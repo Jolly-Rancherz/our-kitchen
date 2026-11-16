@@ -1146,3 +1146,19 @@ a.pressed{transform:none!important}
 /* polish found in the update 4 walkthrough */
 :is(.nudge,.wn,.annv,.flash,.recap) + .pick{margin-top:18px}
 .favtile .ft{padding-top:34px;background:linear-gradient(rgba(8,16,40,0),rgba(8,16,40,.55) 35%,rgba(8,16,40,.9));text-shadow:0 1px 2px rgba(0,0,0,.45)}
+
+/* ================================================================ update 5 — tab bar reaches the bottom edge on iPhone home-screen app
+   html.reach = iOS strip detected (viewport reported one status bar short) and not switched off in Settings.
+   The document and every full-screen layer are made strip-taller than the reported viewport so they extend into the
+   strip WebKit leaves below the page; the tab bar then sits at the physical bottom with the real home-indicator inset
+   below its labels, like a native tab bar. No strip = none of this applies. */
+html.reach{height:calc(100% + var(--strip));--sab:max(var(--sab-raw),20px)}
+html.reach body{height:auto;bottom:calc(-1 * var(--strip))}
+html.reach #app,html.reach #sheetWrap,html.reach #cook,html.reach #welcome,html.reach #splash,html.reach #season,html.reach .confetti{bottom:calc(-1 * var(--strip))}
+html.reach body::after{bottom:calc(-1 * var(--strip))}
+html.reach #toast{bottom:calc(var(--tabh) + var(--sab) + 14px - var(--strip))}
+/* with the keyboard up, sheets go back to the reported viewport (same as before) so they sit on the keyboard */
+html.reach body.kb #sheetWrap{bottom:0}
+html.reach body.kb .sheet{padding-bottom:20px}
+/* home-screen app: icons + labels sit low in the bar, just above the home-indicator inset (native tab bar feel) */
+html.sa #tabbar a{justify-content:flex-end;padding-bottom:4px}

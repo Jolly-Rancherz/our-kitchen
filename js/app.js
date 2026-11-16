@@ -936,9 +936,11 @@ function viewSettings() {
       <div class="setrow"><span class="l"><b>Show the welcome screen</b></span><button class="btn sm ghost" id="showW">Show</button></div>
       <div class="setrow"><span class="l"><b>Reset everything</b><span>Favourites, pantry, list, budget, ticks — all of it</span></span><button class="btn sm danger" id="resetAll">Reset</button></div>
       <p class="small muted" style="margin-top:14px">Our Kitchen · Corey ♥ Faith · ${INDEX.recipes.length} recipes · works offline. Shared sync between our phones is planned for later.</p>
-      <p class="small muted fitinfo">Screen ${FIT.w || ''}×${FIT.screen || ''} · view ${FIT.view || ''} · safe areas ${Math.round(FIT.sat || 0)}/${Math.round(FIT.sab || 0)} · ${FIT.sa ? 'home-screen app' : 'browser'}${FIT.strip ? ` · bottom strip ${FIT.strip}` : ''}</p>
+      <p class="small muted fitinfo">Screen ${FIT.w || ''}×${FIT.screen || ''} · view ${FIT.view || ''} · safe areas ${Math.round(FIT.sat || 0)}/${Math.round(FIT.sab || 0)} · ${FIT.sa ? 'home-screen app' : 'browser'}${FIT.strip ? ` · bottom strip ${FIT.strip}${FIT.reach ? ' · tab bar to edge' : ''}` : ''}</p>
+      ${FIT.strip ? `<label class="setrow"><span class="l"><b>Tab bar to the bottom edge</b><span>iPhone home-screen fix. Turn off if the tabs look cut off.</span></span><span class="switch"><input type="checkbox" id="fitReach" ${FIT.reach ? 'checked' : ''}><i></i></span></label>` : ''}
     </div></div>`);
   $$('#themeSeg button').forEach((b) => (b.onclick = () => { st.theme = b.dataset.t; save(); applyTheme(); viewSettings(); }));
+  $('#fitReach') && ($('#fitReach').onchange = (e) => { try { localStorage.setItem('ourkitchen.fit', e.target.checked ? 'on' : 'off'); } catch (x) {} fitScreen(); const y = vY(); viewSettings(); vTo(y); });
   $('#bigT').onchange = (e) => { st.bigText = e.target.checked; save(); applyTheme(); };
   $('#snowT').onchange = (e) => { st.snow = e.target.checked; save(); applySeason(); };
   $('#heartT').onchange = (e) => { st.hearts = e.target.checked; save(); applySeason(); };
@@ -1993,13 +1995,17 @@ function fitScreen() {
   const sh = portrait ? Math.max(screen.width, screen.height) : Math.min(screen.width, screen.height);
   const gap = Math.round(sh - window.innerHeight);
   const strip = sa && portrait && sat >= 20 && Math.abs(gap - sat) <= 3 ? gap : 0;
-  r.classList.toggle('sa', sa); r.classList.toggle('strip', strip > 0); r.style.setProperty('--strip', strip + 'px');
-  Object.assign(FIT, { sa, screen: sh, view: window.innerHeight, w: window.innerWidth, sat, sab, gap, strip });
+  let reach = true; try { reach = localStorage.getItem('ourkitchen.fit') !== 'off'; } catch (e) {}
+  r.classList.toggle('sa', sa); r.classList.toggle('strip', strip > 0); r.classList.toggle('reach', strip > 0 && reach); r.style.setProperty('--strip', strip + 'px');
+  if (strip > 0 && reach && (window.scrollY || document.documentElement.scrollTop)) window.scrollTo(0, 0);
+  Object.assign(FIT, { sa, screen: sh, view: window.innerHeight, w: window.innerWidth, sat, sab, gap, strip, reach: strip > 0 && reach });
 }
 fitScreen();
 window.addEventListener('resize', () => setTimeout(fitScreen, 60));
 window.addEventListener('orientationchange', () => setTimeout(fitScreen, 300));
 window.addEventListener('pageshow', fitScreen); window.addEventListener('load', fitScreen);
+// the shell is taller than the reported viewport in 'reach' mode: never let the page itself scroll
+window.addEventListener('scroll', () => { if (document.documentElement.classList.contains('reach') && window.scrollY) window.scrollTo(0, 0); }, { passive: true });
 document.fonts && document.fonts.ready && document.fonts.ready.then(fitScreen);
 
 // ---------------------------------------------------------------- keyboard never covers inputs (#8)
