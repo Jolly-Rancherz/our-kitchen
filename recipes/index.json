@@ -1,0 +1,172 @@
+{
+ "generated": "2026-11-16T13:21:37",
+ "count": 1,
+ "categories": [
+  {
+   "slug": "chicken",
+   "name": "Chicken",
+   "colour": "#C4963E",
+   "tile": "assets/tiles/chicken.webp"
+  },
+  {
+   "slug": "pasta-italian",
+   "name": "Pasta & Italian",
+   "colour": "#5070A8",
+   "tile": "assets/tiles/pasta-italian.webp"
+  },
+  {
+   "slug": "beef-turkey",
+   "name": "Beef & Turkey",
+   "colour": "#381848",
+   "tile": "assets/tiles/beef-turkey.webp"
+  },
+  {
+   "slug": "steak-pork",
+   "name": "Steak & Pork",
+   "colour": "#705088",
+   "tile": "assets/tiles/steak-pork.webp"
+  },
+  {
+   "slug": "seafood",
+   "name": "Seafood",
+   "colour": "#4868A0",
+   "tile": "assets/tiles/seafood.webp"
+  },
+  {
+   "slug": "takeout-at-home",
+   "name": "Takeout at Home",
+   "colour": "#806098",
+   "tile": "assets/tiles/takeout-at-home.webp"
+  },
+  {
+   "slug": "comfort-soups",
+   "name": "Comfort & Soups",
+   "colour": "#082048",
+   "tile": "assets/tiles/comfort-soups.webp"
+  }
+ ],
+ "recipes": [
+  {
+   "id": "comfort-soups-01",
+   "category": "comfort-soups",
+   "num": 1,
+   "file": "recipes/comfort-soups/01-moms-famous-potato-soup.json",
+   "title": "Mom's Famous Potato Soup",
+   "subtitle": "thick, creamy and cheesy — loaded with bacon, cheddar and sour cream",
+   "image": "assets/img/moms-potato-soup.webp",
+   "prep": 15,
+   "cook": 40,
+   "total": 55,
+   "servings": 6,
+   "cost": 17,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "one-pan"
+    ],
+    "base": [
+     "potatoes"
+    ],
+    "occasion": [
+     "comfort-night",
+     "weeknight"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "butter",
+    "large yellow onion",
+    "garlic",
+    "all-purpose flour",
+    "chicken broth",
+    "russet potatoes",
+    "35% cream or whole milk",
+    "salt",
+    "black pepper",
+    "garlic powder",
+    "onion powder",
+    "dried thyme",
+    "sweet paprika",
+    "shredded old cheddar",
+    "bacon",
+    "sour cream"
+   ],
+   "pantry": [
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Chicken broth",
+     "cat": "baking"
+    },
+    {
+     "name": "Russet potatoes",
+     "cat": "produce"
+    },
+    {
+     "name": "35% whipping cream",
+     "cat": "dairy"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Onion powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried thyme",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Cheddar (shredded)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Bacon",
+     "cat": "meat"
+    },
+    {
+     "name": "Sour cream",
+     "cat": "dairy"
+    }
+   ]
+  }
+ ]
+}

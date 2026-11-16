@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "slug": "chicken",
+      "name": "Chicken",
+      "colour": "#C4963E",
+      "tile": "assets/tiles/chicken.webp"
+    },
+    {
+      "slug": "pasta-italian",
+      "name": "Pasta & Italian",
+      "colour": "#5070A8",
+      "tile": "assets/tiles/pasta-italian.webp"
+    },
+    {
+      "slug": "beef-turkey",
+      "name": "Beef & Turkey",
+      "colour": "#381848",
+      "tile": "assets/tiles/beef-turkey.webp"
+    },
+    {
+      "slug": "steak-pork",
+      "name": "Steak & Pork",
+      "colour": "#705088",
+      "tile": "assets/tiles/steak-pork.webp"
+    },
+    {
+      "slug": "seafood",
+      "name": "Seafood",
+      "colour": "#4868A0",
+      "tile": "assets/tiles/seafood.webp"
+    },
+    {
+      "slug": "takeout-at-home",
+      "name": "Takeout at Home",
+      "colour": "#806098",
+      "tile": "assets/tiles/takeout-at-home.webp"
+    },
+    {
+      "slug": "comfort-soups",
+      "name": "Comfort & Soups",
+      "colour": "#082048",
+      "tile": "assets/tiles/comfort-soups.webp"
+    }
+  ]
+}

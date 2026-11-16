@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <clipPath id="plate"><circle cx="512" cy="512" r="362"/></clipPath>
+    <g id="fork">
+      <rect x="-60" y="-340" width="24" height="180" rx="3"/>
+      <rect x="-12" y="-340" width="24" height="180" rx="3"/>
+      <rect x="36" y="-340" width="24" height="180" rx="3"/>
+      <path d="M-60 -168 H60 V-128 C60 -70 34 -40 20 -26 H-20 C-34 -40 -60 -70 -60 -128 Z"/>
+      <rect x="-19" y="-40" width="38" height="440" rx="19"/>
+    </g>
+    <g id="knife">
+      <path d="M-30 30 V-280 C-30 -336 36 -336 36 -280 C40 -170 42 -60 40 30 L30 52 V380 Q30 400 0 400 Q-30 400 -30 380 Z"/>
+    </g>
+  </defs>
+  <rect width="1024" height="1024" fill="#082048"/>
+  <circle cx="512" cy="512" r="362" fill="#F5E6CE"/>
+  <circle cx="512" cy="512" r="306" fill="none" stroke="#EAD6B8" stroke-width="8"/>
+  <g clip-path="url(#plate)" fill="#C4963E">
+    <use href="#fork" transform="translate(318 590) rotate(25)"/>
+    <use href="#knife" transform="translate(708 566) rotate(-25)"/>
+  </g>
+</svg>
