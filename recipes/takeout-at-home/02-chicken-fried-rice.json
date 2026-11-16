@@ -1,0 +1,287 @@
+{
+  "title": "Chicken Fried Rice",
+  "subtitle": "hibachi-style, with garlic butter, egg and soy",
+  "image": "assets/img/chicken-fried-rice.webp",
+  "imageAlt": "Bowl of chicken fried rice with egg, peas and carrots, gold chopsticks",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 15,
+  "cost": {
+    "total": 14,
+    "breakdown": [
+      [
+        "Boneless skinless chicken breast, ~600 g",
+        7.95
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.2
+      ],
+      [
+        "Eggs, 3",
+        1.15
+      ],
+      [
+        "Frozen peas & carrots",
+        1.1
+      ],
+      [
+        "Butter, 3 tbsp",
+        0.7
+      ],
+      [
+        "Onion & garlic",
+        1.0
+      ],
+      [
+        "Soy, oyster sauce, sesame oil",
+        0.9
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "takeout-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Better than takeout"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "rice",
+      "text": "Best with cold, day-old rice. No leftovers? Cook the rice, spread it on a sheet pan and chill in the freezer 15 minutes."
+    },
+    {
+      "icon": "thaw",
+      "text": "Frozen chicken? Thaw it in the fridge overnight."
+    },
+    {
+      "icon": "knife",
+      "text": "Chop everything before you turn on the heat — once it starts it moves quickly."
+    }
+  ],
+  "thaw": {
+    "item": "chicken breast",
+    "hours": 24
+  },
+  "groups": [
+    {
+      "name": "Rice",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "dry — about 6 cups cooked, chilled",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 600,
+          "unit": "g",
+          "name": "boneless skinless chicken breast",
+          "note": "2 cm pieces",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stir-fry",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "divided",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": null,
+          "name": "large eggs",
+          "note": "beaten",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "diced small",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 5,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "frozen peas & carrots",
+          "pantry": {
+            "name": "Frozen peas & carrots",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "soy sauce",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "oyster sauce",
+          "pantry": {
+            "name": "Oyster sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "toasted sesame oil",
+          "pantry": {
+            "name": "Sesame oil",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Cook the chicken",
+      "text": "Season the chicken with salt and pepper. Heat 1 tbsp oil in a large skillet or wok over medium-high. Cook 5–7 minutes, stirring now and then, until golden and 74°C (165°F). Move to a plate.",
+      "timer": 6
+    },
+    {
+      "title": "Scramble the eggs",
+      "text": "Melt 1 tbsp butter in the pan, add the eggs and scramble softly, about 1 minute. Add to the chicken."
+    },
+    {
+      "title": "Onion, garlic, veg",
+      "text": "Add the remaining oil and 1 tbsp butter. Cook the onion 3 minutes, then the garlic and frozen peas & carrots for 2 minutes more.",
+      "timer": 5
+    },
+    {
+      "title": "Fry the rice",
+      "text": "Turn the heat to high. Add the cold rice and last tbsp of butter; break up any clumps and press it flat. Let it sit 1 minute to toast, then stir. Repeat 2–3 times.",
+      "timer": 4
+    },
+    {
+      "title": "Sauce and toss",
+      "text": "Drizzle in the soy and oyster sauce and toss until evenly coloured. Return the chicken and eggs, toss 1 minute, then turn off the heat and stir in the sesame oil. Taste — add a splash more soy if needed."
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Rice is mushy or sticky",
+      "fix": "The rice was warm or the pan was crowded. Use cold rice, high heat, and if your pan is small, fry the rice in two batches."
+    },
+    {
+      "problem": "Bland",
+      "fix": "Add soy sauce 1 tsp at a time, plus a pinch of salt. A little more butter brings back the hibachi taste."
+    },
+    {
+      "problem": "Too salty",
+      "fix": "Stir in a handful of plain cooked rice or another scrambled egg."
+    },
+    {
+      "problem": "Sticking to the pan",
+      "fix": "Let the pan get properly hot before the rice goes in, and add a little more oil or butter."
+    }
+  ],
+  "saleTip": "No Name frozen peas & carrots and a dozen eggs are cheap staples — buy chicken breast on flyer weeks (around $9–10/kg) and freeze in 600 g bags for this.",
+  "swap": "Swap the chicken for shrimp, or use leftover rotisserie chicken (add it at the end).",
+  "leftovers": "Fridge 3–4 days — great for lunch. Microwave with a damp paper towel on top until steaming (74°C / 165°F). Freezes well for 2 months.",
+  "doneness": "Chicken: 74°C (165°F).",
+  "source": "Classic restaurant fried-rice method (cold rice, high heat, soy + oyster sauce); safe temp per Health Canada."
+}

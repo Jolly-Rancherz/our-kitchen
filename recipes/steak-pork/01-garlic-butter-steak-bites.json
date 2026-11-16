@@ -1,0 +1,308 @@
+{
+  "title": "Garlic Butter Steak Bites",
+  "subtitle": "seared sirloin cubes tossed in garlic butter, with crispy roasted baby potatoes",
+  "image": "assets/img/garlic-butter-steak-bites.webp",
+  "imageAlt": "Seared steak bites in garlic butter with golden roasted baby potatoes",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 35,
+  "cost": {
+    "total": 29,
+    "breakdown": [
+      [
+        "Top sirloin steak, 900 g",
+        21.0
+      ],
+      [
+        "Baby potatoes, 1.5 kg bag",
+        4.5
+      ],
+      [
+        "Butter, 4 tbsp",
+        0.9
+      ],
+      [
+        "Garlic, 6 cloves",
+        0.6
+      ],
+      [
+        "Oil, soy sauce & spices",
+        1.5
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "oven-bake",
+      "air-fryer"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "date-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Date-night steak"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen steak? Thaw in the fridge overnight. Take it out 20 minutes before cooking so it sears evenly."
+    },
+    {
+      "icon": "oven",
+      "text": "Heat the oven to 220°C (425°F) for the potatoes — they go in first."
+    },
+    {
+      "icon": "knife",
+      "text": "Cut the steak into even 2.5 cm (1\") cubes and pat them very dry — dry steak = brown crust."
+    },
+    {
+      "icon": "pot",
+      "text": "Use your heaviest skillet (cast iron if you have it) and get it really hot. Turn on the fan!"
+    }
+  ],
+  "thaw": {
+    "item": "sirloin steak",
+    "hours": 24
+  },
+  "groups": [
+    {
+      "name": "Crispy baby potatoes",
+      "items": [
+        {
+          "qty": 1.5,
+          "unit": "kg",
+          "name": "baby potatoes",
+          "note": "halved (quartered if large)",
+          "pantry": {
+            "name": "Baby potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "olive oil",
+          "pantry": {
+            "name": "Olive oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried Italian seasoning",
+          "pantry": {
+            "name": "Italian seasoning (dried)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Steak bites",
+      "items": [
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "top sirloin steak",
+          "note": "2.5 cm cubes, fat trimmed",
+          "pantry": {
+            "name": "Sirloin steak",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "soy sauce",
+          "note": "for extra savoury flavour",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          },
+          "optional": true
+        }
+      ]
+    },
+    {
+      "name": "Garlic butter",
+      "items": [
+        {
+          "qty": 4,
+          "unit": "tbsp",
+          "name": "butter",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 6,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          },
+          "optional": true
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Roast the potatoes",
+      "text": "Toss the potatoes with oil, salt, garlic powder, paprika, Italian seasoning and pepper. Spread cut-side down on a sheet pan and roast at 220°C (425°F) for 30–35 minutes, flipping once, until crispy and tender. (Air fryer: 200°C / 400°F, 18–20 min, shaking twice.)",
+      "timer": 32
+    },
+    {
+      "title": "Season the steak",
+      "text": "With 10 minutes left on the potatoes, pat the steak cubes very dry and toss with salt, pepper, garlic powder and paprika."
+    },
+    {
+      "title": "Sear in batches",
+      "text": "Heat 1 tbsp oil in a large heavy skillet over high until it just smokes. Add half the steak in one layer — don't crowd it. Sear 1–2 minutes without moving, then turn and cook 1–2 minutes more until browned. Move to a plate; repeat with the rest.",
+      "timer": 4
+    },
+    {
+      "title": "Check doneness",
+      "text": "Steak bites cook fast, so check a thick piece with a thermometer: medium-rare 55–57°C (130–135°F), medium 60–63°C (140–145°F), medium-well 65–68°C (150–155°F). Health Canada's safe minimum for whole-muscle beef is 63°C (145°F). Pull them a couple of degrees early — they keep cooking."
+    },
+    {
+      "title": "Garlic butter toss",
+      "text": "Turn the heat to medium-low. Melt the butter, add the garlic (and thyme) and cook 30–60 seconds until fragrant — don't let it burn. Return the steak and juices, add the soy sauce if using, and toss 30 seconds to coat.",
+      "timer": 1
+    },
+    {
+      "title": "Serve",
+      "text": "Pile the steak bites next to the crispy potatoes and spoon over the garlic butter from the pan."
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Steak is grey, not browned",
+      "fix": "The pan wasn't hot enough or was crowded, so it steamed. Dry the steak well, heat the pan until it smokes, and cook in batches."
+    },
+    {
+      "problem": "Steak is chewy",
+      "fix": "Overcooked, or the cubes were cut too big/uneven. Pull at your target temp; sirloin is best at medium-rare to medium."
+    },
+    {
+      "problem": "Garlic burned (bitter)",
+      "fix": "The pan was still on high. Drop to medium-low before the butter and garlic go in — it only needs 30–60 seconds."
+    },
+    {
+      "problem": "Potatoes not crispy",
+      "fix": "Give them space on the pan, cut-side down, and don't flip too early. An extra 5 minutes helps."
+    }
+  ],
+  "saleTip": "Top sirloin is one of the best-value steaks at No Frills — often around $9.99/lb ($22/kg) on sale vs ~$12/lb regular. Buy a big pack and freeze 900 g portions.",
+  "swap": "Use striploin for extra tenderness (pricier), or chicken thigh bites (cook to 74°C / 165°F).",
+  "leftovers": "Fridge 3 days. Reheat steak gently (30 seconds at a time in the microwave, or quickly in a hot pan) so it doesn't overcook. Great sliced over rice for lunch.",
+  "doneness": "Steak to your liking: medium-rare 55–57°C (130–135°F), medium 60–63°C (140–145°F), medium-well 65–68°C (150–155°F). Health Canada safe minimum: 63°C (145°F).",
+  "source": "Based on tested steak bite methods (The Forked Spoon, The Meat Table): dry 1-inch cubes, very hot pan, batches, garlic butter finish."
+}

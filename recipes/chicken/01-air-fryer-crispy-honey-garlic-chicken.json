@@ -1,0 +1,425 @@
+{
+  "title": "Air Fryer Crispy Honey Garlic Chicken",
+  "subtitle": "crispy boneless thigh bites in a sticky honey garlic glaze, with garlic butter rice & cheesy broccoli",
+  "image": "assets/img/air-fryer-honey-garlic-chicken.webp",
+  "imageAlt": "Crispy honey garlic chicken bites with white rice and Parmesan broccoli on a cream plate",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 30,
+  "cost": {
+    "total": 29,
+    "breakdown": [
+      [
+        "Boneless skinless chicken thighs, 1 kg",
+        17.0
+      ],
+      [
+        "Broccoli, 2 crowns",
+        4.0
+      ],
+      [
+        "Butter, 7 tbsp",
+        1.6
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.2
+      ],
+      [
+        "Honey, ⅓ cup",
+        1.3
+      ],
+      [
+        "Parmesan, ⅓ cup",
+        1.2
+      ],
+      [
+        "Garlic, 10 cloves",
+        1.0
+      ],
+      [
+        "Soy sauce, spices, cornstarch, oil, vinegar",
+        1.7
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "air-fryer",
+      "oven-bake",
+      "stovetop"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "date-night",
+      "takeout-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Air fryer"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen thighs? Move them to the fridge the night before (about 24 h for 1 kg)."
+    },
+    {
+      "icon": "rice",
+      "text": "Start the rice first: it needs 15 min plus a 10 min rest."
+    },
+    {
+      "icon": "oven",
+      "text": "Heat the oven to 220°C (425°F) for the broccoli when the rice goes on."
+    },
+    {
+      "icon": "airfryer",
+      "text": "Air fryer: preheat to 200°C (400°F) for 3 minutes before batch one."
+    }
+  ],
+  "thaw": {
+    "item": "chicken thighs",
+    "hours": 24
+  },
+  "groups": [
+    {
+      "name": "Crispy chicken",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "kg",
+          "name": "boneless skinless chicken thighs",
+          "note": "4 cm pieces",
+          "pantry": {
+            "name": "Chicken thighs (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "cornstarch",
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Honey garlic sauce",
+      "items": [
+        {
+          "qty": 0.3333333333333333,
+          "unit": "cup",
+          "name": "honey",
+          "metric": {
+            "qty": 80,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Honey",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "soy sauce",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 6,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "apple cider vinegar",
+          "pantry": {
+            "name": "Apple cider vinegar",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "cornstarch",
+          "note": "mixed with 2 tbsp cold water",
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Garlic butter rice",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "divided",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cheesy roasted broccoli",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "crown",
+          "name": "broccoli",
+          "note": "cut into florets (~550 g)",
+          "pantry": {
+            "name": "Broccoli",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "olive oil",
+          "pantry": {
+            "name": "Olive oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.3333333333333333,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "note": "plus extra",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the garlic butter rice",
+      "text": "Melt 1 tbsp of the rice butter in a pot over medium; cook the garlic 30–45 seconds without browning. Add the rinsed rice, water and salt; bring to a boil, cover and simmer on low 15 minutes. Rest 10 minutes off the heat with the lid on, then fluff in the rest of the butter.",
+      "timer": 15
+    },
+    {
+      "title": "Roast the broccoli",
+      "text": "With the oven at 220°C (425°F), toss the florets with oil, garlic powder, salt and pepper on a sheet pan. Roast 16–18 minutes until the edges are toasted. Toss with the melted butter and Parmesan right out of the oven.",
+      "timer": 17
+    },
+    {
+      "title": "Season the chicken",
+      "text": "Pat the chicken very dry. Toss with salt, pepper, garlic powder, onion powder, paprika, cornstarch and oil until every piece has a thin, even coat — that's what makes it crisp."
+    },
+    {
+      "title": "Air-fry until golden",
+      "text": "Cook in two batches at 200°C (400°F) in a single layer — a packed basket steams. Air-fry 8 minutes, shake, then 5–7 minutes more until deep golden and 74°C (165°F) in the thickest piece. Keep batch one on a plate.",
+      "timer": 14
+    },
+    {
+      "title": "Simmer the sauce",
+      "text": "While batch two cooks, warm the honey, soy sauce, garlic and butter in a large skillet over medium until bubbling, 1–2 minutes. Stir in the vinegar, then the cornstarch slurry; cook 30–60 seconds until glossy and lightly thick. It goes fast.",
+      "timer": 2
+    },
+    {
+      "title": "Toss and plate",
+      "text": "Add all the crispy chicken to the sauce and toss 20–30 seconds, just to coat. Serve over the garlic butter rice with the cheesy broccoli and any extra sauce."
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Chicken came out soft, not crispy",
+      "fix": "The basket was too full or the pieces were wet. Pat dry, cook in two batches, and give it 2–3 extra minutes. Toss in sauce right before eating."
+    },
+    {
+      "problem": "Sauce is too thin",
+      "fix": "Simmer 1 more minute, or add another ½ tsp cornstarch mixed with 1 tsp cold water."
+    },
+    {
+      "problem": "Sauce is too thick or sticky",
+      "fix": "Splash in 1–2 tbsp water and stir over low heat."
+    },
+    {
+      "problem": "Too sweet",
+      "fix": "Add an extra ½ tsp vinegar or a little more soy sauce."
+    },
+    {
+      "problem": "No air fryer / it's in use",
+      "fix": "Bake on a parchment-lined sheet at 220°C (425°F) for 18–22 minutes, flipping once, until 74°C (165°F)."
+    }
+  ],
+  "saleTip": "Boneless thighs are about $17/kg regular at No Frills but drop to roughly $9–11/kg in club-pack flyer weeks. Stock up and freeze them in 1 kg bags.",
+  "swap": "Use chicken breast (air-fry 1–2 min less) or shrimp (air-fry 5–6 min, until opaque).",
+  "leftovers": "Fridge 3 days. Reheat the chicken in the air fryer at 175°C (350°F) for 3–4 min to bring the crunch back. Rice and broccoli microwave fine.",
+  "doneness": "Chicken: 74°C (165°F) in the thickest piece.",
+  "source": "Based on tested air-fryer honey garlic chicken methods (cornstarch coat, 200°C, two batches); safe temp per Health Canada."
+}

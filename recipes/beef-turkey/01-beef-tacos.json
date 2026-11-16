@@ -1,0 +1,367 @@
+{
+  "title": "Beef Tacos",
+  "subtitle": "saucy, mild homemade taco beef with all the classic toppings",
+  "image": "assets/img/beef-tacos.webp",
+  "imageAlt": "Hard and soft beef tacos with lettuce, tomato, cheddar and sour cream",
+  "servings": 4,
+  "servingsNote": "about 12 tacos — dinner for one big eater + one hungry eater, plus lunch",
+  "prep": 15,
+  "cook": 20,
+  "cost": {
+    "total": 27,
+    "breakdown": [
+      [
+        "Lean ground beef, 900 g",
+        10.0
+      ],
+      [
+        "Old cheddar, 2 cups (200 g)",
+        3.5
+      ],
+      [
+        "Hard taco shells, 12",
+        3.0
+      ],
+      [
+        "Small flour tortillas, 10",
+        3.0
+      ],
+      [
+        "Iceberg lettuce, ½ head",
+        1.5
+      ],
+      [
+        "Sour cream, 1 cup",
+        2.0
+      ],
+      [
+        "Tomatoes, 2",
+        1.5
+      ],
+      [
+        "Onion, tomato paste & spices",
+        2.5
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [
+      "weeknight",
+      "takeout-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Mild — not spicy",
+    "Homemade seasoning"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen ground beef? Thaw it in the fridge overnight — never on the counter."
+    },
+    {
+      "icon": "knife",
+      "text": "Shred the lettuce and cheese and dice the tomatoes first so the toppings are ready when the beef is."
+    },
+    {
+      "icon": "oven",
+      "text": "Heat the oven to 175°C (350°F) to warm the shells."
+    }
+  ],
+  "thaw": {
+    "item": "ground beef",
+    "hours": 24
+  },
+  "groups": [
+    {
+      "name": "Mild taco seasoning",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "chili powder",
+          "note": "regular mild blend, not hot",
+          "pantry": {
+            "name": "Chili powder (mild)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "ground cumin",
+          "pantry": {
+            "name": "Ground cumin",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried oregano",
+          "pantry": {
+            "name": "Dried oregano",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "cornstarch",
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Taco beef",
+      "items": [
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "lean ground beef",
+          "note": "2 lb",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "tomato paste",
+          "pantry": {
+            "name": "Tomato paste",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 180,
+            "unit": "ml"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Shells & toppings",
+      "items": [
+        {
+          "qty": 12,
+          "unit": null,
+          "name": "hard taco shells",
+          "pantry": {
+            "name": "Hard taco shells",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 10,
+          "unit": null,
+          "name": "small flour tortillas",
+          "note": "6-inch",
+          "pantry": {
+            "name": "Flour tortillas (small)",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "metric": {
+            "qty": 200,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": null,
+          "name": "head iceberg lettuce",
+          "note": "shredded",
+          "pantry": {
+            "name": "Iceberg lettuce",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "tomatoes",
+          "note": "diced",
+          "pantry": {
+            "name": "Tomatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "sour cream",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Sour cream",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": null,
+          "unit": null,
+          "name": "mild salsa",
+          "note": "to serve",
+          "pantry": {
+            "name": "Salsa (mild)",
+            "cat": "sauces"
+          },
+          "optional": true
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Mix the seasoning",
+      "text": "Stir together the chili powder, cumin, paprika, garlic powder, onion powder, oregano, salt, pepper and cornstarch in a small bowl."
+    },
+    {
+      "title": "Brown the beef",
+      "text": "Heat the oil in a large skillet over medium-high. Add the beef and onion and cook 8–10 minutes, breaking it into small crumbles, until no pink remains and it reaches 71°C (160°F). Spoon off extra fat if there's a lot.",
+      "timer": 9
+    },
+    {
+      "title": "Season and simmer",
+      "text": "Stir in the garlic for 30 seconds, then the seasoning mix and tomato paste for 1 minute. Add the water, bring to a simmer and cook 4–5 minutes, stirring, until thick and saucy. Taste for salt.",
+      "timer": 5
+    },
+    {
+      "title": "Warm the shells",
+      "text": "Warm the hard shells on a sheet pan at 175°C (350°F) for 5 minutes. Wrap the tortillas in a damp paper towel and microwave 30–45 seconds (or warm in a dry pan).",
+      "timer": 5
+    },
+    {
+      "title": "Build the tacos",
+      "text": "Fill with beef, then cheese (so it melts a little), lettuce, tomato and a spoonful of sour cream. Add mild salsa if you like."
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Too spicy",
+      "fix": "Use less chili powder next time (1 tsp) and add more sour cream and cheese now. Make sure the chili powder is the regular mild blend, not cayenne or chipotle."
+    },
+    {
+      "problem": "Beef is dry",
+      "fix": "Add 2–3 tbsp water and simmer 1 minute — the cornstarch makes it saucy again."
+    },
+    {
+      "problem": "Beef is greasy",
+      "fix": "Drain the fat after browning, or use extra-lean beef."
+    },
+    {
+      "problem": "Hard shells break",
+      "fix": "Warm them first (cold shells crack) and put the cheese in before wet toppings."
+    }
+  ],
+  "saleTip": "Lean ground beef often drops to about $4.50/lb ($10/kg) in the No Frills flyer — buy 2–3 packs and freeze flat in 450 g bags. Old El Paso shells are frequently 2 for $5.",
+  "swap": "Ground turkey or chicken works the same (cook to 74°C / 165°F). Make it a taco bowl over rice for lunch.",
+  "leftovers": "Taco beef keeps 3–4 days in the fridge and freezes 3 months. Store toppings separately. Reheat beef with a splash of water.",
+  "doneness": "Ground beef: 71°C (160°F), no pink.",
+  "source": "Classic seasoned ground-beef taco method with a mild homemade seasoning (half the usual chili powder, no cayenne); safe temp per Health Canada."
+}

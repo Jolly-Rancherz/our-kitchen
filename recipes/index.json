@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-16T13:21:37",
- "count": 1,
+ "generated": "2026-11-16T14:45:11",
+ "count": 11,
  "categories": [
   {
    "slug": "chicken",
@@ -46,6 +46,1081 @@
   }
  ],
  "recipes": [
+  {
+   "id": "chicken-01",
+   "category": "chicken",
+   "num": 1,
+   "file": "recipes/chicken/01-air-fryer-crispy-honey-garlic-chicken.json",
+   "title": "Air Fryer Crispy Honey Garlic Chicken",
+   "subtitle": "crispy boneless thigh bites in a sticky honey garlic glaze, with garlic butter rice & cheesy broccoli",
+   "image": "assets/img/air-fryer-honey-garlic-chicken.webp",
+   "prep": 20,
+   "cook": 30,
+   "total": 50,
+   "servings": 4,
+   "cost": 29,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "air-fryer",
+     "oven-bake",
+     "stovetop"
+    ],
+    "base": [
+     "rice"
+    ],
+    "occasion": [
+     "date-night",
+     "takeout-night"
+    ],
+    "leftovers": [
+     "lunch"
+    ],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "boneless skinless chicken thighs",
+    "salt",
+    "black pepper",
+    "garlic powder",
+    "onion powder",
+    "sweet paprika",
+    "cornstarch",
+    "canola or vegetable oil",
+    "honey",
+    "soy sauce",
+    "garlic",
+    "butter",
+    "apple cider vinegar",
+    "cornstarch",
+    "jasmine rice",
+    "water",
+    "butter",
+    "garlic",
+    "salt",
+    "broccoli",
+    "olive oil",
+    "garlic powder",
+    "salt",
+    "black pepper",
+    "butter",
+    "grated Parmesan"
+   ],
+   "pantry": [
+    {
+     "name": "Chicken thighs (boneless)",
+     "cat": "meat"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Onion powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Cornstarch",
+     "cat": "baking"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Honey",
+     "cat": "sauces"
+    },
+    {
+     "name": "Soy sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Apple cider vinegar",
+     "cat": "sauces"
+    },
+    {
+     "name": "Jasmine rice",
+     "cat": "grains"
+    },
+    {
+     "name": "Broccoli",
+     "cat": "produce"
+    },
+    {
+     "name": "Olive oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Parmesan (grated)",
+     "cat": "dairy"
+    }
+   ]
+  },
+  {
+   "id": "chicken-02",
+   "category": "chicken",
+   "num": 2,
+   "file": "recipes/chicken/02-chicken-parm-with-spaghetti.json",
+   "title": "Chicken Parm with Spaghetti",
+   "subtitle": "crunchy Parmesan-breaded cutlets under marinara and bubbly mozzarella",
+   "image": "assets/img/chicken-parm-spaghetti.webp",
+   "prep": 25,
+   "cook": 30,
+   "total": 55,
+   "servings": 4,
+   "cost": 26,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "oven-bake",
+     "stovetop"
+    ],
+    "base": [
+     "pasta"
+    ],
+    "occasion": [
+     "date-night",
+     "comfort-night"
+    ],
+    "leftovers": [
+     "lunch"
+    ],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "boneless skinless chicken breasts",
+    "salt",
+    "black pepper",
+    "garlic powder",
+    "all-purpose flour",
+    "large eggs",
+    "panko breadcrumbs",
+    "grated Parmesan",
+    "dried Italian seasoning",
+    "garlic powder",
+    "canola or vegetable oil",
+    "marinara sauce",
+    "shredded mozzarella",
+    "grated Parmesan",
+    "spaghetti",
+    "salt",
+    "marinara sauce",
+    "butter"
+   ],
+   "pantry": [
+    {
+     "name": "Chicken breasts (boneless)",
+     "cat": "meat"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Panko breadcrumbs",
+     "cat": "grains"
+    },
+    {
+     "name": "Parmesan (grated)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Italian seasoning (dried)",
+     "cat": "spices"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Marinara sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Mozzarella (shredded)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Spaghetti",
+     "cat": "grains"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    }
+   ]
+  },
+  {
+   "id": "chicken-03",
+   "category": "chicken",
+   "num": 3,
+   "file": "recipes/chicken/03-creamy-garlic-parmesan-chicken-with-mashed-potatoes.json",
+   "title": "Creamy Garlic Parmesan Chicken with Mashed Potatoes",
+   "subtitle": "golden cutlets in a garlicky Parmesan cream, over buttery mash with green beans",
+   "image": "assets/img/creamy-garlic-parmesan-chicken.webp",
+   "prep": 15,
+   "cook": 35,
+   "total": 50,
+   "servings": 4,
+   "cost": 27,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "one-pan"
+    ],
+    "base": [
+     "potatoes"
+    ],
+    "occasion": [
+     "date-night",
+     "comfort-night"
+    ],
+    "leftovers": [
+     "lunch"
+    ],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "boneless skinless chicken breasts",
+    "salt",
+    "black pepper",
+    "garlic powder",
+    "sweet paprika",
+    "all-purpose flour",
+    "olive oil",
+    "butter",
+    "butter",
+    "garlic",
+    "all-purpose flour",
+    "chicken broth",
+    "35% whipping cream",
+    "grated Parmesan",
+    "dried Italian seasoning",
+    "salt",
+    "black pepper",
+    "Yukon Gold potatoes",
+    "butter",
+    "milk",
+    "salt",
+    "garlic powder",
+    "green beans",
+    "butter",
+    "salt"
+   ],
+   "pantry": [
+    {
+     "name": "Chicken breasts (boneless)",
+     "cat": "meat"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Olive oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Chicken broth",
+     "cat": "baking"
+    },
+    {
+     "name": "35% whipping cream",
+     "cat": "dairy"
+    },
+    {
+     "name": "Parmesan (grated)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Italian seasoning (dried)",
+     "cat": "spices"
+    },
+    {
+     "name": "Yukon Gold potatoes",
+     "cat": "produce"
+    },
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Green beans",
+     "cat": "produce"
+    }
+   ]
+  },
+  {
+   "id": "pasta-italian-01",
+   "category": "pasta-italian",
+   "num": 1,
+   "file": "recipes/pasta-italian/01-chicken-alfredo.json",
+   "title": "Chicken Alfredo",
+   "subtitle": "garlic butter fettuccine in a big, cheesy Parmesan cream",
+   "image": "assets/img/chicken-alfredo.webp",
+   "prep": 10,
+   "cook": 25,
+   "total": 35,
+   "servings": 4,
+   "cost": 22,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "one-pan"
+    ],
+    "base": [
+     "pasta"
+    ],
+    "occasion": [
+     "date-night",
+     "comfort-night",
+     "weeknight"
+    ],
+    "leftovers": [
+     "lunch"
+    ],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "boneless skinless chicken breasts",
+    "salt",
+    "black pepper",
+    "garlic powder",
+    "dried Italian seasoning",
+    "olive oil",
+    "butter",
+    "fettuccine",
+    "salt",
+    "butter",
+    "garlic",
+    "35% whipping cream",
+    "grated Parmesan",
+    "garlic powder",
+    "black pepper",
+    "salt",
+    "shredded mozzarella"
+   ],
+   "pantry": [
+    {
+     "name": "Chicken breasts (boneless)",
+     "cat": "meat"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Italian seasoning (dried)",
+     "cat": "spices"
+    },
+    {
+     "name": "Olive oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Fettuccine",
+     "cat": "grains"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "35% whipping cream",
+     "cat": "dairy"
+    },
+    {
+     "name": "Parmesan (grated)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Mozzarella (shredded)",
+     "cat": "dairy"
+    }
+   ]
+  },
+  {
+   "id": "pasta-italian-05",
+   "category": "pasta-italian",
+   "num": 5,
+   "file": "recipes/pasta-italian/05-baked-mac-and-cheese.json",
+   "title": "Baked Mac and Cheese",
+   "subtitle": "extra-creamy cheddar sauce under a buttery golden crumb top",
+   "image": "assets/img/baked-mac-and-cheese.webp",
+   "prep": 15,
+   "cook": 40,
+   "total": 55,
+   "servings": 6,
+   "cost": 19,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [
+     "pasta"
+    ],
+    "occasion": [
+     "comfort-night"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "elbow macaroni",
+    "salt",
+    "butter",
+    "all-purpose flour",
+    "whole milk",
+    "evaporated milk",
+    "salt",
+    "black pepper",
+    "garlic powder",
+    "onion powder",
+    "sweet paprika",
+    "shredded old cheddar",
+    "shredded mozzarella",
+    "panko breadcrumbs",
+    "grated Parmesan",
+    "butter"
+   ],
+   "pantry": [
+    {
+     "name": "Elbow macaroni",
+     "cat": "grains"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Evaporated milk",
+     "cat": "baking"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Onion powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Cheddar (shredded)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Mozzarella (shredded)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Panko breadcrumbs",
+     "cat": "grains"
+    },
+    {
+     "name": "Parmesan (grated)",
+     "cat": "dairy"
+    }
+   ]
+  },
+  {
+   "id": "beef-turkey-01",
+   "category": "beef-turkey",
+   "num": 1,
+   "file": "recipes/beef-turkey/01-beef-tacos.json",
+   "title": "Beef Tacos",
+   "subtitle": "saucy, mild homemade taco beef with all the classic toppings",
+   "image": "assets/img/beef-tacos.webp",
+   "prep": 15,
+   "cook": 20,
+   "total": 35,
+   "servings": 4,
+   "cost": 27,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "one-pan"
+    ],
+    "base": [
+     "bread-wraps"
+    ],
+    "occasion": [
+     "weeknight",
+     "takeout-night"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "chili powder",
+    "ground cumin",
+    "sweet paprika",
+    "garlic powder",
+    "onion powder",
+    "dried oregano",
+    "salt",
+    "black pepper",
+    "cornstarch",
+    "lean ground beef",
+    "canola or vegetable oil",
+    "yellow onion",
+    "garlic",
+    "tomato paste",
+    "water",
+    "hard taco shells",
+    "small flour tortillas",
+    "shredded old cheddar",
+    "head iceberg lettuce",
+    "tomatoes",
+    "sour cream",
+    "mild salsa"
+   ],
+   "pantry": [
+    {
+     "name": "Chili powder (mild)",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground cumin",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Onion powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried oregano",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Cornstarch",
+     "cat": "baking"
+    },
+    {
+     "name": "Ground beef (lean)",
+     "cat": "meat"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Tomato paste",
+     "cat": "baking"
+    },
+    {
+     "name": "Hard taco shells",
+     "cat": "grains"
+    },
+    {
+     "name": "Flour tortillas (small)",
+     "cat": "grains"
+    },
+    {
+     "name": "Cheddar (shredded)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Iceberg lettuce",
+     "cat": "produce"
+    },
+    {
+     "name": "Tomatoes",
+     "cat": "produce"
+    },
+    {
+     "name": "Sour cream",
+     "cat": "dairy"
+    },
+    {
+     "name": "Salsa (mild)",
+     "cat": "sauces"
+    }
+   ]
+  },
+  {
+   "id": "steak-pork-01",
+   "category": "steak-pork",
+   "num": 1,
+   "file": "recipes/steak-pork/01-garlic-butter-steak-bites.json",
+   "title": "Garlic Butter Steak Bites",
+   "subtitle": "seared sirloin cubes tossed in garlic butter, with crispy roasted baby potatoes",
+   "image": "assets/img/garlic-butter-steak-bites.webp",
+   "prep": 15,
+   "cook": 35,
+   "total": 50,
+   "servings": 4,
+   "cost": 29,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "oven-bake",
+     "air-fryer"
+    ],
+    "base": [
+     "potatoes"
+    ],
+    "occasion": [
+     "date-night",
+     "weeknight"
+    ],
+    "leftovers": [
+     "lunch"
+    ],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "baby potatoes",
+    "olive oil",
+    "salt",
+    "garlic powder",
+    "sweet paprika",
+    "dried Italian seasoning",
+    "black pepper",
+    "top sirloin steak",
+    "salt",
+    "black pepper",
+    "garlic powder",
+    "sweet paprika",
+    "canola or vegetable oil",
+    "soy sauce",
+    "butter",
+    "garlic",
+    "dried thyme"
+   ],
+   "pantry": [
+    {
+     "name": "Baby potatoes",
+     "cat": "produce"
+    },
+    {
+     "name": "Olive oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Italian seasoning (dried)",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Sirloin steak",
+     "cat": "meat"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Soy sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Dried thyme",
+     "cat": "spices"
+    }
+   ]
+  },
+  {
+   "id": "seafood-01",
+   "category": "seafood",
+   "num": 1,
+   "file": "recipes/seafood/01-honey-garlic-salmon.json",
+   "title": "Honey Garlic Salmon",
+   "subtitle": "pan-seared salmon in a sticky honey garlic butter glaze, with rice & broccoli",
+   "image": "assets/img/honey-garlic-salmon.webp",
+   "prep": 10,
+   "cook": 25,
+   "total": 35,
+   "servings": 4,
+   "cost": 34,
+   "price": "$$$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "one-pan"
+    ],
+    "base": [
+     "rice"
+    ],
+    "occasion": [
+     "date-night"
+    ],
+    "leftovers": [
+     "lunch"
+    ],
+    "price": [
+     "$$$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "salmon fillets",
+    "salt",
+    "black pepper",
+    "garlic powder",
+    "sweet paprika",
+    "canola or vegetable oil",
+    "honey",
+    "soy sauce",
+    "lemon juice",
+    "garlic",
+    "butter",
+    "jasmine rice",
+    "water",
+    "salt",
+    "butter",
+    "broccoli"
+   ],
+   "pantry": [
+    {
+     "name": "Salmon fillets",
+     "cat": "meat"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Honey",
+     "cat": "sauces"
+    },
+    {
+     "name": "Soy sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Lemon juice",
+     "cat": "sauces"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Jasmine rice",
+     "cat": "grains"
+    },
+    {
+     "name": "Broccoli",
+     "cat": "produce"
+    }
+   ]
+  },
+  {
+   "id": "takeout-at-home-02",
+   "category": "takeout-at-home",
+   "num": 2,
+   "file": "recipes/takeout-at-home/02-chicken-fried-rice.json",
+   "title": "Chicken Fried Rice",
+   "subtitle": "hibachi-style, with garlic butter, egg and soy",
+   "image": "assets/img/chicken-fried-rice.webp",
+   "prep": 15,
+   "cook": 15,
+   "total": 30,
+   "servings": 4,
+   "cost": 14,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "one-pan"
+    ],
+    "base": [
+     "rice"
+    ],
+    "occasion": [
+     "takeout-night",
+     "weeknight"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "under-30"
+    ]
+   },
+   "ingredients": [
+    "jasmine rice",
+    "boneless skinless chicken breast",
+    "salt",
+    "black pepper",
+    "canola or vegetable oil",
+    "butter",
+    "large eggs",
+    "yellow onion",
+    "garlic",
+    "frozen peas & carrots",
+    "soy sauce",
+    "oyster sauce",
+    "toasted sesame oil",
+    "canola or vegetable oil"
+   ],
+   "pantry": [
+    {
+     "name": "Jasmine rice",
+     "cat": "grains"
+    },
+    {
+     "name": "Chicken breasts (boneless)",
+     "cat": "meat"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Frozen peas & carrots",
+     "cat": "frozen"
+    },
+    {
+     "name": "Soy sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Oyster sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Sesame oil",
+     "cat": "sauces"
+    }
+   ]
+  },
   {
    "id": "comfort-soups-01",
    "category": "comfort-soups",
@@ -165,6 +1240,119 @@
     {
      "name": "Sour cream",
      "cat": "dairy"
+    }
+   ]
+  },
+  {
+   "id": "comfort-soups-02",
+   "category": "comfort-soups",
+   "num": 2,
+   "file": "recipes/comfort-soups/02-broccoli-cheddar-soup.json",
+   "title": "Broccoli Cheddar Soup",
+   "subtitle": "Panera-style — thick, velvety and loaded with old cheddar",
+   "image": "assets/img/broccoli-cheddar-soup.webp",
+   "prep": 15,
+   "cook": 30,
+   "total": 45,
+   "servings": 6,
+   "cost": 18,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "one-pan"
+    ],
+    "occasion": [
+     "comfort-night",
+     "weeknight"
+    ],
+    "leftovers": [
+     "lunch"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "butter",
+    "yellow onion",
+    "garlic",
+    "all-purpose flour",
+    "chicken broth",
+    "10% half-and-half cream",
+    "broccoli",
+    "carrots",
+    "salt",
+    "black pepper",
+    "garlic powder",
+    "sweet paprika",
+    "ground nutmeg",
+    "shredded old cheddar",
+    "crusty loaf or bread bowls"
+   ],
+   "pantry": [
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Chicken broth",
+     "cat": "baking"
+    },
+    {
+     "name": "Half-and-half (10%)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Broccoli",
+     "cat": "produce"
+    },
+    {
+     "name": "Carrots",
+     "cat": "produce"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground nutmeg",
+     "cat": "spices"
+    },
+    {
+     "name": "Cheddar (shredded)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Crusty bread",
+     "cat": "grains"
     }
    ]
   }

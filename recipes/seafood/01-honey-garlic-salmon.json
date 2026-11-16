@@ -1,0 +1,303 @@
+{
+  "title": "Honey Garlic Salmon",
+  "subtitle": "pan-seared salmon in a sticky honey garlic butter glaze, with rice & broccoli",
+  "image": "assets/img/honey-garlic-salmon.webp",
+  "imageAlt": "Honey garlic glazed salmon fillet with white rice and broccoli",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 10,
+  "cook": 25,
+  "cost": {
+    "total": 34,
+    "breakdown": [
+      [
+        "Atlantic salmon fillets, 900 g",
+        25.5
+      ],
+      [
+        "Broccoli, 2 crowns",
+        4.0
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.2
+      ],
+      [
+        "Honey, ⅓ cup",
+        1.3
+      ],
+      [
+        "Butter, 3 tbsp",
+        0.7
+      ],
+      [
+        "Soy sauce, lemon juice, garlic & spices",
+        1.3
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "date-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "15-minute salmon"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen salmon? Thaw in the fridge overnight, or sealed in cold water for about 1 hour."
+    },
+    {
+      "icon": "rice",
+      "text": "Start the rice first — 15 minutes plus a 10 minute rest."
+    },
+    {
+      "icon": "cup",
+      "text": "Mix the glaze before the salmon goes in; honey and garlic burn fast once they hit the pan."
+    }
+  ],
+  "thaw": {
+    "item": "salmon",
+    "hours": 12
+  },
+  "groups": [
+    {
+      "name": "Salmon",
+      "items": [
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "salmon fillets",
+          "note": "4 pieces about 225 g each, skin on or off",
+          "pantry": {
+            "name": "Salmon fillets",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Honey garlic glaze",
+      "items": [
+        {
+          "qty": 0.3333333333333333,
+          "unit": "cup",
+          "name": "honey",
+          "metric": {
+            "qty": 80,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Honey",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "soy sauce",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "lemon juice",
+          "pantry": {
+            "name": "Lemon juice",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rice & broccoli",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "crown",
+          "name": "broccoli",
+          "note": "cut into florets (~550 g)",
+          "pantry": {
+            "name": "Broccoli",
+            "cat": "produce"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Cook the rice",
+      "text": "Bring the rice, water, salt and butter to a boil, cover and simmer on low 15 minutes. Rest 10 minutes off the heat with the lid on, then fluff.",
+      "timer": 15
+    },
+    {
+      "title": "Mix the glaze & season",
+      "text": "Stir the honey, soy sauce, lemon juice and garlic together. Pat the salmon dry and season with salt, pepper, garlic powder and paprika."
+    },
+    {
+      "title": "Steam the broccoli",
+      "text": "Steam or boil the broccoli 4–5 minutes until bright green and just tender. Drain and season with a pinch of salt.",
+      "timer": 5
+    },
+    {
+      "title": "Sear the salmon",
+      "text": "Heat the oil in a large non-stick skillet over medium-high. Lay the salmon in presentation-side down (skin side up) and leave it alone 4 minutes until golden and it releases easily. Flip.",
+      "timer": 4
+    },
+    {
+      "title": "Glaze",
+      "text": "Turn the heat to medium. Add the butter and the glaze and let it bubble 2–3 minutes, spooning it over the salmon as it thickens, until the thickest part reads 63°C (145°F) and flakes easily. Turn the heat down if the glaze darkens too fast.",
+      "timer": 3
+    },
+    {
+      "title": "Serve",
+      "text": "Plate the salmon on the rice with the broccoli and spoon the extra glaze from the pan over everything."
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Salmon stuck to the pan",
+      "fix": "It wasn't ready to flip. Leave it another minute — it lets go on its own when the crust forms. A non-stick pan helps."
+    },
+    {
+      "problem": "Glaze burned",
+      "fix": "Heat was too high. Lower to medium the moment the glaze goes in; it only needs 2–3 minutes."
+    },
+    {
+      "problem": "Glaze too thin",
+      "fix": "Take the salmon out and simmer the glaze 1 more minute, then spoon it over."
+    },
+    {
+      "problem": "Salmon is dry",
+      "fix": "Pull it at 63°C (145°F) — thinner tail pieces are done sooner, so check those first."
+    }
+  ],
+  "saleTip": "Fresh Atlantic salmon is around $13/lb regular at No Frills but often drops to $9–10/lb. Frozen salmon portions (e.g. 908 g bag) are usually cheaper and work great — thaw overnight.",
+  "swap": "Use frozen salmon portions to bring it to $$ (~$25). Shrimp works too (2 min per side).",
+  "leftovers": "Fridge 2 days (fish is best fresh). Eat cold over rice, or reheat gently, covered, at 50% power so it doesn't dry out.",
+  "doneness": "Salmon: 63°C (145°F) in the thickest part; it should flake easily.",
+  "source": "Based on tested pan-seared honey garlic salmon methods (sear then glaze, 145°F); safe temp per Health Canada."
+}

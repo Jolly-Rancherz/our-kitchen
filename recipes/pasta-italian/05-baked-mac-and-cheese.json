@@ -1,0 +1,322 @@
+{
+  "title": "Baked Mac and Cheese",
+  "subtitle": "extra-creamy cheddar sauce under a buttery golden crumb top",
+  "image": "assets/img/baked-mac-and-cheese.webp",
+  "imageAlt": "Baked macaroni and cheese with a golden breadcrumb top and a spoonful lifted out",
+  "servings": 6,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 3–4 lunches",
+  "prep": 15,
+  "cook": 40,
+  "cost": {
+    "total": 19,
+    "breakdown": [
+      [
+        "Old cheddar, 400 g block",
+        6.5
+      ],
+      [
+        "Mozzarella, 150 g",
+        3.0
+      ],
+      [
+        "Elbow macaroni, 450 g",
+        2.0
+      ],
+      [
+        "Evaporated milk, 370 ml can",
+        2.0
+      ],
+      [
+        "Whole milk, 3 cups",
+        1.6
+      ],
+      [
+        "Butter, 8 tbsp",
+        1.8
+      ],
+      [
+        "Panko & Parmesan",
+        1.5
+      ],
+      [
+        "Flour & spices",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "pasta"
+    ],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Extra cheesy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "Heat the oven to 190°C (375°F) and butter a 9×13 baking dish."
+    },
+    {
+      "icon": "cheese",
+      "text": "Shred the cheese from a block — pre-shredded bags have anti-caking powder and can make the sauce grainy."
+    },
+    {
+      "icon": "cup",
+      "text": "Warm the milk (microwave 2 min) so the sauce thickens smoothly with no lumps."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Pasta",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "elbow macaroni",
+          "note": "1 box",
+          "pantry": {
+            "name": "Elbow macaroni",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the pasta water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cheese sauce",
+      "items": [
+        {
+          "qty": 6,
+          "unit": "tbsp",
+          "name": "butter",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.3333333333333333,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 40,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "whole milk",
+          "note": "warmed",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "can",
+          "name": "evaporated milk",
+          "note": "370 ml",
+          "pantry": {
+            "name": "Evaporated milk",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "note": "from a 400 g block, divided",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "shredded mozzarella",
+          "metric": {
+            "qty": 150,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Mozzarella (shredded)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Crumb top",
+      "items": [
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Undercook the pasta",
+      "text": "Boil the macaroni in well-salted water 2 minutes less than the box says (it finishes in the oven). Drain and set aside.",
+      "timer": 6
+    },
+    {
+      "title": "Make the roux",
+      "text": "In a large pot over medium, melt 6 tbsp butter. Whisk in the flour and cook 1–2 minutes, whisking, until bubbly but not browned.",
+      "timer": 2
+    },
+    {
+      "title": "Thicken the sauce",
+      "text": "Slowly whisk in the warm milk and evaporated milk. Add the salt, pepper, garlic powder, onion powder and paprika. Cook, whisking and scraping the bottom, 6–8 minutes until it coats a spoon. Don't let it boil hard.",
+      "timer": 7
+    },
+    {
+      "title": "Melt in the cheese",
+      "text": "Take the pot off the heat and wait 1 minute. Stir in 3 cups of the cheddar and all the mozzarella a handful at a time until smooth. Taste — it should be well seasoned."
+    },
+    {
+      "title": "Combine and top",
+      "text": "Stir in the pasta (it will look very saucy — that's right). Pour into the buttered dish and sprinkle with the last cup of cheddar. Mix the panko, Parmesan and melted butter and scatter on top."
+    },
+    {
+      "title": "Bake",
+      "text": "Bake uncovered at 190°C (375°F) for 20–25 minutes until bubbling at the edges and golden on top. Want it browner? Broil 1–2 minutes, watching closely.",
+      "timer": 22
+    },
+    {
+      "title": "Rest and serve",
+      "text": "Let it rest 5–10 minutes so the sauce settles and turns extra creamy, then scoop.",
+      "timer": 5
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Sauce is grainy or oily",
+      "fix": "The cheese got too hot. Always add it off the heat, a handful at a time, and shred from a block."
+    },
+    {
+      "problem": "Came out dry",
+      "fix": "Pasta was fully cooked or baked too long. Undercook by 2 minutes and keep it saucy going in. For leftovers, add a splash of milk before reheating."
+    },
+    {
+      "problem": "Lumpy sauce",
+      "fix": "Milk went in too fast or cold. Whisk hard (or quickly use an immersion blender before the cheese goes in)."
+    },
+    {
+      "problem": "Bland",
+      "fix": "Cheese sauces need salt — add ¼ tsp at a time before the pasta goes in. Old (sharp) cheddar gives the most flavour."
+    }
+  ],
+  "saleTip": "Block cheddar (400 g) drops to around $5–6 on sale at No Frills — grab two and freeze one. Evaporated milk is often under $2 a can.",
+  "swap": "Mix in crispy bacon or diced cooked chicken before baking to make it a full dinner. Monterey Jack works instead of mozzarella.",
+  "leftovers": "Fridge 4 days. Freezes 2 months in portions. Reheat with a splash of milk, covered, in the microwave or at 175°C (350°F) for 15–20 min.",
+  "doneness": null,
+  "source": "Based on tested baked mac and cheese methods (roux + evaporated milk, 375°F bake — Trevor's Kitchen, America's Test Kitchen)."
+}

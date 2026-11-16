@@ -1,0 +1,419 @@
+{
+  "title": "Creamy Garlic Parmesan Chicken with Mashed Potatoes",
+  "subtitle": "golden cutlets in a garlicky Parmesan cream, over buttery mash with green beans",
+  "image": "assets/img/creamy-garlic-parmesan-chicken.webp",
+  "imageAlt": "Seared chicken cutlets in creamy garlic Parmesan sauce with mashed potatoes and green beans",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 35,
+  "cost": {
+    "total": 27,
+    "breakdown": [
+      [
+        "Boneless skinless chicken breasts, ~900 g",
+        12.0
+      ],
+      [
+        "Yukon Gold potatoes, 2½ lb",
+        2.5
+      ],
+      [
+        "35% cream, 1¼ cups",
+        3.4
+      ],
+      [
+        "Green beans, 450 g",
+        3.0
+      ],
+      [
+        "Grated Parmesan, ¾ cup",
+        2.1
+      ],
+      [
+        "Butter, 8 tbsp",
+        1.8
+      ],
+      [
+        "Garlic, milk, broth, flour & spices",
+        2.2
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "date-night",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Garlic lovers"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen breasts? Thaw them in the fridge overnight (about 24 h)."
+    },
+    {
+      "icon": "pot",
+      "text": "Start the potatoes first — they take the longest (about 20 min to simmer)."
+    },
+    {
+      "icon": "cheese",
+      "text": "Measure the Parmesan and cream before you start the sauce; it comes together fast."
+    }
+  ],
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "2 large, sliced in half into 4 cutlets",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "note": "for dusting",
+          "metric": {
+            "qty": 30,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "olive oil",
+          "pantry": {
+            "name": "Olive oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Garlic Parmesan sauce",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 6,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 180,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1.25,
+          "unit": "cup",
+          "name": "35% whipping cream",
+          "metric": {
+            "qty": 310,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "35% whipping cream",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "note": "plus extra",
+          "metric": {
+            "qty": 75,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried Italian seasoning",
+          "pantry": {
+            "name": "Italian seasoning (dried)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "note": "to taste",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Mashed potatoes",
+      "items": [
+        {
+          "qty": 2.5,
+          "unit": "lb",
+          "name": "Yukon Gold potatoes",
+          "note": "peeled, 4 cm chunks",
+          "metric": {
+            "qty": 1.1,
+            "unit": "kg"
+          },
+          "pantry": {
+            "name": "Yukon Gold potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "tbsp",
+          "name": "butter",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "milk",
+          "note": "warm, plus more as needed",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "note": "plus 1 tbsp for the water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Green beans",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "green beans",
+          "note": "trimmed",
+          "pantry": {
+            "name": "Green beans",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Boil the potatoes",
+      "text": "Put the potatoes in a pot, cover with cold water by 3 cm and add 1 tbsp salt. Bring to a boil, then simmer 15–20 minutes until a knife slides in with no resistance.",
+      "timer": 18
+    },
+    {
+      "title": "Prep the chicken",
+      "text": "Slice each breast in half horizontally and pound to an even 1.5 cm. Pat dry, season with salt, pepper, garlic powder and paprika, then dust lightly with flour and shake off the extra."
+    },
+    {
+      "title": "Sear the cutlets",
+      "text": "Heat the oil and 1 tbsp butter in a large skillet over medium-high. Cook the cutlets 4–5 minutes per side until golden and 74°C (165°F) in the thickest part (work in 2 batches if they don't fit). Move to a plate.",
+      "timer": 10
+    },
+    {
+      "title": "Cook the green beans",
+      "text": "Meanwhile, boil or steam the green beans 4–5 minutes until bright and just tender. Drain and toss with butter and salt.",
+      "timer": 5
+    },
+    {
+      "title": "Make the sauce",
+      "text": "Lower the skillet to medium-low and melt 2 tbsp butter. Cook the garlic 1 minute without browning. Stir in the flour for 30 seconds, then whisk in the broth, scraping up the brown bits. Add the cream and Italian seasoning and simmer 3–4 minutes until it coats a spoon. Take it off the heat and stir in the Parmesan. Season.",
+      "timer": 4
+    },
+    {
+      "title": "Mash",
+      "text": "Drain the potatoes well and return to the hot pot for 1 minute to steam dry. Mash with the butter, warm milk, salt and garlic powder until smooth and creamy."
+    },
+    {
+      "title": "Bring it together",
+      "text": "Return the chicken and its juices to the sauce and spoon it over for 1–2 minutes to warm through. Serve on the mash with the green beans and extra sauce."
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Sauce is grainy",
+      "fix": "It was too hot when the Parmesan went in. Whisk in a splash of warm broth or cream off the heat. Next time add the cheese off the heat."
+    },
+    {
+      "problem": "Sauce too thick",
+      "fix": "Thin with broth or milk, 2 tbsp at a time."
+    },
+    {
+      "problem": "Mash is gluey",
+      "fix": "Over-mixed (don't use a blender). Fold in a little more warm milk and butter by hand."
+    },
+    {
+      "problem": "Chicken is dry",
+      "fix": "Pound to an even thickness and pull it right at 74°C (165°F); it sits in the warm sauce after."
+    }
+  ],
+  "saleTip": "A 10 lb bag of potatoes is often $5–7 at No Frills. Whipping cream goes on sale around $3.50 for 473 ml — the rest works in the Alfredo or potato soup.",
+  "swap": "Use boneless thighs (5–6 min per side), or swap the green beans for roasted broccoli.",
+  "leftovers": "Fridge 3 days. Reheat gently with a splash of milk or broth so the sauce stays creamy.",
+  "doneness": "Chicken: 74°C (165°F) in the thickest part.",
+  "source": "Based on tested creamy garlic Parmesan chicken methods (The Kitchn, Sprinkles and Sprouts)."
+}

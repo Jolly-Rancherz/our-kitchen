@@ -1,0 +1,324 @@
+{
+  "title": "Chicken Alfredo",
+  "subtitle": "garlic butter fettuccine in a big, cheesy Parmesan cream",
+  "image": "assets/img/chicken-alfredo.webp",
+  "imageAlt": "Fettuccine Alfredo topped with sliced golden chicken and Parmesan",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 10,
+  "cook": 25,
+  "cost": {
+    "total": 22,
+    "breakdown": [
+      [
+        "Boneless skinless chicken breasts, ~700 g",
+        9.25
+      ],
+      [
+        "35% whipping cream, 2 cups",
+        4.5
+      ],
+      [
+        "Grated Parmesan, 1½ cups",
+        4.2
+      ],
+      [
+        "Fettuccine, 450 g",
+        2.0
+      ],
+      [
+        "Butter, 5 tbsp",
+        1.1
+      ],
+      [
+        "Garlic, 6 cloves",
+        0.6
+      ],
+      [
+        "Seasoning & oil",
+        0.5
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "pasta"
+    ],
+    "occasion": [
+      "date-night",
+      "comfort-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Extra cheesy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen chicken breasts? Thaw in the fridge overnight (about 24 h)."
+    },
+    {
+      "icon": "pot",
+      "text": "Put a big pot of well-salted water on to boil first — it takes the longest."
+    },
+    {
+      "icon": "cheese",
+      "text": "Measure the Parmesan before you start; the sauce moves fast at the end."
+    },
+    {
+      "icon": "cup",
+      "text": "Save 1 cup of pasta water before you drain."
+    }
+  ],
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "2 large, halved into thin cutlets",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried Italian seasoning",
+          "pantry": {
+            "name": "Italian seasoning (dried)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "olive oil",
+          "pantry": {
+            "name": "Olive oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pasta",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "fettuccine",
+          "note": "1 box",
+          "pantry": {
+            "name": "Fettuccine",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the pasta water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Alfredo sauce",
+      "items": [
+        {
+          "qty": 4,
+          "unit": "tbsp",
+          "name": "butter",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 6,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "35% whipping cream",
+          "metric": {
+            "qty": 500,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "35% whipping cream",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "note": "plus extra to serve",
+          "metric": {
+            "qty": 150,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": null,
+          "unit": null,
+          "name": "salt",
+          "note": "to taste",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "shredded mozzarella",
+          "note": "for extra-cheesy",
+          "pantry": {
+            "name": "Mozzarella (shredded)",
+            "cat": "dairy"
+          },
+          "optional": true
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Boil the water",
+      "text": "Bring a big pot of water to a boil and salt it well. Pat the chicken dry and season both sides with salt, pepper, garlic powder and Italian seasoning."
+    },
+    {
+      "title": "Sear the chicken",
+      "text": "Heat the oil and 1 tbsp butter in a large skillet over medium-high. Cook the cutlets 5–6 minutes per side until golden and 74°C (165°F) inside. Rest on a board 5 minutes, then slice.",
+      "timer": 12
+    },
+    {
+      "title": "Cook the pasta",
+      "text": "Cook the fettuccine 1 minute less than the box says. Scoop out 1 cup of pasta water, then drain.",
+      "timer": 10
+    },
+    {
+      "title": "Make the garlic butter",
+      "text": "In the same skillet (don't wash it — that's flavour), melt the butter over medium-low. Add the garlic and cook 1 minute until fragrant, without browning."
+    },
+    {
+      "title": "Build the sauce",
+      "text": "Pour in the cream, scrape up the brown bits and simmer gently 3–4 minutes until slightly thickened. Turn the heat to low and whisk in the Parmesan a handful at a time, then garlic powder and pepper. Add mozzarella now if using.",
+      "timer": 4
+    },
+    {
+      "title": "Toss and serve",
+      "text": "Add the pasta and toss for a minute, loosening with splashes of pasta water until silky. Taste for salt. Top with the sliced chicken and extra Parmesan."
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Sauce is grainy or clumpy",
+      "fix": "The heat was too high when the cheese went in. Take it off the heat, add a splash of pasta water and whisk hard. Next time add cheese on low, a handful at a time."
+    },
+    {
+      "problem": "Sauce is too thick",
+      "fix": "Loosen with pasta water or a splash of milk, 2 tbsp at a time."
+    },
+    {
+      "problem": "Sauce is too thin",
+      "fix": "Simmer 1–2 minutes more, or add another ¼ cup Parmesan."
+    },
+    {
+      "problem": "Chicken is dry",
+      "fix": "Thinner cutlets cook faster and stay juicy; pull them at 74°C (165°F) and always rest before slicing."
+    }
+  ],
+  "saleTip": "Chicken breast club packs are about $13/kg at No Frills; watch for $9–10/kg flyer weeks. Pasta is often 2 for $3–4 — grab extra.",
+  "swap": "Use shrimp instead of chicken (2 min per side, until pink and opaque), or add roasted broccoli for a veggie.",
+  "leftovers": "Fridge 3 days. Reheat gently in a pan with a splash of milk so the sauce comes back creamy (the microwave can make it oily).",
+  "doneness": "Chicken: 74°C (165°F) in the thickest part.",
+  "source": "Classic Alfredo method (butter, garlic, cream, Parmesan) with pan-seared cutlets; safe temp per Health Canada."
+}

@@ -1,0 +1,304 @@
+{
+  "title": "Broccoli Cheddar Soup",
+  "subtitle": "Panera-style — thick, velvety and loaded with old cheddar",
+  "image": "assets/img/broccoli-cheddar-soup.webp",
+  "imageAlt": "Bowl of broccoli cheddar soup with shredded cheddar and a slice of crusty bread",
+  "servings": 6,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2–3 lunches",
+  "prep": 15,
+  "cook": 30,
+  "cost": {
+    "total": 18,
+    "breakdown": [
+      [
+        "Old cheddar, 300 g",
+        5.0
+      ],
+      [
+        "Broccoli, 2 crowns",
+        5.0
+      ],
+      [
+        "10% half-and-half cream, 2 cups",
+        2.3
+      ],
+      [
+        "Chicken broth, 900 ml carton",
+        2.0
+      ],
+      [
+        "Butter, 4 tbsp",
+        0.9
+      ],
+      [
+        "Onion, carrots & garlic",
+        1.3
+      ],
+      [
+        "Flour & spices",
+        0.5
+      ],
+      [
+        "Crusty bread (optional, not in total)",
+        0
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "occasion": [
+      "comfort-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "One pot"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cheese",
+      "text": "Shred the cheddar from a block — pre-shredded can make the soup grainy."
+    },
+    {
+      "icon": "knife",
+      "text": "Chop the broccoli small (bite-size florets, peeled stems diced) so every spoonful gets some."
+    },
+    {
+      "icon": "pot",
+      "text": "Use a big pot or Dutch oven (at least 4 L)."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Soup",
+      "items": [
+        {
+          "qty": 4,
+          "unit": "tbsp",
+          "name": "butter",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.3333333333333333,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 40,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "cup",
+          "name": "chicken broth",
+          "note": "low-sodium if you have it",
+          "metric": {
+            "qty": 1,
+            "unit": "L"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "10% half-and-half cream",
+          "metric": {
+            "qty": 500,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Half-and-half (10%)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "crown",
+          "name": "broccoli",
+          "note": "small florets + peeled stems, diced (~6 cups)",
+          "pantry": {
+            "name": "Broccoli",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "carrots",
+          "note": "peeled and grated (~1 cup)",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "note": "plus more to taste",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "ground nutmeg",
+          "note": "just a pinch — it makes it taste like Panera's",
+          "pantry": {
+            "name": "Ground nutmeg",
+            "cat": "spices"
+          },
+          "optional": true
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "note": "freshly shredded, plus extra to top",
+          "metric": {
+            "qty": 300,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To serve",
+      "items": [
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "crusty loaf or bread bowls",
+          "pantry": {
+            "name": "Crusty bread",
+            "cat": "grains"
+          },
+          "optional": true
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Soften the onion",
+      "text": "Melt the butter in a big pot over medium. Add the onion with a pinch of salt and cook 4–5 minutes until soft and see-through, not browned. Add the garlic for the last minute.",
+      "timer": 5
+    },
+    {
+      "title": "Make the roux",
+      "text": "Sprinkle in the flour and stir constantly 1–2 minutes so it loses its raw taste.",
+      "timer": 2
+    },
+    {
+      "title": "Add the liquids",
+      "text": "Slowly whisk in the broth, then the half-and-half, until smooth. Bring to a gentle simmer (don't boil hard)."
+    },
+    {
+      "title": "Simmer the veg",
+      "text": "Add the broccoli, carrots, salt, pepper, garlic powder, paprika and nutmeg. Simmer on medium-low, partly covered and stirring often, 15–20 minutes until the broccoli is very tender.",
+      "timer": 18
+    },
+    {
+      "title": "Make it velvety",
+      "text": "For that Panera texture, blend about a third of the soup with an immersion blender (or blend 2 cups in a blender, vented, and stir back in). Leave plenty of chunks."
+    },
+    {
+      "title": "Melt in the cheddar",
+      "text": "Take the pot off the heat. Stir in the cheddar a handful at a time until melted and smooth. Taste and add salt until it's well seasoned. Serve topped with a little extra cheddar and crusty bread."
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Soup is grainy",
+      "fix": "The cheese went in while it was too hot, or it was pre-shredded. Always add cheese off the heat, a handful at a time."
+    },
+    {
+      "problem": "Too thin",
+      "fix": "Simmer uncovered 5 minutes, or blend a bit more of the soup. Extra cheddar thickens it too."
+    },
+    {
+      "problem": "Too thick",
+      "fix": "Stir in broth or milk, ¼ cup at a time. It thickens a lot overnight."
+    },
+    {
+      "problem": "Tastes flat",
+      "fix": "Add salt ¼ tsp at a time — cheese soups need it. A pinch more nutmeg or garlic powder helps."
+    }
+  ],
+  "saleTip": "Broccoli crowns are often 2 for $4–5 at No Frills, and old cheddar 400 g blocks hit ~$5–6 on sale — use the leftover 100 g on tacos or mac and cheese.",
+  "swap": "Use whole milk instead of half-and-half (a little lighter), or frozen broccoli (no need to thaw; simmer 10–12 min).",
+  "leftovers": "Fridge 4 days. Reheat on low, stirring, with a splash of milk — don't boil or it can split. Freezing isn't recommended (the cheese turns grainy).",
+  "doneness": null,
+  "source": "Based on tested Panera-copycat broccoli cheddar soup methods (Once Upon a Chef, Food Network Kitchen): butter-flour roux, broth + half-and-half, partial blend, cheese off the heat."
+}

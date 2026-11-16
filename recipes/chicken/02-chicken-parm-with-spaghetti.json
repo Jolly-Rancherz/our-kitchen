@@ -1,0 +1,353 @@
+{
+  "title": "Chicken Parm with Spaghetti",
+  "subtitle": "crunchy Parmesan-breaded cutlets under marinara and bubbly mozzarella",
+  "image": "assets/img/chicken-parm-spaghetti.webp",
+  "imageAlt": "Breaded chicken Parmesan with melted mozzarella next to spaghetti in marinara",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 25,
+  "cook": 30,
+  "cost": {
+    "total": 26,
+    "breakdown": [
+      [
+        "Boneless skinless chicken breasts, 2 large (~800 g)",
+        10.5
+      ],
+      [
+        "Shredded mozzarella, 2 cups",
+        4.5
+      ],
+      [
+        "Marinara sauce, 650 ml jar",
+        3.5
+      ],
+      [
+        "Spaghetti, 450 g",
+        2.0
+      ],
+      [
+        "Grated Parmesan, ¾ cup",
+        2.1
+      ],
+      [
+        "Panko breadcrumbs, 1½ cups",
+        1.5
+      ],
+      [
+        "Eggs, 2",
+        0.8
+      ],
+      [
+        "Flour, oil & spices",
+        1.1
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "stovetop"
+    ],
+    "base": [
+      "pasta"
+    ],
+    "occasion": [
+      "date-night",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Extra cheesy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen breasts? Thaw them in the fridge overnight (about 24 h)."
+    },
+    {
+      "icon": "oven",
+      "text": "Heat the oven to 220°C (425°F) and line a sheet pan with parchment."
+    },
+    {
+      "icon": "pot",
+      "text": "Put a big pot of salted water on to boil now for the spaghetti."
+    },
+    {
+      "icon": "knife",
+      "text": "Pick a plain or traditional marinara (no visible basil leaves) — Classico Traditional or No Name both work."
+    }
+  ],
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "groups": [
+    {
+      "name": "Cutlets",
+      "items": [
+        {
+          "qty": 800,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "2 large, sliced in half into 4 thin cutlets",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Breading",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 65,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "note": "beaten with 1 tbsp water",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "dried Italian seasoning",
+          "pantry": {
+            "name": "Italian seasoning (dried)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "canola or vegetable oil",
+          "note": "for pan-frying",
+          "metric": {
+            "qty": 80,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Topping",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "marinara sauce",
+          "note": "from the jar",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Marinara sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "shredded mozzarella",
+          "metric": {
+            "qty": 200,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Mozzarella (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "note": "to sprinkle",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Spaghetti",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "spaghetti",
+          "note": "1 box",
+          "pantry": {
+            "name": "Spaghetti",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the pasta water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.75,
+          "unit": "cup",
+          "name": "marinara sauce",
+          "note": "rest of the jar, warmed",
+          "metric": {
+            "qty": 400,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Marinara sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Make even cutlets",
+      "text": "Slice each breast in half horizontally, then pound to an even 1–1.5 cm thickness between plastic wrap. Even thickness = juicy and cooked through at the same time. Pat dry and season with salt, pepper and garlic powder."
+    },
+    {
+      "title": "Set up the breading",
+      "text": "Three shallow dishes: flour; beaten eggs; panko mixed with ½ cup Parmesan, Italian seasoning and garlic powder. Dredge each cutlet in flour, dip in egg, then press firmly into the crumbs on both sides."
+    },
+    {
+      "title": "Pan-fry until golden",
+      "text": "Heat the oil in a large skillet over medium-high until shimmering. Fry 2 cutlets at a time, 3 minutes per side, until deep golden (they finish in the oven). Move to the lined sheet pan.",
+      "timer": 6
+    },
+    {
+      "title": "Sauce, cheese, bake",
+      "text": "Spoon about ¼ cup marinara on the centre of each cutlet (leave the edges crunchy), top with mozzarella and a sprinkle of Parmesan. Bake at 220°C (425°F) 12–15 minutes until the cheese bubbles and the chicken reads 74°C (165°F).",
+      "timer": 13
+    },
+    {
+      "title": "Cook the spaghetti",
+      "text": "While it bakes, cook the spaghetti until al dente (box time, usually 9–10 min). Save ½ cup pasta water, drain, and toss with the warm marinara, butter and a splash of pasta water.",
+      "timer": 10
+    },
+    {
+      "title": "Rest and serve",
+      "text": "Let the chicken rest 3 minutes so the cheese sets, then serve on the spaghetti with extra Parmesan."
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Breading falls off",
+      "fix": "Pat the chicken dry before flouring, shake off extra flour, and press the crumbs on firmly. Don't move the cutlets in the pan until the first side is golden."
+    },
+    {
+      "problem": "Outside dark, inside not done",
+      "fix": "The oil was too hot or the cutlets too thick. Pound thinner; the oven finishes the cooking — always check for 74°C (165°F)."
+    },
+    {
+      "problem": "Bottom got soggy",
+      "fix": "Bake on a wire rack set in the sheet pan, and keep the sauce on the centre only."
+    },
+    {
+      "problem": "Bland",
+      "fix": "Season every layer — salt on the chicken and garlic/Italian seasoning in the crumbs. A pinch of salt in the marinara helps too."
+    }
+  ],
+  "saleTip": "Classico and No Name pasta sauce often go 2 for $5 at No Frills, and shredded mozzarella (320 g) hits about $5–6 on sale. Buy chicken breast club packs on flyer weeks (~$9–10/kg).",
+  "swap": "Use chicken thighs pounded thin, or make it with pork cutlets (cook to 71°C / 160°F).",
+  "leftovers": "Fridge 3 days. Reheat cutlets in the air fryer at 175°C (350°F) 5–6 min (or oven 190°C / 375°F, 10 min) so they stay crisp; spaghetti microwaves fine.",
+  "doneness": "Chicken: 74°C (165°F) in the thickest part.",
+  "source": "Based on tested chicken Parmesan methods (America's Test Kitchen, Preppy Kitchen): breaded cutlets, pan-fried then baked at 425°F."
+}

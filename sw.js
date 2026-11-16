@@ -1,13 +1,23 @@
 /* Our Kitchen service worker — offline support.
    VERSION and the PRECACHE list are rewritten by tools/build_index.py. */
-const VERSION = '4eff691208';
+const VERSION = 'c963b3e9fb';
 const CACHE = 'our-kitchen-' + VERSION;
 const PRECACHE = /*PRECACHE*/[
   "./",
   "./index.html",
   "./manifest.webmanifest",
   "./assets/grain.png",
+  "./assets/img/air-fryer-honey-garlic-chicken.webp",
+  "./assets/img/baked-mac-and-cheese.webp",
+  "./assets/img/beef-tacos.webp",
+  "./assets/img/broccoli-cheddar-soup.webp",
+  "./assets/img/chicken-alfredo.webp",
+  "./assets/img/chicken-fried-rice.webp",
+  "./assets/img/chicken-parm-spaghetti.webp",
   "./assets/img/cover.webp",
+  "./assets/img/creamy-garlic-parmesan-chicken.webp",
+  "./assets/img/garlic-butter-steak-bites.webp",
+  "./assets/img/honey-garlic-salmon.webp",
   "./assets/img/moms-potato-soup.webp",
   "./assets/tiles/beef-turkey.webp",
   "./assets/tiles/chicken.webp",
@@ -32,7 +42,17 @@ const PRECACHE = /*PRECACHE*/[
   "./js/app.js",
   "./recipes/categories.json",
   "./recipes/index.json",
-  "./recipes/comfort-soups/01-moms-famous-potato-soup.json"
+  "./recipes/beef-turkey/01-beef-tacos.json",
+  "./recipes/chicken/01-air-fryer-crispy-honey-garlic-chicken.json",
+  "./recipes/chicken/02-chicken-parm-with-spaghetti.json",
+  "./recipes/chicken/03-creamy-garlic-parmesan-chicken-with-mashed-potatoes.json",
+  "./recipes/comfort-soups/01-moms-famous-potato-soup.json",
+  "./recipes/comfort-soups/02-broccoli-cheddar-soup.json",
+  "./recipes/pasta-italian/01-chicken-alfredo.json",
+  "./recipes/pasta-italian/05-baked-mac-and-cheese.json",
+  "./recipes/seafood/01-honey-garlic-salmon.json",
+  "./recipes/steak-pork/01-garlic-butter-steak-bites.json",
+  "./recipes/takeout-at-home/02-chicken-fried-rice.json"
 ]/*END*/;
 
 self.addEventListener('install', (e) => {
