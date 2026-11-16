@@ -935,7 +935,7 @@ function viewSettings() {
       <div class="setrow"><span class="l"><b>Show the welcome screen</b></span><button class="btn sm ghost" id="showW">Show</button></div>
       <div class="setrow"><span class="l"><b>Reset everything</b><span>Favourites, pantry, list, budget, ticks — all of it</span></span><button class="btn sm danger" id="resetAll">Reset</button></div>
       <p class="small muted" style="margin-top:14px">Our Kitchen · Corey ♥ Faith · ${INDEX.recipes.length} recipes · works offline. Shared sync between our phones is planned for later.</p>
-      <p class="small muted fitinfo">Screen ${FIT.w || ''}×${FIT.screen || ''} · view ${FIT.view || ''} · safe areas ${Math.round(FIT.sat || 0)}/${Math.round(FIT.sab || 0)} · ${FIT.sa ? 'home-screen app' : 'browser'}${FIT.strip ? ` · bottom strip ${FIT.strip} · bar +${FIT.lift}` : ''}</p>
+      <p class="small muted fitinfo">Screen ${FIT.w || ''}×${FIT.screen || ''} · view ${FIT.view || ''} · safe areas ${Math.round(FIT.sat || 0)}/${Math.round(FIT.sab || 0)} · ${FIT.sa ? 'home-screen app' : 'browser'}${FIT.strip ? ` · bottom strip ${FIT.strip}` : ''}</p>
     </div></div>`);
   $$('#themeSeg button').forEach((b) => (b.onclick = () => { st.theme = b.dataset.t; save(); applyTheme(); viewSettings(); }));
   $('#bigT').onchange = (e) => { st.bigText = e.target.checked; save(); applyTheme(); };
@@ -2007,20 +2007,14 @@ function fitScreen() {
   const gap = Math.round(sh - window.innerHeight);
   const strip = sa && portrait && sat >= 20 && Math.abs(gap - sat) <= 3 ? gap : 0;
   // one fixed layout, no switch (an old 'ourkitchen.fit' key from update 5 is simply ignored, never deleted).
-  // The shell grows into the strip by (strip - bottom inset): 62 - 34 = 28pt on iPhone 16/17 Pro, i.e. down to the
-  // top of the home-indicator zone, where WebKit stops painting. No inset reported: half the strip.
-  const lift = strip > 0 ? Math.max(0, Math.min(strip, sab > 0 ? Math.round(strip - sab) : Math.round(strip / 2))) : 0;
+  // The shell never grows into the strip: iOS draws and hit-tests nothing below the viewport there (see app.css).
   r.classList.toggle('sa', sa); r.classList.toggle('strip', strip > 0);
-  if (strip > 0) r.style.setProperty('--shellh', Math.round(window.innerHeight + lift) + 'px'); else r.style.removeProperty('--shellh');
-  if (strip > 0 && (window.scrollY || document.documentElement.scrollTop)) window.scrollTo(0, 0);
-  Object.assign(FIT, { sa, screen: sh, view: window.innerHeight, w: window.innerWidth, sat, sab, gap, strip, lift });
+  Object.assign(FIT, { sa, screen: sh, view: window.innerHeight, w: window.innerWidth, sat, sab, gap, strip });
 }
 fitScreen();
 window.addEventListener('resize', () => setTimeout(fitScreen, 60));
 window.addEventListener('orientationchange', () => setTimeout(fitScreen, 300));
 window.addEventListener('pageshow', fitScreen); window.addEventListener('load', fitScreen);
-// the shell is taller than the reported viewport in strip mode: never let the page itself scroll
-window.addEventListener('scroll', () => { if (document.documentElement.classList.contains('strip') && window.scrollY) window.scrollTo(0, 0); }, { passive: true });
 document.fonts && document.fonts.ready && document.fonts.ready.then(fitScreen);
 
 // ---------------------------------------------------------------- keyboard never covers inputs (#8)

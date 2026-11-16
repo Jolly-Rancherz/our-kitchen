@@ -53,17 +53,21 @@ A names setting, a welcome tour, a help page, an accessibility check, a tile red
 - Faith sync (data is per phone; the state shape is ready for it)
 - Recipes: 21 of the 101 planned are in; **80 still to add** in small batches (`app_src/batch*.py` pattern)
 
-## iOS 26 "strip" and the tab bar (final solution, Update 6)
+## iOS 26 "strip" and the tab bar (final solution, Update 6.1)
 On iOS 26.1+ with `apple-mobile-web-app-status-bar-style=black-translucent`, a home-screen app is drawn from the top
 of the screen, but the viewport is one status bar short (iPhone 16/17 Pro: screen 874pt, viewport 812, insets 62/34).
-WebKit fills the 62pt strip below with the **body** background and doesn't paint page content in the bottom 34pt
-(home-indicator zone).
-- Update 4: bar ended at 812pt, so it sat too high. Update 5: the shell was stretched by the full 62pt, with a Settings
-  switch, so the bar went too low. Both were removed.
-- Update 6: `fitScreen()` detects the strip and sets `--shellh` = viewport + (strip − bottom inset) = 840pt, so the
-  tab bar ends exactly where the home-indicator zone begins. In strip mode the body is painted the tab-bar colour
-  (or the open layer's colour), so the strip reads as part of the bar. The splash spans the full screen. Faith's 16 Pro
-  has the same geometry. Settings shows a diagnostics line (screen, view, safe areas, strip, bar lift).
+WebKit fills the 62pt strip below with the **body** background colour. It does not draw page content there and does
+not deliver taps there: Corey's 4:08 PM welcome screenshot (refs/u61-welcome-phone.jpg) shows the collage stopping at
+exactly 812pt although the image continues.
+- Update 4: bar ended at 812pt (centred content, looked high). Update 5: shell stretched by 62pt + switch (too low).
+- Update 6 grew the shell to 840pt. That put the lower half of every tab (the labels) below 812pt, where taps are
+  lost, so tabs often needed several taps; it also cut the welcome card. Removed in 6.1.
+- Update 6.1: `fitScreen()` only marks `html.strip`; the shell stays inside the 812pt viewport. In strip mode the tab
+  icons (25px) and labels sit at the foot of the bar (labels end at ~807pt), the body is the tab-bar colour (or the open
+  layer's colour) so the bar's colour runs to the physical edge, and every tab's hit target is the full column × the full
+  58pt bar (754–812pt), clear of the home-indicator gesture zone. The welcome card is edge to edge at the bottom and its
+  cream continues into the strip. The gap from the labels to the home-indicator pill (~54pt) cannot be smaller
+  without moving the icons into the dead zone. Settings shows a diagnostics line (screen, view, safe areas, strip).
 - A full fix would be to drop black-translucent, but changing that meta needs the home-screen icon re-added, which
   wipes data unless you Export first and then Restore. Only do it if Corey says yes.
 
@@ -83,3 +87,4 @@ WebKit fills the 62pt strip below with the **body** background and doesn't paint
 | 4 | 731d494 | Gliding sheets, first iPhone fit, no tap flash |
 | 5 | 8b12ea6 | Tab bar stretched into the strip + switch (too low; replaced) |
 | 6 | see `git log` | Middle-ground tab bar fit (no switch), splash fit, no shake on taps, smooth search, wheel re-spin fix, notes |
+| 6.1 | see `git log` | Shell back inside the viewport (tabs fully tappable), bigger tab icons, edge-to-edge welcome card |

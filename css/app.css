@@ -671,7 +671,7 @@ a.pressed{transform:scale(.97)!important;transition:transform .15s}
 /* tab bar with six tabs (#Us, Acura) */
 #tabbar{grid-template-columns:repeat(6,1fr);padding:0 2px var(--sab)}
 #tabbar a{font-size:.58rem;letter-spacing:.04em;gap:3px}
-#tabbar svg{width:22px;height:22px}
+#tabbar svg{width:25px;height:25px}
 #tabbar a.on::before{left:18%;right:18%}
 .badge{left:calc(50% + 6px)}
 @media (max-width:350px){#tabbar a span{font-size:.52rem;letter-spacing:.02em}}
@@ -1126,18 +1126,18 @@ a.pressed{transform:none!important}
 /* ================================================================ iPhone home-screen fit (one implementation, replaces the update 4/5 workarounds)
    iOS 26 standalone + black-translucent: the page is drawn from the top of the screen but WebKit sizes the viewport
    one status bar short (874pt screen, 812pt viewport on iPhone 16/17 Pro) and fills the strip below with the BODY
-   colour; it also doesn't paint web content in the home-indicator zone (bottom 34pt).
-   fitScreen() (app.js) detects that strip and sets html.strip plus
-     --shellh  viewport + (strip - home-indicator inset) = 812 + 28 = 840: the shell ends where the indicator zone begins
-   (the splash is centred on the full screen from the first frame by the inline script/styles in index.html)
-   So the tab bar's bottom edge lands on that line, fully visible, its labels well above the home indicator, and the
-   body colour (= tab bar colour) fills the rest of the screen seamlessly. Without the strip none of this applies. */
+   colour. Update 6.1, measured on Corey's phone: nothing below the 812pt viewport is drawn (the welcome collage stops
+   exactly there although the image continues) and nothing there receives taps. So the shell stays inside the viewport
+   and fitScreen() (app.js) only marks html.strip; the body colour (= tab bar colour) then carries the bar's colour, or
+   the full-screen layer's, to the physical bottom edge, and every icon, label and button sits above the 812pt line. */
 :root{--sat-raw:env(safe-area-inset-top,0px);--sab-raw:env(safe-area-inset-bottom,0px)}
 #fitProbe{position:fixed;left:0;top:0;width:0;height:0;visibility:hidden;pointer-events:none;padding:var(--sat-raw) 0 var(--sab-raw)}
 html.strip{--sab:0px;background:var(--tabbg)}
-html.strip #app{bottom:auto;height:var(--shellh,100%);background:var(--bg)}
-html.strip body::after{bottom:auto;height:var(--shellh,100%)}
-html.strip #welcome{bottom:auto;height:var(--shellh,100%)}
+html.strip #app{background:var(--bg)}
+/* tab icons and labels sit at the foot of the bar, just above the last drawn and tappable line */
+html.strip #tabbar a{justify-content:flex-end;padding-bottom:5px}
+/* welcome card runs edge to edge at the bottom so its cream continues seamlessly into the strip */
+html.strip #welcome .panel{left:0;right:0;bottom:0;padding:18px 32px 20px}
 /* the strip shows the body colour: tab bar colour normally, otherwise whichever full-screen layer is up */
 html.strip body{background:var(--tabbg)}
 html.strip body.sheet-open{background:var(--bg)}
