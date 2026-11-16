@@ -8,7 +8,7 @@
   "prep": 15,
   "cook": 40,
   "cost": {
-    "total": 17,
+    "total": 18,
     "breakdown": [
       [
         "Old cheddar, 2 cups shredded (½ of a 400 g block)",
@@ -399,5 +399,116 @@
   ],
   "reheat": "Stovetop: low heat with a splash of milk or broth, stirring, until steaming (74°C / 165°F) — don't boil. Microwave: 1 min at a time, stirring between. Add fresh toppings after reheating.",
   "family": true,
-  "story": "This is Mom's soup — the one that showed up on cold nights and sick days, and always tasted like home. Thick, buttery and loaded with cheddar and bacon. Tap edit to add the story in your own words."
+  "story": "This is Mom's soup — the one that showed up on cold nights and sick days, and always tasted like home. Thick, buttery and loaded with cheddar and bacon. Tap edit to add the story in your own words.",
+  "levels": {
+    "basic": {
+      "note": "Mom's soup with the essentials: potatoes, broth, milk and cheddar. Still thick and cosy.",
+      "drop": [
+        "0-9",
+        "0-10",
+        "0-11",
+        "0-12",
+        "1-1",
+        "1-2"
+      ],
+      "swap": {
+        "0-6": {
+          "name": "whole milk",
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        }
+      },
+      "stepNotes": {
+        "0": "Basic: no bacon — skip this step.",
+        "3": "Basic: salt and pepper only.",
+        "6": "Basic: milk instead of cream — keep it on low.",
+        "7": "Basic: top with the rest of the cheddar."
+      },
+      "costDrop": [
+        "bacon",
+        "sour cream",
+        "35%"
+      ],
+      "costAdd": [
+        [
+          "Whole milk, 1½ cups",
+          0.8,
+          "milk"
+        ]
+      ]
+    },
+    "fancy": {
+      "note": "Loaded and silky: cream, aged cheddar, crisp bacon, a swirl of sour cream and crispy potato skins on top.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "shredded aged white cheddar",
+              "pantry": {
+                "name": "Aged white cheddar",
+                "cat": "dairy"
+              },
+              "note": "stirred in with the old cheddar"
+            },
+            {
+              "qty": 4,
+              "unit": "slice",
+              "name": "bacon",
+              "pantry": {
+                "name": "Bacon",
+                "cat": "meat"
+              },
+              "note": "extra, for thick crumbles on top"
+            }
+          ]
+        }
+      ],
+      "swap": {
+        "0-11": {
+          "optional": false
+        },
+        "1-1": {
+          "optional": false
+        }
+      },
+      "stepNotes": {
+        "6": "Fancy: stir the aged white cheddar in with the first cup of old cheddar."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Ladle into warm bowls. Add a spoon of sour cream, then drag a spoon through it for a swirl. Pile big bacon crumbles and cheddar in the centre and finish with cracked black pepper and a pinch of paprika."
+        }
+      ],
+      "costAdd": [
+        [
+          "Aged white cheddar, ½ cup",
+          2.0,
+          "aged-white-cheddar"
+        ],
+        [
+          "Extra bacon, 4 slices",
+          1.8,
+          "bacon"
+        ]
+      ],
+      "plating": [
+        "Warm the bowls with hot water first so the soup stays hot.",
+        "Sour cream swirl, then toppings piled in the centre — not scattered.",
+        "A tiny pinch of paprika for colour."
+      ]
+    }
+  },
+  "why": {
+    "0-3": "Flour is what makes it thick and silky. Skip it and mash more potato instead.",
+    "0-6": "Cream makes it rich. Milk works but keep it on low so it doesn't curdle.",
+    "1-0": "Cheddar is the flavour and the thickness at the end — don't skip it.",
+    "0-4": "Broth is the backbone of the flavour. Water works in a pinch with extra salt."
+  },
+  "fancyNight": false
 }

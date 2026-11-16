@@ -86,7 +86,55 @@
     "Bake them extra-dry if you want them to last longer on the counter.",
     "Small dog? Use a tiny cutter — calories add up fast."
    ],
-   "source": "Adapted from the American Kennel Club (AKC) pumpkin peanut butter dog treat recipe; ingredient safety per ASPCA Animal Poison Control."
+   "source": "Adapted from the American Kennel Club (AKC) pumpkin peanut butter dog treat recipe; ingredient safety per ASPCA Animal Poison Control.",
+   "levels": {
+    "basic": {
+     "note": "Three ingredients: flour, pumpkin and egg.",
+     "drop": [
+      "0-3"
+     ],
+     "stepNotes": {
+      "1": "Basic: no peanut butter — add a spoon more pumpkin."
+     }
+    },
+    "fancy": {
+     "note": "Two-tone biscuits with a plain yogurt drizzle and blueberries pressed in.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 2,
+         "unit": "tbsp",
+         "name": "plain unsweetened yogurt",
+         "note": "drizzle, a little only",
+         "warn": "Plain, unsweetened, no xylitol."
+        },
+        {
+         "qty": 0.25,
+         "unit": "cup",
+         "name": "fresh blueberries"
+        }
+       ]
+      }
+     ],
+     "addSteps": [
+      {
+       "title": "Fancy finish",
+       "text": "Press a blueberry into each bone before baking. Once completely cool, drizzle thin lines of plain yogurt and let them set in the fridge. Keep the drizzled ones in the fridge."
+      }
+     ]
+    }
+   },
+   "why": {
+    "0-1": "Pumpkin binds the dough and is gentle on tummies.",
+    "0-2": "Eggs hold the biscuits together."
+   },
+   "levelCost": {
+    "basic": 3.5,
+    "classic": 4.5,
+    "fancy": 6
+   }
   },
   {
    "id": "pupsicles",
@@ -155,7 +203,47 @@
     "Some dogs are lactose-sensitive — start small.",
     "Swap the yogurt for pure pumpkin purée for a dairy-free version."
    ],
-   "source": "Based on AKC and PetMD frozen yogurt dog treat guidance (plain, unsweetened yogurt; xylitol-free peanut butter)."
+   "source": "Based on AKC and PetMD frozen yogurt dog treat guidance (plain, unsweetened yogurt; xylitol-free peanut butter).",
+   "levels": {
+    "basic": {
+     "note": "Just yogurt and banana.",
+     "drop": [
+      "0-2"
+     ]
+    },
+    "fancy": {
+     "note": "Layered pupsicles with blueberries and strawberries.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 0.25,
+         "unit": "cup",
+         "name": "fresh blueberries"
+        },
+        {
+         "qty": 3,
+         "unit": null,
+         "name": "strawberries",
+         "note": "hulled, chopped small"
+        }
+       ]
+      }
+     ],
+     "stepNotes": {
+      "1": "Fancy: drop berries into each mould before filling."
+     }
+    }
+   },
+   "why": {
+    "0-0": "Yogurt makes them creamy — start small if Acura is new to dairy."
+   },
+   "levelCost": {
+    "basic": 1.5,
+    "classic": 2.5,
+    "fancy": 4
+   }
   },
   {
    "id": "sweet-potato-chews",
@@ -215,7 +303,40 @@
     "Chewy strips are softer on older teeth; crisp ones last longer.",
     "Supervise chewing and cut into smaller pieces for gulpers."
    ],
-   "source": "Based on AKC 'sweet potato chews' guidance and PetMD notes on sweet potato for dogs (plain, cooked, unseasoned)."
+   "source": "Based on AKC 'sweet potato chews' guidance and PetMD notes on sweet potato for dogs (plain, cooked, unseasoned).",
+   "levels": {
+    "basic": {
+     "note": "Already as simple as it gets: one sweet potato, low and slow."
+    },
+    "fancy": {
+     "note": "Mixed sweet potato and apple chews.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 1,
+         "unit": null,
+         "name": "apple",
+         "note": "cored, seeds removed, thin rings",
+         "warn": "No seeds or core."
+        }
+       ]
+      }
+     ],
+     "stepNotes": {
+      "2": "Fancy: add apple rings to the tray — they finish about 30 minutes sooner."
+     }
+    }
+   },
+   "why": {
+    "0-0": "Even slices dry evenly — thickness matters more than anything else."
+   },
+   "levelCost": {
+    "basic": 2,
+    "classic": 2,
+    "fancy": 3
+   }
   },
   {
    "id": "banana-oat-bites",
@@ -258,7 +379,8 @@
        "unit": "tbsp",
        "name": "natural peanut butter",
        "note": "optional",
-       "warn": "Check the label: NO xylitol (also called birch sugar). Plain, unsalted is best."
+       "warn": "Check the label: NO xylitol (also called birch sugar). Plain, unsalted is best.",
+       "optional": true
       }
      ]
     }
@@ -292,7 +414,50 @@
    "tips": [
     "Soft treats are great for training — break them into pea-size pieces."
    ],
-   "source": "Adapted from AKC and Rover vet-reviewed banana oat dog treat recipes."
+   "source": "Adapted from AKC and Rover vet-reviewed banana oat dog treat recipes.",
+   "levels": {
+    "basic": {
+     "note": "Banana, oats and egg.",
+     "drop": [
+      "0-3"
+     ]
+    },
+    "fancy": {
+     "note": "With blueberries and a yogurt dip.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 0.33,
+         "unit": "cup",
+         "name": "fresh blueberries"
+        },
+        {
+         "qty": 2,
+         "unit": "tbsp",
+         "name": "plain unsweetened yogurt",
+         "note": "dip, a little only",
+         "warn": "Plain, unsweetened, no xylitol."
+        }
+       ]
+      }
+     ],
+     "stepNotes": {
+      "1": "Fancy: fold in the blueberries.",
+      "4": "Fancy: dip the cooled tops in yogurt and chill to set."
+     }
+    }
+   },
+   "why": {
+    "0-0": "Ripe banana sweetens and binds — no sugar needed.",
+    "0-1": "Oats give structure; plain rolled oats only."
+   },
+   "levelCost": {
+    "basic": 2,
+    "classic": 2.5,
+    "fancy": 4
+   }
   },
   {
    "id": "chicken-jerky",
@@ -348,7 +513,39 @@
     "Completely dry = longer life. Any bendy, moist spots? Dry 20–30 minutes more.",
     "Break into small pieces for training."
    ],
-   "source": "Method follows USDA guidance for drying meat (heat to 74°C / 165°F before dehydrating); dog-safety per AKC homemade chicken jerky notes."
+   "source": "Method follows USDA guidance for drying meat (heat to 74°C / 165°F before dehydrating); dog-safety per AKC homemade chicken jerky notes.",
+   "levels": {
+    "basic": {
+     "note": "Plain chicken, nothing else — the classic."
+    },
+    "fancy": {
+     "note": "Chicken and sweet potato wraps.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 1,
+         "unit": null,
+         "name": "sweet potato",
+         "note": "cut into thick sticks"
+        }
+       ]
+      }
+     ],
+     "stepNotes": {
+      "1": "Fancy: wrap a thin chicken strip around each sweet potato stick before baking."
+     }
+    }
+   },
+   "why": {
+    "0-0": "Trimming all the fat keeps the jerky safe to store and gentle on tummies."
+   },
+   "levelCost": {
+    "basic": 7,
+    "classic": 7,
+    "fancy": 9
+   }
   },
   {
    "id": "apple-carrot-bites",
@@ -430,7 +627,45 @@
    "tips": [
     "Grate the apple and carrot finely so the bites hold together."
    ],
-   "source": "Adapted from AKC and PetMD apple and carrot dog treat guidance (core and seeds removed)."
+   "source": "Adapted from AKC and PetMD apple and carrot dog treat guidance (core and seeds removed).",
+   "levels": {
+    "basic": {
+     "note": "Already basic: apple, carrot, egg and oat flour — nothing to leave out."
+    },
+    "fancy": {
+     "note": "With a little pumpkin and blueberries.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 0.25,
+         "unit": "cup",
+         "name": "pure pumpkin purée",
+         "warn": "100% pure pumpkin, not pie filling."
+        },
+        {
+         "qty": 0.25,
+         "unit": "cup",
+         "name": "fresh blueberries"
+        }
+       ]
+      }
+     ],
+     "stepNotes": {
+      "1": "Fancy: stir in the pumpkin and blueberries."
+     }
+    }
+   },
+   "why": {
+    "0-0": "Apple adds sweetness and moisture — always core it and remove the seeds.",
+    "0-2": "Egg binds the bites."
+   },
+   "levelCost": {
+    "basic": 2.5,
+    "classic": 2.5,
+    "fancy": 4
+   }
   }
  ],
  "safety": {

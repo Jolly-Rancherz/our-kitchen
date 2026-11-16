@@ -355,5 +355,87 @@
     "Roll the meatballs up to a day ahead and keep covered in the fridge.",
     "Freeze raw rolled meatballs on a tray, then bag; brown from frozen and add 5 min to the simmer."
   ],
-  "reheat": "Warm meatballs and sauce covered on the stove over medium-low, or microwave 2–3 min, until 74°C (165°F). Add a splash of water to the pasta."
+  "reheat": "Warm meatballs and sauce covered on the stove over medium-low, or microwave 2–3 min, until 74°C (165°F). Add a splash of water to the pasta.",
+  "levels": {
+    "basic": {
+      "note": "Simple beef meatballs simmered in jarred sauce.",
+      "drop": [
+        "0-5",
+        "0-10",
+        "1-3"
+      ],
+      "stepNotes": {
+        "1": "Basic: beef, crumbs, milk, eggs, Parmesan, garlic, Italian seasoning, salt and pepper."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Tender ricotta meatballs, a sauce enriched with butter, and spaghetti tossed until glossy.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "ricotta",
+              "pantry": {
+                "name": "Ricotta",
+                "cat": "dairy"
+              },
+              "note": "into the meatballs"
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              },
+              "note": "stirred into the sauce"
+            },
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "grated Parmesan",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              },
+              "note": "extra, to finish"
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: fold the ricotta into the mix — the softest meatballs you'll make.",
+        "3": "Fancy: stir the butter into the sauce at the end."
+      },
+      "costAdd": [
+        [
+          "Ricotta, ½ cup",
+          1.5,
+          "ricotta"
+        ],
+        [
+          "Butter + extra Parmesan",
+          1.3,
+          "parmesan-grated"
+        ]
+      ],
+      "plating": [
+        "Twirl the spaghetti high in a warm bowl.",
+        "Three meatballs on top, sauce spooned over them only.",
+        "Parmesan from high up."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "The panko soaked in milk keeps meatballs soft and juicy.",
+    "0-3": "Eggs bind the meatballs so they hold together in the sauce.",
+    "0-4": "Parmesan seasons the meatballs from the inside."
+  },
+  "fancyNight": false
 }

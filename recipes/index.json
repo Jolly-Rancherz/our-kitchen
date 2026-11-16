@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16T22:55:34",
+ "generated": "2026-11-16T23:38:51",
  "count": 21,
  "categories": [
   {
@@ -180,7 +180,8 @@
      "name": "Parmesan (grated)",
      "cat": "dairy"
     }
-   ]
+   ],
+   "fancyNight": true
   },
   {
    "id": "chicken-02",
@@ -295,7 +296,8 @@
      "name": "Butter",
      "cat": "dairy"
     }
-   ]
+   ],
+   "fancyNight": true
   },
   {
    "id": "chicken-03",
@@ -356,6 +358,7 @@
     "milk",
     "salt",
     "garlic powder",
+    "salt",
     "green beans",
     "butter",
     "salt"
@@ -425,7 +428,8 @@
      "name": "Green beans",
      "cat": "produce"
     }
-   ]
+   ],
+   "fancyNight": true
   },
   {
    "id": "chicken-06",
@@ -554,7 +558,8 @@
      "name": "Sesame seeds",
      "cat": "spices"
     }
-   ]
+   ],
+   "fancyNight": false
   },
   {
    "id": "chicken-10",
@@ -568,7 +573,7 @@
    "cook": 25,
    "total": 50,
    "servings": 4,
-   "cost": 23,
+   "cost": 22,
    "price": "$$",
    "tags": {
     "method": [
@@ -677,7 +682,8 @@
      "name": "Jasmine rice",
      "cat": "grains"
     }
-   ]
+   ],
+   "fancyNight": false
   },
   {
    "id": "pasta-italian-01",
@@ -784,7 +790,8 @@
      "name": "Mozzarella (shredded)",
      "cat": "dairy"
     }
-   ]
+   ],
+   "fancyNight": true
   },
   {
    "id": "pasta-italian-03",
@@ -840,7 +847,8 @@
     "salt",
     "lasagna noodles",
     "shredded mozzarella",
-    "grated Parmesan"
+    "grated Parmesan",
+    "salt"
    ],
    "pantry": [
     {
@@ -907,7 +915,8 @@
      "name": "Mozzarella (shredded)",
      "cat": "dairy"
     }
-   ]
+   ],
+   "fancyNight": false
   },
   {
    "id": "pasta-italian-05",
@@ -1019,7 +1028,8 @@
      "name": "Parmesan (grated)",
      "cat": "dairy"
     }
-   ]
+   ],
+   "fancyNight": false
   },
   {
    "id": "pasta-italian-06",
@@ -1133,7 +1143,8 @@
      "name": "Spaghetti",
      "cat": "grains"
     }
-   ]
+   ],
+   "fancyNight": false
   },
   {
    "id": "beef-turkey-01",
@@ -1281,7 +1292,8 @@
      "name": "Salsa (mild)",
      "cat": "sauces"
     }
-   ]
+   ],
+   "fancyNight": false
   },
   {
    "id": "beef-turkey-03",
@@ -1414,7 +1426,8 @@
      "name": "Frozen corn",
      "cat": "frozen"
     }
-   ]
+   ],
+   "fancyNight": false
   },
   {
    "id": "beef-turkey-07",
@@ -1519,7 +1532,8 @@
      "name": "Jasmine rice",
      "cat": "grains"
     }
-   ]
+   ],
+   "fancyNight": false
   },
   {
    "id": "steak-pork-01",
@@ -1630,7 +1644,8 @@
      "name": "Dried thyme",
      "cat": "spices"
     }
-   ]
+   ],
+   "fancyNight": true
   },
   {
    "id": "steak-pork-02",
@@ -1730,7 +1745,8 @@
      "name": "Mayonnaise",
      "cat": "sauces"
     }
-   ]
+   ],
+   "fancyNight": false
   },
   {
    "id": "seafood-01",
@@ -1838,7 +1854,8 @@
      "name": "Broccoli",
      "cat": "produce"
     }
-   ]
+   ],
+   "fancyNight": true
   },
   {
    "id": "seafood-02",
@@ -1852,7 +1869,7 @@
    "cook": 25,
    "total": 40,
    "servings": 4,
-   "cost": 24,
+   "cost": 23,
    "price": "$$",
    "tags": {
     "method": [
@@ -1953,7 +1970,8 @@
      "name": "Parmesan (grated)",
      "cat": "dairy"
     }
-   ]
+   ],
+   "fancyNight": true
   },
   {
    "id": "takeout-at-home-01",
@@ -2067,7 +2085,8 @@
      "name": "Garlic",
      "cat": "produce"
     }
-   ]
+   ],
+   "fancyNight": false
   },
   {
    "id": "takeout-at-home-02",
@@ -2175,7 +2194,8 @@
      "name": "Sesame oil",
      "cat": "sauces"
     }
-   ]
+   ],
+   "fancyNight": false
   },
   {
    "id": "comfort-soups-01",
@@ -2189,7 +2209,7 @@
    "cook": 40,
    "total": 55,
    "servings": 6,
-   "cost": 17,
+   "cost": 18,
    "price": "$",
    "tags": {
     "method": [
@@ -2297,7 +2317,8 @@
      "name": "Sour cream",
      "cat": "dairy"
     }
-   ]
+   ],
+   "fancyNight": false
   },
   {
    "id": "comfort-soups-02",
@@ -2311,7 +2332,7 @@
    "cook": 30,
    "total": 45,
    "servings": 6,
-   "cost": 18,
+   "cost": 17,
    "price": "$",
    "tags": {
     "method": [
@@ -2410,7 +2431,8 @@
      "name": "Crusty bread",
      "cat": "grains"
     }
-   ]
+   ],
+   "fancyNight": false
   },
   {
    "id": "comfort-soups-03",
@@ -2532,7 +2554,8 @@
      "name": "Crusty bread",
      "cat": "grains"
     }
-   ]
+   ],
+   "fancyNight": false
   }
  ]
 }

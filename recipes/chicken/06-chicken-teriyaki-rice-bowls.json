@@ -395,5 +395,93 @@
     "Cut the broccoli and slice the carrots a day ahead.",
     "Cook the rice the day before for meal-prep bowls."
   ],
-  "reheat": "Microwave the bowl covered with a splash of water, 2–3 minutes, stirring halfway, until steaming (74°C / 165°F)."
+  "reheat": "Microwave the bowl covered with a splash of water, 2–3 minutes, stirring halfway, until steaming (74°C / 165°F).",
+  "levels": {
+    "basic": {
+      "note": "Seared chicken with a 4-ingredient teriyaki over rice and steamed broccoli.",
+      "drop": [
+        "1-4",
+        "1-6",
+        "2-3",
+        "2-4",
+        "2-6"
+      ],
+      "stepNotes": {
+        "1": "Basic: soy sauce, water, honey, brown sugar and garlic.",
+        "2": "Basic: broccoli only, a pinch of salt.",
+        "5": "Basic: no sesame seeds."
+      },
+      "costDrop": [
+        "carrots"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Sticky glazed thighs sliced over rice with honey-glazed carrots, toasted sesame and a soft-boiled egg.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "large eggs",
+              "pantry": {
+                "name": "Eggs",
+                "cat": "dairy"
+              },
+              "note": "soft-boiled, 6½ minutes"
+            },
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "sesame oil",
+              "pantry": {
+                "name": "Sesame oil",
+                "cat": "sauces"
+              },
+              "note": "to finish the veg"
+            }
+          ]
+        }
+      ],
+      "swap": {
+        "2-6": {
+          "optional": false
+        }
+      },
+      "stepNotes": {
+        "2": "Fancy: toss the veg with the sesame oil."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Soft-boil the eggs 6½ minutes, cool in cold water and halve. Build each bowl in sections — rice, broccoli, carrots, sliced chicken — with half an egg on top, extra glaze and sesame seeds."
+        }
+      ],
+      "costAdd": [
+        [
+          "Eggs, 4",
+          1.5,
+          "eggs"
+        ],
+        [
+          "Sesame oil",
+          0.2,
+          "sesame-oil"
+        ]
+      ],
+      "plating": [
+        "Arrange each topping in its own section of the bowl.",
+        "Fan the sliced chicken; spoon glaze only over the chicken.",
+        "Half a soft egg, yolk up, then sesame seeds."
+      ]
+    }
+  },
+  "why": {
+    "1-7": "The slurry turns the thin sauce into a sticky glaze.",
+    "1-4": "Rice vinegar balances the sweetness. Skip it and the glaze is sweeter.",
+    "1-6": "Ginger adds warmth. Without it the teriyaki is simpler but still good."
+  },
+  "fancyNight": false
 }

@@ -347,5 +347,104 @@
     "Slice and velvet the beef up to 12 hours ahead; keep covered in the fridge.",
     "Mix the sauce up to 3 days ahead."
   ],
-  "reheat": "Microwave covered 2 minutes, stirring halfway, until steaming hot (74°C / 165°F). Add a splash of water if the sauce has tightened."
+  "reheat": "Microwave covered 2 minutes, stirring halfway, until steaming hot (74°C / 165°F). Add a splash of water if the sauce has tightened.",
+  "levels": {
+    "basic": {
+      "note": "Beef, broccoli and a simple soy–sugar–garlic sauce over rice.",
+      "drop": [
+        "0-3",
+        "1-0",
+        "1-4",
+        "1-6"
+      ],
+      "swap": {
+        "1-1": {
+          "qty": 0.33,
+          "unit": "cup",
+          "note": "replaces the oyster sauce too"
+        }
+      },
+      "stepNotes": {
+        "1": "Basic: soy sauce and cornstarch only (no baking soda) — slice the beef extra thin.",
+        "2": "Basic: soy sauce, brown sugar, water, garlic and cornstarch."
+      },
+      "costDrop": [
+        "oyster"
+      ],
+      "costAdd": [
+        [
+          "Extra soy sauce",
+          0.3,
+          "soy-sauce"
+        ]
+      ]
+    },
+    "fancy": {
+      "note": "Glossy restaurant-style: velveted beef, a touch of honey and sesame, toasted sesame seeds and crisp-edged broccoli.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "honey",
+              "pantry": {
+                "name": "Honey",
+                "cat": "sauces"
+              },
+              "note": "in the sauce"
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "toasted sesame seeds",
+              "pantry": {
+                "name": "Sesame seeds",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "rice vinegar",
+              "pantry": {
+                "name": "Rice vinegar",
+                "cat": "sauces"
+              },
+              "note": "brightens the sauce"
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "2": "Fancy: whisk the honey and rice vinegar into the sauce.",
+        "3": "Fancy: let the broccoli sit untouched 1 minute before adding the water so the edges char."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Pack the rice into a small bowl and turn it out as a neat dome. Spoon the beef and broccoli alongside, drizzle extra sauce and sprinkle with sesame seeds."
+        }
+      ],
+      "costAdd": [
+        [
+          "Honey, sesame seeds, rice vinegar",
+          1.0,
+          "sesame-seeds"
+        ]
+      ],
+      "plating": [
+        "Dome the rice: pack a small bowl and flip it onto the plate.",
+        "Broccoli florets pointing out, beef piled against the rice.",
+        "Sesame seeds over everything at the very end."
+      ]
+    }
+  },
+  "why": {
+    "0-3": "Baking soda tenderises the beef like takeout. Without it, slice thinner and don't overcook.",
+    "1-0": "Oyster sauce gives the deep, glossy savoury base. Skip it and use a little extra soy.",
+    "1-7": "Cornstarch thickens the sauce so it coats instead of running off."
+  },
+  "fancyNight": false
 }

@@ -334,5 +334,75 @@
     "Cook the rice a day ahead — cold rice makes the best fried rice.",
     "Dice the chicken and onion and mince the garlic the night before."
   ],
-  "reheat": "Microwave with a damp paper towel on top, stirring halfway, until steaming (74°C / 165°F), or toss in a hot skillet with a little butter."
+  "reheat": "Microwave with a damp paper towel on top, stirring halfway, until steaming (74°C / 165°F), or toss in a hot skillet with a little butter.",
+  "levels": {
+    "basic": {
+      "note": "Rice, chicken, egg and soy sauce — the weeknight classic.",
+      "drop": [
+        "2-6",
+        "2-7"
+      ],
+      "stepNotes": {
+        "4": "Basic: soy sauce only."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Extra-crispy toasted rice with a golden egg ribbon, peas, and a drizzle of sesame.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "toasted sesame seeds",
+              "pantry": {
+                "name": "Sesame seeds",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "large egg",
+              "pantry": {
+                "name": "Eggs",
+                "cat": "dairy"
+              },
+              "note": "extra, fried on top"
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: let the rice sit untouched 2 minutes for crispy bits."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Pack the fried rice into a bowl, flip it onto the plate, top with a sunny fried egg and sesame seeds."
+        }
+      ],
+      "costAdd": [
+        [
+          "Sesame seeds + 1 egg",
+          0.8,
+          "eggs"
+        ]
+      ],
+      "plating": [
+        "Dome the rice with a bowl.",
+        "Fried egg on top, yolk centred.",
+        "Sesame seeds and a few peas on the egg."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Cold, day-old rice fries instead of steaming into mush.",
+    "2-5": "Soy sauce seasons and colours the rice.",
+    "2-6": "Oyster sauce adds the savoury takeout depth."
+  },
+  "fancyNight": false
 }

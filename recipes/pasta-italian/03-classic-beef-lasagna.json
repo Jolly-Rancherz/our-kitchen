@@ -286,6 +286,16 @@
             "name": "Parmesan (grated)",
             "cat": "dairy"
           }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          },
+          "note": "for the noodle water"
         }
       ]
     }
@@ -320,7 +330,8 @@
       "text": "Meanwhile cook the noodles in salted boiling water 2 minutes less than the box says (they finish in the oven). Drain, rinse with cool water and lay flat on an oiled sheet so they don't stick.",
       "timer": 8,
       "uses": [
-        "2-0"
+        "2-0",
+        "2-3"
       ]
     },
     {
@@ -390,5 +401,81 @@
     "Assemble the whole lasagna a day ahead, cover and refrigerate; add 10–15 minutes to the covered bake.",
     "Freeze it unbaked for up to 3 months — thaw in the fridge 24–48 h before baking."
   ],
-  "reheat": "Microwave a square covered, 2–3 minutes at 70% power, until 74°C (165°F). Oven: 180°C (350°F), covered with foil, 20–25 minutes."
+  "reheat": "Microwave a square covered, 2–3 minutes at 70% power, until 74°C (165°F). Oven: 180°C (350°F), covered with foil, 20–25 minutes.",
+  "levels": {
+    "basic": {
+      "note": "Meat sauce, noodles and mozzarella — no ricotta layer.",
+      "drop": [
+        "0-9",
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "2-2"
+      ],
+      "stepNotes": {
+        "3": "Basic: skip the ricotta layer.",
+        "4": "Basic: layer sauce, noodles and mozzarella only."
+      },
+      "costDrop": [
+        "ricotta",
+        "parmesan"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Tall, clean layers with a herb-seasoned ricotta, a mozzarella–Parmesan crust and a slow-simmered sauce.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "cup",
+              "name": "grated Parmesan",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              },
+              "note": "extra, between the layers"
+            },
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "dried Italian seasoning",
+              "pantry": {
+                "name": "Italian seasoning (dried)",
+                "cat": "spices"
+              },
+              "note": "into the ricotta"
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: simmer the sauce a full 30 minutes for depth.",
+        "3": "Fancy: stir the Italian seasoning into the ricotta.",
+        "4": "Fancy: dust each layer with a little Parmesan."
+      },
+      "costAdd": [
+        [
+          "Extra Parmesan, 1 cup",
+          2.5,
+          "parmesan-grated"
+        ]
+      ],
+      "plating": [
+        "Rest the full 20 minutes — it's what makes tall layers.",
+        "Lift squares with a wide spatula onto warm plates.",
+        "Spoon a little extra hot sauce beside, not on top."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Ricotta makes the soft, creamy layer. Skip it for a simpler, meatier lasagna.",
+    "1-1": "Egg sets the ricotta so slices stay neat.",
+    "0-9": "A pinch of sugar balances acidic tomatoes."
+  },
+  "fancyNight": false
 }

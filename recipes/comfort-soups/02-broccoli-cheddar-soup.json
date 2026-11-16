@@ -8,7 +8,7 @@
   "prep": 15,
   "cook": 30,
   "cost": {
-    "total": 18,
+    "total": 17,
     "breakdown": [
       [
         "Old cheddar, 300 g",
@@ -306,7 +306,7 @@
     },
     {
       "title": "Melt in the cheddar",
-      "text": "Take the pot off the heat. Stir in the cheddar a handful at a time until melted and smooth. Taste and add salt until it's well seasoned. Serve topped with a little extra cheddar and crusty bread.",
+      "text": "Take the pot off the heat. Stir in the cheddar a handful at a time until melted and smooth, saving a small handful for the top. Taste and add salt until it's well seasoned. Serve topped with the saved cheddar and crusty bread.",
       "uses": [
         "0-13",
         "1-0"
@@ -347,5 +347,98 @@
     "Chop the broccoli, grate the carrots and dice the onion up to 2 days ahead; store in containers in the fridge.",
     "Shred the cheddar ahead and keep it in a sealed bag."
   ],
-  "reheat": "Low heat on the stove, stirring often, with a splash of milk until steaming — never boil or the cheese can split. Microwave at 50% power, 1 min at a time, stirring."
+  "reheat": "Low heat on the stove, stirring often, with a splash of milk until steaming — never boil or the cheese can split. Microwave at 50% power, 1 min at a time, stirring.",
+  "levels": {
+    "basic": {
+      "note": "Broccoli, broth, milk and cheddar — creamy without the extras.",
+      "drop": [
+        "0-7",
+        "0-11",
+        "0-12",
+        "1-0"
+      ],
+      "swap": {
+        "0-5": {
+          "name": "whole milk",
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        }
+      },
+      "stepNotes": {
+        "2": "Basic: milk instead of half-and-half.",
+        "3": "Basic: broccoli, salt, pepper and garlic powder."
+      },
+      "costDrop": [
+        "half-and-half"
+      ],
+      "costAdd": [
+        [
+          "Whole milk, 2 cups",
+          1.0,
+          "milk"
+        ]
+      ]
+    },
+    "fancy": {
+      "note": "Velvety Panera-style soup in a crusty bread bowl with crispy cheddar frico and toasted broccoli tips.",
+      "swap": {
+        "1-0": {
+          "optional": false,
+          "name": "small crusty rounds or bread bowls",
+          "qty": 6
+        }
+      },
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "shredded old cheddar",
+              "pantry": {
+                "name": "Cheddar (shredded)",
+                "cat": "dairy"
+              },
+              "note": "extra, for frico crisps"
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: hold back a handful of small florets, roast them at 220°C for 10 minutes for the top."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Bake small mounds of cheddar on parchment at 200°C for 6–8 minutes until lacy and golden; cool to crisp. Hollow the bread rounds, toast them 5 minutes, ladle in the soup and top with roasted florets and a cheddar crisp."
+        }
+      ],
+      "costAdd": [
+        [
+          "Bread bowls, 6",
+          5.0,
+          "crusty-bread"
+        ],
+        [
+          "Extra cheddar, ½ cup",
+          1.0,
+          "cheddar-shredded"
+        ]
+      ],
+      "plating": [
+        "Toast the bread bowl first so it doesn't go soggy.",
+        "Fill just below the rim and stand a cheddar crisp in the soup.",
+        "Three roasted florets on top, not more."
+      ]
+    }
+  },
+  "why": {
+    "0-3": "Flour makes the roux that keeps the cheese smooth. Without it the soup is thin and can turn grainy.",
+    "0-12": "A pinch of nutmeg is the Panera secret. Leave it out and it's just a little plainer.",
+    "0-13": "Freshly shredded cheddar melts smoothly; bagged has starch that can make it gritty."
+  },
+  "fancyNight": false
 }

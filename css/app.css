@@ -643,7 +643,11 @@ body.cooking #toast{bottom:auto;top:calc(var(--sat) + 64px)}
 html,body{height:100%;overflow:hidden;overscroll-behavior:none}
 body{min-height:0;position:fixed;inset:0;width:100%}
 #app{position:fixed;inset:0;display:flex;flex-direction:column}
-#topbar{position:relative;flex:none}
+/* sticky (not relative) so iOS 26 samples the header itself for the status bar colour: Safari/WebKit colours the
+   bar from the first fixed or sticky element with its own background at the top edge. With a relative header it
+   fell through to the page colour (navy everywhere, even under Acura's brown header). Sticky changes nothing in this
+   layout: #view, not the shell, is the scroller. */
+#topbar{position:sticky;top:0;flex:none}
 #view{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;padding-bottom:28px;will-change:scroll-position}
 body.sheet-open #view{overflow:hidden;touch-action:none}
 /* no accidental zoom, no grey flash, no callouts on buttons (#3, #7) */
@@ -1310,3 +1314,92 @@ html[data-theme="dark"].strip body:has(#splash){background:#0B1734}
    sit at the foot, ending 10pt into the home-indicator area: about 11pt above the pill, like a native tab bar. */
 html.solid #tabbar{padding-bottom:0}
 html.solid #tabbar a{height:calc(var(--tabh) + var(--sab) - 10px);justify-content:flex-end;padding-bottom:calc(var(--sab) - 10px)}
+
+/* ===================================================== update 9 — recipe levels, page turns, small keepsakes
+   matte only: flat fills, hairline rules, no glow; animation is transform/opacity only */
+/* #89/#95 level switch */
+.lvwrap{margin:4px 0 14px}
+.lvbar{display:grid;grid-template-columns:repeat(3,1fr);border:1.25px solid var(--ink);border-radius:3px;overflow:hidden}
+.lvbar button{padding:9px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:2px;border-left:1.25px solid var(--ink);transition:background-color .18s ease,color .18s ease}
+.lvbar button:first-child{border-left:0}
+.lvbar b{font-family:"Cinzel";font-weight:700;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase}
+.lvbar span{font-size:.7rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.lvbar button.on{background:var(--tile1);color:#F5E6CE}
+.lvbar button.on span{color:var(--gold-soft)}
+.lvnote{font-family:"Instrument Serif";font-style:italic;font-size:1.02rem;line-height:1.35;color:var(--group);margin:9px 2px 0}
+.lvacts{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:6px}
+.lvacts .linkbtn{display:inline-flex;align-items:center;gap:5px;font-size:.8rem}
+.lvacts svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8}
+.lvhow{font-size:.85rem;color:var(--ink2);margin-top:6px;padding-left:10px;border-left:2px solid var(--gold)}
+.lvhow span{color:var(--muted);font-size:.78rem}
+.checklist li.lvadd .txt::before{content:"✦ ";color:var(--gold-deep)}
+html[data-theme="dark"] .checklist li.lvadd .txt::before{color:var(--gold-soft)}
+.lvstep{display:block;margin-top:4px;font-family:"Instrument Serif";font-style:italic;font-size:.98rem;color:var(--group)}
+#cook .lvstep{font-size:1.05rem;opacity:.9;margin-top:-4px}
+/* #92 why-it-matters, #90 spice backup */
+.whybtn{display:inline-grid;place-items:center;width:17px;height:17px;margin-left:6px;vertical-align:1px;border:1.2px solid var(--gold-deep);border-radius:50%;font-family:"Instrument Serif";font-style:italic;font-size:.8rem;line-height:1;color:var(--gold-deep)}
+.whybtn.on{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+html[data-theme="dark"] .whybtn{border-color:var(--gold-soft);color:var(--gold-soft)}
+.whyx{display:block;margin-top:5px;font-size:.84rem;line-height:1.4;color:var(--ink2);padding:6px 9px;background:var(--bg2);border-left:2px solid var(--gold)}
+.whyx[hidden]{display:none}
+.bkup{display:flex;gap:5px;align-items:flex-start;margin-top:4px;font-size:.8rem;color:var(--plum);line-height:1.35}
+html[data-theme="dark"] .bkup{color:var(--group)}
+.bkup svg{width:13px;height:13px;flex:none;margin-top:2px;fill:none;stroke:currentColor;stroke-width:1.8}
+/* #93 plating */
+.card.plating h3{color:var(--gold-deep)}
+html[data-theme="dark"] .card.plating h3{color:var(--gold-soft)}
+.card.plating ul{list-style:none;margin-top:6px}
+.card.plating li{position:relative;padding:4px 0 4px 16px;font-size:.92rem;line-height:1.4}
+.card.plating li::before{content:"✦";position:absolute;left:0;top:5px;font-size:.7rem;color:var(--gold)}
+/* #98 Cooked ♥ ink stamp — flat plum ink, slightly rotated, a little rough at the edges */
+.hero .stamp{position:absolute;right:30px;bottom:14px;z-index:3;display:flex;flex-direction:column;align-items:center;padding:6px 10px 5px;border:2px solid rgba(56,24,72,.82);border-radius:4px;transform:rotate(-7deg);color:rgba(56,24,72,.86);background:rgba(245,230,206,.94);font-style:normal;pointer-events:none;box-shadow:0 1px 3px rgba(18,16,46,.12)}
+.hero .stamp span{font-family:"Cinzel";font-weight:700;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase}
+.hero .stamp b{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-size:1.15rem;line-height:1}
+/* #96 swipe indicator + page turn */
+.nofm{flex:none;font-family:"Outfit";font-weight:600;font-size:.66rem;letter-spacing:.08em;color:var(--muted);text-transform:none}
+body.turning #app{background:var(--bg2)}
+body.turning #view{background:var(--bg);box-shadow:0 0 22px rgba(18,16,46,.13);backface-visibility:hidden}
+@keyframes vinTurn{from{opacity:0}to{opacity:1}}
+#view.vin-turn>*{animation:vinTurn .15s ease-out both}
+@media (prefers-reduced-motion: reduce){#view.vin-turn>*{animation:none}}
+/* #97 gold bookmark ribbon */
+.ribbon{display:flex;align-items:flex-start;gap:9px;margin-top:10px;color:var(--ink);text-decoration:none}
+.ribbon .rb{flex:none;width:14px;height:26px;margin-top:-2px;background:var(--gold);clip-path:polygon(0 0,100% 0,100% 100%,50% 76%,0 100%)}
+.ribbon small{display:block;font-family:"Cinzel";font-size:.6rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--kicker)}
+.ribbon b{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-size:1.05rem;line-height:1.2}
+/* #103 faint seasonal accent, #104 quiet badge */
+.home-head{position:relative}
+.season-acc{position:absolute;top:8px;right:14px;width:62px;height:62px;fill:none;stroke:var(--navy);stroke-width:.9;stroke-linecap:round;stroke-linejoin:round;opacity:.13;pointer-events:none}
+html[data-theme="dark"] .season-acc{stroke:var(--cream);opacity:.12}
+.qbadge{flex:none;display:inline-flex;align-items:baseline;gap:3px;padding:2px 7px;border:1.2px solid var(--gold);border-radius:999px;color:var(--kicker);text-decoration:none;letter-spacing:.06em}
+.qbadge b{font-family:"Cinzel";font-size:.7rem}
+.qbadge span{font-family:"Outfit";font-size:.58rem;text-transform:lowercase;letter-spacing:.04em}
+/* #101 our dish */
+.pill.ourdish{background:var(--plum);border-color:var(--plum);color:#F5E6CE;display:inline-flex;align-items:center;gap:4px}
+.pill.ourdish svg{width:10px;height:10px;fill:currentColor}
+.odmark{font-style:italic;font-family:"Instrument Serif";color:var(--plum);font-size:.86rem}
+html[data-theme="dark"] .odmark{color:var(--group)}
+.odcard{margin-top:14px;padding:12px 14px;border:1.25px solid var(--plum);background:var(--card)}
+.odcard .fk{display:flex;align-items:center;gap:6px;font-family:"Cinzel";font-weight:700;font-size:.64rem;letter-spacing:.14em;color:var(--plum)}
+html[data-theme="dark"] .odcard{border-color:var(--group)} html[data-theme="dark"] .odcard .fk{color:var(--group)}
+.odcard .fk svg{width:12px;height:12px;fill:currentColor}
+.odcard .x{margin-left:auto;font-size:1.1rem;line-height:1;color:var(--muted)}
+.odcard p{margin-top:6px;font-size:.95rem}
+/* #99 timer alarm: a gentle breathing pulse, no flashing */
+/* above cook mode (420) and the toast (450): timers mostly finish while cook mode is open */
+#alarm{position:fixed;left:12px;right:12px;top:calc(var(--sat) + 10px);z-index:460;display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--navy);color:#F5E6CE;border:1.5px solid var(--gold);border-radius:6px;box-shadow:0 6px 18px rgba(18,16,46,.25)}
+body.acura #alarm{background:#4A2A1A}
+#alarm::before{content:"";position:absolute;inset:-1.5px;border:2px solid var(--gold);border-radius:7px;animation:alarmPulse 1.8s ease-in-out infinite;pointer-events:none}
+@keyframes alarmPulse{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.9;transform:scale(1.015)}}
+@media (prefers-reduced-motion: reduce){#alarm::before{animation:none;opacity:.6}}
+#alarm .al-ic svg{width:26px;height:26px;fill:none;stroke:var(--gold-soft);stroke-width:1.8}
+#alarm .al-t{flex:1;min-width:0}
+#alarm .al-t b{display:block;font-family:"Cinzel";font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+#alarm .al-t small{display:block;font-size:.85rem;opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#cook .csound{display:flex;align-items:center;gap:6px;margin:10px auto 0;font-size:.82rem;opacity:.85}
+#cook .csound svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8}
+/* #100 paw of approval */
+.pawok{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border:1.25px solid currentColor;border-radius:999px;font-size:.8rem;color:var(--muted)}
+.pawok svg{width:15px;height:15px;fill:currentColor}
+.pawok.on{background:var(--gold);border-color:var(--gold);color:#3A2414}
+.ac-card .im .pa{position:absolute;left:6px;bottom:6px;padding:2px 6px;background:var(--gold);color:#3A2414;font-style:normal;font-size:.56rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:2px}

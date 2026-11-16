@@ -406,5 +406,111 @@
     "Assemble the whole pie a day ahead; bake from cold 35–40 minutes.",
     "Freeze assembled (unbaked) up to 3 months; thaw overnight in the fridge before baking."
   ],
-  "reheat": "Microwave a portion covered 2–3 minutes until 74°C (165°F), or oven 180°C (350°F) covered 20 min (uncover the last 5)."
+  "reheat": "Microwave a portion covered 2–3 minutes until 74°C (165°F), or oven 180°C (350°F) covered 20 min (uncover the last 5).",
+  "levels": {
+    "basic": {
+      "note": "Beef, onion and gravy under plain buttery mash — no cheese crust, fewer jars to open.",
+      "drop": [
+        "0-4",
+        "0-5",
+        "1-3",
+        "1-8",
+        "1-12"
+      ],
+      "stepNotes": {
+        "2": "Basic: no carrots.",
+        "3": "Basic: skip the Worcestershire and corn — add an extra pinch of salt.",
+        "4": "Basic: mash with butter, milk and salt.",
+        "5": "Basic: no cheese on top — brush with a little melted butter for colour."
+      },
+      "costDrop": [
+        "cheddar",
+        "frozen corn"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Golden piped-style mash with aged cheddar and a crisp Parmesan crust, peas instead of corn and a richer gravy.",
+      "swap": {
+        "1-12": {
+          "name": "frozen peas",
+          "pantry": {
+            "name": "Frozen peas",
+            "cat": "frozen"
+          }
+        }
+      },
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "egg yolk",
+              "pantry": {
+                "name": "Eggs",
+                "cat": "dairy"
+              },
+              "note": "beaten into the mash for a golden crust"
+            },
+            {
+              "qty": 0.33,
+              "unit": "cup",
+              "name": "grated Parmesan",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              },
+              "note": "over the top"
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "butter",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              },
+              "note": "melted, for the gravy"
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: stir a tablespoon of butter into the gravy at the end for shine.",
+        "4": "Fancy: beat the egg yolk into the mash last."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy crust",
+          "text": "Pipe or swirl the mash in tight peaks with the back of a spoon, scatter the Parmesan over the cheddar and bake as written. Broil 1–2 minutes at the end until the peaks are deep golden. Rest 10 minutes so it slices cleanly."
+        }
+      ],
+      "costAdd": [
+        [
+          "Parmesan, ⅓ cup",
+          1.0,
+          "parmesan-grated"
+        ],
+        [
+          "Frozen peas (swap for corn)",
+          0.2,
+          "frozen-peas"
+        ]
+      ],
+      "plating": [
+        "Rest 10 minutes, then cut a clean square with a hot wet knife.",
+        "Serve in a shallow bowl so the gravy pools at the side.",
+        "A crack of black pepper over the golden peaks."
+      ]
+    }
+  },
+  "why": {
+    "1-5": "Tomato paste deepens the gravy colour and flavour. Skip it and the filling is paler and milder.",
+    "1-6": "Flour thickens the gravy. Without it the filling is soupy under the mash.",
+    "1-8": "Worcestershire adds the savoury, slightly tangy depth. Skip it and add a little extra salt.",
+    "0-2": "Butter makes the mash silky. Less butter = a stiffer, drier topping."
+  },
+  "fancyNight": false
 }

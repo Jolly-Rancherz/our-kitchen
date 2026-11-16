@@ -354,5 +354,103 @@
     "Make the whole stew a day ahead — it thickens and the flavour deepens overnight.",
     "Cube the beef and chop the vegetables up to 1 day ahead."
   ],
-  "reheat": "Stovetop over medium-low, covered, stirring now and then, with a splash of broth or water, until steaming (74°C / 165°F). Microwave 2–3 min per bowl, stirring halfway."
+  "reheat": "Stovetop over medium-low, covered, stirring now and then, with a splash of broth or water, until steaming (74°C / 165°F). Microwave 2–3 min per bowl, stirring halfway.",
+  "levels": {
+    "basic": {
+      "note": "Beef, potatoes and carrots in a simple broth gravy.",
+      "drop": [
+        "1-4",
+        "1-6",
+        "1-7",
+        "2-0"
+      ],
+      "stepNotes": {
+        "3": "Basic: broth, thyme and the beef — no Worcestershire, bay or sugar."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Deep, glossy bistro stew: extra tomato paste caramelised, pearl onions, a knob of butter and crusty bread.",
+      "swap": {
+        "2-0": {
+          "optional": false
+        }
+      },
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 1.5,
+              "unit": "cup",
+              "name": "frozen pearl onions",
+              "pantry": {
+                "name": "Frozen pearl onions",
+                "cat": "frozen"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              },
+              "note": "stirred in at the end for gloss"
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "balsamic vinegar",
+              "pantry": {
+                "name": "Balsamic vinegar",
+                "cat": "sauces"
+              },
+              "note": "a splash at the end"
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "2": "Fancy: let the tomato paste darken to a brick colour, 2–3 minutes.",
+        "4": "Fancy: add the pearl onions with the potatoes."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Off the heat, stir in the butter and balsamic until glossy. Serve in wide bowls with warm torn crusty bread."
+        }
+      ],
+      "costAdd": [
+        [
+          "Frozen pearl onions",
+          3.0,
+          "frozen-pearl-onions"
+        ],
+        [
+          "Balsamic + butter",
+          1.0,
+          "balsamic-vinegar"
+        ],
+        [
+          "Crusty loaf",
+          3.5,
+          "crusty-bread"
+        ]
+      ],
+      "plating": [
+        "Wide shallow bowls show off the chunks.",
+        "Beef on top, vegetables peeking around.",
+        "Torn bread on the side, never on top."
+      ]
+    }
+  },
+  "why": {
+    "0-3": "Flour browns with the beef and thickens the gravy as it simmers.",
+    "1-2": "Tomato paste gives colour and a rich, savoury depth.",
+    "1-4": "Worcestershire adds tang and savoury depth; skip it and add a little extra salt."
+  },
+  "fancyNight": false
 }

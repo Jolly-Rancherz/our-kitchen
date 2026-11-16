@@ -353,5 +353,91 @@
     "Slice the chicken and veg a day ahead.",
     "Mix the sauce up to 3 days ahead."
   ],
-  "reheat": "Microwave covered 2 minutes with a splash of water, tossing halfway, until steaming (74°C / 165°F), or toss in a hot skillet."
+  "reheat": "Microwave covered 2 minutes with a splash of water, tossing halfway, until steaming (74°C / 165°F), or toss in a hot skillet.",
+  "levels": {
+    "basic": {
+      "note": "Chicken and noodles with soy sauce, sugar and garlic.",
+      "drop": [
+        "1-1",
+        "1-3",
+        "1-6",
+        "2-2"
+      ],
+      "swap": {
+        "1-0": {
+          "qty": 0.33,
+          "note": "replaces the oyster sauce too"
+        }
+      },
+      "stepNotes": {
+        "1": "Basic: soy sauce, brown sugar, water, cornstarch and pepper.",
+        "4": "Basic: onion and coleslaw mix."
+      },
+      "costDrop": [
+        "carrots"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Glossy restaurant lo mein with honey, sesame and crisp-tender veg.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "honey",
+              "pantry": {
+                "name": "Honey",
+                "cat": "sauces"
+              },
+              "note": "in the sauce"
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "toasted sesame seeds",
+              "pantry": {
+                "name": "Sesame seeds",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "cup",
+              "name": "frozen peas",
+              "pantry": {
+                "name": "Frozen peas",
+                "cat": "frozen"
+              },
+              "note": "tossed in with the veg"
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: whisk the honey into the sauce.",
+        "4": "Fancy: add the peas with the coleslaw mix."
+      },
+      "costAdd": [
+        [
+          "Honey, sesame seeds, peas",
+          1.5,
+          "frozen-peas"
+        ]
+      ],
+      "plating": [
+        "Twist the noodles high with tongs in the centre of the plate.",
+        "Chicken on top, glossy.",
+        "Sesame seeds last."
+      ]
+    }
+  },
+  "why": {
+    "1-1": "Oyster sauce gives the deep takeout flavour.",
+    "1-3": "Sesame oil is the takeout aroma — a little goes far.",
+    "2-0": "Rinsing the noodles stops them clumping."
+  },
+  "fancyNight": false
 }

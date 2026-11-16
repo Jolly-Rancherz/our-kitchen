@@ -8,7 +8,7 @@
   "prep": 25,
   "cook": 25,
   "cost": {
-    "total": 23,
+    "total": 22,
     "breakdown": [
       [
         "Boneless skinless chicken breasts, 900 g",
@@ -382,5 +382,102 @@
     "Cut the chicken a day ahead and keep covered in the fridge.",
     "Mix the orange sauce (without the slurry) up to 3 days ahead."
   ],
-  "reheat": "Air fryer 180°C (350°F) 4–5 minutes to re-crisp, then warm the sauce and toss. Microwave works but softens the coating."
+  "reheat": "Air fryer 180°C (350°F) 4–5 minutes to re-crisp, then warm the sauce and toss. Microwave works but softens the coating.",
+  "levels": {
+    "basic": {
+      "note": "Crispy chicken with an orange juice glaze — no zesting, fewer spices.",
+      "drop": [
+        "0-3",
+        "1-1",
+        "1-4",
+        "1-6"
+      ],
+      "swap": {
+        "1-0": {
+          "qty": 1.25,
+          "note": "from the carton — a little extra since there's no fresh orange"
+        }
+      },
+      "stepNotes": {
+        "1": "Basic: salt and pepper only.",
+        "3": "Basic: orange juice, brown sugar, soy and garlic."
+      },
+      "costDrop": [
+        "oranges"
+      ],
+      "costAdd": [
+        [
+          "Extra orange juice",
+          0.3,
+          "orange-juice"
+        ]
+      ]
+    },
+    "fancy": {
+      "note": "Extra-crisp chicken in a bright fresh-orange glaze with candied zest and sesame.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "toasted sesame seeds",
+              "pantry": {
+                "name": "Sesame seeds",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "honey",
+              "pantry": {
+                "name": "Honey",
+                "cat": "sauces"
+              },
+              "note": "in the glaze for shine"
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "navel orange",
+              "pantry": {
+                "name": "Oranges",
+                "cat": "produce"
+              },
+              "note": "extra, cut into thin wheels"
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: add the honey and simmer 1 minute longer for a glossy glaze."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Lay thin orange wheels around the plate, pile the rice and chicken in the middle and finish with sesame seeds and a little extra zest."
+        }
+      ],
+      "costAdd": [
+        [
+          "Orange, honey, sesame seeds",
+          1.6,
+          "oranges"
+        ]
+      ],
+      "plating": [
+        "Thin orange wheels around the rim.",
+        "Chicken piled high in the middle.",
+        "A little extra zest over the top right before serving."
+      ]
+    }
+  },
+  "why": {
+    "1-1": "Fresh zest gives the real orange flavour; juice alone is sweeter and flatter.",
+    "1-7": "Cornstarch thickens the glaze so it clings to the crispy chicken.",
+    "0-5": "Cornstarch in the coating is what makes it crunchy."
+  },
+  "fancyNight": false
 }

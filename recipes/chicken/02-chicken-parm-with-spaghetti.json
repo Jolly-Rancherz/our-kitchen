@@ -415,5 +415,113 @@
     "Shred the mozzarella ahead.",
     "Breaded cutlets can be frozen raw on a tray, then bagged (2 months) — fry from frozen 1–2 min longer per side, then bake to 74°C (165°F)."
   ],
-  "reheat": "Air fryer 175°C (350°F) 5–6 min or oven 190°C (375°F) 10 min so the crust stays crisp. Spaghetti: microwave with a splash of water. Reheat to 74°C (165°F)."
+  "reheat": "Air fryer 175°C (350°F) 5–6 min or oven 190°C (375°F) 10 min so the crust stays crisp. Spaghetti: microwave with a splash of water. Reheat to 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Simple breaded cutlets with jarred sauce and mozzarella over spaghetti.",
+      "drop": [
+        "1-3",
+        "1-4",
+        "1-5",
+        "2-2",
+        "3-3"
+      ],
+      "stepNotes": {
+        "1": "Basic: plain panko with the flour and egg — season the cutlets well instead.",
+        "3": "Basic: marinara and mozzarella only.",
+        "4": "Basic: toss the pasta with the warm sauce, no butter."
+      },
+      "costDrop": [
+        "parmesan"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Fresh-style mozzarella, Parmesan crust, a garlic butter spaghetti and a crisp golden edge.",
+      "swap": {
+        "2-1": {
+          "name": "fresh mozzarella (ball), sliced",
+          "qty": 1,
+          "unit": null,
+          "pantry": {
+            "name": "Fresh mozzarella",
+            "cat": "dairy"
+          },
+          "note": "about 200 g"
+        }
+      },
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 3,
+              "unit": "clove",
+              "name": "garlic",
+              "pantry": {
+                "name": "Garlic",
+                "cat": "produce"
+              },
+              "note": "for garlic butter spaghetti"
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              },
+              "note": "extra, for the spaghetti"
+            },
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "grated Parmesan",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              },
+              "note": "extra, to finish"
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "4": "Fancy: melt the extra butter with the garlic 1 minute before tossing in the pasta and sauce."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Twirl the spaghetti into a nest with tongs, lean the cutlet against it, and finish with Parmesan and a crack of black pepper."
+        }
+      ],
+      "costAdd": [
+        [
+          "Fresh mozzarella ball (instead of shredded)",
+          2.0,
+          "fresh-mozzarella"
+        ],
+        [
+          "Extra Parmesan, butter, garlic",
+          1.5,
+          "parmesan-grated"
+        ]
+      ],
+      "costDrop": [
+        "mozzarella"
+      ],
+      "plating": [
+        "Twirl the spaghetti into a tall nest with tongs in a ladle.",
+        "Lean the cutlet against the nest, crispy edge up.",
+        "Parmesan and black pepper last."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Flour lets the egg stick so the crumb doesn't slide off.",
+    "1-3": "Parmesan in the crumb adds savoury flavour and browns beautifully.",
+    "1-6": "Enough oil fries the crumb golden; too little and it goes patchy."
+  },
+  "fancyNight": true
 }

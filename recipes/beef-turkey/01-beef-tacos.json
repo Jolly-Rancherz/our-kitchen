@@ -415,5 +415,128 @@
     "Cook the taco beef up to 3 days ahead (or freeze 3 months) and reheat with a splash of water.",
     "Shred the lettuce and cheese and dice tomatoes earlier in the day."
   ],
-  "reheat": "Skillet over medium with 2–3 tbsp water, stirring, until steaming (74°C / 165°F). Warm shells fresh. Keep toppings cold and separate."
+  "reheat": "Skillet over medium with 2–3 tbsp water, stirring, until steaming (74°C / 165°F). Warm shells fresh. Keep toppings cold and separate.",
+  "levels": {
+    "basic": {
+      "note": "Just beef, seasoning and shells: chili powder, garlic powder, salt and pepper do the heavy lifting.",
+      "drop": [
+        "0-1",
+        "0-4",
+        "0-5",
+        "1-4",
+        "2-1",
+        "2-4",
+        "2-6"
+      ],
+      "stepNotes": {
+        "0": "Basic: chili powder, paprika, garlic powder, salt and pepper only.",
+        "2": "Basic: no tomato paste — simmer with the water until it clings.",
+        "3": "Basic: hard shells only.",
+        "4": "Basic: cheese, lettuce and sour cream."
+      },
+      "costDrop": [
+        "tortillas",
+        "tomatoes"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Crispy cheese-crusted shells, a quick lime-free crema and pickled red onion — taco-truck pretty, still mild.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": null,
+              "name": "red onion",
+              "pantry": {
+                "name": "Red onions",
+                "cat": "produce"
+              },
+              "note": "thinly sliced, quick-pickled"
+            },
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "apple cider vinegar",
+              "pantry": {
+                "name": "Apple cider vinegar",
+                "cat": "sauces"
+              },
+              "note": "for the pickle"
+            },
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "granulated sugar",
+              "pantry": {
+                "name": "Granulated sugar",
+                "cat": "baking"
+              },
+              "note": "for the pickle"
+            },
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "mayonnaise",
+              "pantry": {
+                "name": "Mayonnaise",
+                "cat": "sauces"
+              },
+              "note": "stirred into the sour cream for crema"
+            },
+            {
+              "qty": 1,
+              "unit": "cup",
+              "name": "frozen corn",
+              "pantry": {
+                "name": "Frozen corn",
+                "cat": "frozen"
+              },
+              "note": "charred in a dry pan"
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: before you start, cover the onion with the vinegar, sugar and a pinch of salt — it turns pink and tangy in 20 minutes."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Char the corn in a dry hot skillet 4–5 minutes. Stir the mayonnaise into the sour cream with a pinch of garlic powder for a smooth crema. Sprinkle a little cheddar in the hot skillet, set a tortilla on top for 1 minute until the cheese crisps, then fill. Top with charred corn, pickled onion and a drizzle of crema."
+        }
+      ],
+      "costAdd": [
+        [
+          "Red onion + vinegar (pickle)",
+          1.2,
+          "red-onions"
+        ],
+        [
+          "Frozen corn, 1 cup",
+          1.0,
+          "frozen-corn"
+        ],
+        [
+          "Mayonnaise, ¼ cup",
+          0.6,
+          "mayonnaise"
+        ]
+      ],
+      "plating": [
+        "Stand the tacos in a row, tight together, so they hold each other up.",
+        "Crema in a squeeze bag (a zip bag with the corner snipped) for neat zig-zags.",
+        "Pink onions on top last — the colour is the whole show."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Chili powder is the taco flavour. Skip it and it tastes like plain seasoned beef.",
+    "0-8": "Cornstarch makes the sauce cling to the beef instead of pooling in the shell.",
+    "1-4": "Tomato paste adds body and a deep, savoury colour. Without it the beef is a bit drier.",
+    "0-6": "Salt wakes up every spice — taco beef tastes flat without enough of it."
+  },
+  "fancyNight": false
 }

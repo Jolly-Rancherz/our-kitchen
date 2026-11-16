@@ -350,5 +350,89 @@
     "Cube the steak up to a day ahead; keep covered in the fridge (pat dry before searing).",
     "Halve the potatoes ahead and keep them in cold water; dry well before roasting."
   ],
-  "reheat": "Steak: very briefly — 30 seconds at a time in the microwave or 1 min in a hot pan — so it doesn't overcook. Potatoes: air fryer 190°C (375°F) for 5–6 min to re-crisp."
+  "reheat": "Steak: very briefly — 30 seconds at a time in the microwave or 1 min in a hot pan — so it doesn't overcook. Potatoes: air fryer 190°C (375°F) for 5–6 min to re-crisp.",
+  "levels": {
+    "basic": {
+      "note": "Seared steak bites in garlic butter with simple roast potatoes.",
+      "drop": [
+        "0-4",
+        "0-5",
+        "1-4",
+        "1-6",
+        "2-2"
+      ],
+      "stepNotes": {
+        "0": "Basic: oil, salt, garlic powder and pepper.",
+        "1": "Basic: salt, pepper and garlic powder."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Striploin bites with brown-butter garlic, crispy smashed potatoes and Parmesan.",
+      "swap": {
+        "1-0": {
+          "name": "striploin steak",
+          "note": "2.5 cm cubes"
+        },
+        "2-2": {
+          "optional": false
+        }
+      },
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.33,
+              "unit": "cup",
+              "name": "grated Parmesan",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              },
+              "note": "over the potatoes"
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              },
+              "note": "extra, browned"
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: halfway through, press each potato flat with a glass and roast until crispy.",
+        "4": "Fancy: let the butter brown and smell nutty before adding the garlic."
+      },
+      "costAdd": [
+        [
+          "Striploin upgrade",
+          6.0,
+          "striploin-steak"
+        ],
+        [
+          "Parmesan + extra butter",
+          1.4,
+          "parmesan-grated"
+        ]
+      ],
+      "plating": [
+        "Pile the steak bites high, glossy side up.",
+        "Smashed potatoes around, crispiest side showing.",
+        "Spoon the brown butter over just before serving."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Dry steak sears; damp steak steams grey.",
+    "2-0": "The butter carries the garlic flavour over everything.",
+    "1-5": "Very hot oil gives the crust — don't crowd the pan."
+  },
+  "fancyNight": true
 }

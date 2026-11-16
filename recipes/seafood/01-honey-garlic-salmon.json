@@ -352,5 +352,84 @@
     "Cook the rice the day before; reheat with a splash of water.",
     "Cut the broccoli ahead."
   ],
-  "reheat": "Salmon is best cold over rice, or warmed gently: covered, 50% power in the microwave, 30 seconds at a time. Don't blast it or it dries out."
+  "reheat": "Salmon is best cold over rice, or warmed gently: covered, 50% power in the microwave, 30 seconds at a time. Don't blast it or it dries out.",
+  "levels": {
+    "basic": {
+      "note": "Seasoned salmon with a honey–soy–garlic glaze over plain rice.",
+      "drop": [
+        "0-4",
+        "1-2",
+        "1-4",
+        "2-3"
+      ],
+      "stepNotes": {
+        "1": "Basic: honey, soy and garlic.",
+        "4": "Basic: no butter — just bubble the glaze."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Crisp-skin salmon with a brown-butter honey glaze, lemon zest rice and sesame broccoli.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "lemon",
+              "pantry": {
+                "name": "Lemons",
+                "cat": "produce"
+              },
+              "note": "zest into the rice, wedges to serve"
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "toasted sesame seeds",
+              "pantry": {
+                "name": "Sesame seeds",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "sesame oil",
+              "pantry": {
+                "name": "Sesame oil",
+                "cat": "sauces"
+              },
+              "note": "for the broccoli"
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: fluff the lemon zest into the rice.",
+        "2": "Fancy: toss the broccoli with the sesame oil and seeds.",
+        "4": "Fancy: let the butter brown before adding the glaze."
+      },
+      "costAdd": [
+        [
+          "Lemon, sesame seeds, sesame oil",
+          1.4,
+          "lemons"
+        ]
+      ],
+      "plating": [
+        "Rice in a neat mound, salmon leaning on it, crispy side up.",
+        "Spoon glaze over the salmon only.",
+        "Lemon wedge and sesame broccoli on the side."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Honey caramelises into the glaze. Without it the sauce is salty and thin.",
+    "1-2": "Lemon balances the sweet glaze — skip it and it's sweeter.",
+    "0-5": "A hot oiled pan gives the crisp, golden crust."
+  },
+  "fancyNight": true
 }

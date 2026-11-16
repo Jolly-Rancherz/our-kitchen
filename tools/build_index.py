@@ -57,6 +57,10 @@ def main():
             for k in REQUIRED:
                 if k not in r:
                     problems.append(f"{cat['slug']}/{fn}: missing '{k}'")
+            # Update 9 rule: every recipe ships all three levels (Classic = as written) and why-it-matters notes
+            lv = r.get("levels") or {}
+            if not (lv.get("basic", {}).get("note") and lv.get("fancy", {}).get("note") and lv["fancy"].get("plating") and r.get("why")):
+                problems.append(f"{cat['slug']}/{fn}: missing Update 9 levels (basic, fancy + plating) or why notes")
             for rx, word in BANNED:
                 if rx.search(raw):
                     problems.append(f"{cat['slug']}/{fn}: contains '{word}' (dislike list!)")
@@ -86,10 +90,17 @@ def main():
                 "tags": tags,
                 "ingredients": names,
                 "pantry": pantry,
+                "fancyNight": bool(r.get("fancyNight")),
             })
     for d in os.listdir(RECIPES):
         if os.path.isdir(os.path.join(RECIPES, d)) and d not in known and d != "acura":  # Acura's dog treats live apart from the dinner book
             problems.append(f"folder recipes/{d} is not in categories.json")
+
+    # Acura's treats follow the same Update 9 rule (dog-safe ingredients at every level)
+    for t in json.load(open(os.path.join(RECIPES, "acura", "treats.json"), encoding="utf-8"))["treats"]:
+        lv = t.get("levels") or {}
+        if not (lv.get("basic", {}).get("note") and lv.get("fancy", {}).get("note") and t.get("levelCost") and t.get("why")):
+            problems.append(f"acura/{t['id']}: missing Update 9 levels, levelCost or why notes")
 
     index = {"generated": __import__("datetime").datetime.now().isoformat(timespec="seconds"),
              "count": len(out), "categories": cats, "recipes": out}

@@ -20,6 +20,9 @@ that every saved value survived (see `/workspace/cookbook/tools/preserve_*.mjs` 
 - `assets/` (dish images, category tiles, Acura art, grain), `fonts/`, `icons/`, `vendor/` (receipt OCR, cached on use)
 - Outside the repo (on the build box): `/workspace/cookbook/app_src/batch1.py`, `batch2.py` (recipe batch generators),
   `update2_data.py`, `acura_data.py`; test scripts in `/workspace/cookbook/tools/` (puppeteer, iPhone emulation)
+- `tools/u9_levels.py`: the Update 9 Basic/Fancy specs, why notes and the recipe audit fixes, already applied to the
+  JSON. Kept as a record; don't rerun it blind. **`app_src/acura_data.py` is older than Update 9: running it would
+  rewrite `treats.json` without the levels, so edit `treats.json` directly instead**
 
 ## Build and deploy
 1. `python3 tools/build_index.py` rebuilds `recipes/index.json`, checks the dislike list, sets the $/$$/$$$ and
@@ -48,12 +51,23 @@ that every saved value survived (see `/workspace/cookbook/tools/preserve_*.mjs` 
 - Update 7 added (add-only) to the state: `plan` (week plan by date), `staples`, `priceLog` (last 12 receipt prices
   per item), `noteMeta` (who/when a recipe note was edited), `places`, `mystery`, `thanks`, `dateMenus`, `acura.photos`
   (640px JPEGs, max 30; all photos live in localStorage, so the phone's ~5MB limit applies)
+- Update 9 added (add-only): `levels` (recipe id or `acura-<treat id>` → 'basic' | 'classic' | 'fancy', the last level
+  used), `levelNotes` (id → level → { text, by, at }), `fancyNight` (id → 1), `bookmark` ({ h, y, at }: last recipe or
+  treat page and scroll), `ourDish` ({ id, date, remind, at, seen }), `acura.paws` (treat id → time approved).
+  Cooked entries made in Update 9 also carry `level`. The default timer sound for NEW installs is 'bell'; a saved
+  pick is kept
 
 ## Food rules (all recipes)
 - No mushrooms, mustard or olives (olive oil is fine). The build script and the add-recipe form enforce this
 - Few peppers. Not spicy, but well seasoned
 - Herbs only as dried seasoning, never visible leaves or garnish
 - Budget is $350–400 a month at No Frills. Price tags per recipe: `$` under $20, `$$` $20–30, `$$$` over $30
+- **Every recipe needs all three levels** (Update 9). The recipe JSON as written is Classic. Add `levels.basic` and
+  `levels.fancy` (`note`; `drop` item refs "g-i"; `add` [{ group, item }]; `stepNotes` { index: note }; `addSteps`;
+  `costDrop` breakdown keys/labels; `costAdd` [{ label, amount }]; Fancy also needs `plating` [3 tips]), plus `why`
+  ({ "g-i": one-line reason } for the 2–4 ingredients that matter most) and `fancyNight` (true for date-night dishes).
+  Acura's treats need the same `levels` plus `levelCost` [basic, classic, fancy] and `why`, with dog-safe ingredients
+  only (check `safety.foods`). `tools/build_index.py` refuses to build if any of this is missing.
 
 ## Locked style
 Matte cream, navy, plum, lavender and gold. Cinzel plus an italic serif (Instrument Serif), Outfit for UI text. No
@@ -64,7 +78,8 @@ A names setting, a welcome tour, a help page, an accessibility check, a tile red
 
 ## Not built yet
 - Faith sync (data is per phone; the state shape is ready for it)
-- Recipes: 21 of the 101 planned are in; **80 still to add** in small batches (`app_src/batch*.py` pattern)
+- Recipes: 21 of the 101 planned are in; **80 still to add** in small batches (`app_src/batch*.py` pattern), each
+  with all three levels (see Food rules)
 
 ## iOS 26 "strip", the status bar and the tab bar (Update 6.1 + Update 8)
 On iOS 26.1+ with `apple-mobile-web-app-status-bar-style=black-translucent`, a home-screen app is drawn from the top
@@ -115,6 +130,29 @@ exactly 812pt although the image continues.
   Badges: 6 new (week planned, thank-you, mystery, 3 places, date-in, Acura photo).
 - Acura tab: "Can Acura eat this?" search (`recipes/acura/treats.json` → `safety.foods`), Acura's photo wall.
 
+## Update 9: where things live (no new tabs)
+- Recipe page: Basic / Classic / Fancy switch under the stats (`levelBar`; remembered per recipe, with "How was
+  Fancy?" notes and "Make it with what I've got", which picks the richest level the pantry covers). Levels are
+  applied by `applyLevel()`, which keeps each ingredient's original "g-i" key, so ticks, swaps and the grocery list
+  keep working. Price pill and Money section follow the level (`levelCost`). Fancy adds a plating card. Ingredients:
+  ⓘ why-it-matters note, and a spice backup line under a spice the pantry has as out or low (`SPICE_BACKUP`).
+- "Fancy night" chip in the plan row: the recipe then always opens on Fancy.
+- Swipe left/right on a recipe or treat page turns to the next/previous one in the same category ("N of M" on the
+  kicker). Turn engine: `initPageTurn` (transform only, ~400ms, never from the left 28pt edge, sliders, scroll rows
+  or the level switch; vertical scroll wins unless the move is clearly sideways). Dice button in the top bar
+  (Home and recipes) opens a random recipe with the same turn. Reduced motion: no animation.
+- Home: gold bookmark ribbon (last recipe/treat page, reopens at the same scroll), faint seasonal accent behind the
+  greeting (London, ON seasons), quiet 10/25/50 dinners badge (no toast), "Our dish" card the week of its date.
+- Hero: "Cooked ♥ N×" ink stamp (treats: "Baked"). Our dish: More → Our dish (pill on the page, heart on cards).
+- Timer: 7 sounds (Settings → Timer alarm, or the Alarm button in cook mode), rings louder every 2.6s for ~30s with a
+  pulsing banner and Stop. iPhone: sound only while the app is open (no background alarms for web apps); while it
+  rings the audio session is set to playback so the silent switch doesn't mute it (iOS 16.4+).
+- Acura: levels on every treat, paw of approval (approved treats sort first, "Acura approves" on the card).
+- Status bar: `#topbar` is `position: sticky` so iOS 26 colours the status bar from the header itself (brown on
+  Acura's tab, navy elsewhere), instead of the page colour.
+- Tests (on the build box, `/workspace/cookbook/tools/`): `u9_smoke.mjs` (every feature), `u9_preserve.mjs` (Update 8.2 → 9 on the same phone, backup
+  restore both ways), `u9_shots.mjs` (previews), `/tmp/pw/smooth9.mjs` (WebKit/Chromium frame timing).
+
 ## Update history
 | Update | Commit | What |
 |---|---|---|
@@ -130,3 +168,4 @@ exactly 812pt although the image continues.
 | 8 | see `git log` | Solid status bar for new installs (no strip; old installs keep 6.1), backup audit: Export/Restore complete and byte-identical, Restore from the welcome screen |
 | 8.1 | see `git log` | Splash wordmark no longer jolts small→big on launch with Bigger text on |
 | 8.2 | see `git log` | Self-update never reloads in front of you (it was the remaining open/return jolt); first frame verified in WebKit |
+| 9 | see `git log` | Basic/Classic/Fancy levels on every recipe and treat, spice backups, make it with what I've got, why notes, Fancy night, level notes, cost by level, page-turn swipe + dice, bookmark ribbon, cooked stamp, louder timer with sounds, paw of approval, our dish, seasonal accent, quiet badges, recipe audit, Acura status bar brown |

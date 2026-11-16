@@ -492,5 +492,99 @@
     "Mix the honey garlic sauce (without the cornstarch slurry) and refrigerate up to 3 days.",
     "Cook the rice the day before — it reheats perfectly."
   ],
-  "reheat": "Air fryer 175°C (350°F) for 3–4 minutes to bring the crunch back, or oven 190°C (375°F) for 8–10 min. Microwave the rice and broccoli with a damp paper towel. Reheat to 74°C (165°F)."
+  "reheat": "Air fryer 175°C (350°F) for 3–4 minutes to bring the crunch back, or oven 190°C (375°F) for 8–10 min. Microwave the rice and broccoli with a damp paper towel. Reheat to 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Crispy honey garlic chicken over plain rice with steamed broccoli.",
+      "drop": [
+        "0-4",
+        "0-5",
+        "1-4",
+        "2-2",
+        "2-3",
+        "3-1",
+        "3-2",
+        "3-5",
+        "3-6"
+      ],
+      "stepNotes": {
+        "0": "Basic: plain rice — rice, water and salt, no garlic butter.",
+        "1": "Basic: steam the broccoli 4–5 minutes instead of roasting.",
+        "2": "Basic: salt, pepper, garlic powder, cornstarch and oil.",
+        "4": "Basic: skip the vinegar."
+      },
+      "costDrop": [
+        "parmesan"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Extra-crispy double-fried chicken, a brown-butter honey glaze and Parmesan-crusted broccoli.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "toasted sesame seeds",
+              "pantry": {
+                "name": "Sesame seeds",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "honey",
+              "pantry": {
+                "name": "Honey",
+                "cat": "sauces"
+              },
+              "note": "extra, to drizzle"
+            },
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "panko breadcrumbs",
+              "pantry": {
+                "name": "Panko breadcrumbs",
+                "cat": "grains"
+              },
+              "note": "toasted, over the broccoli"
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: after both batches, return all the chicken to the basket for 2 more minutes — extra crunch.",
+        "4": "Fancy: let the butter foam and turn nutty brown before adding the honey and soy."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Toast the panko in a dry pan until golden and scatter it with the Parmesan over the broccoli. Plate the rice in a ring, chicken in the middle, drizzle with a thread of honey and finish with sesame seeds."
+        }
+      ],
+      "costAdd": [
+        [
+          "Sesame seeds, panko, extra honey",
+          1.3,
+          "sesame-seeds"
+        ]
+      ],
+      "plating": [
+        "Rice in a ring, chicken piled in the centre.",
+        "Drizzle honey from high up in a thin thread.",
+        "Sesame seeds last, so they stay visible."
+      ]
+    }
+  },
+  "why": {
+    "0-6": "Cornstarch is what makes the chicken crispy. Skip it and it browns but stays soft.",
+    "1-5": "The cornstarch slurry thickens the glaze so it sticks to every piece.",
+    "1-4": "A splash of vinegar balances the sweet honey. Without it the sauce is sweeter.",
+    "3-6": "Parmesan crisps on the broccoli. Leave it off for a lighter side."
+  },
+  "fancyNight": true
 }
