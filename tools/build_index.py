@@ -61,6 +61,8 @@ def main():
             lv = r.get("levels") or {}
             if not (lv.get("basic", {}).get("note") and lv.get("fancy", {}).get("note") and lv["fancy"].get("plating") and r.get("why")):
                 problems.append(f"{cat['slug']}/{fn}: missing Update 9 levels (basic, fancy + plating) or why notes")
+            if not r.get("funFact"):
+                problems.append(f"{cat['slug']}/{fn}: missing funFact (Update 9.1 first-time scratch card)")
             for rx, word in BANNED:
                 if rx.search(raw):
                     problems.append(f"{cat['slug']}/{fn}: contains '{word}' (dislike list!)")
@@ -101,6 +103,26 @@ def main():
         lv = t.get("levels") or {}
         if not (lv.get("basic", {}).get("note") and lv.get("fancy", {}).get("note") and t.get("levelCost") and t.get("why")):
             problems.append(f"acura/{t['id']}: missing Update 9 levels, levelCost or why notes")
+        if not t.get("funFact"):
+            problems.append(f"acura/{t['id']}: missing funFact (a dog-nutrition fact for the scratch card)")
+
+    # patch notes (Update 9.1): ONE list in js/app.js, newest first; every update adds an entry at the top
+    m = re.search(r"/\* UPDATES:BEGIN \*/(.*?)/\* UPDATES:END \*/", open(os.path.join(APP, "js", "app.js"), encoding="utf-8").read(), re.S)
+    try:
+        updates = json.loads(m.group(1)) if m else []
+    except ValueError as e:
+        updates = []; problems.append(f"js/app.js UPDATES is not valid JSON: {e}")
+    if not updates:
+        problems.append("js/app.js: UPDATES (patch notes) missing or empty")
+    ids = [u.get("id") for u in updates]
+    if len(set(ids)) != len(ids):
+        problems.append("js/app.js UPDATES: duplicate id")
+    for u in updates:
+        if not (u.get("name") and u.get("id") and re.fullmatch(r"\d{4}-\d{2}-\d{2}", u.get("date", "")) and u.get("intro") and u.get("notes")):
+            problems.append(f"js/app.js UPDATES: entry {u.get('name')!r} needs name, id, date (YYYY-MM-DD), intro and notes")
+    nums = [tuple(int(x) for x in re.findall(r"\d+", u.get("name", ""))) for u in updates]
+    if nums != sorted(nums, reverse=True):
+        problems.append("js/app.js UPDATES: entries must be newest first (add the new update at the top)")
 
     index = {"generated": __import__("datetime").datetime.now().isoformat(timespec="seconds"),
              "count": len(out), "categories": cats, "recipes": out}

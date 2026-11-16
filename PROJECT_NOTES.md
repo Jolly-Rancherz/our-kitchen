@@ -28,7 +28,8 @@ that every saved value survived (see `/workspace/cookbook/tools/preserve_*.mjs` 
 1. `python3 tools/build_index.py` rebuilds `recipes/index.json`, checks the dislike list, sets the $/$$/$$$ and
    time tags, and **bumps the SW version** (a hash of the files). Run it after ANY change, or phones keep the old copy.
 2. Test (saved-data preservation + iPhone emulation, including the 402×874 screen with an 812 viewport).
-   Bump `APP_UPDATE` in app.js (shown at the foot of Settings).
+   Add the update's patch notes as a NEW entry at the TOP of `UPDATES` in app.js (see "Patch notes" below). That
+   entry is also the version shown at the foot of Settings and drives the "New in Our Kitchen" card.
 3. `git commit` and `git push` to `main`. Pages deploys in about a minute; check that the live `sw.js` shows the new `VERSION`.
 4. Phones self-update: the new SW is applied only while the app is in the background (or on the next launch),
    never while it's on screen. A reload in view replays the splash and redraws all text, which reads as a jolt
@@ -56,6 +57,8 @@ that every saved value survived (see `/workspace/cookbook/tools/preserve_*.mjs` 
   treat page and scroll), `ourDish` ({ id, date, remind, at, seen }), `acura.paws` (treat id → time approved).
   Cooked entries made in Update 9 also carry `level`. The default timer sound for NEW installs is 'bell'; a saved
   pick is kept
+- Update 9.1 added (add-only): `scratched` (recipe id or `acura-<treat id>` → time the first-time scratch card was
+  revealed)
 
 ## Food rules (all recipes)
 - No mushrooms, mustard or olives (olive oil is fine). The build script and the add-recipe form enforce this
@@ -68,6 +71,8 @@ that every saved value survived (see `/workspace/cookbook/tools/preserve_*.mjs` 
   ({ "g-i": one-line reason } for the 2–4 ingredients that matter most) and `fancyNight` (true for date-night dishes).
   Acura's treats need the same `levels` plus `levelCost` [basic, classic, fancy] and `why`, with dog-safe ingredients
   only (check `safety.foods`). `tools/build_index.py` refuses to build if any of this is missing.
+- **Every recipe and treat needs a `funFact`** (Update 9.1): one short, true, checkable fact about the dish (treats:
+  about dog nutrition), shown under the first-time scratch card. Also enforced by `build_index.py`.
 
 ## Locked style
 Matte cream, navy, plum, lavender and gold. Cinzel plus an italic serif (Instrument Serif), Outfit for UI text. No
@@ -75,6 +80,8 @@ glow. **Never redraw the category tiles.** Keep the app uncluttered.
 
 ## Declined (don't build)
 A names setting, a welcome tour, a help page, an accessibility check, a tile redraw, dinner bingo, sunset auto dark mode.
+Anything that repeats an existing feature: a dice button (Spin the wheel / Surprise me), a second season decoration
+(the seasonal layer), a second milestone badge (Badges). Extend the existing feature instead.
 
 ## Not built yet
 - Faith sync (data is per phone; the state shape is ready for it)
@@ -139,10 +146,10 @@ exactly 812pt although the image continues.
 - "Fancy night" chip in the plan row: the recipe then always opens on Fancy.
 - Swipe left/right on a recipe or treat page turns to the next/previous one in the same category ("N of M" on the
   kicker). Turn engine: `initPageTurn` (transform only, ~400ms, never from the left 28pt edge, sliders, scroll rows
-  or the level switch; vertical scroll wins unless the move is clearly sideways). Dice button in the top bar
-  (Home and recipes) opens a random recipe with the same turn. Reduced motion: no animation.
-- Home: gold bookmark ribbon (last recipe/treat page, reopens at the same scroll), faint seasonal accent behind the
-  greeting (London, ON seasons), quiet 10/25/50 dinners badge (no toast), "Our dish" card the week of its date.
+  or the level switch; vertical scroll wins unless the move is clearly sideways). Reduced motion: no animation.
+- Home: gold bookmark ribbon (last recipe/treat page, reopens at the same scroll), "Our dish" card the week of its date.
+- (Update 9 also shipped a dice button, a Home season mark and quiet 10/25/50 badges. They repeated existing features
+  that had been declined as duplicates, so 9.1 removed them; see the 9.1 section.)
 - Hero: "Cooked ♥ N×" ink stamp (treats: "Baked"). Our dish: More → Our dish (pill on the page, heart on cards).
 - Timer: 7 sounds (Settings → Timer alarm, or the Alarm button in cook mode), rings louder every 2.6s for ~30s with a
   pulsing banner and Stop. iPhone: sound only while the app is open (no background alarms for web apps); while it
@@ -152,6 +159,24 @@ exactly 812pt although the image continues.
   Acura's tab, navy elsewhere), instead of the page colour.
 - Tests (on the build box, `/workspace/cookbook/tools/`): `u9_smoke.mjs` (every feature), `u9_preserve.mjs` (Update 8.2 → 9 on the same phone, backup
   restore both ways), `u9_shots.mjs` (previews), `/tmp/pw/smooth9.mjs` (WebKit/Chromium frame timing).
+
+## Update 9.1: patch notes history, scratch card, no doubles
+- **Patch notes** (rule): `UPDATES` in `js/app.js` is THE one list of patch notes, newest first, strict JSON between
+  `/* UPDATES:BEGIN */` and `/* UPDATES:END */`. Each entry: `{ name, id, date: "YYYY-MM-DD", intro, notes: [[heading,
+  text], ...] }`, written in friendly plain words. Every future update adds ONE entry at the top; nothing else to bump
+  (`APP_UPDATE` and `WHATSNEW_ID` come from the top entry; a new `id` shows the Home card again). `build_index.py`
+  checks it is valid, complete, unique and newest first. "See what's new" opens the top entry, with a small "Past
+  updates" link under it: one-line rows (name + date, all updates so far shipped on 2026-11-16) that open in place.
+- First-time scratch card (#107): on a recipe never cooked (treat never baked), above the level switch.
+  `scratchCard`/`bindScratch`: a canvas of matte gold foil over the `funFact`; scratched past half, it fades and
+  `state.scratched` remembers it. The card disappears once cooked. The fact is real text under the canvas
+  (screen readers read it). The card is in `NO_TURN` so scratching never turns the page.
+- No doubles: the dice (Spin the wheel and Surprise me already pick a random dinner), the Home season mark (the
+  seasonal layer #21/#30 — snow, October pumpkin, Valentine's and anniversary hearts — is the one season system) and
+  the quiet 10/25/50 badge (milestones/Badges already cover 10, 25 and 50 dinners, with their toast as before) were
+  removed. `checkMilestones` is back to its Update 8 form.
+- Tests (build box): `u91_shots.mjs` (What's new, Past updates, scratch → reveal → remembered, hidden once cooked,
+  Acura), `u9_preserve.mjs` with `OLD=old9` (Update 9 → 9.1) and the default (Update 8.2 → 9.1).
 
 ## Update history
 | Update | Commit | What |
@@ -169,3 +194,4 @@ exactly 812pt although the image continues.
 | 8.1 | see `git log` | Splash wordmark no longer jolts small→big on launch with Bigger text on |
 | 8.2 | see `git log` | Self-update never reloads in front of you (it was the remaining open/return jolt); first frame verified in WebKit |
 | 9 | see `git log` | Basic/Classic/Fancy levels on every recipe and treat, spice backups, make it with what I've got, why notes, Fancy night, level notes, cost by level, page-turn swipe + dice, bookmark ribbon, cooked stamp, louder timer with sounds, paw of approval, our dish, seasonal accent, quiet badges, recipe audit, Acura status bar brown |
+| 9.1 | see `git log` | Past updates in What's new (one patch-notes list), first-time scratch card with a fun fact, dice / Home season mark / quiet badges removed as duplicates |

@@ -134,7 +134,8 @@
     "basic": 3.5,
     "classic": 4.5,
     "fancy": 6
-   }
+   },
+   "funFact": "Plain pumpkin is rich in soluble fibre, which is why vets often suggest a spoonful to help keep a dog’s digestion on track, in either direction."
   },
   {
    "id": "pupsicles",
@@ -243,7 +244,8 @@
     "basic": 1.5,
     "classic": 2.5,
     "fancy": 4
-   }
+   },
+   "funFact": "Many adult dogs make less lactase, the enzyme that digests milk sugar. Plain yogurt is gentler than milk because its live cultures have already broken down much of the lactose."
   },
   {
    "id": "sweet-potato-chews",
@@ -336,7 +338,8 @@
     "basic": 2,
     "classic": 2,
     "fancy": 3
-   }
+   },
+   "funFact": "Sweet potatoes are orange from beta-carotene. Unlike cats, dogs can turn beta-carotene into vitamin A, which helps their eyes, skin and coat."
   },
   {
    "id": "banana-oat-bites",
@@ -457,7 +460,8 @@
     "basic": 2,
     "classic": 2.5,
     "fancy": 4
-   }
+   },
+   "funFact": "Bananas are a sweet, potassium-rich snack for dogs, but they’re high in sugar, so vets suggest only a few slices at a time."
   },
   {
    "id": "chicken-jerky",
@@ -545,7 +549,8 @@
     "basic": 7,
     "classic": 7,
     "fancy": 9
-   }
+   },
+   "funFact": "Dogs have about 1,700 taste buds to our roughly 9,000, but theirs are tuned to meat, and they even have taste buds that respond to water."
   },
   {
    "id": "apple-carrot-bites",
@@ -665,7 +670,8 @@
     "basic": 2.5,
     "classic": 2.5,
     "fancy": 4
-   }
+   },
+   "funFact": "Apple is a great crunchy snack for dogs, but the core and seeds always come out: apple seeds contain amygdalin, which releases cyanide when chewed."
   }
  ],
  "safety": {

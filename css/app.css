@@ -1367,13 +1367,6 @@ body.turning #view{background:var(--bg);box-shadow:0 0 22px rgba(18,16,46,.13);b
 .ribbon .rb{flex:none;width:14px;height:26px;margin-top:-2px;background:var(--gold);clip-path:polygon(0 0,100% 0,100% 100%,50% 76%,0 100%)}
 .ribbon small{display:block;font-family:"Cinzel";font-size:.6rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--kicker)}
 .ribbon b{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-size:1.05rem;line-height:1.2}
-/* #103 faint seasonal accent, #104 quiet badge */
-.home-head{position:relative}
-.season-acc{position:absolute;top:8px;right:14px;width:62px;height:62px;fill:none;stroke:var(--navy);stroke-width:.9;stroke-linecap:round;stroke-linejoin:round;opacity:.13;pointer-events:none}
-html[data-theme="dark"] .season-acc{stroke:var(--cream);opacity:.12}
-.qbadge{flex:none;display:inline-flex;align-items:baseline;gap:3px;padding:2px 7px;border:1.2px solid var(--gold);border-radius:999px;color:var(--kicker);text-decoration:none;letter-spacing:.06em}
-.qbadge b{font-family:"Cinzel";font-size:.7rem}
-.qbadge span{font-family:"Outfit";font-size:.58rem;text-transform:lowercase;letter-spacing:.04em}
 /* #101 our dish */
 .pill.ourdish{background:var(--plum);border-color:var(--plum);color:#F5E6CE;display:inline-flex;align-items:center;gap:4px}
 .pill.ourdish svg{width:10px;height:10px;fill:currentColor}
@@ -1403,3 +1396,23 @@ body.acura #alarm{background:#4A2A1A}
 .pawok svg{width:15px;height:15px;fill:currentColor}
 .pawok.on{background:var(--gold);border-color:var(--gold);color:#3A2414}
 .ac-card .im .pa{position:absolute;left:6px;bottom:6px;padding:2px 6px;background:var(--gold);color:#3A2414;font-style:normal;font-size:.56rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:2px}
+/* ---------------------------------------------------------------- update 9.1
+   #105 past updates: a quiet link under What's new; one-line rows that open in place */
+.pastlink{display:block;margin:8px auto 0;font-size:.78rem;font-weight:500;color:var(--ink2)}
+.pastlist{margin-top:12px;border-top:1px solid var(--line-gold)}
+.pu{border-bottom:1px solid var(--line-gold)}
+.pu summary{display:flex;align-items:baseline;gap:10px;padding:13px 2px;list-style:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.pu summary::-webkit-details-marker{display:none}
+.pu summary b{flex:1;font-family:"Cinzel";font-weight:700;font-size:.8rem;letter-spacing:.12em;color:var(--kicker)}
+.pu summary span{font-size:.8rem;color:var(--ink2)}
+.pu summary i{display:flex;align-self:center}
+.pu summary i svg{width:15px;height:15px;fill:none;stroke:var(--ink2);stroke-width:1.8;transition:transform .2s ease}
+.pu[open] summary i svg{transform:rotate(90deg)}
+.pu .pu-in{font-family:"Instrument Serif";font-style:italic;font-size:1rem;line-height:1.3;color:var(--ink2)}
+.pu .wnlist{margin:10px 0 16px}
+/* #107 first-time scratch card: matte gold foil (canvas) over the fact; the card never changes size */
+.card.scratch{margin-top:14px;padding:12px 14px 14px}
+.scratch .sc-k{font-family:"Cinzel";font-weight:700;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--kicker)}
+.scratch .sc-box{position:relative;margin-top:8px;min-height:72px;display:flex;align-items:center;border-radius:2px;overflow:hidden}
+.scratch .sc-fact{font-size:.92rem;line-height:1.4;color:var(--ink);padding:6px 2px}
+.scratch .sc-cv{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab}

@@ -169,6 +169,8 @@ const DEFAULT_STATE = () => ({
   fancyNight: {},      // recipeId -> ts (marked Fancy night: opens on Fancy with plating tips)
   bookmark: null,      // { h, y, at } the gold ribbon: last recipe page and where it was scrolled
   ourDish: null,       // { id, date: 'YYYY-MM-DD' | '', remind, at, seen: { year: ts } } the one meal that's ours
+  // update 9.1 (added only)
+  scratched: {},       // recipeId or 'acura-<treatId>' -> ts the first-time scratch card was revealed
 });
 let state = load();
 function load() {
@@ -180,7 +182,7 @@ function migrate(raw) {
   if (!raw || raw.v !== 1) return null;
   const d = DEFAULT_STATE();
   const st = { ...d, ...raw, settings: { ...d.settings, ...raw.settings }, profile: { ...d.profile, ...raw.profile } };
-  ['loveNotes', 'stories', 'freezer', 'wish', 'prices', 'guests', 'edits', 'versions', 'milestones', 'recapSeen', 'favBy', 'nicknames', 'dessertJar', 'tasteTests', 'dishes', 'flashSeen', 'annivSeen', 'plan', 'priceLog', 'noteMeta', 'places', 'thanks', 'dateMenus', 'levels', 'levelNotes', 'fancyNight'].forEach((k) => { if (!st[k] || typeof st[k] !== 'object') st[k] = {}; });
+  ['loveNotes', 'stories', 'freezer', 'wish', 'prices', 'guests', 'edits', 'versions', 'milestones', 'recapSeen', 'favBy', 'nicknames', 'dessertJar', 'tasteTests', 'dishes', 'flashSeen', 'annivSeen', 'plan', 'priceLog', 'noteMeta', 'places', 'thanks', 'dateMenus', 'levels', 'levelNotes', 'fancyNight', 'scratched'].forEach((k) => { if (!st[k] || typeof st[k] !== 'object') st[k] = {}; });
   if (!st.acura || typeof st.acura !== 'object') st.acura = d.acura;
   ['favs', 'baked', 'notes', 'ratings', 'profile', 'given', 'photos', 'paws'].forEach((k) => { if (!st.acura[k] || typeof st.acura[k] !== 'object') st.acura[k] = {}; });
   if (!st.seededSoup) { st.favourites = { ...st.favourites, 'comfort-soups-01': st.favourites['comfort-soups-01'] || now() }; st.seededSoup = 1; }
@@ -507,7 +509,7 @@ async function viewRecipe(id) {
   const ck = state.checks[id] || { i: {}, s: {} };
   const fav = !!state.favourites[id];
   setTop({ title: esc(c.name.toUpperCase()) + ' <span class="h">·</span> ' + pad2(s.num), back: '#/',
-    right: `${diceBtn()}<button class="iconbtn fav ${fav ? 'on' : ''}" id="favBtn" aria-label="Favourite">${svg('heart')}</button>` });
+    right: `<button class="iconbtn fav ${fav ? 'on' : ''}" id="favBtn" aria-label="Favourite">${svg('heart')}</button>` });
   const tags = r.tags || {};
   const pills = [`<span class="pill gold">${priceTier(lc.total)}</span>`];
   (tags.method || []).slice(0, 1).forEach((m) => pills.push(`<span class="pill navy">${esc(TAGLABEL['method:' + m] || m)}</span>`));
@@ -543,6 +545,7 @@ async function viewRecipe(id) {
   <div class="plan"><button class="chip" id="startBy">${svg('clock')}Start cooking by…</button><button class="chip ${guests ? 'on' : ''}" id="guestBtn">${svg('users')}${guests ? guests + ' people' : 'Guests'}</button>${!cooked.length || pend ? `<button class="chip ${pend ? 'on' : ''}" id="tasteChip">${svg('thumbUp')}${pend ? 'Taste test on' : 'Taste test'}</button>` : ''}${hasLevels(r0) ? `<button class="chip ${isFancyNight(id) ? 'on' : ''}" id="fnChip">${svg('star')}Fancy night</button>` : ''}</div>
 
   <div class="wrap">
+    ${cooked.length ? '' : scratchCard(id, r0.funFact)}
     ${levelBar(r0, id, lv)}
     ${haveCard(r)}
     ${love ? `<button class="lovenote" id="loveShow"><span class="lk">${svg('heart')}A NOTE${love.by ? ' FROM ' + esc(love.by.toUpperCase()) : ''}</span><span class="lt">${esc(love.text)}</span></button>` : ''}
@@ -646,7 +649,7 @@ async function viewRecipe(id) {
   loadAcura().then((D) => { const box = $('#pupBox'); if (D && box && location.hash === '#/r/' + id) box.innerHTML = pupShareHTML(r, D); });
   $$('[data-ph]').forEach((b) => (b.onclick = () => viewPhoto(id, b.dataset.ph)));
   bindRecipeExtras(r, s, id, f, cost);
-  bindLevels(r0, r, s, id, lv, f);
+  bindLevels(r0, r, s, id, lv, f); bindScratch();
 }
 function toggleCheck(id, kind, key, li) {
   const ck = state.checks[id] || (state.checks[id] = { i: {}, s: {} });
@@ -1563,7 +1566,7 @@ function useByTag(p) {
 const realDinners = () => Object.values(state.cooked).filter((c) => c.recipeId !== 'receipt');
 function checkMilestones(silent) {
   const f = milestoneFacts(); const fresh = [];
-  MILESTONES.forEach(([k, label, test]) => { if (!state.milestones[k] && test(f)) { state.milestones[k] = todayISO(); if (!QUIET_MILESTONES.has(k)) fresh.push(label); else save(); } });
+  MILESTONES.forEach(([k, label, test]) => { if (!state.milestones[k] && test(f)) { state.milestones[k] = todayISO(); fresh.push(label); } });
   if (fresh.length) { save(); if (!silent) setTimeout(() => toast('Milestone ♥ ' + fresh[fresh.length - 1]), 2800); }
 }
 const REACT = [['love', 'Loved it'], ['like', 'Good'], ['meh', 'Meh']];
@@ -2523,7 +2526,7 @@ function swapHomeBody(html) {
 }
 function viewHome(partial) {
   partial = partial === true && !!$('#homeBody') && !!$('#q');
-  if (!partial) { setTop({ title: 'OUR KITCHEN', right: diceBtn() }); HOME_CARDS.clear(); syncPlanToTonight(); }
+  if (!partial) { setTop({ title: 'OUR KITCHEN' }); HOME_CARDS.clear(); syncPlanToTonight(); }
   const recipes = visibleRecipes();
   ui.pick = ui.pick && recipes.find((r) => r.id === ui.pick) ? ui.pick : seasonalPick(recipes);
   const searching = ui.q || filterCount();
@@ -2596,8 +2599,8 @@ function viewHome(partial) {
   const fc = filterCount();
   const dn = dateNightInfo();
   const pump = isOctober() && state.settings.seasonal !== false;
-  if (partial) swapHomeBody(body); else render(`<div class="home-head">${seasonAccent()}
-      <div class="kicker">${pump ? `<svg class="pump" viewBox="0 0 24 24" aria-hidden="true">${ICON.pumpkin}</svg>` : ''}Recipes we love<span class="rule"></span>${quietBadge()}</div>
+  if (partial) swapHomeBody(body); else render(`<div class="home-head">
+      <div class="kicker">${pump ? `<svg class="pump" viewBox="0 0 24 24" aria-hidden="true">${ICON.pumpkin}</svg>` : ''}Recipes we love<span class="rule"></span></div>
       <div class="lead" style="margin-top:6px">${esc(greeting())}</div>
       ${ribbonHTML()}
       ${dn && dn.days <= 14 ? `<a class="dnline" href="#/us">${svg('heart')}<span>${esc(dnWords(dn))}${dn.s ? ' — ' + esc(dn.s.title) : ''}</span></a>` : ''}
@@ -3426,6 +3429,7 @@ async function viewTreat(id) {
   <div class="wrap">
     <div class="ac-dogsafe">${PAW()}<div><b>Why it’s dog-safe</b><p>${esc(t.dogSafe)}</p></div></div>
     ${tb && kc ? `<p class="small muted ac-budget">For Acura (${r1(tb.kg)} kg): about <b>${Math.max(1, Math.floor(tb.treats / kc))} a day</b> stays inside the 10% treat budget (~${tb.treats} kcal).</p>` : ''}
+    ${batches.length ? '' : scratchCard(sid, t.funFact, true)}
     ${levelBar(t, sid, lv, true)}
     <div class="sec"><div class="sec-title">${PAW('sm')}What you need<button class="act" id="acReset">Reset</button></div>
       ${tt.groups.map((g) => `<div class="ing-group">${g.name ? `<div class="group-name">${esc(g.name)}</div>` : ''}<ul class="checklist pawlist">${g.items.map((it) => `<li data-i="${it.ref}" class="${ck.i[it.ref] ? 'done' : ''}${it.added ? ' lvadd' : ''}"><span class="box">${PAW()}</span><span class="txt">${ingLine(it, 1, false)}${whyHTML(it)}${it.warn ? `<span class="acwarn">${svg('eyeoff')}${esc(it.warn)}</span>` : ''}</span></li>`).join('')}</ul></div>`).join('')}
@@ -3450,7 +3454,7 @@ async function viewTreat(id) {
   $$('.checklist li[data-i]').forEach((li) => (li.onclick = (e) => { if (e.target.closest('.whybtn')) { toggleWhy(li); return; } toggleCheck(sid, 'i', li.dataset.i, li); }));
   $$('.checklist li[data-s]').forEach((li) => (li.onclick = () => toggleCheck(sid, 's', li.dataset.s, li)));
   $('#acPaw').onclick = (e) => { if (a.paws[id]) delete a.paws[id]; else { a.paws[id] = now(); heartBurst(e.currentTarget); } save(); viewTreat(id); toast(a.paws[id] ? 'Paw of approval ♥ — it moves to the top of her list' : 'Approval removed'); };
-  bindLevels(t, tt, s, sid, lv, 1, () => viewTreat(id));
+  bindLevels(t, tt, s, sid, lv, 1, () => viewTreat(id)); bindScratch();
   $('#acReset').onclick = () => withUndo('Ticks reset', () => { delete state.checks[sid]; }, () => $$('.checklist li.done').forEach((li) => li.classList.remove('done')));
   $('#acCook').onclick = () => openCook(r, s, 1);
   $('#acList').onclick = () => {
@@ -4147,13 +4151,13 @@ function toggleWhy(li) { const b = $('.whybtn', li); const x = $('.whyx', li); i
 // ---------------------------------------------------------------- #98 'Cooked ♥' ink stamp
 const cookedStamp = (n, word = 'Cooked') => (n ? `<i class="stamp" aria-label="${word} ${n} time${n === 1 ? '' : 's'}"><span>${word} ♥</span><b>${n}×</b></i>` : '');
 
-// ---------------------------------------------------------------- #96 swipe between recipes with a page turn, #102 dice
+// ---------------------------------------------------------------- #96 swipe between recipes with a page turn
 // Swipe left = next, right = previous, within the same category in numbered order (Acura: treat order). The page follows
 // the finger as a subtle 3D turn on its spine (transform only, so WebKit keeps it on the GPU), then the new page settles in.
 // Never starts in the left 28px (the iOS swipe-back edge), on a horizontal scroller, a slider, the level switch or a field,
 // only once the move is clearly sideways, and never while a sheet, cook mode or a timer alarm is up.
 const TURN_EDGE = 28;
-const NO_TURN = 'input,textarea,select,.chips,.plan,.lvbar,.photos,.hrow,.portion,.bonechips,.favtiles,.rcook,.snackchips,.dishes,table';
+const NO_TURN = '.scratch,input,textarea,select,.chips,.plan,.lvbar,.photos,.hrow,.portion,.bonechips,.favtiles,.rcook,.snackchips,.dishes,table';
 let PT = null;
 function turnList() {
   const h = location.hash; let m;
@@ -4195,11 +4199,11 @@ function turnIn() {
   const v = $('#view'); v.classList.remove('vin-fwd', 'vin-back', 'vin-tab', 'vin-turn'); void v.offsetWidth; v.classList.add('vin-turn');
   clearTimeout(animateView.t); animateView.t = setTimeout(() => v.classList.remove('vin-turn'), 170);
 }
-// turn the current page and open `hash` (dice, or a finished swipe); reduced motion just opens it
-function turnTo(hash, dir, k = 0) {
+// turn the current page and open `hash` (a finished swipe); reduced motion just opens it
+function turnTo(hash, dir, k) {
   if (reducedMotion()) { turnClean(); ui.flip = dir; location.replace(hash); return; }
   if (!document.body.classList.contains('turning')) turnBegin(dir);
-  turnOut(dir, k, () => { if (location.hash === hash) { turnIn(); return; } ui.flip = dir; if (/^#\/(r|acura\/t)\//.test(location.hash)) location.replace(hash); else go(hash); });
+  turnOut(dir, k, () => { ui.flip = dir; location.replace(hash); }); // replace: a turn is a sideways step, not a new level of Back
 }
 function initPageTurn() {
   const v = $('#view');
@@ -4234,14 +4238,6 @@ function initPageTurn() {
   v.addEventListener('touchend', () => end(false));
   v.addEventListener('touchcancel', () => end(true));
 }
-function rollDice() {
-  const cur = (location.hash.match(/^#\/r\/(.+)$/) || [])[1];
-  const pool = visibleRecipes().filter((r) => r.id !== cur); if (!pool.length) return;
-  actx(); if (state.settings.sounds) tone(1200, 0, 0.05, 0.05);
-  turnTo('#/r/' + pool[Math.floor(Math.random() * pool.length)].id, 1);
-}
-const diceBtn = () => `<button class="iconbtn" id="diceBtn" aria-label="Random recipe">${svg('dice')}</button>`;
-document.addEventListener('click', (e) => { if (e.target.closest && e.target.closest('#diceBtn')) rollDice(); });
 
 // ---------------------------------------------------------------- #97 gold bookmark ribbon
 // The last recipe or treat page and how far down it was scrolled; the ribbon on Home reopens it right there.
@@ -4258,26 +4254,6 @@ function ribbonHTML() {
 }
 function bindRibbon() { const a = $('#ribbon'); if (a) a.onclick = () => { try { sessionStorage.setItem('ok-scroll', JSON.stringify({ h: state.bookmark.h, y: state.bookmark.y })); } catch (e) {} }; }
 
-// ---------------------------------------------------------------- #103 faint seasonal accent (London, Ontario seasons)
-const SEASON_ACC = {
-  winter: '<path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9"/><path d="M9.8 4.6L12 6.4l2.2-1.8M9.8 19.4l2.2-1.8 2.2 1.8M4.6 10.3l2.7.9-.5 2.8M19.4 13.7l-2.7-.9.5-2.8M4.6 13.7l2.7-.9-.5-2.8M19.4 10.3l-2.7.9.5 2.8"/>',
-  spring: '<circle cx="12" cy="12" r="2"/><path d="M12 10c-1.6-2.6-1.2-5.2 0-6.5 1.2 1.3 1.6 3.9 0 6.5zM14 12c2.6-1.6 5.2-1.2 6.5 0-1.3 1.2-3.9 1.6-6.5 0zM12 14c1.6 2.6 1.2 5.2 0 6.5-1.2-1.3-1.6-3.9 0-6.5zM10 12c-2.6 1.6-5.2 1.2-6.5 0 1.3-1.2 3.9-1.6 6.5 0z"/>',
-  summer: '<circle cx="12" cy="12" r="3.6"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4L18 18M6 18l1.6-1.6M16.4 7.6L18 6"/>',
-  fall: '<path d="M12 21v-6.5M12 14.5l-4.6 1.6.9-2.4-3.8-2.6 1.9-.5-1-3.3 2.9 1.1.6-1.8 2.2 2.6-.6-5.5 1.5 1 1-3 1 3 1.5-1-.6 5.5 2.2-2.6.6 1.8 2.9-1.1-1 3.3 1.9.5-3.8 2.6.9 2.4z"/>',
-};
-function seasonAccent() {
-  if (state.settings.seasonal === false) return '';
-  const mo = new Date().getMonth(); const k = mo === 11 || mo <= 1 ? 'winter' : mo <= 4 ? 'spring' : mo <= 7 ? 'summer' : 'fall';
-  return `<svg class="season-acc ${k}" viewBox="0 0 24 24" aria-hidden="true">${SEASON_ACC[k]}</svg>`;
-}
-
-// ---------------------------------------------------------------- #104 quiet milestone badges (10, 25, 50 dinners)
-const QUIET_MILESTONES = new Set(['d10', 'd25', 'd50']); // no toast — just the small badge on Home and in Badges
-function quietBadge() {
-  const top = ['d50', 'd25', 'd10'].find((k) => state.milestones[k]); if (!top) return '';
-  const n = top.slice(1);
-  return `<a class="qbadge" href="#/us" aria-label="${n} dinners cooked together"><b>${n}</b><span>dinners</span></a>`;
-}
 
 // ---------------------------------------------------------------- #101 'our dish' (with an optional yearly reminder)
 function openOurDish(id) {
@@ -4310,6 +4286,56 @@ function bindOurDishCard(redraw) {
   $('#odPlan') && ($('#odPlan').onclick = () => { if (x.days === 0) setTonight(x.s.id); else { state.plan[isoPlus(x.days)] = { recipeId: x.s.id, by: state.profile.me || null, at: now() }; save(); toast(`Planned for ${dayWord(isoPlus(x.days))} ♥`); } const od = state.ourDish; od.seen = { ...(od.seen || {}), [x.key]: now() }; save(); redraw(); });
 }
 
+// ---------------------------------------------------------------- update 9.1 #107 first-time scratch card
+// Shown only until the recipe (or treat) is cooked once. A matte gold foil canvas over a real fun fact (recipe JSON
+// `funFact`); scratching with a finger clears it, and past about half cleared the rest fades away and is remembered
+// in state.scratched. The fact is plain text underneath, so screen readers get it without scratching.
+const SCRATCH_DONE = 0.5;
+function scratchCard(key, fact, treat) {
+  if (!fact) return '';
+  const done = !!state.scratched[key];
+  return `<div class="card scratch" data-sk="${esc(key)}"><div class="sc-k">${treat ? 'Her first batch' : 'First time cooking this'}</div>
+    <div class="sc-box"><p class="sc-fact">${esc(fact)}</p>${done ? '' : '<canvas class="sc-cv" aria-hidden="true"></canvas>'}</div></div>`;
+}
+function bindScratch() {
+  const cv = $('.scratch .sc-cv'); if (!cv) return;
+  const key = cv.closest('.scratch').dataset.sk; const box = cv.parentNode;
+  const w = box.clientWidth; const h = box.clientHeight; const dpr = Math.min(3, window.devicePixelRatio || 1);
+  cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+  const x = cv.getContext('2d'); x.scale(dpr, dpr);
+  let last = null; let touched = false;
+  // flat gold with a fine hatch and a quiet label: matte foil, no gloss
+  const paint = () => {
+    x.globalCompositeOperation = 'source-over'; x.fillStyle = '#C4963E'; x.fillRect(0, 0, w, h);
+    x.strokeStyle = 'rgba(245,230,206,.16)'; x.lineWidth = 1;
+    for (let i = -h; i < w; i += 7) { x.beginPath(); x.moveTo(i, h); x.lineTo(i + h, 0); x.stroke(); }
+    x.fillStyle = '#082048'; x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.font = '700 12px Cinzel, serif'; x.fillText('SCRATCH WITH YOUR FINGER', w / 2, h / 2 - 9);
+    x.font = 'italic 15px "Instrument Serif", serif'; x.fillText('for a little fun fact', w / 2, h / 2 + 10);
+    x.globalCompositeOperation = 'destination-out'; x.strokeStyle = '#000'; x.lineCap = 'round'; x.lineJoin = 'round'; x.lineWidth = 30; // opaque ink clears fully
+  };
+  paint();
+  // the label uses the app fonts; on a cold start they may land a moment later, so repaint once (if still untouched)
+  if (document.fonts && !document.fonts.check('700 12px Cinzel')) document.fonts.load('700 12px Cinzel').then(() => { if (!touched && cv.isConnected) paint(); }, () => {});
+  const at = (e) => { const r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+  const line = (a, b) => { x.beginPath(); x.moveTo(a[0], a[1]); x.lineTo(b[0] + 0.01, b[1]); x.stroke(); };
+  // share of the foil already cleared, sampled on a coarse grid (cheap enough to run on every lift)
+  const cleared = () => {
+    const d = x.getImageData(0, 0, cv.width, cv.height).data; const step = Math.max(4, Math.round(8 * dpr)); let n = 0; let c = 0;
+    for (let yy = 0; yy < cv.height; yy += step) for (let xx = 0; xx < cv.width; xx += step) { n++; if (d[(yy * cv.width + xx) * 4 + 3] < 40) c++; }
+    return c / n;
+  };
+  const reveal = () => {
+    state.scratched[key] = now(); save();
+    if (reducedMotion()) { cv.remove(); return; }
+    cv.style.transition = 'opacity .45s ease'; cv.style.opacity = '0'; setTimeout(() => cv.remove(), 480);
+  };
+  cv.addEventListener('pointerdown', (e) => { touched = true; cv.setPointerCapture(e.pointerId); last = at(e); line(last, last); });
+  cv.addEventListener('pointermove', (e) => { if (!last) return; const p = at(e); line(last, p); last = p; });
+  const lift = () => { if (!last) return; last = null; if (cleared() >= SCRATCH_DONE) reveal(); };
+  cv.addEventListener('pointerup', lift); cv.addEventListener('pointercancel', lift);
+}
+
 // ---------------------------------------------------------------- #100 Acura's paw of approval (loved treats first)
 const acOrder = (treats) => treats.map((t, i) => [t, i]).sort((a, b) => (AC().paws[b[0].id] ? 1 : 0) - (AC().paws[a[0].id] ? 1 : 0) || a[1] - b[1]).map(([t]) => t);
 initPageTurn();
@@ -4318,7 +4344,7 @@ async function router() {
   const h = location.hash || '#/';
   const turn = ++routing;
   if (lastRoute != null) { scrollMem[lastRoute] = vY(); if (lastRoute !== h) saveBookmark(lastRoute, vY()); }
-  const flip = ui.flip; ui.flip = 0; // update 9: arriving by a page turn (swipe or dice)
+  const flip = ui.flip; ui.flip = 0; // update 9: arriving by a page turn (swipe)
   if (!flip && document.body.classList.contains('turning')) turnClean();
   closeSheet();
   const tabNew = tabOf(h); const tabOld = lastRoute == null ? null : tabOf(lastRoute);
@@ -4400,29 +4426,303 @@ function recapCard(rc, dismiss) {
     <p>Most made: <b>${esc(rc.topName)}</b>${rc.topN > 1 ? ` ×${rc.topN}` : ''}.${rc.fresh ? ` ${rc.fresh} new recipe${rc.fresh === 1 ? '' : 's'} tried.` : ''}${rc.corey || rc.faith ? ` Corey cooked ${rc.corey}, Faith ${rc.faith}.` : ''}${rc.photos ? ` ${rc.photos} photo${rc.photos === 1 ? '' : 's'}.` : ''}${rc.loved ? ` Highest hearts: <b>${esc(rc.loved.title)}</b> (${r1(rc.loved.v)} ♥).` : ''}${rc.goodWeeks ? ` ${rc.goodWeeks} week${rc.goodWeeks === 1 ? '' : 's'} with 3+ dinners.` : ''}${rc.dishes.Corey + rc.dishes.Faith ? ` Dishes: Corey ${rc.dishes.Corey}, Faith ${rc.dishes.Faith}.` : ''}</p></div>`;
 }
 
-// ---------------------------------------------------------------- what's new (update 3)
-// shown at the foot of Settings so anyone can check which update a phone (or a Safari tab) is running; bump each update
-const APP_UPDATE = 'Update 9';
-const WHATSNEW_ID = 'u9-2026-11';
-const WHATSNEW = [
-  ['Basic · Classic · Fancy', 'Every recipe (Acura’s too) has three levels: Basic keeps the essentials, Classic is the recipe as written, Fancy dresses it up. The ingredients, steps, grocery list and cost ($ / $$ / $$$) all follow the level, and each recipe remembers the last one you used'],
-  ['Make it with what I’ve got', 'One tap picks the highest level the pantry covers · out of a seasoning? a backup or “skip it” shows right under it · tap the small i next to key ingredients to see why they matter'],
-  ['Fancy night', 'Mark a recipe (or tonight’s plan) as Fancy night and it opens on Fancy with plating tips · a quick “how was it” note for each level'],
-  ['Turn the page', 'On a recipe, swipe left for the next one in the category and right for the one before · the dice opens a random recipe · the gold ribbon on Home reopens the last page you were on · a “Cooked ♥” stamp shows how many times you’ve made it'],
-  ['Timers', 'A louder alarm that keeps ringing until you tap Stop, with Bell, Kitchen ding, Chimes or Soft melody (Settings, or tap “Alarm” under the timer)'],
-  ['Us & Acura', 'Pick “our dish” with an optional yearly reminder · quiet badges at 10, 25 and 50 dinners · a faint seasonal touch on Home · Acura’s paw of approval puts her favourite treats first'],
-];
+// ---------------------------------------------------------------- what's new + past updates (update 3, history in 9.1)
+// THE one list of patch notes, newest first. Every update adds ONE entry at the top (strict JSON between the markers:
+// tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
+// the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
+const UPDATES = /* UPDATES:BEGIN */ [
+ {
+  "name": "Update 9.1",
+  "id": "u91-2026-11",
+  "date": "2026-11-16",
+  "intro": "Every past update in one place, a scratch card for recipes you haven’t tried yet, and a little tidy-up. Everything you saved is still here.",
+  "notes": [
+   [
+    "Past updates",
+    "What’s new now keeps every update. Tap “Past updates” at the bottom to read any of them, from Update 1 on"
+   ],
+   [
+    "First-time scratch card",
+    "On a recipe you’ve never made, scratch the little gold card with your finger to reveal a fun fact about the dish. Acura’s treats have one about dog nutrition. The card goes away once you’ve cooked it"
+   ],
+   [
+    "No doubles",
+    "The dice, the faint season mark on Home and the 10 / 25 / 50 dinner badge from Update 9 repeated things the app already had, so they’re folded back in: Spin the wheel and Surprise me pick a random dinner, the seasonal layer (snow, the October pumpkin, Valentine’s hearts) is the one season touch, and dinner milestones live in Badges on the Us tab, with their little note like before"
+   ]
+  ]
+ },
+ {
+  "name": "Update 9",
+  "id": "u9-2026-11",
+  "date": "2026-11-16",
+  "intro": "Basic, Classic and Fancy versions of every recipe, swipe to turn the page, a louder timer and a few small keepsakes.",
+  "notes": [
+   [
+    "Basic · Classic · Fancy",
+    "Every recipe (Acura’s too) has three levels: Basic keeps the essentials, Classic is the recipe as written, Fancy dresses it up. The ingredients, steps, grocery list and cost ($ / $$ / $$$) all follow the level, and each recipe remembers the last one you used"
+   ],
+   [
+    "Make it with what I’ve got",
+    "One tap picks the highest level the pantry covers · out of a seasoning? a backup or “skip it” shows right under it · tap the small i next to key ingredients to see why they matter"
+   ],
+   [
+    "Fancy night",
+    "Mark a recipe as Fancy night and it opens on Fancy with plating tips · a quick “how was it” note for each level"
+   ],
+   [
+    "Turn the page",
+    "On a recipe, swipe left for the next one in the category and right for the one before · a dice for a random recipe · the gold ribbon on Home reopens the last page you were on · a “Cooked ♥” stamp shows how many times you’ve made it"
+   ],
+   [
+    "Timers",
+    "A louder alarm that keeps ringing until you tap Stop, with Bell, Kitchen ding, Chimes or Soft melody (Settings, or tap “Alarm” in cook mode)"
+   ],
+   [
+    "Us & Acura",
+    "Pick “our dish” with an optional yearly reminder · quiet badges at 10, 25 and 50 dinners · a faint seasonal touch on Home · Acura’s paw of approval puts her favourite treats first · the status bar is brown on Acura’s tab, like her header"
+   ],
+   [
+    "Recipe check",
+    "All 21 recipes were checked: a missing pinch of salt added in two, the broccoli cheddar soup saves cheese for the top, and four cost totals now match their price lists"
+   ]
+  ]
+ },
+ {
+  "name": "Update 8.2",
+  "id": "u82",
+  "date": "2026-11-16",
+  "intro": "Updates arrive quietly.",
+  "notes": [
+   [
+    "Smoother updates",
+    "The app now updates itself only while it’s in the background, so it never reloads in front of you when you open it or come back to it"
+   ]
+  ]
+ },
+ {
+  "name": "Update 8.1",
+  "id": "u81",
+  "date": "2026-11-16",
+  "intro": "A steadier launch screen.",
+  "notes": [
+   [
+    "Steady splash",
+    "With Bigger text on, the Our Kitchen title on the launch screen no longer jumps from small to big"
+   ]
+  ]
+ },
+ {
+  "name": "Update 8",
+  "id": "u8",
+  "date": "2026-11-16",
+  "intro": "A solid status bar and a complete backup.",
+  "notes": [
+   [
+    "Status bar",
+    "If you add the app to the Home Screen again, the top of the screen becomes a solid bar in the header colour and the tabs reach the bottom edge. The old layout stays as it was until then"
+   ],
+   [
+    "Backup & restore",
+    "Settings → Backup saves everything (photos too) to one file. A fresh install can restore it right from the welcome screen, exactly as it was"
+   ]
+  ]
+ },
+ {
+  "name": "Update 7",
+  "id": "u7-2026-11",
+  "date": "2026-11-16",
+  "intro": "Plan the week, price memory, mystery meals and lots of small things for the two of you.",
+  "notes": [
+   [
+    "Recipes & Ideas",
+    "Filters → “Ready to make now” shows only what the pantry covers · More ideas has Surprise me (pick time, budget and mood), Fridge clear (with Friday reminders on Home), In season (Ontario produce this month) and soup nudges on cold or rainy days"
+   ],
+   [
+    "Cooking",
+    "Cook mode shows a small preview of the next step and our notes · the swap button covers far more ingredients (all within our rules) · “Acura’s share” on every recipe lists the plain bits she can have"
+   ],
+   [
+    "Notes",
+    "Our notes on each recipe show who last changed them and when, and appear in cook mode"
+   ],
+   [
+    "Grocery",
+    "Aisles follow a No Frills walk · Plan the week → one merged shopping list · Staples: our everyday list, re-added in one tap · receipts remember every price and point out big jumps"
+   ],
+   [
+    "Home",
+    "Tomorrow’s planned dinner reminds you what to thaw · Tonight’s plan has a Prep ahead list · thank-you notes pop up for the other person"
+   ],
+   [
+    "Us",
+    "Mystery meal · Thank-you jar · a monthly Date-in menu · Places we love (with the closest recipe to make at home) · rate together in secret · a printable keepsake cookbook · six new badges"
+   ],
+   [
+    "Acura",
+    "“Can Acura eat this?” search · a dated photo wall"
+   ]
+  ]
+ },
+ {
+  "name": "Update 6.1",
+  "id": "u61",
+  "date": "2026-11-16",
+  "intro": "Tabs that answer the first tap.",
+  "notes": [
+   [
+    "Easier tabs",
+    "Every tab is fully tappable again (the bottom of the screen on newer iPhones ignores taps) · bigger tab icons · the welcome card runs edge to edge"
+   ]
+  ]
+ },
+ {
+  "name": "Update 6",
+  "id": "u6",
+  "date": "2026-11-16",
+  "intro": "A better fit on the iPhone and a calmer screen.",
+  "notes": [
+   [
+    "iPhone fit",
+    "The tab bar sits in a middle-ground spot with no switch needed · a launch screen instead of a black flash"
+   ],
+   [
+    "No shake",
+    "Taps no longer replay the page animation · each page keeps its scroll position · search updates smoothly · the wheel spins properly a second time"
+   ]
+  ]
+ },
+ {
+  "name": "Update 5",
+  "id": "u5",
+  "date": "2026-11-16",
+  "intro": "A taller tab bar (replaced in Update 6).",
+  "notes": [
+   [
+    "Tab bar",
+    "The tab bar stretched to the very bottom edge, with a switch in Settings to turn it off. It sat too low, so Update 6 replaced it"
+   ]
+  ]
+ },
+ {
+  "name": "Update 4",
+  "id": "u4",
+  "date": "2026-11-16",
+  "intro": "Gliding sheets and a first iPhone fit.",
+  "notes": [
+   [
+    "Smoother",
+    "Sheets glide up and down with a little gap at the top · no bounce or flash when you tap"
+   ],
+   [
+    "iPhone",
+    "First fit for the Home Screen app: the tab bar sits flush and the header is flat · Acura’s treat jar updates in place"
+   ]
+  ]
+ },
+ {
+  "name": "Update 3",
+  "id": "u3-2026-11",
+  "date": "2026-11-16",
+  "intro": "10 new recipes, an Us tab just for the two of us, Acura’s Kitchen, and a smoother app all round.",
+  "notes": [
+   [
+    "Smoother",
+    "Sheets slide down to close · swipe from the left edge to go back · pull down on Home to refresh · each tab remembers where you were · long-press a recipe for quick actions · updates install by themselves"
+   ],
+   [
+    "Home",
+    "Tonight’s plan with a start-cooking time · spin the wheel · your top 4 favourites as photo tiles · recently cooked · recipe of the week · leftover reminders"
+   ],
+   [
+    "Cooking",
+    "Count ingredients down in the pantry from a step · a “we’re out” button on every ingredient · two dishes timed to finish together · timer chimes · kitchen playlist · confetti the first time you make something"
+   ],
+   [
+    "Grocery",
+    "Sorted in No Frills aisle order · swipe to tick or delete · Shop together, with a running total and the list split between you"
+   ],
+   [
+    "Us",
+    "A new Us tab: cooking streak, badges, who cooked, rate it together, taste tests, who’s on dishes, dessert wish jar, date-night countdown, signature dish, nicknames, love stamps on photos, flashbacks and a year in review"
+   ],
+   [
+    "Acura",
+    "Acura’s Kitchen: 6 vet-safe homemade dog treats with bake mode, a treat jar with “good until” dates, a daily treat calculator and a safety guide"
+   ],
+   [
+    "New recipes",
+    "10 new dinners: teriyaki chicken bowls, orange chicken, beef lasagna, spaghetti & meatballs, shepherd’s pie, beef & broccoli, Philly cheesesteaks, garlic butter shrimp, chicken lo mein and beef stew"
+   ]
+  ]
+ },
+ {
+  "name": "Update 2",
+  "id": "u2-2026-11",
+  "date": "2026-11-16",
+  "intro": "Cooking help, a smarter grocery list with receipt scanning, ideas and our story.",
+  "notes": [
+   [
+    "Cooking",
+    "Amounts right inside each step · “Start cooking by” · hands-free mode · read-aloud · cook two dishes at once · candle-lit cook mode on Date Night recipes"
+   ],
+   [
+    "Grocery",
+    "Add a recipe (only what the pantry is missing) · duplicates merge · estimated trip total · scan a receipt to stock the pantry, tick the list, log the total and learn real prices"
+   ],
+   [
+    "Ideas",
+    "Mood picker · Use it up · Haven’t made in a while · London weather picks · whose turn to pick · search by ingredient like “chicken + rice” · a wish list"
+   ],
+   [
+    "Us",
+    "Our story timeline · monthly recap · milestones · who cooked it · reactions · love notes on recipes · Mom’s soup family story"
+   ],
+   [
+    "Kitchen",
+    "Swap ideas · reheat and make-ahead tips · gear list · cups/grams and °C/°F · guest mode · pantry use-by dates · freezer list · print a recipe · undo · snow until February · the budget no longer counts a dinner twice once a receipt is scanned"
+   ]
+  ]
+ },
+ {
+  "name": "Update 1",
+  "id": "u1",
+  "date": "2026-11-16",
+  "intro": "Our Kitchen opens.",
+  "notes": [
+   [
+    "Our Kitchen",
+    "Our own cookbook app that works offline on the Home Screen, starting with Mom’s Famous Potato Soup"
+   ],
+   [
+    "First recipes",
+    "10 more dinners across chicken, pasta, beef, steak, seafood, takeout at home and soup"
+   ]
+  ]
+ }
+] /* UPDATES:END */;
+const APP_UPDATE = UPDATES[0].name;
+const WHATSNEW_ID = UPDATES[0].id;
+const updDate = (d) => new Date(d + 'T12:00').toLocaleDateString('en-CA', { month: 'short', day: 'numeric', year: 'numeric' });
+const notesHTML = (u) => `<div class="wnlist">${u.notes.map(([h, t]) => `<div><h4>${esc(h)}</h4><p>${esc(t)}</p></div>`).join('')}</div>`;
 function whatsNewCard() {
   if (state.seenWhatsNew === WHATSNEW_ID) return '';
   return `<div class="wn"><div class="wn-k">NEW IN OUR KITCHEN<button class="x" id="wnX" aria-label="Dismiss">×</button></div>
-    <p>Basic, Classic and Fancy versions of every recipe, swipe to turn the page, a louder timer and a few small keepsakes — all tucked into the tabs you know. Everything you saved is still here.</p>
+    <p>${esc(UPDATES[0].intro)}</p>
     <div class="btnrow" style="margin-top:10px"><button class="btn sm ghost" id="wnMore">See what's new</button><button class="btn sm gold" id="wnOk">Got it ♥</button></div></div>`;
 }
 function openWhatsNew() {
-  openSheet(`<h2>What's new</h2><p class="sub">November 2026 · update 7 · everything you had saved stays exactly as it was.</p>
-    <div class="wnlist">${WHATSNEW.map(([h, t]) => `<div><h4>${esc(h)}</h4><p>${esc(t)}</p></div>`).join('')}</div>
-    <div class="foot"><button class="btn primary" data-close>Lovely</button></div>`);
+  const u = UPDATES[0];
+  openSheet(`<h2>What's new</h2><p class="sub">${esc(u.name)} · ${updDate(u.date)} · everything you had saved stays exactly as it was.</p>
+    ${notesHTML(u)}
+    <div class="foot"><button class="btn primary" data-close>Lovely</button></div>
+    <button class="linkbtn pastlink" id="wnPast">Past updates</button>`, (b) => { $('#wnPast', b).onclick = openPastUpdates; });
   if (state.seenWhatsNew !== WHATSNEW_ID) { state.seenWhatsNew = WHATSNEW_ID; save(); }
+}
+// every update as a one-line row (name + date) that opens in place on tap; the sheet swaps its content, no new layer
+function openPastUpdates() {
+  openSheet(`<h2>Past updates</h2><p class="sub">Every update to Our Kitchen, newest first. Tap one to read it.</p>
+    <div class="pastlist">${UPDATES.map((u) => `<details class="pu"><summary><b>${esc(u.name)}</b><span>${updDate(u.date)}</span><i aria-hidden="true">${svg('chevR')}</i></summary><p class="pu-in">${esc(u.intro)}</p>${notesHTML(u)}</details>`).join('')}</div>
+    <div class="foot"><button class="btn" id="puBack">Latest</button><button class="btn primary" data-close>Done</button></div>`, (b) => { $('#puBack', b).onclick = openWhatsNew; });
 }
 
 // ---------------------------------------------------------------- settings: sounds & extras
