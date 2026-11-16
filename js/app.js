@@ -164,19 +164,19 @@ const DEFAULT_STATE = () => ({
 });
 let state = load();
 function load() {
-  try {
-    const raw = JSON.parse(localStorage.getItem(STORE_KEY));
-    if (raw && raw.v === 1) {
-      const d = DEFAULT_STATE();
-      const st = { ...d, ...raw, settings: { ...d.settings, ...raw.settings }, profile: { ...d.profile, ...raw.profile } };
-      ['loveNotes', 'stories', 'freezer', 'wish', 'prices', 'guests', 'edits', 'versions', 'milestones', 'recapSeen', 'favBy', 'nicknames', 'dessertJar', 'tasteTests', 'dishes', 'flashSeen', 'annivSeen', 'plan', 'priceLog', 'noteMeta', 'places', 'thanks', 'dateMenus'].forEach((k) => { if (!st[k] || typeof st[k] !== 'object') st[k] = {}; });
-      if (!st.acura || typeof st.acura !== 'object') st.acura = d.acura;
-      ['favs', 'baked', 'notes', 'ratings', 'profile', 'given', 'photos'].forEach((k) => { if (!st.acura[k] || typeof st.acura[k] !== 'object') st.acura[k] = {}; });
-      if (!st.seededSoup) { st.favourites = { ...st.favourites, 'comfort-soups-01': st.favourites['comfort-soups-01'] || now() }; st.seededSoup = 1; }
-      return st;
-    }
-  } catch (e) { /* ignore */ }
-  return DEFAULT_STATE();
+  try { return migrate(JSON.parse(localStorage.getItem(STORE_KEY))) || DEFAULT_STATE(); } catch (e) { return DEFAULT_STATE(); }
+}
+// add-only migration, shared by app start and Restore: fills in collections an older save doesn't have yet and never
+// changes an existing value. Returns null when the object isn't an Our Kitchen state (version 1).
+function migrate(raw) {
+  if (!raw || raw.v !== 1) return null;
+  const d = DEFAULT_STATE();
+  const st = { ...d, ...raw, settings: { ...d.settings, ...raw.settings }, profile: { ...d.profile, ...raw.profile } };
+  ['loveNotes', 'stories', 'freezer', 'wish', 'prices', 'guests', 'edits', 'versions', 'milestones', 'recapSeen', 'favBy', 'nicknames', 'dessertJar', 'tasteTests', 'dishes', 'flashSeen', 'annivSeen', 'plan', 'priceLog', 'noteMeta', 'places', 'thanks', 'dateMenus'].forEach((k) => { if (!st[k] || typeof st[k] !== 'object') st[k] = {}; });
+  if (!st.acura || typeof st.acura !== 'object') st.acura = d.acura;
+  ['favs', 'baked', 'notes', 'ratings', 'profile', 'given', 'photos'].forEach((k) => { if (!st.acura[k] || typeof st.acura[k] !== 'object') st.acura[k] = {}; });
+  if (!st.seededSoup) { st.favourites = { ...st.favourites, 'comfort-soups-01': st.favourites['comfort-soups-01'] || now() }; st.seededSoup = 1; }
+  return st;
 }
 let saveTimer;
 function save() {
@@ -327,7 +327,9 @@ function applyTheme() {
   const dark = t === 'dark' || (t === 'auto' && mq.matches);
   document.documentElement.dataset.theme = dark ? 'dark' : 'light';
   document.documentElement.classList.toggle('big', !!state.settings.bigText);
-  const meta = $('meta[name="theme-color"]'); if (meta) meta.content = document.body && document.body.classList.contains('acura') ? (dark ? '#170D08' : '#4A2A1A') : dark ? '#060F26' : '#082048';
+  // status bar colour follows the header (both scheme-specific tags, since the app theme can differ from the phone's)
+  const bar = document.body && document.body.classList.contains('acura') ? (dark ? '#170D08' : '#4A2A1A') : dark ? '#060F26' : '#082048';
+  $$('meta[name="theme-color"]').forEach((m) => (m.content = bar));
 }
 mq.addEventListener ? mq.addEventListener('change', applyTheme) : mq.addListener(applyTheme);
 
@@ -955,13 +957,13 @@ function viewSettings() {
     </div>
     <div class="setgroup"><div class="sec-title">Backup</div>
       <p class="small muted">Everything is saved on this phone. Export a backup now and then (or to move to a new phone).${st.lastBackup ? ` Last backup: ${esc(new Date(st.lastBackup).toLocaleDateString('en-CA', { month: 'short', day: 'numeric', year: 'numeric' }))}.` : ''} A reminder shows on the home screen once a month.</p>
-      <div class="btnrow" style="margin-top:10px"><button class="btn ghost" id="exp">${svg('share')}Export</button><label class="btn ghost" style="cursor:pointer">${svg('reset')}Restore<input type="file" id="imp" accept="application/json,.json" hidden></label></div>
+      <div class="btnrow" style="margin-top:10px"><button class="btn ghost" id="exp">${svg('share')}Export</button><label class="btn ghost" style="cursor:pointer">${svg('reset')}Restore${RESTORE_INPUT}</label></div>
     </div>
     <div class="setgroup"><div class="sec-title">More</div>
       <div class="setrow"><span class="l"><b>What's new</b><span>The latest update, in one place</span></span><button class="btn sm ghost" id="showWN">Show</button></div>
       <div class="setrow"><span class="l"><b>Show the welcome screen</b></span><button class="btn sm ghost" id="showW">Show</button></div>
       <div class="setrow"><span class="l"><b>Reset everything</b><span>Favourites, pantry, list, budget, ticks — all of it</span></span><button class="btn sm danger" id="resetAll">Reset</button></div>
-      <p class="small muted" style="margin-top:14px">Our Kitchen · Corey ♥ Faith · ${INDEX.recipes.length} recipes · works offline. Shared sync between our phones is planned for later.</p>
+      <p class="small muted" style="margin-top:14px">Our Kitchen · ${APP_UPDATE} · Corey ♥ Faith · ${INDEX.recipes.length} recipes · works offline. Shared sync between our phones is planned for later.</p>
       <p class="small muted fitinfo">Screen ${FIT.w || ''}×${FIT.screen || ''} · view ${FIT.view || ''} · safe areas ${Math.round(FIT.sat || 0)}/${Math.round(FIT.sab || 0)} · ${FIT.sa ? 'home-screen app' : 'browser'}${FIT.strip ? ` · bottom strip ${FIT.strip}` : ''}</p>
     </div></div>`);
   $$('#themeSeg button').forEach((b) => (b.onclick = () => { st.theme = b.dataset.t; save(); applyTheme(); viewSettings(); }));
@@ -981,7 +983,7 @@ function viewSettings() {
   num('#bLo', 'budgetMin'); num('#bHi', 'budgetMax'); num('#tko', 'takeoutCost');
   $$('[data-unhide]').forEach((b) => (b.onclick = () => { delete state.hidden[b.dataset.unhide]; save(); viewSettings(); toast('Back in the book'); }));
   $('#exp').onclick = exportBackup;
-  $('#imp').onchange = (e) => importBackup(e.target.files[0]);
+  bindRestore($('#view'));
   $('#showW').onclick = showWelcome;
   $('#resetAll').onclick = () => confirmSheet('Reset everything?', 'This wipes favourites, pantry levels, the grocery list, the budget log and your own recipes on this phone. Export a backup first if you might want it back.', 'Reset everything', () => {
     const snap = JSON.stringify(state);
@@ -989,27 +991,51 @@ function viewSettings() {
     setTimeout(() => toast('Fresh start', 'Undo', () => { state = JSON.parse(snap); save(); applyTheme(); router(); toast('Everything is back ♥'); }), 300);
   }, true);
 }
+// Save a file: the iPhone share sheet ("Save to Files") when it can take files, else a normal download. Shares the
+// file only (no title/text, which iOS would save as a second file). Resolves false if the share was cancelled.
 function downloadFile(name, text) {
   const blob = new Blob([text], { type: 'application/json' });
   const file = typeof File === 'function' ? new File([blob], name, { type: 'application/json' }) : null;
-  if (file && navigator.canShare && navigator.canShare({ files: [file] })) { navigator.share({ files: [file], title: name }).catch(() => {}); return; }
+  if (file && navigator.canShare && navigator.canShare({ files: [file] })) return navigator.share({ files: [file] }).then(() => true, () => false);
   const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click();
   setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  return Promise.resolve(true);
 }
-function exportBackup() { state.settings.lastBackup = now(); state.settings.backupSnooze = null; save(); downloadFile(`our-kitchen-backup-${todayISO()}.json`, JSON.stringify({ app: 'our-kitchen', exportedAt: new Date().toISOString(), state }, null, 1)); }
+// Backup = the whole saved state (every collection, settings, who-is-this-phone, and all photos, which are stored
+// inside it as JPEG data) plus any other "ourkitchen.*" key on this phone, so a fresh install gets back everything.
+const BACKUP_KEY_PREFIX = 'ourkitchen.';
+function exportBackup() {
+  const st = state.settings; const before = { lastBackup: st.lastBackup, backupSnooze: st.backupSnooze };
+  st.lastBackup = now(); st.backupSnooze = null; save(); // the file records the backup date it was made on
+  const extra = {}; Object.keys(localStorage).forEach((k) => { if (k.startsWith(BACKUP_KEY_PREFIX) && k !== STORE_KEY) extra[k] = localStorage.getItem(k); });
+  downloadFile(`our-kitchen-backup-${todayISO()}.json`, JSON.stringify({ app: 'our-kitchen', exportedAt: new Date().toISOString(), state, extra }, null, 1))
+    .then((ok) => { if (ok) return; Object.assign(st, before); save(); }); // cancelled: no backup was saved
+}
+// file input for Restore (Settings and the welcome screen). iOS greys out files whose type it can't map, so the
+// accept list is broad; the content is checked when it is read.
+const RESTORE_INPUT = '<input type="file" class="restoreIn" accept="application/json,.json,text/plain,application/octet-stream" hidden>';
+function bindRestore(root) { $$('.restoreIn', root).forEach((i) => (i.onchange = () => { importBackup(i.files[0]); i.value = ''; })); }
 function importBackup(file) {
   if (!file) return;
   const rd = new FileReader();
   rd.onload = () => {
-    try {
-      const data = JSON.parse(rd.result); const s = data.state || data;
-      if (!s || s.v !== 1 || typeof s.settings !== 'object') throw new Error('bad');
-      confirmSheet('Restore this backup?', `From ${data.exportedAt ? new Date(data.exportedAt).toLocaleString('en-CA') : 'a backup file'}. It replaces what's on this phone now.`, 'Restore', () => {
-        const d = DEFAULT_STATE(); const snap = JSON.stringify(state); state = { ...d, ...s, settings: { ...d.settings, ...s.settings }, profile: { ...d.profile, ...(s.profile || {}) } }; save(); applyTheme(); go('#/'); router(); toast('Backup restored ♥', 'Undo', () => { state = JSON.parse(snap); save(); applyTheme(); router(); });
-      });
-    } catch (e) { toast("That file doesn't look like an Our Kitchen backup"); }
+    let data, st;
+    try { data = JSON.parse(rd.result); st = migrate(data.state || data); } catch (e) { st = null; }
+    if (!st || typeof st.settings !== 'object') { toast("That file doesn't look like an Our Kitchen backup"); return; }
+    confirmSheet('Restore this backup?', `From ${data.exportedAt ? new Date(data.exportedAt).toLocaleString('en-CA') : 'a backup file'}. It replaces what's on this phone now.`, 'Restore', () => restoreState(st, data.extra));
   };
+  rd.onerror = () => toast("Couldn't read that file");
   rd.readAsText(file);
+}
+// put a backup back exactly as it was saved (written as-is, without a new "updated" time), then show it
+function restoreState(st, extra) {
+  const snap = JSON.stringify(state);
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(st)); } catch (e) { toast('Not enough space on this phone to restore'); return; }
+  clearTimeout(saveTimer); state = st;
+  Object.entries(extra || {}).forEach(([k, v]) => { if (k.startsWith(BACKUP_KEY_PREFIX) && k !== STORE_KEY && typeof v === 'string') { try { localStorage.setItem(k, v); } catch (e) {} } });
+  $('#welcome').hidden = true; // restored from the welcome screen: the backup already knows whose phone this is
+  applyTheme(); applySeason(); updateBadge(); go('#/'); router();
+  toast('Backup restored ♥', 'Undo', () => { state = JSON.parse(snap); save(); applyTheme(); applySeason(); updateBadge(); router(); if (!state.settings.welcomed) showWelcome(); });
 }
 
 // ---------------------------------------------------------------- views: add your own recipe
@@ -2039,10 +2065,11 @@ function initSW() {
 }
 
 // ---------------------------------------------------------------- screen fit: iPhone home-screen app geometry
-// iOS 26+ with black-translucent: the page is drawn from the top of the screen but the viewport is sized as if it
-// started below the status bar, so it ends one status-bar height short of the bottom (the 'strip'). We detect the
-// strip and size the app shell so the tab bar ends where the home-indicator zone starts; the css block
-// "iPhone home-screen fit" explains the rest. Normal geometry (browser, fixed iOS versions) is left alone.
+// Two kinds of home-screen install. Old ones (black-translucent, until re-added): on iOS 26+ the page is drawn from
+// the top of the screen but the viewport ends one status bar short of the bottom (the 'strip'); detected by a top
+// safe area equal to that gap -> html.strip, the 6.1 layout. New ones (solid status bar, Update 8): the view starts
+// below the status bar and reaches the bottom edge (top safe area 0, bottom 34) -> html.solid. The css block
+// "iPhone home-screen fit" explains both. A browser tab gets neither.
 const FIT = {};
 function fitScreen() {
   const r = document.documentElement;
@@ -2057,6 +2084,8 @@ function fitScreen() {
   // one fixed layout, no switch (an old 'ourkitchen.fit' key from update 5 is simply ignored, never deleted).
   // The shell never grows into the strip: iOS draws and hit-tests nothing below the viewport there (see app.css).
   r.classList.toggle('sa', sa); r.classList.toggle('strip', strip > 0);
+  // solid status bar (installs from Update 8 on): the view reaches the bottom edge, with the home indicator inside it
+  r.classList.toggle('solid', sa && !strip && sab > 0);
   Object.assign(FIT, { sa, screen: sh, view: window.innerHeight, w: window.innerWidth, sat, sab, gap, strip });
 }
 fitScreen();
@@ -4009,6 +4038,8 @@ function recapCard(rc, dismiss) {
 }
 
 // ---------------------------------------------------------------- what's new (update 3)
+// shown at the foot of Settings so anyone can check which update a phone (or a Safari tab) is running; bump each update
+const APP_UPDATE = 'Update 8';
 const WHATSNEW_ID = 'u7-2026-11';
 const WHATSNEW = [
   ['Recipes & Ideas', 'Filters → “Ready to make now” shows only what the pantry covers · More ideas has Surprise me (pick time, budget and mood), Fridge clear (with Friday reminders on Home), In season (Ontario produce this month) and soup nudges on cold or rainy days'],
@@ -4101,8 +4132,10 @@ function showWelcome() {
         <p style="margin-top:10px;font-weight:600;color:#12102E">Whose phone is this?</p>
         <div class="who">${['Corey', 'Faith'].map((n) => `<button class="btn ${me === n ? 'on' : ''}" data-me="${n}">${n}</button>`).join('')}</div>
         <button class="btn block go" id="wGo">Let's cook ♥</button>
-        ${standalone ? '' : '<p style="font-size:.78rem;margin-top:10px;color:#5A4C6C">Tip: in Safari tap Share → “Add to Home Screen” to install it like an app.</p>'}</div>`;
+        ${standalone ? '' : '<p style="font-size:.78rem;margin-top:10px;color:#5A4C6C">Tip: in Safari tap Share → “Add to Home Screen” to install it like an app.</p>'}
+        <label class="wrestore">Have a backup? <u>Restore from backup</u>${RESTORE_INPUT}</label></div>`;
     $$('[data-me]', w).forEach((b) => (b.onclick = () => { me = b.dataset.me; draw(); }));
+    bindRestore(w);
     $('#wGo', w).onclick = () => { const fresh = !state.settings.welcomed && !Object.keys(state.cooked).length && !Object.keys(state.notes).length; state.profile.me = me; state.settings.welcomed = true; if (fresh) state.seenWhatsNew = WHATSNEW_ID; save(); w.hidden = true; router(); };
   };
   draw(); w.hidden = false;

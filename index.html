@@ -7,9 +7,14 @@
 <meta name="description" content="Corey ♥ Faith — recipes we love.">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- solid status bar (Update 8). black-translucent makes iOS 26 size the app one status bar short, leaving a dead strip
+     at the bottom; "default" puts the app below a solid status bar tinted with theme-color, reaching the bottom edge.
+     iOS reads this only when the icon is added: older installs keep black-translucent and the 6.1 strip layout. -->
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Our Kitchen">
-<meta name="theme-color" content="#082048">
+<!-- status bar colour = the header (navy); applyTheme() in app.js keeps both in step with the app's own theme -->
+<meta name="theme-color" content="#082048" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#060F26" media="(prefers-color-scheme: dark)">
 <meta name="format-detection" content="telephone=no">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -41,8 +46,12 @@
     var dark = t === 'dark' || (t === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
     document.documentElement.dataset.theme = dark ? 'dark' : 'light';
     if (s.bigText) document.documentElement.classList.add('big');
-    var gap = screen.height - innerHeight;
-    if (navigator.standalone && innerHeight > innerWidth && gap >= 20 && gap <= 70) document.documentElement.style.setProperty('--splash-strip', gap + 'px');
+    // the strip only exists with black-translucent (old installs), recognisable by a top safe area equal to the gap;
+    // with the solid status bar the top safe area is 0 and the splash simply fills the view
+    var gap = screen.height - innerHeight, pr = document.createElement('div');
+    pr.style.cssText = 'position:fixed;visibility:hidden;padding-top:env(safe-area-inset-top,0px)';
+    document.documentElement.appendChild(pr); var sat = parseFloat(getComputedStyle(pr).paddingTop) || 0; pr.remove();
+    if (navigator.standalone && innerHeight > innerWidth && sat >= 20 && Math.abs(gap - sat) <= 3) document.documentElement.style.setProperty('--splash-strip', gap + 'px');
   } catch (e) {}
 </script>
 <style>

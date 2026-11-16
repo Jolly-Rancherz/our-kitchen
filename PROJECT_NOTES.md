@@ -25,6 +25,7 @@ that every saved value survived (see `/workspace/cookbook/tools/preserve_*.mjs` 
 1. `python3 tools/build_index.py` rebuilds `recipes/index.json`, checks the dislike list, sets the $/$$/$$$ and
    time tags, and **bumps the SW version** (a hash of the files). Run it after ANY change, or phones keep the old copy.
 2. Test (saved-data preservation + iPhone emulation, including the 402×874 screen with an 812 viewport).
+   Bump `APP_UPDATE` in app.js (shown at the foot of Settings).
 3. `git commit` and `git push` to `main`. Pages deploys in about a minute; check that the live `sw.js` shows the new `VERSION`.
 4. Phones self-update (the new SW is applied on the next quiet moment, with an "Updated" toast). Closing and reopening the app helps.
 
@@ -34,7 +35,14 @@ that every saved value survived (see `/workspace/cookbook/tools/preserve_*.mjs` 
 - `localStorage["ourkitchen.weather"]`: cached London weather (safe to lose)
 - `localStorage["ourkitchen.fit"]`: left by Update 5's removed switch. Now ignored; never delete it
 - `sessionStorage["ok-scroll"]`, `["ok-updated"]`: transient (scroll restore and toast after a self-update)
-- Backups: Settings → Backup → Export/Restore (JSON of the state)
+- No IndexedDB and no other store: every photo (recipe photos, cooked-it photos, Acura's wall) is a JPEG data URL
+  inside `ourkitchen.v1`
+- Backups (Update 8 audit): Settings → Backup → Export writes `{ app, exportedAt, state, extra }`, where `state` is
+  `ourkitchen.v1` byte for byte and `extra` holds every other `ourkitchen.*` key. iPhone: share sheet (files only) →
+  Save to Files; elsewhere a download. Restore (Settings, or "Restore from backup" on the welcome screen of a fresh
+  install) runs the same add-only `migrate()` as app start, writes the state as-is (no new `updatedAt`), puts back the
+  `extra` keys and hides the welcome. Test: `tools/u8_backup.mjs` (4 MB of photos → export → empty profile → restore
+  → every key identical; `FROM=old7` exports with the Update 7 build)
 - Update 7 added (add-only) to the state: `plan` (week plan by date), `staples`, `priceLog` (last 12 receipt prices
   per item), `noteMeta` (who/when a recipe note was edited), `places`, `mystery`, `thanks`, `dateMenus`, `acura.photos`
   (640px JPEGs, max 30; all photos live in localStorage, so the phone's ~5MB limit applies)
@@ -56,7 +64,7 @@ A names setting, a welcome tour, a help page, an accessibility check, a tile red
 - Faith sync (data is per phone; the state shape is ready for it)
 - Recipes: 21 of the 101 planned are in; **80 still to add** in small batches (`app_src/batch*.py` pattern)
 
-## iOS 26 "strip" and the tab bar (final solution, Update 6.1)
+## iOS 26 "strip", the status bar and the tab bar (Update 6.1 + Update 8)
 On iOS 26.1+ with `apple-mobile-web-app-status-bar-style=black-translucent`, a home-screen app is drawn from the top
 of the screen, but the viewport is one status bar short (iPhone 16/17 Pro: screen 874pt, viewport 812, insets 62/34).
 WebKit fills the 62pt strip below with the **body** background colour. It does not draw page content there and does
@@ -71,8 +79,16 @@ exactly 812pt although the image continues.
   58pt bar (754–812pt), clear of the home-indicator gesture zone. The welcome card is edge to edge at the bottom and its
   cream continues into the strip. The gap from the labels to the home-indicator pill (~54pt) cannot be smaller
   without moving the icons into the dead zone. Settings shows a diagnostics line (screen, view, safe areas, strip).
-- A full fix would be to drop black-translucent, but changing that meta needs the home-screen icon re-added, which
-  wipes data unless you Export first and then Restore. Only do it if Corey says yes.
+- Update 8 (Corey said yes): `apple-mobile-web-app-status-bar-style` is now `default`. iOS reads it only when the icon
+  is added, so there are two kinds of install, told apart by `fitScreen()`:
+  - old install (black-translucent; Faith until she re-adds): top safe area 62 = the gap → `html.strip`, the exact
+    6.1 layout above (pixel-identical, checked with tools against the Update 7 build)
+  - new install: the view starts below a solid status bar (tinted by `theme-color`, which `applyTheme()` sets to the
+    header colour: navy, or brown on Acura's tab) and reaches the bottom edge; top safe area 0, bottom 34 →
+    `html.solid`: each tab runs to the bottom edge (all tappable), labels end ~11pt above the home-indicator pill
+  - launch images (`tools/u8_launch.mjs`) centre the wordmark under the status bar, where the splash sits now
+  - Emulation: `tools/u4_env.mjs` `mode: "solid"` (real `env()` insets via CDP `Emulation.setSafeAreaInsetsOverride`)
+- Re-adding the icon deletes that install's storage: always Export first, then Restore in the new install.
 
 ## Smoothness rules (Update 6)
 - `render()` never replays the screen-enter animation, keeps the scroll position, and keeps the tapped control under
@@ -107,3 +123,4 @@ exactly 812pt although the image continues.
 | 6 | see `git log` | Middle-ground tab bar fit (no switch), splash fit, no shake on taps, smooth search, wheel re-spin fix, notes |
 | 6.1 | see `git log` | Shell back inside the viewport (tabs fully tappable), bigger tab icons, edge-to-edge welcome card |
 | 7 | see `git log` | Week plan, staples, price memory, prep ahead, swaps, notes, places, mystery meal, thank-you jar, date-in menu, keepsake, secret rating, Acura search/share/photo wall, weather/Friday/season/surprise ideas, ready filter, badges |
+| 8 | see `git log` | Solid status bar for new installs (no strip; old installs keep 6.1), backup audit: Export/Restore complete and byte-identical, Restore from the welcome screen |

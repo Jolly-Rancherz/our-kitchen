@@ -1275,6 +1275,12 @@ html[data-theme="dark"] .pupres.yes .pv,html[data-theme="dark"] .pv.yes{color:#9
   body.printing-keepsake .ks-stamps i{background:#fff!important;border-color:#8C6A28!important}
 }
 
+/* ================================================================ update 8: restore from the welcome screen */
+#welcome .wrestore{display:block;margin-top:12px;text-align:center;font-size:.82rem;color:#5A4C6C;cursor:pointer}
+#welcome .wrestore u{color:#082048;font-weight:600;text-underline-offset:3px}
+/* the "Restore this backup?" sheet opens over the welcome screen */
+body:has(#welcome:not([hidden])) #sheetWrap{z-index:460}
+
 /* ================================================================ iPhone home-screen fit (one implementation, replaces the update 4/5 workarounds)
    iOS 26 standalone + black-translucent: the page is drawn from the top of the screen but WebKit sizes the viewport
    one status bar short (874pt screen, 812pt viewport on iPhone 16/17 Pro) and fills the strip below with the BODY
@@ -1299,3 +1305,8 @@ html.strip body:has(#cook.candle:not([hidden])){background:#1C0F1E}
 html.strip body:has(#welcome:not([hidden])){background:#F5E6CE}
 html.strip body:has(#splash){background:#F5E6CE}
 html[data-theme="dark"].strip body:has(#splash){background:#0B1734}
+/* solid status bar (installs from Update 8 on, html.solid): the view starts below the status bar and runs to the
+   bottom edge, so no strip. Each tab spans the whole bar down to the edge (all of it tappable) and its icon and label
+   sit at the foot, ending 10pt into the home-indicator area: about 11pt above the pill, like a native tab bar. */
+html.solid #tabbar{padding-bottom:0}
+html.solid #tabbar a{height:calc(var(--tabh) + var(--sab) - 10px);justify-content:flex-end;padding-bottom:calc(var(--sab) - 10px)}
