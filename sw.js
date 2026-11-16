@@ -1,6 +1,6 @@
 /* Our Kitchen service worker — offline support.
    VERSION and the PRECACHE list are rewritten by tools/build_index.py. */
-const VERSION = '7618062466';
+const VERSION = 'b472ffde9b';
 const CACHE = 'our-kitchen-' + VERSION;
 const VENDOR = 'ok-vendor-tesseract-5.1.1';
 const PRECACHE = /*PRECACHE*/[

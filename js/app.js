@@ -75,6 +75,8 @@ const todayISO = () => { const d = new Date(); return d.getFullYear() + '-' + pa
 const monthName = (key) => { const [y, m] = key.split('-').map(Number); return new Date(y, m - 1, 1).toLocaleDateString('en-CA', { month: 'long', year: 'numeric' }); };
 const shortDate = (iso) => { const [y, m, d] = iso.split('-').map(Number); return new Date(y, m - 1, d).toLocaleDateString('en-CA', { weekday: 'short', month: 'short', day: 'numeric' }); };
 const priceTier = (t) => (t < 20 ? '$' : t <= 30 ? '$$' : '$$$');
+// whole dollars that never contradict the tier ($30.40 shows as ~$31 next to $$$, $19.60 as ~$19 next to $)
+const tierDollars = (t) => { const d = Math.round(t); return t > 30 ? Math.max(31, d) : t < 20 ? Math.min(19, d) : d; };
 const timeBucket = (m) => (m <= 30 ? 'under-30' : m <= 45 ? '30-45' : 'up-to-60');
 const bannedIn = (text) => BANNED.filter(([rx]) => rx.test(text)).map(([, w]) => w);
 
@@ -4062,7 +4064,7 @@ function setLevel(id, k) { (ui.lv || (ui.lv = {}))[id] = k; if (k === 'classic')
 function levelBar(r, id, lv, treat) {
   if (!hasLevels(r)) return '';
   const sp = lv === 'classic' ? null : r.levels[lv]; const note = (state.levelNotes[id] || {})[lv];
-  return `<div class="lvwrap"><div class="lvbar" role="radiogroup" aria-label="Recipe level">${RLEVELS.map(([k, n]) => { const c = levelCost(r, k).total; return `<button role="radio" aria-checked="${k === lv}" data-lv="${k}" class="${k === lv ? 'on' : ''}"><b>${n}</b><span>${priceTier(c)} · ~${money(Math.round(c))}</span></button>`; }).join('')}</div>
+  return `<div class="lvwrap"><div class="lvbar" role="radiogroup" aria-label="Recipe level">${RLEVELS.map(([k, n]) => { const c = levelCost(r, k).total; return `<button role="radio" aria-checked="${k === lv}" data-lv="${k}" class="${k === lv ? 'on' : ''}"><b>${n}</b><span>${priceTier(c)} · ~${money(tierDollars(c))}</span></button>`; }).join('')}</div>
     <p class="lvnote">${esc(sp ? sp.note : treat ? 'The treat as written.' : 'The recipe as written.')}</p>
     <div class="lvacts">${treat ? '' : `<button class="linkbtn" id="lvGot">${svg('pantry')}Make it with what I've got</button>`}<button class="linkbtn" id="lvHow">${svg('edit')}How was ${LEVEL_NAME[lv]}?</button></div>
     ${note ? `<p class="lvhow">“${esc(note.text)}”${note.by ? ` <span>— ${esc(note.by)}, ${esc(shortDate(isoOf(new Date(note.at))))}</span>` : ''}</p>` : ''}</div>`;
