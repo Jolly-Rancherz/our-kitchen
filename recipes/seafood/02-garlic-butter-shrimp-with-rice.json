@@ -1,0 +1,389 @@
+{
+  "title": "Garlic Butter Shrimp with Rice",
+  "subtitle": "juicy seared shrimp in a lemony garlic butter sauce, spooned over buttery rice with roasted broccoli",
+  "image": "assets/img/garlic-butter-shrimp.webp",
+  "imageAlt": "Seared shrimp in golden garlic butter sauce over white rice with a lemon wedge",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 25,
+  "cost": {
+    "total": 24,
+    "breakdown": [
+      [
+        "Raw shrimp, peeled & deveined, 680 g bag (frozen)",
+        13.0,
+        "shrimp-raw-frozen"
+      ],
+      [
+        "Broccoli, 2 crowns",
+        4.0,
+        "broccoli"
+      ],
+      [
+        "Butter, 6 tbsp",
+        1.4,
+        "butter"
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.2,
+        "jasmine-rice"
+      ],
+      [
+        "Lemon, 1",
+        0.8,
+        "lemons"
+      ],
+      [
+        "Garlic, 8 cloves",
+        0.8,
+        "garlic"
+      ],
+      [
+        "Parmesan, ¼ cup",
+        0.8,
+        "parmesan-grated"
+      ],
+      [
+        "Oil, broth, spices",
+        1.2
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "oven-bake"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "date-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Ready in 40"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen shrimp: thaw in the fridge overnight, or in a sealed bag in cold water for 20–30 minutes. Pat very dry."
+    },
+    {
+      "icon": "rice",
+      "text": "Start the rice first."
+    },
+    {
+      "icon": "oven",
+      "text": "Heat the oven to 220°C (425°F) for the broccoli."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Shrimp",
+      "items": [
+        {
+          "qty": 680,
+          "unit": "g",
+          "name": "raw shrimp",
+          "note": "peeled & deveined, tails off, thawed (31–40 size)",
+          "pantry": {
+            "name": "Shrimp (raw, frozen)",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 56,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 6,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 80,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "lemon",
+          "note": "juice of ½, rest in wedges",
+          "pantry": {
+            "name": "Lemons",
+            "cat": "produce"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rice",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Roasted broccoli",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "crown",
+          "name": "broccoli",
+          "note": "florets (~550 g)",
+          "pantry": {
+            "name": "Broccoli",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "olive oil",
+          "pantry": {
+            "name": "Olive oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "metric": {
+            "qty": 25,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Garlic rice",
+      "text": "Melt the rice butter in a pot over medium and cook the 2 cloves of garlic 30 seconds. Add the rinsed rice, water and a pinch of salt; boil, cover and simmer on low 15 minutes, then rest 10 minutes with the lid on.",
+      "timer": 15,
+      "uses": [
+        "1-2",
+        "1-3",
+        "1-0",
+        "1-1"
+      ]
+    },
+    {
+      "title": "Roast the broccoli",
+      "text": "Toss the florets with olive oil and salt on a sheet pan. Roast at 220°C (425°F) 16–18 minutes until the edges are toasted, then toss with the Parmesan.",
+      "timer": 17,
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3"
+      ]
+    },
+    {
+      "title": "Season the shrimp",
+      "text": "Pat the shrimp very dry (wet shrimp steam instead of sear). Toss with salt, pepper, paprika and garlic powder.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Sear",
+      "text": "Heat the oil and 1 tbsp butter in a large skillet over medium-high. Add the shrimp in a single layer and cook 1–1½ minutes per side until pink and just opaque. Move to a plate — they finish in the sauce.",
+      "timer": 3,
+      "uses": [
+        "0-5",
+        "0-6=1 tbsp"
+      ]
+    },
+    {
+      "title": "Garlic butter sauce",
+      "text": "Turn the heat to medium-low. Add the remaining 3 tbsp butter and the garlic; cook 30–60 seconds until fragrant, not brown. Add the broth and lemon juice and simmer 1–2 minutes until slightly reduced.",
+      "timer": 2,
+      "uses": [
+        "0-6=3 tbsp",
+        "0-7",
+        "0-8",
+        "0-9"
+      ]
+    },
+    {
+      "title": "Toss and serve",
+      "text": "Return the shrimp and any juices, toss 30 seconds to coat and warm through. Spoon over the garlic rice with the broccoli and lemon wedges.",
+      "uses": []
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Shrimp are rubbery",
+      "fix": "They were overcooked — shrimp take 2–3 minutes total. Pull them as soon as they turn opaque and curl into a loose C (a tight O means overcooked)."
+    },
+    {
+      "problem": "Garlic tastes bitter",
+      "fix": "It browned. Lower the heat before adding garlic and keep it moving."
+    },
+    {
+      "problem": "Sauce is greasy",
+      "fix": "Simmer the broth and lemon a little longer so it emulsifies with the butter, and swirl the pan."
+    },
+    {
+      "problem": "Shrimp didn't brown",
+      "fix": "Pat them really dry and don't crowd the pan."
+    }
+  ],
+  "saleTip": "Bags of frozen raw shrimp (680 g) at No Frills often drop to about $10–12 on flyer weeks — buy two and keep one in the freezer for a fast date night.",
+  "swap": "Chicken thighs in bite-size pieces (cook to 74°C / 165°F), or scallops. Toss with spaghetti instead of rice for garlic butter shrimp pasta.",
+  "leftovers": "Fridge 2–3 days. Shrimp are best fresh — reheat gently.",
+  "doneness": "Shrimp: pink, opaque and firm, 70°C (158°F).",
+  "source": "Based on tested garlic butter shrimp methods (Damn Delicious, Cafe Delites): dry shrimp seared briefly, garlic butter-lemon pan sauce; seafood temp per Health Canada.",
+  "gear": [
+    "Large skillet",
+    "Medium pot with lid",
+    "Sheet pan",
+    "Tongs",
+    "Citrus squeezer (optional)"
+  ],
+  "prepAhead": [
+    "Thaw the shrimp in the fridge overnight.",
+    "Mince the garlic and cut the broccoli a day ahead."
+  ],
+  "reheat": "Low and gentle: covered in a skillet over low 2–3 minutes, or microwave at 50% power in 30-second bursts, just until hot (74°C / 165°F)."
+}

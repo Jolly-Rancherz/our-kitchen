@@ -1,0 +1,303 @@
+{
+  "title": "Philly Steak and Cheese Sandwiches",
+  "subtitle": "shaved seared steak, sweet soft onions and melty provolone piled into toasted garlic-butter rolls",
+  "image": "assets/img/philly-cheesesteak.webp",
+  "imageAlt": "Two toasted hoagie rolls filled with shaved steak, caramelized onions and melted provolone",
+  "servings": 4,
+  "servingsNote": "4 big sandwiches — dinner for two, plus 2 for lunch",
+  "prep": 20,
+  "cook": 20,
+  "cost": {
+    "total": 25,
+    "breakdown": [
+      [
+        "Sirloin steak, 700 g",
+        12.5,
+        "sirloin-steak"
+      ],
+      [
+        "Provolone slices, 8",
+        5.0,
+        "provolone-slices"
+      ],
+      [
+        "Hoagie / sub rolls, 4",
+        4.0,
+        "hoagie-rolls"
+      ],
+      [
+        "Yellow onions, 2",
+        1.0,
+        "yellow-onions"
+      ],
+      [
+        "Butter & garlic",
+        1.0,
+        "butter"
+      ],
+      [
+        "Worcestershire, oil, spices",
+        1.5
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [
+      "takeout-night",
+      "weeknight"
+    ],
+    "leftovers": []
+  },
+  "badges": [
+    "Not spicy",
+    "No peppers"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Freeze the steak 30–40 minutes so you can shave it paper-thin."
+    },
+    {
+      "icon": "knife",
+      "text": "Slice the steak as thin as you can, across the grain. No Frills sometimes sells 'fast-fry' or shaved steak — that works too."
+    },
+    {
+      "icon": "cheese",
+      "text": "Provolone is classic; mild white cheddar or mozzarella slices work too."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Steak & onions",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "sirloin steak",
+          "note": "shaved very thin",
+          "pantry": {
+            "name": "Sirloin steak",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "yellow onions",
+          "note": "thinly sliced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 8,
+          "unit": "slice",
+          "name": "provolone",
+          "pantry": {
+            "name": "Provolone slices",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rolls",
+      "items": [
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "hoagie or sub rolls",
+          "note": "split, not all the way through",
+          "pantry": {
+            "name": "Hoagie rolls",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "softened",
+          "metric": {
+            "qty": 42,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "finely grated",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "mayonnaise",
+          "note": "optional, for the rolls",
+          "pantry": {
+            "name": "Mayonnaise",
+            "cat": "sauces"
+          },
+          "optional": true
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Soften the onions",
+      "text": "Heat 1 tbsp oil and the butter in a large skillet over medium. Add the onions with a pinch of salt and cook, stirring now and then, 12–15 minutes until soft and golden. Tip into a bowl.",
+      "timer": 14,
+      "uses": [
+        "0-1=1 tbsp",
+        "0-3",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Toast the rolls",
+      "text": "Mix the softened butter with the garlic. Spread inside the rolls and toast cut side down in the hot pan (or under the broiler) 1–2 minutes until golden. Spread with mayo if using.",
+      "timer": 2,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Sear the steak",
+      "text": "Turn the heat to high and add the last 1 tbsp oil. Add the steak in a single layer (2 batches) and sear 1 minute without moving, then season with salt, pepper and garlic powder and chop/toss with a spatula 1–2 minutes until just cooked. Splash in the Worcestershire.",
+      "timer": 4,
+      "uses": [
+        "0-1=1 tbsp",
+        "0-0",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Melt the cheese",
+      "text": "Return the onions and mix. Divide into 4 long piles in the pan, lay 2 slices of provolone over each and cover for 1 minute to melt.",
+      "timer": 1,
+      "uses": [
+        "0-8"
+      ]
+    },
+    {
+      "title": "Fill and serve",
+      "text": "Slide a spatula under each pile and flip it into a toasted roll. Serve right away.",
+      "uses": []
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Steak is chewy",
+      "fix": "Slice thinner (partially frozen) and across the grain, and cook fast over high heat — overcooking makes it tough."
+    },
+    {
+      "problem": "Steak went grey and watery",
+      "fix": "Pan was crowded or not hot enough. Cook in two batches."
+    },
+    {
+      "problem": "Roll got soggy",
+      "fix": "Toast the roll well with the garlic butter first — it's a barrier."
+    },
+    {
+      "problem": "Onions burned",
+      "fix": "Keep them at medium and add a splash of water if they colour too fast."
+    }
+  ],
+  "saleTip": "Look for sirloin 'fast-fry' or value-pack steak on the No Frills flyer, and No Name provolone slices. Day-old sub rolls are fine once toasted.",
+  "swap": "Chicken breast, sliced thin (cook to 74°C / 165°F) for chicken cheesesteaks. Swap provolone for Cheez Whiz-style sauce for the Philly-authentic version.",
+  "leftovers": "Store the filling separately from the rolls, fridge 3 days.",
+  "doneness": "Shaved steak cooks through in 2–3 minutes; steak is safe at 63°C (145°F)+.",
+  "source": "Based on tested Philly cheesesteak methods (Serious Eats, Food Network Kitchen): partially frozen shaved steak, high-heat sear, cheese melted over the meat in the pan, toasted rolls.",
+  "gear": [
+    "Large skillet or griddle with a lid",
+    "Sharp knife",
+    "Sturdy spatula",
+    "Small bowl (garlic butter)"
+  ],
+  "prepAhead": [
+    "Cook the onions up to 3 days ahead.",
+    "Slice the steak a day ahead and keep covered in the fridge."
+  ],
+  "reheat": "Reheat the filling in a skillet over medium 3–4 min until steaming, add fresh cheese to melt, and toast a fresh roll."
+}

@@ -1,0 +1,351 @@
+{
+  "title": "Beef and Broccoli",
+  "subtitle": "tender velveted beef and crisp broccoli in a glossy garlic-soy sauce — faster than delivery",
+  "image": "assets/img/beef-and-broccoli.webp",
+  "imageAlt": "Sliced beef and broccoli in a glossy brown sauce beside white rice",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 20,
+  "cost": {
+    "total": 22,
+    "breakdown": [
+      [
+        "Sirloin or flank steak, 700 g",
+        12.5,
+        "sirloin-steak"
+      ],
+      [
+        "Broccoli, 2 crowns",
+        4.0,
+        "broccoli"
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.2,
+        "jasmine-rice"
+      ],
+      [
+        "Oyster sauce, ¼ cup",
+        1.0,
+        "oyster-sauce"
+      ],
+      [
+        "Soy sauce & brown sugar",
+        1.2,
+        "soy-sauce"
+      ],
+      [
+        "Garlic, ginger, cornstarch, baking soda",
+        1.1
+      ],
+      [
+        "Oil & sesame oil",
+        1.0
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "takeout-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Takeout copycat"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Put the steak in the freezer for 20–30 minutes — firm beef slices thin much more easily."
+    },
+    {
+      "icon": "rice",
+      "text": "Start the rice first."
+    },
+    {
+      "icon": "knife",
+      "text": "Slice the beef across the grain (look for the lines in the meat and cut across them) for tender bites."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Beef",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "sirloin or flank steak",
+          "note": "sliced thin across the grain",
+          "pantry": {
+            "name": "Sirloin steak",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "cornstarch",
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "baking soda",
+          "note": "makes it takeout-tender",
+          "pantry": {
+            "name": "Baking soda",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sauce",
+      "items": [
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "oyster sauce",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Oyster sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "packed brown sugar",
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sesame oil",
+          "pantry": {
+            "name": "Sesame oil",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground ginger",
+          "pantry": {
+            "name": "Ground ginger",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "cornstarch",
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Broccoli & rice",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "crown",
+          "name": "broccoli",
+          "note": "florets (~550 g)",
+          "pantry": {
+            "name": "Broccoli",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "2-1",
+        "2-2"
+      ]
+    },
+    {
+      "title": "Velvet the beef",
+      "text": "Toss the sliced beef with 1 tbsp soy sauce, 1 tbsp cornstarch and the baking soda. Let it sit 15 minutes while you prep — this is the takeout trick for silky, tender beef.",
+      "timer": 15,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Mix the sauce",
+      "text": "Whisk the oyster sauce, soy sauce, brown sugar, water, sesame oil, garlic, ginger and cornstarch in a jug.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6",
+        "1-7"
+      ]
+    },
+    {
+      "title": "Steam-fry the broccoli",
+      "text": "Heat 1 tbsp oil in a large skillet or wok over high. Add the broccoli and ¼ cup water, cover and cook 2–3 minutes until bright green and tender-crisp. Tip out onto a plate.",
+      "timer": 3,
+      "uses": [
+        "2-0",
+        "0-4=1 tbsp"
+      ]
+    },
+    {
+      "title": "Sear the beef",
+      "text": "Add the last 1 tbsp oil to the hot pan. Spread the beef out in a single layer (2 batches if needed) and sear 1–2 minutes per side until browned. Don't stir it constantly — let it colour.",
+      "timer": 4,
+      "uses": [
+        "0-4=1 tbsp"
+      ]
+    },
+    {
+      "title": "Sauce it",
+      "text": "Return all the beef and broccoli, give the sauce a stir and pour it in. Toss 1–2 minutes until it bubbles, thickens and turns glossy. Serve over the rice.",
+      "uses": []
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Beef is chewy",
+      "fix": "Slice thinner and across the grain, and don't skip the baking soda step. Sear fast over high heat."
+    },
+    {
+      "problem": "Sauce too thick",
+      "fix": "Add water 1 tbsp at a time."
+    },
+    {
+      "problem": "Beef stewed grey instead of browning",
+      "fix": "The pan was crowded. Sear in two batches over high heat."
+    },
+    {
+      "problem": "Broccoli is soggy",
+      "fix": "Cook it first and briefly, then add back only at the end."
+    }
+  ],
+  "saleTip": "Sirloin 'value pack' steaks at No Frills are often ~$15–17/kg on sale and slice perfectly for stir-fry. Broccoli crowns are frequently 2 for $4–5.",
+  "swap": "Chicken thighs, thinly sliced (cook to 74°C / 165°F). Add carrots or snow-pea-free stir-fry veg if you want more veg.",
+  "leftovers": "Fridge 3 days. Great for lunch over rice.",
+  "doneness": "Thin-sliced beef cooks through in minutes; seared slices are safe at 63°C (145°F)+.",
+  "source": "Based on tested beef and broccoli methods (The Woks of Life velveting with baking soda + cornstarch, RecipeTin Eats sauce ratios).",
+  "gear": [
+    "Large skillet or wok with a lid",
+    "Medium pot with lid (rice)",
+    "Sharp knife",
+    "Whisk",
+    "Tongs or spatula"
+  ],
+  "prepAhead": [
+    "Slice and velvet the beef up to 12 hours ahead; keep covered in the fridge.",
+    "Mix the sauce up to 3 days ahead."
+  ],
+  "reheat": "Microwave covered 2 minutes, stirring halfway, until steaming hot (74°C / 165°F). Add a splash of water if the sauce has tightened."
+}

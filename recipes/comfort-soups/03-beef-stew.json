@@ -1,0 +1,358 @@
+{
+  "title": "Beef Stew",
+  "subtitle": "fall-apart beef, potatoes and carrots in a thick, savoury gravy — slow Sunday comfort",
+  "image": "assets/img/beef-stew.webp",
+  "imageAlt": "Hearty beef stew with potatoes and carrots in a thick gravy, with crusty bread",
+  "servings": 6,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 3–4 lunches",
+  "prep": 30,
+  "cook": 150,
+  "cost": {
+    "total": 30,
+    "breakdown": [
+      [
+        "Stewing beef (chuck), 1.2 kg",
+        19.0,
+        "stewing-beef"
+      ],
+      [
+        "Yukon Gold potatoes, 900 g",
+        2.5,
+        "yukon-gold-potatoes"
+      ],
+      [
+        "Carrots, 4",
+        1.2,
+        "carrots"
+      ],
+      [
+        "Beef broth, 900 ml",
+        2.5,
+        "beef-broth"
+      ],
+      [
+        "Yellow onions, 2",
+        1.0,
+        "yellow-onions"
+      ],
+      [
+        "Tomato paste, flour, Worcestershire",
+        1.8
+      ],
+      [
+        "Garlic, thyme, bay leaves, oil",
+        2.0
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "one-pan",
+      "stovetop",
+      "oven-bake"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Freezer-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen beef? Thaw in the fridge overnight (24 h)."
+    },
+    {
+      "icon": "pot",
+      "text": "Use your heaviest pot (Dutch oven) — it browns better and won't scorch."
+    },
+    {
+      "icon": "oven",
+      "text": "Oven option: heat to 160°C (325°F) and braise covered in the oven instead of the stovetop."
+    },
+    {
+      "icon": "knife",
+      "text": "It's mostly hands-off: about 2½ hours of gentle simmering."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Beef",
+      "items": [
+        {
+          "qty": 1.2,
+          "unit": "kg",
+          "name": "stewing beef (chuck)",
+          "note": "4 cm cubes, patted dry",
+          "pantry": {
+            "name": "Stewing beef",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 30,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stew",
+      "items": [
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "yellow onions",
+          "note": "diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "tomato paste",
+          "pantry": {
+            "name": "Tomato paste",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "cup",
+          "name": "beef broth",
+          "note": "low-sodium",
+          "metric": {
+            "qty": 1,
+            "unit": "L"
+          },
+          "pantry": {
+            "name": "Beef broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "bay leaves",
+          "note": "removed before serving",
+          "pantry": {
+            "name": "Bay leaves",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "granulated sugar",
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "Yukon Gold potatoes",
+          "note": "3 cm chunks",
+          "pantry": {
+            "name": "Yukon Gold potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "carrots",
+          "note": "peeled, 2 cm chunks",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To serve",
+      "items": [
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "crusty loaf",
+          "pantry": {
+            "name": "Crusty bread",
+            "cat": "grains"
+          },
+          "optional": true
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Season and flour",
+      "text": "Pat the beef very dry, season with salt and pepper, and toss with the flour until lightly coated.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Brown in batches",
+      "text": "Heat 2 tbsp oil in a Dutch oven over medium-high. Brown the beef in 2–3 batches, 3–4 minutes per side, until deeply browned (don't crowd it or it steams). Move to a plate.",
+      "timer": 12,
+      "uses": [
+        "0-4=2 tbsp"
+      ]
+    },
+    {
+      "title": "Onions and paste",
+      "text": "Lower to medium, add the last 1 tbsp oil and the onions; cook 5 minutes, scraping up the brown bits. Stir in the garlic and tomato paste and cook 2 minutes until the paste darkens.",
+      "timer": 7,
+      "uses": [
+        "0-4=1 tbsp",
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Simmer low and slow",
+      "text": "Pour in the broth, scraping the bottom, then add the Worcestershire, thyme, bay leaves, sugar and the beef with its juices. Bring to a boil, then cover and simmer on low (or in a 160°C / 325°F oven) 1½ hours, stirring now and then.",
+      "timer": 90,
+      "uses": [
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6",
+        "1-7"
+      ]
+    },
+    {
+      "title": "Add the veg",
+      "text": "Add the potatoes and carrots, pushing them under the liquid. Cover and simmer 45–60 minutes more until the beef is fork-tender and the vegetables are soft.",
+      "timer": 50,
+      "uses": [
+        "1-8",
+        "1-9"
+      ]
+    },
+    {
+      "title": "Thicken and season",
+      "text": "Take out the bay leaves. If you want it thicker, simmer uncovered 10 minutes or mash a few potato pieces into the gravy. Taste and add salt and pepper until it's well seasoned. Serve with crusty bread.",
+      "uses": [
+        "2-0"
+      ]
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Beef is tough",
+      "fix": "It needs more time, not less — chuck turns tender after about 2–2½ hours at a gentle simmer. Keep going in 15-minute stretches."
+    },
+    {
+      "problem": "Gravy is thin",
+      "fix": "Simmer uncovered 10–15 minutes, or stir in 1 tbsp cornstarch mixed with 2 tbsp cold water and bubble 1 minute."
+    },
+    {
+      "problem": "Tastes flat",
+      "fix": "Salt is usually the answer; a splash more Worcestershire adds depth."
+    },
+    {
+      "problem": "Potatoes falling apart",
+      "fix": "Yukon Golds hold their shape better than russets; add them for the last 45 minutes only."
+    }
+  ],
+  "saleTip": "Stewing beef is often ~$15–17/kg on sale at No Frills; a whole chuck roast you cube yourself is sometimes cheaper per kilo.",
+  "swap": "Add a cup of frozen peas & carrots at the end if you like peas. Slow cooker: brown everything first, then cook on low 8 hours with the veg added at the start.",
+  "leftovers": "Fridge 4 days — it tastes even better on day two. Freeze up to 3 months (potatoes soften slightly).",
+  "doneness": "Beef is done when fork-tender (well past 71°C / 160°F). Reheat leftovers to 74°C (165°F).",
+  "source": "Based on tested beef stew methods (Once Upon a Chef, Simply Recipes): floured, batch-browned chuck braised in broth with tomato paste and Worcestershire, vegetables added partway.",
+  "gear": [
+    "Dutch oven or heavy pot with lid (5–6 L)",
+    "Tongs",
+    "Wooden spoon",
+    "Ladle",
+    "Cutting board & knife"
+  ],
+  "prepAhead": [
+    "Make the whole stew a day ahead — it thickens and the flavour deepens overnight.",
+    "Cube the beef and chop the vegetables up to 1 day ahead."
+  ],
+  "reheat": "Stovetop over medium-low, covered, stirring now and then, with a splash of broth or water, until steaming (74°C / 165°F). Microwave 2–3 min per bowl, stirring halfway."
+}

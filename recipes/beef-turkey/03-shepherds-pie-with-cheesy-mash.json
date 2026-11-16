@@ -1,0 +1,410 @@
+{
+  "title": "Shepherd's Pie with Cheesy Mash",
+  "subtitle": "savoury beef, carrot & corn filling in a rich gravy, under a golden cheddar mashed-potato lid",
+  "image": "assets/img/shepherds-pie.webp",
+  "imageAlt": "Shepherd's pie with a browned cheddar mashed potato top and a scoop showing beef, carrot and corn filling",
+  "servings": 6,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 3–4 lunches",
+  "prep": 30,
+  "cook": 50,
+  "cost": {
+    "total": 27,
+    "breakdown": [
+      [
+        "Lean ground beef, 900 g",
+        12.0,
+        "ground-beef-lean"
+      ],
+      [
+        "Yukon Gold potatoes, 1.4 kg",
+        4.0,
+        "yukon-gold-potatoes"
+      ],
+      [
+        "Old cheddar, 1½ cups",
+        3.5,
+        "cheddar-shredded"
+      ],
+      [
+        "Frozen corn, 1 cup",
+        1.0,
+        "frozen-corn"
+      ],
+      [
+        "Beef broth, 1 cup",
+        1.0,
+        "beef-broth"
+      ],
+      [
+        "Butter & milk",
+        1.6,
+        "butter"
+      ],
+      [
+        "Carrots, onion, garlic, tomato paste",
+        2.0
+      ],
+      [
+        "Worcestershire, flour & spices",
+        1.9
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "stovetop"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Extra cheesy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen beef? Thaw in the fridge overnight."
+    },
+    {
+      "icon": "oven",
+      "text": "Heat the oven to 200°C (400°F). Use a 9×13 in or 3 L baking dish."
+    },
+    {
+      "icon": "pot",
+      "text": "Get the potatoes boiling first — they take the longest."
+    },
+    {
+      "icon": "knife",
+      "text": "Strictly speaking, beef makes this a 'cottage pie' — in Canada most people call it shepherd's pie either way."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Cheesy mash",
+      "items": [
+        {
+          "qty": 1.4,
+          "unit": "kg",
+          "name": "Yukon Gold potatoes",
+          "note": "peeled, 4 cm chunks",
+          "pantry": {
+            "name": "Yukon Gold potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 56,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "milk",
+          "note": "warm",
+          "metric": {
+            "qty": 180,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "note": "divided",
+          "metric": {
+            "qty": 150,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Beef filling",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "carrots",
+          "note": "peeled, small dice",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "tomato paste",
+          "pantry": {
+            "name": "Tomato paste",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "beef broth",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Beef broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "frozen corn",
+          "metric": {
+            "qty": 140,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Frozen corn",
+            "cat": "frozen"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Boil the potatoes",
+      "text": "Cover the potatoes with cold water in a big pot, add the salt and bring to a boil. Simmer 15–18 minutes until a knife slides in with no resistance.",
+      "timer": 17,
+      "uses": [
+        "0-0",
+        "0-1"
+      ]
+    },
+    {
+      "title": "Brown the beef",
+      "text": "Meanwhile heat the oil in a large oven-safe skillet or pot over medium-high. Cook the beef, breaking it up, 7–8 minutes until browned with no pink (71°C / 160°F). Drain off extra fat.",
+      "timer": 8,
+      "uses": [
+        "1-0",
+        "1-1"
+      ]
+    },
+    {
+      "title": "Soften the veg",
+      "text": "Add the onion and carrots and cook 5 minutes until softened. Stir in the garlic and tomato paste for 1 minute, then sprinkle over the flour and stir 1 minute more.",
+      "timer": 7,
+      "uses": [
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6"
+      ]
+    },
+    {
+      "title": "Make the gravy",
+      "text": "Stir in the broth, Worcestershire, thyme, salt and pepper. Simmer 5 minutes until thick and glossy, then stir in the frozen corn. Taste and adjust the salt. Spread into the baking dish (or leave it in an oven-safe skillet).",
+      "timer": 5,
+      "uses": [
+        "1-7",
+        "1-8",
+        "1-9",
+        "1-10",
+        "1-11",
+        "1-12"
+      ]
+    },
+    {
+      "title": "Mash with cheese",
+      "text": "Drain the potatoes well and let them steam dry 1 minute. Mash with the butter, warm milk, 1 cup of the cheddar, garlic powder and salt until smooth and fluffy.",
+      "uses": [
+        "0-2",
+        "0-3",
+        "0-4=1 cup",
+        "0-5",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Top and bake",
+      "text": "Spoon the mash over the filling, starting at the edges to seal it, and rough up the top with a fork (the ridges get crispy). Scatter the last ½ cup cheddar on top. Bake at 200°C (400°F) 20–25 minutes until bubbling at the edges and golden. Rest 10 minutes before serving.",
+      "timer": 22,
+      "uses": [
+        "0-4=½ cup"
+      ]
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Filling is runny",
+      "fix": "Simmer the gravy a few minutes longer before topping, and rest the pie 10 minutes after baking."
+    },
+    {
+      "problem": "Mash sank into the filling",
+      "fix": "Let the filling cool for 5 minutes and spoon the mash on in dollops from the edges in, rather than dumping it in the middle."
+    },
+    {
+      "problem": "Top isn't golden",
+      "fix": "Broil 2–3 minutes at the end — watch it closely."
+    },
+    {
+      "problem": "Gluey mash",
+      "fix": "Don't use a blender or overwork the potatoes; mash by hand while hot."
+    }
+  ],
+  "saleTip": "A 4.54 kg (10 lb) bag of potatoes at No Frills is often under $5 in fall — far cheaper per kilo than the small bags.",
+  "swap": "Ground turkey or lamb (lamb makes it a true shepherd's pie). Swap corn for frozen peas & carrots if you like them.",
+  "leftovers": "Fridge 4 days. Freezes well (whole or portions) for up to 3 months.",
+  "doneness": "Ground beef: 71°C (160°F). Reheated portions: 74°C (165°F).",
+  "source": "Based on tested cottage/shepherd's pie methods (RecipeTin Eats, Allrecipes): browned beef in a broth-and-tomato-paste gravy, thick mashed potato top baked at 200°C.",
+  "gear": [
+    "Large oven-safe skillet or pot",
+    "9×13 in or 3 L baking dish",
+    "Big pot for potatoes",
+    "Potato masher",
+    "Fork (for the ridges)"
+  ],
+  "prepAhead": [
+    "Make the filling up to 2 days ahead and refrigerate.",
+    "Assemble the whole pie a day ahead; bake from cold 35–40 minutes.",
+    "Freeze assembled (unbaked) up to 3 months; thaw overnight in the fridge before baking."
+  ],
+  "reheat": "Microwave a portion covered 2–3 minutes until 74°C (165°F), or oven 180°C (350°F) covered 20 min (uncover the last 5)."
+}

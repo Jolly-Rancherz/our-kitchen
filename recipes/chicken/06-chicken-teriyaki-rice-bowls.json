@@ -1,0 +1,399 @@
+{
+  "title": "Chicken Teriyaki Rice Bowls",
+  "subtitle": "seared chicken thighs in a glossy homemade teriyaki, over jasmine rice with broccoli & carrots",
+  "image": "assets/img/chicken-teriyaki-bowl.webp",
+  "imageAlt": "Sliced glossy teriyaki chicken over white rice with broccoli and carrots in a cream bowl",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 30,
+  "cost": {
+    "total": 26,
+    "breakdown": [
+      [
+        "Boneless skinless chicken thighs, 1 kg",
+        17.0,
+        "chicken-thighs-boneless"
+      ],
+      [
+        "Broccoli, 2 crowns",
+        4.0,
+        "broccoli"
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.2,
+        "jasmine-rice"
+      ],
+      [
+        "Soy sauce, ½ cup",
+        0.9,
+        "soy-sauce"
+      ],
+      [
+        "Honey + brown sugar",
+        1.3,
+        "honey"
+      ],
+      [
+        "Carrots, 2",
+        0.6,
+        "carrots"
+      ],
+      [
+        "Rice vinegar, garlic, ginger, cornstarch, oil, sesame seeds",
+        1.0
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "weeknight",
+      "takeout-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Meal-prep bowls"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen thighs? Thaw in the fridge overnight (about 24 h for 1 kg)."
+    },
+    {
+      "icon": "rice",
+      "text": "Start the rice first — it needs 15 minutes plus a 10 minute rest."
+    },
+    {
+      "icon": "knife",
+      "text": "Whisk the teriyaki sauce before you start cooking; the pan part goes fast."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "kg",
+          "name": "boneless skinless chicken thighs",
+          "note": "trimmed, left whole",
+          "pantry": {
+            "name": "Chicken thighs (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Teriyaki sauce",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 80,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "honey",
+          "pantry": {
+            "name": "Honey",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "packed brown sugar",
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "rice vinegar",
+          "pantry": {
+            "name": "Rice vinegar",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground ginger",
+          "pantry": {
+            "name": "Ground ginger",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "cornstarch",
+          "note": "mixed with 2 tbsp cold water",
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bowls",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "crown",
+          "name": "broccoli",
+          "note": "cut into florets (~550 g)",
+          "pantry": {
+            "name": "Broccoli",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "carrots",
+          "note": "peeled, sliced into coins",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "for the veg",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "toasted sesame seeds",
+          "pantry": {
+            "name": "Sesame seeds",
+            "cat": "spices"
+          },
+          "optional": true
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Mix the teriyaki",
+      "text": "In a jug, whisk the soy sauce, water, honey, brown sugar, rice vinegar, garlic and ginger. Keep the cornstarch slurry separate.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6"
+      ]
+    },
+    {
+      "title": "Steam the veg",
+      "text": "Put the broccoli and carrots in a pot with 2 cm of water, cover and steam over medium-high 4–5 minutes until tender-crisp. Drain and toss with the butter and a pinch of salt.",
+      "timer": 5,
+      "uses": [
+        "2-2",
+        "2-3",
+        "2-4",
+        "2-5"
+      ]
+    },
+    {
+      "title": "Sear the chicken",
+      "text": "Pat the thighs dry and season with salt, pepper and garlic powder. Heat the oil in a large skillet over medium-high. Sear smooth side down 5–6 minutes until deep golden, flip and cook 4–5 minutes more, until 74°C (165°F) inside.",
+      "timer": 11,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Glaze",
+      "text": "Lower the heat to medium. Pour the sauce around the chicken and simmer 2 minutes, then stir in the cornstarch slurry and simmer 1 minute more, turning the chicken, until the sauce is glossy and coats a spoon.",
+      "timer": 3,
+      "uses": [
+        "1-7"
+      ]
+    },
+    {
+      "title": "Slice and build the bowls",
+      "text": "Rest the chicken 3 minutes, then slice. Fill bowls with rice, veg and chicken, spoon over extra sauce from the pan and sprinkle with sesame seeds.",
+      "uses": [
+        "2-6"
+      ]
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Sauce is too thin",
+      "fix": "Simmer 1–2 minutes longer — it thickens as it bubbles and again as it cools."
+    },
+    {
+      "problem": "Sauce burned or went sticky",
+      "fix": "Heat was too high once the sugar went in. Add 2–3 tbsp water off the heat and stir to loosen."
+    },
+    {
+      "problem": "Too salty",
+      "fix": "Use low-sodium soy next time; for now add a splash of water and a little more honey."
+    },
+    {
+      "problem": "Chicken pale, not golden",
+      "fix": "Pan wasn't hot enough or the chicken was wet. Pat dry, and don't move it for the first 5 minutes."
+    }
+  ],
+  "saleTip": "Boneless thighs drop to about $9–11/kg in No Frills club-pack flyer weeks — buy 2 kg and freeze half in a flat bag.",
+  "swap": "Chicken breast works (sear 4–5 min a side to 74°C / 165°F). Salmon also loves this sauce — 4 fillets, 4 min a side.",
+  "leftovers": "Pack in containers with the sauce: rice, veg, chicken. Fridge 3–4 days.",
+  "doneness": "Chicken: 74°C (165°F) in the thickest part.",
+  "source": "Based on tested homemade teriyaki methods (RecipeTin Eats, Just One Cookbook): soy + sweetener + vinegar reduced with a cornstarch slurry; safe temp per Health Canada.",
+  "gear": [
+    "Large skillet with a lid",
+    "Medium pot with lid (rice)",
+    "Pot for steaming the veg",
+    "Whisk or fork",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Mix the teriyaki sauce (without the slurry) up to 5 days ahead; keep in a jar in the fridge.",
+    "Cut the broccoli and slice the carrots a day ahead.",
+    "Cook the rice the day before for meal-prep bowls."
+  ],
+  "reheat": "Microwave the bowl covered with a splash of water, 2–3 minutes, stirring halfway, until steaming (74°C / 165°F)."
+}

@@ -1,0 +1,386 @@
+{
+  "title": "Orange Chicken",
+  "subtitle": "crispy air-fried chicken in a sticky, sweet orange sauce — the takeout classic, not spicy",
+  "image": "assets/img/orange-chicken.webp",
+  "imageAlt": "Crispy chicken pieces in glossy orange sauce beside white rice with a twist of orange peel",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 25,
+  "cook": 25,
+  "cost": {
+    "total": 23,
+    "breakdown": [
+      [
+        "Boneless skinless chicken breasts, 900 g",
+        12.0,
+        "chicken-breasts-boneless"
+      ],
+      [
+        "Navel oranges, 2 (zest + juice)",
+        2.0,
+        "oranges"
+      ],
+      [
+        "Orange juice, 1 cup",
+        1.0,
+        "orange-juice"
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.2,
+        "jasmine-rice"
+      ],
+      [
+        "Eggs, 2",
+        0.8,
+        "eggs"
+      ],
+      [
+        "Cornstarch & flour",
+        1.2,
+        "cornstarch"
+      ],
+      [
+        "Brown sugar, soy, rice vinegar, garlic, ginger",
+        2.0
+      ],
+      [
+        "Oil",
+        1.3
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "air-fryer",
+      "stovetop"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "takeout-night",
+      "date-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Air fryer"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen chicken? Thaw in the fridge overnight."
+    },
+    {
+      "icon": "rice",
+      "text": "Start the rice before you bread the chicken."
+    },
+    {
+      "icon": "airfryer",
+      "text": "Preheat the air fryer to 200°C (400°F) for 3 minutes."
+    },
+    {
+      "icon": "knife",
+      "text": "Zest the oranges before you juice them — zest is where the big orange flavour is."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Crispy chicken",
+      "items": [
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "2.5 cm pieces",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "note": "beaten",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "cornstarch",
+          "metric": {
+            "qty": 65,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 65,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "note": "in a spray bottle or brushed on",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Orange sauce",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "orange juice",
+          "note": "from the carton",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Orange juice",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "navel oranges",
+          "note": "zest of both + juice of 1",
+          "pantry": {
+            "name": "Oranges",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 70,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "rice vinegar",
+          "pantry": {
+            "name": "Rice vinegar",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground ginger",
+          "pantry": {
+            "name": "Ground ginger",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tbsp",
+          "name": "cornstarch",
+          "note": "mixed with 3 tbsp cold water",
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rice",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Season and coat",
+      "text": "Pat the chicken dry and season with salt, pepper and garlic powder. Toss in the beaten egg. Mix the cornstarch and flour in a bowl, then toss the chicken in it a few pieces at a time, pressing so every piece is fully coated. Shake off the extra.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Air-fry until crisp",
+      "text": "Spray or brush the pieces with oil. Air-fry in 2 batches in a single layer at 200°C (400°F): 6 minutes, shake and spray any floury spots, then 5–6 minutes more until golden and 74°C (165°F) inside.",
+      "timer": 12,
+      "uses": [
+        "0-7"
+      ]
+    },
+    {
+      "title": "Make the orange sauce",
+      "text": "While batch two cooks, simmer the orange juice, orange zest and juice, brown sugar, soy sauce, rice vinegar, garlic and ginger in a large skillet over medium for 3–4 minutes. Stir in the slurry and simmer 1 minute until thick and glossy.",
+      "timer": 5,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6",
+        "1-7"
+      ]
+    },
+    {
+      "title": "Toss and serve",
+      "text": "Turn off the heat, add the crispy chicken and toss 20–30 seconds just to coat — toss right before eating so it stays crunchy. Serve over the rice.",
+      "uses": []
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Coating is patchy or floury",
+      "fix": "Spray any dry floury spots with oil when you shake the basket — dry flour stays white and powdery."
+    },
+    {
+      "problem": "Sauce too thin",
+      "fix": "Simmer another minute; add ½ tsp more cornstarch in 1 tsp water if needed."
+    },
+    {
+      "problem": "Too sweet",
+      "fix": "Add 1 tsp more rice vinegar and a squeeze of fresh orange."
+    },
+    {
+      "problem": "Lost the crunch",
+      "fix": "Sauce went on too early. Keep sauce and chicken apart until the last minute; leftovers re-crisp in the air fryer."
+    }
+  ],
+  "saleTip": "No Frills' chicken breast club packs drop to ~$9–10/kg on flyer weeks; navel oranges are often 3 lb for $4 in winter.",
+  "swap": "Chicken thighs (air-fry 1–2 min longer) or shrimp (air-fry 6–7 min). No air fryer: bake on an oiled rack at 220°C (425°F) 15–18 min, flipping once.",
+  "leftovers": "Fridge 3 days, sauce and chicken in separate containers if you can.",
+  "doneness": "Chicken: 74°C (165°F) in the thickest piece.",
+  "source": "Based on tested copycat orange chicken methods (Panda Express-style, adapted for the air fryer by Allrecipes and Tasty test kitchens): egg + cornstarch coat, orange juice + zest sauce thickened with cornstarch.",
+  "gear": [
+    "Air fryer",
+    "Large skillet",
+    "Medium pot with lid",
+    "Microplane or fine grater (zest)",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Cut the chicken a day ahead and keep covered in the fridge.",
+    "Mix the orange sauce (without the slurry) up to 3 days ahead."
+  ],
+  "reheat": "Air fryer 180°C (350°F) 4–5 minutes to re-crisp, then warm the sauce and toss. Microwave works but softens the coating."
+}

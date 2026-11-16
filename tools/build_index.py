@@ -88,7 +88,7 @@ def main():
                 "pantry": pantry,
             })
     for d in os.listdir(RECIPES):
-        if os.path.isdir(os.path.join(RECIPES, d)) and d not in known:
+        if os.path.isdir(os.path.join(RECIPES, d)) and d not in known and d != "acura":  # Acura's dog treats live apart from the dinner book
             problems.append(f"folder recipes/{d} is not in categories.json")
 
     index = {"generated": __import__("datetime").datetime.now().isoformat(timespec="seconds"),

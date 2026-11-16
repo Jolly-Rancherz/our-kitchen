@@ -88,7 +88,7 @@ function fraction(q) {
   if (!whole && !best[1]) return '⅛';
   return (whole ? whole : '') + best[1];
 }
-const PLURAL = { cup: 'cups', clove: 'cloves', crown: 'crowns', slice: 'slices', can: 'cans', head: 'heads', bunch: 'bunches', package: 'packages' };
+const PLURAL = { cup: 'cups', clove: 'cloves', crown: 'crowns', slice: 'slices', can: 'cans', head: 'heads', bunch: 'bunches', package: 'packages', jar: 'jars', strip: 'strips' };
 function fmtQty(q, unit) {
   if (q == null) return '';
   let txt;
@@ -108,7 +108,9 @@ const DEFAULT_STATE = () => ({
   profile: { me: null, names: ['Corey', 'Faith'] },
   settings: { theme: 'auto', bigText: false, budgetMin: 350, budgetMax: 400, takeoutCost: 50, welcomed: false, anniversary: '',
     // update 2 (added fields only)
-    units: 'both', temp: 'both', snow: true, hearts: true, haptics: true, autoRestock: true, lastBackup: null, backupSnooze: null, cook: {} },
+    units: 'both', temp: 'both', snow: true, hearts: true, haptics: true, autoRestock: true, lastBackup: null, backupSnooze: null, cook: {},
+    // update 3 (added fields only)
+    sounds: false, chime: 'classic', shake: false, playlist: '', dinnerAt: '18:30', seasonal: true },
   favourites: { 'comfort-soups-01': now() },      // recipeId -> ts (Mom's soup pre-hearted)
   recent: [],          // [recipeId]
   hidden: {},          // recipeId -> ts
@@ -137,6 +139,19 @@ const DEFAULT_STATE = () => ({
   versions: {},        // recipeId -> { prev, at } (the version before the last edit)
   milestones: {},      // key -> date reached
   recapSeen: {},       // monthKey -> ts (monthly recap card dismissed)
+  // update 3 (added collections only — nothing above changes shape)
+  favBy: {},           // recipeId -> { Corey: ts, Faith: ts } (who loves it)
+  tonight: null,       // { date, recipeId, by, eatAt, at }
+  nicknames: {},       // recipeId -> our name for it
+  signature: null,     // recipeId of our signature dish
+  dateNight: null,     // { date, time, recipeId, note, by, at }
+  dessertJar: {},      // id -> { id, text, by, date, at, made }
+  tasteTests: {},      // id -> { id, recipeId, date, guesses: {Corey, Faith}, result, at }
+  dishes: {},          // id -> { id, date, who, at } (coin flips)
+  flashSeen: {},       // date -> ts
+  annivSeen: {},       // year -> ts
+  groceryDate: null,   // { on, start, split: { itemId: name } }
+  acura: { favs: {}, baked: {}, notes: {}, ratings: {}, profile: {}, given: {} }, // dog treats — kept apart from our pantry & budget
 });
 let state = load();
 function load() {
@@ -145,7 +160,9 @@ function load() {
     if (raw && raw.v === 1) {
       const d = DEFAULT_STATE();
       const st = { ...d, ...raw, settings: { ...d.settings, ...raw.settings }, profile: { ...d.profile, ...raw.profile } };
-      ['loveNotes', 'stories', 'freezer', 'wish', 'prices', 'guests', 'edits', 'versions', 'milestones', 'recapSeen'].forEach((k) => { if (!st[k] || typeof st[k] !== 'object') st[k] = {}; });
+      ['loveNotes', 'stories', 'freezer', 'wish', 'prices', 'guests', 'edits', 'versions', 'milestones', 'recapSeen', 'favBy', 'nicknames', 'dessertJar', 'tasteTests', 'dishes', 'flashSeen', 'annivSeen'].forEach((k) => { if (!st[k] || typeof st[k] !== 'object') st[k] = {}; });
+      if (!st.acura || typeof st.acura !== 'object') st.acura = d.acura;
+      ['favs', 'baked', 'notes', 'ratings', 'profile', 'given'].forEach((k) => { if (!st.acura[k] || typeof st.acura[k] !== 'object') st.acura[k] = {}; });
       if (!st.seededSoup) { st.favourites = { ...st.favourites, 'comfort-soups-01': st.favourites['comfort-soups-01'] || now() }; st.seededSoup = 1; }
       return st;
     }
@@ -255,19 +272,11 @@ let toastTimer;
 function toast(msg, action, fn) {
   const t = $('#toast');
   t.innerHTML = esc(msg) + (action ? ` <button type="button">${esc(action)}</button>` : '');
-  if (action) $('button', t).onclick = () => { fn(); t.classList.remove('show'); };
+  if (action) { $('button', t).onclick = () => { lastUndo = null; fn(); t.classList.remove('show'); }; if (action === 'Undo') lastUndo = { fn, at: now() }; }
   t.classList.add('show');
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => t.classList.remove('show'), action ? 5000 : 2600);
 }
-function openSheet(html, mount) {
-  const w = $('#sheetWrap');
-  $('#sheetBody').innerHTML = html;
-  w.hidden = false;
-  $('.sheet', w).scrollTop = 0;
-  if (mount) mount($('#sheetBody'));
-}
-function closeSheet() { $('#sheetWrap').hidden = true; $('#sheetBody').innerHTML = ''; }
 $('#sheetWrap').addEventListener('click', (e) => { if (e.target.closest('[data-close]')) closeSheet(); });
 function confirmSheet(title, text, okLabel, fn, danger) {
   openSheet(`<h2>${esc(title)}</h2><p class="sub">${esc(text)}</p>
@@ -285,11 +294,6 @@ function heartBurst(el) {
   }
   document.body.appendChild(b); setTimeout(() => b.remove(), 800);
   el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop');
-}
-function toggleFav(id, el) {
-  if (state.favourites[id]) { delete state.favourites[id]; toast('Removed from favourites'); }
-  else { state.favourites[id] = now(); if (el) heartBurst(el); toast('Saved to favourites ♥'); }
-  save();
 }
 function setTop({ title = 'OUR KITCHEN', back = null, right = '' } = {}) {
   $('#tbTitle').innerHTML = title;
@@ -315,7 +319,7 @@ function applyTheme() {
   const dark = t === 'dark' || (t === 'auto' && mq.matches);
   document.documentElement.dataset.theme = dark ? 'dark' : 'light';
   document.documentElement.classList.toggle('big', !!state.settings.bigText);
-  const meta = $('meta[name="theme-color"]'); if (meta) meta.content = dark ? '#060F26' : '#082048';
+  const meta = $('meta[name="theme-color"]'); if (meta) meta.content = document.body && document.body.classList.contains('acura') ? (dark ? '#170D08' : '#4A2A1A') : dark ? '#060F26' : '#082048';
 }
 mq.addEventListener ? mq.addEventListener('change', applyTheme) : mq.addListener(applyTheme);
 
@@ -336,28 +340,14 @@ const routes = [
   [/^#\/story$/, viewStory],
   [/^#\/freezer$/, viewFreezer],
   [/^#\/wish$/, viewWish],
+  [/^#\/year(?:\/(\d{4}))?$/, viewYear],
+  [/^#\/acura$/, viewAcura],
+  [/^#\/acura\/t\/([\w-]+)$/, viewTreat],
+  [/^#\/acura\/safety$/, viewAcuraSafety],
   [/^#\/scan$/, () => { go('#/grocery'); setTimeout(openScan, 300); }],
   [/^#\/ideas$/, () => { go('#/'); setTimeout(() => openIdeas(), 300); }],
 ];
-async function router() {
-  const h = location.hash || '#/';
-  if (lastRoute === '#/' ) ui.homeScroll = window.scrollY;
-  closeSheet();
-  for (const [rx, fn] of routes) {
-    const m = h.match(rx);
-    if (m) {
-      const tab = h.startsWith('#/pantry') || h.startsWith('#/freezer') ? 'pantry' : h.startsWith('#/grocery') ? 'grocery' : h.startsWith('#/budget') ? 'budget' : h.startsWith('#/settings') ? '' : 'recipes';
-      $$('#tabbar a').forEach((a) => a.classList.toggle('on', a.dataset.tab === tab));
-      await fn(...m.slice(1));
-      window.scrollTo(0, h === '#/' ? ui.homeScroll : 0);
-      lastRoute = h;
-      return;
-    }
-  }
-  go('#/');
-}
 window.addEventListener('hashchange', router);
-function render(html) { $('#view').innerHTML = html; }
 
 // ---------------------------------------------------------------- views: home
 function matchesFilters(r) {
@@ -422,23 +412,6 @@ function cookAgainNudge(recipes) {
   });
   return best;
 }
-function openRandom(recipes) {
-  const pool = recipes.slice();
-  let cur = null;
-  const draw = (b) => {
-    if (!pool.length) { b.innerHTML = '<h2>Can\'t decide?</h2><div class="empty">No recipes to pick from yet.</div>'; return; }
-    const prev = cur;
-    const opts = pool.length > 1 ? pool.filter((r) => r !== prev) : pool;
-    cur = opts[Math.floor(Math.random() * opts.length)];
-    b.innerHTML = `<h2>Can't decide?</h2><p class="sub">Here's tonight's idea${pool.length === 1 ? ' — the only one in the book so far, so it\'s an easy pick' : ''}.</p>
-      <a class="pick-card" href="#/r/${cur.id}" style="margin-top:12px"><div class="im">${cur.image ? img(cur.image, cur.title) : placeholderArt(cur)}</div>
-        <div class="pc-body"><div class="t">${esc(cur.title)}</div><div class="m">${cur.price} · ${cur.total} min · ~${money(cur.cost)}</div></div></a>
-      <div class="foot"><button class="btn" id="rAgain" ${pool.length < 2 ? 'disabled style="opacity:.4"' : ''}>Spin again</button><a class="btn gold" href="#/r/${cur.id}" id="rGo">Let's make it</a></div>`;
-    $('#rAgain', b).onclick = () => draw(b);
-    $('#rGo', b).onclick = () => logPick(cur.id, true);
-  };
-  openSheet('', draw);
-}
 function openCanMake() {
   const have = (k) => ['lots', 'have', 'low'].includes(levelOf(k));
   const rows = visibleRecipes().map((r) => {
@@ -452,92 +425,6 @@ function openCanMake() {
       <div class="cm-bar"><i style="width:${x.n ? (x.got / x.n) * 100 : 0}%"></i></div>
       <div class="small muted">${x.miss.length ? 'Need: ' + esc(x.miss.slice(0, 6).join(', ')) + (x.miss.length > 6 ? ` +${x.miss.length - 6} more` : '') : 'You have everything ♥'}</div></a>`).join('')}</div>
     <div class="foot"><button class="btn" data-close>Close</button><a class="btn primary" href="#/pantry">Open pantry</a></div>`);
-}
-function viewHome() {
-  setTop({ title: 'OUR KITCHEN' });
-  const recipes = visibleRecipes();
-  ui.pick = ui.pick && recipes.find((r) => r.id === ui.pick) ? ui.pick : seasonalPick(recipes);
-  const searching = ui.q || filterCount();
-  let body = '';
-  if (searching) {
-    const res = recipes.filter(matchesFilters);
-    body = `<div class="sec"><div class="sec-title">${res.length} recipe${res.length === 1 ? '' : 's'}<button class="act" id="clearAll">Clear</button></div>${/[+,]/.test(ui.q) ? `<p class="small muted" style="margin:-4px 0 10px">Recipes that use ${esc(ui.q.split(/\s*[+,]\s*/).filter(Boolean).join(' + '))}</p>` : ''}
-      ${res.length ? `<div class="rlist">${res.map(rcard).join('')}</div>` : `<div class="empty">Nothing matches yet — try fewer filters. More recipes are on the way.</div>`}</div>`;
-  } else {
-    const favs = Object.entries(state.favourites).sort((a, b) => b[1] - a[1]).map(([id]) => recipes.find((r) => r.id === id)).filter(Boolean);
-    const recent = state.recent.map((id) => recipes.find((r) => r.id === id)).filter(Boolean).slice(0, 8);
-    const cats = INDEX.categories.map((c) => ({ ...c, items: recipes.filter((r) => r.category === c.slug).sort((a, b) => a.num - b.num) }));
-    const withRecipes = cats.filter((c) => c.items.length);
-    const pk = recipes.find((r) => r.id === ui.pick);
-    const lefts = Object.values(state.leftovers).sort((a, b) => (a.date < b.date ? -1 : 1));
-    const nudge = cookAgainNudge(recipes);
-    const lastMonth = monthKey(new Date(new Date().getFullYear(), new Date().getMonth() - 1, 1));
-    const rc = new Date().getDate() <= 10 && !state.recapSeen[lastMonth] ? monthRecap(lastMonth) : null;
-    const uu = useItUp(recipes);
-    const turn = whoseTurn();
-    body = `
-      ${whatsNewCard()}${backupCard()}
-      ${rc ? recapCard(rc, true) : ''}
-      ${pk ? `<div class="sec pick"><div class="pick-k">${esc(pickKicker(pk))}</div>
-        <a class="pick-card" href="#/r/${pk.id}"><div class="im">${pk.image ? img(pk.image, pk.title) : placeholderArt(pk)}</div>
-          <div class="pc-body"><div class="t">${esc(pk.title)}</div><div class="m">${pk.price} · ${pk.total} min · ~${money(pk.cost)}</div></div></a>
-        <div class="pick-q"><span>${esc(turn)}'s pick tonight — sound good?</span><button class="turnbtn" id="turnBtn" aria-label="Switch whose turn">${svg('swap')}</button></div>
-        <div class="btnrow"><button class="btn ghost" id="pickNo">${svg('thumbDown')}Not tonight</button><button class="btn gold" id="pickYes">${svg('thumbUp')}Let's make it</button></div></div>` : ''}
-      <div class="quick"><button class="btn ghost" id="randBtn">${svg('dice')}Can't decide?</button><button class="btn ghost" id="canMake">${svg('pantry')}What can we make?</button><button class="btn ghost wide" id="ideasBtn">${svg('star')}More ideas<small>mood · use it up · weather · wish list</small></button></div>
-      ${uu.soon.length && uu.picks.length ? `<a class="nudge use" href="#/r/${uu.picks[0].r.id}"><span>${svg('clock')}</span><span><b>Use it up:</b> ${esc(uu.soon[0].p.name)} ${uu.soon[0].d === 0 ? 'is due today' : uu.soon[0].d === 1 ? 'is due tomorrow' : `is due in ${uu.soon[0].d} days`} — try ${esc(uu.picks[0].r.title)}.</span></a>` : ''}
-      ${lefts.length ? `<div class="sec"><div class="sec-title">In the fridge</div><ul class="cooked">${lefts.map((l) => { const d = daysSince(l.date); const left = 4 - d; return `<li><div><div class="t">${esc(l.title)}</div><div class="d">${l.portions} portion${l.portions === 1 ? '' : 's'} · ${left > 1 ? `eat within ${left} days` : left === 1 ? 'eat by tomorrow' : left === 0 ? '<b style="color:var(--gold-deep)">eat today</b>' : '<b style="color:#A0303A">past 4 days — toss it</b>'}</div></div><button class="btn sm ghost" data-ate="${l.id}">Ate one</button></li>`; }).join('')}</ul></div>` : ''}
-      ${nudge ? `<a class="nudge" href="#/r/${nudge.r.id}"><span>${svg('reset')}</span><span>It's been <b>${nudge.days} days</b> since ${esc(nudge.r.title)}. Cook it again?</span></a>` : ''}
-      <div class="sec"><div class="sec-title">Favourites</div>
-        ${favs.length ? `<div class="hrow">${favs.map(miniCard).join('')}</div>` : `<div class="empty">Tap the ♡ on a recipe and it'll live here.</div>`}</div>
-      ${recent.length ? `<div class="sec"><div class="sec-title">Recently viewed</div><div class="hrow">${recent.map(miniCard).join('')}</div></div>` : ''}
-      <div class="sec"><div class="sec-title">Categories</div>
-        <div class="cats">${withRecipes.map((c, i) => `<a class="cat-tile r${(i % 4) + 1}" href="#/c/${c.slug}" style="background:${c.colour}">${img(c.tile, '')}
-          <div class="lbl"><b>${esc(c.name)}</b><span>${c.items.length} recipe${c.items.length === 1 ? '' : 's'}</span></div></a>`).join('')}</div></div>
-      <div class="sec"><div class="sec-title">Contents</div>
-        ${withRecipes.map((c) => `<div class="toc-sec"><div class="sh"><span class="sq" style="background:${c.colour}"></span>${esc(c.name)}</div>
-          ${c.items.map((r) => `<a href="#/r/${r.id}"><em>${pad2(r.num)}</em><span>${esc(r.title)}</span><i>${r.price}</i></a>`).join('')}</div>`).join('')}
-        <p class="small muted" style="margin-top:10px">${recipes.length} of 101 recipes so far — more are added in small batches.</p>
-      </div>
-      <div class="sec guides"><h3>GUIDES</h3><div class="gl">
-        <a href="#/guide"><span>°</span>Safe temps</a><a href="#/guide"><span>❄</span>Thawing</a>
-        <a href="#/budget"><span>$</span>$350 month</a><a href="#/add"><span>+</span>Add a recipe</a><a href="#/us"><span>♥</span>Us</a><a href="#/story"><span>❦</span>Our story</a>
-        <a href="#/freezer"><span>❄</span>Freezer</a><a href="#/wish"><span>✧</span>Wish list</a><a href="#/scan"><span>▤</span>Scan receipt</a><a href="#/settings"><span>⚙</span>Settings</a></div></div>`;
-  }
-  const fc = filterCount();
-  render(`<div class="home-head">
-      <div class="kicker">Recipes we love<span class="rule"></span></div>
-      <div class="lead" style="margin-top:6px">${esc(greeting())}</div>
-      ${wxFresh() ? `<div class="wx" id="wxLine">London · ${wxTemp(wxFresh().t)} · ${esc(wxWords(wxFresh().code))} — ${esc(wxMood(wxFresh()).line)}</div>` : ''}
-      <div class="searchrow"><label class="search">${svg('search')}<input id="q" type="search" placeholder="Search recipes or ingredients" value="${esc(ui.q)}" autocomplete="off" enterkeyhint="search">${ui.q ? '<button class="clear" id="qClear" aria-label="Clear">×</button>' : ''}</label>
-        <button class="filterbtn ${fc ? 'on' : ''}" id="filterBtn" aria-label="Filters">${svg('filter')}${fc ? `<b>${fc}</b>` : ''}</button></div>
-      ${fc ? `<div class="activefilters">${Object.entries(ui.filters).flatMap(([k, s]) => s.map((v) => `<button data-k="${k}" data-v="${esc(v)}">${esc(TAGLABEL[k + ':' + v])}</button>`)).join('')}</div>` : ''}
-    </div><div class="wrap" style="padding-top:0">${body}</div>`);
-  const q = $('#q');
-  q.addEventListener('input', () => {
-    ui.q = q.value.trim();
-    const pos = q.selectionStart; viewHome(); const q2 = $('#q'); q2.focus(); try { q2.setSelectionRange(pos, pos); } catch (e) {}
-  });
-  $('#qClear') && ($('#qClear').onclick = (e) => { e.preventDefault(); ui.q = ''; viewHome(); });
-  $('#filterBtn').onclick = openFilters;
-  $('#clearAll') && ($('#clearAll').onclick = () => { ui.q = ''; ui.filters = {}; viewHome(); });
-  $('#pickYes') && ($('#pickYes').onclick = (e) => { const t = whoseTurn(); const pid = uid(); state.picks[pid] = { id: pid, recipeId: ui.pick, ok: true, date: todayISO(), by: t }; state.turn = other(t); save(); heartBurst(e.currentTarget); setTimeout(() => go('#/r/' + ui.pick), 350); });
-  $('#turnBtn') && ($('#turnBtn').onclick = () => { state.turn = other(whoseTurn()); save(); const y = scrollY; viewHome(); scrollTo(0, y); });
-  $('#ideasBtn') && ($('#ideasBtn').onclick = () => openIdeas());
-  $('#wnX') && ($('#wnX').onclick = $('#wnOk').onclick = () => { state.seenWhatsNew = WHATSNEW_ID; save(); const y = scrollY; viewHome(); scrollTo(0, y); });
-  $('#wnMore') && ($('#wnMore').onclick = () => { openWhatsNew(); });
-  $('#bkNow') && ($('#bkNow').onclick = () => { exportBackup(); const y = scrollY; viewHome(); scrollTo(0, y); });
-  $('#bkLater') && ($('#bkLater').onclick = () => { state.settings.backupSnooze = now() + DAYS(7); save(); const y = scrollY; viewHome(); scrollTo(0, y); toast("I'll remind you next week"); });
-  $('#recapX') && ($('#recapX').onclick = () => { state.recapSeen[lastMonthKey()] = now(); save(); const y = scrollY; viewHome(); scrollTo(0, y); });
-  $('#pickNo') && ($('#pickNo').onclick = () => {
-    logPick(ui.pick, false);
-    const others = recipes.filter((r) => r.id !== ui.pick);
-    if (!others.length) { toast("It's the only recipe in the book so far — more are coming soon ♥"); return; }
-    ui.pick = others[Math.floor(Math.random() * others.length)].id; viewHome();
-  });
-  $('#randBtn') && ($('#randBtn').onclick = () => openRandom(recipes));
-  $('#canMake') && ($('#canMake').onclick = openCanMake);
-  $$('[data-ate]').forEach((b) => (b.onclick = () => { const l = state.leftovers[b.dataset.ate]; l.portions--; if (l.portions <= 0) delete state.leftovers[l.id]; save(); viewHome(); toast(l.portions > 0 ? 'Enjoy lunch ♥' : 'All gone — nice!'); }));
-  $$('.activefilters button').forEach((b) => (b.onclick = () => { ui.filters[b.dataset.k] = ui.filters[b.dataset.k].filter((v) => v !== b.dataset.v); viewHome(); }));
 }
 function lastMonthKey() { return monthKey(new Date(new Date().getFullYear(), new Date().getMonth() - 1, 1)); }
 function openFilters() {
@@ -559,15 +446,6 @@ function openFilters() {
 }
 
 // ---------------------------------------------------------------- views: category
-function viewCategory(slugName) {
-  const c = catOf(slugName);
-  setTop({ title: esc(c.name.toUpperCase()), back: '#/' });
-  const items = visibleRecipes().filter((r) => r.category === slugName).sort((a, b) => a.num - b.num);
-  render(`<div class="wrap"><div class="kicker"><span class="sw" style="background:${c.colour}"></span>Category<span class="rule"></span></div>
-    <h1 class="h1" style="margin-top:6px">${esc(c.name)}</h1>
-    <p class="lead" style="margin-top:4px">${items.length} recipe${items.length === 1 ? '' : 's'} so far</p>
-    <div class="rlist" style="margin-top:16px">${items.map(rcard).join('') || '<div class="empty">No recipes here yet.</div>'}</div></div>`);
-}
 
 // ---------------------------------------------------------------- views: recipe
 const OCC = { 'date-night': 'Date Night', 'takeout-night': 'Takeout Night', 'comfort-night': 'Comfort Night', weeknight: 'Weeknight Easy' };
@@ -587,7 +465,9 @@ function cookedEntries(id) { return Object.values(state.cooked).filter((c) => c.
 
 async function viewRecipe(id) {
   const s = summary(id);
+  if (s && !RECIPE_CACHE[id] && !state.custom[id]) render(skeletonRecipe(s));
   const r = s && (await getRecipe(id));
+  if (location.hash !== '#/r/' + id) return;
   if (!r) { render('<div class="wrap"><div class="empty">That recipe could not be found.</div></div>'); setTop({ back: '#/' }); return; }
   state.recent = [id, ...state.recent.filter((x) => x !== id)].slice(0, 12); save();
   const c = catOf(s.category);
@@ -605,6 +485,8 @@ async function viewRecipe(id) {
   (r.badges || []).filter((b) => !/air fryer/i.test(b)).forEach((b) => pills.push(`<span class="pill">${esc(b)}</span>`));
   (tags.occasion || []).slice(0, 2).forEach((o) => pills.push(`<span class="pill">${esc(OCC[o] || o)}</span>`));
   if ((tags.leftovers || []).includes('freezer')) pills.push('<span class="pill">Freezer-friendly</span>');
+  if (state.signature === id) pills.unshift('<span class="pill sig">★ Signature</span>');
+  if (isCoupleFav(id)) pills.unshift(`<span class="pill cfav">${svg('heart')}Our favourite</span>`);
   const adj = adjustedCost(r);
   const cost = (r.edited || r.custom ? r.cost.total : adj.total) * f;
   const per = cost / sv;
@@ -615,21 +497,23 @@ async function viewRecipe(id) {
   const subBtn = (it) => { const k = it.pantry ? pantryKey(it.pantry.name) : null; return k && SUBS[k] ? `<button class="subbtn" data-sub="1" aria-label="Swap ideas for ${esc(it.name)}">${svg('swap')}</button>` : ''; };
   const lastReact = cooked.find((c) => c.reactions && Object.keys(c.reactions).length);
   const units = state.settings.units || 'both';
+  const planned = !!(tonightPlan() && tonightPlan().recipeId === id); const first = cooked[cooked.length - 1]; const hs = heartsScore(id); const lw = favWho(id); const pend = pendingTaste(id);
   const { budgetMin, budgetMax } = state.settings;
 
   render(`
   <div class="r-head">
     <div class="kicker"><span class="sw" style="background:${c.colour}"></span>${esc(c.name)} ${pad2(s.num)}<span class="rule"></span></div>
     <h1 class="h1">${esc(r.title)}</h1>
-    ${r.subtitle ? `<p class="lead">${esc(r.subtitle)}</p>` : ''}
+    ${r.subtitle ? `<p class="lead">${esc(r.subtitle)}</p>` : ''}${nickLine(id)}
     <div class="pills">${pills.join('')}</div>
   </div>
   <div class="hero"><div class="tile">${r.image ? img(r.image, r.imageAlt || r.title) : placeholderArt(s)}</div><i class="acc a1"></i><i class="acc a2"></i><i class="acc a3"></i></div>
   <div class="stats"><div class="stat"><b>${r.prep} min</b><span>Prep</span></div><div class="stat plum"><b>${r.cook} min</b><span>Cook</span></div><div class="stat peri"><b>${r.prep + r.cook} min</b><span>Total</span></div></div>
   <div class="serves"><strong>${guests ? `Guest mode · ${guests} people` : esc(sv === base && r.servingsNote ? r.servingsNote : sv + ' servings')}</strong><span class="muted">Est. ~${money(per, true)} a portion</span></div>
-  <div class="plan"><button class="chip" id="startBy">${svg('clock')}Start cooking by…</button><button class="chip ${guests ? 'on' : ''}" id="guestBtn">${svg('users')}${guests ? guests + ' people' : 'Guests'}</button></div>
+  <div class="plan"><button class="chip" id="startBy">${svg('clock')}Start cooking by…</button><button class="chip ${guests ? 'on' : ''}" id="guestBtn">${svg('users')}${guests ? guests + ' people' : 'Guests'}</button>${!cooked.length || pend ? `<button class="chip ${pend ? 'on' : ''}" id="tasteChip">${svg('thumbUp')}${pend ? 'Taste test on' : 'Taste test'}</button>` : ''}</div>
 
   <div class="wrap">
+    ${haveCard(r)}
     ${love ? `<button class="lovenote" id="loveShow"><span class="lk">${svg('heart')}A NOTE${love.by ? ' FROM ' + esc(love.by.toUpperCase()) : ''}</span><span class="lt">${esc(love.text)}</span></button>` : ''}
     ${r.family ? `<div class="card famcard"><h3>THE STORY</h3><p>${esc(story || 'Tap to add the story behind this one.')}</p><button class="linkbtn" id="storyEdit">Edit the story</button></div>` : ''}
     ${(r.beforeYouStart || []).length || (r.gear || []).length ? `<div class="card before"><h3>BEFORE YOU START</h3><ul>${(r.beforeYouStart || []).map((b) => `<li><span class="ic">${svg(b.icon)}</span><span>${tx(b.text)}</span></li>`).join('')}</ul>
@@ -638,13 +522,13 @@ async function viewRecipe(id) {
     <div class="sec"><div class="sec-title">Ingredients<button class="act" id="resetBtn">Reset ticks</button><button class="act unitbtn" id="unitBtn" aria-label="Units">${units === 'metric' ? 'grams' : units === 'us' ? 'cups' : 'cups + g'}</button></div>
       <div class="portion"><div class="val" id="svVal">${sv}</div><input type="range" id="sv" min="1" max="10" step="1" value="${sv}" style="--p:${((sv - 1) / 9) * 100}%" aria-label="Servings"><div class="lbl">servings<br>${sv === base ? 'as written' : '× ' + (Math.round(f * 100) / 100)}</div></div>
       ${r.groups.map((g, gi) => `<div class="ing-group">${g.name ? `<div class="group-name">${esc(g.name)}</div>` : ''}<ul class="checklist">
-        ${g.items.map((it, ii) => `<li data-i="${gi}-${ii}" class="${ck.i[gi + '-' + ii] ? 'done' : ''} ${subBtn(it) ? 'hassub' : ''}"><span class="box">${CHECK}</span><span class="txt">${ingLine(it, f)}</span>${subBtn(it)}</li>`).join('')}</ul></div>`).join('')}
+        ${g.items.map((it, ii) => `<li data-i="${gi}-${ii}" class="${ck.i[gi + '-' + ii] ? 'done' : ''} ${subBtn(it) || outBtn(it) ? 'hasbtn' : ''}"><span class="box">${CHECK}</span><span class="txt">${ingLine(it, f)}</span>${subBtn(it) || outBtn(it) ? `<span class="ibtns">${subBtn(it)}${outBtn(it)}</span>` : ''}</li>`).join('')}</ul></div>`).join('')}
       <button class="btn ghost block" id="missingBtn" style="margin-top:12px">${svg('cart')}Add to grocery list</button>
     </div>
 
     <div class="sec"><div class="sec-title">Method</div>
       <button class="btn primary block" id="cookBtn">${svg('play')}Step-by-step cook mode</button>
-      <ul class="checklist steps" style="margin-top:8px">${r.steps.map((st, si) => `<li data-s="${si}" class="${ck.s[si] ? 'done' : ''}"><span class="stepnum"><span>${si + 1}</span>${CHECK}</span><span class="txt"><strong>${esc(st.title)}.</strong> ${tx(st.text)}${usesHTML(stepUses(r, st, f))}${st.timer ? `<span class="tm">${svg('timer', 'style="width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2"')}${st.timer} min</span>` : ''}</span></li>`).join('')}</ul>
+      <ul class="checklist steps" style="margin-top:8px">${r.steps.map((st, si) => `<li data-s="${si}" class="${ck.s[si] ? 'done' : ''}"><span class="stepnum"><span>${si + 1}</span>${CHECK}</span><span class="txt"><strong>${esc(st.title)}.</strong> ${tx(st.text)}${useChips(r, st, id, f)}${st.timer ? `<span class="tm">${svg('timer', 'style="width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2"')}${st.timer} min</span>` : ''}</span></li>`).join('')}</ul>
       ${sv !== base ? `<p class="small muted" style="margin-top:6px">Amounts in the list and in each step are scaled for ${sv} servings; pan sizes and times in the steps are written for ${base}.</p>` : ''}
     </div>
 
@@ -674,52 +558,53 @@ async function viewRecipe(id) {
     <div class="sec"><div class="sec-title">Our notes</div>
       <div class="card ours">
         <div class="rate-row"><span class="small muted">Our rating</span><div class="rate" id="rate">${[1, 2, 3, 4, 5].map((n) => `<button data-r="${n}" class="${(state.ratings[id] || 0) >= n ? 'on' : ''}" aria-label="${n} of 5">${svg('heart')}</button>`).join('')}</div></div>
+        <div class="rate-row"><span class="small muted">Who loves it</span><div class="loves">${['Corey', 'Faith'].map((n) => `<button data-love="${n}" class="${lw[n] ? 'on' : ''}" aria-label="${n} loves it" aria-pressed="${!!lw[n]}">${hat(n, 20)}<span>${n}</span></button>`).join('')}</div></div>
+        ${hs ? `<div class="rate-row together"><span class="small muted">Rated together</span><span class="tscore"><b>${r1(hs.score)}</b>${svg('heart')}<small>${hs.corey != null ? 'Corey ' + r1(hs.corey) : ''}${hs.corey != null && hs.faith != null ? ' · ' : ''}${hs.faith != null ? 'Faith ' + r1(hs.faith) : ''}</small></span></div>` : ''}
         <textarea id="noteTx" class="notes" placeholder="e.g. Extra cheddar next time. Faith likes it thicker.">${esc(state.notes[id] || '')}</textarea>
         <button class="linkbtn lovebtn" id="loveBtn">${svg('heart')}${love ? 'Edit the love note' : 'Leave a love note'}</button>
         <div class="small muted" style="margin:12px 0 6px">Photo memories</div>
-        <div class="photos">${(state.photos[id] || []).map((ph) => `<button class="ph" data-ph="${ph.id}"><img src="${ph.data}" alt="Our photo from ${esc(ph.date)}"><span>${esc(shortDate(ph.date))}</span></button>`).join('')}
+        <div class="photos">${(state.photos[id] || []).map((ph) => `<button class="ph" data-ph="${ph.id}"><img src="${ph.data}" alt="Our photo from ${esc(ph.date)}">${stampHTML(ph, true)}<span>${esc(shortDate(ph.date))}</span></button>`).join('')}
           <label class="ph add">${svg('plus')}<span>Add photo</span><input type="file" id="phIn" accept="image/*" hidden></label></div>
       </div></div>
 
     <div class="sec r-actions">
       <button class="btn gold block" id="cookedBtn">${svg('check')}Mark as cooked</button>
-      <div class="btnrow"><button class="btn ghost" id="shareBtn">${svg('share')}Share</button><button class="btn ghost" id="hideBtn">${svg('eyeoff')}Hide meal</button></div>
-      <div class="btnrow"><button class="btn ghost" id="printBtn">${svg('print')}Print</button><a class="btn ghost" href="#/add/${id}">Edit recipe</a></div>
-      ${r.custom ? `<div class="btnrow" style="grid-template-columns:1fr"><button class="btn ghost" id="exportRecipe">Export file</button></div>` : ''}
+      <div class="btnrow"><button class="btn ghost" id="cravBtn">${svg('heart')}Cook for me?</button><button class="btn ghost ${planned ? 'on' : ''}" id="tonightBtn">${svg('clock')}${planned ? 'Tonight ✓' : 'Plan tonight'}</button></div>
+      <div class="btnrow"><button class="btn ghost" id="shareBtn">${svg('share')}Share</button><button class="btn ghost" id="moreBtn">${svg('more')}More…</button></div>
       ${state.versions[id] ? `<p class="small muted" style="text-align:center">${r.edited || r.custom ? 'Edited recipe' : 'Original recipe'} · <button class="linkbtn" id="verBtn">Switch to the ${state.versions[id].prev.base ? 'original' : 'other'} version</button></p>` : ''}
-      <p class="small muted" style="text-align:center;margin-top:4px">${cooked.length ? `Cooked ${cooked.length} time${cooked.length === 1 ? '' : 's'} · last ${esc(shortDate(cooked[0].date))}${cooked[0].by ? ' by ' + esc(cooked[0].by === 'Both' ? 'both of you' : cooked[0].by) : ''}` : 'Not cooked yet — first time!'}</p>
+      <p class="small muted cookline">${cooked.length ? `${hat(cooked[0].by, 15)}Cooked ${cooked.length} time${cooked.length === 1 ? '' : 's'} · last ${esc(shortDate(cooked[0].date))}${cooked[0].by ? ' by ' + esc(cooked[0].by === 'Both' ? 'both of you' : cooked[0].by) : ''}` : 'Not cooked yet — first time!'}</p>
+      ${first ? `<p class="memory">${svg('heart')}First made ${first.by === 'Corey' || first.by === 'Faith' ? 'by ' + esc(first.by) : 'together'} · ${esc(longDate(first.date))}</p>` : ''}
       ${lastReact ? `<p class="small muted" style="text-align:center;margin-top:-4px">Last time: ${esc(reactLine(lastReact))}</p>` : ''}
     </div>
   </div>`);
 
   $('#favBtn').onclick = (e) => { toggleFav(id, e.currentTarget); e.currentTarget.classList.toggle('on', !!state.favourites[id]); };
   $$('.checklist li[data-i]').forEach((li) => (li.onclick = (e) => {
+    if (e.target.closest('.outbtn')) { const [gi, ii] = li.dataset.i.split('-').map(Number); weAreOut(r.groups[gi].items[ii], r, f, e.target.closest('.outbtn')); return; }
     if (e.target.closest('.subbtn')) { const [gi, ii] = li.dataset.i.split('-').map(Number); openSub(r.groups[gi].items[ii]); return; }
     toggleCheck(id, 'i', li.dataset.i, li);
   }));
-  $$('.checklist li[data-s]').forEach((li) => (li.onclick = () => toggleCheck(id, 's', li.dataset.s, li)));
+  $$('.checklist li[data-s]').forEach((li) => (li.onclick = (e) => { if (e.target.closest('.use')) return; toggleCheck(id, 's', li.dataset.s, li); }));
   $('#resetBtn').onclick = () => withUndo('Ticks reset', () => { delete state.checks[id]; }, () => $$('.checklist li.done').forEach((li) => li.classList.remove('done')));
-  $('#unitBtn').onclick = () => { const order = ['both', 'us', 'metric']; state.settings.units = order[(order.indexOf(state.settings.units || 'both') + 1) % 3]; save(); const y = scrollY; viewRecipe(id).then(() => scrollTo(0, y)); toast(state.settings.units === 'metric' ? 'Showing grams first' : state.settings.units === 'us' ? 'Showing cups & spoons only' : 'Showing cups with grams'); };
+  $('#unitBtn').onclick = () => { const order = ['both', 'us', 'metric']; state.settings.units = order[(order.indexOf(state.settings.units || 'both') + 1) % 3]; save(); const y = vY(); viewRecipe(id).then(() => vTo(y)); toast(state.settings.units === 'metric' ? 'Showing grams first' : state.settings.units === 'us' ? 'Showing cups & spoons only' : 'Showing cups with grams'); };
   $('#startBy').onclick = () => openStartBy(r);
   $('#guestBtn').onclick = () => openGuests(r, id);
   $('#loveBtn').onclick = () => openLoveNote(id, r);
   $('#loveShow') && ($('#loveShow').onclick = () => openLoveNote(id, r));
   $('#storyEdit') && ($('#storyEdit').onclick = () => openStory(id, r));
-  $('#printBtn').onclick = printRecipe;
   $('#verBtn') && ($('#verBtn').onclick = () => swapVersion(id));
   const range = $('#sv');
   range.oninput = () => { $('#svVal').textContent = range.value; range.style.setProperty('--p', ((range.value - 1) / 9) * 100 + '%'); };
-  range.onchange = () => { const n = +range.value; delete state.guests[id]; if (n === base) delete state.servings[id]; else state.servings[id] = n; save(); const y = scrollY; viewRecipe(id).then(() => scrollTo(0, y)); };
+  range.onchange = () => { const n = +range.value; delete state.guests[id]; if (n === base) delete state.servings[id]; else state.servings[id] = n; save(); const y = vY(); viewRecipe(id).then(() => vTo(y)); };
   $('#missingBtn').onclick = () => openMissing(r, s, f);
   $('#cookBtn').onclick = () => openCook(r, s, f);
   $('#cookedBtn').onclick = () => openCooked(r, s, cost);
-  $('#hideBtn').onclick = () => { state.hidden[id] = now(); save(); go('#/'); toast('Hidden from your lists', 'Undo', () => { delete state.hidden[id]; save(); router(); }); };
   $('#shareBtn').onclick = () => openShare(r, s, f, sv);
   $$('#rate button').forEach((b) => (b.onclick = () => { const n = +b.dataset.r; state.ratings[id] = state.ratings[id] === n ? 0 : n; save(); $$('#rate button').forEach((x) => x.classList.toggle('on', +x.dataset.r <= state.ratings[id])); if (state.ratings[id]) heartBurst(b); }));
   let nt; $('#noteTx').oninput = (e) => { clearTimeout(nt); nt = setTimeout(() => { const v = e.target.value.trim(); if (v) state.notes[id] = v; else delete state.notes[id]; save(); }, 400); };
   $('#phIn').onchange = (e) => addPhoto(id, e.target.files[0]);
   $$('[data-ph]').forEach((b) => (b.onclick = () => viewPhoto(id, b.dataset.ph)));
-  $('#exportRecipe') && ($('#exportRecipe').onclick = () => exportRecipeFile(r));
+  bindRecipeExtras(r, s, id, f, cost);
 }
 function toggleCheck(id, kind, key, li) {
   const ck = state.checks[id] || (state.checks[id] = { i: {}, s: {} });
@@ -739,19 +624,12 @@ function addPhoto(id, file) {
       const list = state.photos[id] || (state.photos[id] = []);
       if (list.length >= 12) { toast('12 photos max per recipe — remove one first'); return; }
       list.push({ id: uid(), data: c.toDataURL('image/jpeg', 0.72), date: todayISO() });
-      save(); const y = scrollY; viewRecipe(id).then(() => scrollTo(0, y)); toast('Photo saved ♥'); checkMilestones();
+      save(); const y = vY(); viewRecipe(id).then(() => vTo(y)); toast('Photo saved ♥'); checkMilestones();
     };
     im.onerror = () => toast("Couldn't read that photo");
     im.src = rd.result;
   };
   rd.readAsDataURL(file);
-}
-function viewPhoto(id, pid) {
-  const ph = (state.photos[id] || []).find((p) => p.id === pid); if (!ph) return;
-  openSheet(`<img src="${ph.data}" alt="" style="width:100%;display:block;margin-top:6px"><p class="sub" style="margin-top:8px">${esc(shortDate(ph.date))}</p>
-    <div class="foot"><button class="btn danger" id="phDel">Delete</button><button class="btn primary" data-close>Done</button></div>`, (b) => {
-    $('#phDel', b).onclick = () => { closeSheet(); withUndo('Photo deleted', () => { state.photos[id] = state.photos[id].filter((p) => p.id !== pid); }, () => viewRecipe(id)); };
-  });
 }
 function openShare(r, s, f, sv) {
   openSheet(`<h2>Share recipe</h2><p class="sub">Send ${esc(r.title)} to someone.</p>
@@ -832,12 +710,16 @@ function openCooked(r, s, est) {
     <div class="field" id="realF" hidden><label>Actual amount (CAD)</label><input id="realAmt" type="number" inputmode="decimal" step="0.01" min="0" placeholder="${e}"></div></div>
     <div class="field"><label>Date</label><input id="cDate" type="date" value="${todayISO()}"></div>
     <div class="field"><label>Who cooked?</label><div class="segtext" id="cWho" style="grid-template-columns:repeat(3,1fr)">${['Corey', 'Faith', 'Both'].map((n) => `<button type="button" data-who="${n}" class="${(state.profile.me || 'Both') === n ? 'on' : ''}">${n}</button>`).join('')}</div></div>
-    <details class="reactbox"><summary>How was it? <span class="muted small">(optional)</span></summary>${reactPicker({})}</details>
+    <div class="field"><label>Rate it together <span class="muted small">(optional)</span></label>${heartsPicker({})}</div>
+    ${pendingTaste(s.id) ? `<div class="field"><label>Taste test — was it a hit?</label><div class="segtext" id="cTT" style="grid-template-columns:1fr 1fr"><button type="button" data-tt="hit">Hit</button><button type="button" data-tt="miss">Miss</button></div></div>` : ''}
+    <details class="reactbox"><summary>Quick reactions <span class="muted small">(optional)</span></summary>${reactPicker({})}</details>
     <label class="setrow" style="border:0;padding-bottom:0"><span class="l"><b>Leftovers in the fridge</b><span>Track lunch portions (eat within 4 days)</span></span><input class="numin" id="cLeft" type="number" inputmode="numeric" min="0" max="10" value="${Math.max(0, (state.servings[s.id] || r.servings || 4) - 2)}"></label>
     <label class="setrow" style="border:0;padding-bottom:0"><span class="l"><b>Reset the ticks</b><span>Clear ingredient & step checkboxes for next time</span></span><span class="switch"><input type="checkbox" id="cReset" checked><i></i></span></label>
     <div class="foot"><button class="btn" data-close>Cancel</button><button class="btn gold" id="cSave">Add to ${esc(new Date().toLocaleDateString('en-CA', { month: 'long' }))}</button></div>`, (b) => {
     let mode = 'est'; let who = state.profile.me || 'Both'; const reacts = {};
     bindReact(b, reacts);
+    const hearts = {}; bindHearts(b, hearts); let ttRes = null;
+    $$('#cTT button', b).forEach((x) => (x.onclick = () => { ttRes = x.dataset.tt; $$('#cTT button', b).forEach((y) => y.classList.toggle('on', y === x)); }));
     let inRc = false;
     const syncRc = () => { inRc = monthHasReceipt(($('#cDate', b).value || todayISO()).slice(0, 7)); $('#rcNote', b).hidden = !inRc; $('#costBox', b).hidden = inRc && !$('#cAdd', b).checked; $('#cSub', b).textContent = inRc && !$('#cAdd', b).checked ? `${r.title} goes into your story and stats.` : `${r.title} goes into this month's dinner total.`; };
     $('#cDate', b).onchange = syncRc; $('#cAdd', b).onchange = syncRc; syncRc();
@@ -847,18 +729,23 @@ function openCooked(r, s, est) {
       let amount = e; const real = parseFloat($('#realAmt', b).value);
       if (mode === 'real') { if (!(real >= 0)) { toast('Enter the receipt amount'); return; } amount = Math.round(real * 100) / 100; }
       const id = uid(); const date = $('#cDate', b).value || todayISO();
+      const firstTime = !cookedEntries(s.id).length;
       const skip = monthHasReceipt(date.slice(0, 7)) && !$('#cAdd', b).checked;
       state.cooked[id] = skip ? { id, recipeId: s.id, title: r.title, date, amount: 0, estimate: false, inReceipts: true, est: e, by: who, at: now() }
         : { id, recipeId: s.id, title: r.title, date, amount, estimate: mode === 'est', by: who, at: now() };
       const rx = Object.fromEntries(Object.entries(reacts).filter(([, v]) => v)); if (Object.keys(rx).length) state.cooked[id].reactions = rx;
+      const hz = Object.fromEntries(Object.entries(hearts).filter(([, v]) => v)); if (Object.keys(hz).length) state.cooked[id].hearts = hz;
+      const pt = pendingTaste(s.id); let note = null;
+      if (pt && ttRes) { pt.result = ttRes; pt.resolvedAt = now(); const right = ['Corey', 'Faith'].filter((n) => pt.guesses[n] === ttRes); note = right.length === 2 ? 'Taste test: you both called it ♥' : right.length ? `Taste test: ${right[0]} called it! +1` : 'Taste test: nobody saw that coming 😄'; }
       if ($('#cReset', b).checked) delete state.checks[s.id];
       const lp = parseInt($('#cLeft', b).value, 10); if (lp > 0) { const lid = uid(); state.leftovers[lid] = { id: lid, recipeId: s.id, title: r.title, date, portions: lp }; }
       save(); closeSheet();
-      const y = scrollY;
-      if (location.hash === '#/r/' + s.id) viewRecipe(s.id).then(() => { scrollTo(0, y); const btn = $('#cookedBtn'); if (btn) heartBurst(btn); });
+      const y = vY();
+      if (location.hash === '#/r/' + s.id) viewRecipe(s.id).then(() => { vTo(y); const btn = $('#cookedBtn'); if (btn) heartBurst(btn); });
       const total = monthTotal(date.slice(0, 7));
       toast(skip ? '♥ Logged · counted in your receipts' : `♥ Logged ${money(amount)} · ${monthName(date.slice(0, 7)).split(' ')[0]} is at ${money(total)}`, 'Budget', () => go('#/budget'));
       checkMilestones();
+      afterCooked(s.id, firstTime, note);
     };
   });
 }
@@ -873,13 +760,6 @@ async function lockScreen() {
   return false;
 }
 document.addEventListener('visibilitychange', () => { if (!$('#cook').hidden && document.visibilityState === 'visible') lockScreen(); });
-function beep() {
-  try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    [0, 0.35, 0.7].forEach((t) => { const o = ctx.createOscillator(); const g = ctx.createGain(); o.frequency.value = 880; o.connect(g); g.connect(ctx.destination); g.gain.setValueAtTime(0.2, ctx.currentTime + t); g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + t + 0.3); o.start(ctx.currentTime + t); o.stop(ctx.currentTime + t + 0.3); });
-  } catch (e) {}
-  if (navigator.vibrate) navigator.vibrate([200, 100, 200]);
-}
 // ---------------------------------------------------------------- views: pantry
 function viewPantry() {
   setTop({ title: 'PANTRY' });
@@ -919,14 +799,14 @@ function viewPantry() {
     const x = cat[row.dataset.k];
     $$('.seg button', row).forEach((b) => (b.onclick = () => {
       setLevel(x.key, x.name, x.cat, b.dataset.l);
-      const y = scrollY; let added = false;
+      const y = vY(); let added = false;
       if (levelOf(x.key) === 'out' && state.settings.autoRestock !== false && !onList(x.key)) { addGrocery(x.name, x.cat, x.key, 'Restock'); save(); added = true; }
-      viewPantry(); scrollTo(0, y);
-      if (added) toast(`${x.name} is out — added to the grocery list`, 'Undo', () => { Object.values(state.grocery).forEach((g) => { if (g.key === x.key && !g.checked && g.from === 'Restock') delete state.grocery[g.id]; }); save(); const y2 = scrollY; viewPantry(); scrollTo(0, y2); });
+      viewPantry(); vTo(y);
+      if (added) toast(`${x.name} is out — added to the grocery list`, 'Undo', () => { Object.values(state.grocery).forEach((g) => { if (g.key === x.key && !g.checked && g.from === 'Restock') delete state.grocery[g.id]; }); save(); const y2 = vY(); viewPantry(); vTo(y2); });
     }));
     $('.nmbtn', row).onclick = () => openPantryItem(x);
   });
-  $$('[data-add]').forEach((b) => (b.onclick = () => { const x = cat[b.dataset.add]; addGrocery(x.name, x.cat, x.key, 'Pantry'); save(); const y = scrollY; viewPantry(); scrollTo(0, y); toast(`${x.name} added to the list`); }));
+  $$('[data-add]').forEach((b) => (b.onclick = () => { const x = cat[b.dataset.add]; addGrocery(x.name, x.cat, x.key, 'Pantry'); save(); const y = vY(); viewPantry(); vTo(y); toast(`${x.name} added to the list`); }));
   $('#addNeeds') && ($('#addNeeds').onclick = () => { needs.forEach((x) => addGrocery(x.name, x.cat, x.key, 'Pantry')); save(); viewPantry(); toast(`Added ${needs.length} to the grocery list`, 'View', () => go('#/grocery')); });
   const addP = () => { const v = $('#pNew').value.trim(); if (!v) return; const k = pantryKey(v); state.pantry[k] = { name: v, cat: guessCat(v), level: 'have', at: now() }; save(); viewPantry(); toast(`${v} added to pantry`); };
   $('#pAdd').onclick = addP; $('#pNew').onkeydown = (e) => { if (e.key === 'Enter') addP(); };
@@ -934,46 +814,6 @@ function viewPantry() {
 }
 
 // ---------------------------------------------------------------- views: grocery
-function viewGrocery() {
-  setTop({ title: 'GROCERY LIST' });
-  const items = Object.values(state.grocery);
-  const left = items.filter((g) => !g.checked).length;
-  const done = items.length - left;
-  render(`<div class="wrap">
-    <div class="kicker">No Frills run<span class="rule"></span></div>
-    <h1 class="h1" style="margin-top:6px">Grocery List</h1>
-    <p class="lead" style="margin-top:4px">${left ? `${left} thing${left === 1 ? '' : 's'} to grab` : items.length ? 'All done — nice.' : 'Empty for now.'}</p>
-    ${(() => { const t = tripEstimate(); return t.n && t.priced ? `<div class="trip"><span>Estimated trip</span><b>~${money(t.total)}</b><small>${t.priced === t.n ? 'all' : t.priced + ' of ' + t.n} items priced · typical No Frills packs${Object.keys(state.prices).length ? ' + your receipts' : ''}</small></div>` : ''; })()}
-    <button class="btn ghost block" id="scanG" style="margin-top:10px">${svg('camera')}Scan a receipt</button>
-    <div class="addrow"><input id="gNew" placeholder="Add an item…" enterkeyhint="done" autocomplete="off"><button class="btn primary" id="gAdd" aria-label="Add">${svg('plus')}</button>
-      <select id="gCat" aria-label="Aisle"><option value="">Aisle: auto</option>${PANTRY_CATS.map(([k, n]) => `<option value="${k}">${esc(n)}</option>`).join('')}</select></div>
-    ${items.length ? PANTRY_CATS.map(([ck, cn]) => {
-      const rows = items.filter((g) => (PCAT[g.cat] ? g.cat : 'other') === ck).sort((a, b) => a.checked - b.checked || a.name.localeCompare(b.name));
-      if (!rows.length) return '';
-      return `<div class="pgroup"><div class="gh">${esc(cn)}<span>${rows.filter((g) => !g.checked).length} left</span></div><ul class="checklist glist">${rows.map((g) => `<li data-g="${g.id}" class="${g.checked ? 'done' : ''}"><span class="box">${CHECK}</span><span class="txt">${esc(g.name)}${g.amounts && g.amounts.length ? ` <span class="gamt">${esc(sumAmounts(g.amounts))}</span>` : ''}${g.from ? `<span class="from">for ${esc(g.from)}</span>` : ''}</span><button class="del" data-del="${g.id}" aria-label="Remove">×</button></li>`).join('')}</ul></div>`;
-    }).join('') : `<div class="empty" style="margin-top:16px">Add things here, or tap “Add missing to grocery list” on a recipe, or “+ Grocery list” on anything running low in the Pantry.</div>`}
-    ${items.length ? `<div class="gsummary"><span>${done} checked</span><span style="display:flex;gap:8px"><button class="btn sm ghost" id="gClear" ${done ? '' : 'disabled style="opacity:.4"'}>Clear checked</button><button class="btn sm ghost" id="gAll">Clear all</button></span></div>
-    <p class="small muted" style="margin-top:10px">Checking something off marks it “Have it” in the Pantry.</p>` : ''}
-  </div>`);
-  const add = () => {
-    const v = $('#gNew').value.trim(); if (!v) return;
-    const c = $('#gCat').value || guessCat(v);
-    addGrocery(v, c, pantryKey(v), ''); save(); viewGrocery(); $('#gNew').focus();
-  };
-  $('#gAdd').onclick = add; $('#gNew').onkeydown = (e) => { if (e.key === 'Enter') add(); };
-  $$('li[data-g]').forEach((li) => (li.onclick = (e) => {
-    if (e.target.closest('.del')) return;
-    const g = state.grocery[li.dataset.g]; g.checked = !g.checked; g.at = now();
-    if (g.checked) { g.checkedAt = now(); g.checkedBy = state.profile.me || null; } else { delete g.checkedAt; delete g.checkedBy; }
-    if (g.checked) { const p = state.pantry[g.key] || { name: g.name, cat: g.cat }; state.pantry[g.key] = { ...p, level: 'have', at: now() }; }
-    save(); li.classList.toggle('done', g.checked);
-    const y = scrollY; setTimeout(() => { viewGrocery(); scrollTo(0, y); }, 250);
-  }));
-  $$('[data-del]').forEach((b) => (b.onclick = () => { const g = state.grocery[b.dataset.del]; delete state.grocery[b.dataset.del]; save(); viewGrocery(); toast(`Removed ${g.name}`, 'Undo', () => { state.grocery[g.id] = g; save(); viewGrocery(); }); }));
-  $('#gClear') && ($('#gClear').onclick = () => { const bak = { ...state.grocery }; Object.values(state.grocery).forEach((g) => { if (g.checked) delete state.grocery[g.id]; }); save(); viewGrocery(); toast('Cleared checked items', 'Undo', () => { state.grocery = bak; save(); viewGrocery(); }); });
-  $('#gAll') && ($('#gAll').onclick = () => confirmSheet('Clear the whole list?', 'This removes every item, checked or not.', 'Clear all', () => withUndo('List cleared', () => { state.grocery = {}; }, viewGrocery), true));
-  $('#scanG').onclick = openScan;
-}
 
 // ---------------------------------------------------------------- views: budget
 function viewBudget() {
@@ -1063,6 +903,7 @@ function viewSettings() {
       <label class="setrow"><span class="l"><b>Anniversary hearts</b><span>A few hearts around your anniversary</span></span><span class="switch"><input type="checkbox" id="heartT" ${st.hearts !== false ? 'checked' : ''}><i></i></span></label>
       <label class="setrow"><span class="l"><b>Little taps</b><span>Tiny vibrations on buttons (Android only — iPhone doesn't allow it)</span></span><span class="switch"><input type="checkbox" id="hapT" ${st.haptics !== false ? 'checked' : ''}><i></i></span></label>
     </div>
+    ${settingsExtrasHTML()}
     <div class="setgroup"><div class="sec-title">Measurements</div>
       <div class="setrow" style="border:0;padding-bottom:0"><span class="l"><b>Ingredient amounts</b></span></div>
       <div class="segtext" id="unitSeg">${[['both', 'Both', 'cups + grams'], ['us', 'Cups', 'spoons & cups'], ['metric', 'Grams', 'metric first']].map(([k, l, t]) => `<button data-u="${k}" class="${(st.units || 'both') === k ? 'on' : ''}">${l}<small>${t}</small></button>`).join('')}</div>
@@ -1107,6 +948,7 @@ function viewSettings() {
   $$('#tempSeg button').forEach((b) => (b.onclick = () => { st.temp = b.dataset.tp; save(); viewSettings(); }));
   $('#clrPrices') && ($('#clrPrices').onclick = () => withUndo('Receipt prices forgotten', () => { state.prices = {}; }, viewSettings));
   $('#showWN').onclick = openWhatsNew;
+  bindSettingsExtras();
   $$('#meSeg button').forEach((b) => (b.onclick = () => { state.profile.me = b.dataset.me; save(); viewSettings(); }));
   const num = (id, k) => ($(id).onchange = (e) => { const v = parseFloat(e.target.value); if (v > 0) { st[k] = v; save(); toast('Saved'); } });
   $('#anniv').onchange = (e) => { st.anniversary = e.target.value; save(); applySeason(); toast('Saved ♥'); };
@@ -1272,36 +1114,8 @@ function viewGuide() {
 }
 
 // ---------------------------------------------------------------- views: us (anniversary)
-function viewUs() {
-  setTop({ title: 'US', back: '#/' });
-  const a = state.settings.anniversary;
-  let together = '';
-  if (a) {
-    const [y, m, d] = a.split('-').map(Number); const start = new Date(y, m - 1, d); const today = new Date(); today.setHours(0, 0, 0, 0);
-    const days = Math.floor((today - start) / 864e5);
-    let next = new Date(today.getFullYear(), m - 1, d); if (next < today) next = new Date(today.getFullYear() + 1, m - 1, d);
-    const to = Math.round((next - today) / 864e5); const yrs = next.getFullYear() - y;
-    together = `<div class="bigtotal"><div class="lbl">TOGETHER</div><div class="amt">${days.toLocaleString('en-CA')}<small>days</small></div>
-      <p>${to === 0 ? `Happy ${yrs}-year anniversary! ♥ Make it a Date Night.` : `${to} day${to === 1 ? '' : 's'} until your ${yrs}-year anniversary.`}</p></div>`;
-  } else together = `<div class="card"><p>Add your anniversary in <a href="#/settings" class="linkbtn">Settings</a> and this page will count the days together.</p></div>`;
-  const all = realDinners();
-  const favs = Object.keys(state.favourites).map(summary).filter(Boolean);
-  const photos = Object.entries(state.photos).flatMap(([rid, ps]) => ps.map((p) => ({ ...p, rid }))).sort((x, y) => (x.date < y.date ? 1 : -1));
-  const rated = Object.entries(state.ratings).filter(([, v]) => v).map(([rid, v]) => ({ r: summary(rid), v })).filter((x) => x.r).sort((x, y) => y.v - x.v);
-  render(`<div class="wrap"><div class="kicker">Corey ♥ Faith<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Us</h1>
-    <div class="sec">${together}</div>
-    <div class="sec"><div class="statgrid"><div class="s"><b>${all.length}</b><span>Dinners together</span></div><div class="s"><b>${favs.length}</b><span>Favourites</span></div>
-      <div class="s"><b>${photos.length}</b><span>Photo memories</span></div><div class="s"><b>${Object.values(state.picks).filter((p) => p.ok).length}</b><span>Picks we said yes to</span></div></div></div>
-    <a class="nudge" href="#/story" style="margin-top:16px"><span>${svg('book')}</span><span style="flex:1"><b>Our story</b> — every dinner we've made, with photos, dates and monthly recaps.</span><span>${svg('chevR')}</span></a>
-    <div class="sec"><div class="sec-title">Milestones</div><div class="miles">${MILESTONES.map(([k, label]) => `<div class="mile ${state.milestones[k] ? 'on' : ''}"><span>${state.milestones[k] ? '♥' : '·'}</span><b>${esc(label)}</b>${state.milestones[k] ? `<small>${esc(shortDate(state.milestones[k]))}</small>` : ''}</div>`).join('')}</div></div>
-    <div class="sec"><div class="sec-title">Our favourites</div>${favs.length ? `<div class="hrow">${favs.map(miniCard).join('')}</div>` : '<div class="empty">Heart a recipe and it shows up here.</div>'}</div>
-    ${rated.length ? `<div class="sec"><div class="sec-title">Top rated</div><ul class="cooked">${rated.map((x) => `<li><div><a class="t" href="#/r/${x.r.id}">${esc(x.r.title)}</a></div><span class="amt" style="color:var(--gold)">${'♥'.repeat(x.v)}</span></li>`).join('')}</ul></div>` : ''}
-    <div class="sec"><div class="sec-title">Photo memories</div>${photos.length ? `<div class="photos">${photos.map((p) => `<a class="ph" href="#/r/${p.rid}"><img src="${p.data}" alt=""><span>${esc(shortDate(p.date))}</span></a>`).join('')}</div>` : '<div class="empty">Add a photo from any recipe page after you cook it.</div>'}</div>
-  </div>`);
-}
 
 // ================================================================ update 2 (Nov 2026)
-const WHATSNEW_ID = 'u2b-2026-11'; // u2b = budget receipt fix; 'u2-2026-11' users get a short card
 ICON.mic = '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>';
 ICON.speaker = '<path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/>';
 ICON.candle = '<path d="M9 10h6v11H9zM12 10V7.5"/><path d="M12 2.8c1.3 1.5 1.6 2.6.8 3.8-.4.5-1.2.5-1.6 0-.8-1.2-.5-2.3.8-3.8z"/>';
@@ -1326,7 +1140,7 @@ function withUndo(msg, fn, after) {
 }
 const reducedMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 const other = (n) => (n === 'Corey' ? 'Faith' : 'Corey');
-const thumb = (src) => (src && /^assets\/img\/(?!cover).+\.webp$/.test(src) ? src.replace(/\.webp$/, '-sm.webp') : src);
+const thumb = (src) => (src && /^assets\/(img|acura)\/(?!cover).+\.webp$/.test(src) ? src.replace(/\.webp$/, '-sm.webp') : src);
 
 // °C / °F display
 function tempText(s) {
@@ -1512,7 +1326,7 @@ async function loadWeather() {
     if (!j.current) return;
     WX = { at: now(), t: Math.round(j.current.temperature_2m), code: j.current.weather_code };
     localStorage.setItem(WX_KEY, JSON.stringify(WX));
-    if ((location.hash || '#/') === '#/' && !$('#wxLine') && $('#sheetWrap').hidden) { const y = scrollY; viewHome(); scrollTo(0, y); }
+    if ((location.hash || '#/') === '#/' && !$('#wxLine') && $('#sheetWrap').hidden) { const y = vY(); viewHome(); vTo(y); }
   } catch (e) { /* offline or blocked: skip silently */ }
 }
 function wxFresh() { return WX && now() - WX.at < 6 * 36e5 ? WX : null; }
@@ -1639,7 +1453,7 @@ function openPantryItem(x) {
     <div class="foot" style="grid-template-columns:auto auto 1fr"><button class="btn" id="ubClear">Clear</button><button class="btn" id="ubFreeze">${svg('snow')}Freezer</button><button class="btn primary" id="ubSave">Save</button></div>
     ${!x.recipes.length ? '<button class="btn danger block" id="pDel" style="margin-top:10px">Remove from pantry</button>' : ''}`, (b) => {
     $$('[data-ub]', b).forEach((c) => (c.onclick = () => { $('#ubD', b).value = isoPlus(+c.dataset.ub); }));
-    const set = (v) => { const cur = state.pantry[x.key] || { name: x.name, cat: x.cat, level: null }; if (v) state.pantry[x.key] = { ...cur, useBy: v, at: now() }; else { const c2 = { ...cur }; delete c2.useBy; state.pantry[x.key] = c2; } save(); closeSheet(); const y = scrollY; viewPantry(); scrollTo(0, y); };
+    const set = (v) => { const cur = state.pantry[x.key] || { name: x.name, cat: x.cat, level: null }; if (v) state.pantry[x.key] = { ...cur, useBy: v, at: now() }; else { const c2 = { ...cur }; delete c2.useBy; state.pantry[x.key] = c2; } save(); closeSheet(); const y = vY(); viewPantry(); vTo(y); };
     $('#ubSave', b).onclick = () => set($('#ubD', b).value);
     $('#ubClear', b).onclick = () => set('');
     $('#ubFreeze', b).onclick = () => { const id = uid(); state.freezer[id] = { id, name: x.name, portions: 1, date: todayISO(), at: now() }; save(); closeSheet(); toast(`${x.name} added to the freezer`, 'Open', () => go('#/freezer')); };
@@ -1655,43 +1469,6 @@ function useByTag(p) {
 
 // ---------------------------------------------------------------- story, recap, milestones (#14, #15, #16)
 const realDinners = () => Object.values(state.cooked).filter((c) => c.recipeId !== 'receipt');
-function monthRecap(key) {
-  const es = realDinners().filter((c) => c.date.startsWith(key));
-  if (!es.length) return null;
-  const spent = Object.values(state.cooked).filter((c) => c.date.startsWith(key)).reduce((a, c) => a + Number(c.amount || 0), 0);
-  const by = {}; es.forEach((c) => { by[c.recipeId] = (by[c.recipeId] || 0) + 1; });
-  const top = Object.entries(by).sort((a, b) => b[1] - a[1])[0];
-  const topName = (summary(top[0]) || {}).title || (es.find((c) => c.recipeId === top[0]) || {}).title;
-  const earlier = new Set(realDinners().filter((c) => c.date < key).map((c) => c.recipeId));
-  const fresh = new Set(es.filter((c) => !earlier.has(c.recipeId) && c.recipeId !== 'other').map((c) => c.recipeId)).size;
-  const cnt = (n) => es.filter((c) => c.by === n || c.by === 'Both').length;
-  const photos = Object.values(state.photos).flat().filter((p) => p.date.startsWith(key)).length;
-  return { key, n: es.length, spent, topName, topN: top[1], fresh, corey: cnt('Corey'), faith: cnt('Faith'), photos, saved: es.reduce((a, c) => a + Math.max(0, state.settings.takeoutCost - mealCost(c)), 0) };
-}
-function recapCard(rc, dismiss) {
-  return `<div class="recap"><div class="rk">${esc(monthName(rc.key).toUpperCase())} · RECAP${dismiss ? '<button class="x" id="recapX" aria-label="Dismiss">×</button>' : ''}</div>
-    <div class="rgrid"><div><b>${rc.n}</b><span>dinners</span></div><div><b>${money(rc.spent)}</b><span>spent</span></div><div><b>${money(rc.saved)}</b><span>saved vs takeout</span></div></div>
-    <p>Most made: <b>${esc(rc.topName)}</b>${rc.topN > 1 ? ` ×${rc.topN}` : ''}.${rc.fresh ? ` ${rc.fresh} new recipe${rc.fresh === 1 ? '' : 's'} tried.` : ''}${rc.corey || rc.faith ? ` Corey cooked ${rc.corey}, Faith ${rc.faith}.` : ''}${rc.photos ? ` ${rc.photos} photo${rc.photos === 1 ? '' : 's'}.` : ''}</p></div>`;
-}
-const MILESTONES = [
-  ['d1', 'First dinner logged', (x) => x.n >= 1], ['d10', '10 dinners together', (x) => x.n >= 10], ['d25', '25 dinners together', (x) => x.n >= 25],
-  ['d50', '50 dinners together', (x) => x.n >= 50], ['d100', '100 dinners together', (x) => x.n >= 100],
-  ['r5', '5 different recipes tried', (x) => x.distinct >= 5], ['rall', 'Cooked every recipe in the book', (x) => x.allBook],
-  ['p1', 'First photo memory', (x) => x.photos >= 1], ['p10', '10 photo memories', (x) => x.photos >= 10],
-  ['c10', 'Corey cooked 10 dinners', (x) => x.corey >= 10], ['f10', 'Faith cooked 10 dinners', (x) => x.faith >= 10],
-  ['b10', '10 dinners cooked together', (x) => x.both >= 10], ['bud', 'A whole month inside the budget', (x) => x.budgetMonth],
-];
-function milestoneFacts() {
-  const all = realDinners();
-  const ids = new Set(all.map((c) => c.recipeId).filter((id) => id !== 'other'));
-  const months = {}; Object.values(state.cooked).forEach((c) => { const k = c.date.slice(0, 7); months[k] = (months[k] || 0) + Number(c.amount || 0); });
-  const cnt = (n) => all.filter((c) => c.by === n || c.by === 'Both').length;
-  return {
-    n: all.length, distinct: ids.size, allBook: INDEX.recipes.length > 0 && INDEX.recipes.every((r) => ids.has(r.id)),
-    photos: Object.values(state.photos).flat().length, corey: cnt('Corey'), faith: cnt('Faith'), both: all.filter((c) => c.by === 'Both').length,
-    budgetMonth: Object.entries(months).some(([k, v]) => k < monthKey() && v > 0 && v <= state.settings.budgetMax && all.filter((c) => c.date.startsWith(k)).length >= 8),
-  };
-}
 function checkMilestones(silent) {
   const f = milestoneFacts(); const fresh = [];
   MILESTONES.forEach(([k, label, test]) => { if (!state.milestones[k] && test(f)) { state.milestones[k] = todayISO(); fresh.push(label); } });
@@ -1737,51 +1514,9 @@ function nearAnniversary() {
   const [, m, d] = a.split('-').map(Number); const t = new Date(); t.setHours(0, 0, 0, 0);
   return [-1, 0, 1].some((yo) => Math.abs((new Date(t.getFullYear() + yo, m - 1, d) - t) / 864e5) <= 3);
 }
-function applySeason() {
-  let layer = $('#season');
-  const mo = new Date().getMonth();
-  const hearts = nearAnniversary() && state.settings.hearts !== false;
-  const snow = (mo >= 10 || mo <= 1) && state.settings.snow !== false;
-  const kind = hearts ? 'hearts' : snow ? 'snow' : '';
-  if (!kind || reducedMotion()) { if (layer) layer.remove(); return; }
-  if (layer && layer.dataset.kind === kind) return;
-  if (layer) layer.remove();
-  layer = document.createElement('div'); layer.id = 'season'; layer.dataset.kind = kind; layer.setAttribute('aria-hidden', 'true');
-  const n = kind === 'hearts' ? 10 : 16;
-  for (let i = 0; i < n; i++) {
-    const e = document.createElement('i');
-    const size = kind === 'hearts' ? 9 + Math.random() * 5 : 3 + Math.random() * 3.5;
-    e.style.cssText = `left:${(i / n) * 100 + Math.random() * (100 / n)}%;width:${size.toFixed(1)}px;height:${size.toFixed(1)}px;animation-duration:${(14 + Math.random() * 12).toFixed(1)}s,${(4 + Math.random() * 3).toFixed(1)}s;animation-delay:${(-Math.random() * 26).toFixed(1)}s,${(-Math.random() * 4).toFixed(1)}s;opacity:${(0.35 + Math.random() * 0.35).toFixed(2)}`;
-    if (kind === 'hearts') e.innerHTML = `<svg viewBox="0 0 24 24">${ICON.heart}</svg>`;
-    layer.appendChild(e);
-  }
-  document.body.appendChild(layer);
-}
 try { matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', applySeason); } catch (e) {}
 
 // ---------------------------------------------------------------- what's new (#34) + backup reminder (#45)
-const WHATSNEW = [
-  ['Cooking', 'Amounts right inside each step · “Start cooking by” · hands-free mode (voice where the phone allows it, big tap zones everywhere) · read-aloud · cook two dishes at once with all timers together · candle-lit cook mode on Date Night recipes'],
-  ['Grocery', 'Add a recipe (only what the pantry is missing) · duplicates merge and amounts add up · estimated trip total · scan a receipt to stock the pantry, tick the list, log the total and learn real prices · once a receipt is in for the month, “Cooked it” stops adding the meal’s cost again (you can still choose to add it) · staples marked Out go back on the list'],
-  ['Ideas', 'Mood picker (Cozy, Quick, Fancy, Cheap) · Use it up · Haven\'t made in a while · London weather picks · whose turn to pick · search by ingredient like “chicken + rice” · a wish list'],
-  ['Us', 'Our story timeline · monthly recap · milestones · who cooked it · reactions · love notes on recipes · Mom\'s soup family story'],
-  ['Kitchen', 'Swap ideas per ingredient · reheat & make-ahead tips · gear list · cups/grams and °C/°F · guest mode for 4–6 · pantry use-by dates · freezer list · print a recipe · recipe versions you can switch back to · undo · snow until February'],
-];
-function whatsNewCard() {
-  if (state.seenWhatsNew === WHATSNEW_ID) return '';
-  if (state.seenWhatsNew === 'u2-2026-11') return `<div class="wn"><div class="wn-k">NEW IN OUR KITCHEN<button class="x" id="wnX" aria-label="Dismiss">×</button></div>
-    <p>Budget fix: once a grocery receipt is scanned for the month, “Cooked it” logs the dinner without adding its cost again (a switch lets you add it anyway). Past entries are unchanged.</p>
-    <div class="btnrow" style="margin-top:10px"><button class="btn sm ghost" id="wnMore">See what's new</button><button class="btn sm gold" id="wnOk">Got it ♥</button></div></div>`;
-  return `<div class="wn"><div class="wn-k">NEW IN OUR KITCHEN<button class="x" id="wnX" aria-label="Dismiss">×</button></div>
-    <p>A big update for both of us — cooking help, smarter grocery runs, our story and more. Everything you saved is still here.</p>
-    <div class="btnrow" style="margin-top:10px"><button class="btn sm ghost" id="wnMore">See what's new</button><button class="btn sm gold" id="wnOk">Got it ♥</button></div></div>`;
-}
-function openWhatsNew() {
-  openSheet(`<h2>What's new</h2><p class="sub">November 2026 update · everything you had saved stays exactly as it was.</p>
-    <div class="wnlist">${WHATSNEW.map(([h, t]) => `<div><h4>${esc(h)}</h4><p>${esc(t)}</p></div>`).join('')}</div>
-    <div class="foot"><button class="btn primary" data-close>Lovely</button></div>`);
-  if (state.seenWhatsNew !== WHATSNEW_ID) { state.seenWhatsNew = WHATSNEW_ID; save(); }
-}
 function backupDue() {
   const st = state.settings; const t = now();
   const hasData = Object.keys(state.cooked).length + Object.keys(state.notes).length + Object.keys(state.photos).length + Object.keys(state.pantry).length > 0;
@@ -1991,7 +1726,7 @@ function ensureTick() {
     let changed = false;
     for (let k = cookTimers.length - 1; k >= 0; k--) {
       const t = cookTimers[k]; t.left = Math.max(0, Math.round((t.end - now()) / 1000));
-      if (t.left <= 0) { cookTimers.splice(k, 1); changed = true; beep(); toast(`${t.dish} · step ${t.step + 1} timer done!`); speak(`Timer done. ${t.dish}, step ${t.step + 1}.`); }
+      if (t.left <= 0) { cookTimers.splice(k, 1); changed = true; beep(); toast(t.label ? `Time to ${t.label.replace(/^Start/, 'start')}!` : `${t.dish} · step ${t.step + 1} timer done!`); speak(t.label ? `Time to ${t.label}.` : `Timer done. ${t.dish}, step ${t.step + 1}.`); }
     }
     $$('[data-tleft]').forEach((el) => { const t = cookTimers.find((x) => x.id === el.dataset.tleft); if (t) el.textContent = fmtSec(t.left); });
     if (changed && cookSession && !$('#cook').hidden) cookSession.redraw();
@@ -2053,14 +1788,15 @@ function openCook(r, s, f) {
     const more = last && pending() >= 0;
     el.classList.toggle('candle', !!sess.candle && isDate(rr)); el.classList.toggle('hands', !!sess.hands);
     el.innerHTML = `<div class="ctop"><button class="iconbtn" id="cClose" aria-label="Close">${svg('close')}</button><div class="cstep">STEP ${d.i + 1} OF ${rr.steps.length}</div>
-        <div class="ctools">${'speechSynthesis' in window ? `<button class="iconbtn ${sess.read ? 'on' : ''}" id="cRead" aria-label="Read aloud" aria-pressed="${sess.read}">${svg('speaker')}</button>` : ''}<button class="iconbtn ${sess.hands ? 'on' : ''}" id="cHands" aria-label="Hands-free" aria-pressed="${sess.hands}">${svg('mic')}</button>${isDate(rr) ? `<button class="iconbtn ${sess.candle ? 'on' : ''}" id="cCandle" aria-label="Candle light" aria-pressed="${sess.candle}">${svg('candle')}</button>` : ''}<button class="iconbtn ${sess.showIngs ? 'on' : ''}" id="cIngs" aria-label="Ingredients">${svg('cart')}</button></div></div>
+        <div class="ctools">${'speechSynthesis' in window ? `<button class="iconbtn ${sess.read ? 'on' : ''}" id="cRead" aria-label="Read aloud" aria-pressed="${sess.read}">${svg('speaker')}</button>` : ''}<button class="iconbtn ${sess.hands ? 'on' : ''}" id="cHands" aria-label="Hands-free" aria-pressed="${sess.hands}">${svg('mic')}</button>${isDate(rr) ? `<button class="iconbtn ${sess.candle ? 'on' : ''}" id="cCandle" aria-label="Candle light" aria-pressed="${sess.candle}">${svg('candle')}</button>` : ''}<button class="iconbtn" id="cMusic" aria-label="Kitchen playlist">${svg('music')}</button><button class="iconbtn ${sess.showIngs ? 'on' : ''}" id="cIngs" aria-label="Ingredients">${svg('cart')}</button></div></div>
       ${sess.dishes.length > 1 ? `<div class="dishes">${sess.dishes.map((x, k) => `<button data-dish="${k}" class="${k === sess.cur ? 'on' : ''}">${esc(short(x.r.title))}<small>${x.done ? 'done ✓' : 'step ' + (x.i + 1) + '/' + x.r.steps.length}</small></button>`).join('')}</div>` : ''}
+      ${alignHTML(sess)}
       <div class="prog">${rr.steps.map((_, k) => `<i class="${k <= d.i ? 'on' : ''}"></i>`).join('')}</div>
       <div class="cbody" id="cBody">${sess.showIngs ? `<div class="k">INGREDIENTS · ${esc(rr.title.toUpperCase())}</div><div class="ings">${rr.groups.map((g) => (g.name ? `<div class="k" style="margin-top:12px">${esc(g.name.toUpperCase())}</div>` : '') + g.items.map((it) => `<div>• ${ingLine(it, d.f, false)}</div>`).join('')).join('')}</div>`
-        : `<div class="k">${esc(rr.title.toUpperCase())}</div><h2>${esc(st.title)}</h2>${uses.length ? `<div class="cuses">${uses.map((u) => `<span>${esc(u)}</span>`).join('')}</div>` : ''}<p>${tx(st.text)}</p>
+        : `<div class="k">${esc(rr.title.toUpperCase())}</div><h2>${esc(st.title)}</h2>${uses.length ? `<div class="cuses">${(st.uses || []).map((ref) => { const t = stepUses(rr, { uses: [ref] }, d.f)[0]; return t ? `<button class="use ${ui.used && ui.used[d.s.id] && ui.used[d.s.id][ref] ? 'on' : ''}" data-use="${esc(ref)}">${esc(t)}</button>` : ''; }).join('')}</div>` : ''}<p>${tx(st.text)}</p>
         ${st.timer ? `<button class="timer ${myT ? 'run' : ''}" id="cTimer">${svg('timer')}<span id="cTimerTxt" ${myT ? `data-tleft="${myT.id}"` : ''}>${myT ? fmtSec(myT.left) : 'Start ' + st.timer + ' min timer'}</span></button>` : ''}`}
         ${sess.hands ? `<p class="handshint">${sess.rec ? 'Listening — say “next”, “back” or “repeat”. ' : ''}Tap anywhere on the right for next, the left for back.</p>` : ''}</div>
-      ${others.length ? `<div class="ttray">${others.map((t) => `<button data-tgo="${t.id}"><b data-tleft="${t.id}">${fmtSec(t.left)}</b><span>${esc(short(t.dish))} · step ${t.step + 1}</span></button>`).join('')}</div>` : ''}
+      ${others.length ? `<div class="ttray">${others.map((t) => `<button data-tgo="${t.id}"><b data-tleft="${t.id}">${fmtSec(t.left)}</b><span>${t.label ? esc(short(t.label)) : esc(short(t.dish)) + ' · step ' + (t.step + 1)}</span></button>`).join('')}</div>` : ''}
       <div class="cnav"><button class="btn" id="cPrev" ${d.i === 0 ? 'disabled style="opacity:.35"' : ''}>Back</button><button class="btn gold" id="cNext">${last ? (more ? 'Next dish' : 'Done ♥') : 'Next step'}</button></div>
       <div class="cfoot">${sess.dishes.length < 2 ? '<button class="linkbtn" id="cAdd">+ Cook a second dish</button>' : ''}<span class="awake">${wakeLock ? 'Screen will stay awake while cooking' : ''}</span></div>`;
     $('#cClose', el).onclick = close;
@@ -2078,6 +1814,9 @@ function openCook(r, s, f) {
     $$('[data-dish]', el).forEach((b) => (b.onclick = () => { sess.cur = +b.dataset.dish; sess.showIngs = false; draw(); }));
     $$('[data-tgo]', el).forEach((b) => (b.onclick = () => { const t = cookTimers.find((x) => x.id === b.dataset.tgo); if (!t) return; const k = sess.dishes.findIndex((x) => x.s.id === t.rid); if (k >= 0) { sess.cur = k; sess.dishes[k].i = t.step; sess.dishes[k].done = false; sess.showIngs = false; draw(); } }));
     if ($('#cAdd', el)) $('#cAdd', el).onclick = pickSecond;
+    $('#cMusic', el).onclick = openPlaylist;
+    if ($('#cAlign', el)) $('#cAlign', el).onclick = () => { startAlign(sess); draw(); };
+    $$('.use', el).forEach((b) => (b.onclick = (e) => { e.stopPropagation(); useIngredient(d.r, d.s.id, b.dataset.use, b); }));
     const tb = $('#cTimer', el);
     if (tb) tb.onclick = () => {
       if (myT) { cookTimers.splice(cookTimers.indexOf(myT), 1); draw(); return; }
@@ -2113,6 +1852,1552 @@ function openCook(r, s, f) {
   draw(); el.hidden = false;
 }
 
+// ================================================================ update 3 (Nov 2026) — quality of life, us, Acura
+ICON.paw = '<ellipse cx="12" cy="15.6" rx="4.4" ry="3.7"/><ellipse cx="6.3" cy="10.2" rx="1.8" ry="2.4" transform="rotate(-22 6.3 10.2)"/><ellipse cx="9.7" cy="6.5" rx="1.8" ry="2.5"/><ellipse cx="14.3" cy="6.5" rx="1.8" ry="2.5"/><ellipse cx="17.7" cy="10.2" rx="1.8" ry="2.4" transform="rotate(22 17.7 10.2)"/>';
+ICON.bone = '<path d="M6.5 9.2a2.3 2.3 0 1 0-2.9 2.8 2.3 2.3 0 1 0 2.9 2.8h11a2.3 2.3 0 1 0 2.9-2.8 2.3 2.3 0 1 0-2.9-2.8z"/>';
+ICON.hat = '<path d="M7 14.5c-2.3-.4-4-2.3-4-4.6a4.6 4.6 0 0 1 5.3-4.6A4.7 4.7 0 0 1 12 3.5a4.7 4.7 0 0 1 3.7 1.8A4.6 4.6 0 0 1 21 9.9c0 2.3-1.7 4.2-4 4.6V20H7z"/><path d="M7 17h10"/>';
+ICON.flame = '<path d="M12 21c-3.9 0-6.5-2.6-6.5-6.1 0-3.4 2.4-5.3 3.6-8 .4 1.7 1.3 2.8 2.4 3.4.2-2.6 1.5-5.1 3.4-6.8-.2 2.6.9 4.4 2.2 6.1 1.1 1.4 1.4 3 1.4 4.6C18.5 18.1 15.9 21 12 21z"/>';
+ICON.music = '<path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/>';
+ICON.coin = '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5.5"/>';
+ICON.jar = '<path d="M8 3.5h8M7 6.5h10M7.5 6.5c-1.6 1.2-2.5 2.8-2.5 5V18a2.5 2.5 0 0 0 2.5 2.5h9A2.5 2.5 0 0 0 19 18v-6.5c0-2.2-.9-3.8-2.5-5"/><path d="M12 11.6c-.7-1.2-2.8-1-2.8.7 0 1.5 2.8 3.1 2.8 3.1s2.8-1.6 2.8-3.1c0-1.7-2.1-1.9-2.8-.7z"/>';
+ICON.calendar = '<rect x="4" y="5" width="16" height="15" rx="1.5"/><path d="M4 9.5h16M8.5 3v4M15.5 3v4"/>';
+ICON.medal = '<circle cx="12" cy="14.5" r="5.5"/><path d="M8.5 3.5l2.2 6M15.5 3.5l-2.2 6M12 12.2l.8 1.6 1.7.2-1.3 1.2.4 1.7-1.6-.9-1.6.9.4-1.7-1.3-1.2 1.7-.2z"/>';
+ICON.more = '<circle cx="5.5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="18.5" cy="12" r="1.3"/>';
+ICON.pumpkin = '<path d="M12 7c-1.2-.9-3.6-1.2-5.4.2C4.2 9 4 13.6 5.6 16.4 7 19 9.6 19.6 12 18.6c2.4 1 5 .4 6.4-2.2 1.6-2.8 1.4-7.4-1-9.2C15.6 5.8 13.2 6.1 12 7z"/><path d="M12 7c.2-1.4.9-2.6 2.2-3.3M12 7c-1.4 2.6-1.4 8.6 0 11.6"/>';
+ICON.dice2 = ICON.dice;
+ICON.edit = '<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/>';
+ICON.bowl = '<path d="M3.5 11.5h17l-1.6 6.2a2 2 0 0 1-1.9 1.5H7a2 2 0 0 1-1.9-1.5z"/><path d="M8 11.5c0-2 1.8-3.4 4-3.4s4 1.4 4 3.4"/>';
+
+// ---------------------------------------------------------------- scroll container helpers (#4: fixed app shell)
+const vY = () => { const v = $('#view'); return v ? v.scrollTop : 0; };
+function vTo(y) { const v = $('#view'); if (v) v.scrollTop = y || 0; }
+
+// ---------------------------------------------------------------- sheets (#1): locked background, inner scroll, drag to dismiss
+function openSheet(html, mount) {
+  const w = $('#sheetWrap'); const sh = $('.sheet', w);
+  $('#sheetBody').innerHTML = html;
+  document.body.classList.add('sheet-open');
+  w.hidden = false; sh.style.transform = ''; sh.style.transition = ''; $('.sheet-scrim', w).style.opacity = '';
+  sh.scrollTop = 0;
+  if (mount) mount($('#sheetBody'));
+}
+function closeSheet() {
+  const w = $('#sheetWrap'); const was = !w.hidden;
+  w.hidden = true; $('#sheetBody').innerHTML = '';
+  const sh = $('.sheet', w); sh.style.transform = ''; sh.style.transition = '';
+  document.body.classList.remove('sheet-open');
+  if (was) setTimeout(maybeApplyUpdate, 450);
+}
+function slideSheetAway() {
+  const w = $('#sheetWrap'); const sh = $('.sheet', w);
+  if (reducedMotion()) { closeSheet(); return; }
+  sh.style.transition = 'transform .2s ease-in'; sh.style.transform = 'translateY(105%)'; $('.sheet-scrim', w).style.opacity = '0';
+  setTimeout(closeSheet, 200);
+}
+(function sheetGestures() {
+  const w = $('#sheetWrap'); const sh = $('.sheet', w); const scrim = $('.sheet-scrim', w);
+  let y0 = null, t0 = 0, dy = 0, drag = false, fromGrip = false;
+  // the scrim never scrolls anything behind it
+  scrim.addEventListener('touchmove', (e) => e.preventDefault(), { passive: false });
+  sh.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) { y0 = null; return; }
+    y0 = e.touches[0].clientY; t0 = now(); dy = 0; drag = false;
+    const r = sh.getBoundingClientRect();
+    fromGrip = !!e.target.closest('.sheet-grip') || y0 - r.top < 34;
+  }, { passive: true });
+  sh.addEventListener('touchmove', (e) => {
+    if (y0 == null) return;
+    dy = e.touches[0].clientY - y0;
+    const atTop = sh.scrollTop <= 0;
+    if (!drag && dy > 6 && (fromGrip || atTop) && !e.target.closest('input[type=range],.hrow,.wheel')) drag = true;
+    if (drag) {
+      e.preventDefault();
+      const d = Math.max(0, dy);
+      sh.style.transition = 'none'; sh.style.transform = `translateY(${d}px)`;
+      scrim.style.opacity = String(Math.max(0.15, 1 - d / 420));
+    } else if (atTop && dy > 0) {
+      e.preventDefault(); // no rubber-band pull of the page behind
+    } else if (sh.scrollHeight <= sh.clientHeight + 1) {
+      e.preventDefault(); // nothing to scroll inside: don't let it chain to the page
+    }
+  }, { passive: false });
+  sh.addEventListener('touchend', () => {
+    if (y0 == null) return;
+    const v = dy / Math.max(1, now() - t0); y0 = null;
+    if (!drag) return; drag = false;
+    if (dy > 120 || (dy > 40 && v > 0.55)) slideSheetAway();
+    else { sh.style.transition = 'transform .22s cubic-bezier(.2,.8,.2,1)'; sh.style.transform = ''; scrim.style.opacity = ''; }
+  }, { passive: true });
+})();
+
+// ---------------------------------------------------------------- auto-update (#2)
+let swReg = null; let updatePending = false;
+const hadController = !!('serviceWorker' in navigator && navigator.serviceWorker.controller);
+function safeToReload() {
+  const ae = document.activeElement;
+  return $('#cook').hidden && $('#sheetWrap').hidden && $('#welcome').hidden && !cookTimers.length
+    && !(ae && /^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName)) && !document.body.classList.contains('printing');
+}
+function maybeApplyUpdate() {
+  if (!updatePending || !safeToReload()) return;
+  updatePending = false;
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) {}
+  try { sessionStorage.setItem('ok-updated', '1'); sessionStorage.setItem('ok-scroll', JSON.stringify({ h: location.hash, y: vY() })); } catch (e) {}
+  location.reload();
+}
+function initSW() {
+  if (!('serviceWorker' in navigator) || location.protocol === 'file:') return;
+  navigator.serviceWorker.register('./sw.js', { scope: './', updateViaCache: 'none' }).then((reg) => {
+    swReg = reg; reg.update().catch(() => {});
+    setInterval(() => { if (document.visibilityState === 'visible') reg.update().catch(() => {}); }, 20 * 60e3);
+  }).catch(() => {});
+  navigator.serviceWorker.addEventListener('controllerchange', () => { if (!hadController) return; updatePending = true; maybeApplyUpdate(); });
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') { if (swReg) swReg.update().catch(() => {}); maybeApplyUpdate(); }
+    else if (updatePending) maybeApplyUpdate(); // reload quietly while the app is in the background
+  });
+}
+
+// ---------------------------------------------------------------- keyboard never covers inputs (#8)
+if (window.visualViewport) {
+  const vv = window.visualViewport;
+  const onvv = () => { const kb = Math.max(0, Math.round(window.innerHeight - vv.height - vv.offsetTop)); document.documentElement.style.setProperty('--kb', kb + 'px'); document.body.classList.toggle('kb', kb > 90); };
+  vv.addEventListener('resize', onvv); vv.addEventListener('scroll', onvv);
+}
+document.addEventListener('focusin', (e) => {
+  const t = e.target;
+  if (!t.matches || !t.matches('input:not([type=checkbox]):not([type=range]):not([type=file]):not([type=radio]),textarea,select')) return;
+  setTimeout(() => { try { t.scrollIntoView({ block: 'center', behavior: reducedMotion() ? 'auto' : 'smooth' }); } catch (x) {} }, 330);
+});
+
+// ---------------------------------------------------------------- swipe from the left edge to go back (#6)
+(function edgeBack() {
+  let sx = null, sy = 0, on = false; const ind = $('#edge');
+  const canBack = () => TAB_ROOTS[location.hash || '#/'] === undefined && $('#sheetWrap').hidden && $('#cook').hidden && $('#welcome').hidden;
+  document.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) return; const t = e.touches[0];
+    if (t.clientX > 24 || !canBack()) { sx = null; return; }
+    sx = t.clientX; sy = t.clientY; on = false;
+  }, { passive: true });
+  document.addEventListener('touchmove', (e) => {
+    if (sx == null) return; const t = e.touches[0]; const dx = t.clientX - sx; const dy = t.clientY - sy;
+    if (!on) { if (Math.abs(dy) > 12 && Math.abs(dy) > Math.abs(dx)) { sx = null; return; } if (dx > 12) on = true; }
+    if (on) { e.preventDefault(); const p = Math.min(1, dx / 110); ind.style.opacity = String(p); ind.classList.toggle('go', dx > 90); $('#view').style.transform = `translateX(${Math.min(dx * 0.3, 36)}px)`; }
+  }, { passive: false });
+  document.addEventListener('touchend', (e) => {
+    if (sx == null) return; const dx = e.changedTouches[0].clientX - sx; sx = null;
+    ind.style.opacity = '0'; ind.classList.remove('go'); $('#view').style.transform = '';
+    if (on && dx > 90) { const b = $('#backBtn'); if (b) b.click(); else history.back(); }
+    on = false;
+  }, { passive: true });
+})();
+
+// ---------------------------------------------------------------- pull to refresh on Home (#11)
+(function pullToRefresh() {
+  const v = $('#view'); const ind = $('#ptr'); let y0 = null, d = 0, on = false, busy = false;
+  v.addEventListener('touchstart', (e) => { if (busy || (location.hash || '#/') !== '#/' || v.scrollTop > 0 || !$('#sheetWrap').hidden || e.touches.length !== 1) { y0 = null; return; } y0 = e.touches[0].clientY; d = 0; on = false; }, { passive: true });
+  v.addEventListener('touchmove', (e) => {
+    if (y0 == null) return; d = e.touches[0].clientY - y0;
+    if (d <= 0 || v.scrollTop > 0) { if (on) { ind.style.transform = ''; v.style.transform = ''; } on = false; return; }
+    if (d > 8) { on = true; e.preventDefault(); const p = Math.min(d * 0.45, 84); ind.style.transform = `translateY(${p}px)`; ind.classList.toggle('ready', p >= 62); v.style.transform = `translateY(${p * 0.55}px)`; }
+  }, { passive: false });
+  v.addEventListener('touchend', async () => {
+    if (y0 == null) return; y0 = null; const ready = ind.classList.contains('ready');
+    v.style.transition = 'transform .25s ease'; v.style.transform = ''; setTimeout(() => { v.style.transition = ''; }, 260);
+    if (!on) return; on = false;
+    if (!ready) { ind.style.transform = ''; return; }
+    busy = true; ind.classList.add('spin'); ind.style.transform = 'translateY(54px)';
+    await refreshAll();
+    ind.classList.remove('spin', 'ready'); ind.style.transform = ''; busy = false;
+  }, { passive: true });
+})();
+async function refreshAll() {
+  const t = now();
+  try { if (swReg) swReg.update().catch(() => {}); WX = null; await Promise.all([loadIndex(), loadPrices(), loadWeather()]); } catch (e) {}
+  await new Promise((r) => setTimeout(r, Math.max(0, 600 - (now() - t))));
+  if ((location.hash || '#/') === '#/') { ui.pick = null; viewHome(); }
+  toast(navigator.onLine === false ? "You're offline — showing what's saved" : 'All fresh ♥');
+}
+
+// ---------------------------------------------------------------- long-press a recipe card (#12)
+(function longPress() {
+  let t = null, sx = 0, sy = 0, fired = false;
+  const cardOf = (el) => el && el.closest && el.closest('a[href^="#/r/"]:not(.btn)');
+  document.addEventListener('touchstart', (e) => {
+    const c = cardOf(e.target); if (!c || c.closest('#sheetWrap,#cook')) return;
+    fired = false; const p = e.touches[0]; sx = p.clientX; sy = p.clientY; clearTimeout(t);
+    t = setTimeout(() => { t = null; fired = true; buzz(15); tapSound(); c.classList.add('pressed'); setTimeout(() => c.classList.remove('pressed'), 350); openCardMenu(c.getAttribute('href').slice(4)); }, 480);
+  }, { passive: true });
+  document.addEventListener('touchmove', (e) => { if (!t) return; const p = e.touches[0]; if (Math.abs(p.clientX - sx) > 9 || Math.abs(p.clientY - sy) > 9) { clearTimeout(t); t = null; } }, { passive: true });
+  // after a long-press opens the menu, swallow the synthetic click so it can't land on the new sheet's scrim
+  document.addEventListener('touchend', (e) => { clearTimeout(t); t = null; if (fired) { fired = false; if (e.cancelable) e.preventDefault(); } }, { passive: false });
+  document.addEventListener('click', (e) => { if (fired && cardOf(e.target)) { e.preventDefault(); e.stopPropagation(); fired = false; } }, true);
+  document.addEventListener('contextmenu', (e) => { const c = cardOf(e.target); if (c && !c.closest('#sheetWrap,#cook')) { e.preventDefault(); openCardMenu(c.getAttribute('href').slice(4)); } });
+})();
+function openCardMenu(id) {
+  const s = summary(id); if (!s) return;
+  const fav = !!state.favourites[id]; const planned = tonightPlan() && tonightPlan().recipeId === id;
+  openSheet(`<div class="cmhead">${s.image ? `<div class="im">${img(thumb(s.image), '')}</div>` : ''}<div><div class="num">${esc(recipeLabel(s))}</div><b>${esc(s.title)}</b>${nickLine(id)}</div></div>
+    <div class="menu">
+      <button data-a="fav">${svg('heart')}<span>${fav ? 'Remove from favourites' : 'Add to favourites'}</span></button>
+      <button data-a="list">${svg('cart')}<span>Add to grocery list</span></button>
+      <button data-a="plan">${svg('clock')}<span>${planned ? "It's tonight's plan ✓" : 'Plan it for tonight'}</span></button>
+      <button data-a="hide">${svg('eyeoff')}<span>Hide meal</span></button>
+      <a href="#/r/${id}">${svg('chevR')}<span>Open recipe</span></a></div>`, (b) => {
+    $$('[data-a]', b).forEach((x) => (x.onclick = async () => {
+      const a = x.dataset.a;
+      if (a === 'fav') { closeSheet(); toggleFav(id); router(); }
+      else if (a === 'list') { const r = await getRecipe(id); if (!r) return; const f = (state.servings[id] || r.servings || 4) / (r.servings || 4); openMissing(r, s, f); }
+      else if (a === 'plan') { closeSheet(); setTonight(id); }
+      else if (a === 'hide') { closeSheet(); state.hidden[id] = now(); save(); router(); toast('Hidden from your lists', 'Undo', () => { delete state.hidden[id]; save(); router(); }); }
+    }));
+  });
+}
+
+// ---------------------------------------------------------------- screen transitions (#15) + shimmer placeholders (#16)
+function animateView(dir) {
+  const v = $('#view'); v.classList.remove('vin-fwd', 'vin-back', 'vin-tab');
+  if (reducedMotion()) return;
+  void v.offsetWidth; v.classList.add('vin-' + dir);
+}
+document.addEventListener('load', (e) => { const t = e.target; if (t && t.tagName === 'IMG') t.classList.add('ld'); }, true);
+document.addEventListener('error', (e) => { const t = e.target; if (t && t.tagName === 'IMG') t.classList.add('ld'); }, true);
+function markLoaded(root) { $$('img', root).forEach((i) => { if (i.complete) i.classList.add('ld'); }); }
+function skeletonRecipe(s) {
+  return `<div class="skel" aria-busy="true"><div class="r-head"><div class="sk sk-k"></div><div class="sk sk-h"></div><div class="sk sk-h2"></div></div>
+    <div class="hero"><div class="tile">${s && s.image ? img(s.image, '') : ''}</div></div>
+    <div class="stats"><div class="sk sk-b"></div><div class="sk sk-b"></div><div class="sk sk-b"></div></div>
+    <div class="wrap">${'<div class="sk sk-line"></div>'.repeat(7)}</div></div>`;
+}
+
+// ---------------------------------------------------------------- sounds (#21, #42)
+let AUD = null;
+function actx() { try { if (!AUD) AUD = new (window.AudioContext || window.webkitAudioContext)(); if (AUD.state === 'suspended') AUD.resume(); } catch (e) { AUD = null; } return AUD; }
+function tone(freq, start, dur, vol = 0.16, type = 'sine') {
+  const c = actx(); if (!c) return;
+  const o = c.createOscillator(); const g = c.createGain(); o.type = type; o.frequency.value = freq; o.connect(g); g.connect(c.destination);
+  const t = c.currentTime + start; g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + 0.015); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+  o.start(t); o.stop(t + dur + 0.05);
+}
+const CHIMES = {
+  classic: ['Classic beep', () => [0, 0.35, 0.7].forEach((t) => tone(880, t, 0.3, 0.2))],
+  bell: ['Soft bell', () => [[1046.5, 0], [1318.5, 0.2], [1568, 0.4]].forEach(([f, t]) => tone(f, t, 1.5, 0.14))],
+  marimba: ['Marimba', () => [[523.25, 0], [659.25, 0.14], [783.99, 0.28], [1046.5, 0.42]].forEach(([f, t]) => tone(f, t, 0.55, 0.2, 'triangle'))],
+  ding: ['Kitchen ding', () => { tone(1567.98, 0, 1.9, 0.16); tone(3135.96, 0, 0.8, 0.04); }],
+  harp: ['Gentle harp', () => [392, 493.88, 587.33, 783.99, 987.77].forEach((f, i) => tone(f, i * 0.11, 1.3, 0.11, 'triangle'))],
+};
+function playChime(k) { try { (CHIMES[k] || CHIMES.classic)[1](); } catch (e) {} }
+function beep() {
+  const k = state.settings.chime || 'classic';
+  playChime(k); setTimeout(() => playChime(k), 2300);
+  if (navigator.vibrate) navigator.vibrate([200, 100, 200]);
+}
+function tapSound() { if (state.settings.sounds) tone(1900, 0, 0.045, 0.045); }
+document.addEventListener('click', (e) => { if (e.target.closest && e.target.closest('.btn,.chip,.iconbtn,#tabbar a,.seg button,.segtext button,.checklist li,.bone')) { actx(); tapSound(); } }, true);
+
+// ---------------------------------------------------------------- undo memory + shake to undo (#29)
+let lastUndo = null;
+let shakeOn = false; let shakeTimes = [];
+function onMotion(e) {
+  const a = e.acceleration; const g = e.accelerationIncludingGravity;
+  let mag = 0;
+  if (a && a.x != null) mag = Math.sqrt(a.x * a.x + a.y * a.y + a.z * a.z);
+  else if (g && g.x != null) mag = Math.abs(Math.sqrt(g.x * g.x + g.y * g.y + g.z * g.z) - 9.81);
+  if (mag < 13) return;
+  const t = now(); shakeTimes = shakeTimes.filter((x) => t - x < 900); shakeTimes.push(t);
+  if (shakeTimes.length >= 3) { shakeTimes = []; shakeUndo(); }
+}
+function shakeUndo() {
+  if (!lastUndo || now() - lastUndo.at > 20000) return;
+  const f = lastUndo.fn; lastUndo = null; $('#toast').classList.remove('show'); f(); setTimeout(() => toast('Undone ↶ (shake)'), 50);
+}
+function enableShake(fromTap) {
+  if (typeof DeviceMotionEvent === 'undefined') return Promise.resolve(false);
+  const on = () => { if (!shakeOn) { window.addEventListener('devicemotion', onMotion); shakeOn = true; } return true; };
+  if (typeof DeviceMotionEvent.requestPermission === 'function') {
+    if (!fromTap) return Promise.resolve(false);
+    return DeviceMotionEvent.requestPermission().then((p) => (p === 'granted' ? on() : false)).catch(() => false);
+  }
+  return Promise.resolve(on());
+}
+
+// ---------------------------------------------------------------- confetti (#22)
+function confetti() {
+  if (reducedMotion()) return;
+  const w = document.createElement('div'); w.className = 'confetti'; w.setAttribute('aria-hidden', 'true');
+  const cols = ['#C4963E', '#5070A8', '#806098', '#381848', '#D4B56A', '#F5E6CE', '#082048'];
+  for (let i = 0; i < 40; i++) {
+    const p = document.createElement('i');
+    p.style.cssText = `left:${46 + Math.random() * 8}%;background:${cols[i % cols.length]};--dx:${((Math.random() * 2 - 1) * 170).toFixed(0)}px;--dy:${(-(180 + Math.random() * 260)).toFixed(0)}px;--r:${(Math.random() * 900 - 450).toFixed(0)}deg;animation-delay:${(Math.random() * 0.15).toFixed(2)}s;width:${(5 + Math.random() * 5).toFixed(1)}px;height:${(7 + Math.random() * 7).toFixed(1)}px`;
+    w.appendChild(p);
+  }
+  document.body.appendChild(w); setTimeout(() => w.remove(), 2400);
+}
+
+// ---------------------------------------------------------------- chef hats (#43), dates
+function hat(who, size = 16) {
+  if (!who) return '';
+  const one = (n) => `<svg class="hat ${n === 'Faith' ? 'f' : 'c'}" viewBox="0 0 24 24" width="${size}" height="${size}" role="img" aria-label="${n}"><title>${n}</title>${ICON.hat}</svg>`;
+  return `<span class="hats">${who === 'Both' ? one('Corey') + one('Faith') : one(who)}</span>`;
+}
+const isoOf = (d) => d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+const dateOf = (iso) => { const [y, m, d] = iso.split('-').map(Number); return new Date(y, m - 1, d); };
+const addDaysISO = (iso, n) => { const d = dateOf(iso); d.setDate(d.getDate() + n); return isoOf(d); };
+function dayWord(iso, future) {
+  const n = daysSince(iso);
+  if (n === 0) return 'today';
+  if (n === 1) return 'yesterday';
+  if (n === -1) return 'tomorrow';
+  if (Math.abs(n) < 7) return dateOf(iso).toLocaleDateString('en-CA', { weekday: 'long' });
+  return dateOf(iso).toLocaleDateString('en-CA', { weekday: 'short', month: 'short', day: 'numeric' });
+}
+const longDate = (iso) => dateOf(iso).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' });
+function shuffle(a) { const b = a.slice(); for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; }
+
+// ---------------------------------------------------------------- sorting (#41)
+const SORTS = [['book', 'Book order'], ['quick', 'Quickest'], ['cheap', 'Cheapest'], ['most', 'Most cooked']];
+function cookCounts() { const m = {}; realDinners().forEach((c) => { m[c.recipeId] = (m[c.recipeId] || 0) + 1; }); return m; }
+function sortRecipes(list) {
+  const s = ui.sort || 'book'; const l = list.slice();
+  if (s === 'quick') l.sort((a, b) => a.total - b.total || a.cost - b.cost);
+  else if (s === 'cheap') l.sort((a, b) => a.cost - b.cost || a.total - b.total);
+  else if (s === 'most') { const m = cookCounts(); l.sort((a, b) => (m[b.id] || 0) - (m[a.id] || 0) || a.title.localeCompare(b.title)); }
+  return l;
+}
+function sortChips() { return `<div class="sortrow" role="group" aria-label="Sort">${SORTS.map(([k, n]) => `<button class="${(ui.sort || 'book') === k ? 'on' : ''}" data-sort="${k}">${n}</button>`).join('')}</div>`; }
+function bindSort(redraw) { $$('[data-sort]').forEach((b) => (b.onclick = () => { ui.sort = b.dataset.sort; const y = vY(); redraw(); vTo(y); })); }
+function viewCategory(slugName) {
+  const c = catOf(slugName);
+  setTop({ title: esc(c.name.toUpperCase()), back: '#/' });
+  const items = sortRecipes(visibleRecipes().filter((r) => r.category === slugName).sort((a, b) => a.num - b.num));
+  render(`<div class="wrap"><div class="kicker"><span class="sw" style="background:${c.colour}"></span>Category<span class="rule"></span></div>
+    <h1 class="h1" style="margin-top:6px">${esc(c.name)}</h1>
+    <p class="lead" style="margin-top:4px">${items.length} recipe${items.length === 1 ? '' : 's'} so far</p>
+    ${items.length > 1 ? sortChips() : ''}
+    <div class="rlist" style="margin-top:14px">${items.map(rcard).join('') || '<div class="empty">No recipes here yet.</div>'}</div></div>`);
+  bindSort(() => viewCategory(slugName));
+}
+
+// ---------------------------------------------------------------- tonight's plan (#31)
+function tonightPlan() { const t = state.tonight; return t && t.date === todayISO() && summary(t.recipeId) && !state.hidden[t.recipeId] ? t : null; }
+function eatTime(t) { const [h, m] = ((t && t.eatAt) || state.settings.dinnerAt || '18:30').split(':').map(Number); const d = new Date(); d.setHours(h, m || 0, 0, 0); return d; }
+function startTime(s, t) { return new Date(eatTime(t) - ((s.total || 30) + 5) * 6e4); }
+function setTonight(id, quiet) {
+  const prev = state.tonight;
+  state.tonight = { date: todayISO(), recipeId: id, by: state.profile.me || null, eatAt: (prev && prev.date === todayISO() && prev.eatAt) || state.settings.dinnerAt || '18:30', at: now() };
+  save();
+  if (!quiet) toast(`Tonight: ${summary(id).title} ♥`, 'Undo', () => { state.tonight = prev || null; save(); router(); });
+  if ((location.hash || '#/') === '#/') { const y = vY(); viewHome(); vTo(y); }
+}
+function openEatAt() {
+  const t = tonightPlan(); const s = t && summary(t.recipeId); if (!s) return;
+  const v = t.eatAt || state.settings.dinnerAt || '18:30';
+  openSheet(`<h2>When do we eat?</h2><p class="sub">${esc(s.title)} takes about ${s.total} minutes — we'll tell you when to start.</p>
+    <div class="field"><label>Dinner time</label><input id="eatIn" type="time" value="${v}"></div>
+    <div class="chips" style="margin-top:4px">${['17:30', '18:00', '18:30', '19:00', '19:30'].map((x) => `<button class="chip ${x === v ? 'on' : ''}" data-eat="${x}">${fmtTime(eatTime({ eatAt: x }))}</button>`).join('')}</div>
+    <div class="foot"><button class="btn" data-close>Cancel</button><button class="btn primary" id="eatOk">Save</button></div>`, (b) => {
+    $$('[data-eat]', b).forEach((c) => (c.onclick = () => { $('#eatIn', b).value = c.dataset.eat; $$('[data-eat]', b).forEach((x) => x.classList.toggle('on', x === c)); }));
+    $('#eatOk', b).onclick = () => { state.tonight.eatAt = $('#eatIn', b).value || v; save(); closeSheet(); const y = vY(); viewHome(); vTo(y); };
+  });
+}
+function tonightCard(t) {
+  const s = summary(t.recipeId); const st = startTime(s, t); const eat = eatTime(t);
+  const done = realDinners().some((c) => c.recipeId === t.recipeId && c.date === todayISO());
+  const mins = Math.round((st - now()) / 6e4);
+  const when = done ? 'Dinner\'s done — well cooked, you two ♥' : mins > 90 ? `Start cooking by <b>${fmtTime(st)}</b> · eat at ${fmtTime(eat)}` : mins > 0 ? `Start in <b>${mins} min</b> (${fmtTime(st)}) · eat at ${fmtTime(eat)}` : mins > -30 ? `<b>Time to start cooking</b> · eat at ${fmtTime(eat)}` : `Running late? Eat around ${fmtTime(new Date(now() + (s.total + 5) * 6e4))}`;
+  return `<div class="sec pick tonight"><div class="pick-k">Tonight's plan${t.by ? ` · ${esc(t.by)}'s pick` : ''}</div>
+    <a class="pick-card" href="#/r/${s.id}"><div class="im">${s.image ? img(s.image, s.title) : placeholderArt(s)}</div>
+      <div class="pc-body"><div class="t">${esc(s.title)}</div><div class="m">${when}</div></div></a>
+    ${done ? `<div class="btnrow"><button class="btn ghost" id="tnDish">${svg('coin')}Who's on dishes?</button><button class="btn ghost" id="tnClear">Clear plan</button></div>`
+      : `<div class="btnrow"><button class="btn ghost" id="tnTime">${svg('clock')}${fmtTime(eat)}</button><button class="btn gold" id="tnCook">${svg('play')}Start cooking</button></div>
+      <button class="linkbtn" id="tnChange" style="display:block;margin:6px auto 0">Change tonight's plan</button>`}</div>`;
+}
+
+// ---------------------------------------------------------------- spin the wheel (#18)
+function spinPool() {
+  const no = new Set(); const wk = isoPlus(-7);
+  Object.values(state.picks).forEach((p) => { if (!p.ok && p.date >= wk) no.add(p.recipeId); });
+  Object.entries(state.ratings).forEach(([id, v]) => { if (v && v <= 2) no.add(id); });
+  realDinners().forEach((c) => { const meh = Object.values(c.reactions || {}).filter((v) => v === 'meh').length; const h = Object.values(c.hearts || {}).filter(Boolean); if (meh >= 2 || (h.length && h.reduce((a, x) => a + x, 0) / h.length <= 2)) no.add(c.recipeId); });
+  const filt = !!(ui.q || filterCount());
+  const all = visibleRecipes().filter((r) => !filt || matchesFilters(r));
+  const pool = all.filter((r) => !no.has(r.id));
+  return { pool: pool.length ? pool : all, skipped: all.length - pool.length, filt };
+}
+function wheelSVG(segs) {
+  const R = 140, C = 150, n = segs.length;
+  const pt = (deg, r) => { const a = (deg * Math.PI) / 180; return [C + r * Math.sin(a), C - r * Math.cos(a)]; };
+  const cols = ['var(--tile1)', 'var(--tile2)', 'var(--tile3)', 'var(--tile4)'];
+  const body = n === 1 ? `<circle cx="${C}" cy="${C}" r="${R}" fill="var(--tile1)"/>` : segs.map((s, i) => {
+    const a0 = (i * 360) / n, a1 = ((i + 1) * 360) / n; const [x0, y0] = pt(a0, R); const [x1, y1] = pt(a1, R);
+    return `<path d="M${C} ${C}L${x0.toFixed(1)} ${y0.toFixed(1)}A${R} ${R} 0 ${a1 - a0 > 180 ? 1 : 0} 1 ${x1.toFixed(1)} ${y1.toFixed(1)}Z" fill="${cols[i % 4]}" stroke="var(--gold)" stroke-width="1.2"/>`;
+  }).join('');
+  const labels = segs.map((s, i) => { const c = ((i + 0.5) * 360) / n; let t = s.title; if (t.length > 17) t = t.slice(0, 16).trim() + '…'; return `<text transform="rotate(${(c - 90).toFixed(1)} ${C} ${C})" x="${C + 26}" y="${C}" class="wl">${esc(t)}</text>`; }).join('');
+  return `<svg viewBox="0 0 300 300" class="wheel-svg"><g id="wheelG">${body}${labels}<circle cx="${C}" cy="${C}" r="20" fill="var(--bg)" stroke="var(--gold)" stroke-width="2"/></g><circle cx="${C}" cy="${C}" r="${R}" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>`;
+}
+function openRandom() {
+  const { pool, skipped, filt } = spinPool();
+  let segs = shuffle(pool).slice(0, Math.min(8, pool.length)); let rot = 0; let busy = false; let cur = null;
+  const draw = (b) => {
+    if (!pool.length) { b.innerHTML = '<h2>Spin the wheel</h2><div class="empty" style="margin-top:12px">No recipes to spin — try clearing the filters.</div>'; return; }
+    b.innerHTML = `<h2>Spin the wheel</h2><p class="sub">${segs.length} of ${pool.length} dinner${pool.length === 1 ? '' : 's'}${filt ? ' matching your search' : ''}${skipped ? ` · skipping ${skipped} you passed on or didn't love` : ''}.</p>
+      <div class="wheel"><i class="wptr"></i><div class="wrot" id="wRot" style="transform:rotate(${rot}deg)">${wheelSVG(segs)}</div></div>
+      <div id="wRes" class="wres">${cur ? resHTML() : '<p class="small muted" style="text-align:center">Tap spin — no take-backs (well, maybe one).</p>'}</div>
+      <div class="foot"><button class="btn" data-close>Close</button><button class="btn gold" id="wSpin">${cur ? 'Spin again' : 'Spin!'}</button></div>`;
+    $('#wSpin', b).onclick = () => spin(b);
+    bindRes(b);
+  };
+  const resHTML = () => `<a class="pick-card mini" href="#/r/${cur.id}"><div class="im">${cur.image ? img(thumb(cur.image), cur.title) : placeholderArt(cur)}</div><div class="pc-body"><div class="t">${esc(cur.title)}</div><div class="m">${cur.price} · ${cur.total} min · ~${money(cur.cost)}</div></div></a>
+    <div class="btnrow" style="margin-top:8px"><a class="btn ghost" href="#/r/${cur.id}" id="wOpen">Open recipe</a><button class="btn primary" id="wPlan">Plan tonight ♥</button></div>`;
+  const bindRes = (b) => {
+    if (!cur) return;
+    $('#wPlan', b).onclick = () => { logPick(cur.id, true); closeSheet(); setTonight(cur.id); };
+    $('#wOpen', b).onclick = () => logPick(cur.id, true);
+  };
+  const spin = (b) => {
+    if (busy) return; busy = true; actx();
+    if (cur && segs.length > 1 && pool.length > segs.length) { segs = shuffle(pool).slice(0, 8); rot = 0; draw(b); }
+    const n = segs.length; const k = Math.floor(Math.random() * n); const c = ((k + 0.5) * 360) / n + (Math.random() - 0.5) * (300 / n) * 0.6;
+    const target = rot + 360 * 5 + ((((360 - c) - (rot % 360)) % 360) + 360) % 360;
+    rot = target; const w = $('#wRot', b);
+    const dur = reducedMotion() ? 0 : 3200;
+    w.style.transition = dur ? `transform ${dur}ms cubic-bezier(.17,.67,.21,1)` : 'none'; w.style.transform = `rotate(${rot}deg)`;
+    $('#wSpin', b).disabled = true;
+    let ticks = 0; const tk = dur && state.settings.sounds ? setInterval(() => { if (++ticks > 22) clearInterval(tk); tone(1400, 0, 0.03, 0.04); }, 120) : null;
+    setTimeout(() => { if (tk) clearInterval(tk); busy = false; cur = segs[k]; buzz(20); playChime('marimba'); const res = $('#wRes', b); if (!res) return; res.innerHTML = resHTML(); bindRes(b); const sb = $('#wSpin', b); sb.disabled = false; sb.textContent = 'Spin again'; }, dur + 80);
+  };
+  openSheet('', draw);
+}
+
+// ---------------------------------------------------------------- home helpers: recently cooked, recipe of the week, leftovers, flashback, anniversary, date night
+function recentlyCooked(recipes) {
+  const seen = new Set(); const out = [];
+  realDinners().slice().sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : (b.at || 0) - (a.at || 0))).forEach((c) => {
+    if (out.length >= 3 || seen.has(c.recipeId)) return; const r = recipes.find((x) => x.id === c.recipeId); if (!r) return; seen.add(c.recipeId); out.push({ r, c });
+  });
+  return out;
+}
+function weekNo(d = new Date()) { const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate())); const day = t.getUTCDay() || 7; t.setUTCDate(t.getUTCDate() + 4 - day); const y0 = new Date(Date.UTC(t.getUTCFullYear(), 0, 1)); return t.getUTCFullYear() * 53 + Math.ceil(((t - y0) / 864e5 + 1) / 7); }
+function recipeOfWeek(recipes) {
+  const done = new Set(realDinners().map((c) => c.recipeId));
+  const untried = recipes.filter((r) => !done.has(r.id) && !r.custom).sort((a, b) => (a.id < b.id ? -1 : 1));
+  return untried.length ? untried[weekNo() % untried.length] : null;
+}
+function leftoverLine(l) {
+  const d = daysSince(l.date); const by = addDaysISO(l.date, 4); const left = 4 - d;
+  const from = d === 0 ? 'from today' : d === 1 ? 'from yesterday' : 'from ' + dateOf(l.date).toLocaleDateString('en-CA', { weekday: 'long' });
+  const eat = left > 1 ? `eat by ${dayWord(by)}` : left === 1 ? 'eat by tomorrow' : left === 0 ? '<b class="warnc">eat today</b>' : '<b class="badc">past 4 days — toss it</b>';
+  return `${esc(l.title)} ${from} — ${eat}`;
+}
+function flashback() {
+  const t = new Date(); const hits = [];
+  for (let k = -3; k <= 3; k++) { const iso = isoOf(new Date(t.getFullYear() - 1, t.getMonth(), t.getDate() + k)); realDinners().forEach((c) => { if (c.date === iso) hits.push(c); }); }
+  if (!hits.length) return null;
+  const withPh = hits.map((c) => ({ c, ph: (state.photos[c.recipeId] || []).find((p) => p.date === c.date) })).sort((a, b) => !!b.ph - !!a.ph);
+  return withPh[0];
+}
+function flashCard(fb, dismiss) {
+  const c = fb.c; const s = summary(c.recipeId);
+  return `<div class="flash"><div class="fk">ONE YEAR AGO${dismiss ? '<button class="x" id="flashX" aria-label="Dismiss">×</button>' : ''}</div>
+    <a class="fbody" href="${s ? '#/r/' + s.id : '#/story'}">${fb.ph ? `<img src="${fb.ph.data}" alt="">` : s && s.image ? img(thumb(s.image), '') : ''}
+      <div><b>${esc(c.title)}</b><span>${esc(dateOf(c.date).toLocaleDateString('en-CA', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }))}${c.by ? ' · ' + (c.by === 'Both' ? 'made together' : 'made by ' + esc(c.by)) : ''}</span><em>Make it again for old times' sake?</em></div></a></div>`;
+}
+function annivSoon() {
+  const a = state.settings.anniversary; if (!a) return null;
+  const [y, m, d] = a.split('-').map(Number); const t = new Date(); t.setHours(0, 0, 0, 0);
+  let next = new Date(t.getFullYear(), m - 1, d); if (next < t) next = new Date(t.getFullYear() + 1, m - 1, d);
+  const days = Math.round((next - t) / 864e5); if (days < 1 || days > 6) return null;
+  const firsts = realDinners().slice().sort((p, q) => (p.date < q.date ? -1 : 1));
+  const sug = (state.signature && summary(state.signature)) || (firsts[0] && summary(firsts[0].recipeId)) || visibleRecipes().find((r) => ((r.tags || {}).occasion || []).includes('date-night'));
+  return { days, yrs: next.getFullYear() - y, key: String(next.getFullYear()), sug, sigWhy: state.signature && sug && sug.id === state.signature ? 'your signature dish' : firsts[0] && sug && sug.id === firsts[0].recipeId ? 'the first dinner you logged together' : 'a Date Night favourite' };
+}
+function dateNightInfo() {
+  const dn = state.dateNight; if (!dn || !dn.date) return null;
+  const days = -daysSince(dn.date); if (days < 0) return null;
+  return { ...dn, days, s: dn.recipeId ? summary(dn.recipeId) : null };
+}
+function dnWords(dn) { return dn.days === 0 ? 'Date night is tonight' : dn.days === 1 ? 'Date night is tomorrow' : `Date night in ${dn.days} days`; }
+function isOctober() { return new Date().getMonth() === 9; }
+
+// ---------------------------------------------------------------- views: home (decluttered)
+function viewHome() {
+  setTop({ title: 'OUR KITCHEN' });
+  const recipes = visibleRecipes();
+  ui.pick = ui.pick && recipes.find((r) => r.id === ui.pick) ? ui.pick : seasonalPick(recipes);
+  const searching = ui.q || filterCount();
+  let body = '';
+  if (searching) {
+    const res = sortRecipes(recipes.filter(matchesFilters));
+    body = `<div class="sec"><div class="sec-title">${res.length} recipe${res.length === 1 ? '' : 's'}<button class="act" id="clearAll">Clear</button></div>${/[+,]/.test(ui.q) ? `<p class="small muted" style="margin:-4px 0 10px">Recipes that use ${esc(ui.q.split(/\s*[+,]\s*/).filter(Boolean).join(' + '))}</p>` : ''}
+      ${res.length > 1 ? sortChips() : ''}
+      ${res.length ? `<div class="rlist" style="margin-top:12px">${res.map(rcard).join('')}</div>` : `<div class="empty">Nothing matches yet — try fewer filters. More recipes are on the way.</div>`}
+      ${res.length > 1 ? '<button class="btn ghost block" id="spinRes" style="margin-top:14px">' + svg('dice') + 'Spin the wheel on these</button>' : ''}</div>`;
+  } else {
+    const favs = Object.entries(state.favourites).sort((a, b) => b[1] - a[1]).map(([id]) => recipes.find((r) => r.id === id)).filter(Boolean);
+    const recent = state.recent.map((id) => recipes.find((r) => r.id === id)).filter(Boolean).slice(0, 8);
+    const cats = INDEX.categories.map((c) => ({ ...c, items: recipes.filter((r) => r.category === c.slug).sort((a, b) => a.num - b.num) }));
+    const withRecipes = cats.filter((c) => c.items.length);
+    const pk = recipes.find((r) => r.id === ui.pick);
+    const plan = tonightPlan();
+    const lefts = Object.values(state.leftovers).sort((a, b) => (a.date < b.date ? -1 : 1));
+    const nudge = cookAgainNudge(recipes);
+    const lastMonth = lastMonthKey();
+    const rc = new Date().getDate() <= 10 && !state.recapSeen[lastMonth] ? monthRecap(lastMonth) : null;
+    const uu = useItUp(recipes);
+    const turn = whoseTurn();
+    const rcook = recentlyCooked(recipes);
+    const row = recipeOfWeek(recipes);
+    const fb = !state.flashSeen[todayISO()] ? flashback() : null;
+    const an = annivSoon(); const showAn = an && !state.annivSeen[an.key];
+    const ny = yearInReviewDue();
+    body = `
+      ${whatsNewCard()}${backupCard()}
+      ${showAn ? `<div class="annv"><div class="fk">${an.days === 1 ? 'TOMORROW' : `IN ${an.days} DAYS`} · ${an.yrs}-YEAR ANNIVERSARY<button class="x" id="anX" aria-label="Dismiss">×</button></div><p>${an.sug ? `How about <b>${esc(an.sug.title)}</b> — ${esc(an.sigWhy)}?` : 'Plan something special to cook together.'}</p>${an.sug ? `<div class="btnrow" style="margin-top:10px"><a class="btn sm ghost" href="#/r/${an.sug.id}">Open recipe</a><button class="btn sm gold" id="anPlan">Plan date night</button></div>` : ''}</div>` : ''}
+      ${rc ? recapCard(rc, true) : ''}
+      ${ny ? `<a class="nudge yr" href="#/year/${ny}"><span>${svg('star')}</span><span style="flex:1"><b>Our ${ny} in review</b> — every dinner, favourite and first, in one place.</span><span>${svg('chevR')}</span></a>` : ''}
+      ${plan ? tonightCard(plan) : pk ? `<div class="sec pick"><div class="pick-k">${esc(pickKicker(pk))}</div>
+        <a class="pick-card" href="#/r/${pk.id}"><div class="im">${pk.image ? img(pk.image, pk.title) : placeholderArt(pk)}</div>
+          <div class="pc-body"><div class="t">${esc(pk.title)}</div><div class="m">${pk.price} · ${pk.total} min · ~${money(pk.cost)} · start by ${fmtTime(startTime(pk, null))}</div></div></a>
+        <div class="pick-q"><span>${esc(turn)}'s pick tonight — sound good?</span><button class="turnbtn" id="turnBtn" aria-label="Switch whose turn">${svg('swap')}</button></div>
+        <div class="btnrow"><button class="btn ghost" id="pickNo">${svg('thumbDown')}Not tonight</button><button class="btn gold" id="pickYes">${svg('thumbUp')}Let's make it</button></div></div>` : ''}
+      <div class="quick"><button class="btn ghost" id="randBtn">${svg('dice')}Spin the wheel</button><button class="btn ghost" id="canMake">${svg('pantry')}What can we make?</button><button class="btn ghost wide" id="ideasBtn">${svg('star')}More ideas<small>mood · use it up · weather · wish list</small></button></div>
+      ${uu.soon.length && uu.picks.length ? `<a class="nudge use" href="#/r/${uu.picks[0].r.id}"><span>${svg('clock')}</span><span><b>Use it up:</b> ${esc(uu.soon[0].p.name)} ${uu.soon[0].d === 0 ? 'is due today' : uu.soon[0].d === 1 ? 'is due tomorrow' : `is due in ${uu.soon[0].d} days`} — try ${esc(uu.picks[0].r.title)}.</span></a>` : ''}
+      ${lefts.length ? `<div class="sec"><div class="sec-title">In the fridge</div><ul class="cooked fridge">${lefts.map((l) => `<li><div><div class="t">${leftoverLine(l)}</div><div class="d">${l.portions} portion${l.portions === 1 ? '' : 's'} left</div></div><button class="btn sm ghost" data-ate="${l.id}">Ate one</button></li>`).join('')}</ul></div>` : ''}
+      ${fb ? flashCard(fb, true) : ''}
+      ${nudge ? `<a class="nudge" href="#/r/${nudge.r.id}"><span>${svg('reset')}</span><span>It's been <b>${nudge.days} days</b> since ${esc(nudge.r.title)}. Cook it again?</span></a>` : ''}
+      <div class="sec"><div class="sec-title">Favourites${favs.length > 4 ? `<span class="act">${favs.length}</span>` : ''}</div>
+        ${favs.length ? `<div class="favtiles">${favs.slice(0, 4).map((r) => `<a class="favtile" href="#/r/${r.id}">${r.image ? img(r.image, r.title) : placeholderArt(r)}<span class="ft">${esc(r.title)}</span>${isCoupleFav(r.id) ? `<i class="gh" title="Both of you love this">${svg('heart')}</i>` : ''}${state.signature === r.id ? '<i class="sg">★</i>' : ''}</a>`).join('')}</div>
+          ${favs.length > 4 ? `<div class="hrow" style="margin-top:10px">${favs.slice(4).map(miniCard).join('')}</div>` : ''}` : `<div class="empty">Tap the ♡ on a recipe and it'll live here.</div>`}</div>
+      ${rcook.length ? `<div class="sec"><div class="sec-title">Recently cooked</div><div class="rcook">${rcook.map(({ r, c }) => `<div class="rc"><a href="#/r/${r.id}" class="rc-a"><div class="im">${r.image ? img(thumb(r.image), '') : placeholderArt(r)}</div><div class="rc-t"><b>${esc(r.title)}</b><small>${hat(c.by, 14)}${esc(dayWord(c.date))}</small></div></a><button class="btn sm ghost" data-again="${r.id}" aria-label="Cook ${esc(r.title)} again">${svg('play')}Again</button></div>`).join('')}</div></div>` : ''}
+      ${row ? `<div class="sec"><div class="sec-title">Recipe of the week</div><a class="wkcard" href="#/r/${row.id}"><div class="im">${row.image ? img(thumb(row.image), '') : placeholderArt(row)}</div><div><small>Something new to try</small><b>${esc(row.title)}</b><span>${row.price} · ${row.total} min · ~${money(row.cost)}</span></div></a></div>` : ''}
+      ${recent.length ? `<div class="sec"><div class="sec-title">Recently viewed</div><div class="hrow">${recent.map(miniCard).join('')}</div></div>` : ''}
+      <div class="sec"><div class="sec-title">Categories</div>
+        <div class="cats">${withRecipes.map((c, i) => `<a class="cat-tile r${(i % 4) + 1}" href="#/c/${c.slug}" style="background:${c.colour}">${img(c.tile, '')}
+          <div class="lbl"><b>${esc(c.name)}</b><span>${c.items.length} recipe${c.items.length === 1 ? '' : 's'}</span></div></a>`).join('')}</div></div>
+      <div class="sec"><div class="sec-title">Contents</div>
+        ${withRecipes.map((c) => `<div class="toc-sec"><div class="sh"><span class="sq" style="background:${c.colour}"></span>${esc(c.name)}</div>
+          ${c.items.map((r) => `<a href="#/r/${r.id}"><em>${pad2(r.num)}</em><span>${esc(r.title)}</span><i>${r.price}</i></a>`).join('')}</div>`).join('')}
+        <p class="small muted" style="margin-top:10px">${recipes.length} of 101 recipes so far — more are added in small batches.</p>
+      </div>
+      <div class="sec guides"><h3>GUIDES</h3><div class="gl">
+        <a href="#/guide"><span>°</span>Safe temps</a><a href="#/guide"><span>❄</span>Thawing</a>
+        <a href="#/budget"><span>$</span>$350 month</a><a href="#/add"><span>+</span>Add a recipe</a><a href="#/story"><span>❦</span>Our story</a>
+        <a href="#/freezer"><span>❄</span>Freezer</a><a href="#/wish"><span>✧</span>Wish list</a><a href="#/scan"><span>▤</span>Scan receipt</a><a href="#/settings"><span>⚙</span>Settings</a></div></div>`;
+  }
+  const fc = filterCount();
+  const dn = dateNightInfo();
+  const pump = isOctober() && state.settings.seasonal !== false;
+  render(`<div class="home-head">
+      <div class="kicker">${pump ? `<svg class="pump" viewBox="0 0 24 24" aria-hidden="true">${ICON.pumpkin}</svg>` : ''}Recipes we love<span class="rule"></span></div>
+      <div class="lead" style="margin-top:6px">${esc(greeting())}</div>
+      ${dn && dn.days <= 14 ? `<a class="dnline" href="#/us">${svg('heart')}<span>${esc(dnWords(dn))}${dn.s ? ' — ' + esc(dn.s.title) : ''}</span></a>` : ''}
+      ${wxFresh() ? `<div class="wx" id="wxLine">London · ${wxTemp(wxFresh().t)} · ${esc(wxWords(wxFresh().code))} — ${esc(wxMood(wxFresh()).line)}</div>` : ''}
+      <div class="searchrow"><label class="search">${svg('search')}<input id="q" type="search" placeholder="Search recipes or ingredients" value="${esc(ui.q)}" autocomplete="off" enterkeyhint="search"><button class="clear" id="qClear" aria-label="Clear search" ${ui.q ? '' : 'hidden'}>×</button></label>
+        <button class="filterbtn ${fc ? 'on' : ''}" id="filterBtn" aria-label="Filters">${svg('filter')}${fc ? `<b>${fc}</b>` : ''}</button></div>
+      ${fc ? `<div class="activefilters">${Object.entries(ui.filters).flatMap(([k, s]) => s.map((v) => `<button data-k="${k}" data-v="${esc(v)}">${esc(TAGLABEL[k + ':' + v])}</button>`)).join('')}</div>` : ''}
+    </div><div class="wrap" style="padding-top:0">${body}</div>`);
+  const q = $('#q');
+  q.addEventListener('input', () => {
+    ui.q = q.value.trim();
+    const pos = q.selectionStart; viewHome(); const q2 = $('#q'); q2.focus({ preventScroll: true }); try { q2.setSelectionRange(pos, pos); } catch (e) {}
+  });
+  const qc = $('#qClear');
+  qc.addEventListener('pointerdown', (e) => e.preventDefault()); // keep the keyboard steady
+  qc.onclick = (e) => { e.preventDefault(); ui.q = ''; viewHome(); };
+  $('#filterBtn').onclick = openFilters;
+  const redraw = () => { const y = vY(); viewHome(); vTo(y); };
+  $('#clearAll') && ($('#clearAll').onclick = () => { ui.q = ''; ui.filters = {}; viewHome(); });
+  bindSort(viewHome);
+  $('#spinRes') && ($('#spinRes').onclick = openRandom);
+  $('#pickYes') && ($('#pickYes').onclick = (e) => { const t = whoseTurn(); const pid = uid(); state.picks[pid] = { id: pid, recipeId: ui.pick, ok: true, date: todayISO(), by: t }; state.turn = other(t); heartBurst(e.currentTarget); setTonight(ui.pick, true); state.tonight.by = t; save(); redraw(); toast(`Tonight: ${summary(ui.pick).title} ♥`); });
+  $('#turnBtn') && ($('#turnBtn').onclick = () => { state.turn = other(whoseTurn()); save(); redraw(); });
+  $('#ideasBtn') && ($('#ideasBtn').onclick = () => openIdeas());
+  $('#wnX') && ($('#wnX').onclick = $('#wnOk').onclick = () => { state.seenWhatsNew = WHATSNEW_ID; save(); redraw(); });
+  $('#wnMore') && ($('#wnMore').onclick = () => { openWhatsNew(); });
+  $('#bkNow') && ($('#bkNow').onclick = () => { exportBackup(); redraw(); });
+  $('#bkLater') && ($('#bkLater').onclick = () => { state.settings.backupSnooze = now() + DAYS(7); save(); redraw(); toast("I'll remind you next week"); });
+  $('#recapX') && ($('#recapX').onclick = () => { state.recapSeen[lastMonthKey()] = now(); save(); redraw(); });
+  $('#flashX') && ($('#flashX').onclick = (e) => { e.preventDefault(); state.flashSeen[todayISO()] = now(); save(); redraw(); });
+  $('#anX') && ($('#anX').onclick = () => { const a = annivSoon(); if (a) state.annivSeen[a.key] = now(); save(); redraw(); });
+  $('#anPlan') && ($('#anPlan').onclick = () => { const a = annivSoon(); if (!a) return; const [, m, d] = state.settings.anniversary.split('-').map(Number); openDateNight({ date: isoOf(new Date(+a.key, m - 1, d)), recipeId: a.sug && a.sug.id }); });
+  $('#pickNo') && ($('#pickNo').onclick = () => {
+    logPick(ui.pick, false);
+    const others = recipes.filter((r) => r.id !== ui.pick);
+    if (!others.length) { toast("It's the only recipe in the book so far — more are coming soon ♥"); return; }
+    ui.pick = others[Math.floor(Math.random() * others.length)].id; redraw();
+  });
+  $('#tnCook') && ($('#tnCook').onclick = () => { ui.autoCook = tonightPlan().recipeId; go('#/r/' + ui.autoCook); });
+  $('#tnTime') && ($('#tnTime').onclick = openEatAt);
+  $('#tnChange') && ($('#tnChange').onclick = () => { const prev = state.tonight; state.tonight = null; save(); redraw(); toast('Plan cleared — pick another', 'Undo', () => { state.tonight = prev; save(); redraw(); }); });
+  $('#tnClear') && ($('#tnClear').onclick = () => { state.tonight = null; save(); redraw(); });
+  $('#tnDish') && ($('#tnDish').onclick = openCoinFlip);
+  $('#randBtn') && ($('#randBtn').onclick = openRandom);
+  $('#canMake') && ($('#canMake').onclick = openCanMake);
+  $$('[data-again]').forEach((b) => (b.onclick = () => { ui.autoCook = b.dataset.again; go('#/r/' + b.dataset.again); }));
+  $$('[data-ate]').forEach((b) => (b.onclick = () => { const l = state.leftovers[b.dataset.ate]; const bak = { ...l }; l.portions--; if (l.portions <= 0) delete state.leftovers[l.id]; save(); redraw(); toast(l.portions > 0 ? 'Enjoy lunch ♥' : 'All gone — nice!', 'Undo', () => { state.leftovers[bak.id] = bak; save(); redraw(); }); }));
+  $$('.activefilters button').forEach((b) => (b.onclick = () => { ui.filters[b.dataset.k] = ui.filters[b.dataset.k].filter((v) => v !== b.dataset.v); viewHome(); }));
+}
+
+// ---------------------------------------------------------------- seasonal layer: snow Nov–Feb, Valentine's hearts, anniversary hearts (#30)
+function isValentine() { const t = new Date(); return t.getMonth() === 1 && t.getDate() >= 7 && t.getDate() <= 15; }
+function applySeason() {
+  let layer = $('#season');
+  const mo = new Date().getMonth();
+  const hearts = (nearAnniversary() && state.settings.hearts !== false) || (isValentine() && state.settings.seasonal !== false);
+  const snow = (mo >= 10 || mo <= 1) && state.settings.snow !== false;
+  const kind = hearts ? 'hearts' : snow ? 'snow' : '';
+  document.body.classList.toggle('valentine', isValentine() && state.settings.seasonal !== false);
+  document.body.classList.toggle('october', mo === 9 && state.settings.seasonal !== false);
+  if (!kind || reducedMotion()) { if (layer) layer.remove(); return; }
+  if (layer && layer.dataset.kind === kind) return;
+  if (layer) layer.remove();
+  layer = document.createElement('div'); layer.id = 'season'; layer.dataset.kind = kind; layer.setAttribute('aria-hidden', 'true');
+  const n = kind === 'hearts' ? 10 : 16;
+  for (let i = 0; i < n; i++) {
+    const e = document.createElement('i');
+    const size = kind === 'hearts' ? 9 + Math.random() * 5 : 3 + Math.random() * 3.5;
+    e.style.cssText = `left:${(i / n) * 100 + Math.random() * (100 / n)}%;width:${size.toFixed(1)}px;height:${size.toFixed(1)}px;animation-duration:${(14 + Math.random() * 12).toFixed(1)}s,${(4 + Math.random() * 3).toFixed(1)}s;animation-delay:${(-Math.random() * 26).toFixed(1)}s,${(-Math.random() * 4).toFixed(1)}s;opacity:${(0.35 + Math.random() * 0.35).toFixed(2)}`;
+    if (kind === 'hearts') e.innerHTML = `<svg viewBox="0 0 24 24">${ICON.heart}</svg>`;
+    layer.appendChild(e);
+  }
+  document.body.appendChild(layer);
+}
+
+// ---------------------------------------------------------------- favourites by who (#46), nicknames (#58), signature (#55)
+function favWho(id) { return state.favBy[id] || {}; }
+function isCoupleFav(id) { const w = favWho(id); return !!(w.Corey && w.Faith); }
+function toggleFav(id, el) {
+  const me = state.profile.me;
+  if (state.favourites[id]) {
+    delete state.favourites[id];
+    if (state.favBy[id]) { if (me) delete state.favBy[id][me]; if (!me || !Object.keys(state.favBy[id]).length) delete state.favBy[id]; }
+    toast('Removed from favourites');
+  } else {
+    state.favourites[id] = now();
+    if (me) state.favBy[id] = { ...(state.favBy[id] || {}), [me]: now() };
+    if (el) heartBurst(el);
+    toast(isCoupleFav(id) ? 'A favourite for both of you ♥♥' : 'Saved to favourites ♥');
+  }
+  save(); checkMilestones();
+}
+function toggleLove(id, who) {
+  const w = { ...(state.favBy[id] || {}) };
+  if (w[who]) delete w[who]; else w[who] = now();
+  if (Object.keys(w).length) { state.favBy[id] = w; if (!state.favourites[id]) state.favourites[id] = now(); }
+  else { delete state.favBy[id]; delete state.favourites[id]; }
+  save(); checkMilestones();
+}
+function nickLine(id) { const n = state.nicknames[id]; return n ? `<p class="nick">aka “${esc(n)}”</p>` : ''; }
+function openNickname(id, r) {
+  openSheet(`<h2>Our name for it</h2><p class="sub">A nickname shows under the real name — “${esc(r.title)}” stays searchable.</p>
+    <div class="field"><label>Nickname</label><input id="nkIn" maxlength="40" value="${esc(state.nicknames[id] || '')}" placeholder="e.g. Sunday Night Special" autocomplete="off"></div>
+    <div class="foot"><button class="btn" id="nkDel">${state.nicknames[id] ? 'Remove' : 'Cancel'}</button><button class="btn primary" id="nkOk">Save</button></div>`, (b) => {
+    $('#nkOk', b).onclick = () => { const v = $('#nkIn', b).value.trim(); if (v) state.nicknames[id] = v; else delete state.nicknames[id]; save(); closeSheet(); rerenderRecipe(id); };
+    $('#nkDel', b).onclick = () => { delete state.nicknames[id]; save(); closeSheet(); rerenderRecipe(id); };
+  });
+}
+function setSignature(id) {
+  const prev = state.signature;
+  state.signature = prev === id ? null : id; save(); checkMilestones();
+  toast(state.signature ? 'Our signature dish ★' : 'Signature dish cleared', 'Undo', () => { state.signature = prev; save(); router(); });
+}
+function rerenderRecipe(id) { const y = vY(); return viewRecipe(id).then(() => vTo(y)); }
+
+// ---------------------------------------------------------------- recipe page extras: have-check (#32), we're out (#38), tap-to-use (#33)
+const PANTRY_SKIP = /^(salt|black pepper|water|kosher salt)$/i;
+function pantryNeeds(r) {
+  const seen = {}; const out = [];
+  r.groups.forEach((g) => g.items.forEach((it) => { if (!it.pantry || it.optional || PANTRY_SKIP.test(it.pantry.name)) return; const k = pantryKey(it.pantry.name); if (seen[k]) return; seen[k] = 1; out.push({ k, name: it.pantry.name, l: levelOf(k) }); }));
+  return out;
+}
+function haveCard(r) {
+  if (!Object.values(state.pantry).some((p) => p.level)) return '';
+  const need = pantryNeeds(r); if (!need.length) return '';
+  const miss = need.filter((x) => !x.l || x.l === 'out'); const low = need.filter((x) => x.l === 'low');
+  const have = need.length - miss.length;
+  return `<div class="havecard ${miss.length ? '' : 'ok'}"><div class="hv-n"><b>${have}</b><span>of ${need.length}</span></div>
+    <div class="hv-t"><b>${miss.length ? `Missing ${miss.length}` : 'You have everything ♥'}</b><span>${miss.length ? esc(miss.slice(0, 5).map((x) => x.name).join(', ')) + (miss.length > 5 ? ` +${miss.length - 5}` : '') : low.length ? 'Running low: ' + esc(low.map((x) => x.name).join(', ')) : 'Based on Our Pantry'}</span></div>
+    ${miss.length ? `<button class="btn sm plum" id="haveAdd">${svg('cart')}Add</button>` : ''}</div>`;
+}
+const outBtn = (it) => (it.pantry && !PANTRY_SKIP.test(it.pantry.name) ? `<button class="outbtn ${levelOf(pantryKey(it.pantry.name)) === 'out' ? 'on' : ''}" data-out="1" aria-label="We're out of ${esc(it.name)}" title="We're out">${svg('cart')}</button>` : '');
+function weAreOut(it, r, f, btn) {
+  const k = pantryKey(it.pantry.name); const prevP = state.pantry[k] ? { ...state.pantry[k] } : null; const prevG = JSON.stringify(state.grocery);
+  state.pantry[k] = { ...(state.pantry[k] || { name: it.pantry.name, cat: it.pantry.cat }), name: it.pantry.name, cat: it.pantry.cat || 'other', level: 'out', at: now() };
+  const amt = it.qty != null ? [{ q: Math.round(it.qty * f * 1000) / 1000, u: it.unit || null, from: r.title }] : null;
+  const added = addGrocery(it.pantry.name, it.pantry.cat, k, r.title, amt); save();
+  if (btn) { btn.classList.add('on'); const li = btn.closest('li'); const tx = li && $('.txt', li); if (tx && !$('.have', tx)) tx.insertAdjacentHTML('beforeend', '<span class="have out">Out</span>'); }
+  toast(added ? `${it.pantry.name} → grocery list` : `${it.pantry.name} is already on the list`, 'Undo', () => { if (prevP) state.pantry[k] = prevP; else delete state.pantry[k]; state.grocery = JSON.parse(prevG); save(); rerenderRecipe(r.id); });
+}
+function useChips(r, st, id, f) {
+  if (!st.uses || !st.uses.length) return '';
+  const used = (ui.used && ui.used[id]) || {};
+  return `<span class="uses">${st.uses.map((ref) => { const t = stepUses(r, { uses: [ref] }, f)[0]; return t ? `<button class="use ${used[ref] ? 'on' : ''}" data-use="${esc(ref)}" aria-label="Mark ${esc(t)} as used">${esc(t)}</button>` : ''; }).join('')}</span>`;
+}
+const LEVEL_DOWN = { lots: 'have', have: 'low', low: 'out' };
+function useIngredient(r, id, ref, btn) {
+  ui.used = ui.used || {}; const used = ui.used[id] || (ui.used[id] = {});
+  const [gi, ii] = ref.split('=')[0].split('-').map(Number); const it = r.groups[gi] && r.groups[gi].items[ii]; if (!it) return;
+  if (used[ref]) { // un-mark: just the chip, pantry changes are undone with the toast
+    delete used[ref]; $$(`[data-use="${CSS.escape(ref)}"]`).forEach((b) => b.classList.remove('on')); return;
+  }
+  used[ref] = 1; $$(`[data-use="${CSS.escape(ref)}"]`).forEach((b) => b.classList.add('on')); buzz(10);
+  if (!it.pantry || PANTRY_SKIP.test(it.pantry.name)) return;
+  const k = pantryKey(it.pantry.name); const cur = levelOf(k);
+  if (!cur || cur === 'out') { if (!cur) toast(`Used ✓ — track ${it.pantry.name} in the Pantry to count it down`); return; }
+  const prev = { ...state.pantry[k] }; const nx = LEVEL_DOWN[cur]; const gSnap = JSON.stringify(state.grocery);
+  state.pantry[k] = { ...prev, level: nx, at: now() };
+  let added = false;
+  if (nx === 'out' && state.settings.autoRestock !== false) added = addGrocery(it.pantry.name, it.pantry.cat, k, r.title);
+  save();
+  const lab = { have: 'have some left', low: 'running low', out: 'out' };
+  toast(`${it.pantry.name}: ${lab[nx]}${added ? ' · on the list' : ''}`, 'Undo', () => { state.pantry[k] = prev; state.grocery = JSON.parse(gSnap); delete used[ref]; save(); $$(`[data-use="${CSS.escape(ref)}"]`).forEach((b) => b.classList.remove('on')); });
+}
+
+// ---------------------------------------------------------------- cook for me (#44)
+function cookForMe(r, id) {
+  const me = state.profile.me; const you = me ? other(me) : null;
+  const lines = [
+    `${me ? me + ' is' : "I'm"} craving ${r.title} 🥺 Cook for me tonight? ♥`,
+    `Pretty please? ${r.title} would make my whole day ♥`,
+    `Hungry heart alert: ${r.title}. Cook it with me? I'll do the dishes 🧽♥`,
+    `${you ? you + ', ' : ''}I've been thinking about ${r.title} all day… ♥`,
+  ];
+  const text = lines[Math.floor(Math.random() * lines.length)];
+  const url = location.origin + location.pathname + '#/r/' + id;
+  if (navigator.share) navigator.share({ title: 'Cook for me? ♥', text, url }).catch(() => {});
+  else if (navigator.clipboard) navigator.clipboard.writeText(text + ' ' + url).then(() => toast(`Copied — paste it to ${you || 'your love'} ♥`)).catch(() => toast(text));
+  else toast(text);
+}
+
+// ---------------------------------------------------------------- "More…" sheet on a recipe (keeps the page uncluttered)
+function openRecipeMore(r, s, id) {
+  const sig = state.signature === id; const pend = pendingTaste(id);
+  openSheet(`<div class="cmhead">${s.image ? `<div class="im">${img(thumb(s.image), '')}</div>` : ''}<div><div class="num">${esc(recipeLabel(s))}</div><b>${esc(r.title)}</b>${nickLine(id)}</div></div>
+    <div class="menu">
+      <button data-a="nick">${svg('edit')}<span>${state.nicknames[id] ? 'Change our nickname' : 'Give it our nickname'}</span></button>
+      <button data-a="sig">${svg('star')}<span>${sig ? 'Remove as signature dish' : 'Make it our signature dish'}</span></button>
+      <button data-a="taste">${svg('thumbUp')}<span>${pend ? 'Taste test is on — reveal' : 'Taste test: guess hit or miss'}</span></button>
+      <button data-a="date">${svg('heart')}<span>Plan a date night with it</span></button>
+      <button data-a="print">${svg('print')}<span>Print</span></button>
+      <a href="#/add/${id}">${svg('edit')}<span>Edit recipe</span></a>
+      ${r.custom ? `<button data-a="export">${svg('share')}<span>Export file</span></button>` : ''}
+      <button data-a="hide">${svg('eyeoff')}<span>Hide meal</span></button></div>`, (b) => {
+    $$('[data-a]', b).forEach((x) => (x.onclick = () => {
+      const a = x.dataset.a;
+      if (a === 'nick') openNickname(id, r);
+      else if (a === 'sig') { closeSheet(); setSignature(id); rerenderRecipe(id); }
+      else if (a === 'taste') openTasteTest(id);
+      else if (a === 'date') openDateNight({ recipeId: id });
+      else if (a === 'print') { closeSheet(); setTimeout(printRecipe, 300); }
+      else if (a === 'export') { closeSheet(); exportRecipeFile(r); }
+      else if (a === 'hide') { closeSheet(); state.hidden[id] = now(); save(); go('#/'); toast('Hidden from your lists', 'Undo', () => { delete state.hidden[id]; save(); router(); }); }
+    }));
+  });
+}
+
+// ---------------------------------------------------------------- rate it together (#23)
+function heartsScore(id) {
+  const es = cookedEntries(id).filter((c) => c.hearts && (c.hearts.Corey || c.hearts.Faith));
+  if (!es.length) return null;
+  const sum = { Corey: [], Faith: [] }; es.forEach((c) => ['Corey', 'Faith'].forEach((n) => { if (c.hearts[n]) sum[n].push(c.hearts[n]); }));
+  const avg = (a) => (a.length ? a.reduce((x, y) => x + y, 0) / a.length : null);
+  const c = avg(sum.Corey), f = avg(sum.Faith); const both = [c, f].filter((x) => x != null);
+  return { corey: c, faith: f, score: both.reduce((x, y) => x + y, 0) / both.length, n: es.length };
+}
+const r1 = (x) => (Math.round(x * 10) / 10).toString();
+function heartsPicker(cur) {
+  return `<div class="hearts2">${['Corey', 'Faith'].map((n) => `<div class="hp" data-hp="${n}">${hat(n, 18)}<b>${n}</b><div class="rate">${[1, 2, 3, 4, 5].map((v) => `<button type="button" data-hv="${v}" class="${(cur[n] || 0) >= v ? 'on' : ''}" aria-label="${n}: ${v} of 5">${svg('heart')}</button>`).join('')}</div></div>`).join('')}</div>`;
+}
+function bindHearts(b, cur) {
+  $$('[data-hp]', b).forEach((row) => $$('[data-hv]', row).forEach((x) => (x.onclick = () => { const n = row.dataset.hp; const v = +x.dataset.hv; cur[n] = cur[n] === v ? 0 : v; $$('[data-hv]', row).forEach((y) => y.classList.toggle('on', +y.dataset.hv <= cur[n])); })));
+}
+
+// ---------------------------------------------------------------- after cooking: confetti (#22), photo nudge (#36), sweet notes (#47)
+const SWEET = [
+  'Best sous-chef ever. ♥', 'That smelled like home.', 'Another dinner, another memory.', 'Cooked with love — you can taste it.',
+  'Table for two, perfectly set.', 'Kitchen dance break earned. ♥', 'Proud of us, chef.', 'Good food, better company.',
+];
+function afterCooked(id, first) {
+  if (first) { confetti(); playChime('marimba'); }
+  const hasPhotoToday = (state.photos[id] || []).some((p) => p.date === todayISO());
+  setTimeout(() => {
+    if (first) toast('First time making it — a new memory ♥');
+    else if (!hasPhotoToday && Math.random() < 0.5 && location.hash === '#/r/' + id) photoNudge(id);
+    else if (Math.random() < 0.6) toast(SWEET[Math.floor(Math.random() * SWEET.length)]);
+  }, 2900);
+  if (first && !hasPhotoToday) setTimeout(() => { if (location.hash === '#/r/' + id && $('#sheetWrap').hidden) photoNudge(id); }, 6200);
+}
+function photoNudge(id) {
+  const t = $('#toast');
+  t.innerHTML = `Snap a photo for your story? <label class="tlink">Add photo<input type="file" accept="image/*" hidden></label>`;
+  $('input', t).onchange = (e) => { t.classList.remove('show'); addPhoto(id, e.target.files[0]); };
+  t.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 6500);
+}
+
+// ---------------------------------------------------------------- photo viewer with love stamps (#54)
+const STAMPS = [['heart', 'Love', '♥'], ['star', 'Star', '★'], ['kiss', "Chef's kiss", '']];
+function stampHTML(ph, small) {
+  const s = ph.stamps || []; if (!s.length) return '';
+  return `<span class="stamps ${small ? 'sm' : ''}">${s.map((k) => `<i class="st st-${k}">${k === 'kiss' ? '<em>CHEF’S<br>KISS</em>' : k === 'star' ? '★' : '♥'}</i>`).join('')}</span>`;
+}
+function viewPhoto(id, pid) {
+  const ph = (state.photos[id] || []).find((p) => p.id === pid); if (!ph) return;
+  const draw = (b) => {
+    b.innerHTML = `<div class="phview"><img src="${ph.data}" alt="">${stampHTML(ph)}</div><p class="sub" style="margin-top:8px">${esc(shortDate(ph.date))}</p>
+      <div class="small muted" style="margin-top:12px">Love stamps</div>
+      <div class="stamprow">${STAMPS.map(([k, n]) => `<button class="${(ph.stamps || []).includes(k) ? 'on' : ''}" data-st="${k}"><i class="st st-${k}">${k === 'kiss' ? '<em>CHEF’S<br>KISS</em>' : k === 'star' ? '★' : '♥'}</i><span>${n}</span></button>`).join('')}</div>
+      <div class="foot"><button class="btn danger" id="phDel">Delete</button><button class="btn primary" data-close>Done</button></div>`;
+    $$('[data-st]', b).forEach((x) => (x.onclick = () => { const k = x.dataset.st; const s = ph.stamps || []; ph.stamps = s.includes(k) ? s.filter((y) => y !== k) : s.concat(k); if (!ph.stamps.length) delete ph.stamps; save(); buzz(10); draw(b); if (location.hash === '#/r/' + id) rerenderRecipe(id); }));
+    $('#phDel', b).onclick = () => { closeSheet(); withUndo('Photo deleted', () => { state.photos[id] = state.photos[id].filter((p) => p.id !== pid); }, () => router()); };
+  };
+  openSheet('', draw);
+}
+
+// ---------------------------------------------------------------- bindings for the extras on the recipe page
+function bindRecipeExtras(r, s, id, f, cost) {
+  $('#haveAdd') && ($('#haveAdd').onclick = () => openMissing(r, s, f));
+  $('#moreBtn').onclick = () => openRecipeMore(r, s, id);
+  $('#cravBtn').onclick = () => cookForMe(r, id);
+  $('#tonightBtn').onclick = () => { const t = tonightPlan(); if (t && t.recipeId === id) { state.tonight = null; save(); toast('Removed from tonight'); } else setTonight(id); rerenderRecipe(id); };
+  $('#tasteChip') && ($('#tasteChip').onclick = () => openTasteTest(id));
+  $$('[data-love]').forEach((b) => (b.onclick = () => { toggleLove(id, b.dataset.love); const on = !!favWho(id)[b.dataset.love]; b.classList.toggle('on', on); if (on) heartBurst(b); $('#favBtn').classList.toggle('on', !!state.favourites[id]); if (isCoupleFav(id) && on) toast('A favourite for both of you ♥♥'); }));
+  $$('button.use').forEach((b) => b.addEventListener('click', (e) => { e.stopPropagation(); useIngredient(r, id, b.dataset.use, b); }));
+  if (ui.autoCook === id) { ui.autoCook = null; setTimeout(() => openCook(r, s, f), 120); }
+}
+
+// ---------------------------------------------------------------- grocery in No Frills aisle order (#13), swipe rows (#28), date mode (#57)
+const AISLES = [['produce', 'Produce'], ['bakery', 'Bakery'], ['meat', 'Meat & Seafood'], ['dairy', 'Dairy & Eggs'], ['pantry', 'Pantry & Dry Goods'], ['canned', 'Canned'], ['spices', 'Spices'], ['frozen', 'Frozen'], ['other', 'Other']];
+const AISLE_NAME = Object.fromEntries(AISLES);
+function aisleOf(g) {
+  if (g.aisle && AISLE_NAME[g.aisle]) return g.aisle;
+  const n = (g.name || '').toLowerCase(); const c = g.cat || 'other';
+  if (/frozen|ice cream/.test(n) || c === 'frozen') return 'frozen';
+  if (c === 'meat') return 'meat';
+  if (/\b(bread|buns?|rolls?|tortillas?|wraps?|bagels?|pitas?|naan|hoagie|baguette|croissants?|english muffins?)\b/.test(n)) return 'bakery';
+  if (c === 'dairy' || /\b(eggs?|milk|cream|cheese|butter|yogu?rt|ricotta|provolone|mozzarella|cheddar|parmesan)\b/.test(n)) return 'dairy';
+  if (c === 'produce') return 'produce';
+  if (/canned|\bcans?\b|tomato paste|crushed tomato|diced tomato|tomato sauce|passata|\bbeans\b|chickpeas|broth|stock|coconut milk|pumpkin pur/.test(n)) return 'canned';
+  if (c === 'spices' || /\bsalt\b|black pepper|peppercorn|powder|paprika|seasoning|cumin|oregano|thyme|cinnamon|nutmeg|bay lea|ground ginger|sesame seeds|chili powder|spice/.test(n)) return 'spices';
+  if (['grains', 'sauces', 'baking'].includes(c)) return 'pantry';
+  if (/rice|pasta|noodle|spaghetti|flour|sugar|oil|vinegar|sauce|honey|oats|peanut butter|cornstarch|baking/.test(n)) return 'pantry';
+  return 'other';
+}
+function grocRow(g, gd) {
+  const who = gd && gd.split && gd.split[g.id];
+  return `<li data-g="${g.id}" class="swr ${g.checked ? 'done' : ''}"><div class="swb"><span>${svg('check')}${g.checked ? 'Untick' : 'Got it'}</span><span>Delete${svg('close')}</span></div>
+    <div class="swf"><span class="box">${CHECK}</span><span class="txt">${esc(g.name)}${g.amounts && g.amounts.length ? ` <span class="gamt">${esc(sumAmounts(g.amounts))}</span>` : ''}${g.from ? `<span class="from">for ${esc(g.from)}</span>` : ''}</span>
+    ${gd ? `<button class="whobtn ${who ? 'on' : ''}" data-who="${g.id}" aria-label="Who grabs ${esc(g.name)}">${who ? hat(who, 18) : '<span class="nobody">who?</span>'}</button>` : `<button class="del" data-del="${g.id}" aria-label="Remove ${esc(g.name)}">×</button>`}</div></li>`;
+}
+function dateModeCard(items) {
+  const gd = state.groceryDate; const mins = Math.max(0, Math.round((now() - gd.start) / 6e4));
+  const got = items.filter((g) => g.checked && (g.checkedAt || 0) >= gd.start);
+  let spent = 0, priced = 0; got.forEach((g) => { const p = priceOf(g.key); if (p) { spent += p.price; priced++; } });
+  const left = items.filter((g) => !g.checked); const t = tripEstimate();
+  const cnt = (n) => left.filter((g) => gd.split[g.id] === n).length;
+  return `<div class="gdate"><div class="gd-k">${svg('heart')}GROCERY DATE · ${mins} MIN<button class="x" id="gdEnd" aria-label="Finish">Done</button></div>
+    <div class="gd-row"><div><b>~${money(spent)}</b><span>in the cart${got.length ? ` · ${got.length} item${got.length === 1 ? '' : 's'}` : ''}</span></div><div><b>~${money(t.total)}</b><span>still to grab</span></div></div>
+    <div class="gd-split"><span>${hat('Corey', 16)}Corey ${cnt('Corey')}</span><span>${hat('Faith', 16)}Faith ${cnt('Faith')}</span><button class="btn sm ghost" id="gdSplit">Split by aisle</button></div>
+    <div class="segtext gd-view" style="grid-template-columns:repeat(3,1fr)">${['All', 'Corey', 'Faith'].map((n) => `<button data-gv="${n}" class="${(ui.gview || 'All') === n ? 'on' : ''}">${n === 'All' ? 'Everything' : n + "'s list"}</button>`).join('')}</div></div>`;
+}
+function viewGrocery() {
+  setTop({ title: 'GROCERY LIST' });
+  const items = Object.values(state.grocery);
+  const left = items.filter((g) => !g.checked).length;
+  const done = items.length - left;
+  const gd = state.groceryDate && state.groceryDate.on ? state.groceryDate : null;
+  if (gd && !gd.split) gd.split = {};
+  const gv = gd ? ui.gview || 'All' : 'All';
+  const shown = items.filter((g) => gv === 'All' || gd.split[g.id] === gv);
+  render(`<div class="wrap">
+    <div class="kicker">No Frills run<span class="rule"></span></div>
+    <h1 class="h1" style="margin-top:6px">Grocery List</h1>
+    <p class="lead" style="margin-top:4px">${left ? `${left} thing${left === 1 ? '' : 's'} to grab` : items.length ? 'All done — nice.' : 'Empty for now.'}</p>
+    ${gd ? dateModeCard(items) : (() => { const t = tripEstimate(); return t.n && t.priced ? `<div class="trip"><span>Estimated trip</span><b>~${money(t.total)}</b><small>${t.priced === t.n ? 'all' : t.priced + ' of ' + t.n} items priced · typical No Frills packs${Object.keys(state.prices).length ? ' + your receipts' : ''}</small></div>` : ''; })()}
+    <div class="btnrow" style="margin-top:10px">${gd ? '' : `<button class="btn ghost" id="gdStart" ${left ? '' : 'disabled style="opacity:.4"'}>${svg('heart')}Shop together</button>`}<button class="btn ghost" id="scanG" ${gd ? 'style="grid-column:1/-1"' : ''}>${svg('camera')}Scan receipt</button></div>
+    <div class="addrow"><input id="gNew" placeholder="Add an item…" enterkeyhint="done" autocomplete="off"><button class="btn primary" id="gAdd" aria-label="Add">${svg('plus')}</button>
+      <select id="gCat" aria-label="Aisle"><option value="">Aisle: auto</option>${AISLES.map(([k, n]) => `<option value="${k}">${esc(n)}</option>`).join('')}</select></div>
+    ${items.length ? `<p class="small muted swhint">Swipe right to tick · left to delete${gd ? ' · tap the hat to say who grabs it' : ''}</p>` : ''}
+    ${items.length ? AISLES.map(([ak, an]) => {
+      const rows = shown.filter((g) => aisleOf(g) === ak).sort((a, b) => a.checked - b.checked || a.name.localeCompare(b.name));
+      if (!rows.length) return '';
+      return `<div class="pgroup"><div class="gh">${esc(an)}<span>${rows.filter((g) => !g.checked).length} left</span></div><ul class="checklist glist">${rows.map((g) => grocRow(g, gd)).join('')}</ul></div>`;
+    }).join('') || '<div class="empty" style="margin-top:14px">Nothing on this list yet — tap a hat on “Everything” to split it.</div>' : `<div class="empty" style="margin-top:16px">Add things here, or tap “Add to grocery list” on a recipe, or “+ Grocery list” on anything running low in the Pantry.</div>`}
+    ${items.length ? `<div class="gsummary"><span>${done} checked</span><span style="display:flex;gap:8px"><button class="btn sm ghost" id="gClear" ${done ? '' : 'disabled style="opacity:.4"'}>Clear checked</button><button class="btn sm ghost" id="gAll">Clear all</button></span></div>
+    <p class="small muted" style="margin-top:10px">Checking something off marks it “Have it” in the Pantry. Sorted in No Frills aisle order.</p>` : ''}
+  </div>`);
+  const redraw = () => { const y = vY(); viewGrocery(); vTo(y); };
+  const add = () => {
+    const v = $('#gNew').value.trim(); if (!v) return;
+    const a = $('#gCat').value;
+    addGrocery(v, guessCat(v), pantryKey(v), '');
+    if (a) { const g = Object.values(state.grocery).find((x) => x.key === pantryKey(v) && !x.checked); if (g) g.aisle = a; }
+    save(); redraw(); $('#gNew').focus();
+  };
+  $('#gAdd').onclick = add; $('#gNew').onkeydown = (e) => { if (e.key === 'Enter') add(); };
+  const tick = (id, li) => {
+    const g = state.grocery[id]; if (!g) return; g.checked = !g.checked; g.at = now();
+    if (g.checked) { g.checkedAt = now(); g.checkedBy = state.profile.me || null; } else { delete g.checkedAt; delete g.checkedBy; }
+    if (g.checked && !g.dog) { const p = state.pantry[g.key] || { name: g.name, cat: g.cat }; state.pantry[g.key] = { ...p, level: 'have', at: now() }; }
+    save(); if (li) li.classList.toggle('done', g.checked);
+    setTimeout(redraw, 260);
+  };
+  const del = (id) => { const g = state.grocery[id]; if (!g) return; delete state.grocery[id]; if (gd) delete gd.split[id]; save(); redraw(); toast(`Removed ${g.name}`, 'Undo', () => { state.grocery[g.id] = g; save(); redraw(); }); };
+  $$('li[data-g]').forEach((li) => {
+    li.onclick = (e) => { if (li.dataset.sw || e.target.closest('.del,.whobtn')) return; tick(li.dataset.g, li); };
+    swipeRow(li, (dir) => { if (dir > 0) tick(li.dataset.g, li); else del(li.dataset.g); });
+  });
+  $$('[data-del]').forEach((b) => (b.onclick = (e) => { e.stopPropagation(); del(b.dataset.del); }));
+  $$('[data-who]').forEach((b) => (b.onclick = (e) => { e.stopPropagation(); const id = b.dataset.who; const cur = gd.split[id]; const nx = !cur ? 'Corey' : cur === 'Corey' ? 'Faith' : null; if (nx) gd.split[id] = nx; else delete gd.split[id]; save(); redraw(); }));
+  $('#gClear') && ($('#gClear').onclick = () => { const bak = { ...state.grocery }; Object.values(state.grocery).forEach((g) => { if (g.checked) delete state.grocery[g.id]; }); save(); redraw(); toast('Cleared checked items', 'Undo', () => { state.grocery = bak; save(); redraw(); }); });
+  $('#gAll') && ($('#gAll').onclick = () => confirmSheet('Clear the whole list?', 'This removes every item, checked or not.', 'Clear all', () => withUndo('List cleared', () => { state.grocery = {}; }, viewGrocery), true));
+  $('#scanG').onclick = openScan;
+  $('#gdStart') && ($('#gdStart').onclick = () => { state.groceryDate = { on: true, start: now(), split: {} }; ui.gview = 'All'; save(); redraw(); toast('Grocery date ♥ — have fun, you two'); });
+  $('#gdSplit') && ($('#gdSplit').onclick = () => {
+    const lefts = items.filter((g) => !g.checked); const by = {}; lefts.forEach((g) => { const a = aisleOf(g); (by[a] = by[a] || []).push(g); });
+    const tally = { Corey: 0, Faith: 0 };
+    AISLES.forEach(([a]) => { const gs = by[a]; if (!gs) return; const who = tally.Corey <= tally.Faith ? 'Corey' : 'Faith'; gs.forEach((g) => { gd.split[g.id] = who; }); tally[who] += gs.length; });
+    save(); redraw(); toast(`Split by aisle · Corey ${tally.Corey}, Faith ${tally.Faith}`);
+  });
+  $$('[data-gv]').forEach((b) => (b.onclick = () => { ui.gview = b.dataset.gv; redraw(); }));
+  $('#gdEnd') && ($('#gdEnd').onclick = () => {
+    const got = Object.values(state.grocery).filter((g) => g.checked && (g.checkedAt || 0) >= gd.start);
+    let spent = 0; got.forEach((g) => { const p = priceOf(g.key); if (p) spent += p.price; });
+    const mins = Math.max(1, Math.round((now() - gd.start) / 6e4)); const prev = state.groceryDate;
+    state.groceryDate = { ...prev, on: false, end: now() }; save(); redraw();
+    toast(`Grocery date done ♥ ${got.length} items · ~${money(spent)} · ${mins} min`, 'Undo', () => { state.groceryDate = prev; save(); redraw(); });
+  });
+}
+function swipeRow(li, done) {
+  const f = $('.swf', li); if (!f) return;
+  let sx = null, sy = 0, dx = 0, on = false;
+  li.addEventListener('touchstart', (e) => { if (e.touches.length !== 1) return; sx = e.touches[0].clientX; sy = e.touches[0].clientY; dx = 0; on = false; if (sx < 26) sx = null; }, { passive: true });
+  li.addEventListener('touchmove', (e) => {
+    if (sx == null) return; const t = e.touches[0]; dx = t.clientX - sx; const dy = t.clientY - sy;
+    if (!on) { if (Math.abs(dy) > 10 && Math.abs(dy) > Math.abs(dx)) { sx = null; return; } if (Math.abs(dx) > 12) { on = true; li.dataset.sw = '1'; } }
+    if (on) { e.preventDefault(); f.style.transition = 'none'; f.style.transform = `translateX(${dx}px)`; li.classList.toggle('swr-l', dx < 0); li.classList.toggle('swr-go', Math.abs(dx) > 90); }
+  }, { passive: false });
+  li.addEventListener('touchend', () => {
+    if (sx == null) return; sx = null;
+    if (!on) return;
+    const go = Math.abs(dx) > 90; f.style.transition = 'transform .2s ease';
+    if (go && dx < 0) { f.style.transform = 'translateX(-110%)'; buzz(15); setTimeout(() => done(-1), 180); }
+    else { f.style.transform = ''; if (go) { buzz(12); done(1); } }
+    setTimeout(() => { delete li.dataset.sw; li.classList.remove('swr-l', 'swr-go'); }, 260);
+  }, { passive: true });
+}
+
+// ---------------------------------------------------------------- streak (#19)
+function weekStart(iso) { const d = dateOf(iso); d.setDate(d.getDate() - ((d.getDay() + 6) % 7)); return isoOf(d); }
+function streakInfo() {
+  const counts = {}; realDinners().forEach((c) => { const k = weekStart(c.date); counts[k] = (counts[k] || 0) + 1; });
+  const wk = weekStart(todayISO()); const thisWeek = counts[wk] || 0;
+  let cur = thisWeek >= 3 ? wk : addDaysISO(wk, -7); let streak = 0;
+  while ((counts[cur] || 0) >= 3) { streak++; cur = addDaysISO(cur, -7); }
+  let best = 0, run = 0; const weeks = Object.keys(counts).sort();
+  if (weeks.length) { let w = weeks[0]; while (w <= wk) { if ((counts[w] || 0) >= 3) { run++; best = Math.max(best, run); } else run = 0; w = addDaysISO(w, 7); } }
+  return { streak, thisWeek, best, toGo: Math.max(0, 3 - thisWeek) };
+}
+function streakHTML(si) {
+  return `<div class="streak ${si.streak ? 'on' : ''}"><svg viewBox="0 0 24 24" class="flame" aria-hidden="true">${ICON.flame}</svg>
+    <div><b>${si.streak ? `${si.streak}-week streak` : 'Start a streak'}</b><span>${si.toGo ? `${si.thisWeek} of 3 dinners this week — ${si.toGo} more to ${si.streak ? 'keep it going' : 'light the flame'}` : '3+ dinners this week ✓'}${si.best > si.streak ? ` · best ${si.best}` : ''}</span></div></div>`;
+}
+
+// ---------------------------------------------------------------- badges (#20) — extends the milestones (keys are add-only)
+const MILESTONES = [
+  ['d1', 'First dinner logged', (x) => x.n >= 1, 'pot'], ['d10', '10 dinners together', (x) => x.n >= 10, 'pot'], ['d25', '25 dinners together', (x) => x.n >= 25, 'pot'],
+  ['d50', '50 dinners together', (x) => x.n >= 50, 'pot'], ['d100', '100 dinners together', (x) => x.n >= 100, 'pot'],
+  ['r5', '5 different recipes tried', (x) => x.distinct >= 5, 'book'], ['rall', 'Cooked every recipe in the book', (x) => x.allBook, 'book'],
+  ['p1', 'First photo memory', (x) => x.photos >= 1, 'camera'], ['p10', '10 photo memories', (x) => x.photos >= 10, 'camera'],
+  ['c10', 'Corey cooked 10 dinners', (x) => x.corey >= 10, 'hat'], ['f10', 'Faith cooked 10 dinners', (x) => x.faith >= 10, 'hat'],
+  ['b10', '10 dinners cooked together', (x) => x.both >= 10, 'users'], ['bud', 'A whole month inside the budget', (x) => x.budgetMonth, 'medal'],
+  // update 3
+  ['cats', 'Tried every category', (x) => x.allCats, 'star'], ['w3', '3-week cooking streak', (x) => x.bestStreak >= 3, 'flame'], ['w8', '8-week cooking streak', (x) => x.bestStreak >= 8, 'flame'],
+  ['dn1', 'First date night in', (x) => x.dateNights >= 1, 'candle'], ['tt1', 'First taste test', (x) => x.taste >= 1, 'thumbUp'], ['cf3', '3 favourites you both love', (x) => x.coupleFavs >= 3, 'heart'],
+  ['sig', 'Picked a signature dish', (x) => x.sig, 'star'], ['jar', 'Made a wish from the dessert jar', (x) => x.jarMade >= 1, 'jar'], ['ac1', "Acura's first batch of treats", (x) => x.acura >= 1, 'paw'],
+];
+function milestoneFacts() {
+  const all = realDinners();
+  const ids = new Set(all.map((c) => c.recipeId).filter((id) => id !== 'other'));
+  const months = {}; Object.values(state.cooked).forEach((c) => { const k = c.date.slice(0, 7); months[k] = (months[k] || 0) + Number(c.amount || 0); });
+  const cnt = (n) => all.filter((c) => c.by === n || c.by === 'Both').length;
+  const cats = INDEX.categories.filter((c) => INDEX.recipes.some((r) => r.category === c.slug));
+  return {
+    n: all.length, distinct: ids.size, allBook: INDEX.recipes.length > 0 && INDEX.recipes.every((r) => ids.has(r.id)),
+    photos: Object.values(state.photos).flat().length, corey: cnt('Corey'), faith: cnt('Faith'), both: all.filter((c) => c.by === 'Both').length,
+    budgetMonth: Object.entries(months).some(([k, v]) => k < monthKey() && v > 0 && v <= state.settings.budgetMax && all.filter((c) => c.date.startsWith(k)).length >= 8),
+    allCats: cats.length > 0 && cats.every((c) => all.some((d) => { const s = summary(d.recipeId); return s && s.category === c.slug; })),
+    bestStreak: streakInfo().best,
+    dateNights: all.filter((c) => { const s = summary(c.recipeId); return (s && ((s.tags || {}).occasion || []).includes('date-night')) || (state.dateNight && state.dateNight.date === c.date); }).length,
+    taste: Object.values(state.tasteTests).filter((t) => t.result).length,
+    coupleFavs: Object.keys(state.favBy).filter(isCoupleFav).length, sig: !!state.signature,
+    jarMade: Object.values(state.dessertJar).filter((d) => d.made).length,
+    acura: Object.keys((state.acura && state.acura.baked) || {}).length,
+  };
+}
+function badgeGrid() {
+  // earned first (oldest first), then the locked ones; only the first 9 show until "Show all" (uncluttered)
+  const got = MILESTONES.filter(([k]) => state.milestones[k]).length;
+  const list = MILESTONES.filter(([k]) => state.milestones[k]).sort((a, b) => String(state.milestones[a[0]]).localeCompare(String(state.milestones[b[0]]))).concat(MILESTONES.filter(([k]) => !state.milestones[k]));
+  const one = ([k, label, , ic]) => { const on = state.milestones[k]; return `<div class="bdg ${on ? 'on' : ''}" title="${esc(label)}"><span class="bm"><svg viewBox="0 0 24 24">${ICON[ic] || ICON.star}</svg></span><b>${esc(label)}</b>${on ? `<small>${esc(shortDate(on))}</small>` : ''}</div>`; };
+  const first = list.slice(0, 9), rest = list.slice(9);
+  return `<div class="sec"><div class="sec-title">Badges<span class="act">${got} of ${MILESTONES.length}</span></div><div class="badges">${first.map(one).join('')}</div>${rest.length ? `<details class="bmore"><summary>Show all ${MILESTONES.length} badges</summary><div class="badges">${rest.map(one).join('')}</div></details>` : ''}</div>`;
+}
+
+// ---------------------------------------------------------------- coin flip: who's on dishes (#52)
+function openCoinFlip() {
+  let flipping = false;
+  const tally = () => { const m = monthKey(); const t = { Corey: 0, Faith: 0 }; Object.values(state.dishes).forEach((d) => { if (d.date.startsWith(m)) t[d.who]++; }); return t; };
+  const draw = (b, res) => {
+    const t = tally();
+    b.innerHTML = `<h2>Who's on dishes?</h2><p class="sub">Gold hat for Corey, lavender for Faith. The coin has spoken — no appeals.</p>
+      <div class="coinwrap"><div class="coin ${res ? 'show-' + res.toLowerCase() : ''}" id="coin"><div class="cf c">${hat('Corey', 54)}<b>COREY</b></div><div class="cf f">${hat('Faith', 54)}<b>FAITH</b></div></div></div>
+      <p class="coinres" id="coinRes">${res ? `<b>${res}</b> is on dishes tonight ♥` : '&nbsp;'}</p>
+      <p class="small muted" style="text-align:center">This month · Corey ${t.Corey} · Faith ${t.Faith}</p>
+      <div class="foot"><button class="btn" data-close>Close</button><button class="btn gold" id="flip">${res ? 'Best of three?' : 'Flip the coin'}</button></div>`;
+    $('#flip', b).onclick = () => {
+      if (flipping) return; flipping = true; actx();
+      const who = Math.random() < 0.5 ? 'Corey' : 'Faith'; const c = $('#coin', b);
+      c.className = 'coin'; void c.offsetWidth; c.classList.add(reducedMotion() ? 'show-' + who.toLowerCase() : 'flip-' + who.toLowerCase());
+      if (state.settings.sounds) tone(2400, 0, 0.05, 0.05);
+      setTimeout(() => { flipping = false; const id = uid(); state.dishes[id] = { id, date: todayISO(), who, at: now() }; save(); buzz(20); playChime('ding'); draw(b, who); }, reducedMotion() ? 50 : 1700);
+    };
+  };
+  openSheet('', (b) => draw(b, null));
+}
+
+// ---------------------------------------------------------------- taste test (#53)
+function pendingTaste(rid) { return Object.values(state.tasteTests).find((t) => t.recipeId === rid && !t.result) || null; }
+function tasteScore() { const s = { Corey: 0, Faith: 0, n: 0 }; Object.values(state.tasteTests).forEach((t) => { if (!t.result) return; s.n++; ['Corey', 'Faith'].forEach((n) => { if (t.guesses[n] && t.guesses[n] === t.result) s[n]++; }); }); return s; }
+function openTasteTest(rid) {
+  const s = summary(rid); if (!s) return;
+  const pend = pendingTaste(rid);
+  if (pend) {
+    openSheet(`<h2>Taste test · the verdict</h2><p class="sub">${esc(s.title)} — Corey guessed <b>${esc(pend.guesses.Corey || '—')}</b>, Faith guessed <b>${esc(pend.guesses.Faith || '—')}</b>. So… was it a hit?</p>
+      <div class="btnrow" style="margin-top:16px"><button class="btn ghost" data-res="miss">${svg('thumbDown')}Miss</button><button class="btn gold" data-res="hit">${svg('thumbUp')}Hit!</button></div>
+      <div class="foot"><button class="btn" id="ttCancel">Cancel the test</button><button class="btn" data-close>Later</button></div>`, (b) => {
+      $$('[data-res]', b).forEach((x) => (x.onclick = () => { resolveTaste(pend, x.dataset.res); closeSheet(); }));
+      $('#ttCancel', b).onclick = () => { delete state.tasteTests[pend.id]; save(); closeSheet(); router(); };
+    });
+    return;
+  }
+  const g = {};
+  openSheet(`<h2>Taste test</h2><p class="sub">Before you cook ${esc(s.title)}: will it be a hit or a miss? Each make a guess — we'll keep score.</p>
+    ${['Corey', 'Faith'].map((n) => `<div class="field"><label>${hat(n, 16)} ${n} says</label><div class="segtext" data-g="${n}" style="grid-template-columns:1fr 1fr"><button data-v="hit">Hit</button><button data-v="miss">Miss</button></div></div>`).join('')}
+    <div class="foot"><button class="btn" data-close>Cancel</button><button class="btn primary" id="ttGo">Lock in our guesses</button></div>`, (b) => {
+    $$('[data-g]', b).forEach((row) => $$('button', row).forEach((x) => (x.onclick = () => { g[row.dataset.g] = x.dataset.v; $$('button', row).forEach((y) => y.classList.toggle('on', y === x)); })));
+    $('#ttGo', b).onclick = () => { if (!g.Corey && !g.Faith) { toast('Make a guess first'); return; } const id = uid(); state.tasteTests[id] = { id, recipeId: rid, date: todayISO(), guesses: { ...g }, result: null, at: now() }; save(); closeSheet(); toast('Guesses locked 🔒 — reveal after you taste it'); router(); };
+  });
+}
+function resolveTaste(t, res) {
+  t.result = res; t.resolvedAt = now(); save();
+  const right = ['Corey', 'Faith'].filter((n) => t.guesses[n] === res);
+  toast(right.length === 2 ? 'You both called it ♥' : right.length ? `${right[0]} called it! +1` : 'Neither of you saw that coming 😄');
+  checkMilestones(); router();
+}
+
+// ---------------------------------------------------------------- dessert wish jar (#50)
+function openDessertJar() {
+  const draw = (b, pulled) => {
+    const items = Object.values(state.dessertJar).sort((x, y) => (x.made ? 1 : 0) - (y.made ? 1 : 0) || y.at - x.at);
+    const open = items.filter((d) => !d.made);
+    b.innerHTML = `<h2>Dessert wish jar</h2><p class="sub">Drop in sweet ideas. When you want a treat, pull one out at random.</p>
+      <div class="addrow" style="grid-template-columns:1fr 46px"><input id="djIn" placeholder="e.g. Molten chocolate cake" maxlength="60" autocomplete="off" enterkeyhint="done"><button class="btn primary" id="djAdd" aria-label="Add">${svg('plus')}</button></div>
+      ${pulled ? `<div class="jarpull"><small>FROM THE JAR</small><b>${esc(pulled.text)}</b><span>${pulled.by ? 'wished by ' + esc(pulled.by) : ''}</span><button class="btn sm gold" id="djMade">We made it ♥</button></div>` : ''}
+      <ul class="cooked jarlist">${items.map((d) => `<li class="${d.made ? 'made' : ''}"><div><div class="t">${esc(d.text)}</div><div class="d">${d.made ? 'made ' + esc(shortDate(d.made)) : d.by ? 'from ' + esc(d.by) : ''}</div></div><button class="del" data-dj="${d.id}" aria-label="Remove">×</button></li>`).join('') || '<li><div class="d">The jar is empty — add the first wish.</div></li>'}</ul>
+      <div class="foot"><button class="btn" data-close>Close</button><button class="btn gold" id="djPull" ${open.length ? '' : 'disabled style="opacity:.4"'}>${svg('jar')}Pull one out</button></div>`;
+    const add = () => { const v = $('#djIn', b).value.trim(); if (!v) return; const id = uid(); state.dessertJar[id] = { id, text: v, by: state.profile.me || null, date: todayISO(), at: now() }; save(); draw(b); $('#djIn', b).focus(); };
+    $('#djAdd', b).onclick = add; $('#djIn', b).onkeydown = (e) => { if (e.key === 'Enter') add(); };
+    $('#djPull', b).onclick = () => { const o = Object.values(state.dessertJar).filter((d) => !d.made); if (!o.length) return; buzz(15); playChime('harp'); draw(b, o[Math.floor(Math.random() * o.length)]); };
+    $('#djMade', b) && ($('#djMade', b).onclick = () => { state.dessertJar[pulled.id].made = todayISO(); save(); checkMilestones(); draw(b); toast('Sweet ♥'); });
+    $$('[data-dj]', b).forEach((x) => (x.onclick = () => { const d = state.dessertJar[x.dataset.dj]; delete state.dessertJar[x.dataset.dj]; save(); draw(b); toast('Removed', 'Undo', () => { state.dessertJar[d.id] = d; save(); if (!$('#sheetWrap').hidden) draw(b); }); }));
+  };
+  openSheet('', (b) => draw(b));
+}
+
+// ---------------------------------------------------------------- kitchen playlist (#49)
+function openPlaylist() {
+  const mine = state.settings.playlist;
+  const links = [
+    ['Spotify · cooking playlists', 'https://open.spotify.com/search/cooking%20dinner%20playlist/playlists'],
+    ['Spotify · cozy jazz for dinner', 'https://open.spotify.com/search/dinner%20jazz/playlists'],
+    ['Apple Music · cooking playlists', 'https://music.apple.com/ca/search?term=cooking%20playlist'],
+    ['Apple Music · dinner for two', 'https://music.apple.com/ca/search?term=romantic%20dinner'],
+  ];
+  openSheet(`<h2>Kitchen playlist</h2><p class="sub">Music while you cook — opens in Spotify or Apple Music.</p>
+    <div class="menu">${mine ? `<a href="${esc(mine)}" target="_blank" rel="noopener">${svg('heart')}<span><b>Our playlist</b></span></a>` : ''}${links.map(([n, u]) => `<a href="${u}" target="_blank" rel="noopener">${svg('music')}<span>${esc(n)}</span></a>`).join('')}</div>
+    <div class="field"><label>Our own playlist link</label><input id="plIn" type="url" inputmode="url" placeholder="Paste a Spotify or Apple Music link" value="${esc(mine || '')}" autocomplete="off"></div>
+    <div class="foot"><button class="btn" data-close>Close</button><button class="btn primary" id="plSave">Save link</button></div>`, (b) => {
+    $('#plSave', b).onclick = () => { const v = $('#plIn', b).value.trim(); if (v && !/^https?:\/\//i.test(v)) { toast('Paste a full link starting with https://'); return; } state.settings.playlist = v; save(); closeSheet(); toast(v ? 'Saved our playlist ♥' : 'Playlist link removed'); };
+  });
+}
+
+// ---------------------------------------------------------------- date night planner + countdown (#51)
+function openDateNight(pre = {}) {
+  const dn = state.dateNight && -daysSince(state.dateNight.date) >= 0 ? state.dateNight : null;
+  const cur = { date: pre.date || (dn && dn.date) || isoPlus(((6 - new Date().getDay()) + 7) % 7 || 7), time: (dn && dn.time) || '19:00', recipeId: pre.recipeId || (dn && dn.recipeId) || '', note: (dn && dn.note) || '' };
+  const list = visibleRecipes().slice().sort((a, b) => (((b.tags || {}).occasion || []).includes('date-night') - ((a.tags || {}).occasion || []).includes('date-night')) || a.title.localeCompare(b.title));
+  openSheet(`<h2>Date night in</h2><p class="sub">Pick the night and the dinner — Home will count down to it.</p>
+    <div class="btnrow" style="margin-top:6px"><div class="field"><label>Date</label><input id="dnD" type="date" value="${cur.date}" min="${todayISO()}"></div><div class="field"><label>Time</label><input id="dnT" type="time" value="${cur.time}"></div></div>
+    <div class="field"><label>What we're cooking</label><select id="dnR"><option value="">Decide later</option>${list.map((r) => `<option value="${r.id}" ${r.id === cur.recipeId ? 'selected' : ''}>${esc(r.title)}${((r.tags || {}).occasion || []).includes('date-night') ? ' ♥' : ''}</option>`).join('')}</select></div>
+    <div class="field"><label>A little note (optional)</label><input id="dnN" maxlength="80" value="${esc(cur.note)}" placeholder="e.g. candles + our song" autocomplete="off"></div>
+    <div class="foot"><button class="btn" id="dnDel">${dn ? 'Cancel date' : 'Close'}</button><button class="btn gold" id="dnOk">Save date night</button></div>`, (b) => {
+    $('#dnOk', b).onclick = () => { const d = $('#dnD', b).value; if (!d) { toast('Pick a date'); return; } state.dateNight = { date: d, time: $('#dnT', b).value || '19:00', recipeId: $('#dnR', b).value || null, note: $('#dnN', b).value.trim(), by: state.profile.me || null, at: now() }; save(); closeSheet(); toast('Date night saved ♥'); router(); };
+    $('#dnDel', b).onclick = () => { if (dn) { const prev = state.dateNight; state.dateNight = null; save(); closeSheet(); router(); toast('Date night cancelled', 'Undo', () => { state.dateNight = prev; save(); router(); }); } else closeSheet(); };
+  });
+}
+function dateNightCard() {
+  const dn = dateNightInfo();
+  if (!dn) return `<button class="tooltile wide" id="dnPlan">${svg('candle')}<span><b>Plan a date night in</b><small>Pick a night and a dinner — we'll count down</small></span></button>`;
+  const when = dateOf(dn.date).toLocaleDateString('en-CA', { weekday: 'long', month: 'long', day: 'numeric' });
+  return `<div class="dncard"><div class="dn-n"><b>${dn.days === 0 ? '♥' : dn.days}</b><span>${dn.days === 0 ? 'tonight' : dn.days === 1 ? 'day to go' : 'days to go'}</span></div>
+    <div class="dn-t"><small>DATE NIGHT IN</small><b>${esc(when)}${dn.time ? ' · ' + fmtTime(eatTime({ eatAt: dn.time })) : ''}</b><span>${dn.s ? esc(dn.s.title) : 'Dinner to be decided'}${dn.note ? ' · ' + esc(dn.note) : ''}</span></div>
+    <div class="dn-a">${dn.s ? `<a class="btn sm gold" href="#/r/${dn.s.id}">Recipe</a>` : ''}<button class="btn sm ghost" id="dnPlan">Edit</button></div></div>`;
+}
+
+// ---------------------------------------------------------------- signature dish (#55)
+function openPickSignature() {
+  const favs = Object.keys(state.favourites).map(summary).filter(Boolean);
+  const cookedIds = [...new Set(realDinners().map((c) => c.recipeId))].map(summary).filter(Boolean).filter((r) => !state.favourites[r.id]);
+  const list = favs.concat(cookedIds);
+  openSheet(`<h2>Our signature dish</h2><p class="sub">The one you'd make to impress — it gets a special spot and a gold badge.</p>
+    <div class="rlist" style="margin-top:10px">${list.map((x) => `<button class="rcard pick2" data-sig="${x.id}"><div class="im">${x.image ? img(thumb(x.image), x.title) : placeholderArt(x)}</div><div><div class="num">${esc(recipeLabel(x))}${state.signature === x.id ? ' · ★ current' : ''}</div><div class="t">${esc(x.title)}</div></div></button>`).join('') || '<div class="empty">Favourite or cook a few recipes first.</div>'}</div>
+    <div class="foot"><button class="btn" data-close>Cancel</button>${state.signature ? '<button class="btn" id="sigClear">Clear</button>' : ''}</div>`, (b) => {
+    $$('[data-sig]', b).forEach((x) => (x.onclick = () => { closeSheet(); state.signature = x.dataset.sig; save(); checkMilestones(); router(); toast('Our signature dish ★'); }));
+    $('#sigClear', b) && ($('#sigClear', b).onclick = () => { closeSheet(); setSignature(state.signature); router(); });
+  });
+}
+
+// ---------------------------------------------------------------- year in review (#59)
+function yearInReviewDue() {
+  const t = new Date(); const y = t.getMonth() === 11 ? t.getFullYear() : t.getMonth() === 0 && t.getDate() <= 15 ? t.getFullYear() - 1 : null;
+  return y && realDinners().some((c) => c.date.startsWith(String(y))) ? y : null;
+}
+function yearStats(y) {
+  const ys = String(y); const es = realDinners().filter((c) => c.date.startsWith(ys)).sort((a, b) => (a.date < b.date ? -1 : 1));
+  const by = {}; es.forEach((c) => { by[c.recipeId] = (by[c.recipeId] || 0) + 1; });
+  const top = Object.entries(by).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([id, n]) => ({ s: summary(id), title: (summary(id) || {}).title || (es.find((c) => c.recipeId === id) || {}).title, n }));
+  const earlier = new Set(realDinners().filter((c) => c.date < ys).map((c) => c.recipeId));
+  const fresh = new Set(es.filter((c) => !earlier.has(c.recipeId) && c.recipeId !== 'other').map((c) => c.recipeId)).size;
+  const spent = Object.values(state.cooked).filter((c) => c.date.startsWith(ys)).reduce((a, c) => a + Number(c.amount || 0), 0);
+  const saved = es.reduce((a, c) => a + Math.max(0, state.settings.takeoutCost - mealCost(c)), 0);
+  const months = {}; es.forEach((c) => { const k = c.date.slice(0, 7); months[k] = (months[k] || 0) + 1; });
+  const bestM = Object.entries(months).sort((a, b) => b[1] - a[1])[0];
+  const photos = Object.entries(state.photos).flatMap(([rid, ps]) => ps.filter((p) => p.date.startsWith(ys)).map((p) => ({ ...p, rid })));
+  const cnt = (n) => es.filter((c) => c.by === n || c.by === 'Both').length;
+  const badges = MILESTONES.filter(([k]) => (state.milestones[k] || '').startsWith(ys)).map(([, l]) => l);
+  const hearts = es.filter((c) => c.hearts).map((c) => ({ c, v: ((c.hearts.Corey || 0) + (c.hearts.Faith || 0)) / ((c.hearts.Corey ? 1 : 0) + (c.hearts.Faith ? 1 : 0) || 1) })).sort((a, b) => b.v - a.v)[0];
+  return { y, n: es.length, distinct: Object.keys(by).length, top, fresh, spent, saved, bestM, photos, corey: cnt('Corey'), faith: cnt('Faith'), both: es.filter((c) => c.by === 'Both').length, first: es[0], badges, loved: hearts, dishes: Object.values(state.dishes).filter((d) => d.date.startsWith(ys)).length };
+}
+function viewYear(yy) {
+  const y = +yy || yearInReviewDue() || new Date().getFullYear();
+  setTop({ title: 'YEAR IN REVIEW', back: '#/us' });
+  const s = yearStats(y);
+  render(`<div class="wrap yir"><div class="kicker">Corey ♥ Faith<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Our ${y}</h1>
+    <p class="lead" style="margin-top:4px">${s.n ? `A year of cooking together, one dinner at a time.` : 'No dinners logged this year yet.'}</p>
+    ${s.n ? `<div class="sec"><div class="statgrid"><div class="s"><b>${s.n}</b><span>Dinners</span></div><div class="s"><b>${s.distinct}</b><span>Different recipes</span></div><div class="s"><b>${money(s.saved)}</b><span>Saved vs takeout</span></div><div class="s"><b>${s.fresh}</b><span>First-time recipes</span></div></div></div>
+    <div class="sec"><div class="sec-title">Most made</div><ol class="yrtop">${s.top.map((t, i) => `<li><span class="yn">${i + 1}</span>${t.s && t.s.image ? img(thumb(t.s.image), '') : '<i></i>'}<div><b>${esc(t.title)}</b><small>${t.n} time${t.n === 1 ? '' : 's'}</small></div></li>`).join('')}</ol></div>
+    <div class="sec card yrfacts"><ul class="tips">
+      ${s.first ? `<li>First dinner of the year: <b>${esc(s.first.title)}</b> on ${esc(shortDate(s.first.date))}.</li>` : ''}
+      ${s.bestM ? `<li>Busiest kitchen month: <b>${esc(monthName(s.bestM[0]).split(' ')[0])}</b> with ${s.bestM[1]} dinners.</li>` : ''}
+      ${s.corey || s.faith ? `<li>Corey cooked ${s.corey}, Faith cooked ${s.faith}${s.both ? ` — ${s.both} together` : ''}.</li>` : ''}
+      ${s.loved ? `<li>Highest hearts: <b>${esc(s.loved.c.title)}</b> (${r1(s.loved.v)} ♥).</li>` : ''}
+      <li>Spent about <b>${money(s.spent)}</b> on dinners at home.</li>
+      ${s.dishes ? `<li>The coin decided dishes duty ${s.dishes} time${s.dishes === 1 ? '' : 's'}.</li>` : ''}
+      ${s.badges.length ? `<li>Badges earned: ${esc(s.badges.join(' · '))}.</li>` : ''}</ul></div>
+    ${s.photos.length ? `<div class="sec"><div class="sec-title">Photo memories</div><div class="photos">${s.photos.slice(0, 12).map((p) => `<a class="ph" href="#/r/${p.rid}"><img src="${p.data}" alt="">${stampHTML(p, true)}<span>${esc(shortDate(p.date))}</span></a>`).join('')}</div></div>` : ''}
+    <p class="lead" style="text-align:center;margin-top:26px">Here's to another year in our kitchen ♥</p>` : ''}</div>`);
+}
+
+// ---------------------------------------------------------------- views: Us — the couple hub (one place for everything "us")
+function viewUs() {
+  setTop({ title: 'US' });
+  const a = state.settings.anniversary;
+  let together = '';
+  if (a) {
+    const [y, m, d] = a.split('-').map(Number); const start = new Date(y, m - 1, d); const today = new Date(); today.setHours(0, 0, 0, 0);
+    const days = Math.floor((today - start) / 864e5);
+    let next = new Date(today.getFullYear(), m - 1, d); if (next < today) next = new Date(today.getFullYear() + 1, m - 1, d);
+    const to = Math.round((next - today) / 864e5); const yrs = next.getFullYear() - y;
+    together = `<div class="bigtotal"><div class="lbl">TOGETHER</div><div class="amt">${days.toLocaleString('en-CA')}<small>days</small></div>
+      <p>${to === 0 ? `Happy ${yrs}-year anniversary! ♥ Make it a Date Night.` : `${to} day${to === 1 ? '' : 's'} until your ${yrs}-year anniversary.`}</p></div>`;
+  } else together = `<div class="card"><p>Add your anniversary in <a href="#/settings" class="linkbtn">Settings</a> and this page will count the days together.</p></div>`;
+  const all = realDinners();
+  const favs = Object.keys(state.favourites).map(summary).filter(Boolean).sort((x, y) => isCoupleFav(y.id) - isCoupleFav(x.id));
+  const photos = Object.entries(state.photos).flatMap(([rid, ps]) => ps.map((p) => ({ ...p, rid }))).sort((x, y) => (x.date < y.date ? 1 : -1));
+  const si = streakInfo(); const ts = tasteScore(); const pend = Object.values(state.tasteTests).filter((t) => !t.result && summary(t.recipeId));
+  const sig = state.signature && summary(state.signature);
+  const sigN = sig ? all.filter((c) => c.recipeId === sig.id).length : 0;
+  const fb = flashback(); const ny = yearInReviewDue();
+  const rc = monthRecap(monthKey());
+  const jarN = Object.values(state.dessertJar).filter((d) => !d.made).length;
+  const dishT = (() => { const m = monthKey(); const t = { Corey: 0, Faith: 0 }; Object.values(state.dishes).forEach((d) => { if (d.date.startsWith(m)) t[d.who]++; }); return t; })();
+  const hatsCount = { Corey: all.filter((c) => c.by === 'Corey' || c.by === 'Both').length, Faith: all.filter((c) => c.by === 'Faith' || c.by === 'Both').length };
+  render(`<div class="wrap"><div class="kicker">Corey ♥ Faith<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Us</h1>
+    <div class="sec">${together}</div>
+    <div class="sec">${streakHTML(si)}</div>
+    <div class="sec"><div class="statgrid"><div class="s"><b>${all.length}</b><span>Dinners together</span></div><div class="s"><b>${favs.length}</b><span>Favourites</span></div>
+      <div class="s"><b>${photos.length}</b><span>Photo memories</span></div><div class="s hatstat"><b>${hat('Corey', 16)}${hatsCount.Corey}<i></i>${hat('Faith', 16)}${hatsCount.Faith}</b><span>Who's cooked</span></div></div></div>
+    <div class="sec">${dateNightCard()}</div>
+    ${sig ? `<div class="sec"><div class="sec-title">Our signature dish</div><a class="sigcard" href="#/r/${sig.id}">${sig.image ? img(sig.image, sig.title) : placeholderArt(sig)}<div class="sg-b"><span class="sg-badge">★ SIGNATURE</span><b>${esc(sig.title)}</b><small>${sigN ? `Made ${sigN} time${sigN === 1 ? '' : 's'}` : 'Not made yet'}${state.nicknames[sig.id] ? ' · aka “' + esc(state.nicknames[sig.id]) + '”' : ''}</small></div></a><button class="linkbtn" id="sigPick">Change</button></div>` : ''}
+    ${fb ? `<div class="sec">${flashCard(fb, false)}</div>` : ''}
+    ${ny ? `<a class="nudge yr" href="#/year/${ny}"><span>${svg('star')}</span><span style="flex:1"><b>Our ${ny} in review</b> — dinners, favourites and firsts.</span><span>${svg('chevR')}</span></a>` : ''}
+    ${rc ? `<div class="sec">${recapCard(rc, false)}</div>` : ''}
+    <div class="sec"><div class="sec-title">Just for us</div><div class="tools">
+      <button class="tooltile" id="tFlip">${svg('coin')}<span><b>Who's on dishes?</b><small>${dishT.Corey + dishT.Faith ? `Corey ${dishT.Corey} · Faith ${dishT.Faith}` : 'Flip a coin'}</small></span></button>
+      <button class="tooltile" id="tTaste">${svg('thumbUp')}<span><b>Taste test</b><small>${ts.n ? `Corey ${ts.Corey} · Faith ${ts.Faith}` : 'Guess hit or miss'}</small></span></button>
+      <button class="tooltile" id="tJar">${svg('jar')}<span><b>Dessert jar</b><small>${jarN ? `${jarN} wish${jarN === 1 ? '' : 'es'} inside` : 'Add a sweet wish'}</small></span></button>
+      <button class="tooltile" id="tMusic">${svg('music')}<span><b>Kitchen playlist</b><small>${state.settings.playlist ? 'Our playlist ♥' : 'Spotify · Apple Music'}</small></span></button>
+      ${sig ? '' : `<button class="tooltile" id="sigPick2">${svg('star')}<span><b>Signature dish</b><small>Pick the one you're proudest of</small></span></button>`}
+      <a class="tooltile" href="#/story">${svg('book')}<span><b>Our story</b><small>Every dinner, with photos</small></span></a>
+    </div>${pend.length ? `<div class="pendtt">${pend.map((t) => `<button data-tt="${t.recipeId}">${svg('thumbUp')}<span>Taste test waiting: <b>${esc(summary(t.recipeId).title)}</b> — reveal</span></button>`).join('')}</div>` : ''}</div>
+    ${badgeGrid()}
+    <div class="sec"><div class="sec-title">Our favourites</div>${favs.length ? `<div class="hrow">${favs.map((r) => `<a class="mini-card" href="#/r/${r.id}"><div class="im">${r.image ? img(thumb(r.image), r.title) : placeholderArt(r)}${isCoupleFav(r.id) ? `<i class="gh">${svg('heart')}</i>` : ''}</div><div class="t">${esc(r.title)}</div><div class="m">${isCoupleFav(r.id) ? 'Both of you ♥' : (() => { const w = Object.keys(favWho(r.id)); return w.length ? esc(w[0]) + '’s favourite' : r.price + ' · ' + r.total + ' min'; })()}</div></a>`).join('')}</div><p class="small muted" style="margin-top:6px">Gold heart = you both love it. Tap the hats under “Who loves it” on a recipe.</p>` : '<div class="empty">Heart a recipe and it shows up here.</div>'}</div>
+    <div class="sec"><div class="sec-title">Photo memories</div>${photos.length ? `<div class="photos">${photos.map((p) => `<a class="ph" href="#/r/${p.rid}"><img src="${p.data}" alt="">${stampHTML(p, true)}<span>${esc(shortDate(p.date))}</span></a>`).join('')}</div>` : '<div class="empty">Add a photo from any recipe page after you cook it.</div>'}</div>
+  </div>`);
+  $('#tFlip').onclick = openCoinFlip;
+  $('#tTaste').onclick = () => { const p = Object.values(state.tasteTests).find((t) => !t.result && summary(t.recipeId)); if (p) openTasteTest(p.recipeId); else openTastePick(); };
+  $('#tJar').onclick = openDessertJar;
+  $('#tMusic').onclick = openPlaylist;
+  $$('#dnPlan').forEach((b) => (b.onclick = () => openDateNight()));
+  $('#sigPick') && ($('#sigPick').onclick = openPickSignature);
+  $('#sigPick2') && ($('#sigPick2').onclick = openPickSignature);
+  $$('[data-tt]').forEach((b) => (b.onclick = () => openTasteTest(b.dataset.tt)));
+}
+function openTastePick() {
+  const done = new Set(realDinners().map((c) => c.recipeId));
+  const list = visibleRecipes().filter((r) => !done.has(r.id));
+  const ts = tasteScore();
+  openSheet(`<h2>Taste test</h2><p class="sub">Pick a recipe you haven't made yet. You each guess hit or miss, cook it, then reveal. ${ts.n ? `Score so far: Corey ${ts.Corey}, Faith ${ts.Faith} (${ts.n} test${ts.n === 1 ? '' : 's'}).` : ''}</p>
+    <div class="rlist" style="margin-top:10px">${list.map((x) => `<button class="rcard pick2" data-tp="${x.id}"><div class="im">${x.image ? img(thumb(x.image), x.title) : placeholderArt(x)}</div><div><div class="num">${esc(recipeLabel(x))}</div><div class="t">${esc(x.title)}</div><div class="meta"><b>${x.price}</b><span>${x.total} min</span></div></div></button>`).join('') || '<div class="empty">You have made every recipe — nice! New ones are added in batches.</div>'}</div>
+    <div class="foot"><button class="btn" data-close>Close</button></div>`, (b) => {
+    $$('[data-tp]', b).forEach((x) => (x.onclick = () => openTasteTest(x.dataset.tp)));
+  });
+}
+
+// ================================================================ Acura's Kitchen — homemade dog treats (separate data: state.acura)
+let ACURA = null;
+async function loadAcura() { if (!ACURA) { try { ACURA = await (await fetch('recipes/acura/treats.json')).json(); } catch (e) { ACURA = null; } } return ACURA; }
+const AC = () => state.acura || (state.acura = { favs: {}, baked: {}, notes: {}, ratings: {}, profile: {}, given: {} });
+const PAW = (cls = '') => `<svg viewBox="0 0 24 24" class="paw ${cls}" aria-hidden="true">${ICON.paw}</svg>`;
+const BONE = (cls = '') => `<svg viewBox="0 0 24 24" class="bonei ${cls}" aria-hidden="true">${ICON.bone}</svg>`;
+function acPattern() {
+  const dark = document.documentElement.dataset.theme === 'dark';
+  const c1 = dark ? '#5E3B28' : '#CBA376', c2 = dark ? '#4E3121' : '#D8B88E';
+  const bone = (x, y, r, c) => `<path transform="translate(${x} ${y}) rotate(${r}) scale(1.1) translate(-12 -12)" fill="${c}" d="M6.5 9.2a2.3 2.3 0 1 0-2.9 2.8 2.3 2.3 0 1 0 2.9 2.8h11a2.3 2.3 0 1 0 2.9-2.8 2.3 2.3 0 1 0-2.9-2.8z"/>`;
+  const paw = (x, y, r, c) => `<g transform="translate(${x} ${y}) rotate(${r}) scale(.8) translate(-12 -12)" fill="${c}"><ellipse cx="12" cy="15.6" rx="4.4" ry="3.7"/><ellipse cx="6.3" cy="10.2" rx="1.8" ry="2.4"/><ellipse cx="9.7" cy="6.5" rx="1.8" ry="2.5"/><ellipse cx="14.3" cy="6.5" rx="1.8" ry="2.5"/><ellipse cx="17.7" cy="10.2" rx="1.8" ry="2.4"/></g>`;
+  const svgT = `<svg xmlns="http://www.w3.org/2000/svg" width="132" height="84" viewBox="0 0 132 84">${bone(22, 18, -28, c1)}${paw(70, 16, 18, c2)}${bone(110, 30, 34, c2)}${paw(36, 60, -20, c2)}${bone(88, 66, -12, c1)}${paw(124, 74, 30, c1)}</svg>`;
+  return `url("data:image/svg+xml,${encodeURIComponent(svgT)}")`;
+}
+function bowlArt() {
+  return `<svg viewBox="0 0 132 78" class="bowl" aria-hidden="true">
+    <g class="kib"><circle cx="46" cy="33" r="4"/><circle cx="57" cy="30" r="4"/><circle cx="68" cy="31" r="4"/><circle cx="79" cy="30" r="4"/><circle cx="88" cy="34" r="4"/><circle cx="52" cy="35" r="3.6"/><circle cx="74" cy="35" r="3.6"/></g>
+    <path class="bn" transform="translate(66 21) rotate(-14) scale(2.1) translate(-12 -12)" d="M6.5 9.2a2.3 2.3 0 1 0-2.9 2.8 2.3 2.3 0 1 0 2.9 2.8h11a2.3 2.3 0 1 0 2.9-2.8 2.3 2.3 0 1 0-2.9-2.8z"/>
+    <rect class="rim" x="20" y="36" width="92" height="8" rx="4"/>
+    <path class="bw" d="M24 44h84l-9 26a4 4 0 0 1-3.8 2.7H36.8A4 4 0 0 1 33 70z"/>
+    <text x="66" y="63" text-anchor="middle" class="bt">ACURA</text></svg>`;
+}
+function treatKcal(t) { const m = String(t.kcal || '').match(/(\d+)/); return m ? +m[1] : null; }
+function dogKg() { const p = AC().profile || {}; const w = parseFloat(p.weight); if (!(w > 0)) return null; const kg = p.unit === 'lb' ? w * 0.4536 : w; return kg >= 0.5 && kg <= 100 ? kg : null; } // ignore typos like 2210 kg
+function treatBudget() { const kg = dogKg(); if (!kg) return null; const rer = 70 * Math.pow(kg, 0.75); return { kg, daily: Math.round(rer * 1.6), treats: Math.round(rer * 1.6 * 0.1) }; }
+function freshBatches(D) {
+  return Object.values(AC().baked).map((b) => ({ b, t: D.treats.find((x) => x.id === b.treatId) })).filter((x) => x.t)
+    .map((x) => ({ ...x, until: addDaysISO(x.b.date, x.t.keepDays || 7), left: (x.t.keepDays || 7) - daysSince(x.b.date) }))
+    .filter((x) => x.left >= 0 && !x.b.gone).sort((a, b) => a.left - b.left);
+}
+const AC_CHIPS = [['all', 'All treats'], ['Crunchy', 'Crunchy'], ['soft', 'Soft & chewy'], ['No bake', 'No bake'], ['Training treat', 'Training'], ['favs', 'Favourites']];
+function acMatch(t, k) { if (k === 'all') return true; if (k === 'favs') return !!AC().favs[t.id]; if (k === 'soft') return t.tags.some((x) => /soft|chewy/i.test(x)); if (k === 'Training treat') return t.tags.some((x) => /training|high value/i.test(x)); return t.tags.includes(k); }
+function pupBirthday() {
+  const b = (AC().profile || {}).birthday; if (!b) return null;
+  const [, m, d] = b.split('-').map(Number); const t = new Date(); t.setHours(0, 0, 0, 0);
+  let next = new Date(t.getFullYear(), m - 1, d); if (next < t) next = new Date(t.getFullYear() + 1, m - 1, d);
+  const days = Math.round((next - t) / 864e5); const age = next.getFullYear() - +b.slice(0, 4);
+  return { days, age };
+}
+
+async function viewAcura() {
+  setTop({ title: 'ACURA’S KITCHEN', right: `<button class="iconbtn" id="acProf" aria-label="Acura's profile">${svg('paw')}</button>` });
+  const D = await loadAcura();
+  if (!D) { render('<div class="wrap"><div class="empty">Couldn’t load Acura’s treats — check your connection and try again.</div></div>'); return; }
+  const a = AC(); const k = ui.acChip || 'all';
+  const list = D.treats.filter((t) => acMatch(t, k));
+  const fresh = freshBatches(D); const tb = treatBudget(); const today = todayISO(); const given = (a.given || {})[today] || 0;
+  const bd = pupBirthday();
+  const bakedN = Object.keys(a.baked).length;
+  render(`<div class="ac">
+    <div class="ac-head"><div class="ac-band" style="background-image:${acPattern()}"></div>
+      <div class="ac-plaque">${bowlArt()}<div class="ac-k">${PAW('sm')}Homemade · vet-safe${PAW('sm')}</div><h1 class="ac-h">Acura’s Kitchen</h1><p class="lead">Pawfect treats, made with love for our good pup</p></div></div>
+    <div class="ac-words" style="background-image:${acPattern()}" aria-hidden="true"><span class="bone w1">Acura</span><span class="bone w2">Good pup</span><span class="bone w3">Treat time</span></div>
+    <div class="wrap" style="padding-top:6px">
+      ${bd && bd.days <= 14 ? `<div class="ac-bday">${PAW()}<span>${bd.days === 0 ? `Happy birthday, Acura! ${bd.age > 0 ? bd.age + ' today' : ''} ♥ Bake something special.` : `Acura’s birthday is in ${bd.days} day${bd.days === 1 ? '' : 's'} — Pupsicles party?`}</span></div>` : ''}
+      <div class="ac-jar"><div class="aj-k">${BONE('sm')}TREAT JAR</div>
+        ${fresh.length ? `<ul>${fresh.map((x) => `<li><a href="#/acura/t/${x.t.id}"><b>${esc(x.t.title)}</b><span>baked ${esc(dayWord(x.b.date))} · ${x.left === 0 ? '<em class="warnc">use today</em>' : x.left === 1 ? 'good until tomorrow' : 'good until ' + esc(dayWord(x.until))}</span></a><button class="linkbtn" data-gone="${x.b.id}">All gone</button></li>`).join('')}</ul>` : `<p>The jar is empty — treat time? Pick a recipe below.</p>`}
+        <div class="aj-count"><div><b>${given}</b><span>${tb ? `treat${given === 1 ? '' : 's'} today · budget ~${tb.treats} kcal` : `treat${given === 1 ? '' : 's'} today`}</span></div><button class="btn sm ghost" id="acMinus" ${given ? '' : 'disabled style="opacity:.4"'} aria-label="One less">−</button><button class="btn sm gold" id="acPlus">${PAW('sm')}Treat given</button></div>
+        ${a.profile && a.profile.allergies ? `<p class="ac-allergy">${PAW('sm')}Vet note: ${esc(a.profile.allergies)}</p>` : ''}
+        ${tb ? '' : `<button class="linkbtn" id="acProf2">Add Acura’s weight for a daily treat guide</button>`}</div>
+      <div class="bonechips">${AC_CHIPS.map(([v, n]) => `<button class="bone ${k === v ? 'on' : ''}" data-ac="${v}">${v === 'favs' ? PAW('sm') : ''}${esc(n)}</button>`).join('')}</div>
+      <div class="ac-list">${list.map((t) => { const n = Object.values(a.baked).filter((b) => b.treatId === t.id).length; const kc = treatKcal(t); return `<a class="ac-card" href="#/acura/t/${t.id}"><div class="im">${img(thumb(t.image), t.title)}${a.favs[t.id] ? `<i class="pf">${PAW()}</i>` : ''}</div>
+        <div class="ac-b"><b>${esc(t.title)}</b><span class="sub">${esc(t.subtitle)}</span><span class="meta">${t.prep + (t.cook || 0)} min${t.chill ? ' + freeze' : ''} · ${esc(t.makes)}${kc ? ` · ~${kc} kcal` : ''}</span>
+        <span class="tagrow">${t.tags.slice(0, 2).map((x) => `<i>${esc(x)}</i>`).join('')}${n ? `<i class="bk">${PAW('sm')}baked ×${n}</i>` : ''}</span></div></a>`; }).join('') || `<div class="empty">No treats here yet${k === 'favs' ? ' — tap the paw on a treat to save it' : ''}.</div>`}</div>
+      <div class="bonediv">${BONE()}</div>
+      <a class="ac-safe" href="#/acura/safety"><div class="as-k">${svg('eyeoff')}NEVER FEED ACURA</div><p>${D.safety.never.slice(0, 6).map((n) => esc(n[0].split(' (')[0])).join(' · ')} <b>+${D.safety.never.length - 6} more</b></p><span class="as-go">Full safety guide &amp; treat calculator ${svg('chevR')}</span></a>
+      <div class="sec"><div class="sec-title">${PAW('sm')}Good-pup snacks from our fridge</div><div class="snackchips">${D.safety.safeSnacks.map((x) => `<span>${esc(x)}</span>`).join('')}</div><p class="small muted" style="margin-top:8px">Plain, unseasoned, bite-sized — and still part of the 10% treat budget.</p></div>
+      <p class="ac-foot">${PAW('sm')} Treats stay under 10% of Acura’s daily calories · ask your vet about allergies ${PAW('sm')}</p>
+      ${bakedN ? `<p class="small muted" style="text-align:center;margin-top:4px">${bakedN} batch${bakedN === 1 ? '' : 'es'} baked for Acura so far</p>` : ''}
+    </div></div>`);
+  const redraw = () => { const y = vY(); viewAcura().then(() => vTo(y)); };
+  $$('[data-ac]').forEach((b) => (b.onclick = () => { ui.acChip = b.dataset.ac; redraw(); }));
+  $('#acProf').onclick = openAcuraProfile; $('#acProf2') && ($('#acProf2').onclick = openAcuraProfile);
+  $('#acPlus').onclick = (e) => { const g = a.given || (a.given = {}); Object.keys(g).forEach((d) => { if (d < isoPlus(-30)) delete g[d]; }); g[today] = (g[today] || 0) + 1; save(); heartBurst(e.currentTarget); redraw(); toast('Good pup! ♥'); };
+  $('#acMinus').onclick = () => { const g = a.given || {}; if (g[today]) { g[today]--; if (!g[today]) delete g[today]; save(); redraw(); } };
+  $$('[data-gone]').forEach((b) => (b.onclick = (e) => { e.preventDefault(); const bt = a.baked[b.dataset.gone]; bt.gone = todayISO(); save(); redraw(); toast('Jar cleared — time for a new batch?', 'Undo', () => { delete bt.gone; save(); redraw(); }); }));
+}
+
+async function viewTreat(id) {
+  const D = await loadAcura(); const t = D && D.treats.find((x) => x.id === id);
+  if (!t) { setTop({ title: 'ACURA’S KITCHEN', back: '#/acura' }); render('<div class="wrap"><div class="empty">That treat could not be found.</div></div>'); return; }
+  const a = AC(); const fav = !!a.favs[id]; const sid = 'acura-' + id; const ck = state.checks[sid] || { i: {}, s: {} };
+  setTop({ title: 'ACURA’S KITCHEN', back: '#/acura', right: `<button class="iconbtn fav pawfav ${fav ? 'on' : ''}" id="acFav" aria-label="Save to Acura's favourites">${svg('paw')}</button>` });
+  const batches = Object.values(a.baked).filter((b) => b.treatId === id).sort((x, y) => (x.date < y.date ? 1 : -1));
+  const kc = treatKcal(t); const tb = treatBudget();
+  const fr = batches[0] && !batches[0].gone ? (t.keepDays || 7) - daysSince(batches[0].date) : -1;
+  render(`<div class="ac">
+  <div class="r-head"><div class="kicker">${PAW('sm')}Treat time<span class="rule"></span></div><h1 class="h1">${esc(t.title)}</h1><p class="lead">${esc(t.subtitle)}</p>
+    <div class="bonechips static">${t.tags.map((x) => `<span class="bone sm">${esc(x)}</span>`).join('')}</div></div>
+  <div class="hero"><div class="tile">${img(t.image, t.title)}</div><i class="acc a1"></i><i class="acc a2"></i><i class="acc a3"></i></div>
+  <div class="stats"><div class="stat"><b>${t.prep} min</b><span>Prep</span></div><div class="stat plum"><b>${t.cook ? t.cook + ' min' : '—'}</b><span>${t.chill ? 'Bake' : 'Bake'}</span></div><div class="stat peri"><b>${t.chill ? Math.round(t.chill / 60) + ' h' : (t.prep + (t.cook || 0)) + ' min'}</b><span>${t.chill ? 'Freeze' : 'Total'}</span></div></div>
+  <div class="serves"><strong>Makes ${esc(t.makes)}</strong><span class="muted">${esc(t.kcal || '')}</span></div>
+  <div class="wrap">
+    <div class="ac-dogsafe">${PAW()}<div><b>Why it’s dog-safe</b><p>${esc(t.dogSafe)}</p></div></div>
+    ${tb && kc ? `<p class="small muted ac-budget">For Acura (${r1(tb.kg)} kg): about <b>${Math.max(1, Math.floor(tb.treats / kc))} a day</b> stays inside the 10% treat budget (~${tb.treats} kcal).</p>` : ''}
+    <div class="sec"><div class="sec-title">${PAW('sm')}What you need<button class="act" id="acReset">Reset</button></div>
+      ${t.groups.map((g, gi) => `<div class="ing-group">${g.name ? `<div class="group-name">${esc(g.name)}</div>` : ''}<ul class="checklist pawlist">${g.items.map((it, ii) => `<li data-i="${gi}-${ii}" class="${ck.i[gi + '-' + ii] ? 'done' : ''}"><span class="box">${PAW()}</span><span class="txt">${ingLine(it, 1, false)}${it.warn ? `<span class="acwarn">${svg('eyeoff')}${esc(it.warn)}</span>` : ''}</span></li>`).join('')}</ul></div>`).join('')}
+      <button class="btn ghost block" id="acList" style="margin-top:12px">${svg('cart')}Add to grocery list</button></div>
+    <div class="sec"><div class="sec-title">${PAW('sm')}How to make it</div>
+      <button class="btn primary block" id="acCook">${svg('play')}Step-by-step bake mode</button>
+      <ul class="checklist steps pawsteps" style="margin-top:8px">${t.steps.map((st, si) => `<li data-s="${si}" class="${ck.s[si] ? 'done' : ''}"><span class="stepnum paw-n">${PAW()}<span>${si + 1}</span></span><span class="txt"><strong>${esc(st.title)}.</strong> ${tx(st.text)}${st.timer ? `<span class="tm">${svg('timer', 'style="width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2"')}${st.timer >= 120 ? Math.round(st.timer / 60) + ' h' : st.timer + ' min'}</span>` : ''}</span></li>`).join('')}</ul></div>
+    <div class="sec row2"><div class="mini"><h3>STORAGE</h3><p>${esc(t.storage)}</p></div><div class="mini navy"><h3>GOOD PUP TIPS</h3><p>${t.tips.map(esc).join(' ')}</p></div></div>
+    <div class="sec"><div class="sec-title">${PAW('sm')}Acura’s review</div><div class="card ours">
+      <div class="rate-row"><span class="small muted">Tail wags</span><div class="rate pawrate" id="acRate">${[1, 2, 3, 4, 5].map((n) => `<button data-r="${n}" class="${(a.ratings[id] || 0) >= n ? 'on' : ''}" aria-label="${n} of 5">${svg('paw')}</button>`).join('')}</div></div>
+      <textarea id="acNote" class="notes" placeholder="e.g. Acura loved these — cut them smaller next time.">${esc(a.notes[id] || '')}</textarea>
+      ${batches.length ? `<p class="small muted" style="margin-top:8px">Baked ${batches.length} time${batches.length === 1 ? '' : 's'} · last ${esc(shortDate(batches[0].date))}${fr >= 0 ? ` · ${fr === 0 ? 'use today' : `fresh for ${fr} more day${fr === 1 ? '' : 's'}`}` : ''}</p>` : ''}</div></div>
+    <div class="sec r-actions"><button class="btn gold block" id="cookedBtn">${PAW('sm')}We baked a batch</button>
+      <p class="small muted" style="text-align:center;margin-top:6px">Adds it to the treat jar with a “good until” date. Not counted in the dinner budget.</p></div>
+    <p class="small muted" style="margin-top:10px;font-style:italic">${esc(t.source)}</p>
+    <div class="bonediv">${BONE()}</div>
+  </div></div>`);
+  const s = { id: sid, title: t.title };
+  const r = { ...t, id: sid, servings: 1, tags: {}, steps: t.steps.map((x) => ({ ...x })) };
+  $('#acFav').onclick = (e) => { if (a.favs[id]) { delete a.favs[id]; toast('Removed from Acura’s favourites'); } else { a.favs[id] = now(); heartBurst(e.currentTarget); toast('Pawfect — saved ♥'); } save(); e.currentTarget.classList.toggle('on', !!a.favs[id]); };
+  $$('.checklist li[data-i]').forEach((li) => (li.onclick = () => toggleCheck(sid, 'i', li.dataset.i, li)));
+  $$('.checklist li[data-s]').forEach((li) => (li.onclick = () => toggleCheck(sid, 's', li.dataset.s, li)));
+  $('#acReset').onclick = () => withUndo('Ticks reset', () => { delete state.checks[sid]; }, () => $$('.checklist li.done').forEach((li) => li.classList.remove('done')));
+  $('#acCook').onclick = () => openCook(r, s, 1);
+  $('#acList').onclick = () => {
+    let n = 0; t.groups.forEach((g) => g.items.forEach((it) => { if (/^water$/i.test(it.name)) return; const amt = it.qty != null ? [{ q: it.qty, u: it.unit || null, from: 'Acura' }] : null; if (addGrocery(it.name, guessCat(it.name), 'dog-' + pantryKey(it.name), 'Acura’s ' + t.title, amt)) n++; }));
+    Object.values(state.grocery).forEach((g) => { if (g.key && g.key.startsWith('dog-')) g.dog = true; });
+    save(); toast(n ? `Added ${n} item${n === 1 ? '' : 's'} for Acura` : 'Already on the list', n ? 'View' : null, () => go('#/grocery'));
+  };
+  $$('#acRate button').forEach((b) => (b.onclick = () => { const n = +b.dataset.r; a.ratings[id] = a.ratings[id] === n ? 0 : n; if (!a.ratings[id]) delete a.ratings[id]; save(); $$('#acRate button').forEach((x) => x.classList.toggle('on', +x.dataset.r <= (a.ratings[id] || 0))); if (a.ratings[id]) heartBurst(b); }));
+  let nt; $('#acNote').oninput = (e) => { clearTimeout(nt); nt = setTimeout(() => { const v = e.target.value.trim(); if (v) a.notes[id] = v; else delete a.notes[id]; save(); }, 400); };
+  $('#cookedBtn').onclick = (e) => {
+    const first = !Object.keys(a.baked).length; const bid = uid();
+    a.baked[bid] = { id: bid, treatId: id, date: todayISO(), by: state.profile.me || null, at: now() };
+    delete state.checks[sid]; save(); checkMilestones();
+    if (first) confetti(); heartBurst(e.currentTarget);
+    toast(first ? "Acura's first batch! Good pup ♥" : `Treat jar topped up — good until ${dayWord(addDaysISO(todayISO(), t.keepDays || 7))}`, 'Undo', () => { delete a.baked[bid]; save(); router(); });
+    const y = vY(); setTimeout(() => viewTreat(id).then(() => vTo(y)), 400);
+  };
+}
+
+async function viewAcuraSafety() {
+  setTop({ title: 'ACURA’S KITCHEN', back: '#/acura' });
+  const D = await loadAcura(); if (!D) { render('<div class="wrap"><div class="empty">Couldn’t load the safety guide.</div></div>'); return; }
+  const tb = treatBudget(); const p = AC().profile || {};
+  render(`<div class="ac"><div class="wrap"><div class="kicker">${PAW('sm')}Keep Acura safe<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Safety guide</h1>
+    <p class="lead" style="margin-top:4px">What never goes in the bowl, and how much is a good-pup amount.</p>
+    <div class="ac-emerg">${svg('eyeoff')}<p>${esc(D.safety.emergency)}</p></div>
+    <div class="sec"><div class="sec-title">Never feed</div><ul class="neverlist">${D.safety.never.map(([n, w]) => `<li><b>${esc(n)}</b><span>${esc(w)}</span></li>`).join('')}</ul></div>
+    <div class="sec"><div class="sec-title">${PAW('sm')}Treat rules</div><ul class="pawbul">${D.safety.rules.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
+    <div class="sec"><div class="sec-title">${PAW('sm')}Daily treat calculator</div><div class="card calc">
+      <div class="btnrow"><div class="field" style="margin:0"><label>Acura’s weight</label><input id="cW" type="number" inputmode="decimal" min="0.5" max="100" step="0.1" value="${esc(p.weight || '')}" placeholder="e.g. 12"></div>
+      <div class="field" style="margin:0"><label>Units</label><div class="segtext" id="cU" style="grid-template-columns:1fr 1fr"><button data-u="kg" class="${p.unit !== 'lb' ? 'on' : ''}">kg</button><button data-u="lb" class="${p.unit === 'lb' ? 'on' : ''}">lb</button></div></div></div>
+      <div id="cOut" class="calcout">${tb ? calcOut(tb, D) : '<p class="small muted">Enter a weight to see a daily treat guide.</p>'}</div>
+      <p class="small muted" style="margin-top:8px">Estimate for a typical adult, spayed/neutered dog (RER × 1.6). Puppies, seniors, very active or overweight dogs differ — ask your vet.</p></div></div>
+    <p class="small muted" style="margin-top:14px;font-style:italic">Sources: ${esc(D.safety.source)}</p></div></div>`);
+  const upd = () => { const w = $('#cW').value; const a = AC(); a.profile = { ...(a.profile || {}), weight: w }; save(); const t2 = treatBudget(); $('#cOut').innerHTML = t2 ? calcOut(t2, D) : `<p class="small muted">${w ? 'That weight looks off — try between 0.5 and 100 kg (1–220 lb).' : 'Enter a weight to see a daily treat guide.'}</p>`; };
+  $('#cW').oninput = upd;
+  $$('#cU button').forEach((b) => (b.onclick = () => { const a = AC(); a.profile = { ...(a.profile || {}), unit: b.dataset.u }; $$('#cU button').forEach((x) => x.classList.toggle('on', x === b)); upd(); }));
+}
+function calcOut(tb, D) {
+  return `<div class="co-top"><div><b>~${tb.daily}</b><span>kcal a day total</span></div><div><b>~${tb.treats}</b><span>kcal of treats</span></div></div>
+    <ul class="co-list">${D.treats.map((t) => { const k = treatKcal(t); return k ? `<li><span>${esc(t.title)}</span><b>${Math.max(1, Math.floor(tb.treats / k))} a day</b></li>` : ''; }).join('')}</ul>`;
+}
+function openAcuraProfile() {
+  const p = AC().profile || {};
+  openSheet(`<h2>${PAW('sm')} Acura’s profile</h2><p class="sub">Used for the treat calculator and a birthday reminder. Stays on this phone.</p>
+    <div class="btnrow"><div class="field"><label>Weight</label><input id="apW" type="number" inputmode="decimal" min="0.5" max="100" step="0.1" value="${esc(p.weight || '')}" placeholder="e.g. 12"></div>
+    <div class="field"><label>Units</label><div class="segtext" id="apU" style="grid-template-columns:1fr 1fr"><button data-u="kg" class="${p.unit !== 'lb' ? 'on' : ''}">kg</button><button data-u="lb" class="${p.unit === 'lb' ? 'on' : ''}">lb</button></div></div></div>
+    <div class="field"><label>Birthday or gotcha day (optional)</label><input id="apB" type="date" value="${esc(p.birthday || '')}"></div>
+    <div class="field"><label>Allergies or vet notes (optional)</label><input id="apA" maxlength="80" value="${esc(p.allergies || '')}" placeholder="e.g. no chicken — itchy skin" autocomplete="off"></div>
+    <div class="foot"><button class="btn" data-close>Cancel</button><button class="btn primary" id="apOk">Save</button></div>`, (b) => {
+    let unit = p.unit || 'kg';
+    $$('#apU button', b).forEach((x) => (x.onclick = () => { unit = x.dataset.u; $$('#apU button', b).forEach((y) => y.classList.toggle('on', y === x)); }));
+    $('#apOk', b).onclick = () => { const a = AC(); a.profile = { ...(a.profile || {}), weight: $('#apW', b).value, unit, birthday: $('#apB', b).value || '', allergies: $('#apA', b).value.trim() }; save(); closeSheet(); toast('Saved — good pup ♥'); router(); };
+  });
+}
+
+// ---------------------------------------------------------------- router: tabs, direction-aware transitions, per-tab scroll memory (#5, #15)
+const TAB_ROOTS = { '#/': 'recipes', '#/pantry': 'pantry', '#/grocery': 'grocery', '#/budget': 'budget', '#/us': 'us', '#/acura': 'acura' };
+function tabOf(h) {
+  if (/^#\/(pantry|freezer)/.test(h)) return 'pantry';
+  if (h.startsWith('#/grocery')) return 'grocery';
+  if (h.startsWith('#/budget')) return 'budget';
+  if (/^#\/(us|story|year)/.test(h)) return 'us';
+  if (h.startsWith('#/acura')) return 'acura';
+  if (h.startsWith('#/settings')) return '';
+  return 'recipes';
+}
+const scrollMem = {}; const navStack = []; let routing = 0;
+async function router() {
+  const h = location.hash || '#/';
+  const turn = ++routing;
+  if (lastRoute != null) scrollMem[lastRoute] = vY();
+  closeSheet();
+  const tabNew = tabOf(h); const tabOld = lastRoute == null ? null : tabOf(lastRoute);
+  let dir = 'fwd';
+  if (lastRoute == null || lastRoute === h) dir = 'none';
+  else if (TAB_ROOTS[h] !== undefined && tabNew !== tabOld) { dir = 'tab'; navStack.length = 0; }
+  else if (navStack.length && navStack[navStack.length - 1] === h) { navStack.pop(); dir = 'back'; }
+  else { navStack.push(lastRoute); if (navStack.length > 40) navStack.shift(); }
+  for (const [rx, fn] of routes) {
+    const m = h.match(rx);
+    if (!m) continue;
+    $$('#tabbar a').forEach((a) => a.classList.toggle('on', a.dataset.tab === tabNew));
+    if (document.body.classList.contains('acura') !== (tabNew === 'acura')) { document.body.classList.toggle('acura', tabNew === 'acura'); applyTheme(); }
+    await fn(...m.slice(1));
+    if (turn !== routing) return;
+    let y = dir === 'back' || dir === 'tab' || dir === 'none' ? scrollMem[h] || 0 : 0;
+    try { const sv = JSON.parse(sessionStorage.getItem('ok-scroll') || 'null'); if (sv && sv.h === h) { y = sv.y; } sessionStorage.removeItem('ok-scroll'); } catch (e) {}
+    vTo(y);
+    markLoaded($('#view'));
+    if (dir !== 'none') animateView(dir);
+    lastRoute = h;
+    setTimeout(maybeApplyUpdate, 700);
+    return;
+  }
+  go('#/');
+}
+function render(html) { const v = $('#view'); v.innerHTML = html; markLoaded(v); }
+document.addEventListener('click', (e) => {
+  const a = e.target.closest && e.target.closest('#tabbar a'); if (!a) return;
+  if (a.getAttribute('href') === (location.hash || '#/')) { e.preventDefault(); const v = $('#view'); try { v.scrollTo({ top: 0, behavior: reducedMotion() ? 'auto' : 'smooth' }); } catch (x) { v.scrollTop = 0; } }
+});
+
+// ---------------------------------------------------------------- monthly recap, extended (#39)
+function monthRecap(key) {
+  const es = realDinners().filter((c) => c.date.startsWith(key));
+  if (!es.length) return null;
+  const spent = Object.values(state.cooked).filter((c) => c.date.startsWith(key)).reduce((a, c) => a + Number(c.amount || 0), 0);
+  const by = {}; es.forEach((c) => { by[c.recipeId] = (by[c.recipeId] || 0) + 1; });
+  const top = Object.entries(by).sort((a, b) => b[1] - a[1])[0];
+  const topName = (summary(top[0]) || {}).title || (es.find((c) => c.recipeId === top[0]) || {}).title;
+  const earlier = new Set(realDinners().filter((c) => c.date < key).map((c) => c.recipeId));
+  const fresh = new Set(es.filter((c) => !earlier.has(c.recipeId) && c.recipeId !== 'other').map((c) => c.recipeId)).size;
+  const cnt = (n) => es.filter((c) => c.by === n || c.by === 'Both').length;
+  const photos = Object.values(state.photos).flat().filter((p) => p.date.startsWith(key)).length;
+  const hs = es.filter((c) => c.hearts && (c.hearts.Corey || c.hearts.Faith)).map((c) => { const v = [c.hearts.Corey, c.hearts.Faith].filter(Boolean); return { c, v: v.reduce((a, x) => a + x, 0) / v.length }; }).sort((a, b) => b.v - a.v)[0];
+  const weeks = {}; es.forEach((c) => { const w = weekStart(c.date); weeks[w] = (weeks[w] || 0) + 1; });
+  const dish = Object.values(state.dishes).filter((d) => d.date.startsWith(key));
+  return { key, n: es.length, spent, topName, topN: top[1], fresh, corey: cnt('Corey'), faith: cnt('Faith'), photos, saved: es.reduce((a, c) => a + Math.max(0, state.settings.takeoutCost - mealCost(c)), 0),
+    loved: hs ? { title: hs.c.title, v: hs.v } : null, goodWeeks: Object.values(weeks).filter((n) => n >= 3).length, dishes: { Corey: dish.filter((d) => d.who === 'Corey').length, Faith: dish.filter((d) => d.who === 'Faith').length } };
+}
+function recapCard(rc, dismiss) {
+  return `<div class="recap"><div class="rk">${esc(monthName(rc.key).toUpperCase())} · ${rc.key === monthKey() ? 'SO FAR' : 'RECAP'}${dismiss ? '<button class="x" id="recapX" aria-label="Dismiss">×</button>' : ''}</div>
+    <div class="rgrid"><div><b>${rc.n}</b><span>dinners</span></div><div><b>${money(rc.spent)}</b><span>spent</span></div><div><b>${money(rc.saved)}</b><span>saved vs takeout</span></div></div>
+    <p>Most made: <b>${esc(rc.topName)}</b>${rc.topN > 1 ? ` ×${rc.topN}` : ''}.${rc.fresh ? ` ${rc.fresh} new recipe${rc.fresh === 1 ? '' : 's'} tried.` : ''}${rc.corey || rc.faith ? ` Corey cooked ${rc.corey}, Faith ${rc.faith}.` : ''}${rc.photos ? ` ${rc.photos} photo${rc.photos === 1 ? '' : 's'}.` : ''}${rc.loved ? ` Highest hearts: <b>${esc(rc.loved.title)}</b> (${r1(rc.loved.v)} ♥).` : ''}${rc.goodWeeks ? ` ${rc.goodWeeks} week${rc.goodWeeks === 1 ? '' : 's'} with 3+ dinners.` : ''}${rc.dishes.Corey + rc.dishes.Faith ? ` Dishes: Corey ${rc.dishes.Corey}, Faith ${rc.dishes.Faith}.` : ''}</p></div>`;
+}
+
+// ---------------------------------------------------------------- what's new (update 3)
+const WHATSNEW_ID = 'u3-2026-11';
+const WHATSNEW = [
+  ['Smoother', 'Sheets slide down to close and the page behind stays put · no accidental zoom or bounce · swipe from the left edge to go back · pull down on Home to refresh · each tab remembers where you were · long-press a recipe for quick actions · updates install by themselves'],
+  ['Home', "Tonight's plan with a start-cooking time · spin the wheel · your top 4 favourites as photo tiles · recently cooked · recipe of the week · leftover reminders · sort by quickest, cheapest or most cooked"],
+  ['Cooking', 'Tap an ingredient in a step to count it down in the pantry · a “we’re out” button on every ingredient · missing-ingredient check · two dishes timed to finish together · choice of timer chimes · kitchen playlist · confetti the first time you make something'],
+  ['Grocery', 'Sorted in No Frills aisle order · swipe right to tick, left to delete · Shop together: a grocery-date view with a running total and the list split between you'],
+  ['Us', 'A new Us tab: cooking streak, badges, chef hats for who cooked, rate it together, taste tests, who’s on dishes, dessert wish jar, date-night countdown, signature dish, nicknames, “cook for me”, love stamps on photos, one-year-ago flashbacks and a year in review'],
+  ['Acura', "Acura’s Kitchen: 6 vet-safe homemade dog treats with bake mode, a treat jar with “good until” dates, a daily treat calculator and a safety guide"],
+  ['New recipes', '10 new dinners: teriyaki chicken bowls, orange chicken, beef lasagna, spaghetti & meatballs, shepherd’s pie, beef & broccoli, Philly cheesesteaks, garlic butter shrimp, chicken lo mein and beef stew'],
+];
+function whatsNewCard() {
+  if (state.seenWhatsNew === WHATSNEW_ID) return '';
+  return `<div class="wn"><div class="wn-k">NEW IN OUR KITCHEN<button class="x" id="wnX" aria-label="Dismiss">×</button></div>
+    <p>10 new recipes, an Us tab just for the two of us, Acura’s Kitchen, and a smoother app all round. Everything you saved is still here.</p>
+    <div class="btnrow" style="margin-top:10px"><button class="btn sm ghost" id="wnMore">See what's new</button><button class="btn sm gold" id="wnOk">Got it ♥</button></div></div>`;
+}
+function openWhatsNew() {
+  openSheet(`<h2>What's new</h2><p class="sub">November 2026 · update 3 · everything you had saved stays exactly as it was.</p>
+    <div class="wnlist">${WHATSNEW.map(([h, t]) => `<div><h4>${esc(h)}</h4><p>${esc(t)}</p></div>`).join('')}</div>
+    <div class="foot"><button class="btn primary" data-close>Lovely</button></div>`);
+  if (state.seenWhatsNew !== WHATSNEW_ID) { state.seenWhatsNew = WHATSNEW_ID; save(); }
+}
+
+// ---------------------------------------------------------------- settings: sounds & extras
+function settingsExtrasHTML() {
+  const st = state.settings;
+  return `<div class="setgroup"><div class="sec-title">Sounds &amp; extras</div>
+      <label class="setrow"><span class="l"><b>Gentle sounds</b><span>Soft clicks on taps and a tick when the wheel spins</span></span><span class="switch"><input type="checkbox" id="sndT" ${st.sounds ? 'checked' : ''}><i></i></span></label>
+      <div class="setrow" style="border:0;padding-bottom:0"><span class="l"><b>Timer chime</b><span>Tap one to hear it</span></span></div>
+      <div class="chimes" id="chimeSeg">${Object.entries(CHIMES).map(([k, [n]]) => `<button data-ch="${k}" class="${(st.chime || 'classic') === k ? 'on' : ''}">${svg('speaker')}${esc(n)}</button>`).join('')}</div>
+      <label class="setrow"><span class="l"><b>Shake to undo</b><span>Shake the phone to undo the last change${typeof DeviceMotionEvent !== 'undefined' && typeof DeviceMotionEvent.requestPermission === 'function' ? ' (iPhone asks for motion access)' : ''}</span></span><span class="switch"><input type="checkbox" id="shkT" ${st.shake ? 'checked' : ''}><i></i></span></label>
+      <label class="setrow"><span class="l"><b>Seasonal touches</b><span>A pumpkin in October, hearts for Valentine’s week</span></span><span class="switch"><input type="checkbox" id="seaT" ${st.seasonal !== false ? 'checked' : ''}><i></i></span></label>
+      <div class="setrow"><span class="l"><b>Usual dinner time</b><span>For “Start cooking by” on tonight’s plan</span></span><input class="numin" id="dinT" type="time" style="width:auto" value="${esc(st.dinnerAt || '18:30')}"></div>
+      <div class="setrow"><span class="l"><b>Kitchen playlist</b><span>${st.playlist ? 'Our own link is saved' : 'Spotify or Apple Music'}</span></span><button class="btn sm ghost" id="plBtn">${st.playlist ? 'Change' : 'Set up'}</button></div>
+    </div>`;
+}
+function bindSettingsExtras() {
+  const st = state.settings;
+  $('#sndT').onchange = (e) => { st.sounds = e.target.checked; save(); if (st.sounds) { actx(); tone(1900, 0, 0.05, 0.06); } };
+  $$('#chimeSeg button').forEach((b) => (b.onclick = () => { st.chime = b.dataset.ch; save(); actx(); playChime(st.chime); $$('#chimeSeg button').forEach((x) => x.classList.toggle('on', x === b)); }));
+  $('#shkT').onchange = (e) => {
+    if (!e.target.checked) { st.shake = false; save(); window.removeEventListener('devicemotion', onMotion); shakeOn = false; return; }
+    enableShake(true).then((ok) => { if (ok) { st.shake = true; save(); toast('Shake to undo is on'); } else { e.target.checked = false; st.shake = false; save(); toast('Motion access was not allowed — the Undo button still works'); } });
+  };
+  $('#seaT').onchange = (e) => { st.seasonal = e.target.checked; save(); applySeason(); };
+  $('#dinT').onchange = (e) => { if (e.target.value) { st.dinnerAt = e.target.value; save(); toast('Saved'); } };
+  $('#plBtn').onclick = openPlaylist;
+}
+
+// ---------------------------------------------------------------- cook mode: finish two dishes together (#37)
+function remainingMin(d) { return d.r.steps.slice(d.i).reduce((a, st) => a + (st.timer ? Math.min(st.timer, 240) : 3), 0); }
+function alignHTML(sess) {
+  if (sess.dishes.length < 2) return '';
+  const [A, B] = sess.dishes; const ra = remainingMin(A), rb = remainingMin(B);
+  const L = ra >= rb ? A : B, S = L === A ? B : A; const diff = Math.abs(ra - rb);
+  const short = (t) => (t.length > 22 ? t.split(' ').slice(0, 3).join(' ') : t);
+  const startT = cookTimers.find((t) => t.align);
+  if (startT) return `<div class="align">${svg('clock')}<span>Start <b>${esc(short(startT.dish))}</b> in <b data-tleft="${startT.id}">${fmtSec(startT.left)}</b> — both finish together</span></div>`;
+  if (S.done || L.done) return '';
+  if (diff < 3 || S.i > 0) return `<div class="align">${svg('clock')}<span>Both dishes are on track to finish together ♥</span></div>`;
+  return `<div class="align">${svg('clock')}<span>To finish together, start <b>${esc(short(S.r.title))}</b> about <b>${diff} min</b> after ${esc(short(L.r.title))}.</span><button class="btn sm gold" id="cAlign">Remind me</button></div>`;
+}
+function startAlign(sess) {
+  const [A, B] = sess.dishes; const ra = remainingMin(A), rb = remainingMin(B);
+  const S = ra >= rb ? B : A; const diff = Math.abs(ra - rb);
+  cookTimers.push({ id: uid(), rid: S.s.id, dish: S.r.title, step: 0, left: diff * 60, end: now() + diff * 6e4, label: 'Start ' + S.r.title, align: true });
+  ensureTick(); toast(`We'll chime when it's time to start ${S.r.title}`);
+}
+
+// ---------------------------------------------------------------- boot extras
+function bootExtras() {
+  initSW();
+  if (state.settings.shake) {
+    enableShake(false).then((ok) => { if (!ok) document.addEventListener('touchend', () => enableShake(true), { once: true }); });
+  }
+  let updated = false; try { updated = sessionStorage.getItem('ok-updated') === '1'; sessionStorage.removeItem('ok-updated'); } catch (e) {}
+  if (updated) setTimeout(() => toast('Updated to the newest version ♥'), 400);
+  return updated;
+}
+
 // ---------------------------------------------------------------- welcome + splash
 function showWelcome() {
   const w = $('#welcome');
@@ -2136,6 +3421,7 @@ function showWelcome() {
 async function boot() {
   applyTheme();
   updateBadge();
+  const updatedNow = bootExtras();
   const t0 = performance.now();
   applySeason();
   try { await Promise.all([loadIndex(), loadPrices()]); } catch (e) { render('<div class="wrap"><div class="empty">Could not load recipes. Check your connection and reopen the app.</div></div>'); }
@@ -2143,9 +3429,8 @@ async function boot() {
   await router();
   if (!state.settings.welcomed) showWelcome();
   setTimeout(loadWeather, 1500);
-  const wait = Math.max(0, 800 - (performance.now() - t0));
+  const wait = updatedNow ? 0 : Math.max(0, 800 - (performance.now() - t0));
   setTimeout(() => { $('#splash').classList.add('out'); setTimeout(() => $('#splash').remove(), 700); }, wait);
-  if ('serviceWorker' in navigator && location.protocol !== 'file:') navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(() => {});
 }
 window.OK_DEBUG = { get state() { return state; }, set state(v) { state = v; save(); } };
 boot();

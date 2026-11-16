@@ -1,0 +1,357 @@
+{
+  "title": "Chicken Lo Mein",
+  "subtitle": "chewy egg noodles tossed with tender chicken, carrots and cabbage in a savoury-sweet soy sauce",
+  "image": "assets/img/chicken-lo-mein.webp",
+  "imageAlt": "Glossy brown lo mein noodles with sliced chicken, carrots and cabbage in a cream bowl",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 15,
+  "cost": {
+    "total": 21,
+    "breakdown": [
+      [
+        "Boneless skinless chicken breasts, 700 g",
+        9.5,
+        "chicken-breasts-boneless"
+      ],
+      [
+        "Lo mein / egg noodles, 450 g",
+        4.0,
+        "egg-noodles-lo-mein"
+      ],
+      [
+        "Coleslaw mix (cabbage + carrot), 397 g",
+        2.5,
+        "coleslaw-mix"
+      ],
+      [
+        "Carrots, 2",
+        0.6,
+        "carrots"
+      ],
+      [
+        "Oyster sauce & soy sauce",
+        1.6,
+        "oyster-sauce"
+      ],
+      [
+        "Brown sugar, sesame oil, garlic, ginger, cornstarch",
+        1.6
+      ],
+      [
+        "Oil",
+        1.2
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "noodles"
+    ],
+    "occasion": [
+      "takeout-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Takeout copycat"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen chicken? Thaw it in the fridge overnight."
+    },
+    {
+      "icon": "pot",
+      "text": "Put a big pot of water on to boil for the noodles."
+    },
+    {
+      "icon": "knife",
+      "text": "Have everything cut and the sauce mixed before you turn on the pan — it cooks fast."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "thin strips",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "cornstarch",
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sauce",
+      "items": [
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "oyster sauce",
+          "pantry": {
+            "name": "Oyster sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tbsp",
+          "name": "packed brown sugar",
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "sesame oil",
+          "pantry": {
+            "name": "Sesame oil",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "cornstarch",
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground ginger",
+          "pantry": {
+            "name": "Ground ginger",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Noodles & veg",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "lo mein or fresh egg noodles",
+          "note": "or spaghetti in a pinch",
+          "pantry": {
+            "name": "Egg noodles (lo mein)",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "thinly sliced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "carrots",
+          "note": "julienned or coarsely grated",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "cup",
+          "name": "coleslaw mix",
+          "note": "shredded cabbage + carrot (about ½ bag)",
+          "pantry": {
+            "name": "Coleslaw mix",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Coat the chicken",
+      "text": "Toss the chicken strips with 1 tbsp soy sauce and 1 tbsp cornstarch. Set aside while you prep.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Mix the sauce",
+      "text": "Whisk the soy sauce, oyster sauce, brown sugar, sesame oil, water, cornstarch, ginger and pepper in a jug.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6",
+        "1-7"
+      ]
+    },
+    {
+      "title": "Cook the noodles",
+      "text": "Boil the noodles 1 minute less than the package says (fresh lo mein: 2–3 minutes). Drain, rinse briefly with warm water and toss with a few drops of oil so they don't clump.",
+      "timer": 3,
+      "uses": [
+        "2-0"
+      ]
+    },
+    {
+      "title": "Sear the chicken",
+      "text": "Heat 1 tbsp oil in a large skillet or wok over high. Cook the chicken in a single layer 2–3 minutes per side until golden and 74°C (165°F). Move to a plate.",
+      "timer": 5,
+      "uses": [
+        "0-3=1 tbsp"
+      ]
+    },
+    {
+      "title": "Stir-fry the veg",
+      "text": "Add the last 1 tbsp oil. Stir-fry the onion and carrots 2 minutes, then the coleslaw mix and garlic 1–2 minutes until just wilted.",
+      "timer": 4,
+      "uses": [
+        "0-3=1 tbsp",
+        "2-1",
+        "2-2",
+        "2-3",
+        "2-4"
+      ]
+    },
+    {
+      "title": "Toss it all",
+      "text": "Add the noodles, chicken and sauce. Toss with tongs 1–2 minutes until every noodle is glossy and coated. Serve right away.",
+      "uses": []
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Noodles are clumpy",
+      "fix": "Rinse them after draining and toss with a little oil; separate with tongs before they hit the pan."
+    },
+    {
+      "problem": "Too salty",
+      "fix": "Use low-sodium soy sauce, and add a splash of water and a pinch of sugar."
+    },
+    {
+      "problem": "Dry noodles",
+      "fix": "Add 2–3 tbsp water or broth and toss over the heat."
+    },
+    {
+      "problem": "Bland",
+      "fix": "Add 1 more tbsp oyster sauce — it's the backbone of takeout flavour."
+    }
+  ],
+  "saleTip": "Coleslaw mix is the cheapest pre-cut stir-fry veg at No Frills (~$2.50). Look for lo mein or fresh egg noodles in the produce cooler or international aisle.",
+  "swap": "Beef, pork or shrimp instead of chicken. Spaghetti or linguine work if you can't find lo mein noodles.",
+  "leftovers": "Fridge 3–4 days. One of the best lunch leftovers in the book.",
+  "doneness": "Chicken: 74°C (165°F).",
+  "source": "Based on tested takeout-style lo mein methods (The Woks of Life, Damn Delicious): soy + oyster sauce base, noodles par-cooked and tossed in a very hot wok.",
+  "gear": [
+    "Large skillet or wok",
+    "Big pot (noodles)",
+    "Colander",
+    "Tongs",
+    "Whisk"
+  ],
+  "prepAhead": [
+    "Slice the chicken and veg a day ahead.",
+    "Mix the sauce up to 3 days ahead."
+  ],
+  "reheat": "Microwave covered 2 minutes with a splash of water, tossing halfway, until steaming (74°C / 165°F), or toss in a hot skillet."
+}

@@ -1,0 +1,506 @@
+{
+ "treats": [
+  {
+   "id": "pb-pumpkin-biscuits",
+   "title": "Peanut Butter Pumpkin Biscuits",
+   "subtitle": "crunchy bone-shaped biscuits — the classic good-pup cookie",
+   "image": "assets/acura/pb-pumpkin-biscuits.webp",
+   "makes": "about 30 small bones",
+   "prep": 20,
+   "cook": 40,
+   "kcal": "~25 kcal each (small bone)",
+   "tags": [
+    "Baked",
+    "Crunchy",
+    "Freezer-friendly"
+   ],
+   "dogSafe": "Pure pumpkin is gentle on tummies and peanut butter is safe when it's xylitol-free. No salt or sugar added.",
+   "groups": [
+    {
+     "name": "Dough",
+     "items": [
+      {
+       "qty": 2.5,
+       "unit": "cup",
+       "name": "whole wheat flour",
+       "note": "or oat flour for sensitive pups"
+      },
+      {
+       "qty": 0.5,
+       "unit": "cup",
+       "name": "pure pumpkin purée",
+       "note": "NOT pumpkin pie filling (it has spices + sugar)",
+       "warn": "Pie filling has nutmeg and sugar — use 100% pure pumpkin."
+      },
+      {
+       "qty": 2,
+       "unit": null,
+       "name": "large eggs"
+      },
+      {
+       "qty": 3,
+       "unit": "tbsp",
+       "name": "natural peanut butter",
+       "warn": "Check the label: NO xylitol (also called birch sugar). Plain, unsalted is best."
+      },
+      {
+       "qty": 2,
+       "unit": "tbsp",
+       "name": "water",
+       "note": "only if the dough is dry"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Heat the oven",
+     "text": "Heat the oven to 175°C (350°F) and line a baking sheet with parchment."
+    },
+    {
+     "title": "Mix the dough",
+     "text": "Stir the flour, pumpkin, eggs and peanut butter together until it forms a stiff dough. Add water 1 tbsp at a time only if it's too dry to hold together."
+    },
+    {
+     "title": "Roll and cut",
+     "text": "Roll out on a floured counter to about 1 cm (½ in) thick. Cut into bones (or squares with a knife) and lay them on the sheet — they don't spread."
+    },
+    {
+     "title": "Bake",
+     "text": "Bake 20 minutes, flip, then bake 15–20 minutes more until firm and golden.",
+     "timer": 20
+    },
+    {
+     "title": "Dry out for crunch",
+     "text": "Turn the oven off and leave the biscuits inside with the door cracked for 1 hour. Drier biscuits keep longer.",
+     "timer": 60
+    },
+    {
+     "title": "Cool completely",
+     "text": "Cool on a rack before sharing or storing. Good pup!"
+    }
+   ],
+   "storage": "Airtight jar at room temp 1 week, fridge 3 weeks, freezer 3 months.",
+   "keepDays": 7,
+   "tips": [
+    "Bake them extra-dry if you want them to last longer on the counter.",
+    "Small dog? Use a tiny cutter — calories add up fast."
+   ],
+   "source": "Adapted from the American Kennel Club (AKC) pumpkin peanut butter dog treat recipe; ingredient safety per ASPCA Animal Poison Control."
+  },
+  {
+   "id": "pupsicles",
+   "title": "Frozen Yogurt Pupsicles",
+   "subtitle": "cool, creamy paw-shaped bites of yogurt, banana and peanut butter",
+   "image": "assets/acura/pupsicles.webp",
+   "makes": "about 14 paw moulds",
+   "prep": 10,
+   "cook": 0,
+   "chill": 240,
+   "kcal": "~15 kcal each",
+   "tags": [
+    "No bake",
+    "Frozen",
+    "Summer"
+   ],
+   "dogSafe": "Plain yogurt and banana are dog-safe in small amounts. Pick yogurt with no sweeteners — some 'light' yogurts contain xylitol.",
+   "groups": [
+    {
+     "name": "Pupsicles",
+     "items": [
+      {
+       "qty": 1,
+       "unit": "cup",
+       "name": "plain unsweetened yogurt",
+       "note": "regular or Greek",
+       "warn": "Plain only — no xylitol, no artificial sweeteners, no flavours."
+      },
+      {
+       "qty": 0.5,
+       "unit": null,
+       "name": "ripe banana",
+       "note": "mashed"
+      },
+      {
+       "qty": 1,
+       "unit": "tbsp",
+       "name": "natural peanut butter",
+       "warn": "Check the label: NO xylitol (also called birch sugar). Plain, unsalted is best."
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Blend",
+     "text": "Mash or blend the yogurt, banana and peanut butter until smooth."
+    },
+    {
+     "title": "Fill the moulds",
+     "text": "Spoon into a silicone paw or ice-cube mould and tap it on the counter to settle."
+    },
+    {
+     "title": "Freeze",
+     "text": "Freeze at least 4 hours, until solid. Pop out and store in a freezer bag.",
+     "timer": 240
+    },
+    {
+     "title": "Serve",
+     "text": "Give one at a time, outside or on a towel. New to dairy? Start with half a pupsicle to check Acura's tummy."
+    }
+   ],
+   "storage": "Freezer bag, up to 2 months.",
+   "keepDays": 60,
+   "tips": [
+    "Some dogs are lactose-sensitive — start small.",
+    "Swap the yogurt for pure pumpkin purée for a dairy-free version."
+   ],
+   "source": "Based on AKC and PetMD frozen yogurt dog treat guidance (plain, unsweetened yogurt; xylitol-free peanut butter)."
+  },
+  {
+   "id": "sweet-potato-chews",
+   "title": "Sweet Potato Chews",
+   "subtitle": "slow-baked, chewy single-ingredient strips",
+   "image": "assets/acura/sweet-potato-chews.webp",
+   "makes": "about 30 strips",
+   "prep": 10,
+   "cook": 180,
+   "kcal": "~10 kcal per strip",
+   "tags": [
+    "Baked",
+    "Single ingredient",
+    "Chewy"
+   ],
+   "dogSafe": "Plain cooked sweet potato is a healthy, fibre-rich treat. Never season it — no butter, salt, onion or garlic.",
+   "groups": [
+    {
+     "name": "Chews",
+     "items": [
+      {
+       "qty": 2,
+       "unit": null,
+       "name": "medium sweet potatoes",
+       "note": "scrubbed (peeling optional)"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Heat the oven low",
+     "text": "Heat the oven to 120°C (250°F) and line 2 baking sheets with parchment."
+    },
+    {
+     "title": "Slice",
+     "text": "Cut the sweet potatoes lengthwise into 6 mm (¼ in) slices, then into strips. Even thickness = even drying."
+    },
+    {
+     "title": "Bake low and slow",
+     "text": "Lay in a single layer and bake 1½ hours, then flip.",
+     "timer": 90
+    },
+    {
+     "title": "Finish",
+     "text": "Bake 1–1½ hours more until dry and leathery (chewy) or crisp at the edges. Thinner strips finish sooner.",
+     "timer": 75
+    },
+    {
+     "title": "Cool",
+     "text": "Cool completely on the sheets — they firm up as they cool."
+    }
+   ],
+   "storage": "Fridge in an airtight container up to 3 weeks, or freeze up to 3 months.",
+   "keepDays": 21,
+   "tips": [
+    "Chewy strips are softer on older teeth; crisp ones last longer.",
+    "Supervise chewing and cut into smaller pieces for gulpers."
+   ],
+   "source": "Based on AKC 'sweet potato chews' guidance and PetMD notes on sweet potato for dogs (plain, cooked, unseasoned)."
+  },
+  {
+   "id": "banana-oat-bites",
+   "title": "Banana Oat Bites",
+   "subtitle": "soft, chewy 3-ingredient bites — great training rewards",
+   "image": "assets/acura/banana-oat-bites.webp",
+   "makes": "about 24 bites",
+   "prep": 10,
+   "cook": 18,
+   "kcal": "~20 kcal each",
+   "tags": [
+    "Baked",
+    "Soft",
+    "Training treat"
+   ],
+   "dogSafe": "Oats and banana are dog-safe in moderation. Use plain rolled oats — never instant flavoured packets (they can have raisins or chocolate).",
+   "groups": [
+    {
+     "name": "Bites",
+     "items": [
+      {
+       "qty": 2,
+       "unit": null,
+       "name": "ripe bananas",
+       "note": "mashed"
+      },
+      {
+       "qty": 2,
+       "unit": "cup",
+       "name": "plain rolled oats",
+       "warn": "Plain oats only — no flavoured or raisin packets."
+      },
+      {
+       "qty": 1,
+       "unit": null,
+       "name": "large egg"
+      },
+      {
+       "qty": 2,
+       "unit": "tbsp",
+       "name": "natural peanut butter",
+       "note": "optional",
+       "warn": "Check the label: NO xylitol (also called birch sugar). Plain, unsalted is best."
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Heat the oven",
+     "text": "Heat the oven to 175°C (350°F) and line a baking sheet with parchment."
+    },
+    {
+     "title": "Mix",
+     "text": "Mash the bananas, then stir in the oats, egg and peanut butter until it's a sticky dough. Let it sit 5 minutes so the oats soak.",
+     "timer": 5
+    },
+    {
+     "title": "Scoop",
+     "text": "Roll tablespoons into balls, set on the sheet and press each with a fork."
+    },
+    {
+     "title": "Bake",
+     "text": "Bake 15–18 minutes until set and golden on the bottom.",
+     "timer": 16
+    },
+    {
+     "title": "Cool",
+     "text": "Cool completely. Break in half for small rewards."
+    }
+   ],
+   "storage": "Fridge in an airtight container up to 1 week; freezer up to 3 months.",
+   "keepDays": 7,
+   "tips": [
+    "Soft treats are great for training — break them into pea-size pieces."
+   ],
+   "source": "Adapted from AKC and Rover vet-reviewed banana oat dog treat recipes."
+  },
+  {
+   "id": "chicken-jerky",
+   "title": "Plain Chicken Jerky",
+   "subtitle": "one-ingredient chewy strips — high-value treat time",
+   "image": "assets/acura/chicken-jerky.webp",
+   "makes": "about 40 strips",
+   "prep": 15,
+   "cook": 150,
+   "kcal": "~12 kcal per strip",
+   "tags": [
+    "Baked",
+    "Single ingredient",
+    "High value"
+   ],
+   "dogSafe": "Plain chicken is dog-safe. Never season it (no salt, garlic or onion) and heat it to 74°C (165°F) first so it's food-safe.",
+   "groups": [
+    {
+     "name": "Jerky",
+     "items": [
+      {
+       "qty": 2,
+       "unit": null,
+       "name": "boneless skinless chicken breasts",
+       "note": "about 600 g, partly frozen for slicing"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Slice thin",
+     "text": "Freeze the chicken 30 minutes, then slice with the grain into strips about 3–5 mm thick. Trim any fat."
+    },
+    {
+     "title": "Make it food-safe",
+     "text": "Lay the strips on a parchment-lined sheet and bake at 160°C (325°F) for 10 minutes so they reach 74°C (165°F) — the USDA-recommended step before drying.",
+     "timer": 10
+    },
+    {
+     "title": "Dry low and slow",
+     "text": "Lower the oven to 95°C (200°F) and bake 2–2½ hours, flipping halfway, until completely dry and they snap or bend without any moisture.",
+     "timer": 140
+    },
+    {
+     "title": "Cool and store",
+     "text": "Cool completely, then store in the fridge. Wash hands, boards and counters well — raw chicken can carry salmonella."
+    }
+   ],
+   "storage": "Fridge in an airtight container up to 2 weeks; freezer up to 3 months.",
+   "keepDays": 14,
+   "tips": [
+    "Completely dry = longer life. Any bendy, moist spots? Dry 20–30 minutes more.",
+    "Break into small pieces for training."
+   ],
+   "source": "Method follows USDA guidance for drying meat (heat to 74°C / 165°F before dehydrating); dog-safety per AKC homemade chicken jerky notes."
+  },
+  {
+   "id": "apple-carrot-bites",
+   "title": "Apple Carrot Bites",
+   "subtitle": "crunchy little biscuits with grated apple and carrot",
+   "image": "assets/acura/apple-carrot-bites.webp",
+   "makes": "about 30 bites",
+   "prep": 15,
+   "cook": 25,
+   "kcal": "~15 kcal each",
+   "tags": [
+    "Baked",
+    "Crunchy",
+    "Fruit & veg"
+   ],
+   "dogSafe": "Apple (without seeds or core) and carrot are dog-safe crunchy foods. Always remove apple seeds and the core.",
+   "groups": [
+    {
+     "name": "Bites",
+     "items": [
+      {
+       "qty": 1,
+       "unit": null,
+       "name": "apple",
+       "note": "cored, seeds removed, grated",
+       "warn": "Remove the core and every seed — apple seeds aren't safe for dogs."
+      },
+      {
+       "qty": 1,
+       "unit": null,
+       "name": "carrot",
+       "note": "finely grated"
+      },
+      {
+       "qty": 1,
+       "unit": null,
+       "name": "large egg"
+      },
+      {
+       "qty": 2,
+       "unit": "cup",
+       "name": "oat flour",
+       "note": "blitz rolled oats in a blender"
+      },
+      {
+       "qty": 0.25,
+       "unit": "cup",
+       "name": "water",
+       "note": "as needed"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Heat the oven",
+     "text": "Heat the oven to 175°C (350°F) and line a baking sheet with parchment."
+    },
+    {
+     "title": "Mix",
+     "text": "Stir the grated apple, carrot and egg, then mix in the oat flour. Add water a spoonful at a time until it holds together."
+    },
+    {
+     "title": "Shape",
+     "text": "Roll to 1 cm thick and cut small bones, or roll teaspoon-size balls and flatten with a fork."
+    },
+    {
+     "title": "Bake",
+     "text": "Bake 22–25 minutes until firm and lightly golden.",
+     "timer": 24
+    },
+    {
+     "title": "Cool",
+     "text": "Cool completely on a rack."
+    }
+   ],
+   "storage": "Fridge up to 1 week; freezer up to 3 months.",
+   "keepDays": 7,
+   "tips": [
+    "Grate the apple and carrot finely so the bites hold together."
+   ],
+   "source": "Adapted from AKC and PetMD apple and carrot dog treat guidance (core and seeds removed)."
+  }
+ ],
+ "safety": {
+  "never": [
+   [
+    "Xylitol (birch sugar)",
+    "in some peanut butters, sugar-free gum, candy, baked goods — even a little can be deadly"
+   ],
+   [
+    "Chocolate & cocoa",
+    "the darker, the more dangerous"
+   ],
+   [
+    "Grapes, raisins & currants",
+    "can cause kidney failure"
+   ],
+   [
+    "Onion, garlic, leeks & chives",
+    "raw, cooked or powdered — damage red blood cells"
+   ],
+   [
+    "Macadamia nuts",
+    ""
+   ],
+   [
+    "Alcohol & raw yeast dough",
+    ""
+   ],
+   [
+    "Caffeine (coffee, tea, energy drinks)",
+    ""
+   ],
+   [
+    "Cooked bones",
+    "can splinter"
+   ],
+   [
+    "Avocado",
+    "pit, skin and leaves especially"
+   ],
+   [
+    "Salty or heavily seasoned food",
+    "no salt, butter or spice mixes on treats"
+   ],
+   [
+    "Apple seeds & fruit pits",
+    ""
+   ],
+   [
+    "Nutmeg",
+    "watch out for pumpkin pie filling"
+   ]
+  ],
+  "rules": [
+   "Treats should be under 10% of Acura's daily calories — the other 90% is regular food.",
+   "New food? Start with a small piece and watch for tummy upset for 24 hours.",
+   "Ask your vet before adding treats if Acura has allergies, a sensitive stomach, diabetes or kidney issues.",
+   "Always have fresh water out — and supervise chewing."
+  ],
+  "safeSnacks": [
+   "Plain cooked chicken or turkey",
+   "Carrot sticks",
+   "Apple slices (no core or seeds)",
+   "Plain pumpkin purée",
+   "Plain cooked sweet potato",
+   "Blueberries",
+   "Green beans (plain)",
+   "Plain cooked egg"
+  ],
+  "emergency": "Ate something dangerous? Call your vet or the ASPCA Animal Poison Control Center (1-888-426-4435, fee may apply) right away.",
+  "source": "ASPCA Animal Poison Control 'People Foods to Avoid Feeding Your Pets'; AKC; WSAVA calorie guidance."
+ }
+}

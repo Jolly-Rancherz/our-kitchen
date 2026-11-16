@@ -1,0 +1,394 @@
+{
+  "title": "Classic Beef Lasagna",
+  "subtitle": "layers of meaty tomato sauce, creamy ricotta and golden mozzarella — Sunday dinner with lunches all week",
+  "image": "assets/img/beef-lasagna.webp",
+  "imageAlt": "A tall slice of beef lasagna with clear layers and a golden cheese top",
+  "servings": 8,
+  "servingsNote": "8 big squares — dinner for two, twice, plus 4 lunches (freezes well)",
+  "prep": 35,
+  "cook": 75,
+  "cost": {
+    "total": 38,
+    "breakdown": [
+      [
+        "Lean ground beef, 900 g",
+        12.0,
+        "ground-beef-lean"
+      ],
+      [
+        "Shredded mozzarella, 4 cups",
+        9.0,
+        "mozzarella-shredded"
+      ],
+      [
+        "Marinara sauce, 2 × 650 ml jars",
+        7.0,
+        "marinara-sauce"
+      ],
+      [
+        "Ricotta, 475 g",
+        4.5,
+        "ricotta"
+      ],
+      [
+        "Lasagna noodles, 375 g box",
+        2.5,
+        "lasagna-noodles"
+      ],
+      [
+        "Grated Parmesan, ¾ cup",
+        1.5,
+        "parmesan-grated"
+      ],
+      [
+        "Onion, garlic, egg, tomato paste & spices",
+        1.5
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "pasta"
+    ],
+    "occasion": [
+      "comfort-night",
+      "date-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Feeds a crowd"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen beef? Thaw in the fridge overnight (about 24 h)."
+    },
+    {
+      "icon": "oven",
+      "text": "Heat the oven to 190°C (375°F). You'll need a 9×13 in (23×33 cm) baking dish."
+    },
+    {
+      "icon": "pot",
+      "text": "Put a big pot of salted water on for the noodles while the sauce simmers."
+    },
+    {
+      "icon": "cheese",
+      "text": "Pick a plain or traditional marinara (no visible basil leaves)."
+    },
+    {
+      "icon": "knife",
+      "text": "It needs a 20-minute rest after baking so it slices cleanly — plan for it."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Meat sauce",
+      "items": [
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "olive oil",
+          "pantry": {
+            "name": "Olive oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "tomato paste",
+          "pantry": {
+            "name": "Tomato paste",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "jar",
+          "name": "marinara sauce",
+          "note": "650 ml each",
+          "metric": {
+            "qty": 1300,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Marinara sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "dried Italian seasoning",
+          "pantry": {
+            "name": "Italian seasoning (dried)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "granulated sugar",
+          "note": "balances the tomato",
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ricotta layer",
+      "items": [
+        {
+          "qty": 475,
+          "unit": "g",
+          "name": "ricotta",
+          "note": "1 tub",
+          "pantry": {
+            "name": "Ricotta",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large egg",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "metric": {
+            "qty": 50,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Layers",
+      "items": [
+        {
+          "qty": 12,
+          "unit": null,
+          "name": "lasagna noodles",
+          "note": "regular (not oven-ready), about 1 box",
+          "pantry": {
+            "name": "Lasagna noodles",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "cup",
+          "name": "shredded mozzarella",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Mozzarella (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "note": "for the top",
+          "metric": {
+            "qty": 25,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Brown the beef",
+      "text": "Heat the oil in a large deep pan over medium-high. Add the beef and onion and cook 8–10 minutes, breaking it up, until no pink remains (71°C / 160°F). Drain off extra fat. Add the garlic for the last minute.",
+      "timer": 10,
+      "uses": [
+        "0-1",
+        "0-0",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Simmer the sauce",
+      "text": "Stir in the tomato paste and cook 1 minute, then add the marinara, Italian seasoning, salt, pepper and sugar. Simmer gently, partly covered, 15 minutes, stirring now and then. It should be thick, not watery.",
+      "timer": 15,
+      "uses": [
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9"
+      ]
+    },
+    {
+      "title": "Boil the noodles",
+      "text": "Meanwhile cook the noodles in salted boiling water 2 minutes less than the box says (they finish in the oven). Drain, rinse with cool water and lay flat on an oiled sheet so they don't stick.",
+      "timer": 8,
+      "uses": [
+        "2-0"
+      ]
+    },
+    {
+      "title": "Mix the ricotta",
+      "text": "Stir the ricotta, egg, ½ cup Parmesan, garlic powder and salt together until smooth.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4"
+      ]
+    },
+    {
+      "title": "Layer it up",
+      "text": "Spread 1 cup meat sauce over the bottom of the dish. Then layer: 4 noodles, half the ricotta, 1 cup mozzarella, ⅓ of the remaining sauce. Repeat: 4 noodles, rest of the ricotta, 1 cup mozzarella, ⅓ sauce. Finish with 4 noodles, the last of the sauce, 2 cups mozzarella and the Parmesan.",
+      "uses": [
+        "2-1",
+        "2-2"
+      ]
+    },
+    {
+      "title": "Bake covered, then uncovered",
+      "text": "Cover with foil (tent it or spray the underside so the cheese doesn't stick). Bake at 190°C (375°F) 25 minutes, then uncover and bake 20–25 minutes more until bubbling at the edges and golden on top. The centre should reach 74°C (165°F).",
+      "timer": 50,
+      "uses": []
+    },
+    {
+      "title": "Rest, then slice",
+      "text": "Let it rest 20 minutes before cutting — this is what gives you clean, tall layers instead of a landslide. Cut into 8 squares.",
+      "timer": 20,
+      "uses": []
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Watery lasagna",
+      "fix": "The sauce wasn't simmered thick enough or the noodles weren't drained well. Simmer the sauce until a spoon leaves a trail, and always rest 20 minutes before slicing."
+    },
+    {
+      "problem": "Top browned before the middle was hot",
+      "fix": "Keep the foil on for the first 25 minutes; if the top darkens early, lay the foil loosely back on."
+    },
+    {
+      "problem": "Noodles stuck together",
+      "fix": "Rinse with cool water after draining and lay them flat on an oiled sheet."
+    },
+    {
+      "problem": "Bland",
+      "fix": "Season the meat sauce until it tastes good on its own — the noodles and ricotta soak up salt."
+    }
+  ],
+  "saleTip": "Ground beef family packs are often $9.99/kg-ish on No Frills flyer weeks, and Classico/No Name marinara goes 2 for $5. Ricotta and mozzarella are cheapest as No Name.",
+  "swap": "Half ground beef, half mild Italian sausage (casings removed) for extra flavour. Oven-ready noodles also work — skip the boil and add ½ cup water to the sauce.",
+  "leftovers": "Fridge 4 days. Freeze individual squares wrapped tightly for up to 3 months.",
+  "doneness": "Ground beef: 71°C (160°F) while browning. Whole lasagna and reheated portions: 74°C (165°F) in the centre.",
+  "source": "Based on tested classic lasagna methods (Allrecipes 'World's Best Lasagna', Barefoot Contessa): simmered meat sauce, ricotta-egg layer, foil-covered then uncovered bake, 15–20 min rest.",
+  "gear": [
+    "9×13 in (23×33 cm) baking dish",
+    "Large deep pan",
+    "Big pot for the noodles",
+    "Foil",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Make the meat sauce up to 3 days ahead.",
+    "Assemble the whole lasagna a day ahead, cover and refrigerate; add 10–15 minutes to the covered bake.",
+    "Freeze it unbaked for up to 3 months — thaw in the fridge 24–48 h before baking."
+  ],
+  "reheat": "Microwave a square covered, 2–3 minutes at 70% power, until 74°C (165°F). Oven: 180°C (350°F), covered with foil, 20–25 minutes."
+}

@@ -1,0 +1,359 @@
+{
+  "title": "Spaghetti and Meatballs",
+  "subtitle": "big tender beef meatballs browned, then simmered in marinara, over spaghetti with Parmesan",
+  "image": "assets/img/spaghetti-meatballs.webp",
+  "imageAlt": "Spaghetti in red marinara topped with four browned meatballs and grated Parmesan",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 25,
+  "cook": 35,
+  "cost": {
+    "total": 26,
+    "breakdown": [
+      [
+        "Lean ground beef, 900 g",
+        12.0,
+        "ground-beef-lean"
+      ],
+      [
+        "Marinara sauce, 2 × 650 ml jars",
+        7.0,
+        "marinara-sauce"
+      ],
+      [
+        "Spaghetti, 450 g",
+        2.0,
+        "spaghetti"
+      ],
+      [
+        "Grated Parmesan, ¾ cup",
+        2.1,
+        "parmesan-grated"
+      ],
+      [
+        "Panko breadcrumbs, ¾ cup",
+        0.8,
+        "panko-breadcrumbs"
+      ],
+      [
+        "Eggs, 2 + milk",
+        1.0,
+        "eggs"
+      ],
+      [
+        "Onion, garlic & spices",
+        1.1
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "pasta"
+    ],
+    "occasion": [
+      "comfort-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Kid-classic"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen beef? Thaw in the fridge overnight."
+    },
+    {
+      "icon": "pot",
+      "text": "Put a big pot of salted water on to boil while you roll the meatballs."
+    },
+    {
+      "icon": "cheese",
+      "text": "Use a plain or traditional marinara (no visible basil leaves)."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Meatballs",
+      "items": [
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 45,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 80,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "metric": {
+            "qty": 50,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "grated on a box grater",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "dried Italian seasoning",
+          "pantry": {
+            "name": "Italian seasoning (dried)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "olive oil",
+          "pantry": {
+            "name": "Olive oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sauce & pasta",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "jar",
+          "name": "marinara sauce",
+          "note": "650 ml each",
+          "metric": {
+            "qty": 1300,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Marinara sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "spaghetti",
+          "note": "1 box",
+          "pantry": {
+            "name": "Spaghetti",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the pasta water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "note": "to serve",
+          "metric": {
+            "qty": 25,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Soak the crumbs",
+      "text": "In a big bowl, stir the panko and milk together and let it sit 5 minutes. This 'panade' is the secret to soft, juicy meatballs.",
+      "timer": 5,
+      "uses": [
+        "0-0",
+        "0-1"
+      ]
+    },
+    {
+      "title": "Mix and roll",
+      "text": "Add the beef, eggs, Parmesan, grated onion, garlic, Italian seasoning, salt, pepper and garlic powder. Mix gently with your hands just until combined — overmixing makes them tough. Roll into 16 balls (about 5 cm / golf-ball size), wetting your hands so they don't stick.",
+      "uses": [
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9",
+        "0-10"
+      ]
+    },
+    {
+      "title": "Brown the meatballs",
+      "text": "Heat the oil in a large deep skillet over medium-high. Brown the meatballs in 2 batches, turning, 5–6 minutes per batch until browned all over (they finish in the sauce). Set aside and pour off most of the fat.",
+      "timer": 12,
+      "uses": [
+        "0-11"
+      ]
+    },
+    {
+      "title": "Simmer in sauce",
+      "text": "Pour the marinara into the skillet, scrape up the brown bits and bring to a simmer. Nestle the meatballs in, cover and simmer on low 15 minutes, turning once, until 71°C (160°F) in the centre.",
+      "timer": 15,
+      "uses": [
+        "1-0"
+      ]
+    },
+    {
+      "title": "Cook the spaghetti",
+      "text": "Meanwhile cook the spaghetti in the salted boiling water until al dente (box time, about 9–10 min). Save ½ cup pasta water and drain.",
+      "timer": 10,
+      "uses": [
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Toss and serve",
+      "text": "Toss the spaghetti with a few ladles of the sauce and a splash of pasta water so it's glossy. Plate, top with meatballs and more sauce, and finish with Parmesan.",
+      "uses": [
+        "1-3"
+      ]
+    }
+  ],
+  "fixIt": [
+    {
+      "problem": "Meatballs fall apart",
+      "fix": "Let the panade soak fully and chill the rolled meatballs 10 minutes before browning. Turn them gently with tongs."
+    },
+    {
+      "problem": "Meatballs are dense or tough",
+      "fix": "Mix just until combined and don't pack them tightly when rolling."
+    },
+    {
+      "problem": "Sauce too thick",
+      "fix": "Loosen with a splash of the pasta water."
+    },
+    {
+      "problem": "Bland",
+      "fix": "Taste the sauce after simmering and add a pinch of salt — the meatballs soak it up."
+    }
+  ],
+  "saleTip": "Ground beef family packs and jarred marinara are both frequent No Frills flyer items — 2 jars for $5 is common.",
+  "swap": "Half beef, half ground pork for extra tender meatballs (cook to 71°C / 160°F). Bake the meatballs at 200°C (400°F) 18–20 min instead of browning to skip the splatter.",
+  "leftovers": "Fridge 4 days. Freeze the meatballs in sauce up to 3 months.",
+  "doneness": "Meatballs: 71°C (160°F) in the centre.",
+  "source": "Based on tested meatball methods (Serious Eats panade technique, America's Test Kitchen): milk-soaked crumbs, gentle mixing, browned then simmered in sauce; ground-beef temp per Health Canada.",
+  "gear": [
+    "Large deep skillet with a lid",
+    "Big pot for the pasta",
+    "Mixing bowl",
+    "Box grater (onion)",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Roll the meatballs up to a day ahead and keep covered in the fridge.",
+    "Freeze raw rolled meatballs on a tray, then bag; brown from frozen and add 5 min to the simmer."
+  ],
+  "reheat": "Warm meatballs and sauce covered on the stove over medium-low, or microwave 2–3 min, until 74°C (165°F). Add a splash of water to the pasta."
+}
