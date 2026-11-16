@@ -643,3 +643,7 @@ html[data-theme="dark"] #season[data-kind="hearts"] svg{fill:var(--gold-soft)}
 }
 .pick2{text-align:left;width:100%;color:var(--ink)}
 body.cooking #toast{bottom:auto;top:calc(var(--sat) + 64px)}
+
+.rcnote{margin-top:14px;padding:12px 14px;border:1px solid var(--line-gold);border-radius:14px;background:var(--card)}
+.rcnote>b{display:block;font-family:Cinzel,serif;font-size:.86rem;letter-spacing:.04em;color:var(--ink)}
+.rcnote>span{display:block;font-size:.84rem;color:var(--muted);margin-top:3px}

@@ -825,9 +825,11 @@ function openMissing(r, s, f) {
 
 function openCooked(r, s, est) {
   const e = Math.round(est);
-  openSheet(`<h2>Mark as cooked</h2><p class="sub">${esc(r.title)} goes into this month's dinner total.</p>
-    <div class="chips" style="margin-top:14px"><button class="chip on" data-m="est">Use estimate · ${money(e)}</button><button class="chip" data-m="real">Enter receipt amount</button></div>
-    <div class="field" id="realF" hidden><label>Actual amount (CAD)</label><input id="realAmt" type="number" inputmode="decimal" step="0.01" min="0" placeholder="${e}"></div>
+  openSheet(`<h2>Mark as cooked</h2><p class="sub" id="cSub">${esc(r.title)} goes into this month's dinner total.</p>
+    <div class="rcnote" id="rcNote" hidden><b>Counted in your receipts</b><span>You've scanned a grocery receipt this month, so this dinner is logged without adding its cost again.</span>
+      <label class="setrow" style="border:0;padding:8px 0 0"><span class="l"><b>Add the cost anyway</b><span>Only if these groceries weren't on a scanned receipt</span></span><span class="switch"><input type="checkbox" id="cAdd"><i></i></span></label></div>
+    <div id="costBox"><div class="chips" style="margin-top:14px"><button class="chip on" data-m="est">Use estimate · ${money(e)}</button><button class="chip" data-m="real">Enter receipt amount</button></div>
+    <div class="field" id="realF" hidden><label>Actual amount (CAD)</label><input id="realAmt" type="number" inputmode="decimal" step="0.01" min="0" placeholder="${e}"></div></div>
     <div class="field"><label>Date</label><input id="cDate" type="date" value="${todayISO()}"></div>
     <div class="field"><label>Who cooked?</label><div class="segtext" id="cWho" style="grid-template-columns:repeat(3,1fr)">${['Corey', 'Faith', 'Both'].map((n) => `<button type="button" data-who="${n}" class="${(state.profile.me || 'Both') === n ? 'on' : ''}">${n}</button>`).join('')}</div></div>
     <details class="reactbox"><summary>How was it? <span class="muted small">(optional)</span></summary>${reactPicker({})}</details>
@@ -836,13 +838,18 @@ function openCooked(r, s, est) {
     <div class="foot"><button class="btn" data-close>Cancel</button><button class="btn gold" id="cSave">Add to ${esc(new Date().toLocaleDateString('en-CA', { month: 'long' }))}</button></div>`, (b) => {
     let mode = 'est'; let who = state.profile.me || 'Both'; const reacts = {};
     bindReact(b, reacts);
+    let inRc = false;
+    const syncRc = () => { inRc = monthHasReceipt(($('#cDate', b).value || todayISO()).slice(0, 7)); $('#rcNote', b).hidden = !inRc; $('#costBox', b).hidden = inRc && !$('#cAdd', b).checked; $('#cSub', b).textContent = inRc && !$('#cAdd', b).checked ? `${r.title} goes into your story and stats.` : `${r.title} goes into this month's dinner total.`; };
+    $('#cDate', b).onchange = syncRc; $('#cAdd', b).onchange = syncRc; syncRc();
     $$('#cWho button', b).forEach((x) => (x.onclick = () => { who = x.dataset.who; $$('#cWho button', b).forEach((y) => y.classList.toggle('on', y === x)); }));
     $$('.chip', b).forEach((c) => (c.onclick = () => { mode = c.dataset.m; $$('.chip', b).forEach((x) => x.classList.toggle('on', x === c)); $('#realF', b).hidden = mode !== 'real'; if (mode === 'real') $('#realAmt', b).focus(); }));
     $('#cSave', b).onclick = () => {
       let amount = e; const real = parseFloat($('#realAmt', b).value);
       if (mode === 'real') { if (!(real >= 0)) { toast('Enter the receipt amount'); return; } amount = Math.round(real * 100) / 100; }
       const id = uid(); const date = $('#cDate', b).value || todayISO();
-      state.cooked[id] = { id, recipeId: s.id, title: r.title, date, amount, estimate: mode === 'est', by: who, at: now() };
+      const skip = monthHasReceipt(date.slice(0, 7)) && !$('#cAdd', b).checked;
+      state.cooked[id] = skip ? { id, recipeId: s.id, title: r.title, date, amount: 0, estimate: false, inReceipts: true, est: e, by: who, at: now() }
+        : { id, recipeId: s.id, title: r.title, date, amount, estimate: mode === 'est', by: who, at: now() };
       const rx = Object.fromEntries(Object.entries(reacts).filter(([, v]) => v)); if (Object.keys(rx).length) state.cooked[id].reactions = rx;
       if ($('#cReset', b).checked) delete state.checks[s.id];
       const lp = parseInt($('#cLeft', b).value, 10); if (lp > 0) { const lid = uid(); state.leftovers[lid] = { id: lid, recipeId: s.id, title: r.title, date, portions: lp }; }
@@ -850,11 +857,13 @@ function openCooked(r, s, est) {
       const y = scrollY;
       if (location.hash === '#/r/' + s.id) viewRecipe(s.id).then(() => { scrollTo(0, y); const btn = $('#cookedBtn'); if (btn) heartBurst(btn); });
       const total = monthTotal(date.slice(0, 7));
-      toast(`♥ Logged ${money(amount)} · ${monthName(date.slice(0, 7)).split(' ')[0]} is at ${money(total)}`, 'Budget', () => go('#/budget'));
+      toast(skip ? '♥ Logged · counted in your receipts' : `♥ Logged ${money(amount)} · ${monthName(date.slice(0, 7)).split(' ')[0]} is at ${money(total)}`, 'Budget', () => go('#/budget'));
       checkMilestones();
     };
   });
 }
+function monthHasReceipt(key) { return Object.values(state.cooked).some((c) => c.receipt && String(c.date || '').startsWith(key)); }
+const mealCost = (c) => (c.inReceipts ? Number(c.est || 0) : Number(c.amount || 0)); // stats only; spending uses amount
 function monthTotal(key) { return Object.values(state.cooked).filter((c) => c.date.startsWith(key)).reduce((a, c) => a + Number(c.amount || 0), 0); }
 
 // ---------------------------------------------------------------- cook mode
@@ -979,8 +988,8 @@ function viewBudget() {
   const byRecipe = {}; all.forEach((c) => { byRecipe[c.recipeId] = (byRecipe[c.recipeId] || 0) + 1; });
   const most = Object.entries(byRecipe).sort((a, b) => b[1] - a[1])[0];
   const mostName = most ? (summary(most[0]) || {}).title || all.find((c) => c.recipeId === most[0]).title : '—';
-  const avg = all.length ? all.reduce((a, c) => a + Number(c.amount || 0), 0) / all.length : 0;
-  const saved = all.reduce((a, c) => a + Math.max(0, takeoutCost - Number(c.amount || 0)), 0);
+  const avg = all.length ? all.reduce((a, c) => a + mealCost(c), 0) / all.length : 0;
+  const saved = all.reduce((a, c) => a + Math.max(0, takeoutCost - mealCost(c)), 0);
   const isNow = key === monthKey();
   const d = new Date(); const daysLeft = new Date(d.getFullYear(), d.getMonth() + 1, 0).getDate() - d.getDate();
   let msg;
@@ -1004,7 +1013,7 @@ function viewBudget() {
       <div class="barlbl"><span>$0</span><span>target ${money(lo)}–${money(hi)}</span></div>
       <p>${esc(msg)}</p>${pace ? `<p class="pace">${esc(pace)}</p>` : ''}</div>
     <div class="sec"><div class="sec-title">Cooked this month<button class="act" id="addOther">+ Add other</button><button class="act" id="scanB">Scan receipt</button></div>
-      ${entries.length ? `<ul class="cooked">${entries.map((c) => `<li><div><div class="t">${esc(c.title)}</div><div class="d">${esc(shortDate(c.date))}${c.receipt ? '<span class="est">grocery receipt</span>' : c.estimate ? '<span class="est">estimate</span>' : '<span class="est">receipt</span>'}${c.by ? ' · ' + esc(c.by === 'Both' ? 'both' : c.by) : ''}</div></div><button class="a" data-e="${c.id}">${money(c.amount, true)}</button></li>`).join('')}</ul>` : '<div class="empty">No dinners logged yet.</div>'}
+      ${entries.length ? `<ul class="cooked">${entries.map((c) => `<li><div><div class="t">${esc(c.title)}</div><div class="d">${esc(shortDate(c.date))}${c.receipt ? '<span class="est">grocery receipt</span>' : c.inReceipts ? '<span class="est">counted in receipts</span>' : c.estimate ? '<span class="est">estimate</span>' : '<span class="est">receipt</span>'}${c.by ? ' · ' + esc(c.by === 'Both' ? 'both' : c.by) : ''}</div></div><button class="a" data-e="${c.id}">${c.inReceipts ? '—' : money(c.amount, true)}</button></li>`).join('')}</ul>` : '<div class="empty">No dinners logged yet.</div>'}
     </div>
     <div class="sec"><div class="sec-title">Us, so far</div>
       <div class="statgrid"><div class="s"><b>${all.length}</b><span>Meals cooked</span></div><div class="s"><b>${entries.length}</b><span>This month</span></div>
@@ -1031,6 +1040,7 @@ function editEntry(c) {
       const a = parseFloat($('#eA', b).value); if (!(a >= 0)) { toast('Enter an amount'); return; }
       const t = isNew ? $('#eT', b).value.trim() || 'Other dinner' : c.title;
       state.cooked[c.id] = { ...c, title: t, amount: Math.round(a * 100) / 100, estimate: false, date: $('#eD', b).value || c.date, at: now() };
+      if (c.inReceipts && a > 0) delete state.cooked[c.id].inReceipts;
       save(); closeSheet(); viewBudget();
     };
     $('#eDel', b) && ($('#eDel', b).onclick = () => { const bak = state.cooked[c.id]; delete state.cooked[c.id]; save(); closeSheet(); viewBudget(); toast('Entry deleted', 'Undo', () => { state.cooked[bak.id] = bak; save(); viewBudget(); }); });
@@ -1291,7 +1301,7 @@ function viewUs() {
 }
 
 // ================================================================ update 2 (Nov 2026)
-const WHATSNEW_ID = 'u2-2026-11';
+const WHATSNEW_ID = 'u2b-2026-11'; // u2b = budget receipt fix; 'u2-2026-11' users get a short card
 ICON.mic = '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>';
 ICON.speaker = '<path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/>';
 ICON.candle = '<path d="M9 10h6v11H9zM12 10V7.5"/><path d="M12 2.8c1.3 1.5 1.6 2.6.8 3.8-.4.5-1.2.5-1.6 0-.8-1.2-.5-2.3.8-3.8z"/>';
@@ -1656,7 +1666,7 @@ function monthRecap(key) {
   const fresh = new Set(es.filter((c) => !earlier.has(c.recipeId) && c.recipeId !== 'other').map((c) => c.recipeId)).size;
   const cnt = (n) => es.filter((c) => c.by === n || c.by === 'Both').length;
   const photos = Object.values(state.photos).flat().filter((p) => p.date.startsWith(key)).length;
-  return { key, n: es.length, spent, topName, topN: top[1], fresh, corey: cnt('Corey'), faith: cnt('Faith'), photos, saved: es.reduce((a, c) => a + Math.max(0, state.settings.takeoutCost - Number(c.amount || 0)), 0) };
+  return { key, n: es.length, spent, topName, topN: top[1], fresh, corey: cnt('Corey'), faith: cnt('Faith'), photos, saved: es.reduce((a, c) => a + Math.max(0, state.settings.takeoutCost - mealCost(c)), 0) };
 }
 function recapCard(rc, dismiss) {
   return `<div class="recap"><div class="rk">${esc(monthName(rc.key).toUpperCase())} · RECAP${dismiss ? '<button class="x" id="recapX" aria-label="Dismiss">×</button>' : ''}</div>
@@ -1752,13 +1762,16 @@ try { matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', 
 // ---------------------------------------------------------------- what's new (#34) + backup reminder (#45)
 const WHATSNEW = [
   ['Cooking', 'Amounts right inside each step · “Start cooking by” · hands-free mode (voice where the phone allows it, big tap zones everywhere) · read-aloud · cook two dishes at once with all timers together · candle-lit cook mode on Date Night recipes'],
-  ['Grocery', 'Add a recipe (only what the pantry is missing) · duplicates merge and amounts add up · estimated trip total · scan a receipt to stock the pantry, tick the list, log the total and learn real prices · staples marked Out go back on the list'],
+  ['Grocery', 'Add a recipe (only what the pantry is missing) · duplicates merge and amounts add up · estimated trip total · scan a receipt to stock the pantry, tick the list, log the total and learn real prices · once a receipt is in for the month, “Cooked it” stops adding the meal’s cost again (you can still choose to add it) · staples marked Out go back on the list'],
   ['Ideas', 'Mood picker (Cozy, Quick, Fancy, Cheap) · Use it up · Haven\'t made in a while · London weather picks · whose turn to pick · search by ingredient like “chicken + rice” · a wish list'],
   ['Us', 'Our story timeline · monthly recap · milestones · who cooked it · reactions · love notes on recipes · Mom\'s soup family story'],
   ['Kitchen', 'Swap ideas per ingredient · reheat & make-ahead tips · gear list · cups/grams and °C/°F · guest mode for 4–6 · pantry use-by dates · freezer list · print a recipe · recipe versions you can switch back to · undo · snow until February'],
 ];
 function whatsNewCard() {
   if (state.seenWhatsNew === WHATSNEW_ID) return '';
+  if (state.seenWhatsNew === 'u2-2026-11') return `<div class="wn"><div class="wn-k">NEW IN OUR KITCHEN<button class="x" id="wnX" aria-label="Dismiss">×</button></div>
+    <p>Budget fix: once a grocery receipt is scanned for the month, “Cooked it” logs the dinner without adding its cost again (a switch lets you add it anyway). Past entries are unchanged.</p>
+    <div class="btnrow" style="margin-top:10px"><button class="btn sm ghost" id="wnMore">See what's new</button><button class="btn sm gold" id="wnOk">Got it ♥</button></div></div>`;
   return `<div class="wn"><div class="wn-k">NEW IN OUR KITCHEN<button class="x" id="wnX" aria-label="Dismiss">×</button></div>
     <p>A big update for both of us — cooking help, smarter grocery runs, our story and more. Everything you saved is still here.</p>
     <div class="btnrow" style="margin-top:10px"><button class="btn sm ghost" id="wnMore">See what's new</button><button class="btn sm gold" id="wnOk">Got it ♥</button></div></div>`;
