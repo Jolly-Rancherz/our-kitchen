@@ -27,7 +27,9 @@ that every saved value survived (see `/workspace/cookbook/tools/preserve_*.mjs` 
 2. Test (saved-data preservation + iPhone emulation, including the 402×874 screen with an 812 viewport).
    Bump `APP_UPDATE` in app.js (shown at the foot of Settings).
 3. `git commit` and `git push` to `main`. Pages deploys in about a minute; check that the live `sw.js` shows the new `VERSION`.
-4. Phones self-update (the new SW is applied on the next quiet moment, with an "Updated" toast). Closing and reopening the app helps.
+4. Phones self-update: the new SW is applied only while the app is in the background (or on the next launch),
+   never while it's on screen. A reload in view replays the splash and redraws all text, which reads as a jolt
+   (Update 8.2). Leaving the app for a moment, or closing and reopening it, picks up a new version.
 
 ## Storage keys
 - `localStorage["ourkitchen.v1"]`: the single state object (favourites, pantry, grocery, budget log, cooked,
@@ -127,3 +129,4 @@ exactly 812pt although the image continues.
 | 7 | see `git log` | Week plan, staples, price memory, prep ahead, swaps, notes, places, mystery meal, thank-you jar, date-in menu, keepsake, secret rating, Acura search/share/photo wall, weather/Friday/season/surprise ideas, ready filter, badges |
 | 8 | see `git log` | Solid status bar for new installs (no strip; old installs keep 6.1), backup audit: Export/Restore complete and byte-identical, Restore from the welcome screen |
 | 8.1 | see `git log` | Splash wordmark no longer jolts small→big on launch with Bigger text on |
+| 8.2 | see `git log` | Self-update never reloads in front of you (it was the remaining open/return jolt); first frame verified in WebKit |

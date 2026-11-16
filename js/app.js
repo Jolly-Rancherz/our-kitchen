@@ -2044,8 +2044,11 @@ function safeToReload() {
   return $('#cook').hidden && $('#sheetWrap').hidden && $('#welcome').hidden && !cookTimers.length
     && !(ae && /^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName)) && !document.body.classList.contains('printing');
 }
+// A new version is applied only while the app is in the background (or on the next launch, which the new service
+// worker already serves). Reloading while it's on screen replays the splash and redraws every word, which looks
+// like a flash/jolt right after opening or returning to the app (Update 8.2).
 function maybeApplyUpdate() {
-  if (!updatePending || !safeToReload()) return;
+  if (!updatePending || document.visibilityState !== 'hidden' || !safeToReload()) return;
   updatePending = false;
   try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) {}
   try { sessionStorage.setItem('ok-updated', '1'); sessionStorage.setItem('ok-scroll', JSON.stringify({ h: location.hash, y: vY() })); } catch (e) {}
@@ -2059,8 +2062,8 @@ function initSW() {
   }).catch(() => {});
   navigator.serviceWorker.addEventListener('controllerchange', () => { if (!hadController) return; updatePending = true; maybeApplyUpdate(); });
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible') { if (swReg) swReg.update().catch(() => {}); maybeApplyUpdate(); }
-    else if (updatePending) maybeApplyUpdate(); // reload quietly while the app is in the background
+    if (document.visibilityState === 'visible') { if (swReg) swReg.update().catch(() => {}); } // check only
+    else maybeApplyUpdate(); // reload quietly while the app is in the background
   });
 }
 
@@ -4039,7 +4042,7 @@ function recapCard(rc, dismiss) {
 
 // ---------------------------------------------------------------- what's new (update 3)
 // shown at the foot of Settings so anyone can check which update a phone (or a Safari tab) is running; bump each update
-const APP_UPDATE = 'Update 8.1';
+const APP_UPDATE = 'Update 8.2';
 const WHATSNEW_ID = 'u7-2026-11';
 const WHATSNEW = [
   ['Recipes & Ideas', 'Filters → “Ready to make now” shows only what the pantry covers · More ideas has Surprise me (pick time, budget and mood), Fridge clear (with Friday reminders on Home), In season (Ontario produce this month) and soup nudges on cold or rainy days'],
