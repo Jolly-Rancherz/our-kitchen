@@ -151,7 +151,16 @@ const DEFAULT_STATE = () => ({
   flashSeen: {},       // date -> ts
   annivSeen: {},       // year -> ts
   groceryDate: null,   // { on, start, split: { itemId: name } }
-  acura: { favs: {}, baked: {}, notes: {}, ratings: {}, profile: {}, given: {} }, // dog treats — kept apart from our pantry & budget
+  acura: { favs: {}, baked: {}, notes: {}, ratings: {}, profile: {}, given: {}, photos: {} }, // dog treats — kept apart from our pantry & budget
+  // update 7 (added collections only — nothing above changes shape; acura gains photos: id -> { id, data, date, at })
+  plan: {},            // ISO date -> { recipeId, by, at, synced } (week plan; today's becomes tonight's plan once)
+  staples: null,       // [{ name, cat }] once edited (until then the starter staples list is shown)
+  priceLog: {},        // pantryKey -> [{ price, date, name }] every receipt price, newest last (state.prices keeps the latest)
+  noteMeta: {},        // recipeId -> { by, at } who last edited our notes
+  places: {},          // id -> { id, name, date, dish, note, by, at } places we love
+  mystery: null,       // { recipeId, by, at, revealed } mystery meal in progress
+  thanks: {},          // id -> { id, from, to, text, date, at, seen } thank-you jar
+  dateMenus: {},       // monthKey -> { starter, main, dessert, at } date-in menu we chose
 });
 let state = load();
 function load() {
@@ -160,9 +169,9 @@ function load() {
     if (raw && raw.v === 1) {
       const d = DEFAULT_STATE();
       const st = { ...d, ...raw, settings: { ...d.settings, ...raw.settings }, profile: { ...d.profile, ...raw.profile } };
-      ['loveNotes', 'stories', 'freezer', 'wish', 'prices', 'guests', 'edits', 'versions', 'milestones', 'recapSeen', 'favBy', 'nicknames', 'dessertJar', 'tasteTests', 'dishes', 'flashSeen', 'annivSeen'].forEach((k) => { if (!st[k] || typeof st[k] !== 'object') st[k] = {}; });
+      ['loveNotes', 'stories', 'freezer', 'wish', 'prices', 'guests', 'edits', 'versions', 'milestones', 'recapSeen', 'favBy', 'nicknames', 'dessertJar', 'tasteTests', 'dishes', 'flashSeen', 'annivSeen', 'plan', 'priceLog', 'noteMeta', 'places', 'thanks', 'dateMenus'].forEach((k) => { if (!st[k] || typeof st[k] !== 'object') st[k] = {}; });
       if (!st.acura || typeof st.acura !== 'object') st.acura = d.acura;
-      ['favs', 'baked', 'notes', 'ratings', 'profile', 'given'].forEach((k) => { if (!st.acura[k] || typeof st.acura[k] !== 'object') st.acura[k] = {}; });
+      ['favs', 'baked', 'notes', 'ratings', 'profile', 'given', 'photos'].forEach((k) => { if (!st.acura[k] || typeof st.acura[k] !== 'object') st.acura[k] = {}; });
       if (!st.seededSoup) { st.favourites = { ...st.favourites, 'comfort-soups-01': st.favourites['comfort-soups-01'] || now() }; st.seededSoup = 1; }
       return st;
     }
@@ -343,6 +352,9 @@ const routes = [
   [/^#\/acura$/, viewAcura],
   [/^#\/acura\/t\/([\w-]+)$/, viewTreat],
   [/^#\/acura\/safety$/, viewAcuraSafety],
+  [/^#\/places$/, viewPlaces],
+  [/^#\/menu$/, viewMenu],
+  [/^#\/keepsake$/, viewKeepsake],
   [/^#\/scan$/, () => { go('#/grocery'); setTimeout(openScan, 300); }],
   [/^#\/ideas$/, () => { go('#/'); setTimeout(() => openIdeas(), 300); }],
 ];
@@ -352,6 +364,7 @@ window.addEventListener('hashchange', router);
 function matchesFilters(r) {
   for (const [k, set] of Object.entries(ui.filters)) {
     if (!set.length) continue;
+    if (k === 'ready') { if (!canMakeNow(r)) return false; continue; }
     const vals = (r.tags && r.tags[k]) || [];
     if (!set.some((v) => vals.includes(v))) return false;
   }
@@ -412,25 +425,31 @@ function cookAgainNudge(recipes) {
   return best;
 }
 function openCanMake() {
-  const have = (k) => ['lots', 'have', 'low'].includes(levelOf(k));
+  const have = (k) => HAVE_LEVELS.includes(levelOf(k));
   const rows = visibleRecipes().map((r) => {
-    const req = r.pantry.filter((p) => !/^(salt|black pepper|water)$/i.test(p.name));
+    const req = r.pantry.filter((p) => !ASSUMED.test(p.name));
     const got = req.filter((p) => have(pantryKey(p.name)));
     return { r, n: req.length, got: got.length, miss: req.filter((p) => !have(pantryKey(p.name))).map((p) => p.name) };
   }).sort((a, b) => b.got / b.n - a.got / a.n);
   const tracked = Object.values(state.pantry).some((p) => p.level);
+  const ready = rows.filter((x) => x.n && x.got === x.n).length;
   openSheet(`<h2>What can we make?</h2><p class="sub">${tracked ? 'Based on what\'s marked in Our Pantry (salt & pepper assumed).' : 'Mark what you have in the Pantry tab and this gets smart. For now, here\'s what each recipe needs.'}</p>
+    ${ready ? `<button class="nudge use cmready" id="cmReady"><span>${svg('check')}</span><span><b>${ready} ready right now</b> — everything's in the pantry. Show just those</span><span>${svg('chevR')}</span></button>` : ''}
     <div class="canmake">${rows.map((x) => `<a href="#/r/${x.r.id}" class="cm"><div class="cm-top"><b>${esc(x.r.title)}</b><span>${x.got}/${x.n}</span></div>
       <div class="cm-bar"><i style="width:${x.n ? (x.got / x.n) * 100 : 0}%"></i></div>
       <div class="small muted">${x.miss.length ? 'Need: ' + esc(x.miss.slice(0, 6).join(', ')) + (x.miss.length > 6 ? ` +${x.miss.length - 6} more` : '') : 'You have everything ♥'}</div></a>`).join('')}</div>
-    <div class="foot"><button class="btn" data-close>Close</button><a class="btn primary" href="#/pantry">Open pantry</a></div>`);
+    <div class="foot"><button class="btn" data-close>Close</button><a class="btn primary" href="#/pantry">Open pantry</a></div>`, (b) => {
+    $('#cmReady', b) && ($('#cmReady', b).onclick = () => { ui.filters = { ...ui.filters, ready: ['now'] }; closeSheet(); viewHome(); });
+  });
 }
 function lastMonthKey() { return monthKey(new Date(new Date().getFullYear(), new Date().getMonth() - 1, 1)); }
 function openFilters() {
   const draft = JSON.parse(JSON.stringify(ui.filters));
   const draw = (b) => {
     const count = visibleRecipes().filter((r) => { const save = ui.filters; ui.filters = draft; const ok = matchesFilters(r); ui.filters = save; return ok; }).length;
+    const readyN = visibleRecipes().filter(canMakeNow).length;
     b.innerHTML = `<h2>Filters</h2><p class="sub">Pick any — within a group it's "either", across groups it's "and". Only filters that match a recipe are shown; more appear as recipes are added.</p>
+      <div class="fgroup"><h4>Our pantry</h4><div class="chips"><button class="chip ${(draft.ready || []).includes('now') ? 'on' : ''}" data-k="ready" data-v="now">Ready to make now · ${readyN}</button></div></div>
       ${FILTERS.map((g) => ({ ...g, opts: g.opts.filter((o) => (draft[g.key] || []).includes(o[0]) || visibleRecipes().some((r) => ((r.tags || {})[g.key] || []).includes(o[0]))) })).filter((g) => g.opts.length).map((g) => `<div class="fgroup"><h4>${g.label}</h4><div class="chips">${g.opts.map((o) => `<button class="chip ${(draft[g.key] || []).includes(o[0]) ? 'on' : ''}" data-k="${g.key}" data-v="${esc(o[0])}">${esc(o[1])}${o[2] ? ` <small>${esc(o[2])}</small>` : ''}</button>`).join('')}</div></div>`).join('')}
       <div class="foot"><button class="btn" id="fClear">Clear</button><button class="btn primary" id="fApply">Show ${count} recipe${count === 1 ? '' : 's'}</button></div>`;
     $$('.chip', b).forEach((c) => (c.onclick = () => {
@@ -493,7 +512,7 @@ async function viewRecipe(id) {
   const guests = state.guests[id];
   const love = state.loveNotes[id];
   const story = state.stories[id] != null ? state.stories[id] : r.story;
-  const subBtn = (it) => { const k = it.pantry ? pantryKey(it.pantry.name) : null; return k && SUBS[k] ? `<button class="subbtn" data-sub="1" aria-label="Swap ideas for ${esc(it.name)}">${svg('swap')}</button>` : ''; };
+  const subBtn = (it) => { return subFor(it) ? `<button class="subbtn" data-sub="1" aria-label="Swap ideas for ${esc(it.name)}">${svg('swap')}</button>` : ''; };
   const lastReact = cooked.find((c) => c.reactions && Object.keys(c.reactions).length);
   const units = state.settings.units || 'both';
   const planned = !!(tonightPlan() && tonightPlan().recipeId === id); const first = cooked[cooked.length - 1]; const hs = heartsScore(id); const lw = favWho(id); const pend = pendingTaste(id);
@@ -545,6 +564,7 @@ async function viewRecipe(id) {
       ${r.saleTip ? `<div class="mini wide" style="background:var(--tile3)"><h3>SALE TIP · NO FRILLS</h3><p>${esc(r.saleTip)}</p></div>` : ''}
     </div>
     ${r.source ? `<p class="small muted" style="margin-top:10px;font-style:italic">${esc(r.source)}</p>` : ''}
+    <details class="card fix pupcard"><summary>${PAW('sm')}Acura's share</summary><div id="pupBox">${ACURA ? pupShareHTML(r, ACURA) : ''}</div></details>
 
     <div class="sec money">
       <div class="top"><span>About ${money(cost)} total</span><span>~${money(per, true)} a portion</span></div>
@@ -558,8 +578,10 @@ async function viewRecipe(id) {
       <div class="card ours">
         <div class="rate-row"><span class="small muted">Our rating</span><div class="rate" id="rate">${[1, 2, 3, 4, 5].map((n) => `<button data-r="${n}" class="${(state.ratings[id] || 0) >= n ? 'on' : ''}" aria-label="${n} of 5">${svg('heart')}</button>`).join('')}</div></div>
         <div class="rate-row"><span class="small muted">Who loves it</span><div class="loves">${['Corey', 'Faith'].map((n) => `<button data-love="${n}" class="${lw[n] ? 'on' : ''}" aria-label="${n} loves it" aria-pressed="${!!lw[n]}">${hat(n, 20)}<span>${n}</span></button>`).join('')}</div></div>
+        ${cooked.length ? `<div class="rate-row"><span class="small muted">Rate together</span><button class="linkbtn" id="srBtn">${svg('eyeoff')}In secret, then reveal</button></div>` : ''}
         ${hs ? `<div class="rate-row together"><span class="small muted">Rated together</span><span class="tscore"><b>${r1(hs.score)}</b>${svg('heart')}<small>${hs.corey != null ? 'Corey ' + r1(hs.corey) : ''}${hs.corey != null && hs.faith != null ? ' · ' : ''}${hs.faith != null ? 'Faith ' + r1(hs.faith) : ''}</small></span></div>` : ''}
-        <textarea id="noteTx" class="notes" placeholder="e.g. Extra cheddar next time. Faith likes it thicker.">${esc(state.notes[id] || '')}</textarea>
+        <textarea id="noteTx" class="notes" placeholder="Our tweaks — e.g. extra cheddar next time, Faith likes it thicker, 2 min less in the air fryer.">${esc(state.notes[id] || '')}</textarea>
+        <div class="notemeta small muted" id="noteMeta">${noteMetaLine(id)}</div>
         <button class="linkbtn lovebtn" id="loveBtn">${svg('heart')}${love ? 'Edit the love note' : 'Leave a love note'}</button>
         <div class="small muted" style="margin:12px 0 6px">Photo memories</div>
         <div class="photos">${(state.photos[id] || []).map((ph) => `<button class="ph" data-ph="${ph.id}"><img src="${ph.data}" alt="Our photo from ${esc(ph.date)}">${stampHTML(ph, true)}<span>${esc(shortDate(ph.date))}</span></button>`).join('')}
@@ -600,8 +622,13 @@ async function viewRecipe(id) {
   $('#cookedBtn').onclick = () => openCooked(r, s, cost);
   $('#shareBtn').onclick = () => openShare(r, s, f, sv);
   $$('#rate button').forEach((b) => (b.onclick = () => { const n = +b.dataset.r; state.ratings[id] = state.ratings[id] === n ? 0 : n; save(); $$('#rate button').forEach((x) => x.classList.toggle('on', +x.dataset.r <= state.ratings[id])); if (state.ratings[id]) heartBurst(b); }));
-  let nt; $('#noteTx').oninput = (e) => { clearTimeout(nt); nt = setTimeout(() => { const v = e.target.value.trim(); if (v) state.notes[id] = v; else delete state.notes[id]; save(); }, 400); };
+  let nt; $('#noteTx').oninput = (e) => { clearTimeout(nt); nt = setTimeout(() => {
+    const v = e.target.value.trim(); if (v) { state.notes[id] = v; state.noteMeta[id] = { by: state.profile.me || null, at: now() }; } else { delete state.notes[id]; delete state.noteMeta[id]; }
+    save(); $('#noteMeta').innerHTML = noteMetaLine(id);
+  }, 400); };
   $('#phIn').onchange = (e) => addPhoto(id, e.target.files[0]);
+  $('#srBtn') && ($('#srBtn').onclick = () => openSecretRate(id));
+  loadAcura().then((D) => { const box = $('#pupBox'); if (D && box && location.hash === '#/r/' + id) box.innerHTML = pupShareHTML(r, D); });
   $$('[data-ph]').forEach((b) => (b.onclick = () => viewPhoto(id, b.dataset.ph)));
   bindRecipeExtras(r, s, id, f, cost);
 }
@@ -917,7 +944,7 @@ function viewSettings() {
       <div class="setrow"><span class="l"><b>Monthly target</b><span>Dinner spending range</span></span><span style="display:flex;gap:6px;align-items:center"><input class="numin" id="bLo" type="number" inputmode="numeric" value="${st.budgetMin}"> – <input class="numin" id="bHi" type="number" inputmode="numeric" value="${st.budgetMax}"></span></div>
       <div class="setrow"><span class="l"><b>Takeout for two</b><span>For the “saved vs takeout” stat</span></span><input class="numin" id="tko" type="number" inputmode="numeric" value="${st.takeoutCost}"></div>
       <label class="setrow"><span class="l"><b>Restock staples</b><span>Marking something “Out” in the Pantry adds it to the grocery list</span></span><span class="switch"><input type="checkbox" id="rsT" ${st.autoRestock !== false ? 'checked' : ''}><i></i></span></label>
-      ${Object.keys(state.prices).length ? `<div class="setrow"><span class="l"><b>Prices from receipts</b><span>${Object.keys(state.prices).length} remembered — used for cost estimates</span></span><button class="btn sm ghost" id="clrPrices">Forget</button></div>` : ''}
+      ${Object.keys(state.prices).length ? `<div class="setrow"><span class="l"><b>Prices from receipts</b><span>${Object.keys(state.prices).length} remembered — used for cost estimates</span></span><span class="btnpair"><button class="btn sm ghost" id="seePrices">See</button><button class="btn sm ghost" id="clrPrices">Forget</button></span></div>` : ''}
     </div>
     <div class="setgroup"><div class="sec-title">Our own recipes</div>
       ${custom.length ? custom.map((r) => `<div class="setrow"><span class="l"><b>${esc(r.title)}</b><span>${esc(catOf(r.category).name)} ${pad2(r.num)}</span></span><a class="btn sm ghost" href="#/r/${r.id}">Open</a></div>`).join('') : '<p class="small muted">Recipes you add yourself show up here and in the book.</p>'}
@@ -944,6 +971,7 @@ function viewSettings() {
   $('#rsT').onchange = (e) => { st.autoRestock = e.target.checked; save(); };
   $$('#unitSeg button').forEach((b) => (b.onclick = () => { st.units = b.dataset.u; save(); viewSettings(); }));
   $$('#tempSeg button').forEach((b) => (b.onclick = () => { st.temp = b.dataset.tp; save(); viewSettings(); }));
+  $('#seePrices') && ($('#seePrices').onclick = openPriceList);
   $('#clrPrices') && ($('#clrPrices').onclick = () => withUndo('Receipt prices forgotten', () => { state.prices = {}; }, viewSettings));
   $('#showWN').onclick = openWhatsNew;
   bindSettingsExtras();
@@ -1383,14 +1411,26 @@ function pickCards(list) { return list.length ? `<div class="rlist">${list.map(r
 const withTag = (html, tag) => html.replace(/<\/a>$/, `<span class="usetag">${esc(tag)}</span></a>`);
 function openIdeas(tab) {
   const recipes = visibleRecipes();
-  let cur = tab || 'mood'; let mood = ui.mood || 'cozy';
+  let cur = tab || 'surprise'; let mood = ui.mood || 'cozy';
+  const lim = ui.surprise || (ui.surprise = { time: 0, price: '', mood: '' }); let pickId = null;
+  const surpriseHTML = () => {
+    const pool = surprisePool(recipes, lim); const r = pool.find((x) => x.id === pickId) || null;
+    const seg = (key, opts) => `<div class="segtext lim" style="grid-template-columns:repeat(${opts.length},1fr)">${opts.map(([v, l]) => `<button data-lim="${key}" data-v="${v}" class="${String(lim[key]) === String(v) ? 'on' : ''}">${l}</button>`).join('')}</div>`;
+    return `<div class="limits"><label>Time</label>${seg('time', [[0, 'Any'], [30, '30 min'], [45, '45 min'], [60, '1 hr']])}
+      <label>Budget</label>${seg('price', [['', 'Any'], ['$', '$'], ['$$', '$$'], ['$$$', '$$$']])}
+      <label>Mood</label>${seg('mood', [['', 'Any'], ['cozy', 'Cozy'], ['easy', 'Easy'], ['fancy', 'Fancy'], ['takeout', 'Takeout']])}</div>
+      <div class="surprise">${r ? `${withTag(rcard(r), 'your surprise')}<div class="btnrow"><button class="btn ghost" id="supAgain">${svg('dice')}Another</button><button class="btn gold" id="supPlan">${svg('clock')}Make it tonight</button></div>`
+        : `<button class="btn gold block" id="supGo" ${pool.length ? '' : 'disabled style="opacity:.4"'}>${svg('dice')}${pool.length ? `Surprise me · ${pool.length} match${pool.length === 1 ? '' : 'es'}` : 'Nothing fits — loosen a limit'}</button>`}</div>`;
+  };
   const bodyHTML = () => {
-    const w = wxFresh(); const u = useItUp(recipes); const lt = longTimeFavs(recipes);
-    const tabs = [['mood', 'Mood'], ['use', 'Use it up'], ['while', 'A while'], ...(w ? [['wx', 'Weather']] : []), ['wish', 'Wish list']];
+    const w = wxFresh(); const fc = fridgeClear(recipes); const u = fc.u; const lt = longTimeFavs(recipes);
+    const tabs = [['surprise', 'Surprise me'], ['mood', 'Mood'], ['use', 'Fridge clear'], ['season', 'In season'], ['while', 'A while'], ...(w ? [['wx', 'Weather']] : []), ['wish', 'Wish list']];
     let body = '';
-    if (cur === 'mood') body = `<div class="mood">${[['cozy', 'Cozy'], ['quick', 'Quick'], ['fancy', 'Fancy'], ['cheap', 'Cheap']].map(([k, l]) => `<button data-mood="${k}" class="${mood === k ? 'on' : ''}">${l}</button>`).join('')}</div>${pickCards(moodPicks(recipes, mood))}`;
-    else if (cur === 'use') body = u.items.length ? `<p class="sub">${esc(u.items.slice(0, 5).map((x) => x.p.name + (x.d != null ? (x.d === 0 ? ' (today)' : ` (${x.d} day${x.d === 1 ? '' : 's'})`) : ' (low)')).join(' · '))}</p>${u.picks.length ? `<div class="rlist">${u.picks.map((x) => withTag(rcard(x.r), 'uses ' + x.uses.slice(0, 2).join(', '))).join('')}</div>` : '<div class="empty">None of our recipes use those — maybe a wish-list idea?</div>'}`
-      : '<div class="empty">Add use-by dates in the Pantry (tap an item\'s name) or mark things “Low”, and this suggests meals that use them up.</div>';
+    if (cur === 'surprise') body = surpriseHTML();
+    else if (cur === 'season') { const sp = seasonPicks(recipes); body = `<p class="sub">Local in Ontario this ${esc(new Date().toLocaleDateString('en-CA', { month: 'long' }))} — usually fresher and cheaper at No Frills:</p><div class="clues season">${sp.items.map((x) => `<span>${esc(x)}</span>`).join('')}</div>${sp.picks.length ? `<div class="rlist" style="margin-top:12px">${sp.picks.map((x) => withTag(rcard(x.r), 'uses ' + x.uses.slice(0, 2).join(', '))).join('')}</div>` : ''}`; }
+    else if (cur === 'mood') body = `<div class="mood">${[['cozy', 'Cozy'], ['quick', 'Quick'], ['fancy', 'Fancy'], ['cheap', 'Cheap']].map(([k, l]) => `<button data-mood="${k}" class="${mood === k ? 'on' : ''}">${l}</button>`).join('')}</div>${pickCards(moodPicks(recipes, mood))}`;
+    else if (cur === 'use') body = (isFriday() ? '<p class="fridayk">Fridge-clear Friday ♥</p>' : '') + (fc.lefts.length ? `<p class="sub"><b>Eat first:</b> ${esc(fc.lefts.map((l) => `${l.title} (${l.portions} left)`).join(' · '))}</p>` : '') + (u.items.length ? `<p class="sub">${esc(u.items.slice(0, 5).map((x) => x.p.name + (x.d != null ? (x.d === 0 ? ' (today)' : ` (${x.d} day${x.d === 1 ? '' : 's'})`) : ' (low)')).join(' · '))}</p>${u.picks.length ? `<div class="rlist">${u.picks.map((x) => withTag(rcard(x.r), 'uses ' + x.uses.slice(0, 2).join(', '))).join('')}</div>` : '<div class="empty">None of our recipes use those — maybe a wish-list idea?</div>'}`
+      : fc.lefts.length ? '' : '<div class="empty">Add use-by dates in the Pantry (tap an item\'s name) or mark things “Low”, and this suggests meals that use them up.</div>');
     else if (cur === 'while') body = lt.length ? `<div class="rlist">${lt.slice(0, 5).map((x) => withTag(rcard(x.r), x.days == null ? 'not cooked yet' : x.days + ' days ago')).join('')}</div>` : '<div class="empty">Favourites you haven\'t made in two weeks or more show up here.</div>';
     else if (cur === 'wx' && w) body = `<p class="sub">London, ON · ${wxTemp(w.t)} · ${esc(wxWords(w.code))} — ${esc(wxMood(w).line)}.</p>${pickCards(weatherPicks(recipes))}`;
     else if (cur === 'wish') body = wishHTML();
@@ -1402,6 +1442,10 @@ function openIdeas(tab) {
     const box = $('.ideas', b); box.innerHTML = bodyHTML().body; markLoaded(box);
     $$('[data-tab]', b).forEach((c) => c.classList.toggle('on', c.dataset.tab === cur));
     $$('[data-mood]', box).forEach((c) => (c.onclick = () => { mood = ui.mood = c.dataset.mood; fill(b); }));
+    $$('[data-lim]', box).forEach((c) => (c.onclick = () => { const k = c.dataset.lim; lim[k] = k === 'time' ? +c.dataset.v : c.dataset.v; pickId = null; fill(b); }));
+    const spin = () => { const pool = surprisePool(recipes, lim).filter((x) => x.id !== pickId); const all = pool.length ? pool : surprisePool(recipes, lim); pickId = all.length ? all[Math.floor(Math.random() * all.length)].id : null; fill(b); };
+    $('#supGo', box) && ($('#supGo', box).onclick = spin); $('#supAgain', box) && ($('#supAgain', box).onclick = spin);
+    $('#supPlan', box) && ($('#supPlan', box).onclick = () => { const id = pickId; closeSheet(); setTonight(id); });
     if (cur === 'wish') bindWish(box, () => fill(b));
   };
   const draw = (b) => {
@@ -1492,6 +1536,7 @@ function viewStory() {
   const photoFor = (c) => (state.photos[c.recipeId] || []).filter((p) => p.date === c.date);
   render(`<div class="wrap"><div class="kicker">Corey ♥ Faith<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Our story</h1>
     <p class="lead" style="margin-top:4px">Every dinner we've made together, newest first.</p>
+    ${all.length ? `<a class="nudge ks" href="#/keepsake"><span>${svg('print')}</span><span><b>Our cookbook keepsake</b> — every recipe we've cooked, with photos and love stamps, ready to print or save as a PDF.</span><span>${svg('chevR')}</span></a>` : ''}
     ${months.length ? months.map((m) => { const rc = monthRecap(m.k); return `<div class="sec"><div class="sec-title">${esc(monthName(m.k))}</div>${rc && m.k !== monthKey() ? recapCard(rc) : ''}
       <ul class="timeline">${m.items.map((c) => { const ph = photoFor(c); return `<li><span class="dot"></span><div class="tl-body"><div class="tl-d">${esc(shortDate(c.date))}${c.by ? ' · ' + esc(c.by === 'Both' ? 'cooked together' : c.by + ' cooked') : ''}</div>
         <div class="tl-t">${c.recipeId !== 'other' && summary(c.recipeId) ? `<a href="#/r/${c.recipeId}">${esc(c.title)}</a>` : esc(c.title)}</div>
@@ -1582,9 +1627,9 @@ function openStory(id, r) {
   });
 }
 function openSub(it) {
-  const k = it.pantry ? pantryKey(it.pantry.name) : pantryKey(it.name);
   openSheet(`<h2>Swap for ${esc(it.name)}</h2><p class="sub">If you're out, or want to change it up:</p>
-    <div class="card subcard" style="margin-top:12px"><p>${tx(SUBS[k] || 'No swap saved for this one.')}</p></div>
+    <div class="card subcard" style="margin-top:12px"><p>${tx(subFor(it) || 'No swap saved for this one.')}</p></div>
+    <p class="small muted" style="margin-top:8px">Swaps keep to our rules: mild, dried herbs, no mustard, olives or mushrooms.</p>
     <div class="foot"><button class="btn primary" data-close>Got it</button></div>`);
 }
 function printRecipe() {
@@ -1695,32 +1740,34 @@ function openReceiptReview(parsed) {
   Object.values(state.grocery).forEach((g) => { if (!catMap[g.key]) catMap[g.key] = { key: g.key, name: g.name, cat: g.cat, recipes: [] }; });
   const catalog = Object.values(catMap).sort((a, b) => a.name.localeCompare(b.name));
   const rows = parsed.items.map((it) => ({ ...it, key: matchReceiptName(it.name, catalog), on: true }));
+  const jumpNote = (r) => { const prev = r.on && priceJump(r.key, r.price); return prev ? `Up from ${money(prev.price, true)} last time` : ''; };
   const opts = (sel) => `<option value="">— not in our pantry —</option>${catalog.map((c) => `<option value="${esc(c.key)}" ${c.key === sel ? 'selected' : ''}>${esc(c.name)}</option>`).join('')}`;
   openSheet(`<h2>Check the receipt</h2><p class="sub">Fix anything the reader got wrong. Untick lines to skip them. ${rows.filter((r) => r.key).length} of ${rows.length} matched.</p>
     <div class="rclist">${rows.map((r, i) => `<div class="rcrow ${r.on ? '' : 'off'}"><label class="rcck"><input type="checkbox" ${r.on ? 'checked' : ''} data-on="${i}" aria-label="Include"></label>
       <div class="rcmain"><input class="rcname" data-name="${i}" value="${esc(r.name)}" aria-label="Item"><select data-key="${i}" aria-label="Matches">${opts(r.key)}</select></div>
-      <input class="numin rcprice" data-price="${i}" type="number" inputmode="decimal" step="0.01" value="${r.price.toFixed(2)}" aria-label="Price"></div>`).join('')}</div>
+      <input class="numin rcprice" data-price="${i}" type="number" inputmode="decimal" step="0.01" value="${r.price.toFixed(2)}" aria-label="Price"><span class="rcjump" data-jump="${i}">${jumpNote(r)}</span></div>`).join('')}</div>
     <div class="setrow"><span class="l"><b>Receipt total</b><span>From the TOTAL line</span></span><input class="numin" id="rcTotal" type="number" inputmode="decimal" step="0.01" style="width:96px" value="${parsed.total != null ? parsed.total.toFixed(2) : ''}"></div>
     <label class="setrow"><span class="l"><b>Add the total to the budget</b><span>As “Grocery receipt” today</span></span><span class="switch"><input type="checkbox" id="rcBud" checked><i></i></span></label>
     <p class="small muted" style="margin-top:8px">Saving marks matched items “Have lots” in the Pantry, ticks them off the grocery list and remembers the prices for cost estimates.</p>
     <div class="foot"><button class="btn" data-close>Cancel</button><button class="btn gold" id="rcSave">Save receipt</button></div>`, (b) => {
     $$('[data-on]', b).forEach((x) => (x.onchange = () => { rows[x.dataset.on].on = x.checked; x.closest('.rcrow').classList.toggle('off', !x.checked); }));
-    $$('[data-key]', b).forEach((x) => (x.onchange = () => { rows[x.dataset.key].key = x.value || null; }));
+    const flag = (i) => { $(`[data-jump="${i}"]`, b).textContent = jumpNote(rows[i]); };
+    $$('[data-key]', b).forEach((x) => (x.onchange = () => { rows[x.dataset.key].key = x.value || null; flag(x.dataset.key); }));
     $$('[data-name]', b).forEach((x) => (x.oninput = () => { rows[x.dataset.name].name = x.value; }));
-    $$('[data-price]', b).forEach((x) => (x.oninput = () => { rows[x.dataset.price].price = parseFloat(x.value) || 0; }));
+    $$('[data-price]', b).forEach((x) => (x.oninput = () => { rows[x.dataset.price].price = parseFloat(x.value) || 0; flag(x.dataset.price); }));
     $('#rcSave', b).onclick = () => {
       const snap = JSON.stringify(state);
-      let stocked = 0, ticked = 0, priced = 0;
+      let stocked = 0, ticked = 0, priced = 0, jumped = 0;
       rows.filter((r) => r.on && r.key).forEach((r) => {
         const c = catMap[r.key];
         state.pantry[r.key] = { ...(state.pantry[r.key] || { name: c.name, cat: c.cat }), level: 'lots', at: now() }; stocked++;
         Object.values(state.grocery).forEach((g) => { if (g.key === r.key && !g.checked) { g.checked = true; g.at = now(); g.checkedAt = now(); g.checkedBy = state.profile.me; ticked++; } });
-        if (r.price > 0) { state.prices[r.key] = { price: Math.round(r.price * 100) / 100, at: now(), date: todayISO(), src: 'receipt', name: r.name }; priced++; }
+        if (r.price > 0) { const pr = Math.round(r.price * 100) / 100; if (priceJump(r.key, pr)) jumped++; logPrice(r.key, pr, r.name); state.prices[r.key] = { price: pr, at: now(), date: todayISO(), src: 'receipt', name: r.name }; priced++; }
       });
       const tot = parseFloat($('#rcTotal', b).value);
       if ($('#rcBud', b).checked && tot > 0) { const id = uid(); state.cooked[id] = { id, recipeId: 'receipt', title: 'Grocery receipt', date: todayISO(), amount: Math.round(tot * 100) / 100, estimate: false, by: state.profile.me, at: now(), receipt: true, lines: rows.filter((r) => r.on).length }; }
       save(); closeSheet(); router();
-      toast(`Saved · ${stocked} stocked · ${ticked} ticked off · ${priced} prices`, 'Undo', () => { state = JSON.parse(snap); save(); router(); });
+      toast(`Saved · ${stocked} stocked · ${ticked} ticked off · ${priced} prices${jumped ? ` · ${jumped} went up` : ''}`, 'Undo', () => { state = JSON.parse(snap); save(); router(); });
     };
   });
 }
@@ -1802,10 +1849,11 @@ function openCook(r, s, f) {
       ${sess.dishes.length > 1 ? `<div class="dishes">${sess.dishes.map((x, k) => `<button data-dish="${k}" class="${k === sess.cur ? 'on' : ''}">${esc(short(x.r.title))}<small>${x.done ? 'done ✓' : 'step ' + (x.i + 1) + '/' + x.r.steps.length}</small></button>`).join('')}</div>` : ''}
       ${alignHTML(sess)}
       <div class="prog">${rr.steps.map((_, k) => `<i class="${k <= d.i ? 'on' : ''}"></i>`).join('')}</div>
-      <div class="cbody" id="cBody">${sess.showIngs ? `<div class="k">INGREDIENTS · ${esc(rr.title.toUpperCase())}</div><div class="ings">${rr.groups.map((g) => (g.name ? `<div class="k" style="margin-top:12px">${esc(g.name.toUpperCase())}</div>` : '') + g.items.map((it) => `<div>• ${ingLine(it, d.f, false)}</div>`).join('')).join('')}</div>`
-        : `<div class="k">${esc(rr.title.toUpperCase())}</div><h2>${esc(st.title)}</h2>${uses.length ? `<div class="cuses">${(st.uses || []).map((ref) => { const t = stepUses(rr, { uses: [ref] }, d.f)[0]; return t ? `<button class="use ${ui.used && ui.used[d.s.id] && ui.used[d.s.id][ref] ? 'on' : ''}" data-use="${esc(ref)}">${esc(t)}</button>` : ''; }).join('')}</div>` : ''}<p>${tx(st.text)}</p>
+      <div class="cbody" id="cBody">${sess.showIngs ? `<div class="k">INGREDIENTS · ${esc(rr.title.toUpperCase())}</div><div class="ings">${rr.groups.map((g) => (g.name ? `<div class="k" style="margin-top:12px">${esc(g.name.toUpperCase())}</div>` : '') + g.items.map((it) => `<div>• ${ingLine(it, d.f, false)}</div>`).join('')).join('')}</div>${state.notes[d.s.id] ? `<div class="k" style="margin-top:16px">OUR NOTES</div><p class="cnotes">${esc(state.notes[d.s.id])}</p>` : ''}`
+        : `<div class="k">${esc(rr.title.toUpperCase())}</div><h2>${esc(st.title)}</h2>${d.i === 0 && state.notes[d.s.id] ? `<p class="cnotes">${svg('edit')}${esc(state.notes[d.s.id])}</p>` : ''}${uses.length ? `<div class="cuses">${(st.uses || []).map((ref) => { const t = stepUses(rr, { uses: [ref] }, d.f)[0]; return t ? `<button class="use ${ui.used && ui.used[d.s.id] && ui.used[d.s.id][ref] ? 'on' : ''}" data-use="${esc(ref)}">${esc(t)}</button>` : ''; }).join('')}</div>` : ''}<p>${tx(st.text)}</p>
         ${st.timer ? `<button class="timer ${myT ? 'run' : ''}" id="cTimer">${svg('timer')}<span id="cTimerTxt" ${myT ? `data-tleft="${myT.id}"` : ''}>${myT ? fmtSec(myT.left) : 'Start ' + st.timer + ' min timer'}</span></button>` : ''}`}
         ${sess.hands ? `<p class="handshint">${sess.rec ? 'Listening — say “next”, “back” or “repeat”. ' : ''}Tap anywhere on the right for next, the left for back.</p>` : ''}</div>
+      ${!sess.showIngs && !last ? `<div class="cnext"><span>NEXT</span><b>${esc(rr.steps[d.i + 1].title)}</b> — ${esc(rr.steps[d.i + 1].text.split(/(?<=\.)\s/)[0])}</div>` : ''}
       ${others.length ? `<div class="ttray">${others.map((t) => `<button data-tgo="${t.id}"><b data-tleft="${t.id}">${fmtSec(t.left)}</b><span>${t.label ? esc(short(t.label)) : esc(short(t.dish)) + ' · step ' + (t.step + 1)}</span></button>`).join('')}</div>` : ''}
       <div class="cnav"><button class="btn" id="cPrev" ${d.i === 0 ? 'disabled style="opacity:.35"' : ''}>Back</button><button class="btn gold" id="cNext">${last ? (more ? 'Next dish' : 'Done ♥') : 'Next step'}</button></div>
       <div class="cfoot">${sess.dishes.length < 2 ? '<button class="linkbtn" id="cAdd">+ Cook a second dish</button>' : ''}<span class="awake">${wakeLock ? 'Screen will stay awake while cooking' : ''}</span></div>`;
@@ -2272,7 +2320,7 @@ function tonightCard(t) {
       <div class="pc-body"><div class="t">${esc(s.title)}</div><div class="m">${when}</div></div></a>
     ${done ? `<div class="btnrow"><button class="btn ghost" id="tnDish">${svg('coin')}Who's on dishes?</button><button class="btn ghost" id="tnClear">Clear plan</button></div>`
       : `<div class="btnrow"><button class="btn ghost" id="tnTime">${svg('clock')}${fmtTime(eat)}</button><button class="btn gold" id="tnCook">${svg('play')}Start cooking</button></div>
-      <button class="linkbtn" id="tnChange" style="display:block;margin:6px auto 0">Change tonight's plan</button>`}</div>`;
+      <div class="tnlinks"><button class="linkbtn" id="tnPrep">${svg('thaw')}Prep ahead</button><button class="linkbtn" id="tnChange">Change tonight's plan</button></div>`}</div>`;
 }
 
 // ---------------------------------------------------------------- spin the wheel (#18)
@@ -2397,7 +2445,7 @@ function swapHomeBody(html) {
 }
 function viewHome(partial) {
   partial = partial === true && !!$('#homeBody') && !!$('#q');
-  if (!partial) { setTop({ title: 'OUR KITCHEN' }); HOME_CARDS.clear(); }
+  if (!partial) { setTop({ title: 'OUR KITCHEN' }); HOME_CARDS.clear(); syncPlanToTonight(); }
   const recipes = visibleRecipes();
   ui.pick = ui.pick && recipes.find((r) => r.id === ui.pick) ? ui.pick : seasonalPick(recipes);
   const searching = ui.q || filterCount();
@@ -2426,8 +2474,11 @@ function viewHome(partial) {
     const fb = !state.flashSeen[todayISO()] ? flashback() : null;
     const an = annivSoon(); const showAn = an && !state.annivSeen[an.key];
     const ny = yearInReviewDue();
+    const wn = !plan ? weatherNudge(recipes) : null;
+    const fcl = isFriday() ? fridgeClear(recipes) : null;
+    const tmr = plannedFor(isoPlus(1)); const thaw = tmr ? thawLine(summary(tmr)) : '';
     body = `
-      ${whatsNewCard()}${backupCard()}
+      ${thanksCard()}${whatsNewCard()}${backupCard()}
       ${showAn ? `<div class="annv"><div class="fk">${an.days === 1 ? 'TOMORROW' : `IN ${an.days} DAYS`} · ${an.yrs}-YEAR ANNIVERSARY<button class="x" id="anX" aria-label="Dismiss">×</button></div><p>${an.sug ? `How about <b>${esc(an.sug.title)}</b> — ${esc(an.sigWhy)}?` : 'Plan something special to cook together.'}</p>${an.sug ? `<div class="btnrow" style="margin-top:10px"><a class="btn sm ghost" href="#/r/${an.sug.id}">Open recipe</a><button class="btn sm gold" id="anPlan">Plan date night</button></div>` : ''}</div>` : ''}
       ${rc ? recapCard(rc, true) : ''}
       ${ny ? `<a class="nudge yr" href="#/year/${ny}"><span>${svg('star')}</span><span style="flex:1"><b>Our ${ny} in review</b> — every dinner, favourite and first, in one place.</span><span>${svg('chevR')}</span></a>` : ''}
@@ -2436,7 +2487,10 @@ function viewHome(partial) {
           <div class="pc-body"><div class="t">${esc(pk.title)}</div><div class="m">${pk.price} · ${pk.total} min · ~${money(pk.cost)} · start by ${fmtTime(startTime(pk, null))}</div></div></a>
         <div class="pick-q"><span>${esc(turn)}'s pick tonight — sound good?</span><button class="turnbtn" id="turnBtn" aria-label="Switch whose turn">${svg('swap')}</button></div>
         <div class="btnrow"><button class="btn ghost" id="pickNo">${svg('thumbDown')}Not tonight</button><button class="btn gold" id="pickYes">${svg('thumbUp')}Let's make it</button></div></div>` : ''}
-      <div class="quick"><button class="btn ghost" id="randBtn">${svg('dice')}Spin the wheel</button><button class="btn ghost" id="canMake">${svg('pantry')}What can we make?</button><button class="btn ghost wide" id="ideasBtn">${svg('star')}More ideas<small>mood · use it up · weather · wish list</small></button></div>
+      <div class="quick"><button class="btn ghost" id="randBtn">${svg('dice')}Spin the wheel</button><button class="btn ghost" id="canMake">${svg('pantry')}What can we make?</button><button class="btn ghost wide" id="ideasBtn">${svg('star')}More ideas<small>surprise me · mood · fridge clear · in season</small></button></div>
+      ${tmr && thaw ? `<button class="nudge prep" id="prepNudge"><span>${svg('thaw')}</span><span><b>Tomorrow: ${esc(summary(tmr).title)}</b> — ${esc(thaw)}.</span><span>${svg('chevR')}</span></button>` : ''}
+      ${wn ? `<a class="nudge wxn" href="#/r/${wn.r.id}"><span>${svg('snow')}</span><span>${esc(wn.line)} <b>${esc(wn.r.title)}</b></span><span>${svg('chevR')}</span></a>` : ''}
+      ${fcl && fcl.any ? `<button class="nudge use" id="fridayNudge"><span>${svg('pantry')}</span><span><b>Fridge-clear Friday:</b> ${esc([...fcl.lefts.map((l) => 'leftover ' + l.title), ...fcl.u.items.map((x) => x.p.name)].slice(0, 3).join(', '))}${fcl.u.picks.length ? ` — try ${esc(fcl.u.picks[0].r.title)}` : ''}.</span><span>${svg('chevR')}</span></button>` : ''}
       ${uu.soon.length && uu.picks.length ? `<a class="nudge use" href="#/r/${uu.picks[0].r.id}"><span>${svg('clock')}</span><span><b>Use it up:</b> ${esc(uu.soon[0].p.name)} ${uu.soon[0].d === 0 ? 'is due today' : uu.soon[0].d === 1 ? 'is due tomorrow' : `is due in ${uu.soon[0].d} days`} — try ${esc(uu.picks[0].r.title)}.</span></a>` : ''}
       ${lefts.length ? `<div class="sec"><div class="sec-title">In the fridge</div><ul class="cooked fridge">${lefts.map((l) => `<li><div><div class="t">${leftoverLine(l)}</div><div class="d">${l.portions} portion${l.portions === 1 ? '' : 's'} left</div></div><button class="btn sm ghost" data-ate="${l.id}">Ate one</button></li>`).join('')}</ul></div>` : ''}
       ${fb ? flashCard(fb, true) : ''}
@@ -2458,7 +2512,7 @@ function viewHome(partial) {
       <div class="sec guides"><h3>GUIDES</h3><div class="gl">
         <a href="#/guide"><span>°</span>Safe temps</a><a href="#/guide"><span>❄</span>Thawing</a>
         <a href="#/budget"><span>$</span>$350 month</a><a href="#/add"><span>+</span>Add a recipe</a><a href="#/story"><span>❦</span>Our story</a>
-        <a href="#/freezer"><span>❄</span>Freezer</a><a href="#/wish"><span>✧</span>Wish list</a><a href="#/scan"><span>▤</span>Scan receipt</a><a href="#/settings"><span>⚙</span>Settings</a></div></div>`;
+        <a href="#/freezer"><span>❄</span>Freezer</a><a href="#/places"><span>✦</span>Places we love</a><a href="#/wish"><span>✧</span>Wish list</a><a href="#/scan"><span>▤</span>Scan receipt</a><a href="#/settings"><span>⚙</span>Settings</a></div></div>`;
   }
   const fc = filterCount();
   const dn = dateNightInfo();
@@ -2488,6 +2542,9 @@ function viewHome(partial) {
   $('#pickYes') && ($('#pickYes').onclick = (e) => { const t = whoseTurn(); const pid = uid(); state.picks[pid] = { id: pid, recipeId: ui.pick, ok: true, date: todayISO(), by: t }; state.turn = other(t); heartBurst(e.currentTarget); setTonight(ui.pick, true); state.tonight.by = t; save(); redraw(); toast(`Tonight: ${summary(ui.pick).title} ♥`); });
   $('#turnBtn') && ($('#turnBtn').onclick = () => { state.turn = other(whoseTurn()); save(); redraw(); });
   $('#ideasBtn') && ($('#ideasBtn').onclick = () => openIdeas());
+  $('#prepNudge') && ($('#prepNudge').onclick = openPrepAhead);
+  $('#fridayNudge') && ($('#fridayNudge').onclick = () => openIdeas('use'));
+  $$('[data-tyseen]').forEach((b) => (b.onclick = () => { const t = state.thanks[b.dataset.tyseen]; if (t) t.seen = now(); save(); heartBurst(b); setTimeout(redraw, 450); }));
   $('#wnX') && ($('#wnX').onclick = $('#wnOk').onclick = () => { state.seenWhatsNew = WHATSNEW_ID; save(); redraw(); });
   $('#wnMore') && ($('#wnMore').onclick = () => { openWhatsNew(); });
   $('#bkNow') && ($('#bkNow').onclick = () => { exportBackup(); redraw(); });
@@ -2504,6 +2561,7 @@ function viewHome(partial) {
   });
   $('#tnCook') && ($('#tnCook').onclick = () => { ui.autoCook = tonightPlan().recipeId; go('#/r/' + ui.autoCook); });
   $('#tnTime') && ($('#tnTime').onclick = openEatAt);
+  $('#tnPrep') && ($('#tnPrep').onclick = openPrepAhead);
   $('#tnChange') && ($('#tnChange').onclick = () => { const prev = state.tonight; state.tonight = null; save(); redraw(); toast('Plan cleared — pick another', 'Undo', () => { state.tonight = prev; save(); redraw(); }); });
   $('#tnClear') && ($('#tnClear').onclick = () => { state.tonight = null; save(); redraw(); });
   $('#tnDish') && ($('#tnDish').onclick = openCoinFlip);
@@ -2653,6 +2711,7 @@ function openRecipeMore(r, s, id) {
       <button data-a="nick">${svg('edit')}<span>${state.nicknames[id] ? 'Change our nickname' : 'Give it our nickname'}</span></button>
       <button data-a="sig">${svg('star')}<span>${sig ? 'Remove as signature dish' : 'Make it our signature dish'}</span></button>
       <button data-a="taste">${svg('thumbUp')}<span>${pend ? 'Taste test is on — reveal' : 'Taste test: guess hit or miss'}</span></button>
+      ${cookedEntries(id).length ? `<button data-a="secret">${svg('eyeoff')}<span>Rate together in secret</span></button>` : ''}
       <button data-a="date">${svg('heart')}<span>Plan a date night with it</span></button>
       <button data-a="print">${svg('print')}<span>Print</span></button>
       <a href="#/add/${id}">${svg('edit')}<span>Edit recipe</span></a>
@@ -2663,6 +2722,7 @@ function openRecipeMore(r, s, id) {
       if (a === 'nick') openNickname(id, r);
       else if (a === 'sig') { closeSheet(); setSignature(id); rerenderRecipe(id); }
       else if (a === 'taste') openTasteTest(id);
+      else if (a === 'secret') openSecretRate(id);
       else if (a === 'date') openDateNight({ recipeId: id });
       else if (a === 'print') { closeSheet(); setTimeout(printRecipe, 300); }
       else if (a === 'export') { closeSheet(); exportRecipeFile(r); }
@@ -2699,6 +2759,7 @@ function afterCooked(id, first) {
   setTimeout(() => {
     if (first) toast('First time making it — a new memory ♥');
     else if (!hasPhotoToday && Math.random() < 0.5 && location.hash === '#/r/' + id) photoNudge(id);
+    else if (ACURA && RECIPE_CACHE[id] && pupShare(RECIPE_CACHE[id], ACURA).yes.length && Math.random() < 0.5) toast(`Acura's share: a little plain ${pupShare(RECIPE_CACHE[id], ACURA).yes[0][0].split(' (')[0].toLowerCase()} — before seasoning ♥`);
     else if (Math.random() < 0.6) toast(SWEET[Math.floor(Math.random() * SWEET.length)]);
   }, 2900);
   if (first && !hasPhotoToday) setTimeout(() => { if (location.hash === '#/r/' + id && $('#sheetWrap').hidden) photoNudge(id); }, 6200);
@@ -2745,7 +2806,8 @@ function bindRecipeExtras(r, s, id, f, cost) {
 }
 
 // ---------------------------------------------------------------- grocery in No Frills aisle order (#13), swipe rows (#28), date mode (#57)
-const AISLES = [['produce', 'Produce'], ['bakery', 'Bakery'], ['meat', 'Meat & Seafood'], ['dairy', 'Dairy & Eggs'], ['pantry', 'Pantry & Dry Goods'], ['canned', 'Canned'], ['spices', 'Spices'], ['frozen', 'Frozen'], ['other', 'Other']];
+// update 7: a typical No Frills walk — produce at the door, bakery, deli & meat along the back, dairy, frozen, then the centre aisles
+const AISLES = [['produce', 'Produce'], ['bakery', 'Bakery'], ['meat', 'Deli, Meat & Seafood'], ['dairy', 'Dairy & Eggs'], ['frozen', 'Frozen'], ['pantry', 'Pantry & Dry Goods'], ['canned', 'Canned'], ['spices', 'Spices'], ['other', 'Other']];
 const AISLE_NAME = Object.fromEntries(AISLES);
 function aisleOf(g) {
   if (g.aisle && AISLE_NAME[g.aisle]) return g.aisle;
@@ -2793,6 +2855,7 @@ function viewGrocery() {
     <p class="lead" style="margin-top:4px">${left ? `${left} thing${left === 1 ? '' : 's'} to grab` : items.length ? 'All done — nice.' : 'Empty for now.'}</p>
     ${gd ? dateModeCard(items) : (() => { const t = tripEstimate(); return t.n && t.priced ? `<div class="trip"><span>Estimated trip</span><b>~${money(t.total)}</b><small>${t.priced === t.n ? 'all' : t.priced + ' of ' + t.n} items priced · typical No Frills packs${Object.keys(state.prices).length ? ' + your receipts' : ''}</small></div>` : ''; })()}
     <div class="btnrow" style="margin-top:10px">${gd ? '' : `<button class="btn ghost" id="gdStart" ${left ? '' : 'disabled style="opacity:.4"'}>${svg('heart')}Shop together</button>`}<button class="btn ghost" id="scanG" ${gd ? 'style="grid-column:1/-1"' : ''}>${svg('camera')}Scan receipt</button></div>
+    ${gd ? '' : `<div class="btnrow" style="margin-top:8px"><button class="btn ghost" id="wkBtn">${svg('calendar')}Plan the week</button><button class="btn ghost" id="stBtn">${svg('plus')}Staples</button></div>`}
     <div class="addrow"><input id="gNew" placeholder="Add an item…" enterkeyhint="done" autocomplete="off"><button class="btn primary" id="gAdd" aria-label="Add">${svg('plus')}</button>
       <select id="gCat" aria-label="Aisle"><option value="">Aisle: auto</option>${AISLES.map(([k, n]) => `<option value="${k}">${esc(n)}</option>`).join('')}</select></div>
     ${items.length ? `<p class="small muted swhint">Swipe right to tick · left to delete${gd ? ' · tap the hat to say who grabs it' : ''}</p>` : ''}
@@ -2813,6 +2876,8 @@ function viewGrocery() {
     save(); redraw(); $('#gNew').focus();
   };
   $('#gAdd').onclick = add; $('#gNew').onkeydown = (e) => { if (e.key === 'Enter') add(); };
+  $('#wkBtn') && ($('#wkBtn').onclick = openWeekPlan);
+  $('#stBtn') && ($('#stBtn').onclick = openStaples);
   const tick = (id, li) => {
     const g = state.grocery[id]; if (!g) return; g.checked = !g.checked; g.at = now();
     if (g.checked) { g.checkedAt = now(); g.checkedBy = state.profile.me || null; } else { delete g.checkedAt; delete g.checkedBy; }
@@ -2893,6 +2958,10 @@ const MILESTONES = [
   ['cats', 'Tried every category', (x) => x.allCats, 'star'], ['w3', '3-week cooking streak', (x) => x.bestStreak >= 3, 'flame'], ['w8', '8-week cooking streak', (x) => x.bestStreak >= 8, 'flame'],
   ['dn1', 'First date night in', (x) => x.dateNights >= 1, 'candle'], ['tt1', 'First taste test', (x) => x.taste >= 1, 'thumbUp'], ['cf3', '3 favourites you both love', (x) => x.coupleFavs >= 3, 'heart'],
   ['sig', 'Picked a signature dish', (x) => x.sig, 'star'], ['jar', 'Made a wish from the dessert jar', (x) => x.jarMade >= 1, 'jar'], ['ac1', "Acura's first batch of treats", (x) => x.acura >= 1, 'paw'],
+  // update 7
+  ['wk5', 'Planned five dinners ahead', (x) => x.planned >= 5, 'calendar'], ['ty1', 'First thank-you note', (x) => x.thanks >= 1, 'heart'],
+  ['mm1', 'First mystery meal revealed', (x) => x.mystery, 'eyeoff'], ['pl3', 'Three places we love', (x) => x.places >= 3, 'star'],
+  ['dm1', 'Our first date-in menu', (x) => x.menus >= 1, 'candle'], ['acp1', "First photo on Acura's wall", (x) => x.acPhotos >= 1, 'camera'],
 ];
 function milestoneFacts() {
   const all = realDinners();
@@ -2911,6 +2980,8 @@ function milestoneFacts() {
     coupleFavs: Object.keys(state.favBy).filter(isCoupleFav).length, sig: !!state.signature,
     jarMade: Object.values(state.dessertJar).filter((d) => d.made).length,
     acura: Object.keys((state.acura && state.acura.baked) || {}).length,
+    planned: Object.keys(state.plan).length, thanks: Object.keys(state.thanks).length, mystery: !!(state.mystery && state.mystery.revealed),
+    places: Object.keys(state.places).length, menus: Object.keys(state.dateMenus).length, acPhotos: Object.keys((state.acura && state.acura.photos) || {}).length,
   };
 }
 function badgeGrid() {
@@ -3129,6 +3200,10 @@ function viewUs() {
       <button class="tooltile" id="tMusic">${svg('music')}<span><b>Kitchen playlist</b><small>${state.settings.playlist ? 'Our playlist ♥' : 'Spotify · Apple Music'}</small></span></button>
       ${sig ? '' : `<button class="tooltile" id="sigPick2">${svg('star')}<span><b>Signature dish</b><small>Pick the one you're proudest of</small></span></button>`}
       <a class="tooltile" href="#/story">${svg('book')}<span><b>Our story</b><small>Every dinner, with photos</small></span></a>
+      <button class="tooltile" id="tMystery">${svg('eyeoff')}<span><b>Mystery meal</b><small>${state.mystery && !state.mystery.revealed ? `Clues waiting for ${esc(other(state.mystery.by))}` : 'Pick in secret, reveal later'}</small></span></button>
+      <button class="tooltile" id="tThanks">${svg('heart')}<span><b>Thank-you jar</b><small>${Object.keys(state.thanks).length ? `${Object.keys(state.thanks).length} note${Object.keys(state.thanks).length === 1 ? '' : 's'} inside` : 'Thanks for dinner ♥'}</small></span></button>
+      <a class="tooltile" href="#/menu">${svg('candle')}<span><b>Date-in menu</b><small>${esc(new Date().toLocaleDateString('en-CA', { month: 'long' }))}'s three courses</small></span></a>
+      <a class="tooltile" href="#/places">${svg('star')}<span><b>Places we love</b><small>${Object.keys(state.places).length ? `${Object.keys(state.places).length} remembered` : 'Meals out to remember'}</small></span></a>
     </div>${pend.length ? `<div class="pendtt">${pend.map((t) => `<button data-tt="${t.recipeId}">${svg('thumbUp')}<span>Taste test waiting: <b>${esc(summary(t.recipeId).title)}</b> — reveal</span></button>`).join('')}</div>` : ''}</div>
     ${badgeGrid()}
     <div class="sec"><div class="sec-title">Our favourites</div>${favs.length ? `<div class="hrow">${favs.map((r) => `<a class="mini-card" href="#/r/${r.id}"><div class="im">${r.image ? img(thumb(r.image), r.title) : placeholderArt(r)}${isCoupleFav(r.id) ? `<i class="gh">${svg('heart')}</i>` : ''}</div><div class="t">${esc(r.title)}</div><div class="m">${isCoupleFav(r.id) ? 'Both of you ♥' : (() => { const w = Object.keys(favWho(r.id)); return w.length ? esc(w[0]) + '’s favourite' : r.price + ' · ' + r.total + ' min'; })()}</div></a>`).join('')}</div><p class="small muted" style="margin-top:6px">Gold heart = you both love it. Tap the hats under “Who loves it” on a recipe.</p>` : '<div class="empty">Heart a recipe and it shows up here.</div>'}</div>
@@ -3138,6 +3213,8 @@ function viewUs() {
   $('#tTaste').onclick = () => { const p = Object.values(state.tasteTests).find((t) => !t.result && summary(t.recipeId)); if (p) openTasteTest(p.recipeId); else openTastePick(); };
   $('#tJar').onclick = openDessertJar;
   $('#tMusic').onclick = openPlaylist;
+  $('#tMystery').onclick = openMystery;
+  $('#tThanks').onclick = openThanks;
   $$('#dnPlan').forEach((b) => (b.onclick = () => openDateNight()));
   $('#sigPick') && ($('#sigPick').onclick = openPickSignature);
   $('#sigPick2') && ($('#sigPick2').onclick = openPickSignature);
@@ -3157,7 +3234,7 @@ function openTastePick() {
 // ================================================================ Acura's Kitchen — homemade dog treats (separate data: state.acura)
 let ACURA = null;
 async function loadAcura() { if (!ACURA) { try { ACURA = await (await fetch('recipes/acura/treats.json')).json(); } catch (e) { ACURA = null; } } return ACURA; }
-const AC = () => state.acura || (state.acura = { favs: {}, baked: {}, notes: {}, ratings: {}, profile: {}, given: {} });
+const AC = () => state.acura || (state.acura = DEFAULT_STATE().acura);
 const PAW = (cls = '') => `<svg viewBox="0 0 24 24" class="paw ${cls}" aria-hidden="true">${ICON.paw}</svg>`;
 const BONE = (cls = '') => `<svg viewBox="0 0 24 24" class="bonei ${cls}" aria-hidden="true">${ICON.bone}</svg>`;
 function acPattern() {
@@ -3223,11 +3300,13 @@ async function viewAcura() {
         <div class="aj-count">${ajCount(given, tb)}</div>
         ${a.profile && a.profile.allergies ? `<p class="ac-allergy">${PAW('sm')}Vet note: ${esc(a.profile.allergies)}</p>` : ''}
         ${tb ? '' : `<button class="linkbtn" id="acProf2">Add Acura’s weight for a daily treat guide</button>`}</div>
+      <div class="pupq"><div class="aj-k">${PAW('sm')}CAN ACURA EAT THIS?</div><label class="search">${svg('search')}<input id="pupQ" type="search" placeholder="e.g. carrots, grapes, cheese" autocomplete="off" enterkeyhint="search"></label><div id="pupRes" class="pupresults"></div></div>
       <div class="bonechips">${AC_CHIPS.map(([v, n]) => `<button class="bone ${k === v ? 'on' : ''}" data-ac="${v}">${v === 'favs' ? PAW('sm') : ''}${esc(n)}</button>`).join('')}</div>
       <div class="ac-list">${acListHTML(D, list, k)}</div>
       <div class="bonediv">${BONE()}</div>
       <a class="ac-safe" href="#/acura/safety"><div class="as-k">${svg('eyeoff')}NEVER FEED ACURA</div><p>${D.safety.never.slice(0, 6).map((n) => esc(n[0].split(' (')[0])).join(' · ')} <b>+${D.safety.never.length - 6} more</b></p><span class="as-go">Full safety guide &amp; treat calculator ${svg('chevR')}</span></a>
       <div class="sec"><div class="sec-title">${PAW('sm')}Good-pup snacks from our fridge</div><div class="snackchips">${D.safety.safeSnacks.map((x) => `<span>${esc(x)}</span>`).join('')}</div><p class="small muted" style="margin-top:8px">Plain, unseasoned, bite-sized — and still part of the 10% treat budget.</p></div>
+      <div class="sec"><div class="sec-title">${PAW('sm')}Acura's photo wall</div><div id="acWall">${acuraWallHTML()}</div></div>
       <p class="ac-foot">${PAW('sm')} Treats stay under 10% of Acura’s daily calories · ask your vet about allergies ${PAW('sm')}</p>
       ${bakedN ? `<p class="small muted" style="text-align:center;margin-top:4px">${bakedN} batch${bakedN === 1 ? '' : 'es'} baked for Acura so far</p>` : ''}
     </div></div>`);
@@ -3241,6 +3320,8 @@ async function viewAcura() {
   };
   bindCount();
   $('#acProf').onclick = openAcuraProfile; $('#acProf2') && ($('#acProf2').onclick = openAcuraProfile);
+  let pq; $('#pupQ').oninput = (e) => { clearTimeout(pq); pq = setTimeout(() => { const r = $('#pupRes'); r.innerHTML = pupSearchHTML(e.target.value, D); }, 120); };
+  bindAcuraWall($('#acWall'));
   $$('[data-gone]').forEach((b) => (b.onclick = (e) => { e.preventDefault(); const bt = a.baked[b.dataset.gone]; bt.gone = todayISO(); save(); redraw(); toast('Jar cleared — time for a new batch?', 'Undo', () => { delete bt.gone; save(); redraw(); }); }));
 }
 
@@ -3338,13 +3419,507 @@ function openAcuraProfile() {
   });
 }
 
+// ================================================================ update 7
+// Everything here folds into existing places (no new bottom tabs). Saved data only ever gains keys (see DEFAULT_STATE).
+
+// ---------------------------------------------------------------- #61 what can we make right now (pantry stock, any level)
+const HAVE_LEVELS = ['lots', 'have', 'low'];
+const ASSUMED = /^(salt|black pepper|water)$/i; // always in the house
+function canMakeNow(r) {
+  const req = (r.pantry || []).filter((p) => !ASSUMED.test(p.name));
+  return req.length > 0 && req.every((p) => HAVE_LEVELS.includes(levelOf(pantryKey(p.name))));
+}
+TAGLABEL['ready:now'] = 'Ready to make now';
+
+// ---------------------------------------------------------------- #64 price memory: every receipt price is kept, big jumps are flagged
+const PRICE_JUMP = { ratio: 1.2, min: 0.5 }; // flag when a price is 20%+ and 50¢+ above the last receipt
+function priceJump(key, price) {
+  const prev = key && state.prices[key];
+  return prev && price > 0 && price >= prev.price * PRICE_JUMP.ratio && price - prev.price >= PRICE_JUMP.min ? prev : null;
+}
+function logPrice(key, price, name) {
+  const log = state.priceLog[key] || (state.priceLog[key] = []);
+  const prev = state.prices[key];
+  if (!log.length && prev) log.push({ price: prev.price, date: prev.date }); // remember the price we already had
+  log.push({ price, date: todayISO(), name });
+  if (log.length > 12) log.splice(0, log.length - 12);
+}
+function openPriceList() {
+  const rows = Object.entries(state.prices).map(([k, p]) => {
+    const log = state.priceLog[k] || []; const before = log.length > 1 ? log[log.length - 2].price : null;
+    return { k, p, before, up: before != null && p.price >= before * PRICE_JUMP.ratio && p.price - before >= PRICE_JUMP.min };
+  }).sort((a, b) => b.up - a.up || String(a.p.name || a.k).localeCompare(String(b.p.name || b.k)));
+  openSheet(`<h2>Prices we've paid</h2><p class="sub">From your scanned receipts. A gold note means it went up a lot since last time.</p>
+    <ul class="cooked prices">${rows.map((x) => `<li><div><div class="t">${esc(x.p.name || x.k)}</div><div class="d">${esc(shortDate(x.p.date))}${x.before != null ? ` · was ${money(x.before, true)}` : ''}${x.up ? ' <span class="upnote">up</span>' : ''}</div></div><b>${money(x.p.price, true)}</b></li>`).join('')}</ul>
+    <div class="foot"><button class="btn primary" data-close>Close</button></div>`);
+}
+
+// ---------------------------------------------------------------- #66 prep ahead for tonight's or tomorrow's planned dinner
+const PREP_WORDS = /marinat|brine|overnight|soak|room temperature|soften|chill .*(hour|overnight)|rest .*hour/i;
+function plannedFor(iso) {
+  if (iso === todayISO()) { const t = tonightPlan(); if (t) return t.recipeId; }
+  const p = state.plan[iso]; return p && summary(p.recipeId) && !state.hidden[p.recipeId] ? p.recipeId : null;
+}
+function thawLine(s) { // quick, synchronous: from the recipe summary
+  const meat = (s.pantry || []).filter((p) => p.cat === 'meat' || /shrimp|salmon/i.test(p.name));
+  return meat.length ? `thaw the ${meat.map((p) => p.name.replace(/\s*\(.*\)/, '').toLowerCase()).join(' & ')} in the fridge tonight if it's frozen` : '';
+}
+function prepItems(r) {
+  const out = [];
+  if (r.thaw && r.thaw.item) out.push(`Thaw the ${r.thaw.item} in the fridge — about ${r.thaw.hours} hours.`);
+  else (r.groups || []).forEach((g) => g.items.forEach((it) => { if (it.pantry && (it.pantry.cat === 'meat' || /shrimp|salmon/i.test(it.pantry.name)) && /frozen|shrimp|salmon|chicken|beef|pork|steak/i.test(it.name)) out.push(`If the ${it.name} is frozen, move it to the fridge to thaw (about 24 hours).`); }));
+  (r.steps || []).forEach((st, i) => { if (PREP_WORDS.test(st.text)) out.push(`Step ${i + 1} · ${st.title}: ${st.text.split(/(?<=\.)\s/)[0]}`); });
+  (r.prepAhead || []).forEach((t) => out.push(t));
+  return out;
+}
+async function openPrepAhead() {
+  const days = [[todayISO(), 'Tonight'], [isoPlus(1), 'Tomorrow']].map(([iso, label]) => ({ iso, label, id: plannedFor(iso) })).filter((d) => d.id);
+  const recipes = await Promise.all(days.map((d) => getRecipe(d.id)));
+  openSheet(`<h2>Prep ahead</h2><p class="sub">What to thaw, marinate or get ready early for the dinners you've planned.</p>
+    ${days.length ? days.map((d, i) => { const r = recipes[i]; const items = r ? prepItems(r) : []; return `<div class="card prepcard"><div class="pk">${esc(d.label.toUpperCase())}</div><a href="#/r/${d.id}" class="pt">${esc(summary(d.id).title)}</a>
+      ${items.length ? `<ul class="tips">${items.map((t) => `<li>${tx(t)}</li>`).join('')}</ul>` : '<p class="small muted">Nothing to do ahead — just cook.</p>'}</div>`; }).join('')
+      : '<div class="empty">Plan tonight\'s dinner or the week (Grocery → Plan the week) and the prep list shows up here.</div>'}
+    <div class="foot"><button class="btn primary" data-close>Got it</button></div>`);
+}
+
+// ---------------------------------------------------------------- #67 weekly plan: several dinners, then one merged grocery list
+function syncPlanToTonight() { // a dinner planned for today becomes tonight's plan once (clearing tonight then sticks)
+  const p = state.plan[todayISO()];
+  if (!p || p.synced || !summary(p.recipeId)) return;
+  if (!state.tonight || state.tonight.date !== todayISO()) state.tonight = { date: todayISO(), recipeId: p.recipeId, by: p.by || null, eatAt: state.settings.dinnerAt || '18:30', at: now() };
+  p.synced = 1; save();
+}
+function openWeekPlan() {
+  const recipes = visibleRecipes().slice().sort((a, b) => a.title.localeCompare(b.title));
+  const days = Array.from({ length: 7 }, (_, i) => isoPlus(i));
+  const label = (iso, i) => (i === 0 ? 'Tonight' : i === 1 ? 'Tomorrow' : dateOf(iso).toLocaleDateString('en-CA', { weekday: 'long' }));
+  const chosen = () => days.map((d) => plannedFor(d)).filter(Boolean);
+  const planSel = (iso, i) => { const cur = plannedFor(iso) || ''; return `<div class="wkrow"><span>${esc(label(iso, i))}<small>${esc(shortDate(iso).replace(/^\w+, /, ''))}</small></span><select data-day="${iso}" aria-label="Dinner for ${esc(shortDate(iso))}"><option value="">—</option>${recipes.map((r) => `<option value="${r.id}" ${r.id === cur ? 'selected' : ''}>${esc(r.title)}</option>`).join('')}</select></div>`; };
+  const drawPlan = (b) => {
+    const n = chosen().length;
+    b.innerHTML = `<h2>Plan the week</h2><p class="sub">Pick dinners for the next 7 days. Tonight's pick shows on Home; then add everything to the grocery list in one go.</p>
+      <div class="wkplan">${days.map(planSel).join('')}</div>
+      <button class="linkbtn" id="wkPrep" style="margin-top:6px">${svg('thaw')}Prep ahead for tonight &amp; tomorrow</button>
+      <div class="foot"><button class="btn" data-close>Done</button><button class="btn primary" id="wkList" ${n ? '' : 'disabled style="opacity:.4"'}>Shopping list (${n})</button></div>`;
+    $$('[data-day]', b).forEach((s) => (s.onchange = () => {
+      const iso = s.dataset.day;
+      if (s.value) state.plan[iso] = { recipeId: s.value, by: state.profile.me || null, at: now(), ...(iso === todayISO() ? { synced: 1 } : {}) }; else delete state.plan[iso];
+      if (iso === todayISO()) state.tonight = s.value ? { date: iso, recipeId: s.value, by: state.profile.me || null, eatAt: (state.tonight && state.tonight.date === iso && state.tonight.eatAt) || state.settings.dinnerAt || '18:30', at: now() } : null;
+      save(); checkMilestones();
+      const k = chosen().length; const btn = $('#wkList', b); btn.textContent = `Shopping list (${k})`; btn.disabled = !k; btn.style.opacity = k ? '' : '.4';
+    }));
+    $('#wkPrep', b).onclick = openPrepAhead;
+    $('#wkList', b).onclick = () => drawList(b);
+  };
+  const drawList = async (b) => {
+    const ids = chosen(); const full = (await Promise.all(ids.map(getRecipe))).filter(Boolean);
+    const seen = {}; const rows = [];
+    full.forEach((r) => { const f = (state.servings[r.id] || r.servings || 4) / (r.servings || 4); r.groups.forEach((g) => g.items.forEach((it) => {
+      if (!it.pantry || ASSUMED.test(it.pantry.name)) return;
+      const k = pantryKey(it.pantry.name); const amt = it.qty != null ? { q: Math.round(it.qty * f * 1000) / 1000, u: it.unit || null, from: r.title } : null;
+      let row = seen[k];
+      if (!row) { const l = levelOf(k); row = seen[k] = { k, name: it.pantry.name, cat: it.pantry.cat, l, amts: [], from: [], sel: !it.optional && !HAVE_LEVELS.slice(0, 2).includes(l) && !onList(k) }; rows.push(row); }
+      if (amt) row.amts.push(amt); if (!row.from.includes(r.title)) row.from.push(r.title);
+    })); });
+    rows.sort((a, b2) => AISLES.findIndex(([x]) => x === aisleOf(a)) - AISLES.findIndex(([x]) => x === aisleOf(b2)) || a.name.localeCompare(b2.name));
+    const count = () => rows.filter((x) => x.sel).length;
+    b.innerHTML = `<h2>Shopping list for the week</h2><p class="sub">${full.length} dinner${full.length === 1 ? '' : 's'}, ingredients merged. Things marked “Have it” or “Have lots” in the Pantry start unticked.</p>
+      <ul class="checklist">${rows.map((x, i) => `<li data-x="${i}" class="${x.sel ? 'done' : ''}"><span class="box">${CHECK}</span><span>${esc(x.name)}${x.amts.length ? ` <span class="amt small">${esc(sumAmounts(x.amts))}</span>` : ''}<span class="note small"> · ${x.from.length > 1 ? x.from.length + ' dinners' : esc(x.from[0])}${onList(x.k) ? ' · on the list' : x.l ? ' · ' + ({ lots: 'have lots', have: 'have it', low: 'low', out: 'out' }[x.l]) : ''}</span></span></li>`).join('')}</ul>
+      <div class="foot"><button class="btn" id="wkBack">Back</button><button class="btn primary" id="wkAdd">Add ${count()} to the list</button></div>`;
+    $$('li[data-x]', b).forEach((li) => (li.onclick = () => { const x = rows[li.dataset.x]; x.sel = !x.sel; li.classList.toggle('done', x.sel); $('#wkAdd', b).textContent = `Add ${count()} to the list`; }));
+    $('#wkBack', b).onclick = () => drawPlan(b);
+    $('#wkAdd', b).onclick = () => {
+      let n = 0; rows.filter((x) => x.sel).forEach((x) => { if (addGrocery(x.name, x.cat, x.k, x.from.join(', '), x.amts)) n++; });
+      save(); closeSheet(); if (location.hash === '#/grocery') viewGrocery();
+      toast(n ? `Added ${n} item${n === 1 ? '' : 's'} for the week` : 'Everything was already on the list');
+    };
+    $('.sheet').scrollTop = 0;
+  };
+  openSheet('', drawPlan);
+}
+
+// ---------------------------------------------------------------- #68 substitutions that fit our food rules
+Object.assign(SUBS, {
+  'baking-soda': 'No swap for leavening — but for breading it can simply be left out.',
+  'bay-leaves': 'Leave it out, or a pinch of dried thyme.',
+  'beef-broth': 'Bouillon cube or powder + water (1 cube per 2 cups), or chicken broth.',
+  'brown-sugar': 'White sugar + 1 tsp honey per ½ cup, or plain white sugar.',
+  'coleslaw-mix': 'Shredded green cabbage + a grated carrot.',
+  'egg-noodles-lo-mein': 'Spaghetti or linguine, cooked 1 minute less.',
+  'frozen-corn': 'Canned corn, drained.',
+  'granulated-sugar': 'Brown sugar, same amount (a little more caramel-y).',
+  'ground-ginger': 'Leave it out, or ¼ tsp more garlic powder.',
+  'hoagie-rolls': 'Sub buns, ciabatta or a crusty baguette.',
+  'lasagna-noodles': 'Oven-ready noodles (add ½ cup extra sauce) or wide egg noodles.',
+  lemons: 'Bottled lemon juice — 2 tbsp per lemon.',
+  mayonnaise: 'Plain Greek yogurt.',
+  'orange-juice': 'Juice of 2 oranges, or ⅓ cup frozen OJ concentrate + water.',
+  oranges: '½ cup orange juice per orange.',
+  'provolone-slices': 'Mozzarella or Monterey Jack slices.',
+  'rice-vinegar': 'Apple cider vinegar with a pinch of sugar.',
+  ricotta: 'Cottage cheese, blended smooth.',
+  'sesame-seeds': 'Leave them off — they are just for crunch.',
+  'shrimp-raw-frozen': 'Fresh shrimp, or bite-size chicken breast (cook through to 74°C / 165°F).',
+  'stewing-beef': 'Chuck roast cut into 4 cm cubes.',
+  'worcestershire-sauce': 'Soy sauce with a pinch of sugar and a splash of vinegar.',
+});
+// for ingredients without a pantry match (our own recipes) — all within the food rules: no mustard, olives or mushrooms, mild, dried herbs
+const SUB_RULES = [
+  [/buttermilk/i, '1 cup milk + 1 tbsp white vinegar or lemon juice; stir and let it sit 5 minutes.'],
+  [/heavy cream|whipping cream/i, 'Half-and-half with 1 tbsp flour per cup, or evaporated milk.'],
+  [/fresh (parsley|basil|thyme|oregano|rosemary|dill|cilantro)|parsley|basil|cilantro|rosemary|dill/i, 'Dried herbs: 1 tsp dried for every 1 tbsp fresh, added early so they soften.'],
+  [/white wine|red wine|wine/i, 'Same amount of broth + 1 tsp vinegar.'],
+  [/breadcrumbs/i, 'Crushed crackers or cornflakes.'],
+  [/yogh?urt/i, 'Sour cream, same amount.'],
+  [/cream cheese/i, 'Ricotta blended smooth, or mascarpone.'],
+  [/shallot/i, 'A little yellow onion — about ⅓ of a small onion per shallot.'],
+  [/green onion|scallion/i, 'A little finely diced yellow onion, or a pinch of onion powder.'],
+  [/maple syrup/i, 'Honey or brown sugar, same amount.'],
+  [/self[- ]raising flour/i, '1 cup flour + 1½ tsp baking powder + ¼ tsp salt.'],
+];
+function subFor(it) {
+  const k = it.pantry ? pantryKey(it.pantry.name) : pantryKey(it.name);
+  if (SUBS[k]) return SUBS[k];
+  const rule = SUB_RULES.find(([rx]) => rx.test(it.name || '')); return rule ? rule[1] : null;
+}
+
+// ---------------------------------------------------------------- #69 quick-add staples (our own editable list)
+const DEFAULT_STAPLES = [['Milk', 'dairy'], ['Eggs', 'dairy'], ['Bread', 'grains'], ['Butter', 'dairy'], ['Bananas', 'produce'], ['Apples', 'produce']];
+const staplesList = () => (Array.isArray(state.staples) ? state.staples : DEFAULT_STAPLES.map(([name, cat]) => ({ name, cat })));
+function openStaples() {
+  let edit = false; let picks = null;
+  const draw = (b) => {
+    const list = staplesList();
+    if (!picks || picks.length !== list.length) picks = list.map((s) => !onList(pantryKey(s.name)));
+    const n = picks.filter(Boolean).length;
+    b.innerHTML = `<h2>Our staples</h2><p class="sub">${edit ? 'Add or remove the things we buy every trip.' : 'The things we buy every trip — add them back in one tap.'}</p>
+      ${edit ? `<ul class="cooked">${list.map((s, i) => `<li><div><div class="t">${esc(s.name)}</div></div><button class="del" data-sdel="${i}" aria-label="Remove ${esc(s.name)}">×</button></li>`).join('')}</ul>
+        <div class="addrow"><input id="stNew" placeholder="Add a staple…" enterkeyhint="done" autocomplete="off"><button class="btn primary" id="stAdd" aria-label="Add">${svg('plus')}</button></div>`
+      : list.length ? `<ul class="checklist">${list.map((s, i) => `<li data-st="${i}" class="${picks[i] ? 'done' : ''}"><span class="box">${CHECK}</span><span>${esc(s.name)}${onList(pantryKey(s.name)) ? '<span class="note small"> · already on the list</span>' : ''}</span></li>`).join('')}</ul>` : '<div class="empty">No staples yet — tap Edit to add some.</div>'}
+      <div class="foot"><button class="btn" id="stEdit">${edit ? 'Done editing' : 'Edit'}</button>${edit ? '' : `<button class="btn primary" id="stGo" ${n ? '' : 'disabled style="opacity:.4"'}>Add ${n} to the list</button>`}</div>`;
+    $('#stEdit', b).onclick = () => { edit = !edit; picks = null; draw(b); };
+    $$('[data-st]', b).forEach((li) => (li.onclick = () => { const i = +li.dataset.st; picks[i] = !picks[i]; li.classList.toggle('done', picks[i]); const k = picks.filter(Boolean).length; const g = $('#stGo', b); g.textContent = `Add ${k} to the list`; g.disabled = !k; g.style.opacity = k ? '' : '.4'; }));
+    $('#stGo', b) && ($('#stGo', b).onclick = () => { let k = 0; list.forEach((s, i) => { if (picks[i] && addGrocery(s.name, s.cat || guessCat(s.name), pantryKey(s.name), 'staples')) k++; }); save(); closeSheet(); viewGrocery(); toast(k ? `Added ${k} staple${k === 1 ? '' : 's'}` : 'Already on the list'); });
+    const keep = (l) => { state.staples = l; save(); };
+    $$('[data-sdel]', b).forEach((x) => (x.onclick = () => { const l = list.slice(); l.splice(+x.dataset.sdel, 1); keep(l); draw(b); }));
+    const add = () => { const v = $('#stNew', b).value.trim(); if (!v) return; if (!list.some((s) => pantryKey(s.name) === pantryKey(v))) keep(list.concat({ name: v, cat: guessCat(v) })); draw(b); $('#stNew', b).focus(); };
+    $('#stAdd', b) && ($('#stAdd', b).onclick = add); $('#stNew', b) && ($('#stNew', b).onkeydown = (e) => { if (e.key === 'Enter') add(); });
+  };
+  openSheet('', draw);
+}
+
+// ---------------------------------------------------------------- #70 recipe notes: who changed them and when (notes text stays in state.notes)
+function noteMetaLine(id) {
+  const m = state.noteMeta[id]; if (!m || !state.notes[id]) return '';
+  return `${m.by ? esc(m.by) + ' · ' : ''}edited ${esc(dayWord(isoOf(new Date(m.at))))}`;
+}
+
+// ---------------------------------------------------------------- #71 #72 places we love + recreate a restaurant dish at home
+const STOP = new Set(['the', 'and', 'with', 'a', 'an', 'of', 'in', 'on', 'our', 'their', 'style', 'special', 'house', 'famous', 'plate', 'dish', 'side', 'extra']);
+const dishWords = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').split(/\s+/).filter((w) => w.length > 2 && !STOP.has(w)).map((w) => w.replace(/(es|s)$/, ''));
+function closestRecipe(dish) {
+  const q = dishWords(dish); if (!q.length) return null;
+  let best = null;
+  visibleRecipes().forEach((r) => {
+    const t = dishWords(r.title + ' ' + (r.subtitle || '')); const ing = dishWords((r.ingredients || []).join(' ') + ' ' + (r.pantry || []).map((p) => p.name).join(' '));
+    const score = q.reduce((a, w) => a + (t.includes(w) ? 3 : 0) + (ing.includes(w) ? 1 : 0), 0);
+    if (score >= 3 && (!best || score > best.score)) best = { r, score };
+  });
+  return best && best.r;
+}
+function viewPlaces() {
+  setTop({ title: 'PLACES WE LOVE', back: '#/us' });
+  const list = Object.values(state.places).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : b.at - a.at));
+  render(`<div class="wrap"><div class="kicker">Corey ♥ Faith<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Places we love</h1>
+    <p class="lead" style="margin-top:4px">Memorable meals out — and the closest one we can make at home.</p>
+    <button class="btn primary block" id="plAdd" style="margin-top:14px">${svg('plus')}Add a place</button>
+    ${list.length ? `<div class="places">${list.map((p) => { const m = p.dish ? closestRecipe(p.dish) : null; return `<div class="card place" data-pl="${p.id}"><div class="pl-top"><b>${esc(p.name)}</b><button class="del" data-pldel="${p.id}" aria-label="Remove ${esc(p.name)}">×</button></div>
+      <div class="pl-d">${esc(longDate(p.date))}${p.by ? ' · ' + esc(p.by) : ''}</div>${p.dish ? `<p class="pl-dish">${esc(p.dish)}</p>` : ''}${p.note ? `<p class="pl-note">${esc(p.note)}</p>` : ''}
+      ${p.dish ? m ? `<a class="pl-home" href="#/r/${m.id}">${svg('pot')}<span>Make it at home: <b>${esc(m.title)}</b></span>${svg('chevR')}</a>` : `<button class="linkbtn" data-plwish="${p.id}">${svg('star')}No close match yet — add “${esc(p.dish)}” to the wish list</button>` : ''}</div>`; }).join('')}</div>`
+      : '<div class="empty" style="margin-top:16px">Add the restaurant, the date and what you had. If it\'s something we can cook, the closest recipe in our book shows up.</div>'}</div>`);
+  $('#plAdd').onclick = openPlace;
+  $$('[data-pldel]').forEach((b) => (b.onclick = () => withUndo('Place removed', () => { delete state.places[b.dataset.pldel]; }, viewPlaces)));
+  $$('[data-plwish]').forEach((b) => (b.onclick = () => { const p = state.places[b.dataset.plwish]; const id = uid(); state.wish[id] = { id, text: p.dish, by: state.profile.me, date: todayISO(), at: now() }; save(); b.outerHTML = '<p class="small muted">On the wish list ♥</p>'; }));
+}
+function openPlace() {
+  openSheet(`<h2>Add a place</h2><p class="sub">A restaurant night worth remembering.</p>
+    <div class="field"><label>Where</label><input id="plName" placeholder="e.g. The Keg, Joe Kool's" autocomplete="off"></div>
+    <div class="field"><label>When</label><input id="plDate" type="date" value="${todayISO()}"></div>
+    <div class="field"><label>What we had <span class="muted small">(we'll find the closest home recipe)</span></label><input id="plDish" placeholder="e.g. Garlic butter steak with mashed potatoes" autocomplete="off"></div>
+    <div class="field"><label>A note</label><input id="plNote" placeholder="e.g. Our first date ♥" autocomplete="off"></div>
+    <p class="small muted" id="plMatch">&nbsp;</p>
+    <div class="foot"><button class="btn" data-close>Cancel</button><button class="btn primary" id="plSave">Save</button></div>`, (b) => {
+    const match = () => { const m = closestRecipe($('#plDish', b).value); $('#plMatch', b).innerHTML = m ? `Closest at home: <b>${esc(m.title)}</b>` : '&nbsp;'; };
+    let mt; $('#plDish', b).oninput = () => { clearTimeout(mt); mt = setTimeout(match, 150); };
+    $('#plSave', b).onclick = () => {
+      const name = $('#plName', b).value.trim(); if (!name) { toast('Add the place name'); return; }
+      const id = uid(); state.places[id] = { id, name, date: $('#plDate', b).value || todayISO(), dish: $('#plDish', b).value.trim(), note: $('#plNote', b).value.trim(), by: state.profile.me || null, at: now() };
+      save(); closeSheet(); checkMilestones(); viewPlaces(); toast('Saved to places we love ♥');
+    };
+  });
+}
+
+// ---------------------------------------------------------------- #73 mystery meal (one phone: pick in secret, hand it over, reveal)
+function openMystery() {
+  const m = state.mystery && !state.mystery.revealed && summary(state.mystery.recipeId) ? state.mystery : null;
+  const me = state.profile.me || 'Corey';
+  const pickStep = (b) => {
+    const list = dayShuffle(visibleRecipes(), 7);
+    b.innerHTML = `<h2>Mystery meal</h2><p class="sub">${esc(me)}, pick tonight's dinner in secret. ${esc(other(me))} will only see the ingredients until the reveal.</p>
+      <div class="mylist">${list.map((r) => `<button data-my="${r.id}"><b>${esc(r.title)}</b><small>${r.price} · ${r.total} min</small></button>`).join('')}</div>
+      <div class="foot"><button class="btn" data-close>Cancel</button></div>`;
+    $$('[data-my]', b).forEach((x) => (x.onclick = () => { state.mystery = { recipeId: x.dataset.my, by: me, at: now(), revealed: null }; save(); handStep(b, state.mystery); }));
+  };
+  const handStep = (b, mm) => {
+    b.innerHTML = `<div class="myhand">${svg('eyeoff')}<h2>Shh — it's picked</h2><p class="sub">Hand the phone to ${esc(other(mm.by))}. No peeking at the recipe!</p></div>
+      <div class="foot"><button class="btn" id="myRe">Pick again</button><button class="btn gold" id="myClues">I'm ${esc(other(mm.by))} — show the clues</button></div>`;
+    $('#myRe', b).onclick = () => pickStep(b); $('#myClues', b).onclick = () => clueStep(b, mm);
+  };
+  const clueStep = async (b, mm) => {
+    const r = await getRecipe(mm.recipeId); if (!r) return;
+    const names = [...new Set(r.groups.flatMap((g) => g.items.map((it) => (it.pantry ? it.pantry.name : it.name).replace(/\s*\(.*\)/, ''))))].filter((n) => !ASSUMED.test(n));
+    b.innerHTML = `<h2>Your clues</h2><p class="sub">${esc(mm.by)} picked something with…</p>
+      <div class="clues">${dayShuffle(names, 3).map((n) => `<span>${esc(n)}</span>`).join('')}</div>
+      <p class="small muted" style="text-align:center;margin-top:12px">About ${r.prep + r.cook} minutes. Any guesses?</p>
+      <div class="foot"><button class="btn" data-close>Later</button><button class="btn gold" id="myShow">Reveal ♥</button></div>`;
+    $('#myShow', b).onclick = () => revealStep(b, mm);
+  };
+  const revealStep = (b, mm) => {
+    const s = summary(mm.recipeId); mm.revealed = todayISO(); save(); checkMilestones(); confetti();
+    b.innerHTML = `<div class="myreveal"><div class="im">${s.image ? img(s.image, s.title) : placeholderArt(s)}</div><div class="kicker" style="justify-content:center">TONIGHT'S MYSTERY MEAL</div><h2>${esc(s.title)}</h2><p class="sub">Picked by ${esc(mm.by)} ♥</p></div>
+      <div class="foot"><a class="btn" href="#/r/${s.id}">Open recipe</a><button class="btn gold" id="myPlan">Make it tonight</button></div>`;
+    $('#myPlan', b).onclick = () => { closeSheet(); setTonight(s.id); };
+  };
+  openSheet('', (b) => (m ? handStep(b, m) : pickStep(b)));
+}
+
+// ---------------------------------------------------------------- #74 thank-you jar: a note shown next time the app opens as the other person
+function openThanks() {
+  const me = state.profile.me; let from = me || 'Corey';
+  const past = Object.values(state.thanks).sort((a, b) => b.at - a.at);
+  openSheet(`<h2>Thanks for dinner</h2><p class="sub">Leave a note in the jar. It pops up the next time the app is opened as ${esc(other(from))}.</p>
+    ${me ? '' : `<div class="field"><label>From</label><div class="segtext" id="tyFrom" style="grid-template-columns:1fr 1fr">${['Corey', 'Faith'].map((n) => `<button data-f="${n}" class="${from === n ? 'on' : ''}">${n}</button>`).join('')}</div></div>`}
+    <div class="chips" style="margin-top:6px">${['Thanks for dinner ♥', 'That was delicious', 'Best chef in Ontario', 'I love cooking with you'].map((t) => `<button class="chip" data-ty="${esc(t)}">${esc(t)}</button>`).join('')}</div>
+    <div class="field"><textarea id="tyTx" class="notes" placeholder="Write something sweet…" maxlength="280"></textarea></div>
+    ${past.length ? `<details class="tyjar"><summary>In the jar (${past.length})</summary><ul class="cooked">${past.slice(0, 20).map((t) => `<li><div><div class="t">${esc(t.text)}</div><div class="d">${esc(t.from)} → ${esc(t.to)} · ${esc(shortDate(t.date))}${t.seen ? ' · read ♥' : ''}</div></div></li>`).join('')}</ul></details>` : ''}
+    <div class="foot"><button class="btn" data-close>Cancel</button><button class="btn gold" id="tySave">Put it in the jar</button></div>`, (b) => {
+    $$('#tyFrom button', b).forEach((x) => (x.onclick = () => { from = x.dataset.f; $$('#tyFrom button', b).forEach((y) => y.classList.toggle('on', y === x)); $('.sub', b).textContent = `Leave a note in the jar. It pops up the next time the app is opened as ${other(from)}.`; }));
+    $$('[data-ty]', b).forEach((c) => (c.onclick = () => { $('#tyTx', b).value = c.dataset.ty; }));
+    $('#tySave', b).onclick = () => {
+      const text = $('#tyTx', b).value.trim(); if (!text) { toast('Write a little note first'); return; }
+      const id = uid(); state.thanks[id] = { id, from, to: other(from), text, date: todayISO(), at: now(), seen: null };
+      save(); closeSheet(); checkMilestones(); toast(`In the jar — ${other(from)} will see it next time ♥`);
+    };
+  });
+}
+function thanksCard() {
+  const me = state.profile.me; if (!me) return '';
+  const t = Object.values(state.thanks).filter((x) => x.to === me && !x.seen).sort((a, b) => a.at - b.at)[0];
+  return t ? `<div class="tycard"><div class="ty-k">${svg('heart')}A NOTE FROM ${esc(t.from.toUpperCase())}</div><p>${esc(t.text)}</p><button class="btn sm gold" data-tyseen="${t.id}">Aw ♥</button></div>` : '';
+}
+
+// ---------------------------------------------------------------- #75 monthly date-in menu (three courses from our book)
+const EASY_DESSERTS = ['Chocolate-dipped strawberries', 'Warm brownies with vanilla ice cream', 'Apple crisp with oats and cinnamon', 'Vanilla ice cream with honey and berries', 'Shortbread and hot chocolate'];
+function makeMenu(pick) { // pick(list, course) → one item from the list
+  const recipes = visibleRecipes();
+  const starters = recipes.filter((r) => r.category === 'comfort-soups' && /soup/i.test(r.title)); // a light bowl, not a stew
+  const mains = recipes.filter((r) => ((r.tags || {}).occasion || []).includes('date-night'));
+  const jar = Object.values(state.dessertJar).filter((d) => !d.made);
+  return { starter: (pick(starters, 1) || {}).id || null, main: (pick(mains.length ? mains : recipes, 2) || {}).id || null, dessert: jar.length ? pick(jar, 3).text : pick(EASY_DESSERTS, 4) };
+}
+function menuFor(key) { // the month's own menu until we choose another
+  if (state.dateMenus[key]) return state.dateMenus[key];
+  const seed = Number(key.replace('-', ''));
+  return makeMenu((l, k) => (l.length ? l[(seed * 31 + k * 17) % l.length] : null));
+}
+function viewMenu() {
+  setTop({ title: 'DATE-IN MENU', back: '#/us' });
+  const key = monthKey(); const m = menuFor(key); const st = m.starter && summary(m.starter); const mn = m.main && summary(m.main);
+  const course = (k, s, text) => `<div class="course"><div class="ck">${k}</div>${s ? `<a href="#/r/${s.id}" class="cn">${esc(s.title)}</a>` : `<div class="cn">${esc(text || '—')}</div>`}</div>`;
+  render(`<div class="wrap"><div class="menucard" id="menuCard"><div class="mc-in">
+      <div class="mc-k">CHEZ NOUS · ${esc(monthName(key).toUpperCase())}</div><h1>Dinner for Two</h1><div class="mc-names">Corey <span>♥</span> Faith</div>
+      <div class="mc-rule"></div>${course('TO START', st, st ? '' : 'A little soup')}<div class="mc-dot">✦</div>${course('THE MAIN', mn)}<div class="mc-dot">✦</div>${course('SOMETHING SWEET', null, m.dessert)}
+      <div class="mc-rule"></div><div class="mc-foot">Our Kitchen · made at home with love</div></div></div>
+    <p class="small muted" style="text-align:center;margin-top:10px">Screenshot it to send — a new menu each month.</p>
+    <div class="btnrow" style="margin-top:12px"><button class="btn ghost" id="mnShuffle">${svg('dice')}Another menu</button><button class="btn gold" id="mnPlan" ${mn ? '' : 'disabled'}>${svg('heart')}Plan the date</button></div></div>`);
+  const keep = (menu) => { state.dateMenus[key] = { ...menu, at: now() }; save(); checkMilestones(); };
+  $('#mnShuffle').onclick = () => { keep(makeMenu((l) => (l.length ? l[Math.floor(Math.random() * l.length)] : null))); viewMenu(); };
+  $('#mnPlan').onclick = () => { if (!state.dateMenus[key]) keep(m); openDateNight({ recipeId: m.main }); };
+}
+
+// ---------------------------------------------------------------- #76 keepsake cookbook (print / save as PDF)
+async function viewKeepsake() {
+  setTop({ title: 'OUR COOKBOOK', back: '#/story', right: `<button class="iconbtn" id="ksPrint" aria-label="Print or save as PDF">${svg('print')}</button>` });
+  const ids = [...new Set(realDinners().sort((a, b) => (a.date < b.date ? -1 : 1)).map((c) => c.recipeId))].filter((id) => summary(id));
+  const rs = (await Promise.all(ids.map(getRecipe))).filter(Boolean);
+  if (location.hash !== '#/keepsake') return;
+  const firstOf = (id) => realDinners().filter((c) => c.recipeId === id).sort((a, b) => (a.date < b.date ? -1 : 1))[0];
+  render(`<div class="keepsake"><div class="ks-cover"><div class="ks-k">A KEEPSAKE COOKBOOK</div><h1>Our Kitchen</h1><div class="ks-names">Corey <span>♥</span> Faith</div>
+      <p>${rs.length} recipe${rs.length === 1 ? '' : 's'} we've cooked together · ${esc(longDate(todayISO()))}</p>
+      <button class="btn gold" id="ksPrint2">${svg('print')}Print or save as PDF</button>
+      <p class="small muted ks-hint">On iPhone: Share → Print, then pinch out on the preview to save it as a PDF.</p></div>
+    ${rs.length ? rs.map((r) => { const f = firstOf(r.id); const n = cookedEntries(r.id).length; const phs = (state.photos[r.id] || []).slice(0, 2); const love = state.loveNotes[r.id]; return `<article class="ks-recipe">
+      <div class="ks-rk">${esc(recipeLabel(summary(r.id)))}</div><h2>${esc(r.title)}</h2>
+      <p class="ks-meta">First made ${esc(longDate(f.date))}${f.by ? (f.by === 'Both' ? ' together' : ' by ' + esc(f.by)) : ''} · cooked ${n} time${n === 1 ? '' : 's'}${state.ratings[r.id] ? ' · ' + '♥'.repeat(state.ratings[r.id]) : ''}</p>
+      ${phs.length ? `<div class="ks-photos">${phs.map((p) => `<figure><img src="${p.data}" alt="">${(p.stamps || []).length ? `<span class="ks-stamps">${p.stamps.map((k) => `<i>${k === 'kiss' ? 'CHEF’S KISS' : k === 'star' ? '★' : '♥'}</i>`).join('')}</span>` : ''}<figcaption>${esc(shortDate(p.date))}</figcaption></figure>`).join('')}</div>` : ''}
+      ${love ? `<p class="ks-love">“${esc(love.text)}”${love.by ? ` — ${esc(love.by)}` : ''}</p>` : ''}
+      ${state.notes[r.id] ? `<p class="ks-notes"><b>Our notes:</b> ${esc(state.notes[r.id])}</p>` : ''}
+      <div class="ks-cols"><div><h3>Ingredients</h3>${r.groups.map((g) => `${g.name ? `<h4>${esc(g.name)}</h4>` : ''}<ul>${g.items.map((it) => `<li>${ingLine(it, 1, false)}</li>`).join('')}</ul>`).join('')}</div>
+      <div><h3>Method</h3><ol>${r.steps.map((st) => `<li><b>${esc(st.title)}.</b> ${tx(st.text)}</li>`).join('')}</ol></div></div></article>`; }).join('')
+      : '<div class="empty">Mark dinners as cooked and they become pages in our cookbook.</div>'}</div>`);
+  const pr = () => { document.body.classList.add('printing-keepsake'); setTimeout(() => { try { window.print(); } catch (e) {} }, 60); };
+  $('#ksPrint').onclick = pr; $('#ksPrint2').onclick = pr;
+}
+window.addEventListener('afterprint', () => document.body.classList.remove('printing-keepsake'));
+
+// ---------------------------------------------------------------- #77 rate together in secret (scores go into the cooked entry, like the open rating)
+function openSecretRate(id) {
+  const entry = cookedEntries(id)[0];
+  if (!entry) { toast('Mark it as cooked first, then rate it together'); return; }
+  const first = state.profile.me || 'Corey'; const second = other(first); const score = {};
+  const pickStep = (b, who, next) => {
+    b.innerHTML = `<h2>${esc(who)}, rate it</h2><p class="sub">${esc(summary(id).title)} · ${esc(shortDate(entry.date))}. ${who === first ? `${esc(second)} can't see this.` : `${esc(first)} already rated — no peeking.`}</p>
+      <div class="rate big" id="srRate">${[1, 2, 3, 4, 5].map((n) => `<button data-sr="${n}" aria-label="${n} of 5">${svg('heart')}</button>`).join('')}</div>
+      <div class="foot"><button class="btn" data-close>Cancel</button><button class="btn gold" id="srNext" disabled style="opacity:.4">${who === first ? `Hide &amp; pass to ${esc(second)}` : 'Reveal both ♥'}</button></div>`;
+    $$('[data-sr]', b).forEach((x) => (x.onclick = () => { score[who] = +x.dataset.sr; $$('[data-sr]', b).forEach((y) => y.classList.toggle('on', +y.dataset.sr <= score[who])); const n = $('#srNext', b); n.disabled = false; n.style.opacity = ''; }));
+    $('#srNext', b).onclick = next;
+  };
+  const passStep = (b) => {
+    b.innerHTML = `<div class="myhand">${svg('eyeoff')}<h2>Hidden ✓</h2><p class="sub">Hand the phone to ${esc(second)}.</p></div>
+      <div class="foot"><button class="btn gold" id="srGo">I'm ${esc(second)}</button></div>`;
+    $('#srGo', b).onclick = () => pickStep(b, second, () => revealStep(b));
+  };
+  const revealStep = (b) => {
+    entry.hearts = { ...(entry.hearts || {}), ...score }; save(); checkMilestones();
+    const same = score.Corey === score.Faith;
+    b.innerHTML = `<h2>The verdict</h2><div class="srboth">${['Corey', 'Faith'].map((n) => `<div class="srb">${hat(n, 26)}<b>${n}</b><div class="rate">${[1, 2, 3, 4, 5].map((v) => `<span class="${score[n] >= v ? 'on' : ''}">${svg('heart')}</span>`).join('')}</div></div>`).join('')}</div>
+      <p class="sub" style="text-align:center">${same ? 'Same score — great minds ♥' : Math.abs(score.Corey - score.Faith) >= 2 ? 'Ooh, a difference of opinion!' : 'Close!'}</p>
+      <div class="foot"><button class="btn primary" data-close>Lovely</button></div>`;
+    heartBurst($('.srboth', b));
+    if (location.hash === '#/r/' + id) rerenderRecipe(id);
+  };
+  openSheet('', (b) => pickStep(b, first, () => passStep(b)));
+}
+
+// ---------------------------------------------------------------- #81 #82 can Acura eat this? (safety foods in recipes/acura/treats.json)
+const reEsc = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+function pupVerdict(name, D) {
+  const n = ' ' + String(name).toLowerCase().replace(/[^a-z0-9 -]+/g, ' ') + ' ';
+  const hits = [];
+  (D.safety.foods || []).forEach((f) => f[3].split(',').forEach((kw) => {
+    const m = n.match(new RegExp(`[ -]${reEsc(kw)}s?(?=[ -])`));
+    if (m) hits.push({ f, len: m[0].length, s: m.index, e: m.index + m[0].length });
+  }));
+  // a keyword inside a longer match doesn't count ("butter" in "peanut butter", "potato" in "sweet potato")
+  const kept = hits.filter((h) => !hits.some((o) => o.len > h.len && o.s <= h.s && o.e >= h.e));
+  if (!kept.length) return null;
+  const bad = kept.find((h) => h.f[1] === 'no'); // anything unsafe in the name wins ("chicken broth" → broth)
+  return (bad || kept.sort((x, y) => y.len - x.len)[0]).f;
+}
+const VERDICT = { yes: 'Yes', limit: 'A little', no: 'No' };
+function pupSearchHTML(q, D) {
+  const t = q.trim().toLowerCase(); if (!t) return '';
+  const list = (D.safety.foods || []).filter((f) => f[0].toLowerCase().includes(t) || f[3].split(',').some((k) => k.startsWith(t) || t.includes(k)));
+  return list.length ? list.slice(0, 6).map((f) => `<div class="pupres ${f[1]}"><span class="pv">${VERDICT[f[1]]}</span><div><b>${esc(f[0])}</b>${f[2] ? `<small>${esc(f[2])}</small>` : ''}</div></div>`).join('')
+    : `<p class="small muted">Not in our guide. When in doubt, don't — and ask the vet.</p>`;
+}
+function pupShare(r, D) {
+  const yes = new Map(), no = new Map();
+  r.groups.forEach((g) => g.items.forEach((it) => { const f = pupVerdict(it.pantry ? it.pantry.name : it.name, D); if (!f) return; (f[1] === 'no' ? no : yes).set(f[0], f); }));
+  return { yes: [...yes.values()], no: [...no.values()] };
+}
+function pupShareHTML(r, D) {
+  const p = pupShare(r, D); if (!p.yes.length) return '<p class="small muted">Nothing in this one is a good pup snack — stick to her treats tonight.</p>';
+  return `<ul class="pupshare">${p.yes.map((f) => `<li><span class="pv ${f[1]}">${VERDICT[f[1]]}</span>${esc(f[0])}<small>${esc(f[2])}</small></li>`).join('')}</ul>
+    <p class="small muted">Set her bit aside <b>before</b> any seasoning, butter or sauce goes on${p.no.length ? ` — and keep ${esc(p.no.map((f) => f[0].split(/,| &/)[0].toLowerCase()).slice(0, 3).join(', '))} away from her` : ''}. Still part of her 10% treat budget.</p>`;
+}
+
+// ---------------------------------------------------------------- #83 Acura's photo wall (dated treat photos)
+function addAcuraPhoto(file, after) {
+  if (!file) return;
+  const rd = new FileReader();
+  rd.onload = () => { const im = new Image(); im.onload = () => {
+    // 640px (smaller than recipe photos): the wall shows small tiles and 30 photos must fit in phone storage
+    const k = Math.min(1, 640 / Math.max(im.width, im.height)); const c = document.createElement('canvas'); c.width = Math.round(im.width * k); c.height = Math.round(im.height * k);
+    c.getContext('2d').drawImage(im, 0, 0, c.width, c.height);
+    const ps = AC().photos; if (Object.keys(ps).length >= 30) { toast('30 photos max on the wall — remove one first'); return; }
+    const id = uid(); ps[id] = { id, data: c.toDataURL('image/jpeg', 0.72), date: todayISO(), at: now() }; save(); checkMilestones(); after(); toast('On the wall — good pup ♥');
+  }; im.onerror = () => toast("Couldn't read that photo"); im.src = rd.result; };
+  rd.readAsDataURL(file);
+}
+function acuraWallHTML() {
+  const ps = Object.values(AC().photos).sort((a, b) => (a.date < b.date ? 1 : -1) || b.at - a.at);
+  return `<div class="photos acwall">${ps.map((p) => `<button class="ph" data-acph="${p.id}"><img src="${p.data}" alt="Acura on ${esc(p.date)}"><span>${esc(shortDate(p.date))}</span></button>`).join('')}
+    <label class="ph add">${svg('camera')}<span>Add photo</span><input type="file" id="acPhIn" accept="image/*" hidden></label></div>`;
+}
+function bindAcuraWall(root) {
+  const redraw = () => { const w = $('#acWall'); if (!w) return; w.innerHTML = acuraWallHTML(); markLoaded(w); bindAcuraWall(w); };
+  $('#acPhIn', root).onchange = (e) => addAcuraPhoto(e.target.files[0], redraw);
+  $$('[data-acph]', root).forEach((b) => (b.onclick = () => {
+    const p = AC().photos[b.dataset.acph];
+    openSheet(`<div class="acphoto"><img src="${p.data}" alt=""></div><p class="sub" style="text-align:center">${esc(longDate(p.date))}</p>
+      <div class="foot"><button class="btn danger" id="acDel">Remove</button><button class="btn primary" data-close>Close</button></div>`, (s) => {
+      $('#acDel', s).onclick = () => { closeSheet(); withUndo('Photo removed', () => { delete AC().photos[p.id]; }, redraw); };
+    });
+  }));
+}
+
+// ---------------------------------------------------------------- #84 weather dinners: a soup / comfort nudge on cold or wet days
+function weatherNudge(recipes) {
+  const w = wxFresh(); if (!w || wxMood(w).kind !== 'cozy') return null;
+  const soups = recipes.filter((r) => r.category === 'comfort-soups' || ((r.tags || {}).occasion || []).includes('comfort-night'));
+  const r = dayShuffle(soups.length ? soups : moodPicks(recipes, 'cozy'), 11)[0]; if (!r) return null;
+  const sky = wxWords(w.code);
+  return { r, line: `${w.t <= 0 ? 'Freezing' : w.t <= 5 ? 'Chilly' : 'Wet'} out${/snow|rain|drizzle|showers|storm/.test(sky) ? ' with ' + sky : ''} (${wxTemp(w.t)}) — ${r.category === 'comfort-soups' ? 'soup' : 'comfort food'} night?` };
+}
+
+// ---------------------------------------------------------------- #85 fridge-clear Friday (Fridays on Home, any time in Ideas)
+const isFriday = () => new Date().getDay() === 5;
+function fridgeClear(recipes) {
+  const u = useItUp(recipes); const lefts = Object.values(state.leftovers).filter((l) => l.portions > 0);
+  return { u, lefts, any: u.items.length > 0 || lefts.length > 0 };
+}
+
+// ---------------------------------------------------------------- #87 in season in Ontario (what No Frills has local and cheaper)
+const SEASON = [ // month 0..11 → local produce (Foodland Ontario availability, storage crops in winter); no mushrooms, few peppers
+  ['apples', 'potatoes', 'carrots', 'onions', 'cabbage', 'squash', 'sweet potatoes', 'parsnips', 'greenhouse cucumbers'],
+  ['apples', 'potatoes', 'carrots', 'onions', 'cabbage', 'squash', 'sweet potatoes', 'parsnips', 'greenhouse tomatoes'],
+  ['apples', 'potatoes', 'carrots', 'onions', 'cabbage', 'parsnips', 'greenhouse lettuce', 'greenhouse tomatoes'],
+  ['apples', 'potatoes', 'carrots', 'onions', 'greenhouse lettuce', 'greenhouse cucumbers', 'greenhouse tomatoes'],
+  ['asparagus', 'rhubarb', 'spinach', 'lettuce', 'green onions', 'radishes', 'potatoes', 'greenhouse tomatoes'],
+  ['strawberries', 'asparagus', 'peas', 'lettuce', 'spinach', 'zucchini', 'green onions', 'rhubarb'],
+  ['blueberries', 'cherries', 'green beans', 'peas', 'zucchini', 'cucumbers', 'broccoli', 'carrots', 'new potatoes', 'corn'],
+  ['corn', 'tomatoes', 'peaches', 'blueberries', 'green beans', 'zucchini', 'broccoli', 'cauliflower', 'carrots', 'potatoes', 'cucumbers'],
+  ['apples', 'pears', 'corn', 'tomatoes', 'squash', 'broccoli', 'cauliflower', 'carrots', 'potatoes', 'green beans'],
+  ['apples', 'pears', 'squash', 'pumpkin', 'potatoes', 'sweet potatoes', 'carrots', 'broccoli', 'cauliflower', 'cabbage', 'brussels sprouts'],
+  ['apples', 'pears', 'squash', 'potatoes', 'sweet potatoes', 'carrots', 'cabbage', 'brussels sprouts', 'onions', 'parsnips'],
+  ['apples', 'squash', 'potatoes', 'carrots', 'cabbage', 'onions', 'parsnips', 'sweet potatoes'],
+];
+function seasonPicks(recipes) {
+  const items = SEASON[new Date().getMonth()];
+  const keys = items.filter((x) => x !== 'onions').map((x) => x.replace(/^(greenhouse|new) /, '').replace(/(es|s)$/, ''));
+  const picks = recipes.map((r) => ({ r, uses: keys.filter((k) => (r.pantry || []).some((p) => p.cat === 'produce' && p.name.toLowerCase().includes(k))) }))
+    .filter((x) => x.uses.length).sort((a, b) => b.uses.length - a.uses.length).slice(0, 4);
+  return { items, picks };
+}
+
+// ---------------------------------------------------------------- #88 surprise me, with limits (time, budget, mood → one pick)
+function surprisePool(recipes, lim) {
+  const T = (r, k, v) => ((r.tags || {})[k] || []).includes(v);
+  const { pool } = spinPool(); const ok = new Set(pool.map((r) => r.id));
+  return recipes.filter((r) => ok.has(r.id) || !pool.length)
+    .filter((r) => !lim.time || r.total <= lim.time)
+    .filter((r) => !lim.price || r.price === lim.price)
+    .filter((r) => !lim.mood || (lim.mood === 'cozy' ? r.category === 'comfort-soups' || T(r, 'occasion', 'comfort-night') : lim.mood === 'fancy' ? T(r, 'occasion', 'date-night') || r.price === '$$$' : lim.mood === 'takeout' ? r.category === 'takeout-at-home' || T(r, 'occasion', 'takeout-night') : T(r, 'occasion', 'weeknight') || r.total <= 30));
+}
+
 // ---------------------------------------------------------------- router: tabs, direction-aware transitions, per-tab scroll memory (#5, #15)
 const TAB_ROOTS = { '#/': 'recipes', '#/pantry': 'pantry', '#/grocery': 'grocery', '#/budget': 'budget', '#/us': 'us', '#/acura': 'acura' };
 function tabOf(h) {
   if (/^#\/(pantry|freezer)/.test(h)) return 'pantry';
   if (h.startsWith('#/grocery')) return 'grocery';
   if (h.startsWith('#/budget')) return 'budget';
-  if (/^#\/(us|story|year)/.test(h)) return 'us';
+  if (/^#\/(us|story|year|places|menu|keepsake)/.test(h)) return 'us';
   if (h.startsWith('#/acura')) return 'acura';
   if (h.startsWith('#/settings')) return '';
   return 'recipes';
@@ -3434,24 +4009,24 @@ function recapCard(rc, dismiss) {
 }
 
 // ---------------------------------------------------------------- what's new (update 3)
-const WHATSNEW_ID = 'u3-2026-11';
+const WHATSNEW_ID = 'u7-2026-11';
 const WHATSNEW = [
-  ['Smoother', 'Sheets slide down to close and the page behind stays put · no accidental zoom or bounce · swipe from the left edge to go back · pull down on Home to refresh · each tab remembers where you were · long-press a recipe for quick actions · updates install by themselves'],
-  ['Home', "Tonight's plan with a start-cooking time · spin the wheel · your top 4 favourites as photo tiles · recently cooked · recipe of the week · leftover reminders · sort by quickest, cheapest or most cooked"],
-  ['Cooking', 'Tap an ingredient in a step to count it down in the pantry · a “we’re out” button on every ingredient · missing-ingredient check · two dishes timed to finish together · choice of timer chimes · kitchen playlist · confetti the first time you make something'],
-  ['Grocery', 'Sorted in No Frills aisle order · swipe right to tick, left to delete · Shop together: a grocery-date view with a running total and the list split between you'],
-  ['Us', 'A new Us tab: cooking streak, badges, chef hats for who cooked, rate it together, taste tests, who’s on dishes, dessert wish jar, date-night countdown, signature dish, nicknames, “cook for me”, love stamps on photos, one-year-ago flashbacks and a year in review'],
-  ['Acura', "Acura’s Kitchen: 6 vet-safe homemade dog treats with bake mode, a treat jar with “good until” dates, a daily treat calculator and a safety guide"],
-  ['New recipes', '10 new dinners: teriyaki chicken bowls, orange chicken, beef lasagna, spaghetti & meatballs, shepherd’s pie, beef & broccoli, Philly cheesesteaks, garlic butter shrimp, chicken lo mein and beef stew'],
+  ['Recipes & Ideas', 'Filters → “Ready to make now” shows only what the pantry covers · More ideas has Surprise me (pick time, budget and mood), Fridge clear (with Friday reminders on Home), In season (Ontario produce this month) and soup nudges on cold or rainy days'],
+  ['Cooking', 'Cook mode shows a small preview of the next step and our notes · the swap button now covers far more ingredients (all within our rules) · “Acura’s share” on every recipe lists the plain bits she can have'],
+  ['Notes', 'Our notes on each recipe show who last changed them and when, and appear in cook mode'],
+  ['Grocery', 'Aisles follow a No Frills walk (produce, bakery, deli & meat, dairy, frozen, then the centre aisles) · Plan the week → one merged shopping list · Staples: our everyday list, re-added in one tap · receipts remember every price and point out big jumps (Settings → Prices → See)'],
+  ['Home', 'Tomorrow’s planned dinner reminds you what to thaw · Tonight’s plan has a Prep ahead list · thank-you notes pop up for the other person'],
+  ['Us', 'Mystery meal · Thank-you jar · a monthly Date-in menu card · Places we love (with the closest recipe to make at home) · rate together in secret from any cooked recipe · a printable keepsake cookbook from Our story · six new quiet badges'],
+  ['Acura', '“Can Acura eat this?” search · a dated photo wall'],
 ];
 function whatsNewCard() {
   if (state.seenWhatsNew === WHATSNEW_ID) return '';
   return `<div class="wn"><div class="wn-k">NEW IN OUR KITCHEN<button class="x" id="wnX" aria-label="Dismiss">×</button></div>
-    <p>10 new recipes, an Us tab just for the two of us, Acura’s Kitchen, and a smoother app all round. Everything you saved is still here.</p>
+    <p>Plan the week, a mystery meal, a thank-you jar, a keepsake cookbook, surprise-me picks and more — all tucked into the tabs you know. Everything you saved is still here.</p>
     <div class="btnrow" style="margin-top:10px"><button class="btn sm ghost" id="wnMore">See what's new</button><button class="btn sm gold" id="wnOk">Got it ♥</button></div></div>`;
 }
 function openWhatsNew() {
-  openSheet(`<h2>What's new</h2><p class="sub">November 2026 · update 3 · everything you had saved stays exactly as it was.</p>
+  openSheet(`<h2>What's new</h2><p class="sub">November 2026 · update 7 · everything you had saved stays exactly as it was.</p>
     <div class="wnlist">${WHATSNEW.map(([h, t]) => `<div><h4>${esc(h)}</h4><p>${esc(t)}</p></div>`).join('')}</div>
     <div class="foot"><button class="btn primary" data-close>Lovely</button></div>`);
   if (state.seenWhatsNew !== WHATSNEW_ID) { state.seenWhatsNew = WHATSNEW_ID; save(); }

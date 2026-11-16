@@ -35,6 +35,9 @@ that every saved value survived (see `/workspace/cookbook/tools/preserve_*.mjs` 
 - `localStorage["ourkitchen.fit"]`: left by Update 5's removed switch. Now ignored; never delete it
 - `sessionStorage["ok-scroll"]`, `["ok-updated"]`: transient (scroll restore and toast after a self-update)
 - Backups: Settings → Backup → Export/Restore (JSON of the state)
+- Update 7 added (add-only) to the state: `plan` (week plan by date), `staples`, `priceLog` (last 12 receipt prices
+  per item), `noteMeta` (who/when a recipe note was edited), `places`, `mystery`, `thanks`, `dateMenus`, `acura.photos`
+  (640px JPEGs, max 30; all photos live in localStorage, so the phone's ~5MB limit applies)
 
 ## Food rules (all recipes)
 - No mushrooms, mustard or olives (olive oil is fine). The build script and the add-recipe form enforce this
@@ -77,6 +80,21 @@ exactly 812pt although the image continues.
 - Home search only swaps `#homeBody` (120ms debounce). The input is never recreated, and result cards are reused.
 - Sheets with tabs update only their panel (Ideas has a fixed height). Photo stamps and cook mode update in place.
 
+## Update 7: where things live (no new tabs)
+- Recipes tab: filter "Ready to make now" (Our pantry group); thank-you note card at the top; nudges for prep ahead
+  (tomorrow's planned dinner, thaw reminders), weather dinners and Fridge-clear Friday; Ideas sheet = Surprise me
+  (time/budget/mood limits), Mood, Fridge clear, In season (Ontario, monthly), While-you-wait, Weather, Wish list.
+- Recipe page: "Acura's share" (pup-safe leftovers), swaps on every ingredient (rules: no mushrooms/mustard/olives),
+  notes show who edited them and when, "Rate together · in secret" then reveal (also in More).
+- Cook mode: next-step preview under each step; our notes on step 1 and in the ingredients panel.
+- Grocery tab: aisles in No Frills walking order; "Plan the week" (7 dinners → one merged list, pantry "Have it"
+  unticked); "Staples" (editable, add in one tap); receipt review flags prices that jumped (≥20% and ≥$0.50).
+- Settings → receipt prices: "See" lists the last price of each item.
+- Us tab: Mystery meal, Thank-you jar, Date-in menu (`#/menu`, one per month, shuffle), Places we love (`#/places`,
+  with the closest home recipe), keepsake printable cookbook (`#/keepsake`, from Our story; on iPhone Share → Print).
+  Badges: 6 new (week planned, thank-you, mystery, 3 places, date-in, Acura photo).
+- Acura tab: "Can Acura eat this?" search (`recipes/acura/treats.json` → `safety.foods`), Acura's photo wall.
+
 ## Update history
 | Update | Commit | What |
 |---|---|---|
@@ -88,3 +106,4 @@ exactly 812pt although the image continues.
 | 5 | 8b12ea6 | Tab bar stretched into the strip + switch (too low; replaced) |
 | 6 | see `git log` | Middle-ground tab bar fit (no switch), splash fit, no shake on taps, smooth search, wheel re-spin fix, notes |
 | 6.1 | see `git log` | Shell back inside the viewport (tabs fully tappable), bigger tab icons, edge-to-edge welcome card |
+| 7 | see `git log` | Week plan, staples, price memory, prep ahead, swaps, notes, places, mystery meal, thank-you jar, date-in menu, keepsake, secret rating, Acura search/share/photo wall, weather/Friday/season/surprise ideas, ready filter, badges |

@@ -1123,6 +1123,158 @@ a.pressed{transform:none!important}
 :is(.nudge,.wn,.annv,.flash,.recap) + .pick{margin-top:18px}
 .favtile .ft{padding-top:34px;background:linear-gradient(rgba(8,16,40,0),rgba(8,16,40,.55) 35%,rgba(8,16,40,.9));text-shadow:0 1px 2px rgba(0,0,0,.45)}
 
+/* ================================================================ update 7 — matte, flat, locked palette (no glow) */
+button.nudge{width:100%;text-align:left;border:0;font:inherit}
+.nudge.prep{background:var(--tile1)}
+.nudge.wxn{background:var(--tile3)}
+.nudge.ks{background:var(--tile2);margin:12px 0 4px}
+.nudge.cmready{margin:12px 0 4px}
+.btnpair{display:flex;gap:6px}
+.tnlinks{display:flex;justify-content:center;gap:18px;margin-top:4px}
+.tnlinks .linkbtn{display:inline-flex;align-items:center;gap:5px}
+.tnlinks svg,.linkbtn>svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;vertical-align:-3px;margin-right:4px}
+/* #64 prices */
+.rcjump{grid-column:2/-1;font-size:.72rem;font-weight:600;color:var(--kicker)}
+.rcjump:empty{display:none}
+.upnote{font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--kicker);border:1px solid var(--line-gold);padding:1px 5px;margin-left:4px}
+.cooked.prices b{font-family:"Cinzel";font-weight:700}
+/* #65 #70 cook mode */
+#cook .cnext{margin-top:8px;padding:8px 0 2px;border-top:1px solid rgba(245,230,206,.18);font-size:.86rem;line-height:1.3;color:rgba(245,230,206,.72);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#cook .cnext span{font-family:"Cinzel";font-size:.62rem;letter-spacing:.16em;color:var(--gold-soft);margin-right:8px}
+#cook .cnext b{font-weight:600;color:#F5E6CE}
+#cook .cbody p.cnotes{font-family:"Instrument Serif";font-style:italic;font-size:1.1rem;line-height:1.3;margin-top:10px;color:var(--gold-soft)}
+#cook .cnotes svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;margin-right:6px;vertical-align:-2px}
+.notemeta{margin-top:4px;min-height:1.1em}
+/* #66 prep ahead */
+.prepcard{margin-top:12px}
+.prepcard .pk{font-family:"Cinzel";font-weight:700;font-size:.66rem;letter-spacing:.16em;color:var(--kicker)}
+.prepcard .pt{display:block;font-weight:650;font-size:1rem;margin:2px 0 8px;color:var(--ink);text-decoration:none}
+.prepcard .tips{padding-bottom:2px}
+/* #67 week plan */
+.wkplan{display:flex;flex-direction:column;margin-top:10px}
+.wkrow{display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line)}
+.wkrow span{font-weight:650;font-size:.9rem;line-height:1.1}
+.wkrow small{display:block;font-weight:500;font-size:.7rem;color:var(--muted);margin-top:2px}
+.wkrow select{width:100%;height:40px;border:1.25px solid var(--line-gold);border-radius:2px;background:var(--input);color:var(--ink);padding:0 8px;font:inherit;font-size:.9rem}
+/* #71 #72 places */
+.places{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.place .pl-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.place .pl-top b{font-family:"Cinzel";font-weight:700;font-size:1rem;letter-spacing:.03em}
+.place .del{width:36px;height:36px;color:var(--muted);font-size:1.2rem;margin:-8px -8px -8px 0}
+.place .pl-d{font-size:.74rem;color:var(--muted);margin-top:1px}
+.place .pl-dish{font-family:"Instrument Serif";font-style:italic;font-size:1.15rem;margin-top:6px}
+.place .pl-note{font-size:.9rem;color:var(--ink2);margin-top:3px}
+.pl-home{display:flex;align-items:center;gap:8px;margin-top:10px;padding:9px 10px;background:var(--tile1);color:#F5E6CE;text-decoration:none;font-size:.88rem}
+.pl-home svg{width:18px;height:18px;fill:none;stroke:var(--gold-soft);stroke-width:1.8;flex:none}
+.pl-home span{flex:1}
+/* #73 mystery meal */
+.mylist{display:flex;flex-direction:column;margin-top:10px}
+.mylist button{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px solid var(--line);text-align:left}
+.mylist b{font-weight:600;font-size:.95rem}
+.mylist small{font-size:.74rem;color:var(--muted);flex:none}
+.myhand{text-align:center;padding:18px 0 4px}
+.myhand>svg{width:40px;height:40px;fill:none;stroke:var(--kicker);stroke-width:1.5;margin-bottom:8px}
+.clues{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.clues span{font-size:.86rem;font-weight:500;padding:7px 11px;border:1.25px solid var(--line-gold);background:var(--card)}
+.myreveal{text-align:center}
+.myreveal .im{aspect-ratio:16/10;overflow:hidden;margin-bottom:12px;background:var(--bg2)}
+.myreveal .im img{width:100%;height:100%;object-fit:cover}
+.myreveal h2{font-size:1.35rem!important;margin-top:4px}
+/* #74 thank-you jar */
+.tycard{margin-top:12px;padding:12px 14px;background:var(--tile4);color:#F5E6CE;border-left:4px solid var(--gold)}
+.ty-k{display:flex;align-items:center;gap:6px;font-family:"Cinzel";font-weight:600;font-size:.64rem;letter-spacing:.16em;color:var(--gold-soft)}
+.ty-k svg{width:12px;height:12px;fill:var(--gold-soft)}
+.tycard p{font-family:"Instrument Serif";font-style:italic;font-size:1.2rem;line-height:1.25;margin:4px 0 10px}
+.tyjar{margin-top:10px}
+.tyjar summary{font-weight:600;font-size:.9rem;padding:8px 0;cursor:pointer}
+/* #75 date-in menu (screenshot-friendly card) */
+.menucard{margin-top:8px;background:#F9EEDB;color:#12102E;border:1.5px solid var(--gold);padding:6px}
+.mc-in{border:1px solid rgba(196,150,62,.6);padding:26px 18px 20px;text-align:center}
+.mc-k{font-family:"Cinzel";font-weight:600;font-size:.62rem;letter-spacing:.22em;color:#8C6A28}
+.menucard h1{font-family:"Cinzel";font-weight:700;font-size:1.9rem;letter-spacing:.06em;margin-top:8px;color:#082048}
+.mc-names{font-family:"Instrument Serif";font-style:italic;font-size:1.2rem;color:#381848}
+.mc-names span{color:var(--gold)}
+.mc-rule{height:1px;background:var(--gold);opacity:.6;margin:16px 30px}
+.course .ck{font-family:"Cinzel";font-weight:600;font-size:.62rem;letter-spacing:.2em;color:#8C6A28}
+.course .cn{display:block;font-family:"Instrument Serif";font-style:italic;font-size:1.35rem;line-height:1.2;margin-top:4px;color:#12102E;text-decoration:none}
+.mc-dot{color:var(--gold);font-size:.8rem;margin:10px 0}
+.mc-foot{font-family:"Cinzel";font-size:.56rem;letter-spacing:.18em;color:#5A4C6C}
+/* #77 secret rating */
+.rate.big{justify-content:center;gap:6px;margin:22px 0 8px}
+.rate.big button{width:48px;height:48px}
+.rate.big svg{width:34px;height:34px}
+.srboth{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.srb{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 6px;border:1.25px solid var(--line-gold);background:var(--card)}
+.srb .rate span{display:flex}
+.srb .rate svg{width:20px;height:20px}
+.srb .rate span.on svg{fill:var(--gold)}
+/* #81 #82 #83 Acura */
+.pupq{margin-top:14px;padding:12px 14px;border:1.25px solid var(--line-gold);background:var(--card)}
+.pupq .aj-k{color:var(--kicker);margin-bottom:8px}
+.pupresults{display:flex;flex-direction:column}
+.pupres{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;padding:9px 0;border-bottom:1px solid var(--line)}
+.pupres:last-child{border-bottom:0}
+.pupres b{display:block;font-weight:600;font-size:.92rem}
+.pupres small{display:block;font-size:.78rem;color:var(--muted);margin-top:1px}
+.pv{display:inline-block;min-width:64px;text-align:center;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px;border:1.25px solid currentColor}
+.pupres.yes .pv,.pv.yes{color:var(--peri)}
+.pupres.limit .pv,.pv.limit{color:var(--kicker)}
+.pupres.no .pv,.pv.no{color:#A0304A}
+html[data-theme="dark"] .pupres.no .pv{color:#E08AA0}
+html[data-theme="dark"] .pupres.yes .pv,html[data-theme="dark"] .pv.yes{color:#9DB4E0}
+.pupcard{margin-top:14px;padding-top:2px;padding-bottom:2px}
+.pupcard summary{display:flex;align-items:center;gap:6px}
+.pupcard summary .paw{width:14px;height:14px;color:var(--kicker)}
+.pupshare{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
+.pupshare li{font-size:.9rem;font-weight:600}
+.pupshare .pv{margin-right:8px;min-width:58px}
+.pupshare small{display:block;font-weight:400;font-size:.78rem;color:var(--muted);margin:2px 0 0 66px}
+.acwall{margin-top:2px}
+.acphoto img{width:100%;display:block}
+/* #85 #87 #88 ideas */
+.limits label{display:block;font-family:"Cinzel";font-weight:600;font-size:.62rem;letter-spacing:.16em;color:var(--kicker);margin-top:10px}
+.segtext.lim{margin-top:5px}
+.segtext.lim button{height:38px;font-size:.84rem}
+.surprise{margin-top:16px}
+.surprise .btnrow{margin-top:10px}
+.fridayk{font-family:"Instrument Serif";font-style:italic;font-size:1.15rem;color:var(--kicker);margin-bottom:4px}
+.clues.season span{font-size:.8rem;padding:6px 10px;text-transform:capitalize}
+/* #76 keepsake cookbook */
+.keepsake{padding:0 var(--gutter) 24px}
+.ks-cover{text-align:center;padding:30px 10px 26px;border-bottom:1.25px solid var(--line-gold)}
+.ks-k{font-family:"Cinzel";font-weight:600;font-size:.64rem;letter-spacing:.22em;color:var(--kicker)}
+.ks-cover h1{font-family:"Cinzel";font-weight:700;font-size:2.2rem;letter-spacing:.06em;margin-top:8px}
+.ks-names{font-family:"Instrument Serif";font-style:italic;font-size:1.35rem;color:var(--group)}
+.ks-names span{color:var(--gold)}
+.ks-cover p{font-size:.9rem;color:var(--muted);margin:10px 0 14px}
+.ks-cover .ks-hint{margin:10px 0 0}
+.ks-recipe{padding:22px 0;border-bottom:1.25px solid var(--line-gold)}
+.ks-rk{font-family:"Cinzel";font-weight:600;font-size:.62rem;letter-spacing:.18em;color:var(--kicker)}
+.ks-recipe h2{font-family:"Cinzel";font-weight:700;font-size:1.35rem;line-height:1.15;margin-top:4px}
+.ks-meta{font-size:.8rem;color:var(--muted);margin-top:4px}
+.ks-photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-top:12px}
+.ks-photos figure{position:relative;margin:0}
+.ks-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.ks-photos figcaption{font-size:.7rem;color:var(--muted);margin-top:3px}
+.ks-stamps{position:absolute;top:6px;right:6px;display:flex;gap:4px}
+.ks-stamps i{font-style:normal;font-family:"Cinzel";font-weight:700;font-size:.62rem;color:#F5E6CE;background:var(--tile2);border:1px solid var(--gold);padding:2px 6px}
+.ks-love{font-family:"Instrument Serif";font-style:italic;font-size:1.15rem;margin-top:12px;color:var(--group)}
+.ks-notes{font-size:.88rem;margin-top:8px;color:var(--ink2)}
+.ks-cols{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px}
+.ks-cols h3{font-family:"Cinzel";font-weight:700;font-size:.74rem;letter-spacing:.14em;color:var(--kicker);margin-bottom:6px}
+.ks-cols h4{font-size:.8rem;font-weight:700;margin:8px 0 2px}
+.ks-cols ul,.ks-cols ol{padding-left:18px;font-size:.88rem;line-height:1.4}
+.ks-cols li{margin:2px 0}
+@media print{
+  body.printing-keepsake .keepsake{padding:0}
+  body.printing-keepsake .ks-cover .btn,body.printing-keepsake .ks-hint{display:none!important}
+  body.printing-keepsake .ks-cover{border:0;padding-top:30vh;break-after:page}
+  body.printing-keepsake .ks-recipe{break-before:page;border:0}
+  body.printing-keepsake .ks-cols{grid-template-columns:1fr 1.4fr}
+  body.printing-keepsake .ks-recipe *,body.printing-keepsake .ks-cover *{color:#000!important}
+  body.printing-keepsake .ks-stamps i{background:#fff!important;border-color:#8C6A28!important}
+}
+
 /* ================================================================ iPhone home-screen fit (one implementation, replaces the update 4/5 workarounds)
    iOS 26 standalone + black-translucent: the page is drawn from the top of the screen but WebKit sizes the viewport
    one status bar short (874pt screen, 812pt viewport on iPhone 16/17 Pro) and fills the strip below with the BODY

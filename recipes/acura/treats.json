@@ -501,6 +501,350 @@
    "Plain cooked egg"
   ],
   "emergency": "Ate something dangerous? Call your vet or the ASPCA Animal Poison Control Center (1-888-426-4435, fee may apply) right away.",
-  "source": "ASPCA Animal Poison Control 'People Foods to Avoid Feeding Your Pets'; AKC; WSAVA calorie guidance."
+  "source": "ASPCA Animal Poison Control 'People Foods to Avoid Feeding Your Pets'; AKC; WSAVA calorie guidance.",
+  "foods": [
+   [
+    "Chicken or turkey (plain, cooked)",
+    "yes",
+    "Boneless, skinless, no seasoning, butter or sauce.",
+    "chicken,turkey"
+   ],
+   [
+    "Lean beef (plain, cooked)",
+    "limit",
+    "A few plain pieces; trim the fat, no seasoning.",
+    "beef,steak,sirloin,ground beef,stewing beef"
+   ],
+   [
+    "Pork (plain, cooked)",
+    "limit",
+    "Lean, plain and well cooked only — never ham, bacon or sausage.",
+    "pork"
+   ],
+   [
+    "Salmon or white fish (plain, cooked)",
+    "limit",
+    "Cooked, boneless, no skin or glaze.",
+    "salmon,fish,trout,cod,tilapia"
+   ],
+   [
+    "Shrimp (plain, cooked)",
+    "limit",
+    "Peeled, tails off, no garlic butter.",
+    "shrimp,prawn"
+   ],
+   [
+    "Eggs (cooked)",
+    "yes",
+    "Plain scrambled or hard-boiled — never raw.",
+    "egg,eggs"
+   ],
+   [
+    "White rice (plain)",
+    "yes",
+    "Plain and cooked — great for an upset tummy.",
+    "rice,jasmine,basmati"
+   ],
+   [
+    "Pasta (plain)",
+    "limit",
+    "Plain cooked noodles only, no sauce.",
+    "pasta,spaghetti,fettuccine,macaroni,noodles,lasagna"
+   ],
+   [
+    "Bread (plain)",
+    "limit",
+    "A small piece of plain bread; no garlic bread or raisins.",
+    "bread,bun,roll,tortilla"
+   ],
+   [
+    "Potatoes (plain, cooked)",
+    "limit",
+    "Cooked and plain — never raw or green potatoes, no butter.",
+    "potato,potatoes"
+   ],
+   [
+    "Sweet potato (plain, cooked)",
+    "yes",
+    "Cooked and plain.",
+    "sweet potato,yam"
+   ],
+   [
+    "Pumpkin purée (plain)",
+    "yes",
+    "Plain canned pumpkin, not pie filling.",
+    "pumpkin"
+   ],
+   [
+    "Carrots",
+    "yes",
+    "Raw sticks or plain cooked.",
+    "carrot,carrots"
+   ],
+   [
+    "Green beans",
+    "yes",
+    "Plain, raw or cooked, no salt.",
+    "green bean,green beans"
+   ],
+   [
+    "Peas",
+    "yes",
+    "Plain green peas (fresh or frozen), not canned with salt.",
+    "peas"
+   ],
+   [
+    "Broccoli",
+    "limit",
+    "A few small plain florets.",
+    "broccoli"
+   ],
+   [
+    "Corn (off the cob)",
+    "limit",
+    "Plain kernels only — never the cob.",
+    "corn"
+   ],
+   [
+    "Cucumber",
+    "yes",
+    "Plain slices.",
+    "cucumber"
+   ],
+   [
+    "Lettuce",
+    "yes",
+    "Plain, a little.",
+    "lettuce,romaine,iceberg"
+   ],
+   [
+    "Celery",
+    "yes",
+    "Small pieces.",
+    "celery"
+   ],
+   [
+    "Zucchini",
+    "yes",
+    "Plain, raw or cooked.",
+    "zucchini"
+   ],
+   [
+    "Cauliflower",
+    "limit",
+    "Plain, small amounts.",
+    "cauliflower"
+   ],
+   [
+    "Spinach",
+    "limit",
+    "A little; not a regular treat.",
+    "spinach"
+   ],
+   [
+    "Tomatoes (ripe)",
+    "limit",
+    "Ripe red flesh only — no stems, leaves or green tomatoes.",
+    "tomato,tomatoes"
+   ],
+   [
+    "Apples",
+    "yes",
+    "Slices without the core or seeds.",
+    "apple,apples"
+   ],
+   [
+    "Blueberries",
+    "yes",
+    "Plain fresh or frozen.",
+    "blueberry,blueberries"
+   ],
+   [
+    "Strawberries",
+    "yes",
+    "Plain, cut up.",
+    "strawberry,strawberries"
+   ],
+   [
+    "Bananas",
+    "limit",
+    "A few slices — they're sugary.",
+    "banana,bananas"
+   ],
+   [
+    "Watermelon",
+    "yes",
+    "Seedless flesh, no rind.",
+    "watermelon"
+   ],
+   [
+    "Pears",
+    "yes",
+    "Slices without the core or seeds.",
+    "pear,pears"
+   ],
+   [
+    "Oranges",
+    "limit",
+    "A segment or two, peeled, no seeds.",
+    "orange,oranges,clementine,mandarin"
+   ],
+   [
+    "Pineapple",
+    "limit",
+    "A few small fresh pieces.",
+    "pineapple"
+   ],
+   [
+    "Mango",
+    "limit",
+    "Peeled flesh, no pit.",
+    "mango"
+   ],
+   [
+    "Plain oatmeal",
+    "yes",
+    "Cooked with water, no sugar.",
+    "oats,oatmeal"
+   ],
+   [
+    "Cheese",
+    "limit",
+    "A tiny cube of mild cheese; skip if her tummy is sensitive.",
+    "cheese,cheddar,mozzarella,parmesan,provolone,ricotta"
+   ],
+   [
+    "Plain yogurt",
+    "limit",
+    "Plain, unsweetened, no xylitol.",
+    "yogurt,yoghurt"
+   ],
+   [
+    "Milk & cream",
+    "limit",
+    "Many dogs can't digest it — a lick at most.",
+    "milk,cream,half-and-half,sour cream"
+   ],
+   [
+    "Peanut butter",
+    "limit",
+    "Only xylitol-free, unsalted — check the label.",
+    "peanut butter"
+   ],
+   [
+    "Plain popcorn",
+    "limit",
+    "Air-popped, no butter or salt, no unpopped kernels.",
+    "popcorn"
+   ],
+   [
+    "Onions, garlic, leeks & chives",
+    "no",
+    "Raw, cooked or powdered — damage red blood cells.",
+    "onion,onions,garlic,leek,chive,shallot,onion powder,garlic powder"
+   ],
+   [
+    "Chocolate & cocoa",
+    "no",
+    "The darker, the more dangerous.",
+    "chocolate,cocoa"
+   ],
+   [
+    "Grapes, raisins & currants",
+    "no",
+    "Can cause kidney failure.",
+    "grape,grapes,raisin,raisins,currant"
+   ],
+   [
+    "Xylitol (birch sugar)",
+    "no",
+    "In some peanut butters, gum and baked goods — even a little can be deadly.",
+    "xylitol,sugar-free gum"
+   ],
+   [
+    "Macadamia nuts",
+    "no",
+    "",
+    "macadamia"
+   ],
+   [
+    "Avocado",
+    "no",
+    "Pit, skin and leaves especially.",
+    "avocado,guacamole"
+   ],
+   [
+    "Cooked bones",
+    "no",
+    "Can splinter.",
+    "bone,bones"
+   ],
+   [
+    "Coffee, tea & caffeine",
+    "no",
+    "",
+    "coffee,tea,caffeine,energy drink"
+   ],
+   [
+    "Alcohol & raw yeast dough",
+    "no",
+    "",
+    "alcohol,beer,wine,dough,yeast"
+   ],
+   [
+    "Nutmeg",
+    "no",
+    "Watch out for pumpkin pie filling.",
+    "nutmeg"
+   ],
+   [
+    "Cherries & fruit pits",
+    "no",
+    "Pits, stems and leaves are toxic.",
+    "cherry,cherries,peach pit,plum pit"
+   ],
+   [
+    "Bacon, ham & sausage",
+    "no",
+    "Too salty and fatty.",
+    "bacon,ham,sausage,pepperoni,hot dog"
+   ],
+   [
+    "Salty, buttery or seasoned food",
+    "no",
+    "No salt, butter, sauces or spice mixes on her share.",
+    "butter,salt,gravy,sauce,seasoning,soy sauce,teriyaki,broth,stock,bouillon,salsa,ketchup,tomato paste,worcestershire,marinara,oyster sauce,hoisin,mayonnaise"
+   ],
+   [
+    "Hot peppers & spicy food",
+    "no",
+    "Upsets her tummy.",
+    "chili,jalapeno,hot sauce,spicy,cayenne"
+   ],
+   [
+    "Lemons & limes",
+    "no",
+    "Too acidic; the peel and oils upset tummies.",
+    "lemon,lemons,lime,limes,vinegar"
+   ],
+   [
+    "Walnuts & almonds",
+    "no",
+    "Hard to digest; walnuts can carry mould.",
+    "walnut,walnuts,almond,almonds"
+   ],
+   [
+    "Fried or fatty food",
+    "no",
+    "Can trigger pancreatitis.",
+    "fried,fries,fat trimmings,skin"
+   ],
+   [
+    "Ice cream & sweets",
+    "no",
+    "Sugar and dairy — and some contain xylitol.",
+    "ice cream,candy,cake,cookies,dessert"
+   ]
+  ]
  }
 }
