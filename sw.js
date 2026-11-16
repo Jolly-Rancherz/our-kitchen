@@ -1,6 +1,6 @@
 /* Our Kitchen service worker — offline support.
    VERSION and the PRECACHE list are rewritten by tools/build_index.py. */
-const VERSION = 'bb359c1855';
+const VERSION = '79fee09d0a';
 const CACHE = 'our-kitchen-' + VERSION;
 const VENDOR = 'ok-vendor-tesseract-5.1.1';
 const PRECACHE = /*PRECACHE*/[
@@ -127,13 +127,20 @@ self.addEventListener('activate', (e) => {
   );
 });
 
-// Network-first for pages and recipe data (so new recipes show up), cache-first for everything else.
+// Opening the app (navigation): the app shell comes straight from this version's cache, so launch never waits on the
+// network (no blank/black screen on a weak signal). New versions arrive as a new service worker that precaches a
+// fresh shell together with its matching css/js, and the app applies it (see maybeApplyUpdate in app.js).
+// Recipe data (.json) stays network-first so new recipes show up; everything else is cache-first.
 self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
-  const fresh = req.mode === 'navigate' || url.pathname.endsWith('.json') || url.pathname.endsWith('.html') || url.pathname.endsWith('/');
+  if (req.mode === 'navigate') {
+    e.respondWith(caches.open(CACHE).then((c) => c.match('./index.html').then((m) => m || c.match('./')).then((m) => m || fetch(req))));
+    return;
+  }
+  const fresh = url.pathname.endsWith('.json') || url.pathname.endsWith('.html') || url.pathname.endsWith('/');
   if (fresh) {
     // network-first, but don't hang on a weak signal: fall back to the cache after 3.5 s
     e.respondWith(new Promise((resolve) => {

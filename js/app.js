@@ -585,7 +585,7 @@ async function viewRecipe(id) {
   }));
   $$('.checklist li[data-s]').forEach((li) => (li.onclick = (e) => { if (e.target.closest('.use')) return; toggleCheck(id, 's', li.dataset.s, li); }));
   $('#resetBtn').onclick = () => withUndo('Ticks reset', () => { delete state.checks[id]; }, () => $$('.checklist li.done').forEach((li) => li.classList.remove('done')));
-  $('#unitBtn').onclick = () => { const order = ['both', 'us', 'metric']; state.settings.units = order[(order.indexOf(state.settings.units || 'both') + 1) % 3]; save(); const y = vY(); viewRecipe(id).then(() => vTo(y)); toast(state.settings.units === 'metric' ? 'Showing grams first' : state.settings.units === 'us' ? 'Showing cups & spoons only' : 'Showing cups with grams'); };
+  $('#unitBtn').onclick = () => { const order = ['both', 'us', 'metric']; state.settings.units = order[(order.indexOf(state.settings.units || 'both') + 1) % 3]; save(); viewRecipe(id); toast(state.settings.units === 'metric' ? 'Showing grams first' : state.settings.units === 'us' ? 'Showing cups & spoons only' : 'Showing cups with grams'); };
   $('#startBy').onclick = () => openStartBy(r);
   $('#guestBtn').onclick = () => openGuests(r, id);
   $('#loveBtn').onclick = () => openLoveNote(id, r);
@@ -594,7 +594,7 @@ async function viewRecipe(id) {
   $('#verBtn') && ($('#verBtn').onclick = () => swapVersion(id));
   const range = $('#sv');
   range.oninput = () => { $('#svVal').textContent = range.value; range.style.setProperty('--p', ((range.value - 1) / 9) * 100 + '%'); };
-  range.onchange = () => { const n = +range.value; delete state.guests[id]; if (n === base) delete state.servings[id]; else state.servings[id] = n; save(); const y = vY(); viewRecipe(id).then(() => vTo(y)); };
+  range.onchange = () => { const n = +range.value; delete state.guests[id]; if (n === base) delete state.servings[id]; else state.servings[id] = n; save(); viewRecipe(id); };
   $('#missingBtn').onclick = () => openMissing(r, s, f);
   $('#cookBtn').onclick = () => openCook(r, s, f);
   $('#cookedBtn').onclick = () => openCooked(r, s, cost);
@@ -623,7 +623,7 @@ function addPhoto(id, file) {
       const list = state.photos[id] || (state.photos[id] = []);
       if (list.length >= 12) { toast('12 photos max per recipe — remove one first'); return; }
       list.push({ id: uid(), data: c.toDataURL('image/jpeg', 0.72), date: todayISO() });
-      save(); const y = vY(); viewRecipe(id).then(() => vTo(y)); toast('Photo saved ♥'); checkMilestones();
+      save(); viewRecipe(id); toast('Photo saved ♥'); checkMilestones();
     };
     im.onerror = () => toast("Couldn't read that photo");
     im.src = rd.result;
@@ -739,8 +739,7 @@ function openCooked(r, s, est) {
       if ($('#cReset', b).checked) delete state.checks[s.id];
       const lp = parseInt($('#cLeft', b).value, 10); if (lp > 0) { const lid = uid(); state.leftovers[lid] = { id: lid, recipeId: s.id, title: r.title, date, portions: lp }; }
       save(); closeSheet();
-      const y = vY();
-      if (location.hash === '#/r/' + s.id) viewRecipe(s.id).then(() => { vTo(y); const btn = $('#cookedBtn'); if (btn) heartBurst(btn); });
+      if (location.hash === '#/r/' + s.id) viewRecipe(s.id).then(() => { const btn = $('#cookedBtn'); if (btn) heartBurst(btn); });
       const total = monthTotal(date.slice(0, 7));
       toast(skip ? '♥ Logged · counted in your receipts' : `♥ Logged ${money(amount)} · ${monthName(date.slice(0, 7)).split(' ')[0]} is at ${money(total)}`, 'Budget', () => go('#/budget'));
       checkMilestones();
@@ -798,14 +797,14 @@ function viewPantry() {
     const x = cat[row.dataset.k];
     $$('.seg button', row).forEach((b) => (b.onclick = () => {
       setLevel(x.key, x.name, x.cat, b.dataset.l);
-      const y = vY(); let added = false;
+      let added = false;
       if (levelOf(x.key) === 'out' && state.settings.autoRestock !== false && !onList(x.key)) { addGrocery(x.name, x.cat, x.key, 'Restock'); save(); added = true; }
-      viewPantry(); vTo(y);
-      if (added) toast(`${x.name} is out — added to the grocery list`, 'Undo', () => { Object.values(state.grocery).forEach((g) => { if (g.key === x.key && !g.checked && g.from === 'Restock') delete state.grocery[g.id]; }); save(); const y2 = vY(); viewPantry(); vTo(y2); });
+      viewPantry();
+      if (added) toast(`${x.name} is out — added to the grocery list`, 'Undo', () => { Object.values(state.grocery).forEach((g) => { if (g.key === x.key && !g.checked && g.from === 'Restock') delete state.grocery[g.id]; }); save(); viewPantry(); });
     }));
     $('.nmbtn', row).onclick = () => openPantryItem(x);
   });
-  $$('[data-add]').forEach((b) => (b.onclick = () => { const x = cat[b.dataset.add]; addGrocery(x.name, x.cat, x.key, 'Pantry'); save(); const y = vY(); viewPantry(); vTo(y); toast(`${x.name} added to the list`); }));
+  $$('[data-add]').forEach((b) => (b.onclick = () => { const x = cat[b.dataset.add]; addGrocery(x.name, x.cat, x.key, 'Pantry'); save(); viewPantry(); toast(`${x.name} added to the list`); }));
   $('#addNeeds') && ($('#addNeeds').onclick = () => { needs.forEach((x) => addGrocery(x.name, x.cat, x.key, 'Pantry')); save(); viewPantry(); toast(`Added ${needs.length} to the grocery list`, 'View', () => go('#/grocery')); });
   const addP = () => { const v = $('#pNew').value.trim(); if (!v) return; const k = pantryKey(v); state.pantry[k] = { name: v, cat: guessCat(v), level: 'have', at: now() }; save(); viewPantry(); toast(`${v} added to pantry`); };
   $('#pAdd').onclick = addP; $('#pNew').onkeydown = (e) => { if (e.key === 'Enter') addP(); };
@@ -936,11 +935,9 @@ function viewSettings() {
       <div class="setrow"><span class="l"><b>Show the welcome screen</b></span><button class="btn sm ghost" id="showW">Show</button></div>
       <div class="setrow"><span class="l"><b>Reset everything</b><span>Favourites, pantry, list, budget, ticks — all of it</span></span><button class="btn sm danger" id="resetAll">Reset</button></div>
       <p class="small muted" style="margin-top:14px">Our Kitchen · Corey ♥ Faith · ${INDEX.recipes.length} recipes · works offline. Shared sync between our phones is planned for later.</p>
-      <p class="small muted fitinfo">Screen ${FIT.w || ''}×${FIT.screen || ''} · view ${FIT.view || ''} · safe areas ${Math.round(FIT.sat || 0)}/${Math.round(FIT.sab || 0)} · ${FIT.sa ? 'home-screen app' : 'browser'}${FIT.strip ? ` · bottom strip ${FIT.strip}${FIT.reach ? ' · tab bar to edge' : ''}` : ''}</p>
-      ${FIT.strip ? `<label class="setrow"><span class="l"><b>Tab bar to the bottom edge</b><span>iPhone home-screen fix. Turn off if the tabs look cut off.</span></span><span class="switch"><input type="checkbox" id="fitReach" ${FIT.reach ? 'checked' : ''}><i></i></span></label>` : ''}
+      <p class="small muted fitinfo">Screen ${FIT.w || ''}×${FIT.screen || ''} · view ${FIT.view || ''} · safe areas ${Math.round(FIT.sat || 0)}/${Math.round(FIT.sab || 0)} · ${FIT.sa ? 'home-screen app' : 'browser'}${FIT.strip ? ` · bottom strip ${FIT.strip} · bar +${FIT.lift}` : ''}</p>
     </div></div>`);
   $$('#themeSeg button').forEach((b) => (b.onclick = () => { st.theme = b.dataset.t; save(); applyTheme(); viewSettings(); }));
-  $('#fitReach') && ($('#fitReach').onchange = (e) => { try { localStorage.setItem('ourkitchen.fit', e.target.checked ? 'on' : 'off'); } catch (x) {} fitScreen(); const y = vY(); viewSettings(); vTo(y); });
   $('#bigT').onchange = (e) => { st.bigText = e.target.checked; save(); applyTheme(); };
   $('#snowT').onchange = (e) => { st.snow = e.target.checked; save(); applySeason(); };
   $('#heartT').onchange = (e) => { st.hearts = e.target.checked; save(); applySeason(); };
@@ -1326,7 +1323,7 @@ async function loadWeather() {
     if (!j.current) return;
     WX = { at: now(), t: Math.round(j.current.temperature_2m), code: j.current.weather_code };
     localStorage.setItem(WX_KEY, JSON.stringify(WX));
-    if ((location.hash || '#/') === '#/' && !$('#wxLine') && $('#sheetWrap').hidden) { const y = vY(); viewHome(); vTo(y); }
+    if ((location.hash || '#/') === '#/' && !$('#wxLine') && $('#sheetWrap').hidden && document.activeElement !== $('#q')) { viewHome(); }
   } catch (e) { /* offline or blocked: skip silently */ }
 }
 function wxFresh() { return WX && now() - WX.at < 6 * 36e5 ? WX : null; }
@@ -1387,7 +1384,7 @@ const withTag = (html, tag) => html.replace(/<\/a>$/, `<span class="usetag">${es
 function openIdeas(tab) {
   const recipes = visibleRecipes();
   let cur = tab || 'mood'; let mood = ui.mood || 'cozy';
-  const draw = (b) => {
+  const bodyHTML = () => {
     const w = wxFresh(); const u = useItUp(recipes); const lt = longTimeFavs(recipes);
     const tabs = [['mood', 'Mood'], ['use', 'Use it up'], ['while', 'A while'], ...(w ? [['wx', 'Weather']] : []), ['wish', 'Wish list']];
     let body = '';
@@ -1397,13 +1394,24 @@ function openIdeas(tab) {
     else if (cur === 'while') body = lt.length ? `<div class="rlist">${lt.slice(0, 5).map((x) => withTag(rcard(x.r), x.days == null ? 'not cooked yet' : x.days + ' days ago')).join('')}</div>` : '<div class="empty">Favourites you haven\'t made in two weeks or more show up here.</div>';
     else if (cur === 'wx' && w) body = `<p class="sub">London, ON · ${wxTemp(w.t)} · ${esc(wxWords(w.code))} — ${esc(wxMood(w).line)}.</p>${pickCards(weatherPicks(recipes))}`;
     else if (cur === 'wish') body = wishHTML();
-    b.innerHTML = `<h2>Ideas</h2><div class="chips tabs">${tabs.map(([k, l]) => `<button class="chip ${cur === k ? 'on' : ''}" data-tab="${k}">${l}</button>`).join('')}</div><div class="ideas">${body}</div>
-      <div class="foot"><button class="btn" data-close>Close</button></div>`;
-    $$('[data-tab]', b).forEach((c) => (c.onclick = () => { cur = c.dataset.tab; draw(b); }));
-    $$('[data-mood]', b).forEach((c) => (c.onclick = () => { mood = ui.mood = c.dataset.mood; draw(b); }));
-    if (cur === 'wish') bindWish(b, () => draw(b));
+    return { tabs, body };
   };
-  openSheet('', draw);
+  // update 6: switching tabs / moods only swaps the .ideas panel (the sheet, its tab chips and footer stay put) and the
+  // sheet keeps one height for every tab (.ideas-sheet), so it no longer jumps or redraws when you switch.
+  const fill = (b) => {
+    const box = $('.ideas', b); box.innerHTML = bodyHTML().body; markLoaded(box);
+    $$('[data-tab]', b).forEach((c) => c.classList.toggle('on', c.dataset.tab === cur));
+    $$('[data-mood]', box).forEach((c) => (c.onclick = () => { mood = ui.mood = c.dataset.mood; fill(b); }));
+    if (cur === 'wish') bindWish(box, () => fill(b));
+  };
+  const draw = (b) => {
+    const { tabs } = bodyHTML();
+    b.innerHTML = `<h2>Ideas</h2><div class="chips tabs">${tabs.map(([k, l]) => `<button class="chip ${cur === k ? 'on' : ''}" data-tab="${k}">${l}</button>`).join('')}</div><div class="ideas"></div>
+      <div class="foot"><button class="btn" data-close>Close</button></div>`;
+    $$('[data-tab]', b).forEach((c) => (c.onclick = () => { if (cur === c.dataset.tab) return; cur = c.dataset.tab; fill(b); }));
+    fill(b);
+  };
+  openSheet('', (b) => { $('.sheet').classList.add('ideas-sheet'); draw(b); });
 }
 
 // ---------------------------------------------------------------- wish list (#48)
@@ -1453,7 +1461,7 @@ function openPantryItem(x) {
     <div class="foot" style="grid-template-columns:auto auto 1fr"><button class="btn" id="ubClear">Clear</button><button class="btn" id="ubFreeze">${svg('snow')}Freezer</button><button class="btn primary" id="ubSave">Save</button></div>
     ${!x.recipes.length ? '<button class="btn danger block" id="pDel" style="margin-top:10px">Remove from pantry</button>' : ''}`, (b) => {
     $$('[data-ub]', b).forEach((c) => (c.onclick = () => { $('#ubD', b).value = isoPlus(+c.dataset.ub); }));
-    const set = (v) => { const cur = state.pantry[x.key] || { name: x.name, cat: x.cat, level: null }; if (v) state.pantry[x.key] = { ...cur, useBy: v, at: now() }; else { const c2 = { ...cur }; delete c2.useBy; state.pantry[x.key] = c2; } save(); closeSheet(); const y = vY(); viewPantry(); vTo(y); };
+    const set = (v) => { const cur = state.pantry[x.key] || { name: x.name, cat: x.cat, level: null }; if (v) state.pantry[x.key] = { ...cur, useBy: v, at: now() }; else { const c2 = { ...cur }; delete c2.useBy; state.pantry[x.key] = c2; } save(); closeSheet(); viewPantry(); };
     $('#ubSave', b).onclick = () => set($('#ubD', b).value);
     $('#ubClear', b).onclick = () => set('');
     $('#ubFreeze', b).onclick = () => { const id = uid(); state.freezer[id] = { id, name: x.name, portions: 1, date: todayISO(), at: now() }; save(); closeSheet(); toast(`${x.name} added to the freezer`, 'Open', () => go('#/freezer')); };
@@ -1787,6 +1795,8 @@ function openCook(r, s, f) {
     const others = cookTimers.filter((t) => t !== myT);
     const more = last && pending() >= 0;
     el.classList.toggle('candle', !!sess.candle && isDate(rr)); el.classList.toggle('hands', !!sess.hands);
+    // same step redrawn (read aloud, timer, ingredients, candle...): keep the step text where it was scrolled to
+    const pos = `${d.s.id}:${d.i}`, cb0 = $('.cbody', el), keepY = cb0 && el.dataset.pos === pos ? cb0.scrollTop : 0; el.dataset.pos = pos;
     el.innerHTML = `<div class="ctop"><button class="iconbtn" id="cClose" aria-label="Close">${svg('close')}</button><div class="cstep">STEP ${d.i + 1} OF ${rr.steps.length}</div>
         <div class="ctools">${'speechSynthesis' in window ? `<button class="iconbtn ${sess.read ? 'on' : ''}" id="cRead" aria-label="Read aloud" aria-pressed="${sess.read}">${svg('speaker')}</button>` : ''}<button class="iconbtn ${sess.hands ? 'on' : ''}" id="cHands" aria-label="Hands-free" aria-pressed="${sess.hands}">${svg('mic')}</button>${isDate(rr) ? `<button class="iconbtn ${sess.candle ? 'on' : ''}" id="cCandle" aria-label="Candle light" aria-pressed="${sess.candle}">${svg('candle')}</button>` : ''}<button class="iconbtn" id="cMusic" aria-label="Kitchen playlist">${svg('music')}</button><button class="iconbtn ${sess.showIngs ? 'on' : ''}" id="cIngs" aria-label="Ingredients">${svg('cart')}</button></div></div>
       ${sess.dishes.length > 1 ? `<div class="dishes">${sess.dishes.map((x, k) => `<button data-dish="${k}" class="${k === sess.cur ? 'on' : ''}">${esc(short(x.r.title))}<small>${x.done ? 'done ✓' : 'step ' + (x.i + 1) + '/' + x.r.steps.length}</small></button>`).join('')}</div>` : ''}
@@ -1799,6 +1809,7 @@ function openCook(r, s, f) {
       ${others.length ? `<div class="ttray">${others.map((t) => `<button data-tgo="${t.id}"><b data-tleft="${t.id}">${fmtSec(t.left)}</b><span>${t.label ? esc(short(t.label)) : esc(short(t.dish)) + ' · step ' + (t.step + 1)}</span></button>`).join('')}</div>` : ''}
       <div class="cnav"><button class="btn" id="cPrev" ${d.i === 0 ? 'disabled style="opacity:.35"' : ''}>Back</button><button class="btn gold" id="cNext">${last ? (more ? 'Next dish' : 'Done ♥') : 'Next step'}</button></div>
       <div class="cfoot">${sess.dishes.length < 2 ? '<button class="linkbtn" id="cAdd">+ Cook a second dish</button>' : ''}<span class="awake">${wakeLock ? 'Screen will stay awake while cooking' : ''}</span></div>`;
+    if (keepY && $('.cbody', el)) $('.cbody', el).scrollTop = keepY;
     $('#cClose', el).onclick = close;
     $('#cIngs', el).onclick = () => { sess.showIngs = !sess.showIngs; draw(); };
     $('#cPrev', el).onclick = () => move(-1);
@@ -1878,7 +1889,7 @@ const SHEET_IN = 'transform .36s cubic-bezier(.32,.72,0,1)', SHEET_OUT = 'transf
 function openSheet(html, mount) {
   const w = $('#sheetWrap'); const sh = $('.sheet', w); const scrim = $('.sheet-scrim', w);
   const fresh = w.hidden; clearTimeout(sheetCloseT); sheetCloseT = null; w.classList.remove('closing');
-  $('#sheetBody').innerHTML = html;
+  sh.classList.remove('ideas-sheet'); $('#sheetBody').innerHTML = html;
   document.body.classList.add('sheet-open');
   sh.scrollTop = 0;
   if (mount) mount($('#sheetBody'));
@@ -1899,7 +1910,7 @@ function finishCloseSheet() {
   const w = $('#sheetWrap'); const sh = $('.sheet', w); const scrim = $('.sheet-scrim', w);
   clearTimeout(sheetCloseT); clearTimeout(sheetOpenT); sheetCloseT = null;
   const was = !w.hidden;
-  w.hidden = true; w.classList.remove('closing'); $('#sheetBody').innerHTML = '';
+  w.hidden = true; w.classList.remove('closing'); sh.classList.remove('ideas-sheet'); $('#sheetBody').innerHTML = '';
   sh.style.transform = ''; sh.style.transition = ''; scrim.style.opacity = ''; scrim.style.transition = '';
   document.body.classList.remove('sheet-open');
   if (was) setTimeout(maybeApplyUpdate, 450);
@@ -1979,11 +1990,11 @@ function initSW() {
   });
 }
 
-// ---------------------------------------------------------------- screen fit (update 4): iPhone home-screen app geometry
+// ---------------------------------------------------------------- screen fit: iPhone home-screen app geometry
 // iOS 26+ with black-translucent: the page is drawn from the top of the screen but the viewport is sized as if it
-// started below the status bar, so it ends one status-bar height short of the bottom and iOS fills that strip with
-// the page background. We detect that strip, colour it like the tab bar and drop the (now redundant) bottom padding
-// so the tab bar reads as flush to the edge. Normal geometry is left alone.
+// started below the status bar, so it ends one status-bar height short of the bottom (the 'strip'). We detect the
+// strip and size the app shell so the tab bar ends where the home-indicator zone starts; the css block
+// "iPhone home-screen fit" explains the rest. Normal geometry (browser, fixed iOS versions) is left alone.
 const FIT = {};
 function fitScreen() {
   const r = document.documentElement;
@@ -1995,17 +2006,21 @@ function fitScreen() {
   const sh = portrait ? Math.max(screen.width, screen.height) : Math.min(screen.width, screen.height);
   const gap = Math.round(sh - window.innerHeight);
   const strip = sa && portrait && sat >= 20 && Math.abs(gap - sat) <= 3 ? gap : 0;
-  let reach = true; try { reach = localStorage.getItem('ourkitchen.fit') !== 'off'; } catch (e) {}
-  r.classList.toggle('sa', sa); r.classList.toggle('strip', strip > 0); r.classList.toggle('reach', strip > 0 && reach); r.style.setProperty('--strip', strip + 'px');
-  if (strip > 0 && reach && (window.scrollY || document.documentElement.scrollTop)) window.scrollTo(0, 0);
-  Object.assign(FIT, { sa, screen: sh, view: window.innerHeight, w: window.innerWidth, sat, sab, gap, strip, reach: strip > 0 && reach });
+  // one fixed layout, no switch (an old 'ourkitchen.fit' key from update 5 is simply ignored, never deleted).
+  // The shell grows into the strip by (strip - bottom inset): 62 - 34 = 28pt on iPhone 16/17 Pro, i.e. down to the
+  // top of the home-indicator zone, where WebKit stops painting. No inset reported: half the strip.
+  const lift = strip > 0 ? Math.max(0, Math.min(strip, sab > 0 ? Math.round(strip - sab) : Math.round(strip / 2))) : 0;
+  r.classList.toggle('sa', sa); r.classList.toggle('strip', strip > 0);
+  if (strip > 0) r.style.setProperty('--shellh', Math.round(window.innerHeight + lift) + 'px'); else r.style.removeProperty('--shellh');
+  if (strip > 0 && (window.scrollY || document.documentElement.scrollTop)) window.scrollTo(0, 0);
+  Object.assign(FIT, { sa, screen: sh, view: window.innerHeight, w: window.innerWidth, sat, sab, gap, strip, lift });
 }
 fitScreen();
 window.addEventListener('resize', () => setTimeout(fitScreen, 60));
 window.addEventListener('orientationchange', () => setTimeout(fitScreen, 300));
 window.addEventListener('pageshow', fitScreen); window.addEventListener('load', fitScreen);
-// the shell is taller than the reported viewport in 'reach' mode: never let the page itself scroll
-window.addEventListener('scroll', () => { if (document.documentElement.classList.contains('reach') && window.scrollY) window.scrollTo(0, 0); }, { passive: true });
+// the shell is taller than the reported viewport in strip mode: never let the page itself scroll
+window.addEventListener('scroll', () => { if (document.documentElement.classList.contains('strip') && window.scrollY) window.scrollTo(0, 0); }, { passive: true });
 document.fonts && document.fonts.ready && document.fonts.ready.then(fitScreen);
 
 // ---------------------------------------------------------------- keyboard never covers inputs (#8)
@@ -2109,6 +2124,8 @@ function animateView(dir) {
   const v = $('#view'); v.classList.remove('vin-fwd', 'vin-back', 'vin-tab');
   if (reducedMotion()) return;
   void v.offsetWidth; v.classList.add('vin-' + dir);
+  // drop the class once the enter animation is done so later partial updates never animate
+  clearTimeout(animateView.t); animateView.t = setTimeout(() => v.classList.remove('vin-fwd', 'vin-back', 'vin-tab'), 420);
 }
 const LOADED = new Set();
 document.addEventListener('load', (e) => { const t = e.target; if (t && t.tagName === 'IMG') { t.classList.add('ld'); LOADED.add(t.getAttribute('src')); } }, true);
@@ -2216,7 +2233,7 @@ function sortRecipes(list) {
   return l;
 }
 function sortChips() { return `<div class="sortrow" role="group" aria-label="Sort">${SORTS.map(([k, n]) => `<button class="${(ui.sort || 'book') === k ? 'on' : ''}" data-sort="${k}">${n}</button>`).join('')}</div>`; }
-function bindSort(redraw) { $$('[data-sort]').forEach((b) => (b.onclick = () => { ui.sort = b.dataset.sort; const y = vY(); redraw(); vTo(y); })); }
+function bindSort(redraw) { $$('[data-sort]').forEach((b) => (b.onclick = () => { ui.sort = b.dataset.sort; redraw(); })); }
 function viewCategory(slugName) {
   const c = catOf(slugName);
   setTop({ title: esc(c.name.toUpperCase()), back: '#/' });
@@ -2238,7 +2255,7 @@ function setTonight(id, quiet) {
   state.tonight = { date: todayISO(), recipeId: id, by: state.profile.me || null, eatAt: (prev && prev.date === todayISO() && prev.eatAt) || state.settings.dinnerAt || '18:30', at: now() };
   save();
   if (!quiet) toast(`Tonight: ${summary(id).title} ♥`, 'Undo', () => { state.tonight = prev || null; save(); router(); });
-  if ((location.hash || '#/') === '#/') { const y = vY(); viewHome(); vTo(y); }
+  if ((location.hash || '#/') === '#/') { viewHome(); }
 }
 function openEatAt() {
   const t = tonightPlan(); const s = t && summary(t.recipeId); if (!s) return;
@@ -2248,7 +2265,7 @@ function openEatAt() {
     <div class="chips" style="margin-top:4px">${['17:30', '18:00', '18:30', '19:00', '19:30'].map((x) => `<button class="chip ${x === v ? 'on' : ''}" data-eat="${x}">${fmtTime(eatTime({ eatAt: x }))}</button>`).join('')}</div>
     <div class="foot"><button class="btn" data-close>Cancel</button><button class="btn primary" id="eatOk">Save</button></div>`, (b) => {
     $$('[data-eat]', b).forEach((c) => (c.onclick = () => { $('#eatIn', b).value = c.dataset.eat; $$('[data-eat]', b).forEach((x) => x.classList.toggle('on', x === c)); }));
-    $('#eatOk', b).onclick = () => { state.tonight.eatAt = $('#eatIn', b).value || v; save(); closeSheet(); const y = vY(); viewHome(); vTo(y); };
+    $('#eatOk', b).onclick = () => { state.tonight.eatAt = $('#eatIn', b).value || v; save(); closeSheet(); viewHome(); };
   });
 }
 function tonightCard(t) {
@@ -2307,14 +2324,18 @@ function openRandom() {
   };
   const spin = (b) => {
     if (busy) return; busy = true; actx();
-    if (cur && segs.length > 1 && pool.length > segs.length) { segs = shuffle(pool).slice(0, 8); rot = 0; draw(b); }
+    // fresh dinners on the wheel: redraw at the angle it stopped at (no snap back to 0)
+    if (cur && segs.length > 1 && pool.length > segs.length) { segs = shuffle(pool).slice(0, 8); rot = ((rot % 360) + 360) % 360; draw(b); }
     const n = segs.length; const k = Math.floor(Math.random() * n); const c = ((k + 0.5) * 360) / n + (Math.random() - 0.5) * (300 / n) * 0.6;
     const target = rot + 360 * 5 + ((((360 - c) - (rot % 360)) % 360) + 360) % 360;
     rot = target; const w = $('#wRot', b);
-    const dur = reducedMotion() ? 0 : 3200;
+    const dur = reducedMotion() ? 0 : 3600;
+    // update 6: a redrawn wheel had no painted start angle yet, so the browser skipped straight to the end (2nd spin
+    // 'jumped'). Commit the start angle with no transition, force a style flush, then animate from there.
+    w.style.transition = 'none'; void w.getBoundingClientRect();
     w.style.transition = dur ? `transform ${dur}ms cubic-bezier(.17,.67,.21,1)` : 'none'; w.style.transform = `rotate(${rot}deg)`;
     $('#wSpin', b).disabled = true;
-    let ticks = 0; const tk = dur && state.settings.sounds ? setInterval(() => { if (++ticks > 22) clearInterval(tk); tone(1400, 0, 0.03, 0.04); }, 120) : null;
+    let ticks = 0; const tk = dur && state.settings.sounds ? setInterval(() => { if (++ticks > 25) clearInterval(tk); tone(1400, 0, 0.03, 0.04); }, 120) : null;
     setTimeout(() => { if (tk) clearInterval(tk); busy = false; cur = segs[k]; buzz(20); playChime('marimba'); const res = $('#wRes', b); if (!res) return; res.innerHTML = resHTML(); bindRes(b); const sb = $('#wSpin', b); sb.disabled = false; sb.textContent = 'Spin again'; }, dur + 80);
   };
   openSheet('', draw);
@@ -2371,8 +2392,18 @@ function dnWords(dn) { return dn.days === 0 ? 'Date night is tonight' : dn.days 
 function isOctober() { return new Date().getMonth() === 9; }
 
 // ---------------------------------------------------------------- views: home (decluttered)
-function viewHome() {
-  setTop({ title: 'OUR KITCHEN' });
+// update 6: typing in search no longer redraws the whole home screen (which recreated the input, refocused it and
+// re-inserted every image: keyboard stutter + flashing). Keystrokes are debounced and only #homeBody is swapped;
+// recipe cards already on screen are reused as-is (same markup = same node, image stays loaded).
+const HOME_CARDS = new Map();
+function swapHomeBody(html) {
+  const w = $('#homeBody'); const t = document.createElement('template'); t.innerHTML = html; const fresh = [];
+  t.content.querySelectorAll('a.rcard[href]').forEach((n) => { const key = n.getAttribute('href'); const src = n.outerHTML; const c = HOME_CARDS.get(key); if (c && c.src === src) n.replaceWith(c.node); else fresh.push([key, src, n]); });
+  w.replaceChildren(t.content); fresh.forEach(([key, src, node]) => HOME_CARDS.set(key, { src, node })); markLoaded(w);
+}
+function viewHome(partial) {
+  partial = partial === true && !!$('#homeBody') && !!$('#q');
+  if (!partial) { setTop({ title: 'OUR KITCHEN' }); HOME_CARDS.clear(); }
   const recipes = visibleRecipes();
   ui.pick = ui.pick && recipes.find((r) => r.id === ui.pick) ? ui.pick : seasonalPick(recipes);
   const searching = ui.q || filterCount();
@@ -2438,7 +2469,7 @@ function viewHome() {
   const fc = filterCount();
   const dn = dateNightInfo();
   const pump = isOctober() && state.settings.seasonal !== false;
-  render(`<div class="home-head">
+  if (partial) swapHomeBody(body); else render(`<div class="home-head">
       <div class="kicker">${pump ? `<svg class="pump" viewBox="0 0 24 24" aria-hidden="true">${ICON.pumpkin}</svg>` : ''}Recipes we love<span class="rule"></span></div>
       <div class="lead" style="margin-top:6px">${esc(greeting())}</div>
       ${dn && dn.days <= 14 ? `<a class="dnline" href="#/us">${svg('heart')}<span>${esc(dnWords(dn))}${dn.s ? ' — ' + esc(dn.s.title) : ''}</span></a>` : ''}
@@ -2446,17 +2477,17 @@ function viewHome() {
       <div class="searchrow"><label class="search">${svg('search')}<input id="q" type="search" placeholder="Search recipes or ingredients" value="${esc(ui.q)}" autocomplete="off" enterkeyhint="search"><button class="clear" id="qClear" aria-label="Clear search" ${ui.q ? '' : 'hidden'}>×</button></label>
         <button class="filterbtn ${fc ? 'on' : ''}" id="filterBtn" aria-label="Filters">${svg('filter')}${fc ? `<b>${fc}</b>` : ''}</button></div>
       ${fc ? `<div class="activefilters">${Object.entries(ui.filters).flatMap(([k, s]) => s.map((v) => `<button data-k="${k}" data-v="${esc(v)}">${esc(TAGLABEL[k + ':' + v])}</button>`)).join('')}</div>` : ''}
-    </div><div class="wrap" style="padding-top:0">${body}</div>`);
-  const q = $('#q');
-  q.addEventListener('input', () => {
-    ui.q = q.value.trim();
-    const pos = q.selectionStart; viewHome(); const q2 = $('#q'); q2.focus({ preventScroll: true }); try { q2.setSelectionRange(pos, pos); } catch (e) {}
-  });
-  const qc = $('#qClear');
-  qc.addEventListener('pointerdown', (e) => e.preventDefault()); // keep the keyboard steady
-  qc.onclick = (e) => { e.preventDefault(); ui.q = ''; viewHome(); };
+    </div><div class="wrap" id="homeBody" style="padding-top:0">${body}</div>`);
+  const q = $('#q'); const qc = $('#qClear');
+  // the input is never replaced while typing, so it keeps focus, caret and the keyboard; results follow ~120ms later
+  q.oninput = () => {
+    qc.hidden = !q.value; clearTimeout(viewHome.qT);
+    viewHome.qT = setTimeout(() => { const v = q.value.trim(); if (v === ui.q) return; ui.q = v; viewHome(true); }, 120);
+  };
+  qc.onpointerdown = (e) => e.preventDefault(); // keep the keyboard steady
+  qc.onclick = (e) => { e.preventDefault(); clearTimeout(viewHome.qT); ui.q = ''; q.value = ''; qc.hidden = true; viewHome(true); };
   $('#filterBtn').onclick = openFilters;
-  const redraw = () => { const y = vY(); viewHome(); vTo(y); };
+  const redraw = () => viewHome();
   $('#clearAll') && ($('#clearAll').onclick = () => { ui.q = ''; ui.filters = {}; viewHome(); });
   bindSort(viewHome);
   $('#spinRes') && ($('#spinRes').onclick = openRandom);
@@ -2552,7 +2583,7 @@ function setSignature(id) {
   state.signature = prev === id ? null : id; save(); checkMilestones();
   toast(state.signature ? 'Our signature dish ★' : 'Signature dish cleared', 'Undo', () => { state.signature = prev; save(); router(); });
 }
-function rerenderRecipe(id) { const y = vY(); return viewRecipe(id).then(() => vTo(y)); }
+function rerenderRecipe(id) { return viewRecipe(id); } // render() keeps the scroll position
 
 // ---------------------------------------------------------------- recipe page extras: have-check (#32), we're out (#38), tap-to-use (#33)
 const PANTRY_SKIP = /^(salt|black pepper|water|kosher salt)$/i;
@@ -2698,7 +2729,10 @@ function viewPhoto(id, pid) {
       <div class="small muted" style="margin-top:12px">Love stamps</div>
       <div class="stamprow">${STAMPS.map(([k, n]) => `<button class="${(ph.stamps || []).includes(k) ? 'on' : ''}" data-st="${k}"><i class="st st-${k}">${k === 'kiss' ? '<em>CHEF’S<br>KISS</em>' : k === 'star' ? '★' : '♥'}</i><span>${n}</span></button>`).join('')}</div>
       <div class="foot"><button class="btn danger" id="phDel">Delete</button><button class="btn primary" data-close>Done</button></div>`;
-    $$('[data-st]', b).forEach((x) => (x.onclick = () => { const k = x.dataset.st; const s = ph.stamps || []; ph.stamps = s.includes(k) ? s.filter((y) => y !== k) : s.concat(k); if (!ph.stamps.length) delete ph.stamps; save(); buzz(10); draw(b); if (location.hash === '#/r/' + id) rerenderRecipe(id); }));
+    $$('[data-st]', b).forEach((x) => (x.onclick = () => { const k = x.dataset.st; const s = ph.stamps || []; ph.stamps = s.includes(k) ? s.filter((y) => y !== k) : s.concat(k); if (!ph.stamps.length) delete ph.stamps; save(); buzz(10);
+      // in place: the photo itself is never re-inserted (no flicker), only the stamp overlay and this button change
+      x.classList.toggle('on', (ph.stamps || []).includes(k)); const pv = $('.phview', b); const old = $('.stamps', pv); if (old) old.remove(); pv.insertAdjacentHTML('beforeend', stampHTML(ph));
+      if (location.hash === '#/r/' + id) rerenderRecipe(id); }));
     $('#phDel', b).onclick = () => { closeSheet(); withUndo('Photo deleted', () => { state.photos[id] = state.photos[id].filter((p) => p.id !== pid); }, () => router()); };
   };
   openSheet('', draw);
@@ -2776,7 +2810,7 @@ function viewGrocery() {
     ${items.length ? `<div class="gsummary"><span>${done} checked</span><span style="display:flex;gap:8px"><button class="btn sm ghost" id="gClear" ${done ? '' : 'disabled style="opacity:.4"'}>Clear checked</button><button class="btn sm ghost" id="gAll">Clear all</button></span></div>
     <p class="small muted" style="margin-top:10px">Checking something off marks it “Have it” in the Pantry. Sorted in No Frills aisle order.</p>` : ''}
   </div>`);
-  const redraw = () => { const y = vY(); viewGrocery(); vTo(y); };
+  const redraw = () => viewGrocery();
   const add = () => {
     const v = $('#gNew').value.trim(); if (!v) return;
     const a = $('#gCat').value;
@@ -2949,6 +2983,7 @@ function resolveTaste(t, res) {
 // ---------------------------------------------------------------- dessert wish jar (#50)
 function openDessertJar() {
   const draw = (b, pulled) => {
+    const sh = $('.sheet'); const y = sh ? sh.scrollTop : 0; queueMicrotask(() => { if (sh && y) sh.scrollTop = y; });
     const items = Object.values(state.dessertJar).sort((x, y) => (x.made ? 1 : 0) - (y.made ? 1 : 0) || y.at - x.at);
     const open = items.filter((d) => !d.made);
     b.innerHTML = `<h2>Dessert wish jar</h2><p class="sub">Drop in sweet ideas. When you want a treat, pull one out at random.</p>
@@ -3202,7 +3237,7 @@ async function viewAcura() {
       <p class="ac-foot">${PAW('sm')} Treats stay under 10% of Acura’s daily calories · ask your vet about allergies ${PAW('sm')}</p>
       ${bakedN ? `<p class="small muted" style="text-align:center;margin-top:4px">${bakedN} batch${bakedN === 1 ? '' : 'es'} baked for Acura so far</p>` : ''}
     </div></div>`);
-  const redraw = () => { const y = vY(); viewAcura().then(() => vTo(y)); };
+  const redraw = () => viewAcura();
   $$('[data-ac]').forEach((b) => (b.onclick = () => { if (ui.acChip === b.dataset.ac || (!ui.acChip && b.dataset.ac === 'all')) return; ui.acChip = b.dataset.ac; $$('[data-ac]').forEach((x) => x.classList.toggle('on', x === b)); const l = $('.ac-list'); l.innerHTML = acListHTML(D, D.treats.filter((t) => acMatch(t, ui.acChip)), ui.acChip); markLoaded(l); }));
   const bindCount = () => {
     const g0 = () => (a.given || (a.given = {}));
@@ -3268,7 +3303,7 @@ async function viewTreat(id) {
     delete state.checks[sid]; save(); checkMilestones();
     if (first) confetti(); heartBurst(e.currentTarget);
     toast(first ? "Acura's first batch! Good pup ♥" : `Treat jar topped up — good until ${dayWord(addDaysISO(todayISO(), t.keepDays || 7))}`, 'Undo', () => { delete a.baked[bid]; save(); router(); });
-    const y = vY(); setTimeout(() => viewTreat(id).then(() => vTo(y)), 400);
+    setTimeout(() => viewTreat(id), 400);
   };
 }
 
@@ -3350,7 +3385,31 @@ async function router() {
   }
   go('#/');
 }
-function render(html) { const v = $('#view'); v.innerHTML = html; markLoaded(v); }
+// update 6: an in-place redraw (tapping a toggle, tick, stepper...) must not replay the screen-enter animation or move the
+// scroll position: the old vin-* class stayed on #view, so every redraw slid/faded the whole page in again (the 'shake').
+// The router adds the enter animation back after a real navigation (animateView runs after the view renders).
+// Scroll anchor: when a tap redraws the screen, the control you tapped stays exactly where your finger was, even if
+// something above it appeared or disappeared (a banner, the "add low & out" button, a longer title...).
+let tapAnchor = null;
+function anchorKey(el) {
+  const parts = [];
+  for (let e = el, i = 0; e && e.id !== 'view' && i < 4; e = e.parentElement, i++) {
+    if (e.id) { parts.unshift('#' + CSS.escape(e.id)); break; }
+    const attrs = [...e.attributes].filter((a) => a.name.startsWith('data-')).map((a) => `[${a.name}="${CSS.escape(a.value)}"]`).join('');
+    if (attrs) parts.unshift(e.tagName.toLowerCase() + attrs);
+  }
+  return parts.length ? parts.join(' ') : null;
+}
+document.addEventListener('click', (e) => {
+  const v = $('#view'); const el = e.target.closest && e.target.closest('button,label,li,.chip,[data-k],[data-l]');
+  if (!el || !v.contains(el)) { tapAnchor = null; return; }
+  const key = anchorKey(el); tapAnchor = key ? { key, top: el.getBoundingClientRect().top, at: performance.now() } : null;
+}, true);
+function render(html) {
+  const v = $('#view'); const y = v.scrollTop; v.classList.remove('vin-fwd', 'vin-back', 'vin-tab'); v.innerHTML = html; if (y) v.scrollTop = y; markLoaded(v);
+  const a = tapAnchor; tapAnchor = null;
+  if (a && performance.now() - a.at < 1500) { const all = v.querySelectorAll(a.key); if (all.length === 1) { const d = all[0].getBoundingClientRect().top - a.top; if (Math.abs(d) > 1) v.scrollTop += d; } }
+}
 document.addEventListener('click', (e) => {
   const a = e.target.closest && e.target.closest('#tabbar a'); if (!a) return;
   if (a.getAttribute('href') === (location.hash || '#/')) { e.preventDefault(); const v = $('#view'); try { v.scrollTo({ top: 0, behavior: reducedMotion() ? 'auto' : 'smooth' }); } catch (x) { v.scrollTop = 0; } }

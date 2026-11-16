@@ -1,7 +1,7 @@
 /* Our Kitchen — matte retro cookbook theme (from sample5) */
-@font-face{font-family:"Cinzel";src:url("../fonts/Cinzel.woff2") format("woff2");font-weight:400 900;font-display:swap}
+@font-face{font-family:"Cinzel";src:url("../fonts/Cinzel.woff2") format("woff2");font-weight:400 900;font-display:block}
 @font-face{font-family:"Instrument Serif";src:url("../fonts/InstrumentSerif-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Instrument Serif";src:url("../fonts/InstrumentSerif-Italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url("../fonts/InstrumentSerif-Italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:block}
 @font-face{font-family:"Outfit";src:url("../fonts/Outfit.woff2") format("woff2");font-weight:100 900;font-display:swap}
 
 :root{
@@ -43,17 +43,7 @@ img{display:block;max-width:100%}
 svg{display:block}
 [hidden]{display:none!important}
 
-/* ---------- splash ---------- */
-#splash{position:fixed;inset:0;z-index:500;background:#F5E6CE;display:flex;align-items:center;justify-content:center;transition:opacity .55s ease}
-html[data-theme="dark"] #splash{background:#0B1734}
-#splash.out{opacity:0;pointer-events:none}
-.splash-inner{text-align:center;animation:splashIn .7s ease both}
-.splash-our{font-family:"Cinzel";font-weight:600;font-size:1.1rem;letter-spacing:.42em;color:var(--gold);padding-left:.42em}
-.splash-kitchen{font-family:"Cinzel";font-weight:500;font-size:2.6rem;letter-spacing:.1em;color:var(--ink);line-height:1.05;margin-top:2px}
-.splash-names{font-family:"Instrument Serif";font-style:italic;font-size:1.35rem;color:var(--ink2);margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px}
-.splash-heart{width:16px;height:16px;fill:var(--gold);animation:beat 1.1s ease .3s both}
-@keyframes splashIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-@keyframes beat{0%{transform:scale(.6);opacity:0}45%{transform:scale(1.25);opacity:1}100%{transform:scale(1)}}
+/* ---------- splash: styles live inline in index.html so it paints on the very first frame ---------- */
 
 /* ---------- top bar ---------- */
 #topbar{position:sticky;top:0;z-index:50;background:var(--bar);color:var(--bar-ink);padding:calc(var(--sat) + 6px) 10px 9px;display:grid;grid-template-columns:72px 1fr 72px;align-items:center;border-bottom:2px solid var(--gold)}
@@ -68,7 +58,7 @@ html[data-theme="dark"] #splash{background:#0B1734}
 
 /* ---------- tab bar ---------- */
 #view{display:block;padding-bottom:calc(var(--tabh) + var(--sab) + 24px);min-height:100vh;outline:none}
-#tabbar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--tabbg);border-top:1.5px solid var(--gold);display:grid;grid-template-columns:repeat(4,1fr);padding:0 4px var(--sab)}
+#tabbar{position:relative;flex:none;z-index:60;background:var(--tabbg);border-top:1.5px solid var(--gold);display:grid;grid-template-columns:repeat(4,1fr);padding:0 4px var(--sab)}
 #tabbar a{position:relative;height:var(--tabh);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--muted);font-size:.66rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
 #tabbar svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 #tabbar a.on{color:var(--ink)}
@@ -654,7 +644,7 @@ html,body{height:100%;overflow:hidden;overscroll-behavior:none}
 body{min-height:0;position:fixed;inset:0;width:100%}
 #app{position:fixed;inset:0;display:flex;flex-direction:column}
 #topbar{position:relative;flex:none}
-#view{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;padding-bottom:calc(var(--tabh) + var(--sab) + 28px);will-change:scroll-position}
+#view{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;padding-bottom:28px;will-change:scroll-position}
 body.sheet-open #view{overflow:hidden;touch-action:none}
 /* no accidental zoom, no grey flash, no callouts on buttons (#3, #7) */
 html{touch-action:manipulation}
@@ -692,7 +682,6 @@ a.pressed{transform:scale(.97)!important;transition:transform .15s}
 .sheet-grip::after{content:"";position:absolute;left:50%;top:10px;width:42px;height:5px;margin-left:-21px;border-radius:3px;background:var(--line);box-shadow:inset 0 0 0 1px var(--line)}
 .sheet-scrim{transition:opacity .2s;touch-action:none}
 body.kb #tabbar{display:none}
-body.kb #view{padding-bottom:28px}
 
 /* screen transitions (#15) */
 @keyframes vinFwd{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
@@ -1109,21 +1098,6 @@ html[data-theme="dark"] body.acura .ac-words .w2{--bc:var(--tile3);--bt:#F5E6CE}
 .addrow:has(#gNew:placeholder-shown) #gCat{display:none}
 
 /* ================================================================ update 4 — smooth sheets, full-screen fit, no tap effects */
-/* app shell: the tab bar is a normal flex child pinned to the bottom of the fixed shell (not position:fixed) */
-#tabbar{position:relative;left:auto;right:auto;bottom:auto;flex:none}
-#view{padding-bottom:28px}
-body.kb #view{padding-bottom:28px}
-/* iOS strip fix: see fitScreen() in app.js. The strip below the viewport shows the root background, so paint it like
-   the tab bar (and like whatever full-screen layer is open). The strip is taller than the home indicator, so the
-   bottom safe-area padding would only add a second gap. */
-html.strip{--sab:0px;background:var(--tabbg)}
-html.strip:has(body.acura){background:#F2E3CB}
-html.strip[data-theme="dark"]:has(body.acura){background:#1C110B}
-html.strip:has(#cook:not([hidden])){background:#082048}
-html.strip:has(body.acura #cook:not([hidden])){background:#3A2216}
-html.strip:has(#welcome:not([hidden])){background:#F5E6CE}
-:root{--sat-raw:env(safe-area-inset-top,0px);--sab-raw:env(safe-area-inset-bottom,0px)}
-#fitProbe{position:fixed;left:0;top:0;width:0;height:0;visibility:hidden;pointer-events:none;padding:var(--sat-raw) 0 var(--sab-raw)}
 /* keep the paper grain off the header so iOS sees one flat colour under the status bar (no blur band) */
 body::after{top:calc(var(--sat) + 61px)}
 html.sa body::after{top:calc(var(--sat) + 63px)}
@@ -1133,6 +1107,8 @@ html.sa #topbar{padding-top:calc(var(--sat) + 8px)}
 
 /* sheets: glide up with transform only; never cover the whole screen; background untouched */
 .sheet{animation:none;max-height:calc(100% - var(--sat) - 56px - var(--kb,0px));backface-visibility:hidden;contain:layout paint}
+/* Ideas: one fixed height for every tab so switching tabs never resizes the sheet */
+.sheet.ideas-sheet{height:calc(100% - var(--sat) - 56px - var(--kb,0px))}
 .sheet-scrim{animation:none}
 body.sheet-open #view{overflow-y:auto;touch-action:auto}
 #sheetWrap.closing{pointer-events:none}
@@ -1147,18 +1123,27 @@ a.pressed{transform:none!important}
 :is(.nudge,.wn,.annv,.flash,.recap) + .pick{margin-top:18px}
 .favtile .ft{padding-top:34px;background:linear-gradient(rgba(8,16,40,0),rgba(8,16,40,.55) 35%,rgba(8,16,40,.9));text-shadow:0 1px 2px rgba(0,0,0,.45)}
 
-/* ================================================================ update 5 — tab bar reaches the bottom edge on iPhone home-screen app
-   html.reach = iOS strip detected (viewport reported one status bar short) and not switched off in Settings.
-   The document and every full-screen layer are made strip-taller than the reported viewport so they extend into the
-   strip WebKit leaves below the page; the tab bar then sits at the physical bottom with the real home-indicator inset
-   below its labels, like a native tab bar. No strip = none of this applies. */
-html.reach{height:calc(100% + var(--strip));--sab:max(var(--sab-raw),20px)}
-html.reach body{height:auto;bottom:calc(-1 * var(--strip))}
-html.reach #app,html.reach #sheetWrap,html.reach #cook,html.reach #welcome,html.reach #splash,html.reach #season,html.reach .confetti{bottom:calc(-1 * var(--strip))}
-html.reach body::after{bottom:calc(-1 * var(--strip))}
-html.reach #toast{bottom:calc(var(--tabh) + var(--sab) + 14px - var(--strip))}
-/* with the keyboard up, sheets go back to the reported viewport (same as before) so they sit on the keyboard */
-html.reach body.kb #sheetWrap{bottom:0}
-html.reach body.kb .sheet{padding-bottom:20px}
-/* home-screen app: icons + labels sit low in the bar, just above the home-indicator inset (native tab bar feel) */
-html.sa #tabbar a{justify-content:flex-end;padding-bottom:4px}
+/* ================================================================ iPhone home-screen fit (one implementation, replaces the update 4/5 workarounds)
+   iOS 26 standalone + black-translucent: the page is drawn from the top of the screen but WebKit sizes the viewport
+   one status bar short (874pt screen, 812pt viewport on iPhone 16/17 Pro) and fills the strip below with the BODY
+   colour; it also doesn't paint web content in the home-indicator zone (bottom 34pt).
+   fitScreen() (app.js) detects that strip and sets html.strip plus
+     --shellh  viewport + (strip - home-indicator inset) = 812 + 28 = 840: the shell ends where the indicator zone begins
+   (the splash is centred on the full screen from the first frame by the inline script/styles in index.html)
+   So the tab bar's bottom edge lands on that line, fully visible, its labels well above the home indicator, and the
+   body colour (= tab bar colour) fills the rest of the screen seamlessly. Without the strip none of this applies. */
+:root{--sat-raw:env(safe-area-inset-top,0px);--sab-raw:env(safe-area-inset-bottom,0px)}
+#fitProbe{position:fixed;left:0;top:0;width:0;height:0;visibility:hidden;pointer-events:none;padding:var(--sat-raw) 0 var(--sab-raw)}
+html.strip{--sab:0px;background:var(--tabbg)}
+html.strip #app{bottom:auto;height:var(--shellh,100%);background:var(--bg)}
+html.strip body::after{bottom:auto;height:var(--shellh,100%)}
+html.strip #welcome{bottom:auto;height:var(--shellh,100%)}
+/* the strip shows the body colour: tab bar colour normally, otherwise whichever full-screen layer is up */
+html.strip body{background:var(--tabbg)}
+html.strip body.sheet-open{background:var(--bg)}
+html.strip body:has(#cook:not([hidden])){background:#082048}
+html.strip body.acura:has(#cook:not([hidden])){background:#3A2216}
+html.strip body:has(#cook.candle:not([hidden])){background:#1C0F1E}
+html.strip body:has(#welcome:not([hidden])){background:#F5E6CE}
+html.strip body:has(#splash){background:#F5E6CE}
+html[data-theme="dark"].strip body:has(#splash){background:#0B1734}

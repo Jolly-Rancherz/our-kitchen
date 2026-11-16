@@ -14,19 +14,54 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<!-- launch images: what iOS shows while the home-screen app starts (instead of a black screen). They match the
+     splash's first frame (navy, centred wordmark; the heart pops in afterwards). iOS reads these when the icon is
+     added to the home screen. -->
+<link rel="apple-touch-startup-image" href="icons/launch/launch-1206x2622.png" media="(device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="icons/launch/launch-1320x2868.png" media="(device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="icons/launch/launch-1179x2556.png" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="icons/launch/launch-1290x2796.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="icons/launch/launch-1260x2736.png" media="(device-width: 420px) and (device-height: 912px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="icons/launch/launch-1170x2532.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="icons/launch/launch-1284x2778.png" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="icons/launch/launch-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="icons/launch/launch-1242x2688.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="icons/launch/launch-828x1792.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="icons/launch/launch-750x1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="icons/launch/launch-1242x2208.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
 <link rel="preload" href="fonts/Cinzel.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/InstrumentSerif-Italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/Outfit.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/app.css">
 <script>
-  // apply theme + text size before first paint (no flash)
+  // before first paint: theme + text size (no flash), and the iOS 26 bottom strip so the splash is centred on the
+  // physical screen from frame one (same geometry as the launch image; see "iPhone home-screen fit" in app.css)
   try {
     var s = JSON.parse(localStorage.getItem('ourkitchen.v1') || '{}').settings || {};
     var t = s.theme || 'auto';
     var dark = t === 'dark' || (t === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
     document.documentElement.dataset.theme = dark ? 'dark' : 'light';
     if (s.bigText) document.documentElement.classList.add('big');
+    var gap = screen.height - innerHeight;
+    if (navigator.standalone && innerHeight > innerWidth && gap >= 20 && gap <= 70) document.documentElement.style.setProperty('--splash-strip', gap + 'px');
   } catch (e) {}
 </script>
+<style>
+  /* critical first-paint styles: page colour + splash, before app.css */
+  html{background:#F5E6CE} html[data-theme="dark"]{background:#0B1734}
+  #splash{position:fixed;left:0;right:0;top:0;height:calc(100% + var(--splash-strip,0px));z-index:500;background:#F5E6CE;display:flex;align-items:center;justify-content:center;transition:opacity .55s ease}
+  html[data-theme="dark"] #splash{background:#0B1734}
+  #splash.out{opacity:0;pointer-events:none}
+  .splash-inner{text-align:center;animation:splashIn .7s ease both}
+  .splash-our{font-family:"Cinzel";font-weight:600;font-size:1.1rem;letter-spacing:.42em;color:var(--gold);padding-left:.42em}
+  .splash-kitchen{font-family:"Cinzel";font-weight:500;font-size:2.6rem;letter-spacing:.1em;color:var(--ink);line-height:1.05;margin-top:2px}
+  .splash-names{font-family:"Instrument Serif";font-style:italic;font-size:1.35rem;color:var(--ink2);margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px}
+  .splash-heart{width:16px;height:16px;fill:var(--gold);animation:beat 1.1s ease .3s both}
+  @keyframes splashIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @keyframes beat{0%{transform:scale(.6);opacity:0}45%{transform:scale(1.25);opacity:1}100%{transform:scale(1)}}
+  /* home-screen app: the launch image already shows the wordmark, so it is there from frame one (no fade-in) */
+  @media (display-mode: standalone){.splash-inner{animation:none}}
+</style>
+<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
 <div id="splash" aria-hidden="true">
