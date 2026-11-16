@@ -4039,7 +4039,7 @@ function recapCard(rc, dismiss) {
 
 // ---------------------------------------------------------------- what's new (update 3)
 // shown at the foot of Settings so anyone can check which update a phone (or a Safari tab) is running; bump each update
-const APP_UPDATE = 'Update 8';
+const APP_UPDATE = 'Update 8.1';
 const WHATSNEW_ID = 'u7-2026-11';
 const WHATSNEW = [
   ['Recipes & Ideas', 'Filters → “Ready to make now” shows only what the pantry covers · More ideas has Surprise me (pick time, budget and mood), Fridge clear (with Friday reminders on Home), In season (Ontario produce this month) and soup nudges on cold or rainy days'],

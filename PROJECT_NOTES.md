@@ -88,6 +88,8 @@ exactly 812pt although the image continues.
     `html.solid`: each tab runs to the bottom edge (all tappable), labels end ~11pt above the home-indicator pill
   - launch images (`tools/u8_launch.mjs`) centre the wordmark under the status bar, where the splash sits now
   - Emulation: `tools/u4_env.mjs` `mode: "solid"` (real `env()` insets via CDP `Emulation.setSafeAreaInsetsOverride`)
+- The splash wordmark is sized in px (index.html), never rem: Bigger text must not enlarge it, or it jolts from the
+  regular-size launch image to a bigger splash on every launch (fixed in 8.1)
 - Re-adding the icon deletes that install's storage: always Export first, then Restore in the new install.
 
 ## Smoothness rules (Update 6)
@@ -124,3 +126,4 @@ exactly 812pt although the image continues.
 | 6.1 | see `git log` | Shell back inside the viewport (tabs fully tappable), bigger tab icons, edge-to-edge welcome card |
 | 7 | see `git log` | Week plan, staples, price memory, prep ahead, swaps, notes, places, mystery meal, thank-you jar, date-in menu, keepsake, secret rating, Acura search/share/photo wall, weather/Friday/season/surprise ideas, ready filter, badges |
 | 8 | see `git log` | Solid status bar for new installs (no strip; old installs keep 6.1), backup audit: Export/Restore complete and byte-identical, Restore from the welcome screen |
+| 8.1 | see `git log` | Splash wordmark no longer jolts small→big on launch with Bigger text on |
