@@ -12,23 +12,28 @@
     "breakdown": [
       [
         "Boneless skinless chicken breast, ~600 g",
-        7.95
+        7.95,
+        "chicken-breasts-boneless"
       ],
       [
         "Jasmine rice, 400 g",
-        1.2
+        1.2,
+        "jasmine-rice"
       ],
       [
         "Eggs, 3",
-        1.15
+        1.15,
+        "eggs"
       ],
       [
         "Frozen peas & carrots",
-        1.1
+        1.1,
+        "frozen-peas-and-carrots"
       ],
       [
         "Butter, 3 tbsp",
-        0.7
+        0.7,
+        "butter"
       ],
       [
         "Onion & garlic",
@@ -152,6 +157,10 @@
           "pantry": {
             "name": "Butter",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 42,
+            "unit": "g"
           }
         },
         {
@@ -191,6 +200,10 @@
           "pantry": {
             "name": "Frozen peas & carrots",
             "cat": "frozen"
+          },
+          "metric": {
+            "qty": 210,
+            "unit": "g"
           }
         },
         {
@@ -240,25 +253,51 @@
     {
       "title": "Cook the chicken",
       "text": "Season the chicken with salt and pepper. Heat 1 tbsp oil in a large skillet or wok over medium-high. Cook 5–7 minutes, stirring now and then, until golden and 74°C (165°F). Move to a plate.",
-      "timer": 6
+      "timer": 6,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
     },
     {
       "title": "Scramble the eggs",
-      "text": "Melt 1 tbsp butter in the pan, add the eggs and scramble softly, about 1 minute. Add to the chicken."
+      "text": "Melt 1 tbsp butter in the pan, add the eggs and scramble softly, about 1 minute. Add to the chicken.",
+      "uses": [
+        "2-0=1 tbsp",
+        "2-1"
+      ]
     },
     {
       "title": "Onion, garlic, veg",
       "text": "Add the remaining oil and 1 tbsp butter. Cook the onion 3 minutes, then the garlic and frozen peas & carrots for 2 minutes more.",
-      "timer": 5
+      "timer": 5,
+      "uses": [
+        "2-8",
+        "2-0=1 tbsp",
+        "2-2",
+        "2-3",
+        "2-4"
+      ]
     },
     {
       "title": "Fry the rice",
       "text": "Turn the heat to high. Add the cold rice and last tbsp of butter; break up any clumps and press it flat. Let it sit 1 minute to toast, then stir. Repeat 2–3 times.",
-      "timer": 4
+      "timer": 4,
+      "uses": [
+        "0-0",
+        "2-0=1 tbsp"
+      ]
     },
     {
       "title": "Sauce and toss",
-      "text": "Drizzle in the soy and oyster sauce and toss until evenly coloured. Return the chicken and eggs, toss 1 minute, then turn off the heat and stir in the sesame oil. Taste — add a splash more soy if needed."
+      "text": "Drizzle in the soy and oyster sauce and toss until evenly coloured. Return the chicken and eggs, toss 1 minute, then turn off the heat and stir in the sesame oil. Taste — add a splash more soy if needed.",
+      "uses": [
+        "2-5",
+        "2-6",
+        "2-7"
+      ]
     }
   ],
   "fixIt": [
@@ -283,5 +322,17 @@
   "swap": "Swap the chicken for shrimp, or use leftover rotisserie chicken (add it at the end).",
   "leftovers": "Fridge 3–4 days — great for lunch. Microwave with a damp paper towel on top until steaming (74°C / 165°F). Freezes well for 2 months.",
   "doneness": "Chicken: 74°C (165°F).",
-  "source": "Classic restaurant fried-rice method (cold rice, high heat, soy + oyster sauce); safe temp per Health Canada."
+  "source": "Classic restaurant fried-rice method (cold rice, high heat, soy + oyster sauce); safe temp per Health Canada.",
+  "gear": [
+    "Large skillet or wok",
+    "Medium pot (for the rice)",
+    "Sheet pan (to chill the rice)",
+    "Spatula",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Cook the rice a day ahead — cold rice makes the best fried rice.",
+    "Dice the chicken and onion and mince the garlic the night before."
+  ],
+  "reheat": "Microwave with a damp paper towel on top, stirring halfway, until steaming (74°C / 165°F), or toss in a hot skillet with a little butter."
 }

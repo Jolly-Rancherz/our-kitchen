@@ -12,15 +12,18 @@
     "breakdown": [
       [
         "Top sirloin steak, 900 g",
-        21.0
+        21.0,
+        "sirloin-steak"
       ],
       [
         "Baby potatoes, 1.5 kg bag",
-        4.5
+        4.5,
+        "baby-potatoes"
       ],
       [
         "Butter, 4 tbsp",
-        0.9
+        0.9,
+        "butter"
       ],
       [
         "Garlic, 6 cloves",
@@ -228,6 +231,10 @@
           "pantry": {
             "name": "Butter",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 56,
+            "unit": "g"
           }
         },
         {
@@ -257,29 +264,56 @@
     {
       "title": "Roast the potatoes",
       "text": "Toss the potatoes with oil, salt, garlic powder, paprika, Italian seasoning and pepper. Spread cut-side down on a sheet pan and roast at 220°C (425°F) for 30–35 minutes, flipping once, until crispy and tender. (Air fryer: 200°C / 400°F, 18–20 min, shaking twice.)",
-      "timer": 32
+      "timer": 32,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
     },
     {
       "title": "Season the steak",
-      "text": "With 10 minutes left on the potatoes, pat the steak cubes very dry and toss with salt, pepper, garlic powder and paprika."
+      "text": "With 10 minutes left on the potatoes, pat the steak cubes very dry and toss with salt, pepper, garlic powder and paprika.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4"
+      ]
     },
     {
       "title": "Sear in batches",
       "text": "Heat 1 tbsp oil in a large heavy skillet over high until it just smokes. Add half the steak in one layer — don't crowd it. Sear 1–2 minutes without moving, then turn and cook 1–2 minutes more until browned. Move to a plate; repeat with the rest.",
-      "timer": 4
+      "timer": 4,
+      "uses": [
+        "1-5"
+      ]
     },
     {
       "title": "Check doneness",
-      "text": "Steak bites cook fast, so check a thick piece with a thermometer: medium-rare 55–57°C (130–135°F), medium 60–63°C (140–145°F), medium-well 65–68°C (150–155°F). Health Canada's safe minimum for whole-muscle beef is 63°C (145°F). Pull them a couple of degrees early — they keep cooking."
+      "text": "Steak bites cook fast, so check a thick piece with a thermometer: medium-rare 55–57°C (130–135°F), medium 60–63°C (140–145°F), medium-well 65–68°C (150–155°F). Health Canada's safe minimum for whole-muscle beef is 63°C (145°F). Pull them a couple of degrees early — they keep cooking.",
+      "uses": []
     },
     {
       "title": "Garlic butter toss",
       "text": "Turn the heat to medium-low. Melt the butter, add the garlic (and thyme) and cook 30–60 seconds until fragrant — don't let it burn. Return the steak and juices, add the soy sauce if using, and toss 30 seconds to coat.",
-      "timer": 1
+      "timer": 1,
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2",
+        "1-6"
+      ]
     },
     {
       "title": "Serve",
-      "text": "Pile the steak bites next to the crispy potatoes and spoon over the garlic butter from the pan."
+      "text": "Pile the steak bites next to the crispy potatoes and spoon over the garlic butter from the pan.",
+      "uses": []
     }
   ],
   "fixIt": [
@@ -304,5 +338,17 @@
   "swap": "Use striploin for extra tenderness (pricier), or chicken thigh bites (cook to 74°C / 165°F).",
   "leftovers": "Fridge 3 days. Reheat steak gently (30 seconds at a time in the microwave, or quickly in a hot pan) so it doesn't overcook. Great sliced over rice for lunch.",
   "doneness": "Steak to your liking: medium-rare 55–57°C (130–135°F), medium 60–63°C (140–145°F), medium-well 65–68°C (150–155°F). Health Canada safe minimum: 63°C (145°F).",
-  "source": "Based on tested steak bite methods (The Forked Spoon, The Meat Table): dry 1-inch cubes, very hot pan, batches, garlic butter finish."
+  "source": "Based on tested steak bite methods (The Forked Spoon, The Meat Table): dry 1-inch cubes, very hot pan, batches, garlic butter finish.",
+  "gear": [
+    "Heavy skillet (cast iron best)",
+    "Sheet pan",
+    "Tongs",
+    "Instant-read thermometer",
+    "Cutting board & sharp knife"
+  ],
+  "prepAhead": [
+    "Cube the steak up to a day ahead; keep covered in the fridge (pat dry before searing).",
+    "Halve the potatoes ahead and keep them in cold water; dry well before roasting."
+  ],
+  "reheat": "Steak: very briefly — 30 seconds at a time in the microwave or 1 min in a hot pan — so it doesn't overcook. Potatoes: air fryer 190°C (375°F) for 5–6 min to re-crisp."
 }

@@ -12,27 +12,33 @@
     "breakdown": [
       [
         "Boneless skinless chicken thighs, 1 kg",
-        17.0
+        17.0,
+        "chicken-thighs-boneless"
       ],
       [
         "Broccoli, 2 crowns",
-        4.0
+        4.0,
+        "broccoli"
       ],
       [
         "Butter, 7 tbsp",
-        1.6
+        1.6,
+        "butter"
       ],
       [
         "Jasmine rice, 400 g",
-        1.2
+        1.2,
+        "jasmine-rice"
       ],
       [
         "Honey, ⅓ cup",
-        1.3
+        1.3,
+        "honey"
       ],
       [
         "Parmesan, ⅓ cup",
-        1.2
+        1.2,
+        "parmesan-grated"
       ],
       [
         "Garlic, 10 cloves",
@@ -213,6 +219,10 @@
           "pantry": {
             "name": "Butter",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 28,
+            "unit": "g"
           }
         },
         {
@@ -270,6 +280,10 @@
           "pantry": {
             "name": "Butter",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 42,
+            "unit": "g"
           }
         },
         {
@@ -350,6 +364,10 @@
           "pantry": {
             "name": "Butter",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 28,
+            "unit": "g"
           }
         },
         {
@@ -360,6 +378,10 @@
           "pantry": {
             "name": "Parmesan (grated)",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 33,
+            "unit": "g"
           }
         }
       ]
@@ -369,30 +391,66 @@
     {
       "title": "Start the garlic butter rice",
       "text": "Melt 1 tbsp of the rice butter in a pot over medium; cook the garlic 30–45 seconds without browning. Add the rinsed rice, water and salt; bring to a boil, cover and simmer on low 15 minutes. Rest 10 minutes off the heat with the lid on, then fluff in the rest of the butter.",
-      "timer": 15
+      "timer": 15,
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3",
+        "2-4"
+      ]
     },
     {
       "title": "Roast the broccoli",
       "text": "With the oven at 220°C (425°F), toss the florets with oil, garlic powder, salt and pepper on a sheet pan. Roast 16–18 minutes until the edges are toasted. Toss with the melted butter and Parmesan right out of the oven.",
-      "timer": 17
+      "timer": 17,
+      "uses": [
+        "3-0",
+        "3-1",
+        "3-2",
+        "3-3",
+        "3-4",
+        "3-5",
+        "3-6"
+      ]
     },
     {
       "title": "Season the chicken",
-      "text": "Pat the chicken very dry. Toss with salt, pepper, garlic powder, onion powder, paprika, cornstarch and oil until every piece has a thin, even coat — that's what makes it crisp."
+      "text": "Pat the chicken very dry. Toss with salt, pepper, garlic powder, onion powder, paprika, cornstarch and oil until every piece has a thin, even coat — that's what makes it crisp.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
     },
     {
       "title": "Air-fry until golden",
       "text": "Cook in two batches at 200°C (400°F) in a single layer — a packed basket steams. Air-fry 8 minutes, shake, then 5–7 minutes more until deep golden and 74°C (165°F) in the thickest piece. Keep batch one on a plate.",
-      "timer": 14
+      "timer": 14,
+      "uses": []
     },
     {
       "title": "Simmer the sauce",
       "text": "While batch two cooks, warm the honey, soy sauce, garlic and butter in a large skillet over medium until bubbling, 1–2 minutes. Stir in the vinegar, then the cornstarch slurry; cook 30–60 seconds until glossy and lightly thick. It goes fast.",
-      "timer": 2
+      "timer": 2,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5"
+      ]
     },
     {
       "title": "Toss and plate",
-      "text": "Add all the crispy chicken to the sauce and toss 20–30 seconds, just to coat. Serve over the garlic butter rice with the cheesy broccoli and any extra sauce."
+      "text": "Add all the crispy chicken to the sauce and toss 20–30 seconds, just to coat. Serve over the garlic butter rice with the cheesy broccoli and any extra sauce.",
+      "uses": []
     }
   ],
   "fixIt": [
@@ -421,5 +479,18 @@
   "swap": "Use chicken breast (air-fry 1–2 min less) or shrimp (air-fry 5–6 min, until opaque).",
   "leftovers": "Fridge 3 days. Reheat the chicken in the air fryer at 175°C (350°F) for 3–4 min to bring the crunch back. Rice and broccoli microwave fine.",
   "doneness": "Chicken: 74°C (165°F) in the thickest piece.",
-  "source": "Based on tested air-fryer honey garlic chicken methods (cornstarch coat, 200°C, two batches); safe temp per Health Canada."
+  "source": "Based on tested air-fryer honey garlic chicken methods (cornstarch coat, 200°C, two batches); safe temp per Health Canada.",
+  "gear": [
+    "Air fryer",
+    "Medium pot with lid",
+    "Sheet pan",
+    "Large skillet",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Cut the chicken into pieces up to a day ahead; keep covered in the fridge.",
+    "Mix the honey garlic sauce (without the cornstarch slurry) and refrigerate up to 3 days.",
+    "Cook the rice the day before — it reheats perfectly."
+  ],
+  "reheat": "Air fryer 175°C (350°F) for 3–4 minutes to bring the crunch back, or oven 190°C (375°F) for 8–10 min. Microwave the rice and broccoli with a damp paper towel. Reheat to 74°C (165°F)."
 }

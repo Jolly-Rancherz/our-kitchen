@@ -25,3 +25,9 @@ to export/restore.
 Any static host works; all paths are relative, so it runs at a domain root or a subpath
 (e.g. GitHub Pages `https://<user>.github.io/our-kitchen/`). `.nojekyll` is included.
 On iPhone: open the URL in Safari → Share → Add to Home Screen.
+
+## Update 2 (Nov 2026)
+- Per-recipe extras live in each recipe JSON: `gear`, `prepAhead`, `reheat`, step `uses` (refs like `"1-0"` or `"2-0=1 tbsp"` = group-item), grams in `metric`, and a 3rd pantry-key element on `cost.breakdown` lines (used by receipt price memory). Mom's soup has `family: true` and a default `story`.
+- `recipes/prices.json` holds typical No Frills pack prices (trip estimate + cost estimates); receipts saved in the app override them on that phone.
+- `vendor/tesseract/` is the on-device receipt reader (Tesseract.js 5.1.1, English "fast" data). It is not precached; the service worker keeps it in its own cache after the first scan so it works offline and survives app updates.
+- Saved data stays in `localStorage["ourkitchen.v1"]`; update 2 only added new fields.

@@ -12,31 +12,38 @@
     "breakdown": [
       [
         "Lean ground beef, 900 g",
-        10.0
+        10.0,
+        "ground-beef-lean"
       ],
       [
         "Old cheddar, 2 cups (200 g)",
-        3.5
+        3.5,
+        "cheddar-shredded"
       ],
       [
         "Hard taco shells, 12",
-        3.0
+        3.0,
+        "hard-taco-shells"
       ],
       [
         "Small flour tortillas, 10",
-        3.0
+        3.0,
+        "flour-tortillas-small"
       ],
       [
         "Iceberg lettuce, ½ head",
-        1.5
+        1.5,
+        "iceberg-lettuce"
       ],
       [
         "Sour cream, 1 cup",
-        2.0
+        2.0,
+        "sour-cream"
       ],
       [
         "Tomatoes, 2",
-        1.5
+        1.5,
+        "tomatoes"
       ],
       [
         "Onion, tomato paste & spices",
@@ -319,26 +326,58 @@
   "steps": [
     {
       "title": "Mix the seasoning",
-      "text": "Stir together the chili powder, cumin, paprika, garlic powder, onion powder, oregano, salt, pepper and cornstarch in a small bowl."
+      "text": "Stir together the chili powder, cumin, paprika, garlic powder, onion powder, oregano, salt, pepper and cornstarch in a small bowl.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8"
+      ]
     },
     {
       "title": "Brown the beef",
       "text": "Heat the oil in a large skillet over medium-high. Add the beef and onion and cook 8–10 minutes, breaking it into small crumbles, until no pink remains and it reaches 71°C (160°F). Spoon off extra fat if there's a lot.",
-      "timer": 9
+      "timer": 9,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
     },
     {
       "title": "Season and simmer",
       "text": "Stir in the garlic for 30 seconds, then the seasoning mix and tomato paste for 1 minute. Add the water, bring to a simmer and cook 4–5 minutes, stirring, until thick and saucy. Taste for salt.",
-      "timer": 5
+      "timer": 5,
+      "uses": [
+        "1-3",
+        "1-4",
+        "1-5"
+      ]
     },
     {
       "title": "Warm the shells",
       "text": "Warm the hard shells on a sheet pan at 175°C (350°F) for 5 minutes. Wrap the tortillas in a damp paper towel and microwave 30–45 seconds (or warm in a dry pan).",
-      "timer": 5
+      "timer": 5,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
     },
     {
       "title": "Build the tacos",
-      "text": "Fill with beef, then cheese (so it melts a little), lettuce, tomato and a spoonful of sour cream. Add mild salsa if you like."
+      "text": "Fill with beef, then cheese (so it melts a little), lettuce, tomato and a spoonful of sour cream. Add mild salsa if you like.",
+      "uses": [
+        "2-2",
+        "2-3",
+        "2-4",
+        "2-5",
+        "2-6"
+      ]
     }
   ],
   "fixIt": [
@@ -363,5 +402,18 @@
   "swap": "Ground turkey or chicken works the same (cook to 74°C / 165°F). Make it a taco bowl over rice for lunch.",
   "leftovers": "Taco beef keeps 3–4 days in the fridge and freezes 3 months. Store toppings separately. Reheat beef with a splash of water.",
   "doneness": "Ground beef: 71°C (160°F), no pink.",
-  "source": "Classic seasoned ground-beef taco method with a mild homemade seasoning (half the usual chili powder, no cayenne); safe temp per Health Canada."
+  "source": "Classic seasoned ground-beef taco method with a mild homemade seasoning (half the usual chili powder, no cayenne); safe temp per Health Canada.",
+  "gear": [
+    "Large skillet",
+    "Sheet pan",
+    "Small bowl",
+    "Box grater",
+    "Cutting board & knife"
+  ],
+  "prepAhead": [
+    "Mix the taco seasoning ahead — it keeps for months in a jar.",
+    "Cook the taco beef up to 3 days ahead (or freeze 3 months) and reheat with a splash of water.",
+    "Shred the lettuce and cheese and dice tomatoes earlier in the day."
+  ],
+  "reheat": "Skillet over medium with 2–3 tbsp water, stirring, until steaming (74°C / 165°F). Warm shells fresh. Keep toppings cold and separate."
 }

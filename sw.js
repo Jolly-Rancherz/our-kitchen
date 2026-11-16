@@ -1,23 +1,35 @@
 /* Our Kitchen service worker — offline support.
    VERSION and the PRECACHE list are rewritten by tools/build_index.py. */
-const VERSION = 'c963b3e9fb';
+const VERSION = '11a5417217';
 const CACHE = 'our-kitchen-' + VERSION;
+const VENDOR = 'ok-vendor-tesseract-5.1.1';
 const PRECACHE = /*PRECACHE*/[
   "./",
   "./index.html",
   "./manifest.webmanifest",
   "./assets/grain.png",
+  "./assets/img/air-fryer-honey-garlic-chicken-sm.webp",
   "./assets/img/air-fryer-honey-garlic-chicken.webp",
+  "./assets/img/baked-mac-and-cheese-sm.webp",
   "./assets/img/baked-mac-and-cheese.webp",
+  "./assets/img/beef-tacos-sm.webp",
   "./assets/img/beef-tacos.webp",
+  "./assets/img/broccoli-cheddar-soup-sm.webp",
   "./assets/img/broccoli-cheddar-soup.webp",
+  "./assets/img/chicken-alfredo-sm.webp",
   "./assets/img/chicken-alfredo.webp",
+  "./assets/img/chicken-fried-rice-sm.webp",
   "./assets/img/chicken-fried-rice.webp",
+  "./assets/img/chicken-parm-spaghetti-sm.webp",
   "./assets/img/chicken-parm-spaghetti.webp",
   "./assets/img/cover.webp",
+  "./assets/img/creamy-garlic-parmesan-chicken-sm.webp",
   "./assets/img/creamy-garlic-parmesan-chicken.webp",
+  "./assets/img/garlic-butter-steak-bites-sm.webp",
   "./assets/img/garlic-butter-steak-bites.webp",
+  "./assets/img/honey-garlic-salmon-sm.webp",
   "./assets/img/honey-garlic-salmon.webp",
+  "./assets/img/moms-potato-soup-sm.webp",
   "./assets/img/moms-potato-soup.webp",
   "./assets/tiles/beef-turkey.webp",
   "./assets/tiles/chicken.webp",
@@ -42,6 +54,7 @@ const PRECACHE = /*PRECACHE*/[
   "./js/app.js",
   "./recipes/categories.json",
   "./recipes/index.json",
+  "./recipes/prices.json",
   "./recipes/beef-turkey/01-beef-tacos.json",
   "./recipes/chicken/01-air-fryer-crispy-honey-garlic-chicken.json",
   "./recipes/chicken/02-chicken-parm-with-spaghetti.json",
@@ -84,6 +97,16 @@ self.addEventListener('fetch', (e) => {
         if (res.ok) { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)); }
         return res;
       }).catch(() => caches.match(req, { ignoreSearch: true }).then((m) => m || (req.mode === 'navigate' ? caches.match('./index.html') : Response.error())))
+    );
+    return;
+  }
+  // the receipt reader (vendor/) lives in its own cache so app updates don't make phones re-download it
+  if (url.pathname.includes('/vendor/')) {
+    e.respondWith(
+      caches.open(VENDOR).then((c) => c.match(req, { ignoreSearch: true }).then((m) => m || fetch(req).then((res) => {
+        if (res.ok) c.put(req, res.clone());
+        return res;
+      })))
     );
     return;
   }

@@ -12,23 +12,28 @@
     "breakdown": [
       [
         "Atlantic salmon fillets, 900 g",
-        25.5
+        25.5,
+        "salmon-fillets"
       ],
       [
         "Broccoli, 2 crowns",
-        4.0
+        4.0,
+        "broccoli"
       ],
       [
         "Jasmine rice, 400 g",
-        1.2
+        1.2,
+        "jasmine-rice"
       ],
       [
         "Honey, ⅓ cup",
-        1.3
+        1.3,
+        "honey"
       ],
       [
         "Butter, 3 tbsp",
-        0.7
+        0.7,
+        "butter"
       ],
       [
         "Soy sauce, lemon juice, garlic & spices",
@@ -186,6 +191,10 @@
           "pantry": {
             "name": "Butter",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 28,
+            "unit": "g"
           }
         }
       ]
@@ -232,6 +241,10 @@
           "pantry": {
             "name": "Butter",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 14,
+            "unit": "g"
           }
         },
         {
@@ -251,30 +264,57 @@
     {
       "title": "Cook the rice",
       "text": "Bring the rice, water, salt and butter to a boil, cover and simmer on low 15 minutes. Rest 10 minutes off the heat with the lid on, then fluff.",
-      "timer": 15
+      "timer": 15,
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3"
+      ]
     },
     {
       "title": "Mix the glaze & season",
-      "text": "Stir the honey, soy sauce, lemon juice and garlic together. Pat the salmon dry and season with salt, pepper, garlic powder and paprika."
+      "text": "Stir the honey, soy sauce, lemon juice and garlic together. Pat the salmon dry and season with salt, pepper, garlic powder and paprika.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
     },
     {
       "title": "Steam the broccoli",
       "text": "Steam or boil the broccoli 4–5 minutes until bright green and just tender. Drain and season with a pinch of salt.",
-      "timer": 5
+      "timer": 5,
+      "uses": [
+        "2-4"
+      ]
     },
     {
       "title": "Sear the salmon",
       "text": "Heat the oil in a large non-stick skillet over medium-high. Lay the salmon in presentation-side down (skin side up) and leave it alone 4 minutes until golden and it releases easily. Flip.",
-      "timer": 4
+      "timer": 4,
+      "uses": [
+        "0-5"
+      ]
     },
     {
       "title": "Glaze",
       "text": "Turn the heat to medium. Add the butter and the glaze and let it bubble 2–3 minutes, spooning it over the salmon as it thickens, until the thickest part reads 63°C (145°F) and flakes easily. Turn the heat down if the glaze darkens too fast.",
-      "timer": 3
+      "timer": 3,
+      "uses": [
+        "1-4"
+      ]
     },
     {
       "title": "Serve",
-      "text": "Plate the salmon on the rice with the broccoli and spoon the extra glaze from the pan over everything."
+      "text": "Plate the salmon on the rice with the broccoli and spoon the extra glaze from the pan over everything.",
+      "uses": []
     }
   ],
   "fixIt": [
@@ -299,5 +339,18 @@
   "swap": "Use frozen salmon portions to bring it to $$ (~$25). Shrimp works too (2 min per side).",
   "leftovers": "Fridge 2 days (fish is best fresh). Eat cold over rice, or reheat gently, covered, at 50% power so it doesn't dry out.",
   "doneness": "Salmon: 63°C (145°F) in the thickest part; it should flake easily.",
-  "source": "Based on tested pan-seared honey garlic salmon methods (sear then glaze, 145°F); safe temp per Health Canada."
+  "source": "Based on tested pan-seared honey garlic salmon methods (sear then glaze, 145°F); safe temp per Health Canada.",
+  "gear": [
+    "Large non-stick skillet",
+    "Medium pot with lid",
+    "Steamer basket or pot",
+    "Fish spatula",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Mix the glaze up to 3 days ahead and refrigerate.",
+    "Cook the rice the day before; reheat with a splash of water.",
+    "Cut the broccoli ahead."
+  ],
+  "reheat": "Salmon is best cold over rice, or warmed gently: covered, 50% power in the microwave, 30 seconds at a time. Don't blast it or it dries out."
 }

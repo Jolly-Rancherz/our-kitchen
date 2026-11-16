@@ -1,0 +1,245 @@
+{
+ "note": "Typical No Frills (London, ON) pack prices, Nov 2026 estimates. Receipts saved in the app override these on that phone.",
+ "prices": {
+  "35-whipping-cream": {
+   "price": 4.49,
+   "pack": "473 ml"
+  },
+  "all-purpose-flour": {
+   "price": 4.99,
+   "pack": "2.5 kg"
+  },
+  "apple-cider-vinegar": {
+   "price": 2.99,
+   "pack": "1 L"
+  },
+  "baby-potatoes": {
+   "price": 4.49,
+   "pack": "1.5 kg"
+  },
+  "bacon": {
+   "price": 6.99,
+   "pack": "375 g"
+  },
+  "black-pepper": {
+   "price": 3.49,
+   "pack": "jar"
+  },
+  "broccoli": {
+   "price": 2.49,
+   "pack": "1 crown"
+  },
+  "butter": {
+   "price": 6.49,
+   "pack": "454 g"
+  },
+  "canola-vegetable-oil": {
+   "price": 5.99,
+   "pack": "1.89 L"
+  },
+  "carrots": {
+   "price": 2.49,
+   "pack": "907 g bag"
+  },
+  "cheddar-shredded": {
+   "price": 6.99,
+   "pack": "400 g block"
+  },
+  "chicken-breasts-boneless": {
+   "price": 13.2,
+   "pack": "~1 kg pack"
+  },
+  "chicken-broth": {
+   "price": 2.49,
+   "pack": "900 ml"
+  },
+  "chicken-thighs-boneless": {
+   "price": 17.0,
+   "pack": "~1 kg pack"
+  },
+  "chili-powder-mild": {
+   "price": 2.99,
+   "pack": "jar"
+  },
+  "cornstarch": {
+   "price": 2.49,
+   "pack": "454 g"
+  },
+  "crusty-bread": {
+   "price": 3.49,
+   "pack": "loaf"
+  },
+  "dried-oregano": {
+   "price": 2.49,
+   "pack": "jar"
+  },
+  "dried-thyme": {
+   "price": 2.49,
+   "pack": "jar"
+  },
+  "eggs": {
+   "price": 4.69,
+   "pack": "dozen"
+  },
+  "elbow-macaroni": {
+   "price": 2.0,
+   "pack": "450 g"
+  },
+  "evaporated-milk": {
+   "price": 2.29,
+   "pack": "370 ml"
+  },
+  "fettuccine": {
+   "price": 2.0,
+   "pack": "450 g"
+  },
+  "flour-tortillas-small": {
+   "price": 3.49,
+   "pack": "10 pack"
+  },
+  "frozen-peas-and-carrots": {
+   "price": 2.99,
+   "pack": "750 g"
+  },
+  "garlic": {
+   "price": 1.99,
+   "pack": "3-bulb pack"
+  },
+  "garlic-powder": {
+   "price": 2.99,
+   "pack": "jar"
+  },
+  "green-beans": {
+   "price": 3.3,
+   "pack": "~450 g"
+  },
+  "ground-beef-lean": {
+   "price": 11.0,
+   "pack": "~1 kg"
+  },
+  "ground-cumin": {
+   "price": 2.99,
+   "pack": "jar"
+  },
+  "ground-nutmeg": {
+   "price": 3.49,
+   "pack": "jar"
+  },
+  "half-and-half-10": {
+   "price": 3.99,
+   "pack": "1 L"
+  },
+  "hard-taco-shells": {
+   "price": 2.99,
+   "pack": "12 shells"
+  },
+  "honey": {
+   "price": 6.99,
+   "pack": "500 g"
+  },
+  "iceberg-lettuce": {
+   "price": 2.49,
+   "pack": "head"
+  },
+  "italian-seasoning-dried": {
+   "price": 2.49,
+   "pack": "jar"
+  },
+  "jasmine-rice": {
+   "price": 8.99,
+   "pack": "3.6 kg"
+  },
+  "lemon-juice": {
+   "price": 2.49,
+   "pack": "bottle"
+  },
+  "marinara-sauce": {
+   "price": 3.49,
+   "pack": "650 ml jar"
+  },
+  "milk": {
+   "price": 5.79,
+   "pack": "2 L"
+  },
+  "mozzarella-shredded": {
+   "price": 6.49,
+   "pack": "320 g"
+  },
+  "olive-oil": {
+   "price": 9.99,
+   "pack": "1 L"
+  },
+  "onion-powder": {
+   "price": 2.99,
+   "pack": "jar"
+  },
+  "oyster-sauce": {
+   "price": 3.49,
+   "pack": "bottle"
+  },
+  "panko-breadcrumbs": {
+   "price": 3.29,
+   "pack": "230 g"
+  },
+  "paprika": {
+   "price": 2.99,
+   "pack": "jar"
+  },
+  "parmesan-grated": {
+   "price": 6.99,
+   "pack": "250 g"
+  },
+  "russet-potatoes": {
+   "price": 5.99,
+   "pack": "10 lb bag"
+  },
+  "salmon-fillets": {
+   "price": 25.5,
+   "pack": "~900 g"
+  },
+  "salsa-mild": {
+   "price": 3.49,
+   "pack": "jar"
+  },
+  "salt": {
+   "price": 1.79,
+   "pack": "1 kg"
+  },
+  "sesame-oil": {
+   "price": 4.49,
+   "pack": "bottle"
+  },
+  "sirloin-steak": {
+   "price": 21.0,
+   "pack": "~900 g"
+  },
+  "sour-cream": {
+   "price": 2.99,
+   "pack": "500 ml"
+  },
+  "soy-sauce": {
+   "price": 3.49,
+   "pack": "bottle"
+  },
+  "spaghetti": {
+   "price": 2.0,
+   "pack": "450 g"
+  },
+  "tomato-paste": {
+   "price": 1.29,
+   "pack": "156 ml can"
+  },
+  "tomatoes": {
+   "price": 1.5,
+   "pack": "2 tomatoes"
+  },
+  "yellow-onions": {
+   "price": 3.49,
+   "pack": "3 lb bag"
+  },
+  "yukon-gold-potatoes": {
+   "price": 5.49,
+   "pack": "5 lb bag"
+  }
+ }
+}

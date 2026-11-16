@@ -12,23 +12,28 @@
     "breakdown": [
       [
         "Boneless skinless chicken breasts, ~700 g",
-        9.25
+        9.25,
+        "chicken-breasts-boneless"
       ],
       [
         "35% whipping cream, 2 cups",
-        4.5
+        4.5,
+        "35-whipping-cream"
       ],
       [
         "Grated Parmesan, 1½ cups",
-        4.2
+        4.2,
+        "parmesan-grated"
       ],
       [
         "Fettuccine, 450 g",
-        2.0
+        2.0,
+        "fettuccine"
       ],
       [
         "Butter, 5 tbsp",
-        1.1
+        1.1,
+        "butter"
       ],
       [
         "Garlic, 6 cloves",
@@ -149,6 +154,10 @@
           "pantry": {
             "name": "Butter",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 14,
+            "unit": "g"
           }
         }
       ]
@@ -188,6 +197,10 @@
           "pantry": {
             "name": "Butter",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 56,
+            "unit": "g"
           }
         },
         {
@@ -264,7 +277,11 @@
             "name": "Mozzarella (shredded)",
             "cat": "dairy"
           },
-          "optional": true
+          "optional": true,
+          "metric": {
+            "qty": 100,
+            "unit": "g"
+          }
         }
       ]
     }
@@ -272,30 +289,59 @@
   "steps": [
     {
       "title": "Boil the water",
-      "text": "Bring a big pot of water to a boil and salt it well. Pat the chicken dry and season both sides with salt, pepper, garlic powder and Italian seasoning."
+      "text": "Bring a big pot of water to a boil and salt it well. Pat the chicken dry and season both sides with salt, pepper, garlic powder and Italian seasoning.",
+      "uses": [
+        "1-1",
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
     },
     {
       "title": "Sear the chicken",
       "text": "Heat the oil and 1 tbsp butter in a large skillet over medium-high. Cook the cutlets 5–6 minutes per side until golden and 74°C (165°F) inside. Rest on a board 5 minutes, then slice.",
-      "timer": 12
+      "timer": 12,
+      "uses": [
+        "0-5",
+        "0-6"
+      ]
     },
     {
       "title": "Cook the pasta",
       "text": "Cook the fettuccine 1 minute less than the box says. Scoop out 1 cup of pasta water, then drain.",
-      "timer": 10
+      "timer": 10,
+      "uses": [
+        "1-0"
+      ]
     },
     {
       "title": "Make the garlic butter",
-      "text": "In the same skillet (don't wash it — that's flavour), melt the butter over medium-low. Add the garlic and cook 1 minute until fragrant, without browning."
+      "text": "In the same skillet (don't wash it — that's flavour), melt the butter over medium-low. Add the garlic and cook 1 minute until fragrant, without browning.",
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
     },
     {
       "title": "Build the sauce",
       "text": "Pour in the cream, scrape up the brown bits and simmer gently 3–4 minutes until slightly thickened. Turn the heat to low and whisk in the Parmesan a handful at a time, then garlic powder and pepper. Add mozzarella now if using.",
-      "timer": 4
+      "timer": 4,
+      "uses": [
+        "2-2",
+        "2-3",
+        "2-4",
+        "2-5",
+        "2-7"
+      ]
     },
     {
       "title": "Toss and serve",
-      "text": "Add the pasta and toss for a minute, loosening with splashes of pasta water until silky. Taste for salt. Top with the sliced chicken and extra Parmesan."
+      "text": "Add the pasta and toss for a minute, loosening with splashes of pasta water until silky. Taste for salt. Top with the sliced chicken and extra Parmesan.",
+      "uses": [
+        "2-6"
+      ]
     }
   ],
   "fixIt": [
@@ -320,5 +366,18 @@
   "swap": "Use shrimp instead of chicken (2 min per side, until pink and opaque), or add roasted broccoli for a veggie.",
   "leftovers": "Fridge 3 days. Reheat gently in a pan with a splash of milk so the sauce comes back creamy (the microwave can make it oily).",
   "doneness": "Chicken: 74°C (165°F) in the thickest part.",
-  "source": "Classic Alfredo method (butter, garlic, cream, Parmesan) with pan-seared cutlets; safe temp per Health Canada."
+  "source": "Classic Alfredo method (butter, garlic, cream, Parmesan) with pan-seared cutlets; safe temp per Health Canada.",
+  "gear": [
+    "Large pot",
+    "Large skillet",
+    "Whisk",
+    "Tongs",
+    "Colander",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Slice the chicken into cutlets and season up to a day ahead.",
+    "Grate/measure the Parmesan and mince the garlic ahead."
+  ],
+  "reheat": "In a pan over low heat with a splash of milk or cream, tossing until hot (74°C / 165°F). The microwave can make Alfredo oily — if you use it, go 50% power and stir often."
 }

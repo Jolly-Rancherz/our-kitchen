@@ -19,7 +19,7 @@ BANNED = [(re.compile(r"mushroom", re.I), "mushroom"),
           (re.compile(r"\bolives?\b(?!\s+oil)", re.I), "olives")]
 REQUIRED = ["title", "servings", "prep", "cook", "cost", "groups", "steps"]
 # files the service worker should precache (relative to app/)
-SKIP_DIRS = {"tools", ".git", "node_modules"}
+SKIP_DIRS = {"tools", ".git", "node_modules", "vendor"}  # vendor/ (receipt reader) is cached on first use, not precached
 SKIP_FILES = {"sw.js", ".DS_Store", "README.md", "CNAME", ".nojekyll"}
 
 

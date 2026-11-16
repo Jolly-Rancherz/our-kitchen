@@ -12,31 +12,38 @@
     "breakdown": [
       [
         "Boneless skinless chicken breasts, ~900 g",
-        12.0
+        12.0,
+        "chicken-breasts-boneless"
       ],
       [
         "Yukon Gold potatoes, 2½ lb",
-        2.5
+        2.5,
+        "yukon-gold-potatoes"
       ],
       [
         "35% cream, 1¼ cups",
-        3.4
+        3.4,
+        "35-whipping-cream"
       ],
       [
         "Green beans, 450 g",
-        3.0
+        3.0,
+        "green-beans"
       ],
       [
         "Grated Parmesan, ¾ cup",
-        2.1
+        2.1,
+        "parmesan-grated"
       ],
       [
         "Butter, 8 tbsp",
-        1.8
+        1.8,
+        "butter"
       ],
       [
         "Garlic, milk, broth, flour & spices",
-        2.2
+        2.2,
+        "chicken-broth"
       ]
     ]
   },
@@ -159,6 +166,10 @@
           "pantry": {
             "name": "Butter",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 14,
+            "unit": "g"
           }
         }
       ]
@@ -173,6 +184,10 @@
           "pantry": {
             "name": "Butter",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 28,
+            "unit": "g"
           }
         },
         {
@@ -288,6 +303,10 @@
           "pantry": {
             "name": "Butter",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 56,
+            "unit": "g"
           }
         },
         {
@@ -345,6 +364,10 @@
           "pantry": {
             "name": "Butter",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 14,
+            "unit": "g"
           }
         },
         {
@@ -363,34 +386,73 @@
     {
       "title": "Boil the potatoes",
       "text": "Put the potatoes in a pot, cover with cold water by 3 cm and add 1 tbsp salt. Bring to a boil, then simmer 15–20 minutes until a knife slides in with no resistance.",
-      "timer": 18
+      "timer": 18,
+      "uses": [
+        "2-0",
+        "2-3=1 tbsp"
+      ]
     },
     {
       "title": "Prep the chicken",
-      "text": "Slice each breast in half horizontally and pound to an even 1.5 cm. Pat dry, season with salt, pepper, garlic powder and paprika, then dust lightly with flour and shake off the extra."
+      "text": "Slice each breast in half horizontally and pound to an even 1.5 cm. Pat dry, season with salt, pepper, garlic powder and paprika, then dust lightly with flour and shake off the extra.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5"
+      ]
     },
     {
       "title": "Sear the cutlets",
       "text": "Heat the oil and 1 tbsp butter in a large skillet over medium-high. Cook the cutlets 4–5 minutes per side until golden and 74°C (165°F) in the thickest part (work in 2 batches if they don't fit). Move to a plate.",
-      "timer": 10
+      "timer": 10,
+      "uses": [
+        "0-6",
+        "0-7"
+      ]
     },
     {
       "title": "Cook the green beans",
       "text": "Meanwhile, boil or steam the green beans 4–5 minutes until bright and just tender. Drain and toss with butter and salt.",
-      "timer": 5
+      "timer": 5,
+      "uses": [
+        "3-0",
+        "3-1",
+        "3-2"
+      ]
     },
     {
       "title": "Make the sauce",
       "text": "Lower the skillet to medium-low and melt 2 tbsp butter. Cook the garlic 1 minute without browning. Stir in the flour for 30 seconds, then whisk in the broth, scraping up the brown bits. Add the cream and Italian seasoning and simmer 3–4 minutes until it coats a spoon. Take it off the heat and stir in the Parmesan. Season.",
-      "timer": 4
+      "timer": 4,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6",
+        "1-7",
+        "1-8"
+      ]
     },
     {
       "title": "Mash",
-      "text": "Drain the potatoes well and return to the hot pot for 1 minute to steam dry. Mash with the butter, warm milk, salt and garlic powder until smooth and creamy."
+      "text": "Drain the potatoes well and return to the hot pot for 1 minute to steam dry. Mash with the butter, warm milk, salt and garlic powder until smooth and creamy.",
+      "uses": [
+        "2-1",
+        "2-2",
+        "2-3=1 tsp",
+        "2-4"
+      ]
     },
     {
       "title": "Bring it together",
-      "text": "Return the chicken and its juices to the sauce and spoon it over for 1–2 minutes to warm through. Serve on the mash with the green beans and extra sauce."
+      "text": "Return the chicken and its juices to the sauce and spoon it over for 1–2 minutes to warm through. Serve on the mash with the green beans and extra sauce.",
+      "uses": []
     }
   ],
   "fixIt": [
@@ -415,5 +477,19 @@
   "swap": "Use boneless thighs (5–6 min per side), or swap the green beans for roasted broccoli.",
   "leftovers": "Fridge 3 days. Reheat gently with a splash of milk or broth so the sauce stays creamy.",
   "doneness": "Chicken: 74°C (165°F) in the thickest part.",
-  "source": "Based on tested creamy garlic Parmesan chicken methods (The Kitchn, Sprinkles and Sprouts)."
+  "source": "Based on tested creamy garlic Parmesan chicken methods (The Kitchn, Sprinkles and Sprouts).",
+  "gear": [
+    "Medium pot",
+    "Potato masher",
+    "Large skillet",
+    "Meat mallet or rolling pin",
+    "Whisk",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Peel and cut the potatoes up to a day ahead; keep in cold water in the fridge.",
+    "Slice and pound the cutlets the night before.",
+    "Mashed potatoes keep 3 days — reheat with a splash of milk."
+  ],
+  "reheat": "Gently in a covered skillet on medium-low with a splash of broth or milk so the sauce stays creamy, until the chicken hits 74°C (165°F). Mash: microwave with a little milk, stirring."
 }

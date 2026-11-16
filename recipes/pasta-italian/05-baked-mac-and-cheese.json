@@ -12,31 +12,38 @@
     "breakdown": [
       [
         "Old cheddar, 400 g block",
-        6.5
+        6.5,
+        "cheddar-shredded"
       ],
       [
         "Mozzarella, 150 g",
-        3.0
+        3.0,
+        "mozzarella-shredded"
       ],
       [
         "Elbow macaroni, 450 g",
-        2.0
+        2.0,
+        "elbow-macaroni"
       ],
       [
         "Evaporated milk, 370 ml can",
-        2.0
+        2.0,
+        "evaporated-milk"
       ],
       [
         "Whole milk, 3 cups",
-        1.6
+        1.6,
+        "milk"
       ],
       [
         "Butter, 8 tbsp",
-        1.8
+        1.8,
+        "butter"
       ],
       [
         "Panko & Parmesan",
-        1.5
+        1.5,
+        "parmesan-grated"
       ],
       [
         "Flour & spices",
@@ -113,6 +120,10 @@
           "pantry": {
             "name": "Butter",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 84,
+            "unit": "g"
           }
         },
         {
@@ -237,6 +248,10 @@
           "pantry": {
             "name": "Panko breadcrumbs",
             "cat": "grains"
+          },
+          "metric": {
+            "qty": 45,
+            "unit": "g"
           }
         },
         {
@@ -246,6 +261,10 @@
           "pantry": {
             "name": "Parmesan (grated)",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 25,
+            "unit": "g"
           }
         },
         {
@@ -256,6 +275,10 @@
           "pantry": {
             "name": "Butter",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 28,
+            "unit": "g"
           }
         }
       ]
@@ -265,35 +288,64 @@
     {
       "title": "Undercook the pasta",
       "text": "Boil the macaroni in well-salted water 2 minutes less than the box says (it finishes in the oven). Drain and set aside.",
-      "timer": 6
+      "timer": 6,
+      "uses": [
+        "0-0",
+        "0-1"
+      ]
     },
     {
       "title": "Make the roux",
       "text": "In a large pot over medium, melt 6 tbsp butter. Whisk in the flour and cook 1–2 minutes, whisking, until bubbly but not browned.",
-      "timer": 2
+      "timer": 2,
+      "uses": [
+        "1-0",
+        "1-1"
+      ]
     },
     {
       "title": "Thicken the sauce",
       "text": "Slowly whisk in the warm milk and evaporated milk. Add the salt, pepper, garlic powder, onion powder and paprika. Cook, whisking and scraping the bottom, 6–8 minutes until it coats a spoon. Don't let it boil hard.",
-      "timer": 7
+      "timer": 7,
+      "uses": [
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6",
+        "1-7",
+        "1-8"
+      ]
     },
     {
       "title": "Melt in the cheese",
-      "text": "Take the pot off the heat and wait 1 minute. Stir in 3 cups of the cheddar and all the mozzarella a handful at a time until smooth. Taste — it should be well seasoned."
+      "text": "Take the pot off the heat and wait 1 minute. Stir in 3 cups of the cheddar and all the mozzarella a handful at a time until smooth. Taste — it should be well seasoned.",
+      "uses": [
+        "1-9=3 cups",
+        "1-10"
+      ]
     },
     {
       "title": "Combine and top",
-      "text": "Stir in the pasta (it will look very saucy — that's right). Pour into the buttered dish and sprinkle with the last cup of cheddar. Mix the panko, Parmesan and melted butter and scatter on top."
+      "text": "Stir in the pasta (it will look very saucy — that's right). Pour into the buttered dish and sprinkle with the last cup of cheddar. Mix the panko, Parmesan and melted butter and scatter on top.",
+      "uses": [
+        "1-9=1 cup",
+        "2-0",
+        "2-1",
+        "2-2"
+      ]
     },
     {
       "title": "Bake",
       "text": "Bake uncovered at 190°C (375°F) for 20–25 minutes until bubbling at the edges and golden on top. Want it browner? Broil 1–2 minutes, watching closely.",
-      "timer": 22
+      "timer": 22,
+      "uses": []
     },
     {
       "title": "Rest and serve",
       "text": "Let it rest 5–10 minutes so the sauce settles and turns extra creamy, then scoop.",
-      "timer": 5
+      "timer": 5,
+      "uses": []
     }
   ],
   "fixIt": [
@@ -318,5 +370,18 @@
   "swap": "Mix in crispy bacon or diced cooked chicken before baking to make it a full dinner. Monterey Jack works instead of mozzarella.",
   "leftovers": "Fridge 4 days. Freezes 2 months in portions. Reheat with a splash of milk, covered, in the microwave or at 175°C (350°F) for 15–20 min.",
   "doneness": null,
-  "source": "Based on tested baked mac and cheese methods (roux + evaporated milk, 375°F bake — Trevor's Kitchen, America's Test Kitchen)."
+  "source": "Based on tested baked mac and cheese methods (roux + evaporated milk, 375°F bake — Trevor's Kitchen, America's Test Kitchen).",
+  "gear": [
+    "9×13 baking dish",
+    "Large pot",
+    "Large saucepan",
+    "Whisk",
+    "Box grater",
+    "Colander"
+  ],
+  "prepAhead": [
+    "Assemble the whole dish up to 1 day ahead (stir an extra ½ cup milk into the sauce first), cover and refrigerate. Add the crumb top just before baking; bake 30–35 min at 190°C (375°F).",
+    "Shred the cheese ahead."
+  ],
+  "reheat": "Add a splash of milk, cover, and microwave 1–2 min (stir halfway) or bake covered at 175°C (350°F) for 15–20 min until hot (74°C / 165°F)."
 }

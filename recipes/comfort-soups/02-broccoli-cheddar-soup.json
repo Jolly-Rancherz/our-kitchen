@@ -12,23 +12,28 @@
     "breakdown": [
       [
         "Old cheddar, 300 g",
-        5.0
+        5.0,
+        "cheddar-shredded"
       ],
       [
         "Broccoli, 2 crowns",
-        5.0
+        5.0,
+        "broccoli"
       ],
       [
         "10% half-and-half cream, 2 cups",
-        2.3
+        2.3,
+        "half-and-half-10"
       ],
       [
         "Chicken broth, 900 ml carton",
-        2.0
+        2.0,
+        "chicken-broth"
       ],
       [
         "Butter, 4 tbsp",
-        0.9
+        0.9,
+        "butter"
       ],
       [
         "Onion, carrots & garlic",
@@ -86,6 +91,10 @@
           "pantry": {
             "name": "Butter",
             "cat": "dairy"
+          },
+          "metric": {
+            "qty": 56,
+            "unit": "g"
           }
         },
         {
@@ -253,29 +262,55 @@
     {
       "title": "Soften the onion",
       "text": "Melt the butter in a big pot over medium. Add the onion with a pinch of salt and cook 4–5 minutes until soft and see-through, not browned. Add the garlic for the last minute.",
-      "timer": 5
+      "timer": 5,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
     },
     {
       "title": "Make the roux",
       "text": "Sprinkle in the flour and stir constantly 1–2 minutes so it loses its raw taste.",
-      "timer": 2
+      "timer": 2,
+      "uses": [
+        "0-3"
+      ]
     },
     {
       "title": "Add the liquids",
-      "text": "Slowly whisk in the broth, then the half-and-half, until smooth. Bring to a gentle simmer (don't boil hard)."
+      "text": "Slowly whisk in the broth, then the half-and-half, until smooth. Bring to a gentle simmer (don't boil hard).",
+      "uses": [
+        "0-4",
+        "0-5"
+      ]
     },
     {
       "title": "Simmer the veg",
       "text": "Add the broccoli, carrots, salt, pepper, garlic powder, paprika and nutmeg. Simmer on medium-low, partly covered and stirring often, 15–20 minutes until the broccoli is very tender.",
-      "timer": 18
+      "timer": 18,
+      "uses": [
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9",
+        "0-10",
+        "0-11",
+        "0-12"
+      ]
     },
     {
       "title": "Make it velvety",
-      "text": "For that Panera texture, blend about a third of the soup with an immersion blender (or blend 2 cups in a blender, vented, and stir back in). Leave plenty of chunks."
+      "text": "For that Panera texture, blend about a third of the soup with an immersion blender (or blend 2 cups in a blender, vented, and stir back in). Leave plenty of chunks.",
+      "uses": []
     },
     {
       "title": "Melt in the cheddar",
-      "text": "Take the pot off the heat. Stir in the cheddar a handful at a time until melted and smooth. Taste and add salt until it's well seasoned. Serve topped with a little extra cheddar and crusty bread."
+      "text": "Take the pot off the heat. Stir in the cheddar a handful at a time until melted and smooth. Taste and add salt until it's well seasoned. Serve topped with a little extra cheddar and crusty bread.",
+      "uses": [
+        "0-13",
+        "1-0"
+      ]
     }
   ],
   "fixIt": [
@@ -300,5 +335,17 @@
   "swap": "Use whole milk instead of half-and-half (a little lighter), or frozen broccoli (no need to thaw; simmer 10–12 min).",
   "leftovers": "Fridge 4 days. Reheat on low, stirring, with a splash of milk — don't boil or it can split. Freezing isn't recommended (the cheese turns grainy).",
   "doneness": null,
-  "source": "Based on tested Panera-copycat broccoli cheddar soup methods (Once Upon a Chef, Food Network Kitchen): butter-flour roux, broth + half-and-half, partial blend, cheese off the heat."
+  "source": "Based on tested Panera-copycat broccoli cheddar soup methods (Once Upon a Chef, Food Network Kitchen): butter-flour roux, broth + half-and-half, partial blend, cheese off the heat.",
+  "gear": [
+    "Large pot or Dutch oven (4 L+)",
+    "Whisk",
+    "Box grater",
+    "Immersion blender (or blender)",
+    "Ladle"
+  ],
+  "prepAhead": [
+    "Chop the broccoli, grate the carrots and dice the onion up to 2 days ahead; store in containers in the fridge.",
+    "Shred the cheddar ahead and keep it in a sealed bag."
+  ],
+  "reheat": "Low heat on the stove, stirring often, with a splash of milk until steaming — never boil or the cheese can split. Microwave at 50% power, 1 min at a time, stirring."
 }
