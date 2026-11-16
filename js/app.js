@@ -293,7 +293,6 @@ function heartBurst(el) {
     b.appendChild(i2);
   }
   document.body.appendChild(b); setTimeout(() => b.remove(), 800);
-  el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop');
 }
 function setTop({ title = 'OUR KITCHEN', back = null, right = '' } = {}) {
   $('#tbTitle').innerHTML = title;
@@ -901,7 +900,7 @@ function viewSettings() {
       <label class="setrow"><span class="l"><b>Bigger text</b><span>Easier to read from across the counter</span></span><span class="switch"><input type="checkbox" id="bigT" ${st.bigText ? 'checked' : ''}><i></i></span></label>
       <label class="setrow"><span class="l"><b>Winter snowflakes</b><span>Gentle snow from November to February</span></span><span class="switch"><input type="checkbox" id="snowT" ${st.snow !== false ? 'checked' : ''}><i></i></span></label>
       <label class="setrow"><span class="l"><b>Anniversary hearts</b><span>A few hearts around your anniversary</span></span><span class="switch"><input type="checkbox" id="heartT" ${st.hearts !== false ? 'checked' : ''}><i></i></span></label>
-      <label class="setrow"><span class="l"><b>Little taps</b><span>Tiny vibrations on buttons (Android only — iPhone doesn't allow it)</span></span><span class="switch"><input type="checkbox" id="hapT" ${st.haptics !== false ? 'checked' : ''}><i></i></span></label>
+      
     </div>
     ${settingsExtrasHTML()}
     <div class="setgroup"><div class="sec-title">Measurements</div>
@@ -937,12 +936,12 @@ function viewSettings() {
       <div class="setrow"><span class="l"><b>Show the welcome screen</b></span><button class="btn sm ghost" id="showW">Show</button></div>
       <div class="setrow"><span class="l"><b>Reset everything</b><span>Favourites, pantry, list, budget, ticks — all of it</span></span><button class="btn sm danger" id="resetAll">Reset</button></div>
       <p class="small muted" style="margin-top:14px">Our Kitchen · Corey ♥ Faith · ${INDEX.recipes.length} recipes · works offline. Shared sync between our phones is planned for later.</p>
+      <p class="small muted fitinfo">Screen ${FIT.w || ''}×${FIT.screen || ''} · view ${FIT.view || ''} · safe areas ${Math.round(FIT.sat || 0)}/${Math.round(FIT.sab || 0)} · ${FIT.sa ? 'home-screen app' : 'browser'}${FIT.strip ? ` · bottom strip ${FIT.strip}` : ''}</p>
     </div></div>`);
   $$('#themeSeg button').forEach((b) => (b.onclick = () => { st.theme = b.dataset.t; save(); applyTheme(); viewSettings(); }));
   $('#bigT').onchange = (e) => { st.bigText = e.target.checked; save(); applyTheme(); };
   $('#snowT').onchange = (e) => { st.snow = e.target.checked; save(); applySeason(); };
   $('#heartT').onchange = (e) => { st.hearts = e.target.checked; save(); applySeason(); };
-  $('#hapT').onchange = (e) => { st.haptics = e.target.checked; save(); buzz(15); };
   $('#rsT').onchange = (e) => { st.autoRestock = e.target.checked; save(); };
   $$('#unitSeg button').forEach((b) => (b.onclick = () => { st.units = b.dataset.u; save(); viewSettings(); }));
   $$('#tempSeg button').forEach((b) => (b.onclick = () => { st.temp = b.dataset.tp; save(); viewSettings(); }));
@@ -1131,8 +1130,7 @@ ICON.star = '<path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8l-5.2 2.7 1-5.8
 // ---------------------------------------------------------------- small helpers
 const DAYS = (n) => n * 864e5;
 const isoPlus = (n) => { const d = new Date(); d.setDate(d.getDate() + n); return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()); };
-function buzz(p = 8) { if (state.settings.haptics === false) return; try { if (navigator.vibrate) navigator.vibrate(p); } catch (e) {} }
-document.addEventListener('click', (e) => { if (e.target.closest && e.target.closest('.btn,.chip,.checklist li,.seg button,.segtext button,.iconbtn,#tabbar a,.rate button,.mood button')) buzz(); }, true);
+function buzz() {} // update 4: tap feedback removed (the saved haptics setting is left untouched, just unused)
 function withUndo(msg, fn, after) {
   const snap = JSON.stringify(state);
   fn(); save(); if (after) after();
@@ -1873,34 +1871,55 @@ const vY = () => { const v = $('#view'); return v ? v.scrollTop : 0; };
 function vTo(y) { const v = $('#view'); if (v) v.scrollTop = y || 0; }
 
 // ---------------------------------------------------------------- sheets (#1): locked background, inner scroll, drag to dismiss
+let sheetCloseT = null, sheetOpenT = null;
+const SHEET_IN = 'transform .36s cubic-bezier(.32,.72,0,1)', SHEET_OUT = 'transform .24s cubic-bezier(.4,0,.9,.6)';
 function openSheet(html, mount) {
-  const w = $('#sheetWrap'); const sh = $('.sheet', w);
+  const w = $('#sheetWrap'); const sh = $('.sheet', w); const scrim = $('.sheet-scrim', w);
+  const fresh = w.hidden; clearTimeout(sheetCloseT); sheetCloseT = null; w.classList.remove('closing');
   $('#sheetBody').innerHTML = html;
   document.body.classList.add('sheet-open');
-  w.hidden = false; sh.style.transform = ''; sh.style.transition = ''; $('.sheet-scrim', w).style.opacity = '';
   sh.scrollTop = 0;
   if (mount) mount($('#sheetBody'));
+  markLoaded(sh);
+  if (fresh && !reducedMotion()) {
+    // start fully below the screen, then glide up on the compositor (transform + opacity only, no layout)
+    sh.style.transition = 'none'; sh.style.transform = 'translate3d(0,100%,0)'; scrim.style.transition = 'none'; scrim.style.opacity = '0';
+    w.hidden = false; void sh.offsetHeight;
+    sh.style.transition = SHEET_IN; sh.style.transform = 'translate3d(0,0,0)'; scrim.style.transition = 'opacity .3s ease'; scrim.style.opacity = '1';
+    clearTimeout(sheetOpenT); sheetOpenT = setTimeout(() => { if (!w.classList.contains('closing') && !w.hidden) { sh.style.transition = ''; sh.style.transform = ''; scrim.style.transition = ''; scrim.style.opacity = ''; } }, 400);
+  } else {
+    w.hidden = false;
+    if (!fresh && sh.style.transform && !reducedMotion()) { sh.style.transition = SHEET_IN; sh.style.transform = ''; scrim.style.transition = 'opacity .3s ease'; scrim.style.opacity = ''; }
+    else { sh.style.transition = ''; sh.style.transform = ''; scrim.style.transition = ''; scrim.style.opacity = ''; }
+  }
 }
-function closeSheet() {
-  const w = $('#sheetWrap'); const was = !w.hidden;
-  w.hidden = true; $('#sheetBody').innerHTML = '';
-  const sh = $('.sheet', w); sh.style.transform = ''; sh.style.transition = '';
+function finishCloseSheet() {
+  const w = $('#sheetWrap'); const sh = $('.sheet', w); const scrim = $('.sheet-scrim', w);
+  clearTimeout(sheetCloseT); clearTimeout(sheetOpenT); sheetCloseT = null;
+  const was = !w.hidden;
+  w.hidden = true; w.classList.remove('closing'); $('#sheetBody').innerHTML = '';
+  sh.style.transform = ''; sh.style.transition = ''; scrim.style.opacity = ''; scrim.style.transition = '';
   document.body.classList.remove('sheet-open');
   if (was) setTimeout(maybeApplyUpdate, 450);
 }
-function slideSheetAway() {
-  const w = $('#sheetWrap'); const sh = $('.sheet', w);
-  if (reducedMotion()) { closeSheet(); return; }
-  sh.style.transition = 'transform .2s ease-in'; sh.style.transform = 'translateY(105%)'; $('.sheet-scrim', w).style.opacity = '0';
-  setTimeout(closeSheet, 200);
+function closeSheet(instant) {
+  const w = $('#sheetWrap'); if (w.hidden) return;
+  if (instant === true || reducedMotion()) { finishCloseSheet(); return; }
+  if (w.classList.contains('closing')) return;
+  const sh = $('.sheet', w); const scrim = $('.sheet-scrim', w);
+  w.classList.add('closing'); clearTimeout(sheetOpenT);
+  sh.style.transition = SHEET_OUT; sh.style.transform = 'translate3d(0,100%,0)'; scrim.style.transition = 'opacity .24s ease'; scrim.style.opacity = '0';
+  sheetCloseT = setTimeout(finishCloseSheet, 250);
 }
+function slideSheetAway() { closeSheet(); }
 (function sheetGestures() {
   const w = $('#sheetWrap'); const sh = $('.sheet', w); const scrim = $('.sheet-scrim', w);
   let y0 = null, t0 = 0, dy = 0, drag = false, fromGrip = false;
   // the scrim never scrolls anything behind it
   scrim.addEventListener('touchmove', (e) => e.preventDefault(), { passive: false });
   sh.addEventListener('touchstart', (e) => {
-    if (e.touches.length !== 1) { y0 = null; return; }
+    if (e.touches.length !== 1 || $('#sheetWrap').classList.contains('closing')) { y0 = null; return; }
+    clearTimeout(sheetOpenT); sh.style.transition = ''; scrim.style.transition = '';
     y0 = e.touches[0].clientY; t0 = now(); dy = 0; drag = false;
     const r = sh.getBoundingClientRect();
     fromGrip = !!e.target.closest('.sheet-grip') || y0 - r.top < 34;
@@ -1925,8 +1944,8 @@ function slideSheetAway() {
     if (y0 == null) return;
     const v = dy / Math.max(1, now() - t0); y0 = null;
     if (!drag) return; drag = false;
-    if (dy > 120 || (dy > 40 && v > 0.55)) slideSheetAway();
-    else { sh.style.transition = 'transform .22s cubic-bezier(.2,.8,.2,1)'; sh.style.transform = ''; scrim.style.opacity = ''; }
+    if (dy > 120 || (dy > 40 && v > 0.55)) { const sc = $('.sheet-scrim', w); sh.style.transition = SHEET_OUT; sc.style.transition = 'opacity .24s ease'; closeSheet(); }
+    else { sh.style.transition = 'transform .26s cubic-bezier(.32,.72,0,1)'; sh.style.transform = ''; scrim.style.transition = 'opacity .26s ease'; scrim.style.opacity = ''; }
   }, { passive: true });
 })();
 
@@ -1957,6 +1976,31 @@ function initSW() {
     else if (updatePending) maybeApplyUpdate(); // reload quietly while the app is in the background
   });
 }
+
+// ---------------------------------------------------------------- screen fit (update 4): iPhone home-screen app geometry
+// iOS 26+ with black-translucent: the page is drawn from the top of the screen but the viewport is sized as if it
+// started below the status bar, so it ends one status-bar height short of the bottom and iOS fills that strip with
+// the page background. We detect that strip, colour it like the tab bar and drop the (now redundant) bottom padding
+// so the tab bar reads as flush to the edge. Normal geometry is left alone.
+const FIT = {};
+function fitScreen() {
+  const r = document.documentElement;
+  const vv = window.visualViewport; if (vv && vv.height < window.innerHeight - 90) return; // keyboard up: keep last fit
+  let pr = $('#fitProbe'); if (!pr) { pr = document.createElement('div'); pr.id = 'fitProbe'; pr.setAttribute('aria-hidden', 'true'); document.body.appendChild(pr); }
+  const cs = getComputedStyle(pr); const sat = parseFloat(cs.paddingTop) || 0, sab = parseFloat(cs.paddingBottom) || 0;
+  const sa = !!(navigator.standalone || (window.matchMedia && matchMedia('(display-mode: standalone)').matches));
+  const portrait = window.innerHeight >= window.innerWidth;
+  const sh = portrait ? Math.max(screen.width, screen.height) : Math.min(screen.width, screen.height);
+  const gap = Math.round(sh - window.innerHeight);
+  const strip = sa && portrait && sat >= 20 && Math.abs(gap - sat) <= 3 ? gap : 0;
+  r.classList.toggle('sa', sa); r.classList.toggle('strip', strip > 0); r.style.setProperty('--strip', strip + 'px');
+  Object.assign(FIT, { sa, screen: sh, view: window.innerHeight, w: window.innerWidth, sat, sab, gap, strip });
+}
+fitScreen();
+window.addEventListener('resize', () => setTimeout(fitScreen, 60));
+window.addEventListener('orientationchange', () => setTimeout(fitScreen, 300));
+window.addEventListener('pageshow', fitScreen); window.addEventListener('load', fitScreen);
+document.fonts && document.fonts.ready && document.fonts.ready.then(fitScreen);
 
 // ---------------------------------------------------------------- keyboard never covers inputs (#8)
 if (window.visualViewport) {
@@ -2026,7 +2070,7 @@ async function refreshAll() {
   document.addEventListener('touchstart', (e) => {
     const c = cardOf(e.target); if (!c || c.closest('#sheetWrap,#cook')) return;
     fired = false; const p = e.touches[0]; sx = p.clientX; sy = p.clientY; clearTimeout(t);
-    t = setTimeout(() => { t = null; fired = true; buzz(15); tapSound(); c.classList.add('pressed'); setTimeout(() => c.classList.remove('pressed'), 350); openCardMenu(c.getAttribute('href').slice(4)); }, 480);
+    t = setTimeout(() => { t = null; fired = true; buzz(15); tapSound(); openCardMenu(c.getAttribute('href').slice(4)); }, 480);
   }, { passive: true });
   document.addEventListener('touchmove', (e) => { if (!t) return; const p = e.touches[0]; if (Math.abs(p.clientX - sx) > 9 || Math.abs(p.clientY - sy) > 9) { clearTimeout(t); t = null; } }, { passive: true });
   // after a long-press opens the menu, swallow the synthetic click so it can't land on the new sheet's scrim
@@ -2060,9 +2104,10 @@ function animateView(dir) {
   if (reducedMotion()) return;
   void v.offsetWidth; v.classList.add('vin-' + dir);
 }
-document.addEventListener('load', (e) => { const t = e.target; if (t && t.tagName === 'IMG') t.classList.add('ld'); }, true);
+const LOADED = new Set();
+document.addEventListener('load', (e) => { const t = e.target; if (t && t.tagName === 'IMG') { t.classList.add('ld'); LOADED.add(t.getAttribute('src')); } }, true);
 document.addEventListener('error', (e) => { const t = e.target; if (t && t.tagName === 'IMG') t.classList.add('ld'); }, true);
-function markLoaded(root) { $$('img', root).forEach((i) => { if (i.complete) i.classList.add('ld'); }); }
+function markLoaded(root) { $$('img', root).forEach((i) => { if ((i.complete && i.naturalWidth) || LOADED.has(i.getAttribute('src'))) { i.classList.add('ld'); i.loading = 'eager'; } }); }
 function skeletonRecipe(s) {
   return `<div class="skel" aria-busy="true"><div class="r-head"><div class="sk sk-k"></div><div class="sk sk-h"></div><div class="sk sk-h2"></div></div>
     <div class="hero"><div class="tile">${s && s.image ? img(s.image, '') : ''}</div></div>
@@ -3114,6 +3159,15 @@ function pupBirthday() {
   return { days, age };
 }
 
+function ajCount(given, tb) {
+  return `<div><b>${given}</b><span>${tb ? `treat${given === 1 ? '' : 's'} today · budget ~${tb.treats} kcal` : `treat${given === 1 ? '' : 's'} today`}</span></div><button class="btn sm ghost" id="acMinus" ${given ? '' : 'disabled'} aria-label="One less">−</button><button class="btn sm gold" id="acPlus">${PAW('sm')}Treat given</button>`;
+}
+function acListHTML(D, list, k) {
+  const a = AC();
+  return list.map((t) => { const n = Object.values(a.baked).filter((b) => b.treatId === t.id).length; const kc = treatKcal(t); return `<a class="ac-card" href="#/acura/t/${t.id}"><div class="im">${img(thumb(t.image), t.title)}${a.favs[t.id] ? `<i class="pf">${PAW()}</i>` : ''}</div>
+        <div class="ac-b"><b>${esc(t.title)}</b><span class="sub">${esc(t.subtitle)}</span><span class="meta">${t.prep + (t.cook || 0)} min${t.chill ? ' + freeze' : ''} · ${esc(t.makes)}${kc ? ` · ~${kc} kcal` : ''}</span>
+        <span class="tagrow">${t.tags.slice(0, 2).map((x) => `<i>${esc(x)}</i>`).join('')}${n ? `<i class="bk">${PAW('sm')}baked ×${n}</i>` : ''}</span></div></a>`; }).join('') || `<div class="empty">No treats here yet${k === 'favs' ? ' — tap the paw on a treat to save it' : ''}.</div>`;
+}
 async function viewAcura() {
   setTop({ title: 'ACURA’S KITCHEN', right: `<button class="iconbtn" id="acProf" aria-label="Acura's profile">${svg('paw')}</button>` });
   const D = await loadAcura();
@@ -3131,13 +3185,11 @@ async function viewAcura() {
       ${bd && bd.days <= 14 ? `<div class="ac-bday">${PAW()}<span>${bd.days === 0 ? `Happy birthday, Acura! ${bd.age > 0 ? bd.age + ' today' : ''} ♥ Bake something special.` : `Acura’s birthday is in ${bd.days} day${bd.days === 1 ? '' : 's'} — Pupsicles party?`}</span></div>` : ''}
       <div class="ac-jar"><div class="aj-k">${BONE('sm')}TREAT JAR</div>
         ${fresh.length ? `<ul>${fresh.map((x) => `<li><a href="#/acura/t/${x.t.id}"><b>${esc(x.t.title)}</b><span>baked ${esc(dayWord(x.b.date))} · ${x.left === 0 ? '<em class="warnc">use today</em>' : x.left === 1 ? 'good until tomorrow' : 'good until ' + esc(dayWord(x.until))}</span></a><button class="linkbtn" data-gone="${x.b.id}">All gone</button></li>`).join('')}</ul>` : `<p>The jar is empty — treat time? Pick a recipe below.</p>`}
-        <div class="aj-count"><div><b>${given}</b><span>${tb ? `treat${given === 1 ? '' : 's'} today · budget ~${tb.treats} kcal` : `treat${given === 1 ? '' : 's'} today`}</span></div><button class="btn sm ghost" id="acMinus" ${given ? '' : 'disabled style="opacity:.4"'} aria-label="One less">−</button><button class="btn sm gold" id="acPlus">${PAW('sm')}Treat given</button></div>
+        <div class="aj-count">${ajCount(given, tb)}</div>
         ${a.profile && a.profile.allergies ? `<p class="ac-allergy">${PAW('sm')}Vet note: ${esc(a.profile.allergies)}</p>` : ''}
         ${tb ? '' : `<button class="linkbtn" id="acProf2">Add Acura’s weight for a daily treat guide</button>`}</div>
       <div class="bonechips">${AC_CHIPS.map(([v, n]) => `<button class="bone ${k === v ? 'on' : ''}" data-ac="${v}">${v === 'favs' ? PAW('sm') : ''}${esc(n)}</button>`).join('')}</div>
-      <div class="ac-list">${list.map((t) => { const n = Object.values(a.baked).filter((b) => b.treatId === t.id).length; const kc = treatKcal(t); return `<a class="ac-card" href="#/acura/t/${t.id}"><div class="im">${img(thumb(t.image), t.title)}${a.favs[t.id] ? `<i class="pf">${PAW()}</i>` : ''}</div>
-        <div class="ac-b"><b>${esc(t.title)}</b><span class="sub">${esc(t.subtitle)}</span><span class="meta">${t.prep + (t.cook || 0)} min${t.chill ? ' + freeze' : ''} · ${esc(t.makes)}${kc ? ` · ~${kc} kcal` : ''}</span>
-        <span class="tagrow">${t.tags.slice(0, 2).map((x) => `<i>${esc(x)}</i>`).join('')}${n ? `<i class="bk">${PAW('sm')}baked ×${n}</i>` : ''}</span></div></a>`; }).join('') || `<div class="empty">No treats here yet${k === 'favs' ? ' — tap the paw on a treat to save it' : ''}.</div>`}</div>
+      <div class="ac-list">${acListHTML(D, list, k)}</div>
       <div class="bonediv">${BONE()}</div>
       <a class="ac-safe" href="#/acura/safety"><div class="as-k">${svg('eyeoff')}NEVER FEED ACURA</div><p>${D.safety.never.slice(0, 6).map((n) => esc(n[0].split(' (')[0])).join(' · ')} <b>+${D.safety.never.length - 6} more</b></p><span class="as-go">Full safety guide &amp; treat calculator ${svg('chevR')}</span></a>
       <div class="sec"><div class="sec-title">${PAW('sm')}Good-pup snacks from our fridge</div><div class="snackchips">${D.safety.safeSnacks.map((x) => `<span>${esc(x)}</span>`).join('')}</div><p class="small muted" style="margin-top:8px">Plain, unseasoned, bite-sized — and still part of the 10% treat budget.</p></div>
@@ -3145,10 +3197,15 @@ async function viewAcura() {
       ${bakedN ? `<p class="small muted" style="text-align:center;margin-top:4px">${bakedN} batch${bakedN === 1 ? '' : 'es'} baked for Acura so far</p>` : ''}
     </div></div>`);
   const redraw = () => { const y = vY(); viewAcura().then(() => vTo(y)); };
-  $$('[data-ac]').forEach((b) => (b.onclick = () => { ui.acChip = b.dataset.ac; redraw(); }));
+  $$('[data-ac]').forEach((b) => (b.onclick = () => { if (ui.acChip === b.dataset.ac || (!ui.acChip && b.dataset.ac === 'all')) return; ui.acChip = b.dataset.ac; $$('[data-ac]').forEach((x) => x.classList.toggle('on', x === b)); const l = $('.ac-list'); l.innerHTML = acListHTML(D, D.treats.filter((t) => acMatch(t, ui.acChip)), ui.acChip); markLoaded(l); }));
+  const bindCount = () => {
+    const g0 = () => (a.given || (a.given = {}));
+    const upd = () => { const c = $('.aj-count'); if (!c) return; c.innerHTML = ajCount(g0()[today] || 0, treatBudget()); bindCount(); };
+    $('#acPlus').onclick = () => { const g = g0(); Object.keys(g).forEach((d) => { if (d < isoPlus(-30)) delete g[d]; }); g[today] = (g[today] || 0) + 1; save(); upd(); toast('Good pup! ♥'); };
+    $('#acMinus').onclick = () => { const g = g0(); if (g[today]) { g[today]--; if (!g[today]) delete g[today]; save(); upd(); } };
+  };
+  bindCount();
   $('#acProf').onclick = openAcuraProfile; $('#acProf2') && ($('#acProf2').onclick = openAcuraProfile);
-  $('#acPlus').onclick = (e) => { const g = a.given || (a.given = {}); Object.keys(g).forEach((d) => { if (d < isoPlus(-30)) delete g[d]; }); g[today] = (g[today] || 0) + 1; save(); heartBurst(e.currentTarget); redraw(); toast('Good pup! ♥'); };
-  $('#acMinus').onclick = () => { const g = a.given || {}; if (g[today]) { g[today]--; if (!g[today]) delete g[today]; save(); redraw(); } };
   $$('[data-gone]').forEach((b) => (b.onclick = (e) => { e.preventDefault(); const bt = a.baked[b.dataset.gone]; bt.gone = todayISO(); save(); redraw(); toast('Jar cleared — time for a new batch?', 'Undo', () => { delete bt.gone; save(); redraw(); }); }));
 }
 

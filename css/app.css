@@ -1107,3 +1107,42 @@ html[data-theme="dark"] body.acura .ac-words .w2{--bc:var(--tile3);--bt:#F5E6CE}
 .favtiles .favtile:last-child:nth-child(odd){grid-column:1/-1;aspect-ratio:2/0.9}
 /* aisle picker only appears once you start typing an item (falls back to always-visible without :has) */
 .addrow:has(#gNew:placeholder-shown) #gCat{display:none}
+
+/* ================================================================ update 4 — smooth sheets, full-screen fit, no tap effects */
+/* app shell: the tab bar is a normal flex child pinned to the bottom of the fixed shell (not position:fixed) */
+#tabbar{position:relative;left:auto;right:auto;bottom:auto;flex:none}
+#view{padding-bottom:28px}
+body.kb #view{padding-bottom:28px}
+/* iOS strip fix: see fitScreen() in app.js. The strip below the viewport shows the root background, so paint it like
+   the tab bar (and like whatever full-screen layer is open). The strip is taller than the home indicator, so the
+   bottom safe-area padding would only add a second gap. */
+html.strip{--sab:0px;background:var(--tabbg)}
+html.strip:has(body.acura){background:#F2E3CB}
+html.strip[data-theme="dark"]:has(body.acura){background:#1C110B}
+html.strip:has(#cook:not([hidden])){background:#082048}
+html.strip:has(body.acura #cook:not([hidden])){background:#3A2216}
+html.strip:has(#welcome:not([hidden])){background:#F5E6CE}
+:root{--sat-raw:env(safe-area-inset-top,0px);--sab-raw:env(safe-area-inset-bottom,0px)}
+#fitProbe{position:fixed;left:0;top:0;width:0;height:0;visibility:hidden;pointer-events:none;padding:var(--sat-raw) 0 var(--sab-raw)}
+/* keep the paper grain off the header so iOS sees one flat colour under the status bar (no blur band) */
+body::after{top:calc(var(--sat) + 61px)}
+html.sa body::after{top:calc(var(--sat) + 63px)}
+/* home-screen app: a little extra air under the status bar */
+html.sa #topbar{padding-top:calc(var(--sat) + 8px)}
+.fitinfo{margin-top:6px;font-size:.7rem;opacity:.75}
+
+/* sheets: glide up with transform only; never cover the whole screen; background untouched */
+.sheet{animation:none;max-height:calc(100% - var(--sat) - 56px - var(--kb,0px));backface-visibility:hidden;contain:layout paint}
+.sheet-scrim{animation:none}
+body.sheet-open #view{overflow-y:auto;touch-action:auto}
+#sheetWrap.closing{pointer-events:none}
+
+/* no tap bounce / flash (tap highlight stays transparent) */
+.btn:active,.chip:active,.tooltile:active,.bone:active,.sortrow button:active,.favtile:active,.rcard:active,.mini-card:active,.pick-card:active,.ac-card:active,.rate button:active svg{transform:none}
+.iconbtn:active{background:none}
+.pop{animation:none}
+a.pressed{transform:none!important}
+.aj-count .btn:disabled{opacity:.4}
+/* polish found in the update 4 walkthrough */
+:is(.nudge,.wn,.annv,.flash,.recap) + .pick{margin-top:18px}
+.favtile .ft{padding-top:34px;background:linear-gradient(rgba(8,16,40,0),rgba(8,16,40,.55) 35%,rgba(8,16,40,.9));text-shadow:0 1px 2px rgba(0,0,0,.45)}
