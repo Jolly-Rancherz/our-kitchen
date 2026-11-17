@@ -1496,3 +1496,54 @@ html.big .tb-title{font-size:13.1px;letter-spacing:.2em}
 .r-head .h1{line-height:1.06}
 .r-head .lead{display:flow-root}
 .r-head{padding-bottom:4px}
+/* ---------------------------------------------------------------- update 10.2: the full-screen book */
+/* the book: no header, no tab bar — a page lying on the cover board, curved at the fore-edge, with page thickness */
+body.book #topbar,body.book #tabbar{display:none}
+body.book #app{background:var(--bar)}
+body.book #view{margin:calc(var(--sat) + 8px) 10px calc(var(--sab) + 8px) 0;border-radius:0 14px 14px 0;background:var(--bg);padding-bottom:36px;
+  box-shadow:1px 0 0 #E9DBC2,2px 0 0 #D6C3A2,3px 0 0 #EBDDC5,4px 0 0 #CDB894,5px 0 0 #E2D0B1,6px 0 0 #BCA47C,7px 0 3px rgba(0,0,0,.25)}
+html[data-theme="dark"] body.book #view{box-shadow:1px 0 0 #1A2850,2px 0 0 #0E1838,3px 0 0 #1C2A54,4px 0 0 #0B1430,5px 0 0 #18264C,6px 0 0 #08102A,7px 0 3px rgba(0,0,0,.4)}
+body.book::before{background:
+    linear-gradient(90deg,rgba(60,36,14,.26) 0,rgba(60,36,14,.12) 6px,rgba(60,36,14,.05) 16px,rgba(60,36,14,.02) 30px,transparent 46px),
+    radial-gradient(130% 95% at 50% 46%,transparent 66%,rgba(96,64,30,.1) 90%,rgba(96,64,30,.16) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012 .55' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .3 0 0 0 0 .16 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23f)' opacity='.22'/%3E%3C/svg%3E")}
+#bookX{display:none;position:fixed;top:calc(var(--sat) + 14px);right:22px;z-index:70;width:26px;height:26px;align-items:center;justify-content:center;border-radius:50%;color:var(--muted);opacity:.5}
+#bookX svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+body.book #bookX{display:flex}
+body.book:has(#sheetWrap:not([hidden])) #bookX,body.book:has(#cook:not([hidden])) #bookX{display:none}
+/* book pages */
+.bk{min-height:100%}
+.bk-cover{position:relative;height:calc(100vh - var(--sat) - var(--sab) - 16px);overflow:hidden;background:#F5E6CE;color:#12102E}
+.bk-cover .cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+.bk-cover .panel{position:absolute;left:14px;right:14px;bottom:14px;background:#F5E6CE;border-top:3px solid #C4963E;padding:18px 18px 16px}
+.bk-cover .panel h2{font-family:"Cinzel";font-weight:700;font-size:1.25rem;letter-spacing:.06em}
+.bk-cover .panel p{font-size:.95rem;line-height:1.35;margin-top:6px;color:#3A3050}
+.bk-cover .bk-hint{font-family:"Instrument Serif";font-style:italic;font-size:1.05rem;color:#8C6A28;text-align:right;margin-top:10px}
+.bk-title{height:calc(100vh - var(--sat) - var(--sab) - 16px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.bk-title .splash-our,.bk-title .splash-kitchen,.bk-title .splash-names,.bk-back .splash-names{font-family:"Cinzel"}
+.bk-title .splash-our{font-weight:600;font-size:17.6px;letter-spacing:.42em;color:var(--gold);padding-left:.42em}
+.bk-title .splash-kitchen{font-weight:500;font-size:41.6px;letter-spacing:.1em;color:var(--ink);line-height:1.05;margin-top:2px}
+.bk-title .splash-names,.bk-back .splash-names{font-family:"Instrument Serif";font-style:italic;font-size:21.6px;color:var(--ink2);margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px}
+.bk .splash-heart{width:16px;height:16px;fill:var(--gold)}
+.bk-page{padding:46px 30px 30px}
+.bk-page .ch-k,.bk-ch .ch-k{font-family:"Cinzel";font-weight:600;font-size:.74rem;letter-spacing:.34em;color:var(--kicker);text-transform:uppercase;text-align:center;padding-left:.34em}
+.bk-page p{font-family:"Instrument Serif";font-size:1.18rem;line-height:1.45;color:var(--ink);margin-top:12px;text-wrap:pretty}
+.bk-drop::first-letter{float:left;font-family:"Cinzel";font-weight:700;font-size:3.2em;line-height:.8;margin:6px 8px 0 0;color:var(--gold-deep)}
+html[data-theme="dark"] .bk-drop::first-letter{color:var(--gold)}
+.bk-toc,.bk-list{list-style:none;margin-top:18px}
+.bk-toc a,.bk-list a{display:flex;align-items:baseline;gap:10px;padding:9px 0;color:var(--ink)}
+.bk-toc .n{font-family:"Cinzel";font-weight:600;font-size:.8rem;color:var(--kicker);width:2.2em;flex:none}
+.bk-toc b,.bk-list b{font-family:"Cinzel";font-weight:600;font-size:.98rem;letter-spacing:.04em;min-width:0}
+.bk-list b{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-size:1.12rem;letter-spacing:0}
+.bk-toc i,.bk-list i{flex:1;border-bottom:1.5px dotted var(--line-gold);transform:translateY(-4px);min-width:16px}
+.bk-toc .p,.bk-list .p{font-family:"Cinzel";font-size:.82rem;color:var(--muted);flex:none}
+.bk-ch{min-height:calc(100vh - var(--sat) - var(--sab) - 16px);padding:40px 30px 24px}
+.bk-ch .bk-list{text-align:left}
+.bk-back{min-height:calc(100vh - var(--sat) - var(--sab) - 16px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;gap:8px}
+.bk-back .orn{width:80%}
+.bk-end{font-family:"Cinzel";font-weight:700;font-size:1.5rem;letter-spacing:.06em;color:var(--ink)}
+.bk-back .btn{margin-top:14px}
+body.book::after,html.sa body.book::after{top:0} /* the grain covers the whole page in the book (no header to leave out) */
+body.book .r-head .kicker{padding-right:30px} /* keep "page N" clear of the close control */
+body.book::after,html.sa body.book::after{top:0} /* the grain covers the whole page in the book (no header to leave out) */
+body.book .r-head .kicker{padding-right:30px} /* keep "page N" clear of the close control */

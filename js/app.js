@@ -341,9 +341,9 @@ function heartBurst(el) {
   }
   document.body.appendChild(b); setTimeout(() => b.remove(), 800);
 }
-function setTop({ title = 'OUR KITCHEN', back = null, right = '' } = {}) {
+function setTop({ title = 'OUR KITCHEN', back = null, right = '', left = '' } = {}) {
   $('#tbTitle').innerHTML = title;
-  $('#tbLeft').innerHTML = back ? `<button class="iconbtn" id="backBtn" aria-label="Back">${svg('back')}</button>` : '';
+  $('#tbLeft').innerHTML = back ? `<button class="iconbtn" id="backBtn" aria-label="Back">${svg('back')}</button>` : left;
   if (back) $('#backBtn').onclick = () => (history.length > 1 && lastRoute ? history.back() : go(back));
   $('#tbRight').innerHTML = right + `<a class="iconbtn" href="#/settings" aria-label="Settings">${svg('gear')}</a>`;
 }
@@ -398,6 +398,7 @@ const routes = [
   [/^#\/places$/, viewPlaces],
   [/^#\/menu$/, viewMenu],
   [/^#\/keepsake$/, viewKeepsake],
+  [/^#\/book(?:\/(.+))?$/, viewBook],
   [/^#\/scan$/, () => { go('#/grocery'); setTimeout(openScan, 300); }],
   [/^#\/ideas$/, () => { go('#/'); setTimeout(() => openIdeas(), 300); }],
 ];
@@ -2533,10 +2534,10 @@ function viewCategory(slugName) {
   setTop({ title: esc(c.name.toUpperCase()), back: '#/' });
   const items = sortRecipes(visibleRecipes().filter((r) => r.category === slugName).sort((a, b) => a.num - b.num));
   // update 10: each category opens on a chapter divider (the first page of its flip order, see turnList)
-  const ci = INDEX.categories.findIndex((x) => x.slug === slugName) + 1;
+  const ci = bookCats().findIndex((x) => x.slug === slugName) + 1;
   render(`<div class="wrap"><div class="chapter"><div class="ch-k">Chapter ${roman(ci || 1)}</div>${ORN}
     <h1 class="ch-t">${esc(c.name)}</h1>
-    <p class="ch-s">${items.length} recipe${items.length === 1 ? '' : 's'} so far${items.length ? ' · swipe to turn the page' : ''}</p>${ORN}</div>
+    <p class="ch-s">${items.length} recipe${items.length === 1 ? '' : 's'} so far</p>${ORN}</div>
     ${items.length > 1 ? sortChips() : ''}
     <div class="rlist" style="margin-top:14px">${items.map(rcard).join('') || '<div class="empty">No recipes here yet.</div>'}</div></div>`);
   bindSort(() => viewCategory(slugName));
@@ -2699,7 +2700,7 @@ function swapHomeBody(html) {
 }
 function viewHome(partial) {
   partial = partial === true && !!$('#homeBody') && !!$('#q');
-  if (!partial) { setTop({ title: 'OUR KITCHEN' }); HOME_CARDS.clear(); syncPlanToTonight(); }
+  if (!partial) { setTop({ title: 'OUR KITCHEN', left: `<a class="iconbtn" href="#/book/cover" aria-label="Open our cookbook">${svg('book')}</a>` }); HOME_CARDS.clear(); syncPlanToTonight(); }
   const recipes = visibleRecipes();
   ui.pick = ui.pick && recipes.find((r) => r.id === ui.pick) ? ui.pick : seasonalPick(recipes);
   const searching = ui.q || filterCount();
@@ -4187,7 +4188,7 @@ function tabOf(h) {
   if (h.startsWith('#/grocery')) return 'grocery';
   if (h.startsWith('#/budget')) return 'budget';
   if (/^#\/(us|story|year|places|menu|keepsake)/.test(h)) return 'us';
-  if (h.startsWith('#/acura')) return 'acura';
+  if (h.startsWith('#/acura') || h === '#/book/c/acura') return 'acura';
   if (h.startsWith('#/settings')) return '';
   return 'recipes';
 }
@@ -4342,18 +4343,19 @@ const NO_TURN = '.scratch,input,textarea,select,.chips,.plan,.lvbar,.photos,.hro
 let PT = null;
 function turnList() {
   const h = location.hash; let m;
+  if (ui.book) { const list = bookPages(); const i = list.indexOf(h); if (i >= 0) return { list, idx: i, book: true }; } // the book: one run, cover to back
   if ((m = h.match(/^#\/r\/(.+)$/))) {
     const s = summary(m[1]); if (!s) return null;
     const list = chapterList(s.category);
     return list.includes(h) ? { list, idx: list.indexOf(h) } : null;
   }
-  if ((m = h.match(/^#\/c\/([\w-]+)$/))) { const list = chapterList(m[1]); return list.length > 1 ? { list, idx: 0 } : null; }
   if ((m = h.match(/^#\/acura\/t\/(.+)$/)) && ACURA) { const list = acOrder(ACURA.treats).map((t) => '#/acura/t/' + t.id); return list.includes(h) ? { list, idx: list.indexOf(h) } : null; }
   return null;
 }
 // a chapter: its divider page, then its recipes in book order (update 10)
-function chapterList(cat) { return ['#/c/' + cat].concat(visibleRecipes().filter((r) => r.category === cat).sort((a, b) => a.num - b.num).map((r) => '#/r/' + r.id)); }
-function turnIndicator() { const L = turnList(); if (!L) return ''; const pages = L.list.filter((x) => !x.startsWith('#/c/')); const i = pages.indexOf(location.hash); return pages.length > 1 && i >= 0 ? `<span class="nofm">${i + 1} of ${pages.length}</span>` : ''; }
+// a category's recipes in book order: the in-app swipe stops at the ends of a category; the book (bookPages) runs on
+function chapterList(cat) { return visibleRecipes().filter((r) => r.category === cat).sort((a, b) => a.num - b.num).map((r) => '#/r/' + r.id); }
+function turnIndicator() { const L = turnList(); if (!L) return ''; if (L.book) return `<span class="nofm">page ${L.idx + 1}</span>`; return L.list.length > 1 ? `<span class="nofm">${L.idx + 1} of ${L.list.length}</span>` : ''; }
 const turnable = () => !!turnList() && $('#sheetWrap').hidden && $('#cook').hidden && !ALARM;
 const turnTransform = (dir, k) => `perspective(1600px) rotateY(${(dir > 0 ? -1 : 1) * k * 88}deg)`;
 function turnBegin(dir) {
@@ -4428,6 +4430,47 @@ function initPageTurn() {
   v.addEventListener('touchend', () => end(false));
   v.addEventListener('touchcancel', () => end(true));
 }
+
+// ---------------------------------------------------------------- update 10: our cookbook
+// Cover (the welcome design), title page (the splash), About, Contents, then every category in the order of Home's
+// tiles — a chapter plate and its recipes — then Acura's chapter and a back page, turned continuously. Recipe and
+// treat pages are the app's own pages, shown full-screen as book pages.
+function bookCats() { const rs = visibleRecipes(); return INDEX.categories.filter((c) => rs.some((r) => r.category === c.slug)); }
+function bookPages() {
+  const p = ['#/book/cover', '#/book/title', '#/book/about', '#/book/contents'];
+  bookCats().forEach((c) => { p.push('#/book/c/' + c.slug); p.push(...chapterList(c.slug)); });
+  if (ACURA) { p.push('#/book/c/acura'); p.push(...acOrder(ACURA.treats).map((t) => '#/acura/t/' + t.id)); }
+  p.push('#/book/back'); return p;
+}
+const HEART_SVG = '<svg class="splash-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.6 4.6 0 0 1 8-3.1A4.6 4.6 0 0 1 20 10c0 5.8-8 11-8 11z"/></svg>';
+async function viewBook(part = 'cover') {
+  await loadAcura(); if (!location.hash.startsWith('#/book')) return;
+  setTop({ title: 'OUR KITCHEN' });
+  const cats = bookCats(); const pages = bookPages(); const pg = (h) => pages.indexOf(h) + 1;
+  const treats = ACURA ? acOrder(ACURA.treats) : [];
+  let html = ''; let m;
+  if (part === 'cover') html = `<div class="bk-cover"><img class="cover" src="assets/img/cover.webp" alt="Our Kitchen — Corey and Faith — recipes we love"><div class="panel"><h2>WELCOME HOME</h2><p>Our recipes, pantry, grocery list and dinner budget — all in one place, and it works offline.</p><p class="bk-hint">Swipe to open the book ›</p></div></div>`;
+  else if (part === 'title') html = `<div class="bk-title"><div class="splash-our">OUR</div><div class="splash-kitchen">KITCHEN</div><div class="splash-names">Corey ${HEART_SVG} Faith</div></div>`;
+  else if (part === 'about') html = `<div class="bk-page"><div class="ch-k">About this book</div>${ORN}
+    <p class="bk-drop">This is our kitchen, written down. Every recipe in here is one we cook for each other: mild, cozy and made for two, with no mushrooms, mustard or olives.</p>
+    <p>Each dish can be made Basic, Classic or Fancy, and the pages remember how we liked it. There are ${cats.length} chapters of dinners${treats.length ? ', and Acura has her own chapter at the back' : ''}.</p>
+    <p>Turn the pages with a swipe. Tap anything on a page to cook from it.</p>${ORN}</div>`;
+  else if (part === 'contents') html = `<div class="bk-page"><div class="ch-k">Contents</div>${ORN}<ol class="bk-toc">
+    ${cats.map((c, i) => `<li><a href="#/book/c/${c.slug}"><span class="n">${roman(i + 1)}</span><b>${esc(c.name)}</b><i></i><span class="p">${pg('#/book/c/' + c.slug)}</span></a></li>`).join('')}
+    ${treats.length ? `<li><a href="#/book/c/acura"><span class="n">${roman(cats.length + 1)}</span><b>Acura’s Kitchen</b><i></i><span class="p">${pg('#/book/c/acura')}</span></a></li>` : ''}</ol>${ORN}</div>`;
+  else if ((m = part.match(/^c\/([\w-]+)$/))) {
+    const acura = m[1] === 'acura'; const ci = acura ? cats.length + 1 : cats.findIndex((c) => c.slug === m[1]) + 1;
+    const list = acura ? treats.map((t) => ({ h: '#/acura/t/' + t.id, title: t.title })) : chapterList(m[1]).map((h) => ({ h, title: (summary(h.slice(4)) || {}).title }));
+    html = `<div class="chapter bk-ch"><div class="ch-k">Chapter ${roman(ci || 1)}</div>${ORN}<h1 class="ch-t">${acura ? 'Acura’s Kitchen' : esc(catOf(m[1]).name)}</h1>
+      <p class="ch-s">${acura ? 'Treats for our good girl' : list.length + ' recipe' + (list.length === 1 ? '' : 's')}</p>${ORN}
+      <ul class="bk-list">${list.map((x) => `<li><a href="${x.h}"><b>${esc(x.title || '')}</b><i></i><span class="p">${pg(x.h)}</span></a></li>`).join('')}</ul></div>`;
+  } else if (part === 'back') html = `<div class="bk-back">${ORN}<p class="bk-end">The end — for now.</p><p class="small">More pages get written every time we cook.</p><div class="splash-names">Corey ${HEART_SVG} Faith</div><p class="small muted">London, Ontario</p>${ORN}<button class="btn sm" id="bkClose">Close the book</button></div>`;
+  else { go('#/book/cover'); return; }
+  render(`<div class="bk">${html}</div>`);
+  $('#bkClose') && ($('#bkClose').onclick = () => go('#/'));
+}
+// the one control inside the book: a small, quiet close in the corner
+(() => { const x = document.createElement('button'); x.id = 'bookX'; x.setAttribute('aria-label', 'Close the book'); x.innerHTML = svg('close'); x.onclick = () => go('#/'); document.body.appendChild(x); })();
 
 // ---------------------------------------------------------------- #97 gold bookmark ribbon
 // The last recipe or treat page and how far down it was scrolled; the ribbon on Home reopens it right there.
@@ -4538,6 +4581,10 @@ async function router() {
   const flip = ui.flip; ui.flip = 0; // update 9: arriving by a page turn (swipe)
   if (!flip && document.body.classList.contains('turning')) turnClean();
   closeSheet();
+  // update 10: the book (entered only from Home's book icon) stays open across its own pages and the recipe and treat
+  // pages it turns to; any other screen closes it
+  if (h.startsWith('#/book')) ui.book = true; else if (!/^#\/(r|acura\/t)\//.test(h)) ui.book = false;
+  document.body.classList.toggle('book', !!ui.book);
   const tabNew = tabOf(h); const tabOld = lastRoute == null ? null : tabOf(lastRoute);
   let dir = 'fwd';
   if (lastRoute == null || lastRoute === h) dir = 'none';
