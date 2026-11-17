@@ -106,6 +106,12 @@ def main():
         if not t.get("funFact"):
             problems.append(f"acura/{t['id']}: missing funFact (a dog-nutrition fact for the scratch card)")
 
+    # one name per top-level function in app.js (Update 9.2): a second declaration silently replaces the first
+    # (the Update 9 recipe setLevel replaced the pantry's and broke its buttons)
+    names = re.findall(r"^(?:async )?function (\w+)", open(os.path.join(APP, "js", "app.js"), encoding="utf-8").read(), re.M)
+    for n in sorted({n for n in names if names.count(n) > 1}):
+        problems.append(f"js/app.js: function {n} is declared more than once")
+
     # patch notes (Update 9.1): ONE list in js/app.js, newest first; every update adds an entry at the top
     m = re.search(r"/\* UPDATES:BEGIN \*/(.*?)/\* UPDATES:END \*/", open(os.path.join(APP, "js", "app.js"), encoding="utf-8").read(), re.S)
     try:

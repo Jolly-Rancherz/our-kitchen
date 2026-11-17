@@ -4064,7 +4064,10 @@ function levelFor(id, r) {
   if (ui.lv && ui.lv[id]) return ui.lv[id];
   return isFancyNight(id) ? 'fancy' : state.levels[id] || 'classic';
 }
-function setLevel(id, k) { (ui.lv || (ui.lv = {}))[id] = k; if (k === 'classic') delete state.levels[id]; else state.levels[id] = k; save(); }
+// named apart from the pantry's setLevel(key, name, cat, level): one function name per job (update 9.2 — the
+// update 9 recipe version had the same name, and being declared later it replaced the pantry one, so the pantry's
+// Lots / Have / Low / Out buttons did nothing)
+function setRecipeLevel(id, k) { (ui.lv || (ui.lv = {}))[id] = k; if (k === 'classic') delete state.levels[id]; else state.levels[id] = k; save(); }
 function levelBar(r, id, lv, treat) {
   if (!hasLevels(r)) return '';
   const sp = lv === 'classic' ? null : r.levels[lv]; const note = (state.levelNotes[id] || {})[lv];
@@ -4074,7 +4077,7 @@ function levelBar(r, id, lv, treat) {
     ${note ? `<p class="lvhow">“${esc(note.text)}”${note.by ? ` <span>— ${esc(note.by)}, ${esc(shortDate(isoOf(new Date(note.at))))}</span>` : ''}</p>` : ''}</div>`;
 }
 function bindLevels(r0, r, s, id, lv, f, redraw = () => rerenderRecipe(id)) {
-  $$('.lvbar [data-lv]').forEach((b) => (b.onclick = () => { if (b.dataset.lv !== lv) { setLevel(id, b.dataset.lv); redraw(); } }));
+  $$('.lvbar [data-lv]').forEach((b) => (b.onclick = () => { if (b.dataset.lv !== lv) { setRecipeLevel(id, b.dataset.lv); redraw(); } }));
   $('#lvGot') && ($('#lvGot').onclick = () => makeWithWhatIveGot(r0, s, id, f, redraw));
   $('#lvHow') && ($('#lvHow').onclick = () => openLevelNote(id, lv, redraw));
   $('#fnChip') && ($('#fnChip').onclick = () => toggleFancyNight(id, redraw));
@@ -4119,7 +4122,7 @@ function makeWithWhatIveGot(r, s, id, f, redraw) {
   if (!Object.values(state.pantry).some((p) => p.level)) { toast('Mark what you have in the Pantry tab and this picks the level for you'); return; }
   const fit = ['fancy', 'classic', 'basic'].find((k) => !levelGaps(r, k).length);
   if (!fit) { const g = levelGaps(r, 'basic'); toast(`Even Basic needs ${g.slice(0, 3).join(', ')}${g.length > 3 ? ` +${g.length - 3}` : ''}`, 'Add', () => openMissing(applyLevel(r, 'basic'), s, f)); return; }
-  setLevel(id, fit); redraw(); toast(`You've got everything for ${LEVEL_NAME[fit]} ♥`);
+  setRecipeLevel(id, fit); redraw(); toast(`You've got everything for ${LEVEL_NAME[fit]} ♥`);
 }
 
 // ---------------------------------------------------------------- #90 spice backup plan, #92 why-it-matters notes
@@ -4431,6 +4434,18 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+ {
+  "name": "Update 9.2",
+  "id": "u92-2026-11",
+  "date": "2026-11-16",
+  "intro": "The pantry buttons work again. Everything you saved is still here.",
+  "notes": [
+   [
+    "Pantry fixed",
+    "Lots, Have, Low and Out respond again on every pantry item (Update 9 broke them by mistake). Running out still adds the item to the grocery list"
+   ]
+  ]
+ },
  {
   "name": "Update 9.1",
   "id": "u91-2026-11",

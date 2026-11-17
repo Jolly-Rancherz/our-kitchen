@@ -178,6 +178,15 @@ exactly 812pt although the image continues.
 - Tests (build box): `u91_shots.mjs` (What's new, Past updates, scratch → reveal → remembered, hidden once cooked,
   Acura), `u9_preserve.mjs` with `OLD=old9` (Update 9 → 9.1) and the default (Update 8.2 → 9.1).
 
+## Update 9.2: pantry buttons hotfix
+- Cause: Update 9 added a recipe-level `setLevel(id, k)` while the pantry already had `setLevel(key, name, cat,
+  level)`. Both are top-level function declarations in the same scope, so the later one silently replaced the pantry's:
+  Lots / Have / Low / Out wrote a junk `state.levels[<pantry key>] = <item name>` and never changed the stock. The
+  recipe one is now `setRecipeLevel`. Leftover junk keys in `state.levels` are inert (only read by recipe id) and are
+  left untouched (no saved-data changes).
+- Rule: one name per top-level function in `js/app.js`; `build_index.py` fails the build on a duplicate.
+- Test: `/tmp/pw/taps92.mjs` (WebKit, touch taps on every tab with saved data; `BASE=old91` reproduces 9.1).
+
 ## Update history
 | Update | Commit | What |
 |---|---|---|
@@ -195,3 +204,4 @@ exactly 812pt although the image continues.
 | 8.2 | see `git log` | Self-update never reloads in front of you (it was the remaining open/return jolt); first frame verified in WebKit |
 | 9 | see `git log` | Basic/Classic/Fancy levels on every recipe and treat, spice backups, make it with what I've got, why notes, Fancy night, level notes, cost by level, page-turn swipe + dice, bookmark ribbon, cooked stamp, louder timer with sounds, paw of approval, our dish, seasonal accent, quiet badges, recipe audit, Acura status bar brown |
 | 9.1 | see `git log` | Past updates in What's new (one patch-notes list), first-time scratch card with a fun fact, dice / Home season mark / quiet badges removed as duplicates |
+| 9.2 | see `git log` | Pantry Lots / Have / Low / Out buttons work again (duplicate function name from Update 9) |
