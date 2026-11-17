@@ -300,3 +300,15 @@ exactly 812pt although the image continues.
 - Tonight's pick: photo fades in (`img.in`), swipe the card left (touch, horizontal only, `touch-action: pan-y`; `.pick-card` in NO_TURN) = the existing Not tonight; Let's make it opens the recipe straight away with a ✓ toast.
 - Pick + quick buttons are a 2×2 grid of equal 44px buttons, one-line labels; fine gold dividers between Home sections (`#homeBody>.sec+.sec::before`).
 - Book: the welcome-style cover page is removed; `#/book/title` is the front cover and page 1 (old `#/book/cover` links redirect). The latest-bookmark pull ribbon lives on the title page. Page numbers come from `bookPages()`, bookmarks are keyed by page name, so nothing else changed.
+
+## Update 10.6 — sweep (2026-11-16)
+- Sweep: all tabs + Settings + a recipe at 360/393/430pt, Bigger text on/off, WebKit: no JS errors, no horizontal overflow, saved data unchanged (only updatedAt/recent from viewing).
+- Tabular numerals for `.amt`, pills and buttons in the main view.
+
+## TODO (after the Sunday usage reset)
+- Pantry: bigger tap targets on the Lots/Have/Low/Out segments; empty-state line when a filter shows nothing.
+- Grocery: subtle progress line (x of y ticked) on the trip card; tidy the "Swipe right to tick" hint.
+- Budget: align the month's cooked list amounts in one column; gentle empty month state.
+- Us: even spacing on the stat tiles; date-night card tap target.
+- Acura: Treat jar empty state copy and spacing; chip row alignment.
+- Frame-time re-test of book page turns and Home swipe on a real iPhone; check "Your page" sits right under the new greeting.

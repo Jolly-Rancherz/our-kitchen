@@ -1679,3 +1679,5 @@ body.book{--ink:#16204A;--ink2:#4A3526;--muted:#7A6450;--kicker:#6A2440;--group:
 .pick .btnrow .btn,.quick .btn{white-space:nowrap;min-width:0}
 .pick .btnrow .btn,.quick .btn:not(.wide){height:44px;font-size:.86rem;padding:0 8px}
 #homeBody>.sec+.sec::before,#homeBody>.sec+.nudge+.sec::before{content:"";display:block;height:1px;margin:0 8% 16px;background:linear-gradient(90deg,transparent,var(--line-gold),transparent)}
+/* update 10.6: prices and totals use even-width digits so columns line up (Budget, Grocery, Pantry) */
+#view .amt,#view .pill,#view button{font-variant-numeric:tabular-nums}

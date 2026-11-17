@@ -4798,6 +4798,22 @@ function recapCard(rc, dismiss) {
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
  {
+  "name": "Update 10.6",
+  "id": "u106-2026-11",
+  "date": "2026-11-16",
+  "intro": "A quick tidy-up.",
+  "notes": [
+   [
+    "Checked everywhere",
+    "Every tab was checked on small and large phones, with Bigger text on and off. No errors and nothing cut off"
+   ],
+   [
+    "Neater numbers",
+    "Prices and totals line up evenly in Budget, Grocery and Pantry"
+   ]
+  ]
+ },
+ {
   "name": "Update 10.5",
   "id": "u105-2026-11",
   "date": "2026-11-16",
