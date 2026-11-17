@@ -279,3 +279,13 @@ exactly 812pt although the image continues.
 | 10.2 | see `git log` | Our cookbook: full-screen book from Home's book icon, cover to back page |
 | 10.1 | see `git log` | Scratch card no longer revealed by level switch; narrow-screen fit fixes |
 | 10 | see `git log` | Cookbook look: paper, chapter pages, ornaments, drop caps, plate-framed photos, shaded page curl |
+
+
+## Update 10.3 — scrapbook cookbook (2026-11-16)
+- Cover = the welcome screen (shares `#welcome .cover/.panel` CSS with `.bk-cover`; edge to edge via `#view.bk-cover-on`; grain + season layer hidden on it via `body.bkcover`).
+- Scrolling: `bookScrollFit()` measures each book page after render (and on resize); a page that fits gets `#view.noscroll` (overflow-y hidden + overscroll-behavior none). Full-page designs (cover, title, dedication, back) are `.bk.bk-fixed` (height 100%), and `body.book #view` has no bottom padding, so they are exactly one page and centre perfectly.
+- The book always uses its own cream paper palette (`body.book` overrides the theme vars), whatever the app theme; the router no longer adds `body.acura` inside the book (`acuraLook`).
+- Per-chapter accents: `BOOK_ACC` / `bookAcc()` → `--acc` on `.bk[data-ch]` (divider wash, `.bk-tab` page tab, ornaments, ingredient card top). Acura = browns + paw trail + paw sticker.
+- Scrapbook pieces (all in margins / own blocks, never over text): `.bk-plate` taped tilted photos (`tl`/`tr` by page parity, occasional caption), `.bk-card` recipe-card ingredients, `.bk-dots`, `.bk-stamp`, `.bk-index` contents card, `.bk-scrap`, chapter `.bk-sticker` (the category tile).
+- New pages: `#/book/dedication` (after title; shows the anniversary if set) and `#/book/together` (before back; tally of cooked dinners). `bookMargin(id)` = read-only handwritten notes from `cooked`, `ratings`, `favBy`, `loveNotes`, `notes`/`noteMeta` (Corey navy ink, Faith plum). The book never writes saved data.
+- Font: `fonts/Caveat.woff2` (OFL, latin) for handwriting, precached automatically.

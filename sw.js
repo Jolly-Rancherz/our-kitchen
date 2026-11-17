@@ -1,6 +1,6 @@
 /* Our Kitchen service worker — offline support.
    VERSION and the PRECACHE list are rewritten by tools/build_index.py. */
-const VERSION = '60c237fdc1';
+const VERSION = 'f17515fa99';
 const CACHE = 'our-kitchen-' + VERSION;
 const VENDOR = 'ok-vendor-tesseract-5.1.1';
 const PRECACHE = /*PRECACHE*/[
@@ -72,6 +72,7 @@ const PRECACHE = /*PRECACHE*/[
   "./assets/tiles/steak-pork.webp",
   "./assets/tiles/takeout-at-home.webp",
   "./css/app.css",
+  "./fonts/Caveat.woff2",
   "./fonts/Cinzel.woff2",
   "./fonts/InstrumentSerif-Italic.woff2",
   "./fonts/InstrumentSerif-Regular.woff2",
