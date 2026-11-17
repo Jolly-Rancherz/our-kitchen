@@ -241,7 +241,21 @@ exactly 812pt although the image continues.
 - Fit: audited every recipe, treat and main screen at 402 px and 360 px (Display Zoom), Bigger text on/off
   (`/tmp/pw/clip10.mjs`, `clip10w.mjs` with W=360). Only narrow screens clipped (header title, Acura bone words).
   Root fixes in the "update 10.1: fit" CSS block. Title block: line-height 1.06, contained drop cap.
-- The full cookbook (book mode) is NOT in this build: work in progress saved as `/workspace/cookbook/wip_u101_book.patch`.
+- The full cookbook shipped in Update 10.2.
+
+## Update 10.2: our cookbook (book mode)
+- Entered only from Home's gold book icon (top left, `.bookbtn`, the gear's line style). Routes `#/book/<part>`:
+  `cover` (the welcome design, no name picker), `title` (the splash: OUR KITCHEN, Corey ♥ Faith), `about`,
+  `contents` (tappable, page numbers), `c/<slug>` chapter plates in Home's tile order (`bookCats()`), `r/<id>` and
+  `t/<id>` printed read-only recipe/treat pages (Classic, as written), `c/acura` last, `back`. `bookPages()` is the
+  one continuous flip order (turnList uses it for any `#/book/` hash), page numbers come from it.
+- `body.book` (set by the router for `#/book` only) hides the header and tab bar; the page sits on the navy cover board
+  with a curved fore-edge, page thickness (hard-edged stacked shadows), a deeper spine gutter and full-page grain;
+  `#bookX` is the one small close control. The app never opens inside the book: a cold start on `#/book…` goes Home.
+- In-app recipe swipes are recipes only, stopping at the ends of a category (`chapterList`). The in-app category page
+  keeps its chapter header but is not a swipe page.
+- Test: `/tmp/pw/book10.mjs` (opens from the icon, chrome hidden, 40 pages cover → back by finger swipes, close,
+  in-app swipe stops at the category end, scratch foil intact, never the launch state).
 
 ## Update history
 | Update | Commit | What |
@@ -262,5 +276,6 @@ exactly 812pt although the image continues.
 | 9.1 | see `git log` | Past updates in What's new (one patch-notes list), first-time scratch card with a fun fact, dice / Home season mark / quiet badges removed as duplicates |
 | 9.2 | see `git log` | Pantry Lots / Have / Low / Out buttons work again (duplicate function name from Update 9); Acura status bar from the html background |
 | 9.3 | see `git log` | Edit recipe + Delete meal (hold menu), no launch flash, steady photo on level switch |
+| 10.2 | see `git log` | Our cookbook: full-screen book from Home's book icon, cover to back page |
 | 10.1 | see `git log` | Scratch card no longer revealed by level switch; narrow-screen fit fixes |
 | 10 | see `git log` | Cookbook look: paper, chapter pages, ornaments, drop caps, plate-framed photos, shaded page curl |
