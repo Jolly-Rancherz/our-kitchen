@@ -59,6 +59,9 @@ ICON.thumbUp = '<path d="M7 11v9H4v-9zM7 11l4-7c1.5 0 2.5 1 2.2 2.6L12.6 10H19a2
 ICON.thumbDown = '<path d="M17 13V4h3v9zM17 13l-4 7c-1.5 0-2.5-1-2.2-2.6l.6-3.4H5a2 2 0 0 1-2-2.3l1.2-6A2 2 0 0 1 6.2 4H17"/>';
 ICON.dice = '<rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.1"/><circle cx="15" cy="15" r="1.1"/><circle cx="15" cy="9" r="1.1"/><circle cx="9" cy="15" r="1.1"/>';
 ICON.pantry = '<rect x="6" y="7" width="12" height="14" rx="2"/><path d="M8 3h8v4H8zM6 12h12"/>';
+// update 10: the cookbook's gold ornamental rule (a small matte flourish between two hairlines)
+const ORN = '<div class="orn" aria-hidden="true"><i></i><svg viewBox="0 0 64 16"><path d="M32 3c2.4 2.8 2.4 7.2 0 10-2.4-2.8-2.4-7.2 0-10zM26 8c-3-3.6-8-4-12-1.4 4 .8 7 1.8 12 1.4zM38 8c3-3.6 8-4 12-1.4-4 .8-7 1.8-12 1.4zM26 8c-3 3.6-8 4-12 1.4 4-.8 7-1.8 12-1.4zM38 8c3 3.6 8 4 12 1.4-4-.8-7-1.8-12-1.4z"/><circle cx="8" cy="8" r="1.4"/><circle cx="56" cy="8" r="1.4"/></svg><i></i></div>';
+const roman = (n) => [['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]].reduce((o, [r, v]) => { while (n >= v) { o += r; n -= v; } return o; }, '');
 const svg = (name, extra = '') => `<svg viewBox="0 0 24 24" ${extra}>${ICON[name] || ICON.pot}</svg>`;
 const CHECK = `<svg viewBox="0 0 24 24">${ICON.check}</svg>`;
 
@@ -569,7 +572,7 @@ async function viewRecipe(id) {
     <div class="pills">${pills.join('')}</div>
   </div>
   <div class="hero"><div class="tile">${r.image ? img(r.image, r.imageAlt || r.title) : placeholderArt(s)}</div><i class="acc a1"></i><i class="acc a2"></i><i class="acc a3"></i>${cookedStamp(cooked.length)}</div>
-  <div class="stats"><div class="stat"><b>${r.prep} min</b><span>Prep</span></div><div class="stat plum"><b>${r.cook} min</b><span>Cook</span></div><div class="stat peri"><b>${r.prep + r.cook} min</b><span>Total</span></div></div>
+  <div class="stats"><div class="stat"><b>${r.prep} min</b><span>Prep</span></div><div class="stat plum"><b>${r.cook} min</b><span>Cook</span></div><div class="stat peri"><b>${r.prep + r.cook} min</b><span>Total</span></div></div>${ORN}
   <div class="serves"><strong>${guests ? `Guest mode · ${guests} people` : esc(sv === base && r.servingsNote ? r.servingsNote : sv + ' servings')}</strong><span class="muted">Est. ~${money(per, true)} a portion</span></div>
   <div class="plan"><button class="chip" id="startBy">${svg('clock')}Start cooking by…</button><button class="chip ${guests ? 'on' : ''}" id="guestBtn">${svg('users')}${guests ? guests + ' people' : 'Guests'}</button>${!cooked.length || pend ? `<button class="chip ${pend ? 'on' : ''}" id="tasteChip">${svg('thumbUp')}${pend ? 'Taste test on' : 'Taste test'}</button>` : ''}${hasLevels(r0) ? `<button class="chip ${isFancyNight(id) ? 'on' : ''}" id="fnChip">${svg('star')}Fancy night</button>` : ''}</div>
 
@@ -2529,9 +2532,11 @@ function viewCategory(slugName) {
   const c = catOf(slugName);
   setTop({ title: esc(c.name.toUpperCase()), back: '#/' });
   const items = sortRecipes(visibleRecipes().filter((r) => r.category === slugName).sort((a, b) => a.num - b.num));
-  render(`<div class="wrap"><div class="kicker"><span class="sw" style="background:${c.colour}"></span>Category<span class="rule"></span></div>
-    <h1 class="h1" style="margin-top:6px">${esc(c.name)}</h1>
-    <p class="lead" style="margin-top:4px">${items.length} recipe${items.length === 1 ? '' : 's'} so far</p>
+  // update 10: each category opens on a chapter divider (the first page of its flip order, see turnList)
+  const ci = INDEX.categories.findIndex((x) => x.slug === slugName) + 1;
+  render(`<div class="wrap"><div class="chapter"><div class="ch-k">Chapter ${roman(ci || 1)}</div>${ORN}
+    <h1 class="ch-t">${esc(c.name)}</h1>
+    <p class="ch-s">${items.length} recipe${items.length === 1 ? '' : 's'} so far${items.length ? ' · swipe to turn the page' : ''}</p>${ORN}</div>
     ${items.length > 1 ? sortChips() : ''}
     <div class="rlist" style="margin-top:14px">${items.map(rcard).join('') || '<div class="empty">No recipes here yet.</div>'}</div></div>`);
   bindSort(() => viewCategory(slugName));
@@ -4339,41 +4344,49 @@ function turnList() {
   const h = location.hash; let m;
   if ((m = h.match(/^#\/r\/(.+)$/))) {
     const s = summary(m[1]); if (!s) return null;
-    const list = visibleRecipes().filter((r) => r.category === s.category).sort((a, b) => a.num - b.num).map((r) => '#/r/' + r.id);
+    const list = chapterList(s.category);
     return list.includes(h) ? { list, idx: list.indexOf(h) } : null;
   }
+  if ((m = h.match(/^#\/c\/([\w-]+)$/))) { const list = chapterList(m[1]); return list.length > 1 ? { list, idx: 0 } : null; }
   if ((m = h.match(/^#\/acura\/t\/(.+)$/)) && ACURA) { const list = acOrder(ACURA.treats).map((t) => '#/acura/t/' + t.id); return list.includes(h) ? { list, idx: list.indexOf(h) } : null; }
   return null;
 }
-function turnIndicator() { const L = turnList(); return L && L.list.length > 1 ? `<span class="nofm">${L.idx + 1} of ${L.list.length}</span>` : ''; }
+// a chapter: its divider page, then its recipes in book order (update 10)
+function chapterList(cat) { return ['#/c/' + cat].concat(visibleRecipes().filter((r) => r.category === cat).sort((a, b) => a.num - b.num).map((r) => '#/r/' + r.id)); }
+function turnIndicator() { const L = turnList(); if (!L) return ''; const pages = L.list.filter((x) => !x.startsWith('#/c/')); const i = pages.indexOf(location.hash); return pages.length > 1 && i >= 0 ? `<span class="nofm">${i + 1} of ${pages.length}</span>` : ''; }
 const turnable = () => !!turnList() && $('#sheetWrap').hidden && $('#cook').hidden && !ALARM;
 const turnTransform = (dir, k) => `perspective(1600px) rotateY(${(dir > 0 ? -1 : 1) * k * 88}deg)`;
 function turnBegin(dir) {
   const v = $('#view');
   v.style.overflowY = 'hidden'; v.style.transition = 'none'; v.style.willChange = 'transform';
   v.style.transformOrigin = dir > 0 ? 'left center' : 'right center';
+  // update 10: the page darkens toward its lifting edge as it turns (a shade layer that only changes opacity)
+  let c = $('#view > .curl'); if (!c) { c = document.createElement('i'); c.className = 'curl'; v.appendChild(c); }
+  c.classList.toggle('back', dir < 0); c.style.top = v.scrollTop + 'px'; c.style.height = v.clientHeight + 'px'; c.style.opacity = '0'; c.style.transition = 'none';
   document.body.classList.add('turning');
 }
+function curlTo(k, ms) { const c = $('#view > .curl'); if (!c) return; c.style.transition = ms ? `opacity ${ms}ms linear` : 'none'; c.style.opacity = String(Math.min(1, k * 1.15)); }
 function turnClean() {
   const v = $('#view');
   ['overflowY', 'transition', 'willChange', 'transform', 'transformOrigin'].forEach((p) => { v.style[p] = ''; });
+  const c = $('#view > .curl'); if (c) c.remove();
   document.body.classList.remove('turning');
 }
 function turnOut(dir, k, then) {
   const v = $('#view'); const ms = Math.round(110 + 120 * (1 - Math.min(1, k))); // 230ms from rest; the further the finger went, the less is left
   v.style.transition = `transform ${ms}ms cubic-bezier(.45,.05,.75,.95)`;
-  requestAnimationFrame(() => { v.style.transform = turnTransform(dir, 1); });
+  requestAnimationFrame(() => { v.style.transform = turnTransform(dir, 1); curlTo(1, ms); });
   setTimeout(then, ms);
 }
 function turnBack() {
-  const v = $('#view'); v.style.transition = 'transform 220ms cubic-bezier(.2,.8,.2,1)'; v.style.transform = turnTransform(1, 0);
+  const v = $('#view'); v.style.transition = 'transform 220ms cubic-bezier(.2,.8,.2,1)'; v.style.transform = turnTransform(1, 0); curlTo(0, 200);
   setTimeout(turnClean, 230);
 }
 // called by the router once the new page has rendered: the turned page is gone, the new one settles in (150ms)
 function turnIn() {
   turnClean(); if (reducedMotion()) return;
   const v = $('#view'); v.classList.remove('vin-fwd', 'vin-back', 'vin-tab', 'vin-turn'); void v.offsetWidth; v.classList.add('vin-turn');
-  clearTimeout(animateView.t); animateView.t = setTimeout(() => v.classList.remove('vin-turn'), 170);
+  clearTimeout(animateView.t); animateView.t = setTimeout(() => v.classList.remove('vin-turn'), 140);
 }
 // turn the current page and open `hash` (a finished swipe); reduced motion just opens it
 function turnTo(hash, dir, k) {
@@ -4403,7 +4416,8 @@ function initPageTurn() {
     PT.dx = dx; PT.t1 = performance.now();
     if (reducedMotion()) return;
     const k = Math.max(0, Math.min(1, (-PT.dir * dx) / v.clientWidth));
-    $('#view').style.transform = turnTransform(PT.dir, PT.to ? k : Math.min(0.05, k * 0.15)); // first/last page: a hint of give
+    const kk = PT.to ? k : Math.min(0.05, k * 0.15); // first/last page: a hint of give
+    v.style.transform = turnTransform(PT.dir, kk); curlTo(kk);
   }, { passive: false });
   const end = (cancel) => {
     const p = PT; PT = null; if (!p || !p.lock) return;
@@ -4644,6 +4658,30 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+ {
+  "name": "Update 10",
+  "id": "u10-2026-11",
+  "date": "2026-11-16",
+  "intro": "Our Kitchen now looks and turns like a real cookbook.",
+  "notes": [
+   [
+    "Real paper",
+    "Warm cream pages with a soft fibre texture, a gentle shadow at the spine and slightly darker edges"
+   ],
+   [
+    "Chapters",
+    "Each category opens on its own chapter page. Swipe from it straight into the first recipe, and back"
+   ],
+   [
+    "Little flourishes",
+    "Gold ornamental rules, a drop cap on every recipe and photos framed like printed plates"
+   ],
+   [
+    "Smoother page turns",
+    "The page follows your finger and shades as it lifts, then settles quickly"
+   ]
+  ]
+ },
  {
   "name": "Update 9.3",
   "id": "u93-2026-11",

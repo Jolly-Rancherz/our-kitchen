@@ -219,6 +219,21 @@ exactly 812pt although the image continues.
   pantry, search, missing sheet, grocery, reset), `lv93.mjs` (same photo node, no movement, scroll kept),
   `launch92b.mjs` (one Home render), `splash93.mjs`, `taps92.mjs`, `u9_smoke.mjs`, `u9_preserve.mjs OLD=old92`.
 
+## Update 10: the cookbook
+- Paper: `body::before` is a fixed, tap-through sheet (z 45, under the header/tab bar) with a spine gutter on the
+  left, edge darkening (radial deckle + right edge) and a faint long-fibre SVG texture over the existing grain.
+  Plain alpha, no blend modes (cheap to composite while scrolling and turning). Dark theme: shadows only.
+- Chapters: `#/c/<slug>` opens on a chapter divider (`.chapter`: "Chapter I…" from the category order, gold `ORN`
+  rules). `chapterList(cat)` = chapter page + recipes in book order is the flip order for both, so you swipe from the
+  divider into recipe 01 and back. "N of M" counts recipes only.
+- Flourishes: `ORN` (gold ornamental rule) under the recipe stats; a Cinzel drop cap on every recipe/treat lead;
+  photos framed as printed plates (`.hero .tile` cream mat + gold hairline + soft shadow, matte filter; card thumbs
+  framed with outset shadows and `align-self:start`).
+- Page turn: still follows the finger (rotateY from the spine, transform only). New `.curl` shade inside the turning
+  page whose opacity tracks the turn (darkens toward the lifting edge, ends in an edge shadow) — opacity only, no
+  box-shadow. New page settles in 120 ms. Test: `/tmp/pw/flip10.mjs` (synthetic 60 Hz touches in WebKit: frame gaps,
+  settle time, chapter flips, cancel cleanup, taps pass through the paper); `flip10b.mjs` at DPR 1 vs `BASE=old93`.
+
 ## Update history
 | Update | Commit | What |
 |---|---|---|
@@ -238,3 +253,4 @@ exactly 812pt although the image continues.
 | 9.1 | see `git log` | Past updates in What's new (one patch-notes list), first-time scratch card with a fun fact, dice / Home season mark / quiet badges removed as duplicates |
 | 9.2 | see `git log` | Pantry Lots / Have / Low / Out buttons work again (duplicate function name from Update 9); Acura status bar from the html background |
 | 9.3 | see `git log` | Edit recipe + Delete meal (hold menu), no launch flash, steady photo on level switch |
+| 10 | see `git log` | Cookbook look: paper, chapter pages, ornaments, drop caps, plate-framed photos, shaded page curl |
