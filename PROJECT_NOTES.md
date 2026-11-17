@@ -294,3 +294,8 @@ exactly 812pt although the image continues.
 - New additive key `state.bookBookmarks` (page key like `r/chicken-01`, `c/seafood`, `about` -> ts); added to migrate's object-key list, so old saves and backups get `{}`; exported/restored with the whole state.
 - `.bk-rib#bkRib` ribbon at each book page's top edge (right:62px, clear of ×); tap toggles in place (class only, no re-render); it's in `NO_TURN` so it never starts a page turn. Cover/title show a `.pull` ribbon (when bookmarks exist) with the page number that jumps to the newest bookmark.
 - Contents card: "Bookmarked" list (`bkMarks()`, newest first, max 8) + `.mini-rib` on chapter rows holding a bookmark. Separate from the app's Home ribbon (`state.bookmark`).
+
+## Update 10.5 — Recipes tab polish (2026-11-16)
+- Weather now rides on the greeting line (`.greet` + inline `#wxLine`, one line with ellipsis; `wxLine()` returns ' · 1°C cloudy' or '' so the line never moves when it arrives). The old separate weather row and its mood words are gone from Home (weather dinner nudges unchanged).
+- Tonight's pick: photo fades in (`img.in`), swipe the card left (touch, horizontal only, `touch-action: pan-y`; `.pick-card` in NO_TURN) = the existing Not tonight; Let's make it opens the recipe straight away with a ✓ toast.
+- Pick + quick buttons are a 2×2 grid of equal 44px buttons, one-line labels; fine gold dividers between Home sections (`#homeBody>.sec+.sec::before`).

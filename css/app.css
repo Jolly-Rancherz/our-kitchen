@@ -1669,3 +1669,13 @@ body.book{--ink:#16204A;--ink2:#4A3526;--muted:#7A6450;--kicker:#6A2440;--group:
 .bk-marks a{display:flex;align-items:baseline;gap:8px;min-height:36px;padding:4px 0}
 .bk-marks a .hw{font-size:1.25rem;min-width:0}.bk-marks a i{flex:1;border-bottom:1.5px dotted var(--line-gold);min-width:12px}
 @media (prefers-reduced-motion: reduce){.bk-rib::before{transition:none}}
+/* ---------------------------------------------------------------- update 10.5: Recipes tab polish */
+.home-head .greet{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.home-head .greet .wx{display:inline;font-family:"Outfit";font-style:normal;font-size:.8rem;color:var(--muted);margin:0;letter-spacing:.02em;white-space:nowrap}
+.pick-card .im img{opacity:0;transition:opacity .45s ease}
+.pick-card .im img.in{opacity:1}
+.pick-card{transition:transform .16s ease,opacity .16s ease;touch-action:pan-y}
+.pick-card.swiped{transform:translate3d(-40px,0,0);opacity:.4}
+.pick .btnrow .btn,.quick .btn{white-space:nowrap;min-width:0}
+.pick .btnrow .btn,.quick .btn:not(.wide){height:44px;font-size:.86rem;padding:0 8px}
+#homeBody>.sec+.sec::before,#homeBody>.sec+.nudge+.sec::before{content:"";display:block;height:1px;margin:0 8% 16px;background:linear-gradient(90deg,transparent,var(--line-gold),transparent)}

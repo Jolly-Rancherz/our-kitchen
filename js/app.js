@@ -1565,7 +1565,8 @@ async function loadWeather() {
   } catch (e) { /* offline or blocked: skip silently */ }
 }
 // the Home weather line: today's weather, or just the town until it arrives (same single line either way)
-function wxLine() { const w = wxFresh(); return w ? `London · ${wxTemp(w.t)} · ${wxWords(w.code)} — ${wxMood(w).line}` : 'London, Ontario'; }
+// update 10.5: the weather rides on the greeting line (' · 1°C cloudy'); empty until it arrives (the line never moves)
+function wxLine() { const w = wxFresh(); return w ? ` · ${wxTemp(w.t)} ${String(wxWords(w.code)).toLowerCase()}` : ''; }
 function wxFresh() { return WX && now() - WX.at < 6 * 36e5 ? WX : null; }
 function wxTemp(t) { return state.settings.temp === 'F' ? Math.round(t * 9 / 5 + 32) + '°F' : t + '°C'; }
 function wxMood(w) {
@@ -2743,7 +2744,7 @@ function viewHome(partial) {
           <div class="pc-body"><div class="t">${esc(pk.title)}</div><div class="m">${pk.price} · ${pk.total} min · ~${money(pk.cost)} · start by ${fmtTime(startTime(pk, null))}</div></div></a>
         <div class="pick-q"><span>${esc(turn)}'s pick tonight — sound good?</span><button class="turnbtn" id="turnBtn" aria-label="Switch whose turn">${svg('swap')}</button></div>
         <div class="btnrow"><button class="btn ghost" id="pickNo">${svg('thumbDown')}Not tonight</button><button class="btn gold" id="pickYes">${svg('thumbUp')}Let's make it</button></div></div>` : ''}
-      <div class="quick"><button class="btn ghost" id="randBtn">${svg('dice')}Spin the wheel</button><button class="btn ghost" id="canMake">${svg('pantry')}What can we make?</button><button class="btn ghost wide" id="ideasBtn">${svg('star')}More ideas<small>surprise me · mood · fridge clear · in season</small></button></div>
+      <div class="quick"><button class="btn ghost" id="randBtn">${svg('dice')}Spin the wheel</button><button class="btn ghost" id="canMake">${svg('pantry')}What can we make</button><button class="btn ghost wide" id="ideasBtn">${svg('star')}More ideas<small>surprise me · mood · fridge clear · in season</small></button></div>
       ${tmr && thaw ? `<button class="nudge prep" id="prepNudge"><span>${svg('thaw')}</span><span><b>Tomorrow: ${esc(summary(tmr).title)}</b> — ${esc(thaw)}.</span><span>${svg('chevR')}</span></button>` : ''}
       ${wn ? `<a class="nudge wxn" href="#/r/${wn.r.id}"><span>${svg('snow')}</span><span>${esc(wn.line)} <b>${esc(wn.r.title)}</b></span><span>${svg('chevR')}</span></a>` : ''}
       ${fcl && fcl.any ? `<button class="nudge use" id="fridayNudge"><span>${svg('pantry')}</span><span><b>Fridge-clear Friday:</b> ${esc([...fcl.lefts.map((l) => 'leftover ' + l.title), ...fcl.u.items.map((x) => x.p.name)].slice(0, 3).join(', '))}${fcl.u.picks.length ? ` — try ${esc(fcl.u.picks[0].r.title)}` : ''}.</span><span>${svg('chevR')}</span></button>` : ''}
@@ -2775,10 +2776,9 @@ function viewHome(partial) {
   const pump = isOctober() && state.settings.seasonal !== false;
   if (partial) swapHomeBody(body); else render(`<div class="home-head">
       <div class="kicker">${pump ? `<svg class="pump" viewBox="0 0 24 24" aria-hidden="true">${ICON.pumpkin}</svg>` : ''}Recipes we love<span class="rule"></span></div>
-      <div class="lead" style="margin-top:6px">${esc(greeting())}</div>
+      <div class="lead greet" style="margin-top:6px">${esc(greeting())}<span class="wx" id="wxLine">${esc(wxLine())}</span></div>
       ${ribbonHTML()}
       ${dn && dn.days <= 14 ? `<a class="dnline" href="#/us">${svg('heart')}<span>${esc(dnWords(dn))}${dn.s ? ' — ' + esc(dn.s.title) : ''}</span></a>` : ''}
-      <div class="wx" id="wxLine">${esc(wxLine())}</div>
       <div class="searchrow"><label class="search">${svg('search')}<input id="q" type="search" placeholder="Search recipes or ingredients" value="${esc(ui.q)}" autocomplete="off" enterkeyhint="search"><button class="clear" id="qClear" aria-label="Clear search" ${ui.q ? '' : 'hidden'}>×</button></label>
         <button class="filterbtn ${fc ? 'on' : ''}" id="filterBtn" aria-label="Filters">${svg('filter')}${fc ? `<b>${fc}</b>` : ''}</button></div>
       ${fc ? `<div class="activefilters">${Object.entries(ui.filters).flatMap(([k, s]) => s.map((v) => `<button data-k="${k}" data-v="${esc(v)}">${esc(TAGLABEL[k + ':' + v])}</button>`)).join('')}</div>` : ''}
@@ -2796,7 +2796,18 @@ function viewHome(partial) {
   $('#clearAll') && ($('#clearAll').onclick = () => { ui.q = ''; ui.filters = {}; viewHome(); });
   bindSort(viewHome);
   $('#spinRes') && ($('#spinRes').onclick = openRandom);
-  $('#pickYes') && ($('#pickYes').onclick = (e) => { const t = whoseTurn(); const pid = uid(); state.picks[pid] = { id: pid, recipeId: ui.pick, ok: true, date: todayISO(), by: t }; state.turn = other(t); heartBurst(e.currentTarget); setTonight(ui.pick, true); state.tonight.by = t; save(); redraw(); toast(`Tonight: ${summary(ui.pick).title} ♥`); });
+  $('#pickYes') && ($('#pickYes').onclick = (e) => { const t = whoseTurn(); const pid = uid(); state.picks[pid] = { id: pid, recipeId: ui.pick, ok: true, date: todayISO(), by: t }; state.turn = other(t); setTonight(ui.pick, true); state.tonight.by = t; save(); toast(`✓ Tonight: ${summary(ui.pick).title}`); go('#/r/' + ui.pick); }); // update 10.5: straight to the recipe
+  // update 10.5: Tonight's pick photo fades in; swipe the card left for another suggestion (same as Not tonight)
+  $$('.pick-card .im img').forEach((i) => { if (i.complete) i.classList.add('in'); else i.addEventListener('load', () => i.classList.add('in'), { once: true }); });
+  const pc = $('.sec.pick:not(.tonight) .pick-card');
+  if (pc && $('#pickNo')) {
+    let sx = 0, sy = 0, sw = false;
+    pc.addEventListener('touchstart', (e) => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; sw = false; }, { passive: true });
+    pc.addEventListener('touchmove', (e) => { const dx = e.touches[0].clientX - sx, dy = e.touches[0].clientY - sy; if (!sw && dx < -10 && Math.abs(dx) > Math.abs(dy) * 1.5) { pc.style.transition = 'none'; pc.style.transform = `translate3d(${Math.max(dx, -60)}px,0,0)`; } }, { passive: true });
+    pc.addEventListener('touchend', (e) => { const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy; pc.style.transform = '';
+      if (dx < -50 && Math.abs(dx) > Math.abs(dy) * 1.5) { sw = true; pc.classList.add('swiped'); setTimeout(() => $('#pickNo') && $('#pickNo').click(), 160); } });
+    pc.addEventListener('click', (e) => { if (sw) { e.preventDefault(); sw = false; } });
+  }
   $('#turnBtn') && ($('#turnBtn').onclick = () => { state.turn = other(whoseTurn()); save(); redraw(); });
   $('#ideasBtn') && ($('#ideasBtn').onclick = () => openIdeas());
   $('#prepNudge') && ($('#prepNudge').onclick = openPrepAhead);
@@ -4339,7 +4350,7 @@ const cookedStamp = (n, word = 'Cooked') => (n ? `<i class="stamp" aria-label="$
 // Never starts in the left 28px (the iOS swipe-back edge), on a horizontal scroller, a slider, the level switch or a field,
 // only once the move is clearly sideways, and never while a sheet, cook mode or a timer alarm is up.
 const TURN_EDGE = 28;
-const NO_TURN = '.bk-rib,.scratch,input,textarea,select,.chips,.plan,.lvbar,.photos,.hrow,.portion,.bonechips,.favtiles,.rcook,.snackchips,.dishes,table';
+const NO_TURN = '.bk-rib,.pick-card,.scratch,input,textarea,select,.chips,.plan,.lvbar,.photos,.hrow,.portion,.bonechips,.favtiles,.rcook,.snackchips,.dishes,table';
 let PT = null;
 function turnList() {
   const h = location.hash; let m;
@@ -4786,6 +4797,26 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+ {
+  "name": "Update 10.5",
+  "id": "u105-2026-11",
+  "date": "2026-11-16",
+  "intro": "Little touches on the Recipes tab.",
+  "notes": [
+   [
+    "Weather in the greeting",
+    "The weather sits right after Good evening, so everything starts higher"
+   ],
+   [
+    "Tonight's pick",
+    "The photo fades in softly. Swipe it left for another idea, and Let's make it opens the recipe straight away"
+   ],
+   [
+    "Tidier buttons",
+    "The action buttons are the same size with one-line labels, and fine gold lines divide the sections"
+   ]
+  ]
+ },
  {
   "name": "Update 10.4",
   "id": "u104-2026-11",
