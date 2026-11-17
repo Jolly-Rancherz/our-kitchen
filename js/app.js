@@ -188,7 +188,7 @@ function migrate(raw) {
   if (!raw || raw.v !== 1) return null;
   const d = DEFAULT_STATE();
   const st = { ...d, ...raw, settings: { ...d.settings, ...raw.settings }, profile: { ...d.profile, ...raw.profile } };
-  ['loveNotes', 'stories', 'freezer', 'wish', 'prices', 'guests', 'edits', 'versions', 'milestones', 'recapSeen', 'favBy', 'nicknames', 'dessertJar', 'tasteTests', 'dishes', 'flashSeen', 'annivSeen', 'plan', 'priceLog', 'noteMeta', 'places', 'thanks', 'dateMenus', 'levels', 'levelNotes', 'fancyNight', 'scratched', 'deleted'].forEach((k) => { if (!st[k] || typeof st[k] !== 'object') st[k] = {}; });
+  ['loveNotes', 'stories', 'freezer', 'wish', 'prices', 'guests', 'edits', 'versions', 'milestones', 'recapSeen', 'favBy', 'nicknames', 'dessertJar', 'tasteTests', 'dishes', 'flashSeen', 'annivSeen', 'plan', 'priceLog', 'noteMeta', 'places', 'thanks', 'dateMenus', 'levels', 'levelNotes', 'fancyNight', 'scratched', 'deleted', 'bookBookmarks'].forEach((k) => { if (!st[k] || typeof st[k] !== 'object') st[k] = {}; });
   if (!st.acura || typeof st.acura !== 'object') st.acura = d.acura;
   ['favs', 'baked', 'notes', 'ratings', 'profile', 'given', 'photos', 'paws'].forEach((k) => { if (!st.acura[k] || typeof st.acura[k] !== 'object') st.acura[k] = {}; });
   if (!st.seededSoup) { st.favourites = { ...st.favourites, 'comfort-soups-01': st.favourites['comfort-soups-01'] || now() }; st.seededSoup = 1; }
@@ -4339,7 +4339,7 @@ const cookedStamp = (n, word = 'Cooked') => (n ? `<i class="stamp" aria-label="$
 // Never starts in the left 28px (the iOS swipe-back edge), on a horizontal scroller, a slider, the level switch or a field,
 // only once the move is clearly sideways, and never while a sheet, cook mode or a timer alarm is up.
 const TURN_EDGE = 28;
-const NO_TURN = '.scratch,input,textarea,select,.chips,.plan,.lvbar,.photos,.hrow,.portion,.bonechips,.favtiles,.rcook,.snackchips,.dishes,table';
+const NO_TURN = '.bk-rib,.scratch,input,textarea,select,.chips,.plan,.lvbar,.photos,.hrow,.portion,.bonechips,.favtiles,.rcook,.snackchips,.dishes,table';
 let PT = null;
 function turnList() {
   const h = location.hash; let m;
@@ -4458,12 +4458,30 @@ function bookMargin(id) {
 }
 // a tally of five strokes per group, like marks on the inside cover
 const tally = (n) => '<span class="tally">' + '<i class="t5"></i>'.repeat(Math.floor(n / 5)) + '<i class="t1"></i>'.repeat(n % 5) + '</span>';
+// update 10.4: book bookmarks — state.bookBookmarks: page key ('r/chicken-01', 'c/seafood', 'about'…) -> ts (added key; kept
+// by page, not number, so they survive pages moving). A fabric ribbon hangs from each page's top edge; tap it to mark.
+const bkMarks = () => Object.entries(state.bookBookmarks || {}).sort((a, b) => b[1] - a[1]).map(([k]) => k).filter((k) => bookPages().includes('#/book/' + k));
+function bkTitleOf(k) {
+  let m; if ((m = k.match(/^r\/(.+)$/))) return (summary(m[1]) || {}).title || 'Recipe';
+  if ((m = k.match(/^t\/(.+)$/))) return ((ACURA && ACURA.treats.find((t) => t.id === m[1])) || {}).title || 'Treat';
+  if ((m = k.match(/^c\/(.+)$/))) return m[1] === 'acura' ? 'Acura’s Kitchen' : catOf(m[1]).name;
+  return { title: 'Title page', dedication: 'Dedication', about: 'About this book', contents: 'Contents', together: 'Cooked together', back: 'The end' }[k] || k;
+}
+function bindBookRibbon(part) {
+  const b = $('#bkRib'); if (!b) return;
+  b.onclick = (e) => {
+    e.stopPropagation();
+    if (b.dataset.pull) { const k = bkMarks()[0]; if (k) go('#/book/' + k); return; }
+    const on = !state.bookBookmarks[part]; if (on) state.bookBookmarks[part] = now(); else delete state.bookBookmarks[part];
+    save(); b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); b.setAttribute('aria-label', on ? 'Remove bookmark' : 'Bookmark this page');
+  };
+}
 const HEART_SVG = '<svg class="splash-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.6 4.6 0 0 1 8-3.1A4.6 4.6 0 0 1 20 10c0 5.8-8 11-8 11z"/></svg>';
 async function viewBook(part = 'cover') {
   await loadAcura(); if (!location.hash.startsWith('#/book')) return;
   setTop({ title: 'OUR KITCHEN' });
   const cats = bookCats(); const pages = bookPages(); const pg = (h) => pages.indexOf(h) + 1;
-  const treats = ACURA ? acOrder(ACURA.treats) : [];
+  const treats = ACURA ? acOrder(ACURA.treats) : []; const marks = bkMarks();
   let html = ''; let m; let ch = null; // ch: [slug, chapter index] of the page, for its accent and tab
   if (part === 'cover') html = `<div class="bk-cover"><img class="cover" src="assets/img/cover.webp" alt="Our Kitchen — Corey and Faith — recipes we love"><div class="panel"><h2>WELCOME HOME</h2><p>Our recipes, pantry, grocery list and dinner budget — all in one place, and it works offline.</p><p class="bk-hint">Swipe to open the book ›</p></div></div>`;
   else if (part === 'title') html = `<div class="bk-title"><div class="splash-our">OUR</div><div class="splash-kitchen">KITCHEN</div><div class="splash-names">Corey ${HEART_SVG} Faith</div></div>`;
@@ -4480,9 +4498,10 @@ async function viewBook(part = 'cover') {
     <p>Each dish can be made Basic, Classic or Fancy, and the pages remember how we liked it. There are ${cats.length} chapters of dinners${treats.length ? ', and Acura has her own chapter at the back' : ''}.</p>
     <p>Turn the pages with a swipe. Our notes, hearts and how often we've made each dish are pencilled in the margins.</p></div>${ORN}</div>`;
   else if (part === 'contents') html = `<div class="bk-page"><div class="ch-k">Contents</div>${ORN}<div class="bk-index"><ol class="bk-toc">
-    ${cats.map((c, i) => `<li><a href="#/book/c/${c.slug}"><span class="n">${roman(i + 1)}</span><b>${esc(c.name)}</b><i></i><span class="p">${pg('#/book/c/' + c.slug)}</span></a></li>`).join('')}
-    ${treats.length ? `<li><a href="#/book/c/acura"><span class="n">${roman(cats.length + 1)}</span><b>Acura’s Kitchen</b><i></i><span class="p">${pg('#/book/c/acura')}</span></a></li>` : ''}
-    <li><a href="#/book/together"><span class="n">♥</span><b>Cooked together</b><i></i><span class="p">${pg('#/book/together')}</span></a></li></ol></div></div>`;
+    ${cats.map((c, i) => `<li><a href="#/book/c/${c.slug}"><span class="n">${roman(i + 1)}</span><b>${esc(c.name)}${marks.some((k) => k === 'c/' + c.slug || (k.startsWith('r/') && (summary(k.slice(2)) || {}).category === c.slug)) ? '<em class="mini-rib" aria-label="bookmarked"></em>' : ''}</b><i></i><span class="p">${pg('#/book/c/' + c.slug)}</span></a></li>`).join('')}
+    ${treats.length ? `<li><a href="#/book/c/acura"><span class="n">${roman(cats.length + 1)}</span><b>Acura’s Kitchen${marks.some((k) => k === 'c/acura' || k.startsWith('t/')) ? '<em class="mini-rib" aria-label="bookmarked"></em>' : ''}</b><i></i><span class="p">${pg('#/book/c/acura')}</span></a></li>` : ''}
+    <li><a href="#/book/together"><span class="n">♥</span><b>Cooked together</b><i></i><span class="p">${pg('#/book/together')}</span></a></li></ol>
+    ${marks.length ? `<div class="bk-marks"><p class="bm-h"><em class="mini-rib"></em>Bookmarked</p>${marks.slice(0, 8).map((k) => `<a href="#/book/${k}"><span class="hw navy">${esc(bkTitleOf(k))}</span><i></i><span class="hw sepia">${pg('#/book/' + k)}</span></a>`).join('')}</div>` : ''}</div></div>`;
   else if ((m = part.match(/^c\/([\w-]+)$/))) {
     const acura = m[1] === 'acura'; const ci = acura ? cats.length + 1 : cats.findIndex((c) => c.slug === m[1]) + 1; ch = [m[1], ci];
     const list = acura ? treats.map((t) => ({ h: '#/book/t/' + t.id, title: t.title })) : chapterList(m[1]).map((h) => ({ h: '#/book/' + h.slice(2), title: (summary(h.slice(4)) || {}).title }));
@@ -4511,7 +4530,11 @@ async function viewBook(part = 'cover') {
   const fixed = ['cover', 'title', 'dedication', 'back'].includes(part); // full-page designs: exactly one screen, never scroll
   const acc = ch ? bookAcc(ch[0], ch[1] - 1) : '';
   const tab = ch ? `<i class="bk-tab" style="top:${84 + ((ch[1] - 1) % 8) * 52}px" aria-hidden="true"></i>` : '';
-  render(`<div class="bk${fixed ? ' bk-fixed' : ''}"${ch ? ` data-ch="${esc(ch[0])}" style="--acc:${acc}"` : ''}>${tab}${html}</div>`);
+  const pull = part === 'cover' || part === 'title'; const on = !!state.bookBookmarks[part];
+  const rib = pull ? (marks.length ? `<button class="bk-rib on pull" id="bkRib" data-pull="1" aria-label="Go to bookmark: ${esc(bkTitleOf(marks[0]))}"><span>${pg('#/book/' + marks[0])}</span></button>` : '')
+    : `<button class="bk-rib${on ? ' on' : ''}" id="bkRib" aria-pressed="${on}" aria-label="${on ? 'Remove bookmark' : 'Bookmark this page'}"></button>`;
+  render(`<div class="bk${fixed ? ' bk-fixed' : ''}"${ch ? ` data-ch="${esc(ch[0])}" style="--acc:${acc}"` : ''}>${tab}${rib}${html}</div>`);
+  bindBookRibbon(part);
   $('#view').classList.toggle('bk-cover-on', part === 'cover'); document.body.classList.toggle('bkcover', part === 'cover');
   bookScrollFit();
   $('#bkClose') && ($('#bkClose').onclick = () => go('#/'));
@@ -4763,6 +4786,18 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+ {
+  "name": "Update 10.4",
+  "id": "u104-2026-11",
+  "date": "2026-11-16",
+  "intro": "Bookmarks for our book.",
+  "notes": [
+   [
+    "Ribbon bookmarks",
+    "Tap the little ribbon at the top of any book page to mark it. The Contents card lists your bookmarks, and the ribbon on the cover jumps to the latest one"
+   ]
+  ]
+ },
  {
   "name": "Update 10.3",
   "id": "u103-2026-11",

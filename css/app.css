@@ -1653,3 +1653,19 @@ body.book{--ink:#16204A;--ink2:#4A3526;--muted:#7A6450;--kicker:#6A2440;--group:
 .bk-trail .paw:nth-child(3){left:32%;top:80px;transform:rotate(60deg)}.bk-trail .paw:nth-child(4){left:46%;top:54px;transform:rotate(58deg)}
 .bk-trail .paw:nth-child(5){left:60%;top:62px;transform:rotate(62deg)}.bk-trail .paw:nth-child(6){left:74%;top:34px;transform:rotate(56deg)}
 .bk-trail .paw:nth-child(7){left:88%;top:42px;transform:rotate(60deg)}
+/* update 10.4: fabric ribbon bookmark hanging from the page's top edge (left of the ×); drops longer when marked */
+.bk-rib{position:absolute;top:0;right:62px;z-index:3;width:18px;height:44px;padding:0;border:0;background:none;cursor:pointer}
+.bk-rib::before{content:"";position:absolute;top:0;left:3px;width:12px;height:18px;background:
+  repeating-linear-gradient(0deg,rgba(255,255,255,.12) 0 1px,transparent 1px 3px),linear-gradient(90deg,rgba(0,0,0,.12),transparent 40%,rgba(0,0,0,.1)),color-mix(in srgb,var(--acc,#C4963E) 55%,#E9D6B4);
+  clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%);transform-origin:top;transition:height .28s cubic-bezier(.3,1.3,.5,1),background-color .2s;box-shadow:0 1px 2px rgba(40,24,10,.2)}
+.bk-rib.on::before{height:40px;background:repeating-linear-gradient(0deg,rgba(255,255,255,.12) 0 1px,transparent 1px 3px),linear-gradient(90deg,rgba(0,0,0,.16),transparent 40%,rgba(0,0,0,.12)),var(--acc,#C4963E)}
+.bk-cover .bk-rib,.bk-rib.pull{right:62px}
+.bk-rib.pull{height:58px}.bk-rib.pull::before{height:54px}
+.bk-rib.pull span{position:absolute;left:0;right:0;top:20px;text-align:center;font-family:"Cinzel";font-weight:700;font-size:.55rem;color:#FFFDF6}
+.mini-rib{display:inline-block;width:7px;height:12px;margin-left:6px;vertical-align:1px;background:var(--gold);clip-path:polygon(0 0,100% 0,100% 100%,50% 78%,0 100%)}
+.bk-marks{margin-top:10px;padding-top:6px;border-top:2px dotted rgba(140,106,40,.45)}
+.bm-h{font-family:"Cinzel";font-weight:600;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:#6A2440;margin:6px 0 2px}
+.bm-h .mini-rib{margin:0 8px 0 0}
+.bk-marks a{display:flex;align-items:baseline;gap:8px;min-height:36px;padding:4px 0}
+.bk-marks a .hw{font-size:1.25rem;min-width:0}.bk-marks a i{flex:1;border-bottom:1.5px dotted var(--line-gold);min-width:12px}
+@media (prefers-reduced-motion: reduce){.bk-rib::before{transition:none}}

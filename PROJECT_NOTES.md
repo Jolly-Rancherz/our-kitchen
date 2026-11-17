@@ -289,3 +289,8 @@ exactly 812pt although the image continues.
 - Scrapbook pieces (all in margins / own blocks, never over text): `.bk-plate` taped tilted photos (`tl`/`tr` by page parity, occasional caption), `.bk-card` recipe-card ingredients, `.bk-dots`, `.bk-stamp`, `.bk-index` contents card, `.bk-scrap`, chapter `.bk-sticker` (the category tile).
 - New pages: `#/book/dedication` (after title; shows the anniversary if set) and `#/book/together` (before back; tally of cooked dinners). `bookMargin(id)` = read-only handwritten notes from `cooked`, `ratings`, `favBy`, `loveNotes`, `notes`/`noteMeta` (Corey navy ink, Faith plum). The book never writes saved data.
 - Font: `fonts/Caveat.woff2` (OFL, latin) for handwriting, precached automatically.
+
+## Update 10.4 — book bookmarks (2026-11-16)
+- New additive key `state.bookBookmarks` (page key like `r/chicken-01`, `c/seafood`, `about` -> ts); added to migrate's object-key list, so old saves and backups get `{}`; exported/restored with the whole state.
+- `.bk-rib#bkRib` ribbon at each book page's top edge (right:62px, clear of ×); tap toggles in place (class only, no re-render); it's in `NO_TURN` so it never starts a page turn. Cover/title show a `.pull` ribbon (when bookmarks exist) with the page number that jumps to the newest bookmark.
+- Contents card: "Bookmarked" list (`bkMarks()`, newest first, max 8) + `.mini-rib` on chapter rows holding a bookmark. Separate from the app's Home ribbon (`state.bookmark`).
