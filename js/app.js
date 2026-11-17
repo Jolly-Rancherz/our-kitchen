@@ -41,6 +41,7 @@ const ICON = {
   cart: '<path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20.5" r="1.2"/><circle cx="17" cy="20.5" r="1.2"/>',
   pot: '<path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M2 10h20M9 6.5c0-1 .8-1.5 1.5-2M13 6.5c0-1 .8-1.5 1.5-2"/>',
   close: '<path d="M6 6l12 12M18 6L6 18"/>',
+  trash: '<path d="M4.5 7h15M10 4h4M6.5 7l1 13h9l1-13M10 11v5.5M14 11v5.5"/>',
   reset: '<path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v4h4"/>',
   eyeoff: '<path d="M3 3l18 18M10.6 6.1A9.6 9.6 0 0 1 12 6c5 0 8.5 4.5 9.5 6-.5.8-1.6 2.2-3.1 3.5M6.4 7.4C4.6 8.6 3.2 10.4 2.5 12c1 1.5 4.5 6 9.5 6 1.6 0 3-.4 4.3-1.1"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/>',
   chevR: '<path d="M9 5l7 7-7 7"/>',
@@ -171,6 +172,8 @@ const DEFAULT_STATE = () => ({
   ourDish: null,       // { id, date: 'YYYY-MM-DD' | '', remind, at, seen: { year: ts } } the one meal that's ours
   // update 9.1 (added only)
   scratched: {},       // recipeId or 'acura-<treatId>' -> ts the first-time scratch card was revealed
+  // update 9.3 (added only; state.edits entries saved from now on also carry refs: 1, item refs, step srefs, lvAdd)
+  deleted: {},         // built-in recipeId -> ts deleted (gone from every list; Settings → Deleted recipes restores it)
 });
 let state = load();
 function load() {
@@ -182,7 +185,7 @@ function migrate(raw) {
   if (!raw || raw.v !== 1) return null;
   const d = DEFAULT_STATE();
   const st = { ...d, ...raw, settings: { ...d.settings, ...raw.settings }, profile: { ...d.profile, ...raw.profile } };
-  ['loveNotes', 'stories', 'freezer', 'wish', 'prices', 'guests', 'edits', 'versions', 'milestones', 'recapSeen', 'favBy', 'nicknames', 'dessertJar', 'tasteTests', 'dishes', 'flashSeen', 'annivSeen', 'plan', 'priceLog', 'noteMeta', 'places', 'thanks', 'dateMenus', 'levels', 'levelNotes', 'fancyNight', 'scratched'].forEach((k) => { if (!st[k] || typeof st[k] !== 'object') st[k] = {}; });
+  ['loveNotes', 'stories', 'freezer', 'wish', 'prices', 'guests', 'edits', 'versions', 'milestones', 'recapSeen', 'favBy', 'nicknames', 'dessertJar', 'tasteTests', 'dishes', 'flashSeen', 'annivSeen', 'plan', 'priceLog', 'noteMeta', 'places', 'thanks', 'dateMenus', 'levels', 'levelNotes', 'fancyNight', 'scratched', 'deleted'].forEach((k) => { if (!st[k] || typeof st[k] !== 'object') st[k] = {}; });
   if (!st.acura || typeof st.acura !== 'object') st.acura = d.acura;
   ['favs', 'baked', 'notes', 'ratings', 'profile', 'given', 'photos', 'paws'].forEach((k) => { if (!st.acura[k] || typeof st.acura[k] !== 'object') st.acura[k] = {}; });
   if (!st.seededSoup) { st.favourites = { ...st.favourites, 'comfort-soups-01': st.favourites['comfort-soups-01'] || now() }; st.seededSoup = 1; }
@@ -206,9 +209,24 @@ async function loadIndex() {
   const res = await fetch('recipes/index.json', { cache: 'no-cache' });
   INDEX = await res.json();
 }
+// every recipe in the book: built-ins (minus deleted ones, update 9.3) as edited, then our own. Everything that lists,
+// picks, plans, turns pages or counts recipes reads this, so a deleted meal is gone everywhere at once.
 function allRecipes() {
   const custom = Object.values(state.custom).map(customSummary);
-  return INDEX.recipes.map((r) => (state.edits[r.id] ? { ...r, title: state.edits[r.id].title || r.title, subtitle: state.edits[r.id].subtitle != null ? state.edits[r.id].subtitle : r.subtitle } : r)).concat(custom);
+  return INDEX.recipes.filter((r) => !state.deleted[r.id]).map(bookSummary).concat(custom);
+}
+function deletedRecipes() { return INDEX.recipes.filter((r) => state.deleted[r.id]).map(bookSummary); }
+// a built-in's list summary with our edits laid over it: name, times, cost and (update 9.3) the edited ingredients, so
+// search, the pantry, "ready to make" and price/time filters follow the edit
+function bookSummary(r) {
+  const e = state.edits[r.id]; if (!e) return r;
+  const s = { ...r, title: e.title || r.title, subtitle: e.subtitle != null ? e.subtitle : r.subtitle };
+  if (!e.refs) return s; // edits saved before update 9.3: name and description only, as before
+  const names = []; const pantry = [];
+  e.groups.forEach((g) => g.items.forEach((it) => { names.push(it.name); if (it.pantry && !pantry.find((p) => p.name === it.pantry.name)) pantry.push(it.pantry); }));
+  const cost = e.cost && e.cost.total > 0 ? e.cost.total : r.cost;
+  return { ...s, prep: e.prep, cook: e.cook, total: e.prep + e.cook, servings: e.servings, cost, price: priceTier(cost), ingredients: names, pantry,
+    tags: { ...(e.tags || r.tags), price: [priceTier(cost)], time: [timeBucket(e.prep + e.cook)] } };
 }
 function visibleRecipes() { return allRecipes().filter((r) => !state.hidden[r.id]); }
 function catOf(slugName) { return INDEX.categories.find((c) => c.slug === slugName) || { slug: slugName, name: slugName, colour: '#806098' }; }
@@ -225,8 +243,15 @@ function customSummary(r) {
 async function getRecipe(id) {
   if (state.custom[id]) return state.custom[id];
   const base = await getBaseRecipe(id);
-  if (base && state.edits[id]) return { ...base, ...state.edits[id], id, category: base.category, num: base.num, edited: true };
-  return base;
+  const e = base && state.edits[id];
+  if (!e) return base;
+  // edits are overrides laid over the recipe file (which never changes). Update 9.3 edits keep each ingredient's
+  // original ref, so ticks, why notes, step links and the Basic / Fancy changes still find it; lvAdd replaces a
+  // level's extra ingredients.
+  const r = { ...base, ...e, id, category: base.category, num: base.num, edited: true, baseGroups: base.groups.length,
+    costEdited: !!(e.cost && e.cost.total !== base.cost.total) };
+  if (e.lvAdd && base.levels) { r.levels = { ...base.levels }; Object.entries(e.lvAdd).forEach(([k, add]) => { if (r.levels[k]) r.levels[k] = { ...r.levels[k], add }; }); }
+  return r;
 }
 async function getBaseRecipe(id) {
   if (RECIPE_CACHE[id]) return RECIPE_CACHE[id];
@@ -501,6 +526,7 @@ async function viewRecipe(id) {
   if (s && !RECIPE_CACHE[id] && !state.custom[id]) render(skeletonRecipe(s));
   const r0 = s && (await getRecipe(id));
   if (location.hash !== '#/r/' + id) return;
+  if (!r0 && state.deleted[id]) { setTop({ back: '#/' }); render('<div class="wrap"><div class="empty">This meal was deleted.<br><button class="btn sm" id="unDel" style="margin-top:12px">Bring it back</button></div></div>'); $('#unDel').onclick = () => { restoreRecipe(id); viewRecipe(id); toast('Back in the book ♥'); }; return; }
   if (!r0) { render('<div class="wrap"><div class="empty">That recipe could not be found.</div></div>'); setTop({ back: '#/' }); return; }
   // update 9: everything below reads the recipe at the chosen level (Classic = r0 as written, items keep their refs)
   const lv = levelFor(id, r0); const r = applyLevel(r0, lv); const lc = levelCost(r0, lv);
@@ -514,7 +540,7 @@ async function viewRecipe(id) {
   setTop({ title: esc(c.name.toUpperCase()) + ' <span class="h">·</span> ' + pad2(s.num), back: '#/',
     right: `<button class="iconbtn fav ${fav ? 'on' : ''}" id="favBtn" aria-label="Favourite">${svg('heart')}</button>` });
   const tags = r.tags || {};
-  const pills = [`<span class="pill gold">${priceTier(lc.total)}</span>`];
+  const pills = [`<span class="pill gold price">${priceTier(lc.total)}</span>`];
   (tags.method || []).slice(0, 1).forEach((m) => pills.push(`<span class="pill navy">${esc(TAGLABEL['method:' + m] || m)}</span>`));
   if (r.family) pills.push(`<span class="pill fam">${svg('heart')}Family recipe</span>`);
   (r.badges || []).filter((b) => !/air fryer/i.test(b)).forEach((b) => pills.push(`<span class="pill">${esc(b)}</span>`));
@@ -617,7 +643,7 @@ async function viewRecipe(id) {
       ${first ? `<p class="memory">${svg('heart')}First made ${first.by === 'Corey' || first.by === 'Faith' ? 'by ' + esc(first.by) : 'together'} · ${esc(longDate(first.date))}</p>` : ''}
       ${lastReact ? `<p class="small muted" style="text-align:center;margin-top:-4px">Last time: ${esc(reactLine(lastReact))}</p>` : ''}
     </div>
-  </div>`);
+  </div>`, 'r/' + id);
 
   $('#favBtn').onclick = (e) => { toggleFav(id, e.currentTarget); e.currentTarget.classList.toggle('on', !!state.favourites[id]); };
   $$('.checklist li[data-i]').forEach((li) => (li.onclick = (e) => {
@@ -976,6 +1002,9 @@ function viewSettings() {
     <div class="setgroup"><div class="sec-title">Hidden meals</div>
       ${hidden.length ? hidden.map((r) => `<div class="setrow"><span class="l"><b>${esc(r.title)}</b><span>${esc(recipeLabel(r))}</span></span><button class="btn sm ghost" data-unhide="${r.id}">Unhide</button></div>`).join('') : '<p class="small muted">Nothing hidden. Use “Hide meal” on a recipe to tuck it away.</p>'}
     </div>
+    ${deletedRecipes().length ? `<div class="setgroup"><div class="sec-title">Deleted recipes</div>
+      ${deletedRecipes().map((r) => `<div class="setrow"><span class="l"><b>${esc(r.title)}</b><span>${esc(recipeLabel(r))}</span></span><button class="btn sm ghost" data-undel="${r.id}">Restore</button></div>`).join('')}
+    </div>` : ''}
     <div class="setgroup"><div class="sec-title">Backup</div>
       <p class="small muted">Everything is saved on this phone. Export a backup now and then (or to move to a new phone).${st.lastBackup ? ` Last backup: ${esc(new Date(st.lastBackup).toLocaleDateString('en-CA', { month: 'short', day: 'numeric', year: 'numeric' }))}.` : ''} A reminder shows on the home screen once a month.</p>
       <div class="btnrow" style="margin-top:10px"><button class="btn ghost" id="exp">${svg('share')}Export</button><label class="btn ghost" style="cursor:pointer">${svg('reset')}Restore${RESTORE_INPUT}</label></div>
@@ -1002,6 +1031,7 @@ function viewSettings() {
   const num = (id, k) => ($(id).onchange = (e) => { const v = parseFloat(e.target.value); if (v > 0) { st[k] = v; save(); toast('Saved'); } });
   $('#anniv').onchange = (e) => { st.anniversary = e.target.value; save(); applySeason(); toast('Saved ♥'); };
   num('#bLo', 'budgetMin'); num('#bHi', 'budgetMax'); num('#tko', 'takeoutCost');
+  $$('[data-undel]').forEach((b) => (b.onclick = () => { restoreRecipe(b.dataset.undel); viewSettings(); toast('Back in the book ♥'); }));
   $$('[data-unhide]').forEach((b) => (b.onclick = () => { delete state.hidden[b.dataset.unhide]; save(); viewSettings(); toast('Back in the book'); }));
   $('#exp').onclick = exportBackup;
   bindRestore($('#view'));
@@ -1084,7 +1114,7 @@ function parseIngredients(text) {
       const [n, ...note] = name.split(',');
       it = { qty: q, unit: u || null, name: n.trim(), ...(note.length ? { note: note.join(',').trim() } : {}) };
     } else { const [n, ...note] = line.replace(/^[-•*]\s*/, '').split(','); it = { qty: null, unit: null, name: n.trim(), ...(note.length ? { note: note.join(',').trim() } : {}) }; }
-    if (!/^water$/i.test(it.name)) { const pn = it.name.replace(/^(minced|chopped|diced|sliced|fresh|large|small|medium)\s+/i, ''); it.pantry = { name: pn.charAt(0).toUpperCase() + pn.slice(1), cat: guessCat(pn) }; }
+    const pt = pantryFor(it.name); if (pt) it.pantry = pt;
     cur.items.push(it);
   });
   if (cur.items.length) groups.push(cur);
@@ -1096,63 +1126,49 @@ function parseSteps(text) {
     return m ? { title: m[1], text: m[2] } : { title: l.split(' ').slice(0, 3).join(' '), text: l };
   });
 }
+// an ingredient's pantry entry: the matching pantry item if there is one (so a renamed or new ingredient still ticks
+// against what we have), else a new one named after it. Water needs none.
+function pantryFor(name) {
+  if (!name || /^water$/i.test(name)) return null;
+  const pn = name.replace(/^(minced|chopped|diced|sliced|fresh|large|small|medium)\s+/i, '').trim();
+  const cat = pantryCatalog();
+  const hit = cat[pantryKey(pn)] || cat[pantryKey(pn + 's')] || cat[pantryKey(pn.replace(/e?s$/i, ''))];
+  return hit ? { name: hit.name, cat: hit.cat } : { name: pn.charAt(0).toUpperCase() + pn.slice(1), cat: guessCat(pn) };
+}
+const tagChips = (tags) => FILTERS.filter((g) => !['price', 'time'].includes(g.key)).map((g) => `<div class="field"><label>${g.label}</label><div class="chips">${g.opts.map((o) => `<button type="button" class="chip ${(tags[g.key] || []).includes(o[0]) ? 'on' : ''}" data-k="${g.key}" data-v="${o[0]}">${esc(o[1])}</button>`).join('')}</div></div>`).join('');
+function bindTagChips(t) { $$('.chip[data-k]').forEach((c) => (c.onclick = () => { const s = t[c.dataset.k] || (t[c.dataset.k] = []); const i = s.indexOf(c.dataset.v); i >= 0 ? s.splice(i, 1) : s.push(c.dataset.v); c.classList.toggle('on'); })); }
+function bindDislikeCheck(sels) {
+  const check = () => { const hits = bannedIn(sels().join(' ')); $('#dislike').innerHTML = hits.length ? `<div class="warn"><b>Heads up:</b> this has ${hits.join(' & ')} — that's on the no-thanks list (mushrooms, mustard, olives). Leave it out or swap it?</div>` : ''; return hits; };
+  $('#view .wrap').oninput = check; return check; // on the form itself, so it goes when the page does
+}
+// add a recipe of our own (#/add). Editing any recipe is viewEditRecipe (#/add/<id>).
 async function viewAdd(editId) {
-  const builtin = editId && !state.custom[editId] && INDEX.recipes.find((x) => x.id === editId) ? await getRecipe(editId) : null;
-  const ed = editId ? state.custom[editId] || builtin : null;
-  setTop({ title: ed ? 'EDIT RECIPE' : 'ADD A RECIPE', back: ed ? '#/r/' + editId : '#/' });
-  const tags = (ed && ed.tags) || {};
-  const ingText = ed ? ed.groups.map((g) => (g.name ? g.name + ':\n' : '') + g.items.map((it) => [it.qty != null ? fmtQty(it.qty, it.unit) : '', it.name + (it.note ? ', ' + it.note : '')].filter(Boolean).join(' ')).join('\n')).join('\n') : '';
-  const stepText = ed ? ed.steps.map((s) => s.title + ': ' + s.text).join('\n') : '';
-  const chipGroup = (g) => `<div class="field"><label>${g.label}</label><div class="chips">${g.opts.map((o) => `<button type="button" class="chip ${(tags[g.key] || []).includes(o[0]) ? 'on' : ''}" data-k="${g.key}" data-v="${o[0]}">${esc(o[1])}</button>`).join('')}</div></div>`;
-  render(`<div class="wrap"><div class="kicker">Our own<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">${ed ? 'Edit recipe' : 'Add a recipe'}</h1>
-    <p class="lead" style="margin-top:4px">${builtin ? 'Changes are saved on this phone. The version before your edit is kept, so you can switch back from the recipe page.' : ed ? 'The version before this edit is kept — switch back any time from the recipe page.' : 'It goes into the book with the next number in its category.'}</p>
+  if (editId) return viewEditRecipe(editId);
+  setTop({ title: 'ADD A RECIPE', back: '#/' });
+  render(`<div class="wrap"><div class="kicker">Our own<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Add a recipe</h1>
+    <p class="lead" style="margin-top:4px">It goes into the book with the next number in its category.</p>
     <div id="dislike"></div>
-    <div class="field"><label>Name</label><input id="aT" value="${esc(ed ? ed.title : '')}" placeholder="e.g. Garlic Butter Steak Bites"></div>
-    <div class="field"><label>Short description</label><input id="aS" value="${esc(ed ? ed.subtitle : '')}" placeholder="with cheesy mashed potatoes"></div>
-    <div class="field" ${builtin ? 'hidden' : ''}><label>Category</label><select id="aC">${INDEX.categories.map((c) => `<option value="${c.slug}" ${ed && ed.category === c.slug ? 'selected' : ''}>${esc(c.name)}</option>`).join('')}</select></div>
-    <div class="grid3"><div class="field"><label>Prep min</label><input id="aP" type="number" inputmode="numeric" value="${ed ? ed.prep : 15}"></div><div class="field"><label>Cook min</label><input id="aK" type="number" inputmode="numeric" value="${ed ? ed.cook : 30}"></div><div class="field"><label>Servings</label><input id="aV" type="number" inputmode="numeric" value="${ed ? ed.servings : 4}"></div></div>
-    <div class="field"><label>Estimated total cost ($)</label><input id="aM" type="number" inputmode="decimal" value="${ed ? ed.cost.total : ''}" placeholder="e.g. 22"></div>
-    ${FILTERS.filter((g) => !['price', 'time'].includes(g.key)).map(chipGroup).join('')}
-    <div class="field"><label>Ingredients — one per line</label><textarea id="aI" placeholder="Sauce:\n2 tbsp butter\n4 cloves garlic, minced\n1 cup cream">${esc(ingText)}</textarea></div>
-    <div class="field"><label>Steps — one per line</label><textarea id="aSt" placeholder="Sear the steak: Pat dry, season, and…">${esc(stepText)}</textarea></div>
-    <div class="field"><label>Tips / leftovers (optional)</label><input id="aL" value="${esc(ed ? ed.leftovers || '' : '')}"></div>
-    <div class="btnrow" style="margin-top:16px">${ed ? '<button class="btn danger" id="aDel">Delete</button>' : '<a class="btn" href="#/">Cancel</a>'}<button class="btn primary" id="aSave">Save recipe</button></div>
+    <div class="field"><label>Name</label><input id="aT" placeholder="e.g. Garlic Butter Steak Bites"></div>
+    <div class="field"><label>Short description</label><input id="aS" placeholder="with cheesy mashed potatoes"></div>
+    <div class="field"><label>Category</label><select id="aC">${INDEX.categories.map((c) => `<option value="${c.slug}">${esc(c.name)}</option>`).join('')}</select></div>
+    <div class="grid3"><div class="field"><label>Prep min</label><input id="aP" type="number" inputmode="numeric" value="15"></div><div class="field"><label>Cook min</label><input id="aK" type="number" inputmode="numeric" value="30"></div><div class="field"><label>Servings</label><input id="aV" type="number" inputmode="numeric" value="4"></div></div>
+    <div class="field"><label>Estimated total cost ($)</label><input id="aM" type="number" inputmode="decimal" placeholder="e.g. 22"></div>
+    ${tagChips({})}
+    <div class="field"><label>Ingredients — one per line</label><textarea id="aI" placeholder="Sauce:\n2 tbsp butter\n4 cloves garlic, minced\n1 cup cream"></textarea></div>
+    <div class="field"><label>Steps — one per line</label><textarea id="aSt" placeholder="Sear the steak: Pat dry, season, and…"></textarea></div>
+    <div class="field"><label>Tips / leftovers (optional)</label><input id="aL"></div>
+    <div class="btnrow" style="margin-top:16px"><a class="btn" href="#/">Cancel</a><button class="btn primary" id="aSave">Save recipe</button></div>
   </div>`);
-  const t = JSON.parse(JSON.stringify(tags));
-  $$('.chip[data-k]').forEach((c) => (c.onclick = () => { const s = t[c.dataset.k] || (t[c.dataset.k] = []); const i = s.indexOf(c.dataset.v); i >= 0 ? s.splice(i, 1) : s.push(c.dataset.v); c.classList.toggle('on'); }));
-  const check = () => {
-    const all = ['#aT', '#aS', '#aI', '#aSt', '#aL'].map((s) => $(s).value).join(' ');
-    const hits = bannedIn(all);
-    $('#dislike').innerHTML = hits.length ? `<div class="warn"><b>Heads up:</b> this has ${hits.join(' & ')} — that's on the no-thanks list (mushrooms, mustard, olives). Leave it out or swap it?</div>` : '';
-    return hits;
-  };
-  ['#aT', '#aS', '#aI', '#aSt', '#aL'].forEach((s) => $(s).addEventListener('input', check));
-  if (builtin && $('#aDel')) $('#aDel').outerHTML = `<a class="btn" href="#/r/${editId}">Cancel</a>`;
-  $('#aDel') && ($('#aDel').onclick = () => confirmSheet('Delete this recipe?', ed.title, 'Delete', () => { go('#/'); withUndo('Recipe deleted', () => { delete state.custom[editId]; }); }, true));
+  const t = {}; bindTagChips(t);
+  const check = bindDislikeCheck(() => ['#aT', '#aS', '#aI', '#aSt', '#aL'].map((x) => $(x).value));
   $('#aSave').onclick = () => {
     const title = $('#aT').value.trim(); if (!title) { toast('Give it a name'); return; }
     const groups = parseIngredients($('#aI').value); const steps = parseSteps($('#aSt').value);
     if (!groups.length || !steps.length) { toast('Add at least one ingredient and one step'); return; }
     const doSave = () => {
-      if (builtin) {
-        const prev = state.edits[editId] || { base: true };
-        const sameIng = $('#aI').value === ingText; const sameSteps = $('#aSt').value === stepText;
-        const total = parseFloat($('#aM').value) || 0;
-        state.edits[editId] = { title, subtitle: $('#aS').value.trim(), servings: +$('#aV').value || 4, prep: +$('#aP').value || 0, cook: +$('#aK').value || 0,
-          servingsNote: (+$('#aV').value || 4) === builtin.servings ? builtin.servingsNote : (+$('#aV').value || 4) + ' servings',
-          cost: { total, breakdown: total === builtin.cost.total ? builtin.cost.breakdown : [] }, tags: t,
-          groups: sameIng ? builtin.groups : groups, steps: sameSteps ? builtin.steps : steps.map((st, i) => (builtin.steps[i] && builtin.steps[i].timer && !st.timer ? st : st)),
-          leftovers: $('#aL').value.trim() || null, at: now() };
-        if (!sameIng) state.edits[editId].steps = state.edits[editId].steps.map((st) => { const c = { ...st }; delete c.uses; return c; });
-        state.versions[editId] = { prev, at: now() };
-        save(); go('#/r/' + editId); toast('Recipe updated ♥ — the old version is kept');
-        return;
-      }
-      if (ed) state.versions[ed.id] = { prev: JSON.parse(JSON.stringify(ed)), at: now() };
       const category = $('#aC').value;
-      let num = ed && ed.category === category ? ed.num : Math.max(0, ...allRecipes().filter((r) => r.category === category).map((r) => r.num)) + 1;
-      const id = ed && ed.category === category ? ed.id : `own-${category}-${pad2(num)}-${uid().slice(0, 4)}`;
-      if (ed && id !== ed.id) delete state.custom[ed.id];
+      const num = Math.max(0, ...allRecipes().filter((r) => r.category === category).map((r) => r.num)) + 1;
+      const id = `own-${category}-${pad2(num)}-${uid().slice(0, 4)}`;
       state.custom[id] = { id, custom: true, category, num, title, subtitle: $('#aS').value.trim(), image: null,
         servings: +$('#aV').value || 4, servingsNote: (+$('#aV').value || 4) + ' servings', prep: +$('#aP').value || 0, cook: +$('#aK').value || 0,
         cost: { total: parseFloat($('#aM').value) || 0, breakdown: [] }, tags: t, badges: [], groups, steps,
@@ -1163,6 +1179,147 @@ async function viewAdd(editId) {
     if (hits.length) confirmSheet(`It has ${hits.join(' & ')}`, 'That one is on the no-thanks list. Save it anyway?', 'Save anyway', doSave); else doSave();
   };
 }
+
+// ---------------------------------------------------------------- update 9.3: edit recipe (#/add/<id>)
+// One row per ingredient (amount, unit, name) and per step, with add and remove. A built-in recipe's edit is stored as
+// an override in state.edits (the recipe file never changes) and can be reset to the original; our own recipes are
+// edited in place. Each ingredient row remembers the item it came from, so its ref (ticks, why notes, step links,
+// Basic / Fancy drops and swaps), pantry match and extras survive; a renamed or new one is matched to the pantry again.
+const qtyIn = (q) => { if (q == null || q === '') return ''; if (Number.isInteger(q)) return String(q); const fr = fraction(q); return Math.abs(parseQty(fr) - q) < 0.02 ? fr : String(Math.round(q * 100) / 100); };
+const UNIT_OPTS = [...new Set(Object.values(UNITS).concat(['head', 'bunch', 'package', 'jar', 'strip', 'pinch']))];
+function ingRow(it, key) {
+  return `<div class="erow" data-key="${key}"><input class="eq" value="${esc(qtyIn(it.qty))}" inputmode="decimal" placeholder="1" aria-label="Amount"><input class="eu" value="${esc(it.unit || '')}" list="unitList" placeholder="unit" aria-label="Unit" autocapitalize="off"><input class="en" value="${esc(it.name + (it.note ? ', ' + it.note : ''))}" placeholder="Ingredient, note" aria-label="Ingredient"><button type="button" class="ex" aria-label="Remove">${svg('close')}</button></div>`;
+}
+function stepRow(st, key) {
+  return `<div class="srow" data-key="${key}"><div class="shead"><b class="sn"></b><input class="st" value="${esc(st.title || '')}" placeholder="Step name" aria-label="Step name"><button type="button" class="ex" aria-label="Remove step">${svg('close')}</button></div><textarea class="sx" rows="3" placeholder="What to do" aria-label="Step">${esc(st.text || '')}</textarea></div>`;
+}
+function ingBlock(g, gi, keyOf, lv) {
+  return `<div class="egroup" ${lv ? `data-lv="${lv}"` : ''}><input class="egn" value="${esc(g.name || g.group || '')}" placeholder="${lv ? LEVEL_NAME[lv] + ' extras' : 'Group (optional)'}" aria-label="Group name">
+    ${g.items.map((it, ii) => ingRow(it, keyOf(it, gi, ii))).join('')}<button type="button" class="linkbtn eadd">${svg('plus')}Add ingredient</button></div>`;
+}
+async function viewEditRecipe(id) {
+  const own = state.custom[id];
+  const base = own ? null : INDEX.recipes.find((x) => x.id === id) && (await getBaseRecipe(id));
+  const r = own || (base && (await getRecipe(id)));
+  if (location.hash !== '#/add/' + id) return;
+  if (!r) { render('<div class="wrap"><div class="empty">That recipe could not be found.</div></div>'); setTop({ back: '#/' }); return; }
+  setTop({ title: 'EDIT RECIPE', back: '#/r/' + id });
+  // where each row came from: a key into ORIG -> { it, ref } (refs only for built-ins). Edits saved before update 9.3
+  // have no refs, so their items are matched back to the recipe file by name.
+  const ORIG = {}; let nk = 0;
+  const baseRefByName = {}; if (base) base.groups.forEach((g, gi) => g.items.forEach((it, ii) => { baseRefByName[it.name.toLowerCase()] = gi + '-' + ii; }));
+  const keyOf = (it, gi, ii, lv) => { const k = 'k' + nk++; ORIG[k] = { it, ref: base && !lv ? it.ref || (r.edited && !r.refs ? baseRefByName[it.name.toLowerCase()] : gi + '-' + ii) || null : null }; return k; };
+  const SORIG = {}; const skeyOf = (st, i) => { const k = 's' + nk++; SORIG[k] = { st, sref: base ? (st.sref != null ? st.sref : r.edited && !r.refs ? (base.steps[i] && base.steps[i].title === st.title ? i : null) : i) : null }; return k; };
+  const lvs = base && base.levels ? ['basic', 'fancy'].filter((k) => r.levels[k]) : [];
+  const tags = JSON.parse(JSON.stringify(r.tags || {}));
+  render(`<div class="wrap editr"><div class="kicker">${own ? 'Our own' : esc(recipeLabel(summary(id) || r))}<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Edit recipe</h1>
+    <p class="lead" style="margin-top:4px">${own ? 'The version before this edit is kept — switch back any time from the recipe page.' : 'Saved on this phone as your version of the recipe. The original stays in the book, so you can reset to it any time.'}</p>
+    <div id="dislike"></div>
+    <div class="field"><label>Name</label><input id="aT" value="${esc(r.title)}"></div>
+    <div class="field"><label>Short description</label><input id="aS" value="${esc(r.subtitle || '')}"></div>
+    ${own ? `<div class="field"><label>Category</label><select id="aC">${INDEX.categories.map((c) => `<option value="${c.slug}" ${r.category === c.slug ? 'selected' : ''}>${esc(c.name)}</option>`).join('')}</select></div>` : ''}
+    <div class="grid3"><div class="field"><label>Prep min</label><input id="aP" type="number" inputmode="numeric" value="${r.prep}"></div><div class="field"><label>Cook min</label><input id="aK" type="number" inputmode="numeric" value="${r.cook}"></div><div class="field"><label>Servings</label><input id="aV" type="number" inputmode="numeric" value="${r.servings}"></div></div>
+    <div class="field"><label>Estimated total cost ($)</label><input id="aM" type="number" inputmode="decimal" value="${r.cost.total || ''}"></div>
+    <div class="sec"><div class="sec-title">Ingredients</div><div id="eIng">${r.groups.map((g, gi) => ingBlock(g, gi, keyOf)).join('')}</div>
+      <button type="button" class="linkbtn" id="eGroup">${svg('plus')}Add a group</button></div>
+    ${lvs.map((lv) => `<div class="sec"><div class="sec-title">${LEVEL_NAME[lv]} extras</div><p class="small muted">${esc(r.levels[lv].note)}</p><div class="elv" data-lv="${lv}">${(r.levels[lv].add || []).map((g, gi) => ingBlock(g, gi, (it, a, b) => keyOf(it, a, b, lv), lv)).join('') || ingBlock({ group: LEVEL_NAME[lv] + ' extras', items: [] }, 0, keyOf, lv)}</div></div>`).join('')}
+    <div class="sec"><div class="sec-title">Steps</div><div id="eSteps">${r.steps.map((st, i) => stepRow(st, skeyOf(st, i))).join('')}</div>
+      <button type="button" class="linkbtn" id="eStep">${svg('plus')}Add a step</button></div>
+    ${tagChips(tags)}
+    <div class="field"><label>Tips / leftovers (optional)</label><input id="aL" value="${esc(r.leftovers || '')}"></div>
+    <datalist id="unitList">${UNIT_OPTS.map((u) => `<option value="${u}">`).join('')}</datalist>
+    <div class="btnrow" style="margin-top:16px"><a class="btn" href="#/r/${id}">Cancel</a><button class="btn primary" id="aSave">Save changes</button></div>
+    ${!own && state.edits[id] ? '<p class="eReset"><button class="linkbtn" id="eReset">Reset to original</button></p>' : ''}
+  </div>`);
+  const t = tags; bindTagChips(t);
+  const check = bindDislikeCheck(() => [...$$('#view input:not([type=number]), #view textarea')].map((x) => x.value));
+  const number = () => $$('#eSteps .srow .sn').forEach((b, i) => (b.textContent = i + 1));
+  number();
+  $('#view .editr').onclick = (e) => {
+    const x = e.target.closest('.ex');
+    if (x) { const row = x.closest('.erow, .srow'); row.remove(); number(); return; }
+    const add = e.target.closest('.eadd');
+    if (add) { const k = 'k' + nk++; add.insertAdjacentHTML('beforebegin', ingRow({ qty: null, unit: null, name: '' }, k)); add.previousElementSibling.querySelector('.en').focus(); }
+  };
+  $('#eGroup').onclick = () => { $('#eIng').insertAdjacentHTML('beforeend', ingBlock({ name: '', items: [{ qty: null, unit: null, name: '' }] }, 0, () => 'k' + nk++)); $('#eIng .egroup:last-child .egn').focus(); };
+  $('#eStep').onclick = () => { $('#eSteps').insertAdjacentHTML('beforeend', stepRow({}, 's' + nk++)); number(); $('#eSteps .srow:last-child .st').focus(); };
+  $('#eReset') && ($('#eReset').onclick = () => confirmSheet('Reset to original?', 'Your changes to this recipe go away and it reads as written again. Ticks, notes, photos and history stay.', 'Reset to original', () => {
+    const prev = state.edits[id]; state.versions[id] = { prev, at: now() }; delete state.edits[id]; save(); go('#/r/' + id);
+    toast('Back to the original', 'Undo', () => { state.edits[id] = prev; save(); router(); });
+  }, true));
+  // one ingredient row -> an item: the original item with the new amount, unit and name laid over it
+  const readItem = (row, withRef) => {
+    const raw = $('.en', row).value.trim(); if (!raw) return null;
+    const [n, ...note] = raw.split(','); const name = n.trim(); const noteTxt = note.join(',').trim();
+    const qs = $('.eq', row).value.trim(); const q = qs ? parseQty(qs) : null;
+    const us = $('.eu', row).value.trim(); const unit = us ? UNITS[us.toLowerCase().replace('.', '')] || us : null;
+    const o = ORIG[row.dataset.key] || {}; const it = o.it ? { ...o.it } : {};
+    delete it.ref; delete it.why; delete it.added; delete it.lvl;
+    Object.assign(it, { qty: q, unit, name }); if (noteTxt) it.note = noteTxt; else delete it.note;
+    if (!o.it || o.it.name.toLowerCase() !== name.toLowerCase()) { const pt = pantryFor(name); if (pt) it.pantry = pt; else delete it.pantry; }
+    if (withRef) it.ref = o.ref || 'n' + uid().slice(0, 6);
+    return it;
+  };
+  const readGroups = (box, withRef) => $$('.egroup', box).map((g) => ({ name: $('.egn', g).value.trim(), items: $$('.erow', g).map((row) => readItem(row, withRef)).filter(Boolean) })).filter((g) => g.items.length);
+  $('#aSave').onclick = () => {
+    const title = $('#aT').value.trim(); if (!title) { toast('Give it a name'); return; }
+    const bad = $$('.erow').find((row) => $('.en', row).value.trim() && $('.eq', row).value.trim() && parseQty($('.eq', row).value) == null);
+    if (bad) { toast('Amounts are numbers like 2, 1½ or 0.5'); $('.eq', bad).focus(); return; }
+    const groups = readGroups($('#eIng'), !own);
+    const refs = new Set(); groups.forEach((g) => g.items.forEach((it) => refs.add(it.ref)));
+    const steps = $$('#eSteps .srow').map((row) => {
+      const text = $('.sx', row).value.trim(); const ttl = $('.st', row).value.trim(); if (!text && !ttl) return null;
+      const o = SORIG[row.dataset.key] || {}; const st = o.st ? { ...o.st } : {};
+      delete st.lvNote; delete st.added;
+      Object.assign(st, { title: ttl || text.split(' ').slice(0, 3).join(' '), text });
+      if (!own) { if (o.sref != null) st.sref = o.sref; else delete st.sref; if (st.uses) st.uses = st.uses.filter((u) => refs.has(String(u).split('=')[0])); }
+      return st;
+    }).filter(Boolean);
+    if (!groups.length || !steps.length) { toast('Keep at least one ingredient and one step'); return; }
+    const sv = +$('#aV').value || r.servings || 4; const total = parseFloat($('#aM').value) || 0;
+    const common = { title, subtitle: $('#aS').value.trim(), servings: sv, prep: +$('#aP').value || 0, cook: +$('#aK').value || 0, tags: t, groups, steps, leftovers: $('#aL').value.trim() || null, at: now() };
+    const doSave = () => {
+      if (own) {
+        state.versions[id] = { prev: JSON.parse(JSON.stringify(own)), at: now() };
+        const category = $('#aC').value;
+        if (category === own.category) state.custom[id] = { ...own, ...common, servingsNote: sv + ' servings', cost: { total, breakdown: own.cost.breakdown || [] } };
+        else {
+          const num = Math.max(0, ...allRecipes().filter((x) => x.category === category).map((x) => x.num)) + 1; const nid = `own-${category}-${pad2(num)}-${uid().slice(0, 4)}`;
+          delete state.custom[id]; state.custom[nid] = { ...own, ...common, id: nid, category, num, servingsNote: sv + ' servings', cost: { total, breakdown: own.cost.breakdown || [] } };
+          save(); go('#/r/' + nid); toast('Recipe updated ♥'); return;
+        }
+        save(); go('#/r/' + id); toast('Recipe updated ♥ — the old version is kept'); return;
+      }
+      const e = { ...common, refs: 1, servingsNote: sv === base.servings ? base.servingsNote : sv + ' servings',
+        cost: { total: total || base.cost.total, breakdown: (total || base.cost.total) === base.cost.total ? base.cost.breakdown : [] } };
+      const lvAdd = {};
+      lvs.forEach((lv) => { const add = readGroups($(`.elv[data-lv="${lv}"]`), false).map((g) => ({ group: g.name || LEVEL_NAME[lv] + ' extras', items: g.items })); if (JSON.stringify(add) !== JSON.stringify(base.levels[lv].add || [])) lvAdd[lv] = add; });
+      if (Object.keys(lvAdd).length) e.lvAdd = lvAdd;
+      state.versions[id] = { prev: state.edits[id] || { base: true }, at: now() };
+      state.edits[id] = e;
+      save(); go('#/r/' + id); toast('Recipe updated ♥ — the original is kept');
+    };
+    const hits = check();
+    if (hits.length) confirmSheet(`It has ${hits.join(' & ')}`, 'That one is on the no-thanks list. Save it anyway?', 'Save anyway', doSave); else doSave();
+  };
+}
+
+// ---------------------------------------------------------------- update 9.3: delete a meal
+// Built-ins are marked deleted (allRecipes drops them from every list, the wheel, plans, page turns and Surprise me;
+// Settings → Deleted recipes brings them back). Our own recipes are removed for real. History stays either way.
+function askDeleteRecipe(id) {
+  const s = summary(id); if (!s) return;
+  const own = !!state.custom[id];
+  confirmSheet(own ? 'Delete this recipe?' : 'Delete this meal?',
+    own ? `“${s.title}” is our own recipe, so deleting it removes it for good. Export a backup first if you might want it back.` : `“${s.title}” leaves every list, the wheel, plans and Surprise me. Dinners you logged stay in the budget, and you can bring it back from Settings → Deleted recipes.`,
+    own ? 'Delete for good' : 'Delete meal', () => {
+      if (own) { delete state.custom[id]; delete state.versions[id]; } else state.deleted[id] = now();
+      save();
+      if ((location.hash || '').startsWith('#/r/' + id) || (location.hash || '').startsWith('#/add/' + id)) go('#/'); else router();
+      toast(own ? 'Recipe deleted' : 'Meal deleted — Settings can bring it back');
+    }, true);
+}
+function restoreRecipe(id) { delete state.deleted[id]; save(); }
 function exportRecipeFile(r) {
   const { id, custom, category, num, at, ...file } = r;
   downloadFile(`${pad2(num)}-${slug(r.title)}.json`, JSON.stringify(file, null, 2));
@@ -1397,15 +1554,20 @@ async function loadWeather() {
     if (!j.current) return;
     WX = { at: now(), t: Math.round(j.current.temperature_2m), code: j.current.weather_code };
     localStorage.setItem(WX_KEY, JSON.stringify(WX));
-    if ((location.hash || '#/') === '#/' && !$('#wxLine') && $('#sheetWrap').hidden && document.activeElement !== $('#q')) { viewHome(); }
+    // update 9.3: only the weather line changes (it always holds its one-line place), never a whole-Home redraw —
+    // that redraw landed just after the splash and moved everything below the greeting (the start-up flicker).
+    // Weather dinner ideas follow on the next time Home is drawn.
+    const line = $('#wxLine'); if (line) line.textContent = wxLine();
   } catch (e) { /* offline or blocked: skip silently */ }
 }
+// the Home weather line: today's weather, or just the town until it arrives (same single line either way)
+function wxLine() { const w = wxFresh(); return w ? `London · ${wxTemp(w.t)} · ${wxWords(w.code)} — ${wxMood(w).line}` : 'London, Ontario'; }
 function wxFresh() { return WX && now() - WX.at < 6 * 36e5 ? WX : null; }
 function wxTemp(t) { return state.settings.temp === 'F' ? Math.round(t * 9 / 5 + 32) + '°F' : t + '°C'; }
 function wxMood(w) {
   const words = wxWords(w.code);
   if (w.t <= 5 || /snow|rain|drizzle|showers|storm/.test(words)) return { kind: 'cozy', line: w.t <= 0 ? 'soup weather' : 'cozy-dinner weather' };
-  if (w.t >= 22) return { kind: 'quick', line: 'too warm for the oven — keep it quick' };
+  if (w.t >= 22) return { kind: 'quick', line: 'warm — keep it quick' };
   return { kind: 'any', line: 'a good night for a favourite' };
 }
 function weatherPicks(recipes) {
@@ -2202,14 +2364,17 @@ function openCardMenu(id) {
       <button data-a="fav">${svg('heart')}<span>${fav ? 'Remove from favourites' : 'Add to favourites'}</span></button>
       <button data-a="list">${svg('cart')}<span>Add to grocery list</span></button>
       <button data-a="plan">${svg('clock')}<span>${planned ? "It's tonight's plan ✓" : 'Plan it for tonight'}</span></button>
+      <a href="#/r/${id}">${svg('chevR')}<span>Open recipe</span></a>
+      <a href="#/add/${id}">${svg('edit')}<span>Edit recipe</span></a>
       <button data-a="hide">${svg('eyeoff')}<span>Hide meal</span></button>
-      <a href="#/r/${id}">${svg('chevR')}<span>Open recipe</span></a></div>`, (b) => {
+      <button data-a="del" class="mdanger">${svg('trash')}<span>Delete meal</span></button></div>`, (b) => {
     $$('[data-a]', b).forEach((x) => (x.onclick = async () => {
       const a = x.dataset.a;
       if (a === 'fav') { closeSheet(); toggleFav(id); router(); }
       else if (a === 'list') { const r = await getRecipe(id); if (!r) return; const f = (state.servings[id] || r.servings || 4) / (r.servings || 4); openMissing(r, s, f); }
       else if (a === 'plan') { closeSheet(); setTonight(id); }
       else if (a === 'hide') { closeSheet(); state.hidden[id] = now(); save(); router(); toast('Hidden from your lists', 'Undo', () => { delete state.hidden[id]; save(); router(); }); }
+      else if (a === 'del') askDeleteRecipe(id);
     }));
   });
 }
@@ -2607,7 +2772,7 @@ function viewHome(partial) {
       <div class="lead" style="margin-top:6px">${esc(greeting())}</div>
       ${ribbonHTML()}
       ${dn && dn.days <= 14 ? `<a class="dnline" href="#/us">${svg('heart')}<span>${esc(dnWords(dn))}${dn.s ? ' — ' + esc(dn.s.title) : ''}</span></a>` : ''}
-      ${wxFresh() ? `<div class="wx" id="wxLine">London · ${wxTemp(wxFresh().t)} · ${esc(wxWords(wxFresh().code))} — ${esc(wxMood(wxFresh()).line)}</div>` : ''}
+      <div class="wx" id="wxLine">${esc(wxLine())}</div>
       <div class="searchrow"><label class="search">${svg('search')}<input id="q" type="search" placeholder="Search recipes or ingredients" value="${esc(ui.q)}" autocomplete="off" enterkeyhint="search"><button class="clear" id="qClear" aria-label="Clear search" ${ui.q ? '' : 'hidden'}>×</button></label>
         <button class="filterbtn ${fc ? 'on' : ''}" id="filterBtn" aria-label="Filters">${svg('filter')}${fc ? `<b>${fc}</b>` : ''}</button></div>
       ${fc ? `<div class="activefilters">${Object.entries(ui.filters).flatMap(([k, s]) => s.map((v) => `<button data-k="${k}" data-v="${esc(v)}">${esc(TAGLABEL[k + ':' + v])}</button>`)).join('')}</div>` : ''}
@@ -2802,9 +2967,10 @@ function openRecipeMore(r, s, id) {
       ${cookedEntries(id).length ? `<button data-a="secret">${svg('eyeoff')}<span>Rate together in secret</span></button>` : ''}
       <button data-a="date">${svg('heart')}<span>Plan a date night with it</span></button>
       <button data-a="print">${svg('print')}<span>Print</span></button>
-      <a href="#/add/${id}">${svg('edit')}<span>Edit recipe</span></a>
       ${r.custom ? `<button data-a="export">${svg('share')}<span>Export file</span></button>` : ''}
-      <button data-a="hide">${svg('eyeoff')}<span>Hide meal</span></button></div>`, (b) => {
+      <a href="#/add/${id}">${svg('edit')}<span>Edit recipe</span></a>
+      <button data-a="hide">${svg('eyeoff')}<span>Hide meal</span></button>
+      <button data-a="del" class="mdanger">${svg('trash')}<span>Delete meal</span></button></div>`, (b) => {
     $$('[data-a]', b).forEach((x) => (x.onclick = () => {
       const a = x.dataset.a;
       if (a === 'nick') openNickname(id, r);
@@ -2816,6 +2982,7 @@ function openRecipeMore(r, s, id) {
       else if (a === 'print') { closeSheet(); setTimeout(printRecipe, 300); }
       else if (a === 'export') { closeSheet(); exportRecipeFile(r); }
       else if (a === 'hide') { closeSheet(); state.hidden[id] = now(); save(); go('#/'); toast('Hidden from your lists', 'Undo', () => { delete state.hidden[id]; save(); router(); }); }
+      else if (a === 'del') askDeleteRecipe(id);
     }));
   });
 }
@@ -2890,7 +3057,7 @@ function bindRecipeExtras(r, s, id, f, cost) {
   $('#tonightBtn').onclick = () => { const t = tonightPlan(); if (t && t.recipeId === id) { state.tonight = null; save(); toast('Removed from tonight'); } else setTonight(id); rerenderRecipe(id); };
   $('#tasteChip') && ($('#tasteChip').onclick = () => openTasteTest(id));
   $$('[data-love]').forEach((b) => (b.onclick = () => { toggleLove(id, b.dataset.love); const on = !!favWho(id)[b.dataset.love]; b.classList.toggle('on', on); if (on) heartBurst(b); $('#favBtn').classList.toggle('on', !!state.favourites[id]); if (isCoupleFav(id) && on) toast('A favourite for both of you ♥♥'); }));
-  $$('button.use').forEach((b) => b.addEventListener('click', (e) => { e.stopPropagation(); useIngredient(r, id, b.dataset.use, b); }));
+  $$('button.use').forEach((b) => (b.onclick = (e) => { e.stopPropagation(); useIngredient(r, id, b.dataset.use, b); })); // onclick, not a listener: a patched redraw keeps the button
   if (ui.autoCook === id) { ui.autoCook = null; setTimeout(() => openCook(r, s, f), 120); }
 }
 
@@ -3450,7 +3617,7 @@ async function viewTreat(id) {
       <p class="small muted" style="text-align:center;margin-top:6px">Adds it to the treat jar with a “good until” date. Not counted in the dinner budget.</p></div>
     <p class="small muted" style="margin-top:10px;font-style:italic">${esc(t.source)}</p>
     <div class="bonediv">${BONE()}</div>
-  </div></div>`);
+  </div></div>`, 't/' + id);
   const s = { id: sid, title: t.title };
   const r = { ...tt, id: sid, servings: 1, tags: {}, steps: tt.steps.map((x) => ({ ...x })) };
   $('#acFav').onclick = (e) => { if (a.favs[id]) { delete a.favs[id]; toast('Removed from Acura’s favourites'); } else { a.favs[id] = now(); heartBurst(e.currentTarget); toast('Pawfect — saved ♥'); } save(); e.currentTarget.classList.toggle('on', !!a.favs[id]); };
@@ -4029,7 +4196,7 @@ const scrollMem = {}; const navStack = []; let routing = 0;
 const RLEVELS = [['basic', 'Basic'], ['classic', 'Classic'], ['fancy', 'Fancy']]; // recipe levels (LEVELS is pantry stock)
 const LEVEL_NAME = Object.fromEntries(RLEVELS);
 // built-in recipes and Acura's treats have levels; our own recipes and edited copies use their own ingredient list
-const hasLevels = (r) => !!(r && r.levels && !r.custom && !r.edited);
+const hasLevels = (r) => !!(r && r.levels && !r.custom && (!r.edited || r.refs)); // edits from update 9.3 on keep refs, so levels still apply
 function itemAt(r, ref) {
   const key = String(ref).split('=')[0];
   if (r.byRef) return r.byRef[key] || null;
@@ -4040,18 +4207,21 @@ function applyLevel(r, lv) {
   const sp = on && lv !== 'classic' ? r.levels[lv] || {} : {};
   const drop = new Set(sp.drop || []); const swap = sp.swap || {}; const why = (on && r.why) || {}; const byRef = {};
   const keep = (it, ref, extra) => { const c = { ...it, ...(swap[ref] || {}), ref, why: why[ref] || null, ...extra }; byRef[ref] = c; return c; };
-  const groups = r.groups.map((g, gi) => ({ ...g, items: g.items.map((it, ii) => (drop.has(gi + '-' + ii) ? null : keep(it, gi + '-' + ii))).filter(Boolean) })).filter((g) => g.items.length)
-    .concat((sp.add || []).map((g, k) => ({ name: g.group, items: g.items.map((it, n) => keep(it, (r.groups.length + k) + '-' + n, { added: true })) })));
+  // an edited item keeps its original ref (it.ref); a level's extras number on from the recipe file's groups
+  const nG = r.baseGroups != null ? r.baseGroups : r.groups.length;
+  const groups = r.groups.map((g, gi) => ({ ...g, items: g.items.map((it, ii) => { const ref = it.ref || gi + '-' + ii; return drop.has(ref) ? null : keep(it, ref); }).filter(Boolean) })).filter((g) => g.items.length)
+    .concat((sp.add || []).map((g, k) => ({ name: g.group, items: g.items.map((it, n) => keep(it, (nG + k) + '-' + n, { added: true })) })));
   const notes = sp.stepNotes || {};
-  const steps = r.steps.map((st, i) => (notes[i] ? { ...st, lvNote: notes[i] } : st)).concat((sp.addSteps || []).map((st) => ({ ...st, added: true })));
+  const steps = r.steps.map((st, i) => { const n = notes[st.sref != null ? st.sref : i]; return n ? { ...st, lvNote: n } : st; }).concat((sp.addSteps || []).map((st) => ({ ...st, added: true })));
   return { ...r, groups, steps, byRef, lvl: on ? lv : null };
 }
 function levelCost(r, lv) {
   if (r.levelCost) return { lines: [], total: r.levelCost[lv] || r.levelCost.classic, mine: 0 }; // Acura: one price per batch
   const adj = adjustedCost(r);
-  const base = r.edited || r.custom ? r.cost.breakdown.map((l) => [l[0], l[1], l[2], false]) : adj.lines;
+  const flat = r.custom || (r.edited && (r.costEdited || !r.refs)); // our own total, not live receipt prices
+  const base = flat ? r.cost.breakdown.map((l) => [l[0], l[1], l[2], false]) : adj.lines;
   const sp = hasLevels(r) && lv !== 'classic' ? r.levels[lv] : null;
-  let total = r.edited || r.custom ? r.cost.total : adj.total; const lines = base.slice();
+  let total = flat ? r.cost.total : adj.total; const lines = base.slice();
   if (sp) {
     // a dropped line matches a breakdown key or a word in its label; the first match is removed
     (sp.costDrop || []).forEach((term) => { const t = term.toLowerCase(); const k = lines.findIndex(([n, , key]) => key === term || n.toLowerCase().includes(t)); if (k >= 0) { total -= lines[k][1]; lines.splice(k, 1); } });
@@ -4304,7 +4474,8 @@ function scratchCard(key, fact, treat) {
     <div class="sc-box"><p class="sc-fact">${esc(fact)}</p>${done ? '' : '<canvas class="sc-cv" aria-hidden="true"></canvas>'}</div></div>`;
 }
 function bindScratch() {
-  const cv = $('.scratch .sc-cv'); if (!cv) return;
+  const cv = $('.scratch .sc-cv'); if (!cv || cv.scInit) return; // a patched redraw keeps the canvas: set it up once
+  cv.scInit = true;
   const key = cv.closest('.scratch').dataset.sk; const box = cv.parentNode;
   const w = box.clientWidth; const h = box.clientHeight; const dpr = Math.min(3, window.devicePixelRatio || 1);
   cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
@@ -4398,10 +4569,46 @@ document.addEventListener('click', (e) => {
   if (!el || !v.contains(el)) { tapAnchor = null; return; }
   const key = anchorKey(el); tapAnchor = key ? { key, top: el.getBoundingClientRect().top, at: performance.now() } : null;
 }, true);
-function render(html) {
-  const v = $('#view'); const y = v.scrollTop; v.classList.remove('vin-fwd', 'vin-back', 'vin-tab', 'vin-turn'); v.innerHTML = html; if (y) v.scrollTop = y; markLoaded(v);
+// page: a key for the page being drawn (e.g. 'r/chicken-01'). Drawing the SAME page again (a level switch, servings,
+// units, Fancy night, a paw...) patches the existing DOM instead of replacing it (update 9.3): unchanged elements are
+// left exactly as they are, so the photo is never re-created (WebKit decodes a new <img> asynchronously, which showed
+// as a blank frame — the "image shake") and nothing above the change moves.
+function render(html, page) {
+  const v = $('#view'); const y = v.scrollTop; v.classList.remove('vin-fwd', 'vin-back', 'vin-tab', 'vin-turn');
+  const same = !!page && v.dataset.page === page; v.dataset.page = page || '';
+  if (same) { const t = document.createElement('template'); t.innerHTML = html; patchChildren(v, t.content); } else v.innerHTML = html;
+  if (y && v.scrollTop !== y) v.scrollTop = y; markLoaded(v);
   const a = tapAnchor; tapAnchor = null;
   if (a && performance.now() - a.at < 1500) { const all = v.querySelectorAll(a.key); if (all.length === 1) { const d = all[0].getBoundingClientRect().top - a.top; if (Math.abs(d) > 1) v.scrollTop += d; } }
+}
+// a minimal DOM patch: children are matched in order (skipping over an inserted or removed sibling), text and
+// attributes are updated in place, and only nodes of a different kind are replaced. Live state the markup doesn't
+// carry is kept: a loaded image stays loaded (.ld), an opened <details> stays open, a field being typed in keeps its value.
+const sig = (n) => (n.nodeType === 1 ? n.nodeName + '#' + n.id + '.' + n.getAttribute('class') : '#' + n.nodeType);
+function patchChildren(live, next) {
+  let x = live.firstChild; let y = next.firstChild;
+  while (y) {
+    const ny = y.nextSibling;
+    if (!x) { live.appendChild(y); y = ny; continue; }
+    if (sig(x) !== sig(y)) {
+      if (x.nextSibling && sig(x.nextSibling) === sig(y)) { const nx = x.nextSibling; x.remove(); x = nx; } // a block went away
+      else if (ny && sig(ny) === sig(x)) { live.insertBefore(y, x); y = ny; continue; } // a block was added
+    }
+    const nx = x.nextSibling; patchNode(x, y); x = nx; y = ny;
+  }
+  while (x) { const nx = x.nextSibling; x.remove(); x = nx; }
+}
+function patchNode(x, y) {
+  if (x.nodeType !== y.nodeType || x.nodeName !== y.nodeName || (x.nodeType === 1 && x.id !== y.id)) { x.replaceWith(y); return; }
+  if (x.nodeType !== 1) { if (x.data !== y.data) x.data = y.data; return; }
+  const keepLd = x.nodeName === 'IMG' && x.classList.contains('ld') && x.getAttribute('src') === y.getAttribute('src');
+  const keepOpen = x.nodeName === 'DETAILS' && x.open;
+  for (const a of [...x.attributes]) if (!y.hasAttribute(a.name) && !(keepOpen && a.name === 'open')) x.removeAttribute(a.name);
+  for (const a of [...y.attributes]) if (x.getAttribute(a.name) !== a.value) x.setAttribute(a.name, a.value);
+  if (keepLd) x.classList.add('ld');
+  if ((x.nodeName === 'INPUT' || x.nodeName === 'TEXTAREA') && x !== document.activeElement && x.value !== y.value) x.value = y.value;
+  if (x.nodeName === 'TEXTAREA') return; // its text is its value, handled above
+  patchChildren(x, y);
 }
 document.addEventListener('click', (e) => {
   const a = e.target.closest && e.target.closest('#tabbar a'); if (!a) return;
@@ -4437,6 +4644,30 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+ {
+  "name": "Update 9.3",
+  "id": "u93-2026-11",
+  "date": "2026-11-16",
+  "intro": "Edit and delete meals, a calmer start, and steady photos when you switch levels.",
+  "notes": [
+   [
+    "Edit recipe",
+    "Hold a recipe card (or tap More on the recipe) and choose Edit recipe. Change the name, amounts, ingredients and steps, add or remove lines, even the Basic and Fancy extras. Your grocery list, pantry, ticks and costs follow along, and Reset to original puts it back as written"
+   ],
+   [
+    "Delete meal",
+    "In the same menu, at the bottom. A meal from the book leaves every list, the wheel and plans, and Settings → Deleted recipes brings it back. Your own recipes are removed for good"
+   ],
+   [
+    "Smoother start",
+    "No more flash when the app opens: the opening screen matches the launch picture, and the weather fills in without nudging the page"
+   ],
+   [
+    "Steady photos",
+    "Switching Basic, Classic and Fancy only changes what changes. The photo and your place on the page stay put"
+   ]
+  ]
+ },
  {
   "name": "Update 9.2",
   "id": "u92-2026-11",

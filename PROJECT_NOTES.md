@@ -193,6 +193,32 @@ exactly 812pt although the image continues.
 - Rule: one name per top-level function in `js/app.js`; `build_index.py` fails the build on a duplicate.
 - Test: `/tmp/pw/taps92.mjs` (WebKit, touch taps on every tab with saved data; `BASE=old91` reproduces 9.1).
 
+## Update 9.3: edit + delete meals, calm start-up, steady level switch
+- Launch flash: the launch image (what iOS shows first) is navy with cream words, but in the light theme the splash
+  painted cream on its first frame — a full-screen navy-to-cream flash. In the home-screen app the splash is now
+  always the launch navy (inline styles in index.html, `@media (display-mode: standalone)`), then fades as before.
+  Also, the weather arriving 1.5 s after start redrew all of Home and pushed everything down; now `#wxLine` always
+  holds its one line and `loadWeather` only changes its text.
+- Image shake: a level switch (and servings, Fancy night, paw…) redrew the whole recipe with innerHTML, so WebKit
+  re-created and re-decoded the photo (a blank frame). `render(html, page)` now patches the DOM when the same page is
+  drawn again (`patchChildren`/`patchNode`): unchanged nodes stay, the photo node is never replaced, scroll stays.
+  Rule: bind recipe/treat page handlers with `el.onclick =`, not addEventListener (a patched node keeps its listeners).
+  `.pill.price` has a fixed width so $ / $$ / $$$ never re-wrap the pills.
+- Edit recipe (`viewEditRecipe`, `#/add/<id>`; Add a recipe stays `viewAdd`): rows per ingredient (amount, unit,
+  "name, note") and per step, add/remove, plus Basic / Fancy extras for built-ins. Built-in edits are overrides in
+  `state.edits[id]` with `refs: 1`: every item keeps its original `ref` (new items `n…`), steps keep `sref`, a level's
+  extras go in `lvAdd`. So ticks, why notes, step links, level drops/swaps/step notes, pantry matching (`pantryFor`),
+  the missing-ingredients sheet, grocery list, search and the pantry catalog (`bookSummary`) all follow the edit.
+  Cost: live receipt prices unless the total was changed. "Reset to original" (confirm) deletes the override (kept in
+  `state.versions`, undo toast). Edits saved before 9.3 (no `refs`) still work as before (no levels).
+- Delete meal: last item of the hold menu (and the recipe's More menu), quiet red, confirm sheet like Reset everything.
+  Built-ins: `state.deleted[id]` (new, add-only); `allRecipes()` drops them, so lists, wheel, plans, page turns, N of M
+  and Surprise me all lose them; Settings → Deleted recipes → Restore. Our own recipes are deleted for real.
+  Acura's treats have no hold menu, so no edit/delete there.
+- Tests: `/tmp/pw/ed93.mjs` (hold menu, delete/restore, own delete, legacy edit, full edit flow through levels,
+  pantry, search, missing sheet, grocery, reset), `lv93.mjs` (same photo node, no movement, scroll kept),
+  `launch92b.mjs` (one Home render), `splash93.mjs`, `taps92.mjs`, `u9_smoke.mjs`, `u9_preserve.mjs OLD=old92`.
+
 ## Update history
 | Update | Commit | What |
 |---|---|---|
@@ -210,4 +236,5 @@ exactly 812pt although the image continues.
 | 8.2 | see `git log` | Self-update never reloads in front of you (it was the remaining open/return jolt); first frame verified in WebKit |
 | 9 | see `git log` | Basic/Classic/Fancy levels on every recipe and treat, spice backups, make it with what I've got, why notes, Fancy night, level notes, cost by level, page-turn swipe + dice, bookmark ribbon, cooked stamp, louder timer with sounds, paw of approval, our dish, seasonal accent, quiet badges, recipe audit, Acura status bar brown |
 | 9.1 | see `git log` | Past updates in What's new (one patch-notes list), first-time scratch card with a fun fact, dice / Home season mark / quiet badges removed as duplicates |
-| 9.2 | see `git log` | Pantry Lots / Have / Low / Out buttons work again (duplicate function name from Update 9) |
+| 9.2 | see `git log` | Pantry Lots / Have / Low / Out buttons work again (duplicate function name from Update 9); Acura status bar from the html background |
+| 9.3 | see `git log` | Edit recipe + Delete meal (hold menu), no launch flash, steady photo on level switch |

@@ -1310,6 +1310,7 @@ html.strip body.acura:has(#cook:not([hidden])){background:#3A2216}
 html.strip body:has(#cook.candle:not([hidden])){background:#1C0F1E}
 html.strip body:has(#welcome:not([hidden])){background:#F5E6CE}
 html.strip body:has(#splash){background:#F5E6CE}
+@media (display-mode: standalone){html.strip body:has(#splash){background:#0B1734}} /* matches the launch image (update 9.3) */
 html[data-theme="dark"].strip body:has(#splash){background:#0B1734}
 /* solid status bar (installs from Update 8 on, html.solid): the view starts below the status bar and runs to the
    bottom edge, so no strip. Each tab spans the whole bar down to the edge (all of it tappable) and its icon and label
@@ -1418,3 +1419,28 @@ body.acura #alarm{background:#4A2A1A}
 .scratch .sc-box{position:relative;margin-top:8px;min-height:72px;display:flex;align-items:center;border-radius:2px;overflow:hidden}
 .scratch .sc-fact{font-size:.92rem;line-height:1.4;color:var(--ink);padding:6px 2px}
 .scratch .sc-cv{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab}
+/* ---------------------------------------------------------------- update 9.3
+   the price pill keeps one width for $, $$ and $$$, so switching levels never re-wraps the pills above the photo */
+.pill.price{min-width:3.6em;text-align:center}
+.wx{white-space:nowrap;overflow:hidden;text-overflow:ellipsis} /* the weather line is always exactly one line (it fills in after start-up) */
+/* ---------------------------------------------------------------- update 9.3: delete + edit recipe */
+.menu>.mdanger{color:#9A3B3B;font-weight:400}
+.menu>.mdanger svg{stroke:#9A3B3B}
+html[data-theme="dark"] .menu>.mdanger{color:#E08A8A}
+html[data-theme="dark"] .menu>.mdanger svg{stroke:#E08A8A}
+.editr .egroup{margin-top:10px;padding-top:4px}
+.editr .egroup+.egroup{border-top:1px solid var(--line);margin-top:14px;padding-top:12px}
+.editr .egn{width:100%;border:0;border-bottom:1px dashed var(--line-gold);background:none;padding:6px 0;font-family:"Instrument Serif";font-style:italic;font-size:1.05rem;color:var(--group);outline:none}
+.editr .erow{display:grid;grid-template-columns:54px 62px 1fr 34px;gap:6px;margin-top:6px;align-items:center}
+.editr .erow input,.editr .st{width:100%;min-width:0;height:40px;border:1.25px solid var(--line-gold);background:var(--input);border-radius:2px;padding:0 8px;font-size:.95rem;outline:none;color:var(--ink)}
+.editr .erow input:focus,.editr .st:focus,.editr .sx:focus{border-color:var(--gold)}
+.editr .eq{text-align:center}
+.editr .ex{width:34px;height:40px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.editr .ex svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.editr .linkbtn svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;vertical-align:-2px;margin-right:4px}
+.editr .srow{margin-top:10px}
+.editr .shead{display:grid;grid-template-columns:22px 1fr 34px;gap:6px;align-items:center}
+.editr .sn{font-family:"Cinzel";font-weight:700;color:var(--kicker);text-align:center}
+.editr .sx{display:block;width:calc(100% - 68px);margin:6px 34px 0 28px;border:1.25px solid var(--line-gold);background:var(--input);border-radius:2px;padding:8px 10px;font-size:.95rem;line-height:1.4;outline:none;resize:vertical;color:var(--ink);font-family:inherit}
+.editr .eReset{text-align:center;margin-top:14px}
+.editr .eReset .linkbtn{color:var(--muted);font-weight:500;font-style:italic}

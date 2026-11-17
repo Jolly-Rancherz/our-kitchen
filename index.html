@@ -71,6 +71,12 @@
   @keyframes beat{0%{transform:scale(.6);opacity:0}45%{transform:scale(1.25);opacity:1}100%{transform:scale(1)}}
   /* home-screen app: the launch image already shows the wordmark, so it is there from frame one (no fade-in) */
   @media (display-mode: standalone){.splash-inner{animation:none}}
+  /* home-screen app: the splash is always the launch image's navy with cream words, in the light theme too. It used
+     to switch to the cream light splash on the first frame — a full-screen navy-to-cream flash on every launch
+     (update 9.3). It then fades into the app as before. */
+  @media (display-mode: standalone){
+    html #splash{background:#0B1734;--ink:#F3E6CF;--ink2:#E6D6BD}
+  }
 </style>
 <link rel="stylesheet" href="css/app.css">
 </head>
