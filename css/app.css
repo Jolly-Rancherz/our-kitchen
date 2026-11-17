@@ -1545,5 +1545,25 @@ html[data-theme="dark"] .bk-drop::first-letter{color:var(--gold)}
 .bk-back .btn{margin-top:14px}
 body.book::after,html.sa body.book::after{top:0} /* the grain covers the whole page in the book (no header to leave out) */
 body.book .r-head .kicker{padding-right:30px} /* keep "page N" clear of the close control */
-body.book::after,html.sa body.book::after{top:0} /* the grain covers the whole page in the book (no header to leave out) */
-body.book .r-head .kicker{padding-right:30px} /* keep "page N" clear of the close control */
+/* Home's book icon: the gear's line style, in gold */
+#topbar .bookbtn svg{stroke:var(--gold)}
+/* a printed recipe page in the book */
+.bk-rec{padding:40px 26px 24px}
+.bk-rec .ch-k{font-family:"Cinzel";font-weight:600;font-size:.7rem;letter-spacing:.3em;color:var(--kicker);text-transform:uppercase;text-align:center;padding-left:.3em}
+.bk-rt{font-family:"Cinzel";font-weight:700;font-size:1.7rem;line-height:1.08;letter-spacing:.04em;color:var(--ink);text-align:center;margin-top:10px;text-wrap:balance;overflow-wrap:break-word}
+.bk-sub{font-family:"Instrument Serif";font-style:italic;font-size:1.12rem;line-height:1.35;color:var(--ink2);margin-top:12px;display:flow-root}
+.bk-plate{margin:18px 0 0;padding:7px;background:var(--card);box-shadow:0 1px 2px rgba(40,24,10,.16),0 8px 16px -10px rgba(40,24,10,.32);position:relative;aspect-ratio:4/3}
+.bk-plate::after{content:"";position:absolute;inset:7px;border:1px solid rgba(196,150,62,.6);pointer-events:none}
+.bk-plate img{width:100%;height:100%;object-fit:cover;filter:saturate(.93) contrast(.97);display:block}
+.bk-meta{text-align:center;font-family:"Cinzel";font-size:.72rem;letter-spacing:.14em;color:var(--muted);margin-top:14px;text-transform:uppercase}
+.bk-h{font-family:"Cinzel";font-weight:700;font-size:.9rem;letter-spacing:.22em;text-transform:uppercase;color:var(--kicker);margin-top:18px;text-align:center}
+.bk-g{font-family:"Instrument Serif";font-style:italic;font-size:1.05rem;color:var(--group);margin-top:10px}
+.bk-ing{list-style:none;margin-top:4px}
+.bk-ing li{display:grid;grid-template-columns:4.6em 1fr;gap:8px;padding:3px 0;font-family:"Instrument Serif";font-size:1.08rem;line-height:1.3;color:var(--ink)}
+.bk-ing .q{text-align:right;color:var(--kicker)}
+.bk-ing i{color:var(--muted)}
+.bk-steps{margin:8px 0 0 1.2em;font-family:"Instrument Serif";font-size:1.1rem;line-height:1.42;color:var(--ink)}
+.bk-steps li{margin-top:8px;padding-left:4px}
+.bk-steps li::marker{font-family:"Cinzel";font-weight:700;color:var(--gold-deep)}
+.bk-steps b{font-family:"Cinzel";font-weight:600;font-size:.86em;letter-spacing:.04em}
+.bk-foot{text-align:center;font-family:"Cinzel";font-size:.8rem;color:var(--muted);margin-top:22px}

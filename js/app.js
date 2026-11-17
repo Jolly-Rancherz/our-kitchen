@@ -2700,7 +2700,7 @@ function swapHomeBody(html) {
 }
 function viewHome(partial) {
   partial = partial === true && !!$('#homeBody') && !!$('#q');
-  if (!partial) { setTop({ title: 'OUR KITCHEN', left: `<a class="iconbtn" href="#/book/cover" aria-label="Open our cookbook">${svg('book')}</a>` }); HOME_CARDS.clear(); syncPlanToTonight(); }
+  if (!partial) { setTop({ title: 'OUR KITCHEN', left: `<a class="iconbtn bookbtn" href="#/book/cover" aria-label="Open our cookbook">${svg('book')}</a>` }); HOME_CARDS.clear(); syncPlanToTonight(); }
   const recipes = visibleRecipes();
   ui.pick = ui.pick && recipes.find((r) => r.id === ui.pick) ? ui.pick : seasonalPick(recipes);
   const searching = ui.q || filterCount();
@@ -4188,7 +4188,7 @@ function tabOf(h) {
   if (h.startsWith('#/grocery')) return 'grocery';
   if (h.startsWith('#/budget')) return 'budget';
   if (/^#\/(us|story|year|places|menu|keepsake)/.test(h)) return 'us';
-  if (h.startsWith('#/acura') || h === '#/book/c/acura') return 'acura';
+  if (h.startsWith('#/acura') || h === '#/book/c/acura' || h.startsWith('#/book/t/')) return 'acura';
   if (h.startsWith('#/settings')) return '';
   return 'recipes';
 }
@@ -4343,7 +4343,7 @@ const NO_TURN = '.scratch,input,textarea,select,.chips,.plan,.lvbar,.photos,.hro
 let PT = null;
 function turnList() {
   const h = location.hash; let m;
-  if (ui.book) { const list = bookPages(); const i = list.indexOf(h); if (i >= 0) return { list, idx: i, book: true }; } // the book: one run, cover to back
+  if (h.startsWith('#/book/')) { const list = bookPages(); const i = list.indexOf(h); return i >= 0 ? { list, idx: i, book: true } : null; } // the book: one run, cover to back
   if ((m = h.match(/^#\/r\/(.+)$/))) {
     const s = summary(m[1]); if (!s) return null;
     const list = chapterList(s.category);
@@ -4352,7 +4352,6 @@ function turnList() {
   if ((m = h.match(/^#\/acura\/t\/(.+)$/)) && ACURA) { const list = acOrder(ACURA.treats).map((t) => '#/acura/t/' + t.id); return list.includes(h) ? { list, idx: list.indexOf(h) } : null; }
   return null;
 }
-// a chapter: its divider page, then its recipes in book order (update 10)
 // a category's recipes in book order: the in-app swipe stops at the ends of a category; the book (bookPages) runs on
 function chapterList(cat) { return visibleRecipes().filter((r) => r.category === cat).sort((a, b) => a.num - b.num).map((r) => '#/r/' + r.id); }
 function turnIndicator() { const L = turnList(); if (!L) return ''; if (L.book) return `<span class="nofm">page ${L.idx + 1}</span>`; return L.list.length > 1 ? `<span class="nofm">${L.idx + 1} of ${L.list.length}</span>` : ''; }
@@ -4438,8 +4437,8 @@ function initPageTurn() {
 function bookCats() { const rs = visibleRecipes(); return INDEX.categories.filter((c) => rs.some((r) => r.category === c.slug)); }
 function bookPages() {
   const p = ['#/book/cover', '#/book/title', '#/book/about', '#/book/contents'];
-  bookCats().forEach((c) => { p.push('#/book/c/' + c.slug); p.push(...chapterList(c.slug)); });
-  if (ACURA) { p.push('#/book/c/acura'); p.push(...acOrder(ACURA.treats).map((t) => '#/acura/t/' + t.id)); }
+  bookCats().forEach((c) => { p.push('#/book/c/' + c.slug); p.push(...chapterList(c.slug).map((h) => '#/book' + h)); });
+  if (ACURA) { p.push('#/book/c/acura'); p.push(...acOrder(ACURA.treats).map((t) => '#/book/t/' + t.id)); }
   p.push('#/book/back'); return p;
 }
 const HEART_SVG = '<svg class="splash-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.6 4.6 0 0 1 8-3.1A4.6 4.6 0 0 1 20 10c0 5.8-8 11-8 11z"/></svg>';
@@ -4460,10 +4459,23 @@ async function viewBook(part = 'cover') {
     ${treats.length ? `<li><a href="#/book/c/acura"><span class="n">${roman(cats.length + 1)}</span><b>Acura’s Kitchen</b><i></i><span class="p">${pg('#/book/c/acura')}</span></a></li>` : ''}</ol>${ORN}</div>`;
   else if ((m = part.match(/^c\/([\w-]+)$/))) {
     const acura = m[1] === 'acura'; const ci = acura ? cats.length + 1 : cats.findIndex((c) => c.slug === m[1]) + 1;
-    const list = acura ? treats.map((t) => ({ h: '#/acura/t/' + t.id, title: t.title })) : chapterList(m[1]).map((h) => ({ h, title: (summary(h.slice(4)) || {}).title }));
+    const list = acura ? treats.map((t) => ({ h: '#/book/t/' + t.id, title: t.title })) : chapterList(m[1]).map((h) => ({ h: '#/book' + h, title: (summary(h.slice(4)) || {}).title }));
     html = `<div class="chapter bk-ch"><div class="ch-k">Chapter ${roman(ci || 1)}</div>${ORN}<h1 class="ch-t">${acura ? 'Acura’s Kitchen' : esc(catOf(m[1]).name)}</h1>
       <p class="ch-s">${acura ? 'Treats for our good girl' : list.length + ' recipe' + (list.length === 1 ? '' : 's')}</p>${ORN}
       <ul class="bk-list">${list.map((x) => `<li><a href="${x.h}"><b>${esc(x.title || '')}</b><i></i><span class="p">${pg(x.h)}</span></a></li>`).join('')}</ul></div>`;
+  } else if ((m = part.match(/^(r|t)\/([\w-]+)$/))) {
+    // a printed recipe page: read-only (the recipe as written, Classic), cooking happens in the app
+    const treat = m[1] === 't'; const r = treat ? treats.find((t) => t.id === m[2]) : await getRecipe(m[2]);
+    if (!location.hash.startsWith('#/book')) return;
+    if (!r) { go('#/book/contents'); return; }
+    const s = treat ? null : summary(m[2]); const label = treat ? 'Acura’s Kitchen' : esc(catOf(s.category).name) + ' · ' + pad2(s.num);
+    const line = (it) => `<li><span class="q">${esc(fmtQty(it.qty, it.unit))}</span><span>${esc(it.name)}${it.note ? `<i>, ${esc(it.note)}</i>` : ''}</span></li>`;
+    html = `<article class="bk-rec"><div class="ch-k">${label}</div><h1 class="bk-rt">${esc(r.title)}</h1>${r.subtitle ? `<p class="bk-drop bk-sub">${esc(r.subtitle)}</p>` : ''}
+      ${r.image ? `<figure class="bk-plate">${img(r.image, r.imageAlt || r.title)}</figure>` : ''}
+      <p class="bk-meta">${treat ? esc(r.makes || '') : `Serves ${r.servings}`} · Prep ${r.prep} min · Cook ${r.cook} min</p>${ORN}
+      <h2 class="bk-h">Ingredients</h2>${r.groups.map((g) => `${g.name ? `<div class="bk-g">${esc(g.name)}</div>` : ''}<ul class="bk-ing">${g.items.map(line).join('')}</ul>`).join('')}
+      <h2 class="bk-h">Method</h2><ol class="bk-steps">${r.steps.map((st) => `<li><b>${esc(st.title)}.</b> ${esc(st.text)}</li>`).join('')}</ol>
+      <p class="bk-foot">${pages.indexOf(location.hash) + 1}</p></article>`;
   } else if (part === 'back') html = `<div class="bk-back">${ORN}<p class="bk-end">The end — for now.</p><p class="small">More pages get written every time we cook.</p><div class="splash-names">Corey ${HEART_SVG} Faith</div><p class="small muted">London, Ontario</p>${ORN}<button class="btn sm" id="bkClose">Close the book</button></div>`;
   else { go('#/book/cover'); return; }
   render(`<div class="bk">${html}</div>`);
@@ -4583,8 +4595,9 @@ async function router() {
   closeSheet();
   // update 10: the book (entered only from Home's book icon) stays open across its own pages and the recipe and treat
   // pages it turns to; any other screen closes it
-  if (h.startsWith('#/book')) ui.book = true; else if (!/^#\/(r|acura\/t)\//.test(h)) ui.book = false;
-  document.body.classList.toggle('book', !!ui.book);
+  if (lastRoute == null && h.startsWith('#/book')) { location.replace('#/'); return; } // the app never opens inside the book
+  ui.book = h.startsWith('#/book');
+  document.body.classList.toggle('book', ui.book);
   const tabNew = tabOf(h); const tabOld = lastRoute == null ? null : tabOf(lastRoute);
   let dir = 'fwd';
   if (lastRoute == null || lastRoute === h) dir = 'none';
@@ -4706,6 +4719,26 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+ {
+  "name": "Update 10.2",
+  "id": "u102-2026-11",
+  "date": "2026-11-16",
+  "intro": "Our Kitchen is now a cookbook you can hold. Tap the little gold book at the top left of Home.",
+  "notes": [
+   [
+    "Our cookbook",
+    "A cover, the title page, About this book and a Contents page you can tap, then every dish chapter by chapter in the same order as Home, Acura's chapter last and a back page"
+   ],
+   [
+    "Like holding a book",
+    "It fills the screen on real-looking paper and turns from the first page to the last as your finger moves: right to left for the next page, left to right to go back. The small × closes it"
+   ],
+   [
+    "Swipes in the app",
+    "Swiping between recipes in the app stays within their category, as before"
+   ]
+  ]
+ },
  {
   "name": "Update 10.1",
   "id": "u101-2026-11",
