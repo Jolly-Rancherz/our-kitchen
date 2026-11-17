@@ -1485,3 +1485,14 @@ html[data-theme="dark"] .r-head .lead::first-letter{color:var(--gold)}
 .chapter .ch-t{font-family:"Cinzel";font-weight:700;font-size:2.35rem;line-height:1.05;letter-spacing:.06em;color:var(--ink);margin:12px 0 6px;text-wrap:balance}
 .chapter .ch-s{font-family:"Instrument Serif";font-style:italic;font-size:1.1rem;color:var(--ink2)}
 .chapter .orn{margin-top:12px}
+/* ---------------------------------------------------------------- update 10.1: fit
+   long words wrap, flex/grid text can shrink, Bigger text leaves the header title at its regular size (it is chrome,
+   like the splash), the Acura bone words fit narrow (zoomed) screens, and the recipe title block keeps clear room
+   above the photo with the drop cap contained in its paragraph */
+.h1,.ch-t,.lead,h2,.sub,.rcard b,.nm,.setrow .l b{overflow-wrap:break-word}
+.rcard>div,.setrow .l,.prow .nm{min-width:0}
+html.big .tb-title{font-size:13.1px;letter-spacing:.2em}
+.ac-words .bone{padding:0 clamp(10px,4.5vw,22px);font-size:min(.74rem,3.2vw)}
+.r-head .h1{line-height:1.06}
+.r-head .lead{display:flow-root}
+.r-head{padding-bottom:4px}

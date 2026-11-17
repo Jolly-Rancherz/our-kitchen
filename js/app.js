@@ -4613,6 +4613,7 @@ function patchChildren(live, next) {
   while (x) { const nx = x.nextSibling; x.remove(); x = nx; }
 }
 function patchNode(x, y) {
+  if (x.nodeName === 'CANVAS' && y.nodeName === 'CANVAS') return; // a canvas keeps its size and drawing (the scratch foil): resetting width/height wiped it, so a level switch revealed the card
   if (x.nodeType !== y.nodeType || x.nodeName !== y.nodeName || (x.nodeType === 1 && x.id !== y.id)) { x.replaceWith(y); return; }
   if (x.nodeType !== 1) { if (x.data !== y.data) x.data = y.data; return; }
   const keepLd = x.nodeName === 'IMG' && x.classList.contains('ld') && x.getAttribute('src') === y.getAttribute('src');
@@ -4658,6 +4659,22 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+ {
+  "name": "Update 10.1",
+  "id": "u101-2026-11",
+  "date": "2026-11-16",
+  "intro": "Small fixes.",
+  "notes": [
+   [
+    "Scratch cards stay put",
+    "Switching Basic, Classic and Fancy no longer reveals a scratch card you haven't scratched, on recipes or Acura's treats"
+   ],
+   [
+    "Nothing cut off",
+    "Long words and titles wrap neatly on narrow screens, with Bigger text on or off, and long recipe names keep clear of the photo"
+   ]
+  ]
+ },
  {
   "name": "Update 10",
   "id": "u10-2026-11",

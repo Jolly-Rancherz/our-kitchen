@@ -234,6 +234,15 @@ exactly 812pt although the image continues.
   box-shadow. New page settles in 120 ms. Test: `/tmp/pw/flip10.mjs` (synthetic 60 Hz touches in WebKit: frame gaps,
   settle time, chapter flips, cancel cleanup, taps pass through the paper); `flip10b.mjs` at DPR 1 vs `BASE=old93`.
 
+## Update 10.1: fixes
+- Scratch card revealed by a level switch (9.3+): the DOM patch copied attributes from the fresh markup, which has no
+  canvas width/height, so the live canvas was resized — and a resized canvas is wiped. `patchNode` now leaves a canvas
+  untouched. Test: `/tmp/pw/scr101.mjs` (foil coverage after Basic/Fancy/Classic on a treat and a recipe).
+- Fit: audited every recipe, treat and main screen at 402 px and 360 px (Display Zoom), Bigger text on/off
+  (`/tmp/pw/clip10.mjs`, `clip10w.mjs` with W=360). Only narrow screens clipped (header title, Acura bone words).
+  Root fixes in the "update 10.1: fit" CSS block. Title block: line-height 1.06, contained drop cap.
+- The full cookbook (book mode) is NOT in this build: work in progress saved as `/workspace/cookbook/wip_u101_book.patch`.
+
 ## Update history
 | Update | Commit | What |
 |---|---|---|
@@ -253,4 +262,5 @@ exactly 812pt although the image continues.
 | 9.1 | see `git log` | Past updates in What's new (one patch-notes list), first-time scratch card with a fun fact, dice / Home season mark / quiet badges removed as duplicates |
 | 9.2 | see `git log` | Pantry Lots / Have / Low / Out buttons work again (duplicate function name from Update 9); Acura status bar from the html background |
 | 9.3 | see `git log` | Edit recipe + Delete meal (hold menu), no launch flash, steady photo on level switch |
+| 10.1 | see `git log` | Scratch card no longer revealed by level switch; narrow-screen fit fixes |
 | 10 | see `git log` | Cookbook look: paper, chapter pages, ornaments, drop caps, plate-framed photos, shaded page curl |
