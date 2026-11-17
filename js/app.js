@@ -4437,7 +4437,7 @@ function initPageTurn() {
 function bookCats() { const rs = visibleRecipes(); return INDEX.categories.filter((c) => rs.some((r) => r.category === c.slug)); }
 function bookPages() {
   const p = ['#/book/cover', '#/book/title', '#/book/about', '#/book/contents'];
-  bookCats().forEach((c) => { p.push('#/book/c/' + c.slug); p.push(...chapterList(c.slug).map((h) => '#/book' + h)); });
+  bookCats().forEach((c) => { p.push('#/book/c/' + c.slug); p.push(...chapterList(c.slug).map((h) => '#/book/' + h.slice(2))); });
   if (ACURA) { p.push('#/book/c/acura'); p.push(...acOrder(ACURA.treats).map((t) => '#/book/t/' + t.id)); }
   p.push('#/book/back'); return p;
 }
@@ -4459,7 +4459,7 @@ async function viewBook(part = 'cover') {
     ${treats.length ? `<li><a href="#/book/c/acura"><span class="n">${roman(cats.length + 1)}</span><b>Acura’s Kitchen</b><i></i><span class="p">${pg('#/book/c/acura')}</span></a></li>` : ''}</ol>${ORN}</div>`;
   else if ((m = part.match(/^c\/([\w-]+)$/))) {
     const acura = m[1] === 'acura'; const ci = acura ? cats.length + 1 : cats.findIndex((c) => c.slug === m[1]) + 1;
-    const list = acura ? treats.map((t) => ({ h: '#/book/t/' + t.id, title: t.title })) : chapterList(m[1]).map((h) => ({ h: '#/book' + h, title: (summary(h.slice(4)) || {}).title }));
+    const list = acura ? treats.map((t) => ({ h: '#/book/t/' + t.id, title: t.title })) : chapterList(m[1]).map((h) => ({ h: '#/book/' + h.slice(2), title: (summary(h.slice(4)) || {}).title }));
     html = `<div class="chapter bk-ch"><div class="ch-k">Chapter ${roman(ci || 1)}</div>${ORN}<h1 class="ch-t">${acura ? 'Acura’s Kitchen' : esc(catOf(m[1]).name)}</h1>
       <p class="ch-s">${acura ? 'Treats for our good girl' : list.length + ' recipe' + (list.length === 1 ? '' : 's')}</p>${ORN}
       <ul class="bk-list">${list.map((x) => `<li><a href="${x.h}"><b>${esc(x.title || '')}</b><i></i><span class="p">${pg(x.h)}</span></a></li>`).join('')}</ul></div>`;
