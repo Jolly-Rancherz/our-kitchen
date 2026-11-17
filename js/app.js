@@ -2701,7 +2701,7 @@ function swapHomeBody(html) {
 }
 function viewHome(partial) {
   partial = partial === true && !!$('#homeBody') && !!$('#q');
-  if (!partial) { setTop({ title: 'OUR KITCHEN', left: `<a class="iconbtn bookbtn" href="#/book/cover" aria-label="Open our cookbook">${svg('book')}</a>` }); HOME_CARDS.clear(); syncPlanToTonight(); }
+  if (!partial) { setTop({ title: 'OUR KITCHEN', left: `<a class="iconbtn bookbtn" href="#/book/title" aria-label="Open our cookbook">${svg('book')}</a>` }); HOME_CARDS.clear(); syncPlanToTonight(); }
   const recipes = visibleRecipes();
   ui.pick = ui.pick && recipes.find((r) => r.id === ui.pick) ? ui.pick : seasonalPick(recipes);
   const searching = ui.q || filterCount();
@@ -4447,7 +4447,7 @@ function initPageTurn() {
 // treat pages are the app's own pages, shown full-screen as book pages.
 function bookCats() { const rs = visibleRecipes(); return INDEX.categories.filter((c) => rs.some((r) => r.category === c.slug)); }
 function bookPages() {
-  const p = ['#/book/cover', '#/book/title', '#/book/dedication', '#/book/about', '#/book/contents'];
+  const p = ['#/book/title', '#/book/dedication', '#/book/about', '#/book/contents'];
   bookCats().forEach((c) => { p.push('#/book/c/' + c.slug); p.push(...chapterList(c.slug).map((h) => '#/book/' + h.slice(2))); });
   if (ACURA) { p.push('#/book/c/acura'); p.push(...acOrder(ACURA.treats).map((t) => '#/book/t/' + t.id)); }
   p.push('#/book/together', '#/book/back'); return p;
@@ -4488,14 +4488,14 @@ function bindBookRibbon(part) {
   };
 }
 const HEART_SVG = '<svg class="splash-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.6 4.6 0 0 1 8-3.1A4.6 4.6 0 0 1 20 10c0 5.8-8 11-8 11z"/></svg>';
-async function viewBook(part = 'cover') {
+async function viewBook(part = 'title') {
+  if (part === 'cover') { history.replaceState(null, '', '#/book/title'); part = 'title'; } // update 10.5: the title page is the front cover now
   await loadAcura(); if (!location.hash.startsWith('#/book')) return;
   setTop({ title: 'OUR KITCHEN' });
   const cats = bookCats(); const pages = bookPages(); const pg = (h) => pages.indexOf(h) + 1;
   const treats = ACURA ? acOrder(ACURA.treats) : []; const marks = bkMarks();
   let html = ''; let m; let ch = null; // ch: [slug, chapter index] of the page, for its accent and tab
-  if (part === 'cover') html = `<div class="bk-cover"><img class="cover" src="assets/img/cover.webp" alt="Our Kitchen — Corey and Faith — recipes we love"><div class="panel"><h2>WELCOME HOME</h2><p>Our recipes, pantry, grocery list and dinner budget — all in one place, and it works offline.</p><p class="bk-hint">Swipe to open the book ›</p></div></div>`;
-  else if (part === 'title') html = `<div class="bk-title"><div class="splash-our">OUR</div><div class="splash-kitchen">KITCHEN</div><div class="splash-names">Corey ${HEART_SVG} Faith</div></div>`;
+  if (part === 'title') html = `<div class="bk-title"><div class="splash-our">OUR</div><div class="splash-kitchen">KITCHEN</div><div class="splash-names">Corey ${HEART_SVG} Faith</div></div>`;
   else if (part === 'dedication') { const a = state.settings.anniversary; const ad = /^\d{4}-\d{2}-\d{2}$/.test(a || '') ? new Date(+a.slice(0, 4), +a.slice(5, 7) - 1, +a.slice(8, 10)).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' }) : '';
     html = `<div class="bk-ded"><div class="bk-dedcard"><p class="ded-for">for</p><p class="ded-names">Corey &amp; Faith</p>${ORN}<p class="hw sepia">every dinner we've made together, and all the ones still to come</p>${ad ? `<p class="hw plum ded-ann">together since ${esc(ad)}</p>` : ''}</div><span class="bk-flower" aria-hidden="true"></span></div>`; }
   else if (part === 'together') {
@@ -4537,11 +4537,11 @@ async function viewBook(part = 'cover') {
       <div class="bk-stamp">${treat ? PAW() : ''}<span>from our<br>kitchen</span></div>
       <p class="bk-foot">${pages.indexOf(location.hash) + 1}</p></article>`;
   } else if (part === 'back') html = `<div class="bk-back">${ORN}<p class="bk-end">The end — for now.</p><p class="small">More pages get written every time we cook.</p><div class="splash-names">Corey ${HEART_SVG} Faith</div><p class="small muted">London, Ontario</p>${ORN}<button class="btn sm" id="bkClose">Close the book</button></div>`;
-  else { go('#/book/cover'); return; }
+  else { go('#/book/title'); return; }
   const fixed = ['cover', 'title', 'dedication', 'back'].includes(part); // full-page designs: exactly one screen, never scroll
   const acc = ch ? bookAcc(ch[0], ch[1] - 1) : '';
   const tab = ch ? `<i class="bk-tab" style="top:${84 + ((ch[1] - 1) % 8) * 52}px" aria-hidden="true"></i>` : '';
-  const pull = part === 'cover' || part === 'title'; const on = !!state.bookBookmarks[part];
+  const pull = part === 'title'; const on = !!state.bookBookmarks[part];
   const rib = pull ? (marks.length ? `<button class="bk-rib on pull" id="bkRib" data-pull="1" aria-label="Go to bookmark: ${esc(bkTitleOf(marks[0]))}"><span>${pg('#/book/' + marks[0])}</span></button>` : '')
     : `<button class="bk-rib${on ? ' on' : ''}" id="bkRib" aria-pressed="${on}" aria-label="${on ? 'Remove bookmark' : 'Bookmark this page'}"></button>`;
   render(`<div class="bk${fixed ? ' bk-fixed' : ''}"${ch ? ` data-ch="${esc(ch[0])}" style="--acc:${acc}"` : ''}>${tab}${rib}${html}</div>`);
@@ -4814,6 +4814,10 @@ const UPDATES = /* UPDATES:BEGIN */ [
    [
     "Tidier buttons",
     "The action buttons are the same size with one-line labels, and fine gold lines divide the sections"
+   ],
+   [
+    "The book's new cover",
+    "The cookbook now opens on the OUR KITCHEN page, with the bookmark ribbon on it"
    ]
   ]
  },
