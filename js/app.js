@@ -340,6 +340,9 @@ function applyTheme() {
   // status bar colour follows the header (both scheme-specific tags, since the app theme can differ from the phone's)
   const bar = document.body && document.body.classList.contains('acura') ? (dark ? '#170D08' : '#4A2A1A') : dark ? '#060F26' : '#082048';
   $$('meta[name="theme-color"]').forEach((m) => (m.content = bar));
+  // iOS 26 home-screen apps ignore live theme-color and tint the solid status bar from the <html> background, and
+  // Acura's colours were only set on body.acura — so <html> stays brown on her tab too (update 9.2)
+  document.documentElement.classList.toggle('acura', !!(document.body && document.body.classList.contains('acura')));
 }
 mq.addEventListener ? mq.addEventListener('change', applyTheme) : mq.addListener(applyTheme);
 
@@ -4443,6 +4446,10 @@ const UPDATES = /* UPDATES:BEGIN */ [
    [
     "Pantry fixed",
     "Lots, Have, Low and Out respond again on every pantry item (Update 9 broke them by mistake). Running out still adds the item to the grocery list"
+   ],
+   [
+    "Acura's status bar",
+    "On the iPhone the strip at the very top now turns brown on Acura's tab too, instead of staying blue"
    ]
   ]
  },

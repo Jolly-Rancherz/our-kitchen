@@ -184,6 +184,12 @@ exactly 812pt although the image continues.
   Lots / Have / Low / Out wrote a junk `state.levels[<pantry key>] = <item name>` and never changed the stock. The
   recipe one is now `setRecipeLevel`. Leftover junk keys in `state.levels` are inert (only read by recipe id) and are
   left untouched (no saved-data changes).
+- Acura status bar (still blue on Corey's iPhone 17 Pro, iOS 26, installed with status-bar-style `default`): iOS 26
+  home-screen apps ignore live `theme-color` changes and tint the solid status bar from the `<html>` background. `html`
+  is `background: var(--bar)`, but Acura's `--bar` was only set on `body.acura`, so `<html>` stayed navy. `applyTheme`
+  now mirrors the class onto `<html>` (`html.acura` brown / dark brown). `theme-color` is still updated for older iOS.
+  Not testable off-device; if it is still blue, the only other route is status-bar-style `black-translucent` (needs a
+  re-install from the home screen).
 - Rule: one name per top-level function in `js/app.js`; `build_index.py` fails the build on a duplicate.
 - Test: `/tmp/pw/taps92.mjs` (WebKit, touch taps on every tab with saved data; `BASE=old91` reproduces 9.1).
 
