@@ -187,7 +187,7 @@
     },
     {
       "title": "Make the sauce",
-      "text": "Melt the butter in a saucepan over medium and cook the garlic 30 seconds. Whisk in the flour and cook 1 minute, then slowly whisk in the milk. Add the salt, pepper and thyme and simmer 3–4 minutes, whisking, until it's as thick as heavy cream. Off the heat, stir in half the cheddar until melted.",
+      "text": "Melt the butter in a saucepan over medium and cook the garlic 30 seconds. Whisk in the flour and cook 1 minute, then slowly whisk in the milk. Add the salt, pepper and dried thyme and simmer 3–4 minutes, whisking, until it's as thick as heavy cream. Off the heat, stir in half the cheddar until melted.",
       "timer": 5,
       "uses": [
         "1-0",
@@ -271,13 +271,13 @@
   "reheat": "Covered with foil at 180°C (350°F) for 20–25 minutes, until 74°C (165°F) in the centre. Microwave single portions covered, about 2 minutes.",
   "levels": {
     "basic": {
-      "note": "Plain cheddar sauce: no garlic or thyme.",
+      "note": "Plain cheddar sauce: no garlic or dried thyme.",
       "drop": [
         "1-1",
         "1-6"
       ],
       "stepNotes": {
-        "1": "Basic: skip the garlic and thyme."
+        "1": "Basic: skip the garlic and dried thyme."
       },
       "costDrop": [],
       "costAdd": []

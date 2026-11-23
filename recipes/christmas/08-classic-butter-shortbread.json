@@ -1,0 +1,305 @@
+{
+  "title": "Classic Butter Shortbread",
+  "subtitle": "slice-and-bake butter rounds with a sugar-sparkle edge that melt in your mouth",
+  "image": "assets/img/butter-shortbread.webp",
+  "imageAlt": "Round pale-golden butter shortbread cookies fanned on a white plate on a navy napkin",
+  "servings": 10,
+  "servingsNote": "about 30 cookies: 3 each, and a tin to give away",
+  "prep": 15,
+  "cook": 55,
+  "cost": {
+    "total": 4.8,
+    "breakdown": [
+      [
+        "Butter, 1 cup",
+        3.25,
+        "butter"
+      ],
+      [
+        "Flour, 250 g",
+        0.5,
+        "all-purpose-flour"
+      ],
+      [
+        "Vanilla",
+        0.81,
+        "vanilla-extract"
+      ],
+      [
+        "Icing sugar, sugar, salt",
+        0.25,
+        "icing-sugar"
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "dessert"
+    ]
+  },
+  "badges": [
+    "Make-ahead dough",
+    "Freezer-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "The butter must be soft: it should dent easily but not look greasy. Leave it out about an hour."
+    },
+    {
+      "icon": "thaw",
+      "text": "The logs chill 30 minutes before slicing (included in the time), or keep in the fridge up to 3 days."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Shortbread",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "butter",
+          "note": "softened",
+          "metric": {
+            "qty": 227,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "icing sugar",
+          "metric": {
+            "qty": 65,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Icing sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.125,
+          "unit": "tsp",
+          "name": "salt",
+          "note": "a pinch",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "note": "spooned and levelled",
+          "metric": {
+            "qty": 250,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "granulated sugar",
+          "note": "for rolling",
+          "metric": {
+            "qty": 25,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Cream",
+      "text": "Beat the soft butter, icing sugar, vanilla and salt with an electric mixer about 2 minutes, until pale and creamy.",
+      "timer": 2,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Add the flour",
+      "text": "Mix in the flour on low just until it comes together into a soft dough. Don't overmix.",
+      "uses": [
+        "0-4"
+      ]
+    },
+    {
+      "title": "Shape and chill",
+      "text": "Divide in half and roll each into a log about 4 cm across. Roll the logs in the sugar, wrap and chill 30 minutes, until firm.",
+      "timer": 30,
+      "uses": [
+        "0-5"
+      ]
+    },
+    {
+      "title": "Slice",
+      "text": "Heat the oven to 160°C (325°F) and line 2 baking sheets with parchment. Slice the logs 1 cm thick and set the rounds 2 cm apart.",
+      "uses": []
+    },
+    {
+      "title": "Bake",
+      "text": "Bake both sheets 18–20 minutes, swapping racks halfway, until the bottoms are lightly golden and the tops still pale. Cool 5 minutes on the sheets, then move to a rack.",
+      "timer": 19,
+      "uses": []
+    }
+  ],
+  "together": "AA*BA",
+  "fixIt": [
+    {
+      "problem": "Dough too crumbly to shape",
+      "fix": "Knead it a few times with your hands; their warmth brings it together."
+    },
+    {
+      "problem": "Cookies spread flat",
+      "fix": "The butter was too soft or the logs too warm. Chill the sliced rounds 10 minutes before baking."
+    },
+    {
+      "problem": "Browned on top",
+      "fix": "Shortbread should stay pale. If your oven runs hot, bake at 150°C (300°F) a few minutes longer."
+    },
+    {
+      "problem": "Logs crumble when sliced",
+      "fix": "Let them sit out 5 minutes and use a thin, sharp knife."
+    }
+  ],
+  "saleTip": "Butter is the main cost here. No Frills butter sales in December often hit $4.99–5.49 a pound, and it freezes for months.",
+  "swap": "Pressed shortbread: pat the dough into a 20 cm (8-inch) square pan, prick all over with a fork and bake 30–35 minutes at 160°C (325°F); cut into fingers while warm.",
+  "leftovers": "Crumble over berries and whipped cream for a quick trifle.",
+  "doneness": "Bottoms lightly golden and tops pale. They're soft out of the oven and turn crisp and tender as they cool.",
+  "source": "Based on classic Scottish-Canadian shortbread ratios (Canadian Living, Robin Hood): about 1 part sugar, 2 parts butter, 3 parts flour by weight, baked low and slow.",
+  "gear": [
+    "Electric mixer",
+    "2 baking sheets",
+    "Parchment",
+    "Plastic wrap",
+    "Thin sharp knife",
+    "Cooling rack"
+  ],
+  "prepAhead": [
+    "Keep the wrapped logs in the fridge up to 3 days, or freeze up to 3 months and slice from almost-frozen."
+  ],
+  "reheat": "Not needed. Serve at room temperature.",
+  "levels": {
+    "basic": {
+      "note": "Just butter, sugar, flour and salt: no vanilla, no sugar coating.",
+      "drop": [
+        "0-2",
+        "0-5"
+      ],
+      "stepNotes": {
+        "2": "Basic: skip the sugar coating; just wrap and chill."
+      },
+      "costDrop": [
+        "vanilla"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Half-dipped in chocolate with festive sprinkles.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 115,
+              "unit": "g",
+              "name": "semi-sweet baking chocolate",
+              "note": "4 squares, chopped",
+              "pantry": {
+                "name": "Semi-sweet chocolate (baking)",
+                "cat": "baking"
+              },
+              "asWritten": true
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "holiday sprinkles",
+              "pantry": {
+                "name": "Holiday sprinkles",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Chocolate dip",
+          "text": "Melt the chocolate in a heatproof bowl in the microwave in 20-second bursts, stirring between, until smooth. Dip half of each cooled cookie, set on parchment, add sprinkles and let set 30 minutes (or 10 in the fridge)."
+        }
+      ],
+      "costAdd": [
+        [
+          "Semi-sweet chocolate, 115 g",
+          2.55,
+          "semi-sweet-chocolate-baking"
+        ],
+        [
+          "Holiday sprinkles",
+          0.6,
+          "holiday-sprinkles"
+        ]
+      ],
+      "plating": [
+        "Stack them chocolate-side out in a short tower.",
+        "Tie a tin with ribbon to give away.",
+        "Best with tea."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "Icing sugar dissolves completely, which is what gives shortbread its melt-away texture.",
+    "0-4": "Mixing just until combined keeps them tender, not tough."
+  },
+  "fancyNight": false,
+  "funFact": "Shortbread came to Canada with Scottish settlers. “Short” is an old baker's word for crumbly: all that butter coats the flour and keeps the dough from turning chewy.",
+  "keeps": {
+    "room": "2 weeks in an airtight tin",
+    "freezer": "3 months",
+    "note": "the baked cookies or the wrapped raw logs",
+    "thaw": "Cookies: on the counter about 1 hour. Raw logs: in the fridge overnight, then slice and bake"
+  },
+  "pairs": [
+    [
+      "christmas-07",
+      "fill a cookie tin together"
+    ]
+  ]
+}

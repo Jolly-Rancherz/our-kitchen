@@ -49,6 +49,10 @@
    "price": 6.49,
    "pack": "454 g"
   },
+  "candy-canes": {
+   "price": 2.49,
+   "pack": "box of 12"
+  },
   "canola-vegetable-oil": {
    "price": 5.99,
    "pack": "1.89 L"
@@ -56,6 +60,10 @@
   "carrots": {
    "price": 2.49,
    "pack": "907 g bag"
+  },
+  "celery": {
+   "price": 2.99,
+   "pack": "bunch"
   },
   "cheddar-shredded": {
    "price": 6.99,
@@ -77,20 +85,48 @@
    "price": 2.99,
    "pack": "jar"
   },
+  "cocoa-powder": {
+   "price": 5.49,
+   "pack": "227 g"
+  },
   "coleslaw-mix": {
    "price": 2.49,
    "pack": "397 g"
+  },
+  "corn-syrup-golden": {
+   "price": 3.99,
+   "pack": "500 ml"
   },
   "cornstarch": {
    "price": 2.49,
    "pack": "454 g"
   },
+  "cranberries-fresh-or-frozen": {
+   "price": 3.49,
+   "pack": "340 g bag"
+  },
   "crusty-bread": {
    "price": 3.49,
    "pack": "loaf"
   },
+  "custard-powder": {
+   "price": 4.99,
+   "pack": "300 g"
+  },
+  "dried-cranberries": {
+   "price": 3.99,
+   "pack": "170 g"
+  },
   "dried-oregano": {
    "price": 2.49,
+   "pack": "jar"
+  },
+  "dried-rosemary": {
+   "price": 2.99,
+   "pack": "jar"
+  },
+  "dried-sage": {
+   "price": 2.99,
    "pack": "jar"
   },
   "dried-thyme": {
@@ -113,6 +149,10 @@
    "price": 2.29,
    "pack": "370 ml"
   },
+  "fancy-molasses": {
+   "price": 4.99,
+   "pack": "675 ml"
+  },
   "fettuccine": {
    "price": 2.0,
    "pack": "450 g"
@@ -129,6 +169,10 @@
    "price": 2.99,
    "pack": "750 g"
   },
+  "frozen-tart-shells": {
+   "price": 4.49,
+   "pack": "12 deep shells"
+  },
   "garlic": {
    "price": 1.99,
    "pack": "3-bulb pack"
@@ -136,6 +180,10 @@
   "garlic-powder": {
    "price": 2.99,
    "pack": "jar"
+  },
+  "graham-cracker-crumbs": {
+   "price": 3.99,
+   "pack": "400 g"
   },
   "granulated-sugar": {
    "price": 3.99,
@@ -149,6 +197,14 @@
    "price": 11.0,
    "pack": "~1 kg"
   },
+  "ground-cinnamon": {
+   "price": 2.99,
+   "pack": "jar"
+  },
+  "ground-cloves": {
+   "price": 3.49,
+   "pack": "jar"
+  },
   "ground-cumin": {
    "price": 2.99,
    "pack": "jar"
@@ -161,9 +217,17 @@
    "price": 3.49,
    "pack": "jar"
   },
+  "gruyere-cheese": {
+   "price": 8.99,
+   "pack": "200 g"
+  },
   "half-and-half-10": {
    "price": 3.99,
    "pack": "1 L"
+  },
+  "ham-fully-cooked": {
+   "price": 17.0,
+   "pack": "~1.5 kg boneless"
   },
   "hard-taco-shells": {
    "price": 2.99,
@@ -173,6 +237,10 @@
    "price": 3.99,
    "pack": "6 pack"
   },
+  "holiday-sprinkles": {
+   "price": 2.99,
+   "pack": "jar"
+  },
   "honey": {
    "price": 6.99,
    "pack": "500 g"
@@ -180,6 +248,10 @@
   "iceberg-lettuce": {
    "price": 2.49,
    "pack": "head"
+  },
+  "icing-sugar": {
+   "price": 2.99,
+   "pack": "1 kg"
   },
   "italian-seasoning-dried": {
    "price": 2.49,
@@ -200,6 +272,10 @@
   "lemons": {
    "price": 0.79,
    "pack": "each"
+  },
+  "maple-syrup": {
+   "price": 9.99,
+   "pack": "540 ml"
   },
   "marinara-sauce": {
    "price": 3.49,
@@ -249,9 +325,33 @@
    "price": 6.99,
    "pack": "250 g"
   },
+  "parsnips": {
+   "price": 2.99,
+   "pack": "907 g bag"
+  },
+  "pecan-halves": {
+   "price": 7.99,
+   "pack": "200 g"
+  },
+  "peppermint-extract": {
+   "price": 4.49,
+   "pack": "43 ml"
+  },
+  "pineapple-rings-canned": {
+   "price": 1.99,
+   "pack": "398 ml"
+  },
+  "pork-sausages-mild": {
+   "price": 6.99,
+   "pack": "500 g"
+  },
   "provolone-slices": {
    "price": 4.99,
    "pack": "200 g"
+  },
+  "raisins": {
+   "price": 3.49,
+   "pack": "400 g"
   },
   "rice-vinegar": {
    "price": 2.79,
@@ -277,6 +377,14 @@
    "price": 1.79,
    "pack": "1 kg"
   },
+  "sandwich-bread-white": {
+   "price": 2.99,
+   "pack": "675 g loaf"
+  },
+  "semi-sweet-chocolate-baking": {
+   "price": 4.99,
+   "pack": "225 g box"
+  },
   "sesame-oil": {
    "price": 4.49,
    "pack": "bottle"
@@ -292,6 +400,10 @@
   "sirloin-steak": {
    "price": 21.0,
    "pack": "~900 g"
+  },
+  "sliced-almonds": {
+   "price": 4.99,
+   "pack": "200 g"
   },
   "sour-cream": {
    "price": 2.99,
@@ -309,6 +421,10 @@
    "price": 16.5,
    "pack": "per kg"
   },
+  "sweetened-shredded-coconut": {
+   "price": 3.49,
+   "pack": "200 g"
+  },
   "tomato-paste": {
    "price": 1.29,
    "pack": "156 ml can"
@@ -316,6 +432,18 @@
   "tomatoes": {
    "price": 1.5,
    "pack": "2 tomatoes"
+  },
+  "turkey-breast-roast": {
+   "price": 19.99,
+   "pack": "1.36–1.4 kg, frozen boneless"
+  },
+  "vanilla-extract": {
+   "price": 6.99,
+   "pack": "43 ml"
+  },
+  "white-vinegar": {
+   "price": 2.49,
+   "pack": "1 L"
   },
   "worcestershire-sauce": {
    "price": 3.49,

@@ -1,0 +1,470 @@
+{
+  "title": "Nanaimo Bars",
+  "subtitle": "Canada's no-bake classic: chocolate coconut crumb base, custard buttercream middle, snappy chocolate top",
+  "image": "assets/img/nanaimo-bars.webp",
+  "imageAlt": "Nanaimo bars cut into squares showing the crumb base, custard middle and chocolate top, on a white plate",
+  "servings": 8,
+  "servingsNote": "16 bars from a 20 cm (8-inch) pan: 2 each",
+  "prep": 30,
+  "cook": 85,
+  "cost": {
+    "total": 12.8,
+    "breakdown": [
+      [
+        "Butter, 1 cup + 2 tbsp",
+        3.63,
+        "butter"
+      ],
+      [
+        "Semi-sweet chocolate, 115 g",
+        2.55,
+        "semi-sweet-chocolate-baking"
+      ],
+      [
+        "Coconut, 1 cup",
+        1.4,
+        "sweetened-shredded-coconut"
+      ],
+      [
+        "Graham crumbs, 1¼ cups",
+        1.25,
+        "graham-cracker-crumbs"
+      ],
+      [
+        "Sliced almonds, ½ cup",
+        1.25,
+        "sliced-almonds"
+      ],
+      [
+        "Icing sugar, 2 cups",
+        0.75,
+        "icing-sugar"
+      ],
+      [
+        "Cocoa, ⅓ cup",
+        0.73,
+        "cocoa-powder"
+      ],
+      [
+        "Custard powder, 2 tbsp",
+        0.33,
+        "custard-powder"
+      ],
+      [
+        "35% cream",
+        0.38,
+        "35-whipping-cream"
+      ],
+      [
+        "Egg",
+        0.39,
+        "eggs"
+      ],
+      [
+        "Sugar",
+        0.1,
+        "granulated-sugar"
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "dessert"
+    ]
+  },
+  "badges": [
+    "No-bake",
+    "Canadian classic"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "Soften the butter for the middle layer and have everything measured: each layer goes on as soon as the last one is firm."
+    },
+    {
+      "icon": "thaw",
+      "text": "About 75 minutes of fridge time between layers is built into the time."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Bottom layer",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "butter",
+          "metric": {
+            "qty": 115,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "granulated sugar",
+          "metric": {
+            "qty": 50,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "cocoa powder",
+          "metric": {
+            "qty": 30,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cocoa powder",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large egg",
+          "note": "beaten",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1.25,
+          "unit": "cup",
+          "name": "graham cracker crumbs",
+          "metric": {
+            "qty": 125,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Graham cracker crumbs",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "sweetened shredded coconut",
+          "metric": {
+            "qty": 80,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Sweetened shredded coconut",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "sliced almonds",
+          "note": "finely chopped",
+          "metric": {
+            "qty": 50,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Sliced almonds",
+            "cat": "baking"
+          },
+          "optional": true
+        }
+      ]
+    },
+    {
+      "name": "Middle layer",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "butter",
+          "note": "softened",
+          "metric": {
+            "qty": 115,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2.67,
+          "unit": "tbsp",
+          "name": "35% whipping cream",
+          "note": "or milk",
+          "metric": {
+            "qty": 40,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "35% whipping cream",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "custard powder",
+          "note": "Bird's",
+          "pantry": {
+            "name": "Custard powder",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "icing sugar",
+          "metric": {
+            "qty": 250,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Icing sugar",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Top layer",
+      "items": [
+        {
+          "qty": 115,
+          "unit": "g",
+          "name": "semi-sweet baking chocolate",
+          "note": "4 squares, chopped",
+          "pantry": {
+            "name": "Semi-sweet chocolate (baking)",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Line the pan",
+      "text": "Line a 20 cm (8-inch) square pan with parchment, leaving an overhang on two sides to lift the bars out.",
+      "uses": []
+    },
+    {
+      "title": "Cook the base",
+      "text": "In a heatproof bowl set over a pot of barely simmering water (or a heavy saucepan on low), melt the butter with the sugar and cocoa. Whisk in the beaten egg and stir constantly 2–3 minutes, until thick and glossy; it should reach 71°C (160°F).",
+      "timer": 3,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Press the base",
+      "text": "Off the heat, stir in the graham crumbs, coconut and almonds. Press firmly and evenly into the pan with the bottom of a measuring cup. Chill 15 minutes.",
+      "timer": 15,
+      "uses": [
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Middle layer",
+      "text": "Beat the soft butter, cream, custard powder and icing sugar until light and smooth, about 2 minutes. Spread evenly over the base and chill 30 minutes, until firm.",
+      "timer": 30,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Chocolate top",
+      "text": "Melt the chocolate and butter together over low heat (or in the microwave in 20-second bursts), stirring until smooth. Cool 5 minutes so it's pourable but not hot, then spread it over the middle layer. Chill 30 minutes.",
+      "timer": 30,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Cut",
+      "text": "Lift the slab out and let it sit 5 minutes. Cut into 16 squares with a sharp knife dipped in hot water and wiped dry between cuts, so the layers stay clean.",
+      "uses": []
+    }
+  ],
+  "together": "AA*BA*",
+  "fixIt": [
+    {
+      "problem": "Chocolate top cracks when cut",
+      "fix": "Let the slab sit out 5–10 minutes first, and use a hot, dry knife."
+    },
+    {
+      "problem": "Middle layer too soft",
+      "fix": "Beat in more icing sugar, 2 tbsp at a time, and chill longer."
+    },
+    {
+      "problem": "Base falls apart",
+      "fix": "Press it harder, and make sure the egg mixture cooked until thick before adding the crumbs."
+    }
+  ],
+  "saleTip": "Graham crumbs, coconut and baking chocolate are all on the baking aisle at No Frills and usually on sale together in December.",
+  "swap": "No almonds? Use walnuts, or leave them out: the bars hold together fine. Vanilla pudding powder works in place of custard powder.",
+  "leftovers": "They keep beautifully. Keep a few in the freezer for a treat straight from the cold.",
+  "doneness": "Each layer should be firm before the next goes on. The base is cooked once it's thick and glossy (71°C / 160°F), which makes the egg safe.",
+  "source": "Based on the City of Nanaimo's official Nanaimo bar recipe (Joyce Hardcastle, 1986): cooked cocoa-egg base with graham, coconut and nuts; custard buttercream; chocolate top.",
+  "gear": [
+    "20 cm (8-inch) square pan",
+    "Parchment",
+    "Heatproof bowl & pot (double boiler)",
+    "Electric mixer",
+    "Offset spatula",
+    "Sharp knife"
+  ],
+  "prepAhead": [
+    "Make them up to a week ahead and keep in the fridge, or freeze the slab uncut up to 3 months."
+  ],
+  "reheat": "Not needed. Serve cold, or let them sit 5 minutes out of the fridge.",
+  "levels": {
+    "basic": {
+      "note": "No nuts, and milk in the middle instead of cream.",
+      "drop": [
+        "0-6"
+      ],
+      "swap": {
+        "1-1": {
+          "name": "milk",
+          "note": null,
+          "metric": {
+            "qty": 40,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        }
+      },
+      "stepNotes": {
+        "2": "Basic: graham crumbs and coconut only.",
+        "3": "Basic: use milk in place of the cream."
+      },
+      "costDrop": [
+        "almonds",
+        "35-whipping-cream"
+      ],
+      "costAdd": [
+        [
+          "Milk, 2⅔ tbsp",
+          0.05,
+          "milk"
+        ]
+      ]
+    },
+    "fancy": {
+      "note": "Candy cane Nanaimo bars: peppermint in the middle layer, crushed candy canes on top.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "tsp",
+              "name": "peppermint extract",
+              "pantry": {
+                "name": "Peppermint extract",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "crushed candy canes",
+              "note": "about 2 canes",
+              "pantry": {
+                "name": "Candy canes",
+                "cat": "baking"
+              },
+              "asWritten": true
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: beat in the peppermint extract with the custard powder.",
+        "4": "Fancy: scatter the crushed candy canes over the chocolate right after spreading."
+      },
+      "costAdd": [
+        [
+          "Peppermint extract",
+          0.26,
+          "peppermint-extract"
+        ],
+        [
+          "Candy canes, 2",
+          0.42,
+          "candy-canes"
+        ]
+      ],
+      "plating": [
+        "Cut smaller, 25 squares, for a dessert tray.",
+        "Serve fridge-cold on a white plate so the layers show.",
+        "Wipe the knife between every cut."
+      ]
+    }
+  },
+  "why": {
+    "0-3": "Cooking the egg into the cocoa butter binds the base and makes it safe.",
+    "1-2": "Custard powder gives the middle its colour and vanilla custard flavour.",
+    "2-1": "A little butter in the chocolate keeps it from shattering when you cut."
+  },
+  "fancyNight": false,
+  "funFact": "Named for Nanaimo, B.C. In 1986 the city held a contest for the ultimate recipe; Joyce Hardcastle's won, and it's still the official one.",
+  "keeps": {
+    "fridge": "1 week",
+    "freezer": "3 months",
+    "note": "wrap the uncut slab or the bars well",
+    "thaw": "Overnight in the fridge; cut while still cold"
+  },
+  "pairs": [
+    [
+      "christmas-10",
+      "a Canadian Christmas tray"
+    ]
+  ]
+}

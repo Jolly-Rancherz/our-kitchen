@@ -1,0 +1,422 @@
+{
+  "title": "Gingerbread Cookies",
+  "subtitle": "soft-centred molasses cut-outs with warm ginger and cinnamon, piped with simple white icing",
+  "image": "assets/img/gingerbread-cookies.webp",
+  "imageAlt": "Iced gingerbread people cookies arranged on a white plate on a navy napkin",
+  "servings": 12,
+  "servingsNote": "about 24 cookies (10 cm gingerbread people): 2 each, or a tin to share",
+  "prep": 30,
+  "cook": 85,
+  "cost": {
+    "total": 7.2,
+    "breakdown": [
+      [
+        "Flour, 375 g",
+        0.75,
+        "all-purpose-flour"
+      ],
+      [
+        "Butter, ¾ cup",
+        2.43,
+        "butter"
+      ],
+      [
+        "Brown sugar, ¾ cup",
+        0.52,
+        "brown-sugar"
+      ],
+      [
+        "Fancy molasses, ½ cup",
+        0.92,
+        "fancy-molasses"
+      ],
+      [
+        "Egg",
+        0.39,
+        "eggs"
+      ],
+      [
+        "Ground ginger, cinnamon, cloves",
+        0.7
+      ],
+      [
+        "Vanilla, baking soda, salt",
+        0.95
+      ],
+      [
+        "Icing sugar, 1½ cups",
+        0.57,
+        "icing-sugar"
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "dessert"
+    ]
+  },
+  "badges": [
+    "Make-ahead dough",
+    "Freezer-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "Set the butter and egg out 30–60 minutes ahead so they cream smoothly."
+    },
+    {
+      "icon": "thaw",
+      "text": "The dough needs at least 1 hour in the fridge (included in the time), and keeps up to 3 days, so you can mix it one night and bake another."
+    },
+    {
+      "icon": "knife",
+      "text": "Warm, not hot: ginger, cinnamon and a little clove. No heat at all."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Dough",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "note": "spooned and levelled",
+          "metric": {
+            "qty": 375,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "ground ginger",
+          "pantry": {
+            "name": "Ground ginger",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "ground cloves",
+          "pantry": {
+            "name": "Ground cloves",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "baking soda",
+          "pantry": {
+            "name": "Baking soda",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "butter",
+          "note": "softened",
+          "metric": {
+            "qty": 170,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 150,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "fancy molasses",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Fancy molasses",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large egg",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Icing",
+      "items": [
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "icing sugar",
+          "metric": {
+            "qty": 190,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Icing sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "milk",
+          "note": "plus more ½ tsp at a time",
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Mix the dry",
+      "text": "Whisk the flour, ginger, cinnamon, cloves, baking soda and salt in a bowl.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Cream",
+      "text": "In a large bowl, beat the butter and brown sugar with an electric mixer about 2 minutes, until fluffy. Beat in the molasses, egg and vanilla until smooth (it may look a little curdled; that's fine).",
+      "timer": 2,
+      "uses": [
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9",
+        "0-10"
+      ]
+    },
+    {
+      "title": "Combine and chill",
+      "text": "Mix in the dry ingredients on low just until a soft dough forms. Divide in half, flatten each into a 2 cm disc, wrap and chill at least 1 hour (or up to 3 days).",
+      "timer": 60,
+      "uses": []
+    },
+    {
+      "title": "Roll and cut",
+      "text": "Heat the oven to 180°C (350°F) and line 2 baking sheets with parchment. Roll one disc between two sheets of parchment (or on a lightly floured counter) to 5 mm thick. Cut out shapes and set them 2–3 cm apart. Re-roll the scraps once.",
+      "uses": []
+    },
+    {
+      "title": "Bake",
+      "text": "Bake one sheet at a time 8–10 minutes, until the edges are set and the centres look just dry: 8 for soft, 10 for crisp. Cool 5 minutes on the sheet, then move to a rack to cool completely.",
+      "timer": 9,
+      "uses": []
+    },
+    {
+      "title": "Ice",
+      "text": "Whisk the icing sugar, milk and vanilla until thick but pipeable. Spoon into a zip-top bag, snip a tiny corner and decorate the cooled cookies. Let the icing set about 1 hour.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    }
+  ],
+  "together": "BA*AAB",
+  "fixIt": [
+    {
+      "problem": "Dough too sticky to roll",
+      "fix": "Chill it longer, and roll between two sheets of parchment instead of on flour."
+    },
+    {
+      "problem": "Cookies spread and lose their shape",
+      "fix": "The dough got warm. Chill the cut-outs on the sheet 10 minutes before baking."
+    },
+    {
+      "problem": "Hard as rocks",
+      "fix": "They baked too long; pull them at 8 minutes next time. A slice of bread in the tin softens them overnight."
+    },
+    {
+      "problem": "Icing runs off",
+      "fix": "Whisk in more icing sugar a spoonful at a time until it holds a line."
+    }
+  ],
+  "saleTip": "Baking staples go on sale at No Frills from mid-November. Stock up on flour, brown sugar and butter, which freezes well.",
+  "swap": "No cutters? Roll into 2.5 cm balls, roll in sugar and bake 10 minutes for soft gingersnaps.",
+  "leftovers": "Crumble stale ones over vanilla ice cream, or use as the crust for a cheesecake.",
+  "doneness": "Edges set and centres just dry to the touch; they firm up as they cool. Don't taste the raw dough: it has raw egg and raw flour.",
+  "source": "Based on tested Canadian gingerbread cookie methods (Crosby's Molasses, Canadian Living): butter and brown sugar creamed with fancy molasses, a chilled dough, baked at 180°C (350°F).",
+  "gear": [
+    "Electric mixer",
+    "2 baking sheets",
+    "Parchment",
+    "Rolling pin",
+    "Cookie cutters",
+    "Cooling rack",
+    "Zip-top bag for icing"
+  ],
+  "prepAhead": [
+    "Make the dough up to 3 days ahead, or freeze the wrapped discs up to 3 months (thaw overnight in the fridge).",
+    "Bake and freeze the plain cookies; ice them the day you serve."
+  ],
+  "reheat": "Not needed. Serve at room temperature. Frozen cookies thaw on the counter in about an hour.",
+  "levels": {
+    "basic": {
+      "note": "Plain gingerbread: no icing, no clove.",
+      "drop": [
+        "0-3",
+        "1-0",
+        "1-1",
+        "1-2"
+      ],
+      "stepNotes": {
+        "5": "Basic: skip the icing. They're lovely plain, or dusted with a little icing sugar."
+      },
+      "costDrop": [
+        "icing-sugar"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Orange zest in the dough, piped details and a scatter of sprinkles.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "orange",
+              "note": "finely grated zest only",
+              "pantry": {
+                "name": "Oranges",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "holiday sprinkles",
+              "pantry": {
+                "name": "Holiday sprinkles",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: beat in the orange zest with the molasses.",
+        "5": "Fancy: pipe outlines and buttons, then scatter sprinkles before the icing sets."
+      },
+      "costAdd": [
+        [
+          "Orange, for zest",
+          0.6,
+          "oranges"
+        ],
+        [
+          "Holiday sprinkles",
+          0.6,
+          "holiday-sprinkles"
+        ]
+      ],
+      "plating": [
+        "Stand a few cookies up against the stack.",
+        "Layer between parchment in a tin to give away.",
+        "Serve with cold milk or hot chocolate."
+      ]
+    }
+  },
+  "why": {
+    "0-8": "Fancy molasses gives the deep colour, the soft chew and that classic gingerbread flavour.",
+    "0-4": "Baking soda reacts with the molasses so the cookies puff slightly and stay tender.",
+    "0-6": "Soft (not melted) butter traps air when creamed, so the cookies aren't dense."
+  },
+  "fancyNight": false,
+  "funFact": "“Fancy” molasses is the light, sweet grade from the first boil of sugar cane. Crosby's in Saint John, New Brunswick, has been selling it since 1879, and it's the classic for Canadian gingerbread.",
+  "keeps": {
+    "room": "2 weeks in an airtight tin, layered with parchment",
+    "freezer": "3 months",
+    "note": "freeze them un-iced; the raw dough discs freeze 3 months too",
+    "thaw": "On the counter in their container, about 1 hour"
+  },
+  "pairs": [
+    [
+      "christmas-08",
+      "fill a cookie tin together"
+    ]
+  ]
+}

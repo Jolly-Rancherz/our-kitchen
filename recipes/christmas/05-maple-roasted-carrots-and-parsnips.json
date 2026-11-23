@@ -173,7 +173,7 @@
     },
     {
       "title": "Season and roast",
-      "text": "Toss on the sheet with the oil, salt, pepper and thyme and spread in one layer with space between. Roast 20 minutes.",
+      "text": "Toss on the sheet with the oil, salt, pepper and dried thyme, then spread in one layer with space between. Roast 20 minutes.",
       "timer": 20,
       "uses": [
         "0-2",
@@ -225,7 +225,7 @@
   "reheat": "Spread on a sheet at 200°C (400°F) for 8–10 minutes until hot, or microwave 1–2 minutes.",
   "levels": {
     "basic": {
-      "note": "Maple alone: no butter or thyme.",
+      "note": "Maple alone: no butter or dried thyme.",
       "drop": [
         "0-5",
         "1-1"

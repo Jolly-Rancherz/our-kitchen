@@ -41,6 +41,11 @@
       "name": "Comfort & Soups",
       "colour": "#082048",
       "tile": "assets/tiles/comfort-soups.webp"
+    },
+    {
+      "slug": "christmas",
+      "name": "Christmas",
+      "colour": "#9E2B35"
     }
   ]
 }

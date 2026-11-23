@@ -261,7 +261,7 @@
     },
     {
       "title": "Make the herb butter",
-      "text": "Mash the soft butter with the garlic, thyme, sage, rosemary and paprika until evenly mixed.",
+      "text": "Mash the soft butter with the garlic, dried herbs and paprika until evenly mixed.",
       "uses": [
         "1-0",
         "1-1",
@@ -353,7 +353,7 @@
   },
   "levels": {
     "basic": {
-      "note": "Butter, thyme, salt and pepper, and a quick gravy from the pan juices.",
+      "note": "Butter, dried thyme, salt and pepper, and a quick gravy from the pan juices.",
       "drop": [
         "1-1",
         "1-3",
@@ -361,7 +361,7 @@
         "2-3"
       ],
       "stepNotes": {
-        "1": "Basic: mash the butter with the thyme and paprika only.",
+        "1": "Basic: mash the butter with the dried thyme and paprika only.",
         "5": "Basic: skip the Worcestershire."
       },
       "costDrop": [],
