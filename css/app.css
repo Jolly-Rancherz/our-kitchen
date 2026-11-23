@@ -1728,3 +1728,31 @@ html[data-theme="dark"] .wkcard .im::after{background:repeating-linear-gradient(
 #tabbar a.on svg{animation:tabpop .34s cubic-bezier(.3,1.4,.5,1)}
 #tabbar a.on::before{animation:tabbar .26s ease-out}
 @media (prefers-reduced-motion:reduce){#tabbar a.on svg,#tabbar a.on::before{animation:none}}
+
+/* ---------------------------------------------------------------- update 12.2 grocery: store, flyer, in-store mode, forgot anything */
+.storebar{display:flex;align-items:center;gap:6px;margin-top:10px;flex-wrap:wrap}
+.storesel{position:relative;flex:1 1 160px;min-width:0;display:flex;align-items:center;height:36px;border:1.25px solid var(--line-gold);background:var(--card);padding:0 10px 0 9px;gap:6px}
+.storesel svg,.storebar .chip svg,.forgot .chip svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.storesel svg{color:var(--gold-deep)}
+html[data-theme="dark"] .storesel svg{color:var(--gold)}
+.storesel select{flex:1;min-width:0;height:100%;border:0;background:transparent;color:var(--ink);font:inherit;font-weight:600;font-size:.86rem;-webkit-appearance:none;appearance:none;padding-right:16px}
+.storesel::after{content:"";position:absolute;right:11px;top:13px;width:6px;height:6px;border-right:1.5px solid var(--ink2);border-bottom:1.5px solid var(--ink2);transform:rotate(45deg);pointer-events:none}
+.storebar .chip{height:36px;border-color:var(--line-gold);background:var(--card);color:var(--ink);text-decoration:none}
+/* a strip of tape holds the trip estimate on like a receipt */
+.trip{position:relative}
+.trip::before{content:"";position:absolute;top:-8px;left:50%;width:64px;height:16px;margin-left:-32px;transform:rotate(-2deg);pointer-events:none;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.22) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(242,229,198,.9);box-shadow:0 1px 3px rgba(18,16,46,.28);opacity:.92}
+html[data-theme="dark"] .trip::before{background:repeating-linear-gradient(90deg,rgba(255,255,255,.10) 0 6px,rgba(255,255,255,0) 6px 12px),rgba(222,200,150,.78)}
+/* in-store mode: big rows and big ticks, one hand, no fiddly targets */
+.instore .glist .swf{min-height:62px;font-size:1.14rem;grid-template-columns:34px 1fr auto;gap:14px}
+.instore .glist .box{width:32px;height:32px;border-width:2px}
+.instore .glist .box svg{width:22px;height:22px}
+.instore .glist .gamt{font-size:.9rem}
+.instore .pgroup .gh{font-size:.8rem}
+.forgot .chips{gap:8px}
+.forgot .chip{border-color:var(--line-gold);background:var(--card);color:var(--ink);height:38px}
+.forgot .chip small{margin-left:2px;font-size:.68rem;color:var(--muted)}
+.storebar{display:grid;grid-template-columns:minmax(0,1fr) auto auto}
+.storebar .chip{justify-content:center}
+html.big .storebar{grid-template-columns:1fr 1fr}
+html.big .storesel{grid-column:1/-1}

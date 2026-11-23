@@ -343,3 +343,12 @@ exactly 812pt although the image continues.
 - Already there and re-verified (pwtest/t121.mjs): per-tab scroll memory (`scrollMem` restored on `dir === 'tab'`), tap the active tab → smooth scroll to top.
 - Photos: all 63 are already WebP. AVIF was measured at only 18% smaller (2.77 → 2.27 MB) and would mean a second copy of every photo in the offline cache, so we stayed on WebP.
 - iPhone 16 Pro (402 × 874) added to the crawl configs.
+
+## Update 12.2 — grocery: store, prices, tax, in-store (2026-11-23)
+- New saved fields (additive only): `settings.store` (default 'nofrills') and `storePrices` (storeId → pantryKey → { price, date, name, src }). `migrate()` fills both; existing `prices` / `priceLog` untouched.
+- `STORES`, `curStore()`, `storeName()`. The kicker reads "<Store> run". `#gStore` select in `.storebar` with the Flyer chip (`flippLink(store)` = `https://flipp.com/action?command=query&text=…&type=search`; flipp.com's AASA lists `/action`, so on iPhone it opens the Flipp app if installed, otherwise flipp.com) and the Receipt chip (old Scan receipt button moved here).
+- `priceOf(key)`: this store's remembered price → latest receipt price (any store) → typical No Frills pack (recipes/prices.json). Receipt save also calls `rememberStorePrice(key, price, name, 'receipt')`. The item sheet entry saves 'entry' and logs the price.
+- HST: `TAXABLE` keyword guess (paper/cleaning/personal care/candy/chips/pop/pet/etc.) × 13%, only on priced items; unpriced taxable items are counted in words. Always labelled "an estimate".
+- In-store mode (`ui.instore`, session only): `.instore` big rows and ticks, its own wake lock `storeLock` (re-requested on visibility, released on Done or when leaving #/grocery). `forgotCard()` = pantry low/out + staples not already on the list (ticked or not), max 10, tap to add.
+- Hold a row (`longPress`, 520 ms, cancels on 8 px move; contextmenu on desktop) → `openGroceryItem`: recipes that use it (pantry key or a loose singular-name match), price at this store + other stores, Find on Flipp.
+- Scrapbook touch on Grocery: handwritten lead, a tape strip on the trip card, store tools grouped in one bar.

@@ -34,6 +34,8 @@ const ICON = {
   search: '<circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/>',
   filter: '<path d="M4 6h16M7 12h10M10 18h4"/>',
   check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+  pin: '<path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/>',
+  tag: '<path d="M3.5 12.2V4.5a1 1 0 0 1 1-1h7.7l8.3 8.3a1.4 1.4 0 0 1 0 2l-6.2 6.2a1.4 1.4 0 0 1-2 0z"/><circle cx="8" cy="8" r="1.4"/>',
   plus: '<path d="M12 5v14M5 12h14"/>',
   play: '<path d="M7 5v14l11-7z"/>',
   timer: '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2.5h5"/>',
@@ -131,7 +133,9 @@ const DEFAULT_STATE = () => ({
     // update 2 (added fields only)
     units: 'both', temp: 'both', snow: true, hearts: true, haptics: true, autoRestock: true, lastBackup: null, backupSnooze: null, cook: {},
     // update 3 (added fields only)
-    sounds: false, chime: 'bell', shake: false, playlist: '', dinnerAt: '18:30', seasonal: true },
+    sounds: false, chime: 'bell', shake: false, playlist: '', dinnerAt: '18:30', seasonal: true,
+    // update 12.2 (added field only): the store we shop at, drives the list title, prices and the Flipp flyer link
+    store: 'nofrills' },
   favourites: { 'comfort-soups-01': now() },      // recipeId -> ts (Mom's soup pre-hearted)
   recent: [],          // [recipeId]
   hidden: {},          // recipeId -> ts
@@ -176,6 +180,7 @@ const DEFAULT_STATE = () => ({
   // update 7 (added collections only — nothing above changes shape; acura gains photos: id -> { id, data, date, at })
   plan: {},            // ISO date -> { recipeId, by, at, synced } (week plan; today's becomes tonight's plan once)
   staples: null,       // [{ name, cat }] once edited (until then the starter staples list is shown)
+  storePrices: {},     // update 12.2: storeId -> pantryKey -> { price, date, name, src: 'receipt' | 'entry' } (what we paid there)
   priceLog: {},        // pantryKey -> [{ price, date, name }] every receipt price, newest last (state.prices keeps the latest)
   noteMeta: {},        // recipeId -> { by, at } who last edited our notes
   places: {},          // id -> { id, name, date, dish, note, by, at } places we love
@@ -203,7 +208,7 @@ function migrate(raw) {
   if (!raw || raw.v !== 1) return null;
   const d = DEFAULT_STATE();
   const st = { ...d, ...raw, settings: { ...d.settings, ...raw.settings }, profile: { ...d.profile, ...raw.profile } };
-  ['loveNotes', 'stories', 'freezer', 'wish', 'prices', 'guests', 'edits', 'versions', 'milestones', 'recapSeen', 'favBy', 'nicknames', 'dessertJar', 'tasteTests', 'dishes', 'flashSeen', 'annivSeen', 'plan', 'priceLog', 'noteMeta', 'places', 'thanks', 'dateMenus', 'levels', 'levelNotes', 'fancyNight', 'scratched', 'deleted', 'bookBookmarks'].forEach((k) => { if (!st[k] || typeof st[k] !== 'object') st[k] = {}; });
+  ['storePrices', 'loveNotes', 'stories', 'freezer', 'wish', 'prices', 'guests', 'edits', 'versions', 'milestones', 'recapSeen', 'favBy', 'nicknames', 'dessertJar', 'tasteTests', 'dishes', 'flashSeen', 'annivSeen', 'plan', 'priceLog', 'noteMeta', 'places', 'thanks', 'dateMenus', 'levels', 'levelNotes', 'fancyNight', 'scratched', 'deleted', 'bookBookmarks'].forEach((k) => { if (!st[k] || typeof st[k] !== 'object') st[k] = {}; });
   if (!st.acura || typeof st.acura !== 'object') st.acura = d.acura;
   ['favs', 'baked', 'notes', 'ratings', 'profile', 'given', 'photos', 'paws'].forEach((k) => { if (!st.acura[k] || typeof st.acura[k] !== 'object') st.acura[k] = {}; });
   if (!st.seededSoup) { st.favourites = { ...st.favourites, 'comfort-soups-01': st.favourites['comfort-soups-01'] || now() }; st.seededSoup = 1; }
@@ -1517,7 +1522,23 @@ const SUBS = {
 // ---------------------------------------------------------------- price memory (#26)
 let PRICES = {};
 async function loadPrices() { try { PRICES = (await (await fetch('recipes/prices.json')).json()).prices || {}; } catch (e) { PRICES = {}; } }
+// update 12.2: stores we can pick, per-store remembered prices (only what we actually paid: receipts and our own entries)
+const STORES = [['nofrills', 'No Frills'], ['foodbasics', 'Food Basics'], ['freshco', 'FreshCo'], ['walmart', 'Walmart'], ['superstore', 'Real Canadian Superstore'],
+  ['costco', 'Costco'], ['metro', 'Metro'], ['sobeys', 'Sobeys'], ['zehrs', 'Zehrs'], ['loblaws', 'Loblaws']];
+const curStore = () => (STORES.some(([k]) => k === state.settings.store) ? state.settings.store : 'nofrills');
+const storeName = (k = curStore()) => (STORES.find((s) => s[0] === k) || STORES[0])[1];
+const flippLink = (text) => `https://flipp.com/action?command=query&text=${encodeURIComponent(text)}&type=search`;
+function rememberStorePrice(key, price, name, src) {
+  const st = curStore(); const m = state.storePrices[st] || (state.storePrices[st] = {});
+  m[key] = { price, date: todayISO(), name: name || (m[key] && m[key].name) || key, src };
+}
+// Ontario HST 13% applies only to taxable items; basic groceries are zero-rated. A keyword guess, shown as an estimate.
+const HST = 0.13;
+const TAXABLE = /paper towel|toilet paper|tissue|napkin|foil|parchment|plastic wrap|cling|zip ?lock|freezer bag|sandwich bag|garbage bag|trash bag|dish soap|dishwasher|detergent|laundry|soap|shampoo|conditioner|toothpaste|deodorant|cleaner|bleach|sponge|batter(y|ies)|light ?bulb|candy|chocolate bar|gum\b|chips\b|popcorn|soft drink|\bpop\b|soda|cola|energy drink|sparkling|kombucha|dog food|dog treat|cat food|kitty litter|pet |vitamin|candle|charcoal|propane/i;
+const isTaxable = (name) => TAXABLE.test(name || '');
 function priceOf(key) {
+  const sp = (state.storePrices[curStore()] || {})[key];
+  if (sp && sp.price > 0) return { price: sp.price, mine: true, here: true, at: sp.date };
   const m = state.prices[key];
   if (m && m.price > 0) return { price: m.price, mine: true, at: m.at };
   const d = PRICES[key];
@@ -1559,8 +1580,9 @@ function sumAmounts(amts) {
 function tripEstimate() {
   const left = Object.values(state.grocery).filter((g) => !g.checked);
   let total = 0, priced = 0;
-  left.forEach((g) => { const p = priceOf(g.key); if (p) { total += p.price; priced++; } });
-  return { total, priced, n: left.length };
+  let tax = 0, taxN = 0, here = 0, taxOpen = 0;
+  left.forEach((g) => { const p = priceOf(g.key); const tx = isTaxable(g.name); if (p) { total += p.price; priced++; if (p.here) here++; if (tx) { tax += p.price * HST; taxN++; } } else if (tx) taxOpen++; });
+  return { total, priced, n: left.length, tax, taxN, taxOpen, here };
 }
 
 // ---------------------------------------------------------------- weather (#13)
@@ -1994,7 +2016,7 @@ function openReceiptReview(parsed) {
       <input class="numin rcprice" data-price="${i}" type="number" inputmode="decimal" step="0.01" value="${r.price.toFixed(2)}" aria-label="Price"><span class="rcjump" data-jump="${i}">${jumpNote(r)}</span></div>`).join('')}</div>
     <div class="setrow"><span class="l"><b>Receipt total</b><span>From the TOTAL line</span></span><input class="numin" id="rcTotal" type="number" inputmode="decimal" step="0.01" style="width:96px" value="${parsed.total != null ? parsed.total.toFixed(2) : ''}"></div>
     <label class="setrow"><span class="l"><b>Add the total to the budget</b><span>As “Grocery receipt” today</span></span><span class="switch"><input type="checkbox" id="rcBud" checked><i></i></span></label>
-    <p class="small muted" style="margin-top:8px">Saving marks matched items “Have lots” in the Pantry, ticks them off the grocery list and remembers the prices for cost estimates.</p>
+    <p class="small muted" style="margin-top:8px">Saving marks matched items “Have lots” in the Pantry, ticks them off the grocery list and remembers the prices as ${esc(storeName())} prices for cost estimates.</p>
     <div class="foot"><button class="btn" data-close>Cancel</button><button class="btn gold" id="rcSave">Save receipt</button></div>`, (b) => {
     $$('[data-on]', b).forEach((x) => (x.onchange = () => { rows[x.dataset.on].on = x.checked; x.closest('.rcrow').classList.toggle('off', !x.checked); }));
     const flag = (i) => { $(`[data-jump="${i}"]`, b).textContent = jumpNote(rows[i]); };
@@ -2008,7 +2030,7 @@ function openReceiptReview(parsed) {
         const c = catMap[r.key];
         state.pantry[r.key] = { ...(state.pantry[r.key] || { name: c.name, cat: c.cat }), level: 'lots', at: now() }; stocked++;
         Object.values(state.grocery).forEach((g) => { if (g.key === r.key && !g.checked) { g.checked = true; g.at = now(); g.checkedAt = now(); g.checkedBy = state.profile.me; ticked++; } });
-        if (r.price > 0) { const pr = Math.round(r.price * 100) / 100; if (priceJump(r.key, pr)) jumped++; logPrice(r.key, pr, r.name); state.prices[r.key] = { price: pr, at: now(), date: todayISO(), src: 'receipt', name: r.name }; priced++; }
+        if (r.price > 0) { const pr = Math.round(r.price * 100) / 100; if (priceJump(r.key, pr)) jumped++; logPrice(r.key, pr, r.name); state.prices[r.key] = { price: pr, at: now(), date: todayISO(), src: 'receipt', name: r.name }; rememberStorePrice(r.key, pr, r.name, 'receipt'); priced++; }
       });
       const tot = parseFloat($('#rcTotal', b).value);
       if ($('#rcBud', b).checked && tot > 0) { const id = uid(); state.cooked[id] = { id, recipeId: 'receipt', title: 'Grocery receipt', date: todayISO(), amount: Math.round(tot * 100) / 100, estimate: false, by: state.profile.me, at: now(), receipt: true, lines: rows.filter((r) => r.on).length }; }
@@ -3211,23 +3233,27 @@ function viewGrocery() {
   const gv = gd ? ui.gview || 'All' : 'All';
   const shown = items.filter((g) => gv === 'All' || gd.split[g.id] === gv);
   render(`<div class="wrap">
-    <div class="kicker">No Frills run<span class="rule"></span></div>
+    <div class="kicker">${esc(storeName())} run<span class="rule"></span></div>
     <h1 class="h1" style="margin-top:6px">Grocery List</h1>
     <p class="lead hand">${left ? `${left} thing${left === 1 ? '' : 's'} to grab` : items.length ? 'All done — nice.' : 'Empty for now.'}</p>
-    ${gd ? dateModeCard(items) : (() => { const t = tripEstimate(); return t.n && t.priced ? `<div class="trip"><span>Estimated trip</span><b>~${money(t.total)}</b><small>${t.priced === t.n ? 'all' : t.priced + ' of ' + t.n} items priced · typical No Frills packs${Object.keys(state.prices).length ? ' + your receipts' : ''}</small>${(() => { const dn = items.filter((g) => g.checked).length; return dn ? `<span class="tprog" aria-label="${dn} of ${items.length} in the cart"><i style="transform:scaleX(${(dn / items.length).toFixed(3)})"></i></span><small class="tdone">${dn} of ${items.length} in the cart</small>` : ''; })()}</div>` : ''; })()}
-    <div class="btnrow" style="margin-top:10px">${gd ? '' : `<button class="btn ghost" id="gdStart" ${left ? '' : 'disabled style="opacity:.4"'}>${svg('heart')}Shop together</button>`}<button class="btn ghost" id="scanG" ${gd ? 'style="grid-column:1/-1"' : ''}>${svg('camera')}Scan receipt</button></div>
-    ${gd ? '' : `<div class="btnrow" style="margin-top:8px"><button class="btn ghost" id="wkBtn">${svg('calendar')}Plan the week</button><button class="btn ghost" id="stBtn">${svg('plus')}Staples</button></div>`}
+    <div class="storebar"><label class="storesel">${svg('pin')}<select id="gStore" aria-label="Store">${STORES.map(([k, n]) => `<option value="${k}" ${k === curStore() ? 'selected' : ''}>${esc(n)}</option>`).join('')}</select></label>
+      <a class="chip" id="gFlyer" href="${flippLink(storeName())}" target="_blank" rel="noopener">${svg('tag')}Flyer</a><button class="chip" id="scanG">${svg('camera')}Receipt</button></div>
+    ${gd ? dateModeCard(items) : (() => { const t = tripEstimate(); return t.n && t.priced ? `<div class="trip"><span>Estimated trip</span><b>~${money(t.total + t.tax)}</b><small>${t.priced === t.n ? 'all' : t.priced + ' of ' + t.n} items priced · ${t.here ? `${t.here} at ${esc(storeName())} prices we've paid, the rest ` : ''}typical No Frills packs</small><small>${t.taxN ? `incl. ~${money(t.tax, true)} HST on ${t.taxN} taxable item${t.taxN === 1 ? '' : 's'}` : t.taxOpen ? '' : 'no HST — groceries are zero-rated'}${t.taxOpen ? `${t.taxN ? ' · ' : ''}+13% HST on ${t.taxOpen} unpriced taxable item${t.taxOpen === 1 ? '' : 's'}` : ''} · an estimate</small>${(() => { const dn = items.filter((g) => g.checked).length; return dn ? `<span class="tprog" aria-label="${dn} of ${items.length} in the cart"><i style="transform:scaleX(${(dn / items.length).toFixed(3)})"></i></span><small class="tdone">${dn} of ${items.length} in the cart</small>` : ''; })()}</div>` : ''; })()}
+    <div class="btnrow" style="margin-top:10px">${gd ? '' : `<button class="btn ghost" id="gdStart" ${left ? '' : 'disabled style="opacity:.4"'}>${svg('heart')}Shop together</button>`}<button class="btn ${ui.instore ? 'gold' : 'ghost'}" id="gStoreMode" ${gd ? 'style="grid-column:1/-1"' : ''}>${svg('cart')}${ui.instore ? 'Done shopping' : 'In the store'}</button></div>
+    ${gd || ui.instore ? '' : `<div class="btnrow" style="margin-top:8px"><button class="btn ghost" id="wkBtn">${svg('calendar')}Plan the week</button><button class="btn ghost" id="stBtn">${svg('plus')}Staples</button></div>`}
     <div class="addrow"><input id="gNew" placeholder="Add an item…" enterkeyhint="done" autocomplete="off"><button class="btn primary" id="gAdd" aria-label="Add">${svg('plus')}</button>
       <select id="gCat" aria-label="Aisle"><option value="">Aisle: auto</option>${AISLES.map(([k, n]) => `<option value="${k}">${esc(n)}</option>`).join('')}</select></div>
-    ${items.length ? `<p class="small muted swhint">Swipe → to tick · ← to delete${gd ? ' · tap the hat to say who grabs it' : ''}</p>` : ''}
+    ${items.length ? `<p class="small muted swhint">${ui.instore ? 'Tap to tick · hold for recipes and price' : `Swipe → to tick · ← to delete · hold for recipes and price${gd ? ' · tap the hat to say who grabs it' : ''}`}</p>` : ''}
     ${items.length ? AISLES.map(([ak, an]) => {
       const rows = shown.filter((g) => aisleOf(g) === ak).sort((a, b) => a.checked - b.checked || a.name.localeCompare(b.name));
       if (!rows.length) return '';
       return `<div class="pgroup"><div class="gh">${esc(an)}<span>${rows.filter((g) => !g.checked).length} left</span></div><ul class="checklist glist">${rows.map((g) => grocRow(g, gd)).join('')}</ul></div>`;
     }).join('') || '<div class="empty" style="margin-top:14px">Nothing on this list yet — tap a hat on “Everything” to split it.</div>' : `<div class="empty" style="margin-top:16px">Add things here, or tap “Add to grocery list” on a recipe, or “+ Grocery list” on anything running low in the Pantry.</div>`}
     ${items.length ? `<div class="gsummary"><span>${done} checked</span><span style="display:flex;gap:8px"><button class="btn sm ghost" id="gClear" ${done ? '' : 'disabled style="opacity:.4"'}>Clear checked</button><button class="btn sm ghost" id="gAll">Clear all</button></span></div>
-    <p class="small muted" style="margin-top:10px">Checking something off marks it “Have it” in the Pantry. Sorted in No Frills aisle order.</p>` : ''}
+    <p class="small muted" style="margin-top:10px">Checking something off marks it “Have it” in the Pantry. Sorted by aisle.</p>` : ''}
+    ${ui.instore ? forgotCard() : ''}
   </div>`);
+  $('#view .wrap').classList.toggle('instore', !!ui.instore);
   const redraw = () => viewGrocery();
   const add = () => {
     const v = $('#gNew').value.trim(); if (!v) return;
@@ -3248,7 +3274,8 @@ function viewGrocery() {
   };
   const del = (id) => { const g = state.grocery[id]; if (!g) return; delete state.grocery[id]; if (gd) delete gd.split[id]; save(); redraw(); toast(`Removed ${g.name}`, 'Undo', () => { state.grocery[g.id] = g; save(); redraw(); }); };
   $$('li[data-g]').forEach((li) => {
-    li.onclick = (e) => { if (li.dataset.sw || e.target.closest('.del,.whobtn')) return; tick(li.dataset.g, li); };
+    longPress(li, () => openGroceryItem(li.dataset.g));
+    li.onclick = (e) => { if (li.dataset.sw || li.dataset.lp || e.target.closest('.del,.whobtn')) return; tick(li.dataset.g, li); };
     swipeRow(li, (dir) => { if (dir > 0) tick(li.dataset.g, li); else del(li.dataset.g); });
   });
   $$('[data-del]').forEach((b) => (b.onclick = (e) => { e.stopPropagation(); del(b.dataset.del); }));
@@ -3256,6 +3283,9 @@ function viewGrocery() {
   $('#gClear') && ($('#gClear').onclick = () => { const bak = { ...state.grocery }; Object.values(state.grocery).forEach((g) => { if (g.checked) delete state.grocery[g.id]; }); save(); redraw(); toast('Cleared checked items', 'Undo', () => { state.grocery = bak; save(); redraw(); }); });
   $('#gAll') && ($('#gAll').onclick = () => confirmSheet('Clear the whole list?', 'This removes every item, checked or not.', 'Clear all', () => withUndo('List cleared', () => { state.grocery = {}; }, viewGrocery), true));
   $('#scanG').onclick = openScan;
+  $('#gStore').onchange = (e) => { state.settings.store = e.target.value; save(); redraw(); toast(`Shopping at ${storeName()}`); };
+  $('#gStoreMode').onclick = () => { if (ui.instore) stopInstore(); else { ui.instore = true; storeLockOn(); } redraw(); };
+  $$('[data-forgot]').forEach((b) => (b.onclick = () => { const x = forgotList()[+b.dataset.forgot]; if (!x) return; addGrocery(x.name, x.cat || guessCat(x.name), x.key, 'forgot'); save(); redraw(); toast(`${x.name} added`); }));
   $('#gdStart') && ($('#gdStart').onclick = () => { state.groceryDate = { on: true, start: now(), split: {} }; ui.gview = 'All'; save(); redraw(); toast('Grocery date ♥ — have fun, you two'); });
   $('#gdSplit') && ($('#gdSplit').onclick = () => {
     const lefts = items.filter((g) => !g.checked); const by = {}; lefts.forEach((g) => { const a = aisleOf(g); (by[a] = by[a] || []).push(g); });
@@ -3270,6 +3300,50 @@ function viewGrocery() {
     const mins = Math.max(1, Math.round((now() - gd.start) / 6e4)); const prev = state.groceryDate;
     state.groceryDate = { ...prev, on: false, end: now() }; save(); redraw();
     toast(`Grocery date done ♥ ${got.length} items · ~${money(spent)} · ${mins} min`, 'Undo', () => { state.groceryDate = prev; save(); redraw(); });
+  });
+}
+// update 12.2: in-store mode keeps the screen awake while the list is open; leaving the tab or tapping Done lets it sleep
+let storeLock = null;
+async function storeLockOn() { try { if ('wakeLock' in navigator && !storeLock) { storeLock = await navigator.wakeLock.request('screen'); storeLock.addEventListener('release', () => { storeLock = null; }); } } catch (e) { storeLock = null; } }
+function stopInstore() { ui.instore = false; if (storeLock) { storeLock.release().catch(() => {}); storeLock = null; } }
+window.addEventListener('hashchange', () => { if (ui.instore && !/^#\/grocery/.test(location.hash)) stopInstore(); });
+document.addEventListener('visibilitychange', () => { if (ui.instore && document.visibilityState === 'visible' && /^#\/grocery/.test(location.hash)) storeLockOn(); });
+// "Forgot anything?": pantry items marked low or out, and staples, that aren't on the list yet
+function forgotList() {
+  const seen = new Set(Object.values(state.grocery).map((g) => g.key)); const out = []; // anything already on the list, ticked or not
+  Object.entries(state.pantry).forEach(([key, p]) => { if ((p.level === 'low' || p.level === 'out') && !seen.has(key)) { seen.add(key); out.push({ key, name: p.name, cat: p.cat, why: p.level === 'out' ? 'out' : 'low' }); } });
+  staplesList().forEach((x) => { const key = pantryKey(x.name); if (!seen.has(key) && levelOf(key) !== 'lots') { seen.add(key); out.push({ key, name: x.name, cat: x.cat, why: 'staple' }); } });
+  return out.slice(0, 10);
+}
+function forgotCard() {
+  const l = forgotList(); if (!l.length) return '';
+  return `<div class="sec forgot"><div class="sec-title">Forgot anything?</div><div class="chips">${l.map((x, i) => `<button class="chip" data-forgot="${i}">${svg('plus')}${esc(x.name)}<small>${x.why === 'staple' ? 'staple' : x.why === 'out' ? 'out' : 'low'}</small></button>`).join('')}</div></div>`;
+}
+// hold a grocery row: which recipes need it, what we paid for it here, and a Flipp search
+function longPress(el, fn) {
+  let t = null, x0 = 0, y0 = 0;
+  const cancel = () => { clearTimeout(t); t = null; };
+  el.addEventListener('touchstart', (e) => { if (e.touches.length !== 1) return; x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; delete el.dataset.lp; cancel(); t = setTimeout(() => { t = null; el.dataset.lp = '1'; buzz(15); fn(); setTimeout(() => { delete el.dataset.lp; }, 600); }, 520); }, { passive: true });
+  el.addEventListener('touchmove', (e) => { if (t && (Math.abs(e.touches[0].clientX - x0) > 8 || Math.abs(e.touches[0].clientY - y0) > 8)) cancel(); }, { passive: true });
+  el.addEventListener('touchend', cancel, { passive: true }); el.addEventListener('touchcancel', cancel, { passive: true });
+  el.addEventListener('contextmenu', (e) => { e.preventDefault(); if (!el.dataset.lp) fn(); });
+}
+function openGroceryItem(id) {
+  const g = state.grocery[id]; if (!g) return;
+  const base = (n) => String(n).toLowerCase().replace(/\(.*?\)/g, '').replace(/[^a-z ]/g, ' ').trim().replace(/\s+/g, ' ').replace(/(e?s)$/, '');
+  const gb = base(g.name);
+  const uses = visibleRecipes().filter((r) => (r.pantry || []).some((p) => pantryKey(p.name) === g.key || base(p.name) === gb));
+  const here = (state.storePrices[curStore()] || {})[g.key]; const p = priceOf(g.key);
+  const others = STORES.filter(([k]) => k !== curStore() && state.storePrices[k] && state.storePrices[k][g.key]).map(([k, n]) => `${esc(n)} ${money(state.storePrices[k][g.key].price, true)}`);
+  openSheet(`<h2>${esc(g.name)}</h2><p class="sub">${uses.length ? `In ${uses.length} of our recipes` : 'Not in any of our recipes'}${g.from ? ` · added for ${esc(g.from)}` : ''}</p>
+    ${uses.length ? `<ul class="cooked">${uses.map((r) => `<li><a href="#/r/${r.id}" data-close style="flex:1;color:inherit;text-decoration:none"><div class="t">${esc(r.title)}</div><div class="d">${esc(catOf(r.category).name)}</div></a></li>`).join('')}</ul>` : ''}
+    <div class="setrow"><span class="l"><b>Price at ${esc(storeName())}</b><span>${here ? `We paid ${money(here.price, true)} · ${esc(shortDate(here.date))}` : p ? `No ${esc(storeName())} price yet · estimate ${money(p.price, true)}` : 'No price yet'}${others.length ? ` · ${others.join(' · ')}` : ''}</span></span><input class="numin" id="giPrice" type="number" inputmode="decimal" step="0.01" min="0" style="width:96px" placeholder="$" value="${here ? here.price : ''}"></div>
+    <div class="foot"><a class="btn ghost" href="${flippLink(g.name)}" target="_blank" rel="noopener">${svg('tag')}Find on Flipp</a><button class="btn primary" id="giSave">Done</button></div>`, (b) => {
+    $('#giSave', b).onclick = () => {
+      const v = Math.round((parseFloat($('#giPrice', b).value) || 0) * 100) / 100;
+      if (v > 0 && (!here || here.price !== v)) { rememberStorePrice(g.key, v, g.name, 'entry'); logPrice(g.key, v, g.name); state.prices[g.key] = { price: v, at: now(), date: todayISO(), src: 'entry', name: g.name }; save(); toast(`${g.name}: ${money(v, true)} at ${storeName()}`); }
+      closeSheet(); viewGrocery();
+    };
   });
 }
 function swipeRow(li, done) {
@@ -4885,6 +4959,34 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+ {
+  "name": "Update 12.2",
+  "id": "u122-2026-11",
+  "date": "2026-11-23",
+  "intro": "The grocery list knows which store you're at.",
+  "notes": [
+   [
+    "Pick your store",
+    "No Frills, Food Basics, FreshCo, Walmart and more. The list, the trip estimate and the Flyer button (opens Flipp) follow it"
+   ],
+   [
+    "Prices you've paid there",
+    "Scanned receipts and prices you type in are remembered for each store, and the estimate uses them first. Nothing is made up"
+   ],
+   [
+    "After tax",
+    "The estimate adds 13% HST only on taxable things like paper towels or dish soap. Groceries are zero-rated. It's an estimate"
+   ],
+   [
+    "In the store",
+    "Big rows and big ticks, the screen stays awake, and “Forgot anything?” offers what's low, out or a staple"
+   ],
+   [
+    "Hold an item",
+    "See which recipes need it, type what it cost, or find it on Flipp"
+   ]
+  ]
+ },
  {
   "name": "Update 12.1",
   "id": "u121-2026-11",
