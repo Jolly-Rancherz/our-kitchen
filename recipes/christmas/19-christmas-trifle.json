@@ -1,0 +1,368 @@
+{
+  "title": "Christmas Trifle",
+  "subtitle": "layers of jam-spread pound cake, berries, vanilla custard and whipped cream in a big glass bowl",
+  "image": "assets/img/christmas-trifle.webp",
+  "imageAlt": "A glass trifle bowl showing layers of cake, red berries, yellow custard and whipped cream, on a navy napkin",
+  "servings": 10,
+  "servingsNote": "a 3 L bowl for a holiday crowd, or dessert for two all week",
+  "prep": 30,
+  "cook": 280,
+  "cost": {
+    "total": 16.6,
+    "breakdown": [
+      [
+        "Frozen pound cake, 298 g",
+        4.49,
+        "pound-cake-frozen"
+      ],
+      [
+        "Frozen mixed berries, 600 g",
+        5.99,
+        "frozen-mixed-berries"
+      ],
+      [
+        "Raspberry jam, ⅓ cup",
+        0.8,
+        "raspberry-jam"
+      ],
+      [
+        "Milk, 3 cups",
+        2.17,
+        "milk"
+      ],
+      [
+        "Custard powder, 3 tbsp",
+        0.45,
+        "custard-powder"
+      ],
+      [
+        "35% cream, 1 cup",
+        2.37,
+        "35-whipping-cream"
+      ],
+      [
+        "Sugar, icing sugar",
+        0.17
+      ],
+      [
+        "Vanilla",
+        0.08,
+        "vanilla-extract"
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+      "dessert"
+    ]
+  },
+  "badges": [
+    "Make-ahead",
+    "Feeds a crowd"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Thaw the berries in a bowl in the fridge overnight, or about 1 hour on the counter. Keep the juice; it soaks the cake."
+    },
+    {
+      "icon": "cup",
+      "text": "Most of the time is chilling (4 hours, included). Make it the morning of, or the night before."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Custard",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "custard powder",
+          "note": "Bird's",
+          "pantry": {
+            "name": "Custard powder",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "granulated sugar",
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Layers",
+      "items": [
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "frozen pound cakes",
+          "note": "298 g, thawed",
+          "pantry": {
+            "name": "Pound cake (frozen)",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "raspberry jam",
+          "metric": {
+            "qty": 80,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Raspberry jam",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 600,
+          "unit": "g",
+          "name": "frozen mixed berries",
+          "note": "thawed, with their juice",
+          "pantry": {
+            "name": "Frozen mixed berries",
+            "cat": "frozen"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Topping",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "35% whipping cream",
+          "note": "cold",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "35% whipping cream",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "icing sugar",
+          "pantry": {
+            "name": "Icing sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Make the custard",
+      "text": "In a saucepan, whisk the custard powder and sugar with ½ cup of the milk into a smooth paste, then whisk in the remaining 2½ cups. Cook over medium, whisking constantly, until it boils and thickens, 6–8 minutes.",
+      "timer": 7,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Cool the custard",
+      "text": "Pour into a bowl, press plastic wrap onto the surface and cool 30 minutes, until just warm.",
+      "timer": 30,
+      "uses": []
+    },
+    {
+      "title": "Cake layer",
+      "text": "Cut the cake into 1.5 cm slices, spread one side of each with jam and cut into cubes. Put half the cubes in a 3 L glass bowl, jam side up.",
+      "uses": [
+        "1-0",
+        "1-1"
+      ]
+    },
+    {
+      "title": "Layer",
+      "text": "Spoon half the berries and juice over the cake, then half the custard. Repeat with the rest of the cake, berries and custard.",
+      "uses": [
+        "1-2"
+      ]
+    },
+    {
+      "title": "Chill",
+      "text": "Cover and refrigerate at least 4 hours, or overnight, so the cake soaks and the custard sets.",
+      "timer": 240,
+      "uses": []
+    },
+    {
+      "title": "Whip and top",
+      "text": "Just before serving, whip the cream with the icing sugar and vanilla to soft peaks and spread it over the top.",
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2"
+      ]
+    }
+  ],
+  "together": "ABB*AB",
+  "fixIt": [
+    {
+      "problem": "Lumpy custard",
+      "fix": "Whisk hard or pour it through a sieve. Make the paste with cold milk first next time."
+    },
+    {
+      "problem": "Custard too thin",
+      "fix": "It didn't fully boil. Return it to the heat and whisk until it bubbles and thickens."
+    },
+    {
+      "problem": "Watery trifle",
+      "fix": "The custard was hot when layered or the berries weren't drained of extra liquid. Cool the custard, and use only the juice that clings plus a few spoonfuls."
+    },
+    {
+      "problem": "Cream deflated",
+      "fix": "It was topped too early. Whip just before serving, or add 1 tbsp more icing sugar to help it hold."
+    }
+  ],
+  "saleTip": "Frozen berries and pound cake are both regular No Frills sale items; buy them a week ahead and keep them in the freezer.",
+  "swap": "Ladyfingers or cubed leftover sponge or angel food cake instead of pound cake: about 300 g.",
+  "leftovers": "Spoon into glasses and keep covered in the fridge; it's best within 2 days.",
+  "doneness": "The custard boils and is thick enough to coat a spoon heavily before it cools.",
+  "source": "Based on the classic English-Canadian Christmas trifle (Bird's Custard, Canadian Living): cake spread with jam, berries, set custard powder custard and whipped cream, chilled before serving.",
+  "gear": [
+    "3 L glass bowl",
+    "Saucepan & whisk",
+    "Plastic wrap",
+    "Electric mixer or whisk"
+  ],
+  "prepAhead": [
+    "Assemble up to the cream the night before; whip and top the cream just before serving."
+  ],
+  "reheat": "Not needed. Serve cold.",
+  "levels": {
+    "basic": {
+      "note": "Cake, berries and custard: no jam or whipped cream.",
+      "drop": [
+        "1-1",
+        "2-0",
+        "2-1",
+        "2-2"
+      ],
+      "stepNotes": {
+        "2": "Basic: skip the jam; just cube the cake.",
+        "5": "Basic: no cream topping. Scatter a few berries saved from the layers on top."
+      },
+      "costDrop": [
+        "raspberry-jam",
+        "35-whipping-cream",
+        "icing-sugar",
+        "vanilla"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Toasted almonds and grated chocolate over the cream.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "sliced almonds",
+              "note": "toasted",
+              "pantry": {
+                "name": "Sliced almonds",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 30,
+              "unit": "g",
+              "name": "semi-sweet baking chocolate",
+              "note": "finely grated",
+              "pantry": {
+                "name": "Semi-sweet chocolate (baking)",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Toast the almonds in a dry skillet over medium 3–4 minutes until golden, cool, and scatter over the cream with the grated chocolate."
+        }
+      ],
+      "costAdd": [
+        [
+          "Sliced almonds, ¼ cup",
+          0.6,
+          "sliced-almonds"
+        ],
+        [
+          "Semi-sweet chocolate, 30 g",
+          0.67,
+          "semi-sweet-chocolate-baking"
+        ]
+      ],
+      "plating": [
+        "Serve from the glass bowl at the table so everyone sees the layers.",
+        "Scoop straight down to get every layer.",
+        "Small glass dishes or teacups."
+      ]
+    }
+  },
+  "why": {
+    "1-1": "Jam glues the cake and adds a sharp fruit layer that cuts the richness.",
+    "0-0": "Custard powder sets reliably with no eggs to curdle.",
+    "0-2": "Making a paste with some of the cold milk first stops lumps."
+  },
+  "fancyNight": false,
+  "funFact": "Bird's Custard powder was invented in 1837 by an English chemist, Alfred Bird, because his wife was allergic to eggs, and it became a fixture of Canadian holiday trifles.",
+  "keeps": {
+    "fridge": "2 days",
+    "freezer": null,
+    "note": "custard and cream don't freeze well"
+  },
+  "pairs": [
+    [
+      "christmas-20",
+      "two classic British-Canadian puddings"
+    ]
+  ]
+}

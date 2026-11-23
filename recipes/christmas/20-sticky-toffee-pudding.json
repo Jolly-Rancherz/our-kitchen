@@ -1,0 +1,447 @@
+{
+  "title": "Sticky Toffee Pudding",
+  "subtitle": "a moist date cake soaked with warm brown-sugar toffee sauce: the coziest Christmas dessert",
+  "image": "assets/img/sticky-toffee-pudding.webp",
+  "imageAlt": "A square of dark date cake drenched in glossy toffee sauce in a white dish on a navy napkin",
+  "servings": 9,
+  "servingsNote": "9 squares from a 20 cm pan, with sauce for all",
+  "prep": 25,
+  "cook": 50,
+  "cost": {
+    "total": 8.1,
+    "breakdown": [
+      [
+        "Pitted dates, 175 g",
+        1.86,
+        "pitted-dates"
+      ],
+      [
+        "Butter, ¾ cup",
+        2.43,
+        "butter"
+      ],
+      [
+        "Brown sugar, 1¾ cups",
+        1.22,
+        "brown-sugar"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "35% cream, ½ cup",
+        1.18,
+        "35-whipping-cream"
+      ],
+      [
+        "Flour, 160 g",
+        0.32,
+        "all-purpose-flour"
+      ],
+      [
+        "Vanilla",
+        0.16,
+        "vanilla-extract"
+      ],
+      [
+        "Baking powder, baking soda, salt",
+        0.15
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "dessert"
+    ]
+  },
+  "badges": [
+    "Make-ahead",
+    "Freezer-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "Set the butter and eggs out 30 minutes ahead."
+    },
+    {
+      "icon": "oven",
+      "text": "Oven at 180°C (350°F), with a buttered 20 cm (8-inch) square pan ready."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Cake",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "pitted dates",
+          "note": "chopped",
+          "metric": {
+            "qty": 175,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Pitted dates",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "boiling water",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "baking soda",
+          "pantry": {
+            "name": "Baking soda",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "butter",
+          "note": "softened",
+          "metric": {
+            "qty": 57,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 150,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1.25,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "note": "spooned and levelled",
+          "metric": {
+            "qty": 160,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "baking powder",
+          "pantry": {
+            "name": "Baking powder",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Toffee sauce",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "butter",
+          "metric": {
+            "qty": 113,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 200,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "35% whipping cream",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "35% whipping cream",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.125,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Soak the dates",
+      "text": "Heat the oven to 180°C (350°F) and butter a 20 cm (8-inch) square pan. Pour the boiling water over the dates, stir in the baking soda and stand 10 minutes, then mash roughly with a fork.",
+      "timer": 10,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Cream",
+      "text": "Beat the butter and brown sugar 2 minutes, until fluffy. Beat in the eggs one at a time, then the vanilla.",
+      "timer": 2,
+      "uses": [
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Make the batter",
+      "text": "Whisk the flour, baking powder and salt, and stir into the butter mixture. Stir in the dates and their liquid; the batter will be loose.",
+      "uses": [
+        "0-7",
+        "0-8",
+        "0-9"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Scrape into the pan and bake 30–35 minutes, until a toothpick in the centre comes out clean.",
+      "timer": 32,
+      "uses": []
+    },
+    {
+      "title": "Toffee sauce",
+      "text": "Meanwhile, bring the butter, brown sugar, cream and salt to a boil in a saucepan, stirring, and simmer 3 minutes until slightly thickened.",
+      "timer": 3,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Soak and serve",
+      "text": "Poke the warm cake all over with a skewer and pour about a third of the sauce over. Let it soak 10 minutes, then cut into 9 squares and serve with the rest of the warm sauce.",
+      "timer": 10,
+      "uses": []
+    }
+  ],
+  "together": "AAAABA",
+  "fixIt": [
+    {
+      "problem": "Cake sank in the middle",
+      "fix": "It came out too early. Bake until a toothpick comes out clean from the very centre."
+    },
+    {
+      "problem": "Sauce separated and greasy",
+      "fix": "It boiled too hard. Whisk in 1–2 tbsp cream over low heat until smooth."
+    },
+    {
+      "problem": "Sauce grainy",
+      "fix": "Stir until the sugar fully dissolves before it boils."
+    },
+    {
+      "problem": "Dry cake",
+      "fix": "Overbaked. Pour on more sauce and let it soak; check it at 30 minutes next time."
+    }
+  ],
+  "saleTip": "Dates are cheapest in the bulk aisle and on sale before Christmas. Brown sugar and butter are the rest, both December sale staples.",
+  "swap": "No cream: use ½ cup evaporated milk in the sauce. It's a little less rich but just as glossy.",
+  "leftovers": "Rewarm squares with a spoon of sauce in the microwave 30–40 seconds.",
+  "doneness": "A toothpick in the centre comes out clean and the top springs back when pressed.",
+  "source": "Based on tested sticky toffee pudding methods (BBC Good Food, Canadian Living): dates softened with boiling water and baking soda, a creamed batter baked at 180°C (350°F), and a butter, brown sugar and cream sauce.",
+  "gear": [
+    "20 cm (8-inch) square pan",
+    "Electric mixer",
+    "Saucepan",
+    "Skewer"
+  ],
+  "prepAhead": [
+    "Bake the cake and make the sauce up to 3 days ahead; keep both covered in the fridge. Rewarm the cake covered at 160°C (325°F) 15 minutes and the sauce on low."
+  ],
+  "reheat": "Covered, at 160°C (325°F) 15 minutes, or single squares in the microwave 30–40 seconds. Warm the sauce on low.",
+  "levels": {
+    "basic": {
+      "note": "The same cake with a simpler milk toffee sauce.",
+      "drop": [
+        "0-6"
+      ],
+      "swap": {
+        "1-2": {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        }
+      },
+      "stepNotes": {
+        "1": "Basic: skip the vanilla.",
+        "4": "Basic: use milk and simmer 4–5 minutes; it's a thinner sauce."
+      },
+      "costDrop": [
+        "vanilla"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Toasted pecans and a scoop of vanilla ice cream melting into the sauce.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "pecan halves",
+              "note": "toasted and chopped",
+              "pantry": {
+                "name": "Pecan halves",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 1.5,
+              "unit": "cup",
+              "name": "vanilla ice cream",
+              "note": "for serving",
+              "pantry": {
+                "name": "Vanilla ice cream",
+                "cat": "frozen"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: while it bakes, toast the pecans in a dry skillet over medium 3–4 minutes, until fragrant, then chop."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Top each warm square with a small scoop of ice cream, a spoon of sauce and the toasted pecans."
+        }
+      ],
+      "costAdd": [
+        [
+          "Pecans, ½ cup",
+          2.2,
+          "pecan-halves"
+        ],
+        [
+          "Vanilla ice cream",
+          1.18,
+          "vanilla-ice-cream"
+        ]
+      ],
+      "plating": [
+        "Warm the bowls first.",
+        "Ice cream off-centre so the sauce pools beside it.",
+        "Pecans over everything."
+      ]
+    }
+  },
+  "why": {
+    "0-2": "Baking soda softens the dates' skins so they melt into the cake and darken it.",
+    "0-0": "Dates make the cake moist and toffee-flavoured without tasting like fruit.",
+    "1-2": "Cream gives a thick, glossy sauce that soaks in without making the cake soggy."
+  },
+  "fancyNight": true,
+  "funFact": "Sticky toffee pudding is a modern classic: it was popularized in the 1970s at the Sharrow Bay hotel in England's Lake District.",
+  "keeps": {
+    "fridge": "4–5 days",
+    "freezer": "3 months",
+    "note": "keep the sauce in its own container, in the fridge or freezer",
+    "thaw": "Overnight in the fridge, then rewarm"
+  },
+  "pairs": [
+    [
+      "christmas-19",
+      "two classic British-Canadian puddings"
+    ]
+  ]
+}

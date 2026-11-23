@@ -1,0 +1,443 @@
+{
+  "title": "Roast Pork Loin with Apples & Onions",
+  "subtitle": "a brown sugar and dried-herb rubbed pork roast over sweet apples and onions, with a quick pan sauce",
+  "image": "assets/img/roast-pork-loin-apples.webp",
+  "imageAlt": "Sliced roast pork loin with soft apple and onion wedges and a little jug of pan sauce on a white platter",
+  "servings": 6,
+  "servingsNote": "dinner for two, plus 4 portions for sandwiches and lunches",
+  "prep": 15,
+  "cook": 75,
+  "cost": {
+    "total": 14.5,
+    "breakdown": [
+      [
+        "Boneless pork loin roast, 1.2 kg",
+        10.5,
+        "pork-loin-roast"
+      ],
+      [
+        "Gala apples, 3",
+        1.9,
+        "apples-gala"
+      ],
+      [
+        "Onion",
+        0.4,
+        "yellow-onions"
+      ],
+      [
+        "Butter, 2 tbsp",
+        0.55,
+        "butter"
+      ],
+      [
+        "Chicken broth, ¾ cup",
+        0.5,
+        "chicken-broth"
+      ],
+      [
+        "Brown sugar, oil, dried herbs, spices, cornstarch",
+        0.65
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "one-pan"
+    ],
+    "base": [],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ],
+    "course": [
+      "main"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "One pan"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen roast? Thaw it in the fridge, about 10 hours per kg."
+    },
+    {
+      "icon": "oven",
+      "text": "Oven at 220°C (425°F) to brown, then 180°C (350°F) to finish."
+    },
+    {
+      "icon": "knife",
+      "text": "Pull it at 71°C (160°F) on an instant-read thermometer. Pork loin is lean and dries out past that."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Pork",
+      "items": [
+        {
+          "qty": 1.2,
+          "unit": "kg",
+          "name": "boneless pork loin roast",
+          "note": "tied or netted",
+          "pantry": {
+            "name": "Pork loin roast",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried sage",
+          "note": "rubbed",
+          "pantry": {
+            "name": "Dried sage",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "packed brown sugar",
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Apples & onions",
+      "items": [
+        {
+          "qty": 3,
+          "unit": null,
+          "name": "Gala apples",
+          "note": "cored and cut in 8 wedges each",
+          "pantry": {
+            "name": "Apples (Gala)",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "cut in 8 wedges",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "chicken broth",
+          "note": "for the pan",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pan sauce",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "cornstarch",
+          "note": "mixed with 1 tbsp cold water",
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Heat the oven",
+      "text": "Heat the oven to 220°C (425°F). Pat the roast dry with paper towel.",
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Season",
+      "text": "Mix the salt, pepper, dried thyme, dried sage, garlic powder and brown sugar. Rub the roast with the oil, then with the seasoning on all sides.",
+      "uses": [
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Into the pan",
+      "text": "Toss the apple and onion wedges with the melted butter in a roasting pan or 9×13 dish. Push them to the sides and set the roast in the middle, fat side up.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Brown",
+      "text": "Roast 15 minutes.",
+      "timer": 15,
+      "uses": []
+    },
+    {
+      "title": "Roast",
+      "text": "Lower the oven to 180°C (350°F), pour the broth over the apples and roast 40–50 minutes, stirring the apples once, until a thermometer in the centre of the roast reads 71°C (160°F).",
+      "timer": 45,
+      "uses": [
+        "1-3"
+      ]
+    },
+    {
+      "title": "Rest",
+      "text": "Move the roast to a board, tent with foil and rest 10 minutes. Spoon the apples and onions into a serving dish and keep warm.",
+      "timer": 10,
+      "uses": []
+    },
+    {
+      "title": "Pan sauce",
+      "text": "Scrape the pan juices into a small saucepan with the broth and bring to a boil. Stir in the cornstarch mixture and simmer 1 minute, until glossy. Season with salt and pepper.",
+      "timer": 1,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Slice",
+      "text": "Slice the pork about 1 cm thick and serve with the apples, onions and sauce.",
+      "uses": []
+    }
+  ],
+  "together": "AABAAABA",
+  "fixIt": [
+    {
+      "problem": "Pork is dry",
+      "fix": "It went past 71°C. Slice thin and spoon the sauce over; pull it right at 71°C next time, as it climbs while resting."
+    },
+    {
+      "problem": "Apples turned to mush",
+      "fix": "Softer apples like McIntosh collapse. Gala, Honeycrisp or Ambrosia hold their shape."
+    },
+    {
+      "problem": "Pan juices burning",
+      "fix": "Add a few spoonfuls of water or broth to the pan partway through."
+    },
+    {
+      "problem": "Sauce too thin",
+      "fix": "Simmer 1–2 minutes more, or add another 1 tsp cornstarch mixed with cold water."
+    }
+  ],
+  "saleTip": "Whole pork loins go on sale at No Frills around the holidays, often under $2.50/lb. Have the meat counter cut a 1.2 kg roast and chops from the rest, and freeze them.",
+  "swap": "Bone-in pork loin roast (about 1.6 kg): same method, 55–70 minutes at 180°C (350°F) to 71°C (160°F), with the thermometer not touching the bone.",
+  "leftovers": "Thin-sliced pork sandwiches with the apples, or chopped into fried rice.",
+  "doneness": "71°C (160°F) in the centre (Health Canada, pork). A little blush of pink at 71°C is safe. Reheat leftovers to 74°C (165°F).",
+  "source": "Based on tested pork loin roast methods (Canadian Pork, Canadian Living): seared at high heat, finished at 180°C (350°F) to 71°C, with apples roasted alongside.",
+  "gear": [
+    "Roasting pan or 9×13 dish",
+    "Instant-read thermometer",
+    "Foil",
+    "Small saucepan",
+    "Carving knife & board"
+  ],
+  "prepAhead": [
+    "Rub the roast with the seasoning up to 1 day ahead and keep it uncovered in the fridge; it browns even better.",
+    "Cut the apples just before roasting so they don't brown."
+  ],
+  "reheat": "Lay slices in a dish with a spoonful of sauce or broth, cover with foil and warm at 160°C (325°F) 15–20 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "pork loin roast",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Salt, pepper and dried thyme on the pork, and the pan juices spooned over instead of a thickened sauce.",
+      "drop": [
+        "0-5",
+        "0-6",
+        "0-7",
+        "2-0",
+        "2-1"
+      ],
+      "stepNotes": {
+        "1": "Basic: rub with oil, salt, pepper and dried thyme only.",
+        "6": "Basic: skip the sauce; spoon the pan juices over the slices."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A maple glaze for the last 15 minutes and a splash of cream in the sauce.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "maple syrup",
+              "note": "pure",
+              "pantry": {
+                "name": "Maple syrup",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 3,
+              "unit": "tbsp",
+              "name": "35% whipping cream",
+              "note": "for the sauce",
+              "pantry": {
+                "name": "35% whipping cream",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "4": "Fancy: brush the maple syrup over the roast for the last 15 minutes.",
+        "6": "Fancy: stir in the cream after the cornstarch and simmer 1 minute more."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Fan the slices over the apples and onions on a warm platter and pour the sauce into a jug."
+        }
+      ],
+      "costAdd": [
+        [
+          "Maple syrup, 2 tbsp",
+          0.55,
+          "maple-syrup"
+        ],
+        [
+          "35% cream, 3 tbsp",
+          0.45,
+          "35-whipping-cream"
+        ]
+      ],
+      "plating": [
+        "Slices fanned over the apples so the glaze shows.",
+        "Sauce in a warm jug.",
+        "Mashed potatoes or rolls alongside."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "A dry roast browns in the hot first 15 minutes; a wet one steams.",
+    "0-7": "A spoon of brown sugar helps the crust brown and echoes the apples.",
+    "1-0": "The apples cook in the pork juices and turn into a soft, sweet side dish."
+  },
+  "fancyNight": true,
+  "funFact": "Canada changed its pork advice from 77°C to 71°C because modern pork is much leaner and safer. That's why a slightly pink centre is fine now.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "2–3 months",
+    "note": "freeze slices with a little sauce so they stay moist"
+  },
+  "pairs": [
+    [
+      "christmas-13",
+      "creamy mash for the pan sauce"
+    ],
+    [
+      "christmas-05",
+      "sweet roast veg, same oven"
+    ]
+  ]
+}

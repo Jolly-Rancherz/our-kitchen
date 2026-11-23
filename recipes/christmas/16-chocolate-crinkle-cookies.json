@@ -1,0 +1,349 @@
+{
+  "title": "Chocolate Crinkle Cookies",
+  "subtitle": "fudgy, brownie-like chocolate cookies rolled in icing sugar so they crack open like snow on bark",
+  "image": "assets/img/chocolate-crinkle-cookies.webp",
+  "imageAlt": "Dark chocolate cookies with white icing-sugar crackled tops piled on a white plate on a navy napkin",
+  "servings": 12,
+  "servingsNote": "about 24 cookies: 2 each, and a tin to share",
+  "prep": 20,
+  "cook": 85,
+  "cost": {
+    "total": 3.15,
+    "breakdown": [
+      [
+        "Cocoa powder, ½ cup",
+        1.09,
+        "cocoa-powder"
+      ],
+      [
+        "Sugar, 1 cup",
+        0.4,
+        "granulated-sugar"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "Flour, 125 g",
+        0.25,
+        "all-purpose-flour"
+      ],
+      [
+        "Icing sugar, ½ cup",
+        0.2,
+        "icing-sugar"
+      ],
+      [
+        "Vanilla",
+        0.16,
+        "vanilla-extract"
+      ],
+      [
+        "Oil, baking powder, salt",
+        0.27
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "dessert"
+    ]
+  },
+  "badges": [
+    "Make-ahead dough",
+    "Freezer-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "The dough is soft like brownie batter and needs at least 1 hour in the fridge (included) before you can roll it. It keeps up to 2 days."
+    },
+    {
+      "icon": "cup",
+      "text": "Use plain unsweetened cocoa powder, not hot chocolate mix."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Dough",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "cocoa powder",
+          "note": "unsweetened",
+          "metric": {
+            "qty": 45,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cocoa powder",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "granulated sugar",
+          "metric": {
+            "qty": 200,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "note": "spooned and levelled",
+          "metric": {
+            "qty": 125,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "baking powder",
+          "pantry": {
+            "name": "Baking powder",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "For rolling",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "icing sugar",
+          "metric": {
+            "qty": 65,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Icing sugar",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Wet mix",
+      "text": "Whisk the cocoa, sugar and oil in a large bowl until smooth. Whisk in the eggs one at a time, then the vanilla.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Add the dry",
+      "text": "Whisk the flour, baking powder and salt in another bowl, then stir into the chocolate mixture just until no flour shows.",
+      "uses": [
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Chill",
+      "text": "Cover and refrigerate at least 1 hour, until firm enough to scoop.",
+      "timer": 60,
+      "uses": []
+    },
+    {
+      "title": "Roll",
+      "text": "Heat the oven to 180°C (350°F) and line 2 baking sheets with parchment. Put the icing sugar in a shallow bowl. Scoop the dough by the tablespoon, roll into balls and roll each thickly in the icing sugar. Set them 5 cm apart.",
+      "uses": [
+        "1-0"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Bake one sheet at a time 10–11 minutes, until the edges are set and the tops are cracked; the centres should still look soft. Cool 5 minutes on the sheet, then move to a rack.",
+      "timer": 10,
+      "uses": []
+    }
+  ],
+  "together": "AB*BA",
+  "fixIt": [
+    {
+      "problem": "Too sticky to roll",
+      "fix": "Chill longer, and roll with lightly oiled hands."
+    },
+    {
+      "problem": "No white cracks, just grey",
+      "fix": "The icing sugar melted in. Roll the balls thickly, or roll them in granulated sugar first, then icing sugar."
+    },
+    {
+      "problem": "Spread flat",
+      "fix": "The dough warmed up. Keep the bowl in the fridge between sheets."
+    },
+    {
+      "problem": "Dry and cakey",
+      "fix": "Overbaked. Pull them while the centres still look soft; they set as they cool."
+    }
+  ],
+  "saleTip": "Cocoa powder is often cheaper in the No Frills bulk aisle; buy what you need for one batch.",
+  "swap": "Melted butter instead of oil: same amount. A little richer, slightly less fudgy.",
+  "leftovers": "Crumble over vanilla ice cream, or sandwich two with a spoon of icing.",
+  "doneness": "Edges set, tops cracked, centres still soft. Don't taste the raw dough: it has raw egg and raw flour.",
+  "source": "Based on tested chocolate crinkle methods (Betty Crocker, Canadian Living): a cocoa-and-oil dough chilled firm, rolled in icing sugar, baked at 180°C (350°F).",
+  "gear": [
+    "2 mixing bowls",
+    "Whisk",
+    "2 baking sheets",
+    "Parchment",
+    "Tablespoon or small scoop",
+    "Cooling rack"
+  ],
+  "prepAhead": [
+    "Keep the dough covered in the fridge up to 2 days.",
+    "Freeze baked cookies up to 3 months; roll in a little fresh icing sugar after thawing."
+  ],
+  "reheat": "Not needed. Serve at room temperature.",
+  "levels": {
+    "basic": {
+      "note": "Plain chocolate crinkles, no vanilla.",
+      "drop": [
+        "0-4"
+      ],
+      "stepNotes": {
+        "0": "Basic: skip the vanilla."
+      },
+      "costDrop": [
+        "vanilla"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Chopped dark chocolate folded in for melty pockets, and a hint of orange.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 85,
+              "unit": "g",
+              "name": "semi-sweet baking chocolate",
+              "note": "finely chopped",
+              "pantry": {
+                "name": "Semi-sweet chocolate (baking)",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "finely grated orange zest",
+              "pantry": {
+                "name": "Oranges",
+                "cat": "produce"
+              },
+              "asWritten": true
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: whisk in the orange zest with the vanilla.",
+        "1": "Fancy: fold in the chopped chocolate last."
+      },
+      "costAdd": [
+        [
+          "Semi-sweet chocolate, 85 g",
+          1.88,
+          "semi-sweet-chocolate-baking"
+        ],
+        [
+          "Orange, for zest",
+          0.3,
+          "oranges"
+        ]
+      ],
+      "plating": [
+        "Stack them on a dark plate so the white cracks pop.",
+        "Dust with a little extra icing sugar just before serving.",
+        "Cold milk alongside."
+      ]
+    }
+  },
+  "why": {
+    "0-2": "Oil keeps the cookies fudgy and soft for days, even after chilling.",
+    "1-0": "A thick icing-sugar coat stays white while the cookie spreads and cracks underneath it."
+  },
+  "fancyNight": false,
+  "funFact": "Crinkle cookies were a mid-century North American church-cookbook favourite; Betty Crocker's version from the 1950s made them a Christmas staple.",
+  "keeps": {
+    "room": "1 week in an airtight tin",
+    "freezer": "3 months",
+    "note": "roll in a little fresh icing sugar after thawing",
+    "thaw": "On the counter in their container, about 1 hour"
+  },
+  "pairs": [
+    [
+      "christmas-17",
+      "a two-colour cookie tin"
+    ]
+  ]
+}

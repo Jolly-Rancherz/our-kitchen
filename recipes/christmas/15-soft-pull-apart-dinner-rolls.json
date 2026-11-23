@@ -1,0 +1,388 @@
+{
+  "title": "Soft Pull-Apart Dinner Rolls",
+  "subtitle": "a pan of tender, buttery milk-and-egg rolls that tear apart warm from the oven",
+  "image": "assets/img/dinner-rolls.webp",
+  "imageAlt": "A pan of golden, buttery pull-apart dinner rolls on a navy napkin",
+  "servings": 6,
+  "servingsNote": "12 rolls: 2 each with dinner, and more for sandwiches the next day",
+  "prep": 25,
+  "cook": 125,
+  "cost": {
+    "total": 4.05,
+    "breakdown": [
+      [
+        "Flour, 440 g",
+        0.88,
+        "all-purpose-flour"
+      ],
+      [
+        "Instant yeast, 1 pouch",
+        0.93,
+        "instant-yeast"
+      ],
+      [
+        "Milk, 1 cup",
+        0.72,
+        "milk"
+      ],
+      [
+        "Butter, 5 tbsp",
+        1.0,
+        "butter"
+      ],
+      [
+        "Egg",
+        0.39,
+        "eggs"
+      ],
+      [
+        "Sugar, salt",
+        0.13
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "side"
+    ]
+  },
+  "badges": [
+    "Make-ahead",
+    "Freezer-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "The milk should be warm, not hot: about 40–45°C (it feels warm on your wrist). Hotter can kill the yeast."
+    },
+    {
+      "icon": "thaw",
+      "text": "Most of the time is rising (about 1½ hours, included). Find a warm spot, like the oven with just the light on."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Dough",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 56,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 3.5,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "note": "spooned and levelled",
+          "metric": {
+            "qty": 440,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2.25,
+          "unit": "tsp",
+          "name": "instant yeast",
+          "note": "1 pouch (8 g)",
+          "pantry": {
+            "name": "Instant yeast",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "granulated sugar",
+          "metric": {
+            "qty": 50,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Topping",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Warm the milk",
+      "text": "Heat the milk and butter until the butter melts, then cool until just warm, 40–45°C.",
+      "uses": [
+        "0-0",
+        "0-1"
+      ]
+    },
+    {
+      "title": "Mix",
+      "text": "In a large bowl, whisk 3 cups of the flour with the yeast, sugar and salt. Add the warm milk mixture and the egg and stir into a shaggy dough. Add the remaining ½ cup flour a little at a time, only as much as needed for a soft dough that pulls away from the bowl.",
+      "uses": [
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Knead",
+      "text": "Knead on a lightly floured counter 8 minutes (or 5 in a stand mixer with the dough hook), until smooth and slightly tacky.",
+      "timer": 8,
+      "uses": []
+    },
+    {
+      "title": "First rise",
+      "text": "Put the dough in a greased bowl, cover and let rise in a warm spot about 1 hour, until doubled.",
+      "timer": 60,
+      "uses": []
+    },
+    {
+      "title": "Shape",
+      "text": "Grease a 9×13 pan. Divide the dough into 12 pieces (about 70 g each) and roll each into a smooth ball. Set them in the pan in 3 rows of 4.",
+      "uses": []
+    },
+    {
+      "title": "Second rise",
+      "text": "Cover and let rise 30–40 minutes, until puffy and touching. Meanwhile heat the oven to 190°C (375°F).",
+      "timer": 35,
+      "uses": []
+    },
+    {
+      "title": "Bake",
+      "text": "Bake 18–22 minutes, until deep golden and they sound hollow when tapped (90°C / 195°F inside).",
+      "timer": 20,
+      "uses": []
+    },
+    {
+      "title": "Butter",
+      "text": "Brush the hot rolls with the melted butter. Cool 10 minutes in the pan, then pull apart.",
+      "uses": [
+        "1-0"
+      ]
+    }
+  ],
+  "together": "B**AB*AB",
+  "fixIt": [
+    {
+      "problem": "Dough didn't rise",
+      "fix": "The milk was too hot or the yeast was old. Check the date, and keep the milk at 40–45°C."
+    },
+    {
+      "problem": "Rolls are dense",
+      "fix": "Too much flour went in. Stop adding flour once the dough is soft and just tacky."
+    },
+    {
+      "problem": "Tops browning before the centre is done",
+      "fix": "Lay foil loosely over the pan for the last 5 minutes."
+    },
+    {
+      "problem": "Uneven sizes",
+      "fix": "Weigh the pieces. About 70 g each gives 12 even rolls."
+    }
+  ],
+  "saleTip": "Yeast keeps for months in the freezer; buy the 3-pouch strip or a jar when baking supplies go on sale in December.",
+  "swap": "Active dry yeast: same amount. Dissolve it in the warm milk with 1 tsp of the sugar and wait 5–10 minutes until foamy before mixing; the rises can take a little longer.",
+  "leftovers": "Split and toasted for leftover-roast sandwiches, or cubed and dried for stuffing.",
+  "doneness": "Deep golden tops and 90°C (195°F) in the centre roll on an instant-read thermometer.",
+  "source": "Based on tested soft dinner roll methods (Robin Hood, King Arthur Baking): an enriched milk, butter and egg dough with instant yeast, baked at 190°C (375°F).",
+  "gear": [
+    "Large bowl",
+    "9×13 pan",
+    "Kitchen scale (helpful)",
+    "Pastry brush"
+  ],
+  "prepAhead": [
+    "Overnight: after shaping, cover the pan and refrigerate up to 18 hours. Let it sit at room temperature 45–60 minutes until puffy, then bake.",
+    "Bake ahead and freeze the cooled rolls up to 3 months."
+  ],
+  "reheat": "Wrap in foil and warm at 180°C (350°F) 8–10 minutes.",
+  "levels": {
+    "basic": {
+      "note": "A lean dough: no egg and no butter brush.",
+      "drop": [
+        "0-6",
+        "1-0"
+      ],
+      "swap": {
+        "0-0": {
+          "qty": 1,
+          "unit": "cup",
+          "name": "milk",
+          "note": "plus 3 tbsp, to replace the egg",
+          "asWritten": true,
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        }
+      },
+      "stepNotes": {
+        "1": "Basic: no egg; the extra milk takes its place.",
+        "7": "Basic: skip the butter brush."
+      },
+      "costDrop": [
+        "eggs"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Garlic-Parmesan butter brushed on the hot rolls.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "melted",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "tsp",
+              "name": "garlic powder",
+              "pantry": {
+                "name": "Garlic powder",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "grated Parmesan",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "7": "Fancy: stir the extra melted butter and garlic powder into the butter before brushing, then sprinkle with the Parmesan."
+      },
+      "costAdd": [
+        [
+          "Butter, 1 tbsp",
+          0.2,
+          "butter"
+        ],
+        [
+          "Garlic powder",
+          0.05,
+          "garlic-powder"
+        ],
+        [
+          "Parmesan, 2 tbsp",
+          0.3,
+          "parmesan-grated"
+        ]
+      ],
+      "plating": [
+        "Serve right in the pan, wrapped in a tea towel.",
+        "Soft butter in a small dish alongside.",
+        "Pull apart at the table."
+      ]
+    }
+  },
+  "why": {
+    "0-6": "Egg makes the rolls richer, softer and more golden.",
+    "0-4": "Sugar feeds the yeast and keeps the crumb tender.",
+    "0-0": "Milk fat gives the soft, fine crumb dinner rolls are known for."
+  },
+  "fancyNight": false,
+  "funFact": "Rolls baked touching each other stay soft on the sides because they steam one another; that's the whole trick behind pull-apart rolls.",
+  "keeps": {
+    "room": "2 days in a sealed bag",
+    "freezer": "3 months",
+    "note": "freeze cooled rolls in a bag",
+    "thaw": "On the counter about 1 hour, then warm in foil"
+  },
+  "pairs": [
+    [
+      "christmas-02",
+      "for ham sandwiches the next day"
+    ],
+    [
+      "christmas-01",
+      "to mop up the gravy"
+    ]
+  ]
+}

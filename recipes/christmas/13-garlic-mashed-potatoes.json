@@ -1,0 +1,326 @@
+{
+  "title": "Garlic Mashed Potatoes",
+  "subtitle": "Yukon Golds boiled with whole garlic cloves and mashed with warm milk and butter: smooth, rich and made for gravy",
+  "image": "assets/img/garlic-mashed-potatoes.webp",
+  "imageAlt": "A white bowl of creamy mashed potatoes with a pool of melted butter on a navy napkin",
+  "servings": 6,
+  "servingsNote": "a holiday side for two with plenty left for leftovers",
+  "prep": 15,
+  "cook": 25,
+  "cost": {
+    "total": 4.95,
+    "breakdown": [
+      [
+        "Yukon Gold potatoes, 1.4 kg",
+        3.4,
+        "yukon-gold-potatoes"
+      ],
+      [
+        "Butter, ¼ cup",
+        0.81,
+        "butter"
+      ],
+      [
+        "Milk, ¾ cup",
+        0.43,
+        "milk"
+      ],
+      [
+        "Garlic, 4 cloves",
+        0.2,
+        "garlic"
+      ],
+      [
+        "Salt, pepper",
+        0.1
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ],
+    "course": [
+      "side"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Make-ahead"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Start the potatoes in cold, salted water so they cook evenly to the centre."
+    },
+    {
+      "icon": "knife",
+      "text": "The garlic boils with the potatoes, so it turns mellow and sweet, not sharp."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Potatoes",
+      "items": [
+        {
+          "qty": 1.4,
+          "unit": "kg",
+          "name": "Yukon Gold potatoes",
+          "note": "peeled and cut in 5 cm chunks",
+          "pantry": {
+            "name": "Yukon Gold potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "peeled, left whole",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To mash",
+      "items": [
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 175,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 56,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Into the pot",
+      "text": "Put the potatoes and garlic in a large pot, cover with cold water by 2–3 cm and add the salt.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Boil",
+      "text": "Bring to a boil, then simmer 15–20 minutes, until a knife slides through the biggest chunk with no resistance.",
+      "timer": 18,
+      "uses": []
+    },
+    {
+      "title": "Warm the milk",
+      "text": "Meanwhile, warm the milk and butter in a small saucepan (or the microwave) until the butter melts.",
+      "uses": [
+        "1-0",
+        "1-1"
+      ]
+    },
+    {
+      "title": "Drain and dry",
+      "text": "Drain well. Return the potatoes and garlic to the pot over low heat for 1 minute, shaking, to steam off the extra water.",
+      "timer": 1,
+      "uses": []
+    },
+    {
+      "title": "Mash",
+      "text": "Mash the potatoes and garlic until smooth, then stir in the warm milk and butter, the salt and pepper. Taste and add more salt if needed.",
+      "uses": [
+        "1-2",
+        "1-3"
+      ]
+    }
+  ],
+  "together": "BABA*",
+  "fixIt": [
+    {
+      "problem": "Gluey potatoes",
+      "fix": "They were overworked (a blender or hand mixer does this). Use a masher or ricer and stir in the milk gently."
+    },
+    {
+      "problem": "Lumpy",
+      "fix": "They weren't quite tender. Next time test the largest chunk; for now, mash over low heat with a splash more warm milk."
+    },
+    {
+      "problem": "Watery",
+      "fix": "Steam them dry in the pot a minute longer before mashing, and use warm milk, not cold."
+    },
+    {
+      "problem": "Bland",
+      "fix": "Salt the water well, and season at the end; potatoes need more salt than you'd think."
+    }
+  ],
+  "saleTip": "Yukon Golds in 5 lb bags are often $3.99–4.99 at No Frills; russets work too and are usually cheaper.",
+  "swap": "Russet potatoes: same method; they make fluffier, lighter mash. Add an extra 2 tbsp milk.",
+  "leftovers": "Potato pancakes: mix 2 cups cold mash with an egg and 2 tbsp flour and fry in butter until golden. Or top a shepherd's pie.",
+  "doneness": "A knife slides through the biggest chunk with no resistance before draining.",
+  "source": "Based on tested mashed potato methods (Canadian Living, Serious Eats): Yukon Golds started in cold salted water, steamed dry and mashed with warm dairy.",
+  "gear": [
+    "Large pot",
+    "Colander",
+    "Potato masher or ricer",
+    "Small saucepan"
+  ],
+  "prepAhead": [
+    "Make up to 2 days ahead. Reheat covered at 180°C (350°F) 25–30 minutes, or on the stove over low with a splash of milk, stirring.",
+    "Keep warm up to 2 hours in a slow cooker on Low, stirring now and then."
+  ],
+  "reheat": "On the stove over low with a splash of milk, stirring, or covered in the microwave 2–3 minutes, stirring halfway, until steaming hot.",
+  "levels": {
+    "basic": {
+      "note": "Plain buttery mash, no garlic.",
+      "drop": [
+        "0-1"
+      ],
+      "stepNotes": {
+        "0": "Basic: potatoes only."
+      },
+      "costDrop": [
+        "garlic"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Extra-rich: sour cream folded in and browned butter on top.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "sour cream",
+              "metric": {
+                "qty": 125,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "Sour cream",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "for browning",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "4": "Fancy: fold in the sour cream after the milk and butter."
+      },
+      "addSteps": [
+        {
+          "title": "Brown butter",
+          "text": "Melt the extra butter in a small pan over medium and swirl 2–3 minutes, until nutty brown. Pour into a well in the mash just before serving."
+        }
+      ],
+      "costAdd": [
+        [
+          "Sour cream, ½ cup",
+          0.75,
+          "sour-cream"
+        ],
+        [
+          "Butter, 2 tbsp",
+          0.4,
+          "butter"
+        ]
+      ],
+      "plating": [
+        "Swirl the top with the back of a spoon.",
+        "Brown butter poured into the dip.",
+        "Serve in a warmed bowl."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Yukon Golds are naturally buttery and mash smooth without going gluey.",
+    "0-2": "Salting the water seasons the potatoes all the way through.",
+    "1-0": "Warm milk keeps the mash hot and absorbs evenly; cold milk makes it gummy."
+  },
+  "fancyNight": false,
+  "funFact": "Yukon Gold potatoes were bred in Canada, at the University of Guelph in Ontario, and released in 1980.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "mash goes grainy when frozen"
+  },
+  "pairs": [
+    [
+      "christmas-01",
+      "made for the gravy"
+    ],
+    [
+      "christmas-12",
+      "with the pork pan sauce"
+    ]
+  ]
+}

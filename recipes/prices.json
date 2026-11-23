@@ -13,6 +13,10 @@
    "price": 2.99,
    "pack": "1 L"
   },
+  "apples-gala": {
+   "price": 4.49,
+   "pack": "3 lb bag"
+  },
   "baby-potatoes": {
    "price": 4.49,
    "pack": "1.5 kg"
@@ -20,6 +24,10 @@
   "bacon": {
    "price": 6.99,
    "pack": "375 g"
+  },
+  "baking-powder": {
+   "price": 2.99,
+   "pack": "225 g"
   },
   "baking-soda": {
    "price": 1.79,
@@ -44,6 +52,10 @@
   "brown-sugar": {
    "price": 3.49,
    "pack": "1 kg"
+  },
+  "brussels-sprouts": {
+   "price": 3.99,
+   "pack": "680 g bag"
   },
   "butter": {
    "price": 6.49,
@@ -165,6 +177,14 @@
    "price": 2.99,
    "pack": "750 g"
   },
+  "frozen-deep-pie-shells": {
+   "price": 4.49,
+   "pack": "2 deep 23 cm shells"
+  },
+  "frozen-mixed-berries": {
+   "price": 5.99,
+   "pack": "600 g"
+  },
   "frozen-peas-and-carrots": {
    "price": 2.99,
    "pack": "750 g"
@@ -193,6 +213,10 @@
    "price": 3.3,
    "pack": "~450 g"
   },
+  "ground-allspice": {
+   "price": 3.49,
+   "pack": "jar"
+  },
   "ground-beef-lean": {
    "price": 11.0,
    "pack": "~1 kg"
@@ -216,6 +240,10 @@
   "ground-nutmeg": {
    "price": 3.49,
    "pack": "jar"
+  },
+  "ground-pork": {
+   "price": 5.49,
+   "pack": "450 g"
   },
   "gruyere-cheese": {
    "price": 8.99,
@@ -252,6 +280,10 @@
   "icing-sugar": {
    "price": 2.99,
    "pack": "1 kg"
+  },
+  "instant-yeast": {
+   "price": 2.79,
+   "pack": "3 × 8 g pouches"
   },
   "italian-seasoning-dried": {
    "price": 2.49,
@@ -341,9 +373,21 @@
    "price": 1.99,
    "pack": "398 ml"
   },
+  "pitted-dates": {
+   "price": 3.99,
+   "pack": "375 g"
+  },
+  "pork-loin-roast": {
+   "price": 10.5,
+   "pack": "~1.2 kg boneless"
+  },
   "pork-sausages-mild": {
    "price": 6.99,
    "pack": "500 g"
+  },
+  "pound-cake-frozen": {
+   "price": 4.49,
+   "pack": "298 g"
   },
   "provolone-slices": {
    "price": 4.99,
@@ -352,6 +396,10 @@
   "raisins": {
    "price": 3.49,
    "pack": "400 g"
+  },
+  "raspberry-jam": {
+   "price": 3.99,
+   "pack": "500 ml"
   },
   "rice-vinegar": {
    "price": 2.79,
@@ -384,6 +432,10 @@
   "semi-sweet-chocolate-baking": {
    "price": 4.99,
    "pack": "225 g box"
+  },
+  "semi-sweet-chocolate-chips": {
+   "price": 3.99,
+   "pack": "300 g"
   },
   "sesame-oil": {
    "price": 4.49,
@@ -421,6 +473,10 @@
    "price": 16.5,
    "pack": "per kg"
   },
+  "sweetened-condensed-milk": {
+   "price": 2.99,
+   "pack": "300 ml"
+  },
   "sweetened-shredded-coconut": {
    "price": 3.49,
    "pack": "200 g"
@@ -440,6 +496,10 @@
   "vanilla-extract": {
    "price": 6.99,
    "pack": "43 ml"
+  },
+  "vanilla-ice-cream": {
+   "price": 4.99,
+   "pack": "1.5 L"
   },
   "white-vinegar": {
    "price": 2.49,

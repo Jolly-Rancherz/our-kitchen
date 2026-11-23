@@ -407,3 +407,10 @@ exactly 812pt although the image continues.
 - `keepsHTML`: optional `room` (Counter row, for cookies), optional `fridge`, optional `thaw` text (for things served cold). Existing recipes render exactly as before.
 - Food-safety temps: turkey 74°C; stuffing 74°C; ham (fully cooked) 60°C per USDA, leftovers 74°C; sausage (Fancy stuffing) 71°C; Nanaimo base egg cooked to 71°C.
 - For 13.2 (5 foods + 5 desserts): same generator pattern, numbers 11–20, and add pairs back from 01–10 where real.
+
+## Update 13.2 — second Christmas batch (2026-11-23)
+- 10 more in `recipes/christmas/` (generator `app_src/b13/x3.py` foods 11–15, `x4.py` desserts 16–20; `review.py 'christmas/1*.json'` prints a line-by-line review dump). Foods: 11 tourtière (main), 12 roast pork loin with apples (main), 13 garlic mash, 14 Brussels sprouts with bacon, 15 dinner rolls (sides). Desserts: 16 crinkles, 17 pecan snowballs, 18 fudge, 19 trifle, 20 sticky toffee pudding. Pairs added back from 01, 02, 06, 08, 09.
+- `xlib.make()` now also asserts every ingredient is used by at least one step and no stepNote points past the last step.
+- 15 new price keys (prices.json now 129). `nameFor` also singularizes potato/apple/cake at a quantity of 1.
+- Temps: ground pork/beef 71°C (tourtière filling), pork loin 71°C, reheats 74°C; rolls 90°C bread doneness.
+- Tourtière and the pork loin are 'main', so they join the Nov–Feb dinner pickers through `dinnerPool`.

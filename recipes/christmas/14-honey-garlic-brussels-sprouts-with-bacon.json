@@ -1,0 +1,309 @@
+{
+  "title": "Honey-Garlic Brussels Sprouts with Bacon",
+  "subtitle": "sprouts roasted until crisp and caramelized with bits of bacon, then tossed in a honey-garlic glaze",
+  "image": "assets/img/brussels-sprouts-bacon.webp",
+  "imageAlt": "Glossy roasted halved Brussels sprouts with crisp bacon pieces in a white dish on a navy napkin",
+  "servings": 4,
+  "servingsNote": "a side for two, with leftovers for lunch",
+  "prep": 15,
+  "cook": 25,
+  "cost": {
+    "total": 6.6,
+    "breakdown": [
+      [
+        "Brussels sprouts, 680 g",
+        3.99,
+        "brussels-sprouts"
+      ],
+      [
+        "Bacon, 4 strips",
+        2.0,
+        "bacon"
+      ],
+      [
+        "Honey, 1½ tbsp",
+        0.3,
+        "honey"
+      ],
+      [
+        "Oil, garlic, vinegar, salt, pepper",
+        0.31
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "one-pan"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "lunch"
+    ],
+    "course": [
+      "side"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "One pan"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "Oven at 220°C (425°F). A hot oven is what makes sprouts sweet instead of bitter."
+    },
+    {
+      "icon": "knife",
+      "text": "Choose small, tight, bright green sprouts. Halve big ones through the stem so the leaves hold together."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Sprouts",
+      "items": [
+        {
+          "qty": 680,
+          "unit": "g",
+          "name": "Brussels sprouts",
+          "note": "trimmed and halved",
+          "pantry": {
+            "name": "Brussels sprouts",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "strip",
+          "name": "bacon",
+          "note": "cut in 2 cm pieces",
+          "pantry": {
+            "name": "Bacon",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Glaze",
+      "items": [
+        {
+          "qty": 1.5,
+          "unit": "tbsp",
+          "name": "honey",
+          "pantry": {
+            "name": "Honey",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "apple cider vinegar",
+          "pantry": {
+            "name": "Apple cider vinegar",
+            "cat": "sauces"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Heat the oven",
+      "text": "Heat the oven to 220°C (425°F) and line a large rimmed baking sheet with parchment.",
+      "uses": []
+    },
+    {
+      "title": "Toss",
+      "text": "Toss the sprouts with the oil, salt and pepper on the sheet and turn them cut side down. Scatter the bacon pieces between them.",
+      "uses": [
+        "0-0",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-1"
+      ]
+    },
+    {
+      "title": "Roast",
+      "text": "Roast 20 minutes, until the cut sides are deep golden and the bacon is crisp.",
+      "timer": 20,
+      "uses": []
+    },
+    {
+      "title": "Glaze",
+      "text": "Stir the honey, garlic and vinegar together, drizzle over the sprouts and toss on the sheet. Roast 3–4 minutes more, until sticky.",
+      "timer": 4,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    }
+  ],
+  "together": "BBAA",
+  "fixIt": [
+    {
+      "problem": "Bitter sprouts",
+      "fix": "They were steamed, not roasted. Don't crowd the sheet, and roast until the cut sides are really brown."
+    },
+    {
+      "problem": "Outer leaves burnt, centres hard",
+      "fix": "The sprouts were too big. Quarter large ones and keep them about the same size."
+    },
+    {
+      "problem": "Bacon still soft",
+      "fix": "Pieces were too close together. Spread them out, or give the sheet 3–5 minutes more before glazing."
+    },
+    {
+      "problem": "Glaze burnt",
+      "fix": "Honey burns fast at 220°C. Keep the last roast to 3–4 minutes."
+    }
+  ],
+  "saleTip": "Brussels sprouts are cheapest and best from October to January. Look for loose sprouts or 680 g bags on sale at No Frills.",
+  "swap": "Green beans: same method, 12–15 minutes before glazing.",
+  "leftovers": "Chop and fold into fried rice or a frittata, or reheat in a hot skillet until crisp again.",
+  "doneness": "Cut sides deep golden, centres tender when pierced with a knife, bacon crisp.",
+  "source": "Based on tested roasted Brussels sprout methods (Canadian Living, Serious Eats): roasted cut side down at 220°C (425°F), glazed at the end.",
+  "gear": [
+    "Large rimmed baking sheet",
+    "Parchment",
+    "Small bowl"
+  ],
+  "prepAhead": [
+    "Trim and halve the sprouts up to 2 days ahead and keep them in a bag in the fridge."
+  ],
+  "reheat": "In a hot skillet 3–4 minutes, or at 200°C (400°F) 5–8 minutes, until hot and crisp again.",
+  "levels": {
+    "basic": {
+      "note": "Simply roasted with a honey drizzle, no bacon.",
+      "drop": [
+        "0-1",
+        "1-1",
+        "1-2"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the bacon.",
+        "3": "Basic: drizzle with just the honey."
+      },
+      "costDrop": [
+        "bacon"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Dried cranberries and a shower of Parmesan to finish.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "dried cranberries",
+              "pantry": {
+                "name": "Dried cranberries",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "grated Parmesan",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: toss in the cranberries with the glaze."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Pile into a warm dish and scatter the Parmesan over the top."
+        }
+      ],
+      "costAdd": [
+        [
+          "Dried cranberries, ¼ cup",
+          0.9,
+          "dried-cranberries"
+        ],
+        [
+          "Parmesan, ¼ cup",
+          0.6,
+          "parmesan-grated"
+        ]
+      ],
+      "plating": [
+        "Cut sides up so the caramelized faces show.",
+        "Parmesan over the top at the last second.",
+        "A shallow white dish keeps them from steaming."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Cut side down on a hot sheet gives the deep browning that makes sprouts sweet.",
+    "1-2": "A teaspoon of vinegar balances the honey so the glaze isn't cloying."
+  },
+  "fancyNight": false,
+  "funFact": "Brussels sprouts taste milder than they used to: Dutch plant breeders in the 1990s bred out much of the bitter compound, which is why many people who hated them as kids like them now.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "they go soft when frozen"
+  },
+  "pairs": [
+    [
+      "christmas-02",
+      "smoky-sweet beside the glazed ham"
+    ],
+    [
+      "christmas-01",
+      "a green side for Christmas dinner"
+    ]
+  ]
+}

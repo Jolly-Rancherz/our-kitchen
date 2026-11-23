@@ -1,0 +1,320 @@
+{
+  "title": "Pecan Snowball Cookies",
+  "subtitle": "buttery, nutty little balls that melt in your mouth, rolled twice in icing sugar",
+  "image": "assets/img/pecan-snowballs.webp",
+  "imageAlt": "Round cookies thickly coated in white icing sugar heaped on a white plate on a navy napkin",
+  "servings": 10,
+  "servingsNote": "about 30 cookies: 3 each, and a tin to give away",
+  "prep": 25,
+  "cook": 45,
+  "cost": {
+    "total": 7.95,
+    "breakdown": [
+      [
+        "Butter, 1 cup",
+        3.25,
+        "butter"
+      ],
+      [
+        "Pecans, ¾ cup",
+        3.4,
+        "pecan-halves"
+      ],
+      [
+        "Flour, 280 g",
+        0.56,
+        "all-purpose-flour"
+      ],
+      [
+        "Icing sugar, 1½ cups",
+        0.57,
+        "icing-sugar"
+      ],
+      [
+        "Vanilla, salt",
+        0.17
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "dessert"
+    ]
+  },
+  "badges": [
+    "Freezer-friendly",
+    "No eggs"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "Soft butter: it should dent easily but not look greasy. Leave it out about an hour."
+    },
+    {
+      "icon": "knife",
+      "text": "Chop the pecans fine, about the size of rice, so the balls hold together."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Dough",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "butter",
+          "note": "softened",
+          "metric": {
+            "qty": 227,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "icing sugar",
+          "metric": {
+            "qty": 65,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Icing sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2.25,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "note": "spooned and levelled",
+          "metric": {
+            "qty": 280,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "pecans",
+          "note": "finely chopped",
+          "metric": {
+            "qty": 85,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Pecan halves",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "For rolling",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "icing sugar",
+          "metric": {
+            "qty": 125,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Icing sugar",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Cream",
+      "text": "Heat the oven to 180°C (350°F) and line 2 baking sheets with parchment. Beat the butter, icing sugar, vanilla and salt about 2 minutes, until light.",
+      "timer": 2,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Add flour and pecans",
+      "text": "Mix in the flour on low until crumbly, then the pecans, until the dough holds together when squeezed.",
+      "uses": [
+        "0-4",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Shape",
+      "text": "Roll into 2.5 cm balls (about 20 g) and set them 3 cm apart on the sheets.",
+      "uses": []
+    },
+    {
+      "title": "Bake",
+      "text": "Bake both sheets 13–15 minutes, swapping racks halfway, until the bottoms are light golden and the tops still pale.",
+      "timer": 14,
+      "uses": []
+    },
+    {
+      "title": "First roll",
+      "text": "Cool 5 minutes, then roll the warm cookies in the icing sugar and set on a rack to cool completely.",
+      "timer": 5,
+      "uses": [
+        "1-0=½ cup"
+      ]
+    },
+    {
+      "title": "Second roll",
+      "text": "Roll the cooled cookies in the rest of the icing sugar for a thick white coat.",
+      "uses": [
+        "1-0=½ cup"
+      ]
+    }
+  ],
+  "together": "ABBAA*",
+  "fixIt": [
+    {
+      "problem": "Dough too crumbly",
+      "fix": "Squeeze and knead it a few times with your hands; the warmth brings it together."
+    },
+    {
+      "problem": "Cookies flattened",
+      "fix": "The butter was too soft. Chill the shaped balls 15 minutes before baking."
+    },
+    {
+      "problem": "Icing sugar melted into a glaze",
+      "fix": "They were too hot for the first roll. Wait the full 5 minutes; the second roll covers any patches."
+    },
+    {
+      "problem": "Bottoms too dark",
+      "fix": "Use a light-coloured sheet, or bake on the middle rack only, one sheet at a time."
+    }
+  ],
+  "saleTip": "Pecans are the pricey part. Watch for the 200 g bags on sale in December, or use walnuts, which are often cheaper.",
+  "swap": "Walnuts or almonds: same amount, finely chopped.",
+  "leftovers": "Crush over ice cream or fold into whipped cream for a quick dessert.",
+  "doneness": "Bottoms light golden, tops still pale. They're tender out of the oven and firm up as they cool.",
+  "source": "Based on tested snowball / Russian tea cake methods (Canadian Living, Betty Crocker): a nutty butter dough with no eggs, baked at 180°C (350°F) and rolled twice in icing sugar.",
+  "gear": [
+    "Electric mixer",
+    "2 baking sheets",
+    "Parchment",
+    "Cooling rack",
+    "Shallow bowl"
+  ],
+  "prepAhead": [
+    "Make the dough up to 2 days ahead and keep it wrapped in the fridge; let it soften 20 minutes before shaping.",
+    "Freeze baked, once-rolled cookies; give them the second roll after thawing."
+  ],
+  "reheat": "Not needed. Serve at room temperature.",
+  "levels": {
+    "basic": {
+      "note": "Plain butter snowballs, no nuts.",
+      "drop": [
+        "0-5"
+      ],
+      "stepNotes": {
+        "1": "Basic: no pecans; mix just until the dough holds together."
+      },
+      "costDrop": [
+        "pecan-halves"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Toasted pecans and a cinnamon-spiced coat.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "tsp",
+              "name": "ground cinnamon",
+              "note": "for the rolling sugar",
+              "pantry": {
+                "name": "Ground cinnamon",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: first toast the chopped pecans in a dry skillet over medium 3–4 minutes until fragrant, and cool them.",
+        "4": "Fancy: stir the cinnamon into the rolling sugar first."
+      },
+      "costAdd": [
+        [
+          "Ground cinnamon",
+          0.1,
+          "ground-cinnamon"
+        ]
+      ],
+      "plating": [
+        "Pile them in a pyramid on a dark plate.",
+        "Mini paper cups make them easy to give away.",
+        "Coffee or tea alongside."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "Icing sugar in the dough (not granulated) is what makes them melt in your mouth.",
+    "1-0": "The first roll sticks to the warm cookie; the second gives the thick snowy coat."
+  },
+  "fancyNight": false,
+  "funFact": "The same cookie goes by Russian tea cakes, Mexican wedding cookies and Italian butter balls; nobody agrees where it started.",
+  "keeps": {
+    "room": "2 weeks in an airtight tin",
+    "freezer": "3 months",
+    "note": "freeze after the first roll",
+    "thaw": "On the counter about 1 hour, then the second roll"
+  },
+  "pairs": [
+    [
+      "christmas-16",
+      "a two-colour cookie tin"
+    ],
+    [
+      "christmas-08",
+      "a butter-cookie tray"
+    ]
+  ]
+}

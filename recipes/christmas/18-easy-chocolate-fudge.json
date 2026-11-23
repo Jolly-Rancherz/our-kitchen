@@ -1,0 +1,255 @@
+{
+  "title": "Easy Chocolate Fudge",
+  "subtitle": "smooth, rich two-ingredient-style fudge made with sweetened condensed milk, no candy thermometer needed",
+  "image": "assets/img/chocolate-fudge.webp",
+  "imageAlt": "Neat squares of glossy dark chocolate fudge stacked on a white plate on a navy napkin",
+  "servings": 12,
+  "servingsNote": "36 small squares from a 20 cm pan: rich, so 3 each is plenty",
+  "prep": 10,
+  "cook": 125,
+  "cost": {
+    "total": 9.95,
+    "breakdown": [
+      [
+        "Semi-sweet chocolate chips, 510 g",
+        6.79,
+        "semi-sweet-chocolate-chips"
+      ],
+      [
+        "Sweetened condensed milk, 300 ml",
+        2.99,
+        "sweetened-condensed-milk"
+      ],
+      [
+        "Vanilla",
+        0.24,
+        "vanilla-extract"
+      ],
+      [
+        "Salt",
+        0.01,
+        "salt"
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "dessert"
+    ]
+  },
+  "badges": [
+    "No bake",
+    "Freezer-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Low heat only. Chocolate scorches and turns grainy if it gets hot."
+    },
+    {
+      "icon": "thaw",
+      "text": "It sets in the fridge about 2 hours (included)."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Fudge",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "semi-sweet chocolate chips",
+          "metric": {
+            "qty": 510,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Semi-sweet chocolate chips",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "can",
+          "name": "sweetened condensed milk",
+          "note": "300 ml",
+          "pantry": {
+            "name": "Sweetened condensed milk",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.125,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Line the pan",
+      "text": "Line a 20 cm (8-inch) square pan with parchment, leaving the ends hanging over the sides.",
+      "uses": []
+    },
+    {
+      "title": "Melt",
+      "text": "Put the chocolate chips, condensed milk and salt in a heavy saucepan over low heat and stir constantly 4–6 minutes, just until melted and smooth.",
+      "timer": 5,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Vanilla",
+      "text": "Take off the heat and stir in the vanilla.",
+      "uses": [
+        "0-3"
+      ]
+    },
+    {
+      "title": "Set",
+      "text": "Spread evenly in the pan and refrigerate about 2 hours, until firm.",
+      "timer": 120,
+      "uses": []
+    },
+    {
+      "title": "Cut",
+      "text": "Lift out by the parchment and cut into 6 rows each way for 36 squares, wiping the knife between cuts.",
+      "uses": []
+    }
+  ],
+  "together": "BAABA",
+  "fixIt": [
+    {
+      "problem": "Grainy or oily",
+      "fix": "The heat was too high. Take it off the heat and stir in 1–2 tbsp milk until glossy again."
+    },
+    {
+      "problem": "Won't set",
+      "fix": "Give it longer in the fridge; it firms up overnight. Check you used sweetened condensed milk, not evaporated."
+    },
+    {
+      "problem": "Cracks when cut",
+      "fix": "It's too cold. Let it sit 10 minutes and use a hot, dry knife."
+    }
+  ],
+  "saleTip": "Chocolate chips are on sale almost every week in December at No Frills; the store brand works perfectly here.",
+  "swap": "Microwave: melt the chips, condensed milk and salt in a large microwave-safe bowl on medium, 1 minute, then in 20-second bursts, stirring each time, until smooth.",
+  "leftovers": "Chop and stir into brownie batter or cookie dough.",
+  "doneness": "Firm enough to cut cleanly with no soft centre.",
+  "source": "Based on the classic condensed-milk fudge (Eagle Brand Canada): semi-sweet chocolate melted with sweetened condensed milk, vanilla and a pinch of salt, set in a 20 cm pan.",
+  "gear": [
+    "20 cm (8-inch) square pan",
+    "Parchment",
+    "Heavy saucepan",
+    "Spatula",
+    "Sharp knife"
+  ],
+  "prepAhead": [
+    "Make up to 2 weeks ahead and keep in the fridge, or freeze up to 3 months."
+  ],
+  "reheat": "Not needed. Let it sit at room temperature 10 minutes before serving.",
+  "levels": {
+    "basic": {
+      "note": "Chocolate, condensed milk and salt only.",
+      "drop": [
+        "0-3"
+      ],
+      "stepNotes": {
+        "2": "Basic: skip the vanilla; just spread it in the pan."
+      },
+      "costDrop": [
+        "vanilla"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Topped with toasted pecans and a few flakes of salt.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 36,
+              "unit": null,
+              "name": "pecan halves",
+              "note": "toasted",
+              "pantry": {
+                "name": "Pecan halves",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "tsp",
+              "name": "coarse salt",
+              "note": "for the top",
+              "pantry": {
+                "name": "Salt",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: first toast the pecan halves in a dry skillet over medium 3–4 minutes, until fragrant, and cool them.",
+        "3": "Fancy: before chilling, press a pecan half into each square-to-be (6 rows of 6) and sprinkle with the coarse salt."
+      },
+      "costAdd": [
+        [
+          "Pecan halves, about 40 g",
+          1.6,
+          "pecan-halves"
+        ]
+      ],
+      "plating": [
+        "Mini paper cups make it look like a candy-shop box.",
+        "Stack in a tin with parchment between layers.",
+        "Serve slightly chilled."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "Sweetened condensed milk is already cooked down, so the fudge sets smooth without boiling sugar to a temperature.",
+    "0-2": "A pinch of salt keeps it from tasting flat-sweet."
+  },
+  "fancyNight": false,
+  "funFact": "Eagle Brand condensed milk has been sold in Canada since the 1850s, and this fudge has been printed on the label for generations.",
+  "keeps": {
+    "room": "1 week in an airtight container, or 2–3 weeks in the fridge",
+    "freezer": "3 months",
+    "note": "wrap well, with parchment between layers",
+    "thaw": "In the fridge overnight, then 10 minutes on the counter"
+  },
+  "pairs": [
+    [
+      "christmas-09",
+      "a Canadian Christmas tray"
+    ]
+  ]
+}

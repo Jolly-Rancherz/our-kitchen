@@ -122,7 +122,7 @@ function fmtQty(q, unit, name) {
 
 // a bare count of one reads singular ("1 large egg", "1 bay leaf"); counts with a unit keep their own noun
 const ONE = /^[⅛¼⅓½⅔¾]?$|^1$/;
-const nameFor = (name, amt) => (amt && /^[\d⅛¼⅓½⅔¾]+$/.test(amt) && ONE.test(amt) ? name.replace(/\bleaves$/, 'leaf').replace(/(egg|carrot|orange|onion|tortilla|banana|lemon|roll|shell|breast|noodle|tomato)(e?s)$/, '$1') : name);
+const nameFor = (name, amt) => (amt && /^[\d⅛¼⅓½⅔¾]+$/.test(amt) && ONE.test(amt) ? name.replace(/\bleaves$/, 'leaf').replace(/(egg|carrot|orange|onion|tortilla|banana|lemon|roll|shell|breast|noodle|tomato|potato|apple|cake)(e?s)$/, '$1') : name);
 // ---------------------------------------------------------------- state
 const DEFAULT_STATE = () => ({
   v: 1,
@@ -5458,6 +5458,26 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+{
+ "name": "Update 13.2",
+ "id": "u132-2026-11",
+ "date": "2026-11-23",
+ "intro": "Ten more for Christmas: the Christmas tab is now 11 foods and 9 desserts.",
+ "notes": [
+  [
+   "More Christmas foods",
+   "Tourtière, roast pork loin with apples and onions, garlic mashed potatoes, honey-garlic Brussels sprouts with bacon, and soft pull-apart dinner rolls"
+  ],
+  [
+   "More Christmas desserts",
+   "Chocolate crinkle cookies, pecan snowball cookies, easy chocolate fudge, Christmas trifle and sticky toffee pudding"
+  ],
+  [
+   "Goes great with, both ways",
+   "The first ten now point to the new ones too: mash with the turkey, rolls and sprouts with the ham, fudge with the Nanaimo bars"
+  ]
+ ]
+},
 {
  "name": "Update 13.1",
  "id": "u131-2026-11",
