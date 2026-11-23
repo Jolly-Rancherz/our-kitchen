@@ -312,3 +312,8 @@ exactly 812pt although the image continues.
 - Us: even spacing on the stat tiles; date-night card tap target.
 - Acura: Treat jar empty state copy and spacing; chip row alignment.
 - Frame-time re-test of book page turns and Home swipe on a real iPhone; check "Your page" sits right under the new greeting.
+
+## Update 11.0 — Tonight's pick swipe (2026-11-22)
+- Causes: (1) Home's pull-to-refresh started on any downward drift, so a sideways swipe that drifted down pulled the page down and could refresh Home mid-swipe (navy flash + new pick); (2) Not tonight redrew all of Home, and render() kept the tapped button anchored, so a title wrapping differently scrolled the page; (3) the new photo loaded after the swap, showing the navy card (plus a duplicate 10.5 fade on top of the global `img.ld` fade).
+- Fixes: pull-to-refresh only engages for clearly vertical pulls; the pick changes in place (`advance()` in viewHome: slide out, swap text + a pre-decoded `<img>` element, slide in; next pick chosen and decoded ahead); swipe locks direction on the first 8px and preventDefaults only once horizontal; the 10.5 `.in` fade removed (the global `.ld` fade covers it).
+- Test kit now lives in /workspace/pwtest (playwright + webkit; `a0b.mjs` swipe repro, `pres.mjs` saved-data + real Restore round trip). Local server: `python3 -m http.server 8770` in /workspace/serve (our-kitchen -> app symlink).

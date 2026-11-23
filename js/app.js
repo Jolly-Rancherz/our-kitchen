@@ -2321,10 +2321,14 @@ document.addEventListener('focusin', (e) => {
 
 // ---------------------------------------------------------------- pull to refresh on Home (#11)
 (function pullToRefresh() {
-  const v = $('#view'); const ind = $('#ptr'); let y0 = null, d = 0, on = false, busy = false;
-  v.addEventListener('touchstart', (e) => { if (busy || (location.hash || '#/') !== '#/' || v.scrollTop > 0 || !$('#sheetWrap').hidden || e.touches.length !== 1) { y0 = null; return; } y0 = e.touches[0].clientY; d = 0; on = false; }, { passive: true });
+  const v = $('#view'); const ind = $('#ptr'); let y0 = null, x0 = 0, d = 0, on = false, busy = false;
+  v.addEventListener('touchstart', (e) => { if (busy || (location.hash || '#/') !== '#/' || v.scrollTop > 0 || !$('#sheetWrap').hidden || e.touches.length !== 1) { y0 = null; return; } y0 = e.touches[0].clientY; x0 = e.touches[0].clientX; d = 0; on = false; }, { passive: true });
   v.addEventListener('touchmove', (e) => {
     if (y0 == null) return; d = e.touches[0].clientY - y0;
+    // update 11.0: only a clearly vertical pull refreshes — a sideways swipe (e.g. on Tonight's pick) that drifts down
+    // used to pull the page down and could refresh Home mid-swipe (the scroll + blue flash)
+    if (!on && Math.abs(e.touches[0].clientX - x0) > Math.abs(d) * 0.8 && Math.abs(e.touches[0].clientX - x0) > 6) { y0 = null; return; }
+    if (!on && e.target.closest && e.target.closest('.pick-card') && Math.abs(e.touches[0].clientX - x0) > 4) { y0 = null; return; }
     if (d <= 0 || v.scrollTop > 0) { if (on) { ind.style.transform = ''; v.style.transform = ''; } on = false; return; }
     if (d > 8) { on = true; e.preventDefault(); const p = Math.min(d * 0.45, 84); ind.style.transform = `translateY(${p}px)`; ind.classList.toggle('ready', p >= 62); v.style.transform = `translateY(${p * 0.55}px)`; }
   }, { passive: false });
@@ -2797,16 +2801,55 @@ function viewHome(partial) {
   bindSort(viewHome);
   $('#spinRes') && ($('#spinRes').onclick = openRandom);
   $('#pickYes') && ($('#pickYes').onclick = (e) => { const t = whoseTurn(); const pid = uid(); state.picks[pid] = { id: pid, recipeId: ui.pick, ok: true, date: todayISO(), by: t }; state.turn = other(t); setTonight(ui.pick, true); state.tonight.by = t; save(); toast(`✓ Tonight: ${summary(ui.pick).title}`); go('#/r/' + ui.pick); }); // update 10.5: straight to the recipe
-  // update 10.5: Tonight's pick photo fades in; swipe the card left for another suggestion (same as Not tonight)
-  $$('.pick-card .im img').forEach((i) => { if (i.complete) i.classList.add('in'); else i.addEventListener('load', () => i.classList.add('in'), { once: true }); });
+  // update 11.0: Tonight's pick changes in place. The next pick is chosen and its photo decoded ahead of time, so a
+  // swipe or Not tonight just slides the card and swaps text + an already-decoded photo: no Home redraw (that redraw
+  // kept the tapped button anchored, which scrolled the page when the title wrapped differently) and no blank navy
+  // card while a new photo loaded (the "blue flash"). The swipe locks to horizontal or vertical on the first 8px;
+  // once horizontal it owns the gesture (preventDefault), so the page can't scroll during a sideways swipe.
   const pc = $('.sec.pick:not(.tonight) .pick-card');
   if (pc && $('#pickNo')) {
-    let sx = 0, sy = 0, sw = false;
-    pc.addEventListener('touchstart', (e) => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; sw = false; }, { passive: true });
-    pc.addEventListener('touchmove', (e) => { const dx = e.touches[0].clientX - sx, dy = e.touches[0].clientY - sy; if (!sw && dx < -10 && Math.abs(dx) > Math.abs(dy) * 1.5) { pc.style.transition = 'none'; pc.style.transform = `translate3d(${Math.max(dx, -60)}px,0,0)`; } }, { passive: true });
-    pc.addEventListener('touchend', (e) => { const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy; pc.style.transform = '';
-      if (dx < -50 && Math.abs(dx) > Math.abs(dy) * 1.5) { sw = true; pc.classList.add('swiped'); setTimeout(() => $('#pickNo') && $('#pickNo').click(), 160); } });
-    pc.addEventListener('click', (e) => { if (sw) { e.preventDefault(); sw = false; } });
+    const others = () => recipes.filter((r) => r.id !== ui.pick);
+    const choose = () => { const o = others(); return o.length ? o[Math.floor(Math.random() * o.length)] : null; };
+    let pre = null; // the next photo as a ready <img> element, swapped in whole (the visible one never shows blank)
+    const preload = (r) => { pre = null; if (!r || !r.image) return Promise.resolve(); const im = new Image(); im.alt = r.title; im.className = 'ld'; im.src = r.image; pre = im;
+      return new Promise((ok) => { const done = () => ok(); (im.decode ? im.decode() : Promise.reject()).then(done, () => (im.complete ? done() : (im.onload = im.onerror = done))); setTimeout(done, 1500); }); };
+    let next = choose(); let ready = preload(next); let busy = false;
+    const fill = (r) => {
+      pc.href = '#/r/' + r.id; $('.t', pc).textContent = r.title;
+      $('.m', pc).textContent = `${r.price} · ${r.total} min · ~${money(r.cost)} · start by ${fmtTime(startTime(r, null))}`;
+      const k = $('.sec.pick .pick-k'); if (k) k.textContent = pickKicker(r);
+      const box = $('.im', pc);
+      const im = pre; const old = $('img', box);
+      if (r.image && im) { const put = () => { if (ui.pick !== r.id) return; const cur = $('img', box); if (cur) cur.replaceWith(im); else { box.innerHTML = ''; box.appendChild(im); } };
+        if (im.complete && im.naturalWidth) put(); else im.addEventListener('load', put, { once: true }); } // not loaded yet: the old photo stays until it is
+      else if (!r.image || !old) box.innerHTML = r.image ? img(r.image, r.title) : placeholderArt(r);
+    };
+    const advance = (fromSwipe) => {
+      if (busy) return; if (!next) { toast("It's the only recipe in the book so far — more are coming soon ♥"); pc.style.transform = ''; return; }
+      busy = true; logPick(ui.pick, false); const r = next; ui.pick = r.id;
+      pc.style.transition = 'transform .16s ease-in, opacity .16s ease-in'; pc.style.transform = 'translate3d(-48px,0,0)'; pc.style.opacity = '0';
+      Promise.all([ready, new Promise((ok) => setTimeout(ok, 160))]).then(() => {
+        fill(r); pc.style.transition = 'none'; pc.style.transform = 'translate3d(36px,0,0)';
+        requestAnimationFrame(() => requestAnimationFrame(() => { pc.style.transition = 'transform .2s ease-out, opacity .2s ease-out'; pc.style.transform = ''; pc.style.opacity = ''; }));
+        setTimeout(() => { pc.style.transition = ''; busy = false; }, 240);
+        next = choose(); ready = preload(next);
+      });
+    };
+    $('#pickNo').onclick = () => advance(false);
+    let sx = 0, sy = 0, lock = '', swiped = false;
+    pc.addEventListener('touchstart', (e) => { if (e.touches.length > 1) return; sx = e.touches[0].clientX; sy = e.touches[0].clientY; lock = ''; swiped = false; }, { passive: true });
+    pc.addEventListener('touchmove', (e) => {
+      const dx = e.touches[0].clientX - sx, dy = e.touches[0].clientY - sy;
+      if (!lock && Math.hypot(dx, dy) > 8) lock = Math.abs(dx) > Math.abs(dy) * 1.2 ? 'x' : 'y';
+      if (lock !== 'x' || busy) return;
+      e.preventDefault(); pc.style.transition = 'none'; pc.style.transform = `translate3d(${Math.max(Math.min(dx, 12), -80)}px,0,0)`;
+    }, { passive: false });
+    const end = (e) => {
+      if (lock !== 'x') return; const dx = (e.changedTouches[0] || {}).clientX - sx; swiped = true;
+      if (dx < -50 && !busy) advance(true); else { pc.style.transition = 'transform .18s ease-out'; pc.style.transform = ''; }
+    };
+    pc.addEventListener('touchend', end); pc.addEventListener('touchcancel', () => { if (lock === 'x') { pc.style.transition = 'transform .18s ease-out'; pc.style.transform = ''; } });
+    pc.addEventListener('click', (e) => { if (swiped) { e.preventDefault(); swiped = false; } });
   }
   $('#turnBtn') && ($('#turnBtn').onclick = () => { state.turn = other(whoseTurn()); save(); redraw(); });
   $('#ideasBtn') && ($('#ideasBtn').onclick = () => openIdeas());
@@ -2822,12 +2865,6 @@ function viewHome(partial) {
   bindRibbon(); bindOurDishCard(redraw);
   $('#anX') && ($('#anX').onclick = () => { const a = annivSoon(); if (a) state.annivSeen[a.key] = now(); save(); redraw(); });
   $('#anPlan') && ($('#anPlan').onclick = () => { const a = annivSoon(); if (!a) return; const [, m, d] = state.settings.anniversary.split('-').map(Number); openDateNight({ date: isoOf(new Date(+a.key, m - 1, d)), recipeId: a.sug && a.sug.id }); });
-  $('#pickNo') && ($('#pickNo').onclick = () => {
-    logPick(ui.pick, false);
-    const others = recipes.filter((r) => r.id !== ui.pick);
-    if (!others.length) { toast("It's the only recipe in the book so far — more are coming soon ♥"); return; }
-    ui.pick = others[Math.floor(Math.random() * others.length)].id; redraw();
-  });
   $('#tnCook') && ($('#tnCook').onclick = () => { ui.autoCook = tonightPlan().recipeId; go('#/r/' + ui.autoCook); });
   $('#tnTime') && ($('#tnTime').onclick = openEatAt);
   $('#tnPrep') && ($('#tnPrep').onclick = openPrepAhead);
@@ -4797,6 +4834,18 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+ {
+  "name": "Update 11.0",
+  "id": "u110-2026-11",
+  "date": "2026-11-22",
+  "intro": "Smoother Tonight's pick.",
+  "notes": [
+   [
+    "Swipe fixed",
+    "Swiping Tonight's pick no longer scrolls the page or flashes blue. The next meal slides in with its photo ready"
+   ]
+  ]
+ },
  {
   "name": "Update 10.6",
   "id": "u106-2026-11",
