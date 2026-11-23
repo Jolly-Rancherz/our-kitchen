@@ -398,3 +398,12 @@ exactly 812pt although the image continues.
 - For the 13.x Christmas batch: add {"slug":"christmas", …} to recipes/categories.json, recipes in recipes/christmas/NN-*.json with tags.course ['dessert'] on the 9 desserts; then decide whether Christmas recipes should be left out of Tonight's pick / Spin the wheel / suggestions outside the season (not handled yet — no recipes).
 - Toast: wraps long messages (was nowrap + max-width, so long text ran off the edge at 360 pt Bigger text).
 - Tests: pwtest/t127.mjs (mock Christmas category via route interception: tab, label fit, palette + theme-color, recipe page in palette, book chapter, palette off on other tabs; MOCK=0: tab hidden; challenge card; jar start/goal/cash out, saved shape).
+
+## Update 13.1 — first Christmas batch (2026-11-23)
+- 10 recipes in `recipes/christmas/` (generator: `/workspace/cookbook/app_src/b13/x1.py` foods, `x2.py` desserts, helpers `xlib.py` on top of `app_src/b2/common.py`; `make()` resolves '@key' refs in levels/why and asserts together length + cost sum). Foods: 01 turkey breast (main), 02 glazed ham (main), 03 bread stuffing, 04 scalloped potatoes, 05 carrots & parsnips, 06 cranberry sauce (sides). Desserts: 07 gingerbread, 08 shortbread, 09 Nanaimo bars, 10 butter tarts. `tags.course` is ['main'], ['side'] or ['dessert'].
+- `recipes/categories.json` gained {"slug": "christmas", "name": "Christmas", "colour": "#9E2B35"} (no tile — the Home grid skips it). 33 new price keys in `prices.json` (No Frills estimates, same style).
+- Photos: GenerateImage with existing dish photos as style references (white dish, navy napkin, beige table), 960×720 + 360×270 `-sm` WebP. No visible herb leaves.
+- `dinnerPool(list)`: Christmas recipes join the dinner pickers only Nov–Feb and only if `course` includes 'main'. Used by Tonight's pick (+ swipe), Spin the wheel (`spinPool`), More ideas / Surprise me (`openIdeas`), Mystery meal and Home's nudges (cook again, use it up, recipe of the week, weather, fridge clear). Search, Contents, the book and plans still list everything.
+- `keepsHTML`: optional `room` (Counter row, for cookies), optional `fridge`, optional `thaw` text (for things served cold). Existing recipes render exactly as before.
+- Food-safety temps: turkey 74°C; stuffing 74°C; ham (fully cooked) 60°C per USDA, leftovers 74°C; sausage (Fancy stuffing) 71°C; Nanaimo base egg cooked to 71°C.
+- For 13.2 (5 foods + 5 desserts): same generator pattern, numbers 11–20, and add pairs back from 01–10 where real.

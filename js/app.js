@@ -5458,6 +5458,30 @@ function recapCard(rc, dismiss) {
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
 {
+ "name": "Update 13.1",
+ "id": "u131-2026-11",
+ "date": "2026-11-23",
+ "intro": "Christmas is here: the first 10 Christmas recipes, and the Christmas tab is on.",
+ "notes": [
+  [
+   "Christmas foods",
+   "Herb-butter roast turkey breast with pan gravy, honey-orange glazed ham, classic bread stuffing, cheesy scalloped potatoes, maple-roasted carrots and parsnips, and cranberry orange sauce"
+  ],
+  [
+   "Christmas desserts",
+   "Gingerbread cookies, classic butter shortbread, Nanaimo bars and butter tarts"
+  ],
+  [
+   "Every one, the full treatment",
+   "Basic, Classic and Fancy, cook together, how long it keeps, goes great with, No Frills prices and aisles, and a Christmas chapter in our cookbook"
+  ],
+  [
+   "Christmas stays at Christmas",
+   "The Christmas tab shows November to February. Christmas dishes stay out of Tonight's pick, Spin the wheel and Surprise me the rest of the year, but they're always in search and in the book. Sides and desserts never show up as tonight's dinner"
+  ]
+ ]
+},
+{
  "name": "Update 12.7",
  "id": "u127-2026-11",
  "date": "2026-11-23",
