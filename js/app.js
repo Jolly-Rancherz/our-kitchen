@@ -202,6 +202,8 @@ const DEFAULT_STATE = () => ({
   scratched: {},       // recipeId or 'acura-<treatId>' -> ts the first-time scratch card was revealed
   // update 9.3 (added only; state.edits entries saved from now on also carry refs: 1, item refs, step srefs, lvAdd)
   deleted: {},         // built-in recipeId -> ts deleted (gone from every list; Settings → Deleted recipes restores it)
+  // update 12.7 (added only)
+  dateFund: null,      // { start: 'YYYY-MM', goal, at, cashed: [{ date, amount, at }] } the date-night jar
 });
 let state = load();
 function load() {
@@ -410,11 +412,13 @@ function applyTheme() {
   document.documentElement.dataset.theme = dark ? 'dark' : 'light';
   document.documentElement.classList.toggle('big', !!state.settings.bigText);
   // status bar colour follows the header (both scheme-specific tags, since the app theme can differ from the phone's)
-  const bar = document.body && document.body.classList.contains('acura') ? (dark ? '#170D08' : '#4A2A1A') : dark ? '#060F26' : '#082048';
+  const xm = document.body && document.body.classList.contains('xmas');
+  const bar = document.body && document.body.classList.contains('acura') ? (dark ? '#170D08' : '#4A2A1A') : xm ? (dark ? '#0C1A13' : '#1F3B2D') : dark ? '#060F26' : '#082048';
   $$('meta[name="theme-color"]').forEach((m) => (m.content = bar));
   // iOS 26 home-screen apps ignore live theme-color and tint the solid status bar from the <html> background, and
   // Acura's colours were only set on body.acura — so <html> stays brown on her tab too (update 9.2)
   document.documentElement.classList.toggle('acura', !!(document.body && document.body.classList.contains('acura')));
+  document.documentElement.classList.toggle('xmas', !!xm);
 }
 mq.addEventListener ? mq.addEventListener('change', applyTheme) : mq.addListener(applyTheme);
 
@@ -437,6 +441,7 @@ const routes = [
   [/^#\/wish$/, viewWish],
   [/^#\/year(?:\/(\d{4}))?$/, viewYear],
   [/^#\/calendar(?:\/(\d{4}-\d{2}))?$/, viewCalendar],
+  [/^#\/christmas$/, viewChristmas],
   [/^#\/acura$/, viewAcura],
   [/^#\/acura\/t\/([\w-]+)$/, viewTreat],
   [/^#\/acura\/safety$/, viewAcuraSafety],
@@ -941,6 +946,93 @@ function viewPantry() {
 // ---------------------------------------------------------------- views: grocery
 
 // ---------------------------------------------------------------- views: budget
+// ---------------------------------------------------------------- update 12.7: date-night fund jar
+// Whatever we don't spend of the monthly dinner budget (the top of the range) goes in the jar when each month ends,
+// from the month we start the jar. A month only counts with at least 8 dinners logged (the same bar as the budget
+// badge), so a month we forgot to log can't fake savings.
+const FUND_MIN = 8;
+function fundMonths() {
+  const f = state.dateFund; if (!f || !f.start) return [];
+  const hi = state.settings.budgetMax; const out = []; const cur = monthKey();
+  for (let mk = f.start; mk < cur; mk = monthKey(new Date(+mk.slice(0, 4), +mk.slice(5, 7), 1))) {
+    const es = Object.values(state.cooked).filter((c) => c.date && c.date.startsWith(mk));
+    const spent = es.reduce((a, c) => a + Number(c.amount || 0), 0);
+    out.push({ mk, spent, n: es.length, add: es.length >= FUND_MIN ? Math.max(0, Math.round(hi - spent)) : 0 });
+    if (out.length > 240) break;
+  }
+  return out;
+}
+function fundTotal() { const f = state.dateFund; if (!f) return 0; return Math.max(0, fundMonths().reduce((a, m) => a + m.add, 0) - (f.cashed || []).reduce((a, c) => a + Number(c.amount || 0), 0)); }
+function jarSVG(pct) {
+  const h = Math.round(56 * Math.max(0, Math.min(1, pct)));
+  return `<svg class="fjar" viewBox="0 0 60 80" aria-hidden="true"><defs><clipPath id="fjc"><path d="M12 22h36v46a6 6 0 0 1-6 6H18a6 6 0 0 1-6-6z"/></clipPath></defs>
+    <rect class="fj-fill" x="10" y="${74 - h}" width="40" height="${h + 2}" clip-path="url(#fjc)"/>${h > 10 ? '<circle class="fj-coin" cx="24" cy="66" r="3.4"/><circle class="fj-coin" cx="35" cy="69" r="3.4"/>' : ''}${h > 26 ? '<circle class="fj-coin" cx="30" cy="57" r="3.4"/>' : ''}
+    <path class="fj-glass" d="M12 22h36v46a6 6 0 0 1-6 6H18a6 6 0 0 1-6-6z"/><rect class="fj-lid" x="10" y="12" width="40" height="9" rx="2"/><path class="fj-tag" d="M40 30h10v12H40z"/></svg>`;
+}
+function fundCard(spentNow) {
+  const f = state.dateFund; const hi = state.settings.budgetMax;
+  if (!f) return `<div class="card fund"><div class="fund-row">${jarSVG(0)}<div><div class="fk">${svg('heart')}DATE-NIGHT JAR</div><p class="hand">What we don't spend of our ${money(hi)} each month goes in the jar for a night out.</p><button class="btn gold sm" id="fundStart">Start our jar</button></div></div></div>`;
+  const tot = fundTotal(); const goal = f.goal || 150; const under = Math.max(0, Math.round(hi - spentNow));
+  return `<div class="card fund"><div class="fund-row">${jarSVG(tot / goal)}<div><div class="fk">${svg('heart')}DATE-NIGHT JAR</div>
+    <div class="famt"><b>${money(tot)}</b> of ${money(goal)}</div>
+    <p class="hand">${tot >= goal ? 'Enough for a night out ♥ Pick somewhere lovely.' : `This month we're ${money(under)} under so far — it goes in when the month ends.`}</p>
+    ${(() => { const skip = fundMonths().filter((m) => m.n < FUND_MIN); return skip.length ? `<p class="small muted">${esc(skip.map((m) => monthShort(m.mk)).join(', '))} didn't count — under ${FUND_MIN} dinners logged.</p>` : ''; })()}
+    <div class="btnrow" style="margin-top:8px">${tot > 0 ? '<button class="btn gold sm" id="fundOut">We went out ♥</button>' : ''}<button class="btn ghost sm" id="fundGoal">Goal</button></div></div></div>
+    ${(f.cashed || []).length ? `<p class="small muted" style="margin-top:8px">Nights out from the jar: ${f.cashed.slice(-3).reverse().map((c) => `${esc(shortDate(c.date))} (${money(c.amount)})`).join(' · ')}</p>` : ''}</div>`;
+}
+function bindFund(redraw) {
+  $('#fundStart') && ($('#fundStart').onclick = () => { state.dateFund = { start: monthKey(), goal: 150, at: now(), cashed: [] }; save(); redraw(); toast('Jar started ♥'); });
+  $('#fundGoal') && ($('#fundGoal').onclick = () => {
+    openSheet(`<h2>Jar goal</h2><p class="sub">How much for a night out?</p><div class="field"><label>Goal ($)</label><input id="fGoal" type="number" inputmode="numeric" min="20" step="10" value="${state.dateFund.goal || 150}"></div>
+      <div class="foot"><button class="btn" data-close>Cancel</button><button class="btn gold" id="fGoalOk">Save</button></div>`, (b) => {
+      $('#fGoalOk', b).onclick = () => { const v = Math.round(Number($('#fGoal', b).value)); if (!(v >= 20 && v <= 5000)) { toast('Pick a goal between $20 and $5000'); return; } state.dateFund.goal = v; save(); closeSheet(); redraw(); };
+    });
+  });
+  $('#fundOut') && ($('#fundOut').onclick = () => {
+    const tot = fundTotal();
+    openSheet(`<h2>A night out ♥</h2><p class="sub">How much came out of the jar? It's ${money(tot)} now.</p><div class="field"><label>Amount ($)</label><input id="fOut" type="number" inputmode="decimal" min="1" step="1" value="${tot}"></div>
+      <div class="foot"><button class="btn" data-close>Cancel</button><button class="btn gold" id="fOutOk">Take it out</button></div>`, (b) => {
+      $('#fOutOk', b).onclick = () => { const v = Math.round(Number($('#fOut', b).value) * 100) / 100; if (!(v > 0 && v <= tot)) { toast(`Between $1 and ${money(tot)}`); return; } state.dateFund.cashed = (state.dateFund.cashed || []).concat([{ date: todayISO(), amount: v, at: now() }]); save(); closeSheet(); redraw(); toast('Enjoy your night out ♥'); };
+    });
+  });
+}
+// ---------------------------------------------------------------- update 12.7: the Christmas tab (framework)
+// A seasonal tab, November through February only, and only once Christmas recipes exist (category slug 'christmas';
+// a recipe whose tags.course includes 'dessert' goes under Desserts, everything else under Foods). Until the first
+// Christmas batch lands, the tab stays hidden — nothing shows. The chapter joins the book automatically (bookCats).
+const XMAS = 'christmas';
+const xmasSeason = (d = new Date()) => [10, 11, 0, 1].includes(d.getMonth());
+const xmasRecipes = () => (typeof INDEX !== 'undefined' && INDEX && INDEX.recipes ? visibleRecipes().filter((r) => r.category === XMAS) : []);
+const xmasOn = () => xmasSeason() && xmasRecipes().length > 0;
+function syncXmasTab() {
+  const bar = $('#tabbar'); if (!bar) return;
+  let a = $('a[data-tab="christmas"]', bar); const on = xmasOn();
+  if (on && !a) {
+    a = document.createElement('a'); a.href = '#/christmas'; a.dataset.tab = 'christmas'; a.setAttribute('aria-label', 'Christmas');
+    a.innerHTML = '<svg viewBox="0 0 24 24"><path d="M12 3l4 5h-2.5l3.5 4.5h-2.5l4 5H5.5l4-5H7l3.5-4.5H8z"/><path d="M12 17.5V21"/></svg><span>Christmas</span>';
+    bar.insertBefore(a, $('a[data-tab="acura"]', bar));
+  } else if (!on && a) a.remove();
+  bar.classList.toggle('n7', on);
+}
+function daysToChristmas() { const d = new Date(); const y = d.getMonth() === 11 && d.getDate() > 25 ? d.getFullYear() + 1 : d.getFullYear(); return Math.round((new Date(y, 11, 25) - new Date(d.getFullYear(), d.getMonth(), d.getDate())) / 864e5); }
+function viewChristmas() {
+  if (!xmasOn()) { go('#/'); return; }
+  setTop({ title: 'CHRISTMAS' });
+  const rs = xmasRecipes().sort((a, b) => a.num - b.num);
+  const isDessert = (r) => ((r.tags || {}).course || []).includes('dessert');
+  const foods = rs.filter((r) => !isDessert(r)), sweets = rs.filter(isDessert);
+  const dd = daysToChristmas(); const mo = new Date().getMonth();
+  const count = mo === 11 && dd > 0 ? `${dd} sleep${dd === 1 ? '' : 's'} until Christmas` : dd === 0 ? 'Merry Christmas ♥' : mo === 10 ? 'The cozy season starts here' : 'Still cozy season — Christmas favourites, all winter';
+  const sec = (t, list, note) => (list.length ? `<div class="sec"><div class="sec-title">${t}<span class="act">${list.length}</span></div><p class="small muted xm-note">${note}</p><div class="rlist" style="margin-top:10px">${list.map(rcard).join('')}</div></div>` : '');
+  render(`<div class="wrap xm">
+    <div class="xm-band" aria-hidden="true"></div>
+    <div class="kicker">${svg('star')}Our Christmas kitchen<span class="rule"></span></div>
+    <h1 class="h1" style="margin-top:6px">Christmas</h1>
+    <p class="lead hand">${esc(count)}</p>
+    ${sec('Foods', foods, 'Mains and sides for the holidays.')}
+    ${sec('Desserts', sweets, 'Cookies, treats and something for Santa.')}
+  </div>`);
+}
 function viewBudget() {
   setTop({ title: 'BUDGET' });
   const key = ui.budgetMonth;
@@ -978,6 +1070,7 @@ function viewBudget() {
       <div class="bar"><div class="fill ${total > hi ? 'over' : ''}" style="width:${pct(total)}%"></div><div class="band" style="left:${pct(lo)}%;width:${pct(hi) - pct(lo)}%"></div></div>
       <div class="barlbl"><span>$0</span><span>target ${money(lo)}–${money(hi)}</span></div>
       <p>${esc(msg)}</p>${pace ? `<p class="pace">${esc(pace)}</p>` : ''}</div>
+    ${isNow ? fundCard(total) : ''}
     <div class="sec"><div class="sec-title">Cooked this month<button class="act" id="addOther">+ Add</button><button class="act" id="scanB">Scan receipt</button></div>
       ${entries.length ? `<ul class="cooked">${entries.map((c) => `<li><div><div class="t">${esc(c.title)}</div><div class="d">${esc(shortDate(c.date))}${c.receipt ? '<span class="est">grocery receipt</span>' : c.inReceipts ? '<span class="est">counted in receipts</span>' : c.estimate ? '<span class="est">estimate</span>' : '<span class="est">receipt</span>'}${c.by ? ' · ' + esc(c.by === 'Both' ? 'both' : c.by) : ''}</div></div><button class="a" data-e="${c.id}">${c.inReceipts ? '—' : money(c.amount, true)}</button></li>`).join('')}</ul>` : '<div class="empty">No dinners logged this month yet. Cook something and it shows up here with what it cost.</div>'}
     </div>
@@ -993,6 +1086,7 @@ function viewBudget() {
   $$('[data-e]').forEach((b) => (b.onclick = () => editEntry(state.cooked[b.dataset.e])));
   $('#addOther').onclick = () => editEntry(null);
   $('#scanB').onclick = openScan;
+  bindFund(viewBudget);
 }
 function editEntry(c) {
   const isNew = !c;
@@ -1870,6 +1964,8 @@ const realDinners = () => Object.values(state.cooked).filter((c) => c.recipeId !
 function checkMilestones(silent) {
   const f = milestoneFacts(); const fresh = [];
   MILESTONES.forEach(([k, label, test]) => { if (!state.milestones[k] && test(f)) { state.milestones[k] = todayISO(); fresh.push(label); } });
+  // update 12.7: this month's (and last month's, if it was finished before the month ended) cooking challenge
+  [monthKey(), prevMonthKey()].forEach((mk) => { const c = challengeFor(mk); const [have, need] = c.measure(mk); if (!state.milestones['ch-' + mk] && have >= need) { state.milestones['ch-' + mk] = mk === monthKey() ? todayISO() : mk + '-28'; fresh.push(`${monthShort(mk)} challenge: ${c.title}`); } });
   if (fresh.length) { save(); if (!silent) setTimeout(() => toast('Milestone ♥ ' + fresh[fresh.length - 1]), 2800); }
 }
 const REACT = [['love', 'Loved it'], ['like', 'Good'], ['meh', 'Meh']];
@@ -2927,7 +3023,7 @@ function viewHome(partial) {
   } else {
     const favs = Object.entries(state.favourites).sort((a, b) => b[1] - a[1]).map(([id]) => recipes.find((r) => r.id === id)).filter(Boolean);
     const recent = state.recent.map((id) => recipes.find((r) => r.id === id)).filter(Boolean).slice(0, 8);
-    const cats = INDEX.categories.map((c) => ({ ...c, items: recipes.filter((r) => r.category === c.slug).sort((a, b) => a.num - b.num) }));
+    const cats = INDEX.categories.filter((c) => c.slug !== XMAS).map((c) => ({ ...c, items: recipes.filter((r) => r.category === c.slug).sort((a, b) => a.num - b.num) }));
     const withRecipes = cats.filter((c) => c.items.length);
     const pk = recipes.find((r) => r.id === ui.pick);
     const plan = tonightPlan();
@@ -3555,13 +3651,43 @@ function milestoneFacts() {
     places: Object.keys(state.places).length, menus: Object.keys(state.dateMenus).length, acPhotos: Object.keys((state.acura && state.acura.photos) || {}).length,
   };
 }
+// ---------------------------------------------------------------- update 12.7: monthly cooking challenge (tied to Badges)
+// One challenge a month, the same on both phones (picked by the month), measured only from what we already log. Finishing
+// it earns a badge saved as milestones['ch-YYYY-MM'] (an added key in the existing milestones collection).
+const prevMonthKey = (mk = monthKey()) => { const [y, m] = mk.split('-').map(Number); return monthKey(new Date(y, m - 2, 1)); };
+const monthShort = (mk) => { const [y, m] = mk.split('-').map(Number); return new Date(y, m - 1, 1).toLocaleDateString('en-CA', { month: 'short', year: 'numeric' }); };
+const inMonth = (mk) => realDinners().filter((c) => c.date && c.date.startsWith(mk) && c.recipeId !== 'other');
+const CHALLENGES = {
+  home12: { title: '12 dinners at home', text: 'Cook 12 dinners at home this month', icon: 'pot', measure: (mk) => [inMonth(mk).length, 12] },
+  both4: { title: 'Cook together 4 times', text: 'Make 4 dinners side by side (log them as Both)', icon: 'users', measure: (mk) => [inMonth(mk).filter((c) => c.by === 'Both').length, 4] },
+  new3: { title: '3 new recipes', text: 'Try 3 recipes we’ve never cooked before', icon: 'book', measure: (mk) => { const before = new Set(realDinners().filter((c) => c.date < mk).map((c) => c.recipeId)); return [new Set(inMonth(mk).map((c) => c.recipeId).filter((id) => summary(id) && !before.has(id))).size, 3]; } },
+  cats4: { title: '4 chapters', text: 'Cook from 4 different chapters of the book', icon: 'star', measure: (mk) => [new Set(inMonth(mk).map((c) => (summary(c.recipeId) || {}).category).filter(Boolean)).size, 4] },
+  plan5: { title: 'Plan 5 dinners ahead', text: 'Plan 5 dinners this month with Plan the week or the calendar', icon: 'calendar', measure: (mk) => [Object.keys(state.plan).filter((d) => d.startsWith(mk)).length, 5] },
+  soup2: { title: 'Two soup nights', text: 'Make 2 soup or stew dinners — it’s soup season', icon: 'bowl', measure: (mk) => [inMonth(mk).filter((c) => (summary(c.recipeId) || {}).category === 'comfort-soups').length, 2] },
+};
+const CHALLENGE_BY_MONTH = ['home12', 'both4', 'new3', 'cats4', 'plan5', 'both4', 'new3', 'cats4', 'plan5', 'soup2', 'soup2', 'both4'];
+function challengeFor(mk = monthKey()) { return CHALLENGES[CHALLENGE_BY_MONTH[+mk.slice(5, 7) - 1]]; }
+function challengeCard() {
+  const mk = monthKey(); const c = challengeFor(mk); const [have, need] = c.measure(mk); const done = state.milestones['ch-' + mk];
+  const left = new Date(+mk.slice(0, 4), +mk.slice(5, 7), 0).getDate() - new Date().getDate();
+  return `<div class="card chal ${done ? 'done' : ''}"><div class="chk">${svg(c.icon)}${esc(new Date().toLocaleDateString('en-CA', { month: 'long' }).toUpperCase())} CHALLENGE</div>
+    <h3>${esc(c.title)}</h3><p class="hand">${esc(c.text)}</p>
+    <div class="chbar"><i style="width:${Math.min(100, (Math.min(have, need) / need) * 100)}%"></i></div>
+    <div class="chfoot"><b>${Math.min(have, need)} of ${need}</b><span>${done ? 'Badge earned ♥' : left > 0 ? `${left} day${left === 1 ? '' : 's'} left` : 'Last day!'}</span></div>
+    ${done ? `<span class="chstamp">${svg('medal')}Done</span>` : ''}</div>`;
+}
+function challengeBadges() {
+  const got = Object.keys(state.milestones).filter((k) => /^ch-\d{4}-\d{2}$/.test(k)).sort();
+  if (!got.length) return '';
+  return `<div class="chbadges"><div class="small muted">Monthly challenges · ${got.length} earned</div><div class="badges">${got.map((k) => { const mk = k.slice(3); const c = challengeFor(mk); return `<div class="bdg on"><span class="bm"><svg viewBox="0 0 24 24">${ICON[c.icon] || ICON.medal}</svg></span><b>${esc(c.title)}</b><small>${esc(monthShort(mk))}</small></div>`; }).join('')}</div></div>`;
+}
 function badgeGrid() {
   // earned first (oldest first), then the locked ones; only the first 9 show until "Show all" (uncluttered)
   const got = MILESTONES.filter(([k]) => state.milestones[k]).length;
   const list = MILESTONES.filter(([k]) => state.milestones[k]).sort((a, b) => String(state.milestones[a[0]]).localeCompare(String(state.milestones[b[0]]))).concat(MILESTONES.filter(([k]) => !state.milestones[k]));
   const one = ([k, label, , ic]) => { const on = state.milestones[k]; return `<div class="bdg ${on ? 'on' : ''}" title="${esc(label)}"><span class="bm"><svg viewBox="0 0 24 24">${ICON[ic] || ICON.star}</svg></span><b>${esc(label)}</b>${on ? `<small>${esc(shortDate(on))}</small>` : ''}</div>`; };
   const first = list.slice(0, 9), rest = list.slice(9);
-  return `<div class="sec"><div class="sec-title">Badges<span class="act">${got} of ${MILESTONES.length}</span></div><div class="badges">${first.map(one).join('')}</div>${rest.length ? `<details class="bmore"><summary>Show all ${MILESTONES.length} badges</summary><div class="badges">${rest.map(one).join('')}</div></details>` : ''}</div>`;
+  return `<div class="sec"><div class="sec-title">Badges<span class="act">${got} of ${MILESTONES.length}</span></div><div class="badges">${first.map(one).join('')}</div>${rest.length ? `<details class="bmore"><summary>Show all ${MILESTONES.length} badges</summary><div class="badges">${rest.map(one).join('')}</div></details>` : ''}</div>`.replace(/<\/div>$/, challengeBadges() + '</div>');
 }
 
 // ---------------------------------------------------------------- coin flip: who's on dishes (#52)
@@ -3902,6 +4028,7 @@ function viewUs() {
       <a class="tooltile" href="#/menu">${svg('candle')}<span><b>Date-in menu</b><small>${esc(new Date().toLocaleDateString('en-CA', { month: 'long' }))}'s three courses</small></span></a>
       <a class="tooltile" href="#/places">${svg('star')}<span><b>Places we love</b><small>${Object.keys(state.places).length ? `${Object.keys(state.places).length} remembered` : 'Meals out to remember'}</small></span></a>
     </div>${pend.length ? `<div class="pendtt">${pend.map((t) => `<button data-tt="${t.recipeId}">${svg('thumbUp')}<span>Taste test waiting: <b>${esc(summary(t.recipeId).title)}</b> — reveal</span></button>`).join('')}</div>` : ''}</div>
+    ${challengeCard()}
     ${badgeGrid()}
     <div class="sec"><div class="sec-title">Our favourites</div>${favs.length ? `<div class="hrow">${favs.map((r) => `<a class="mini-card" href="#/r/${r.id}"><div class="im">${r.image ? img(thumb(r.image), r.title) : placeholderArt(r)}${isCoupleFav(r.id) ? `<i class="gh">${svg('heart')}</i>` : ''}</div><div class="t">${esc(r.title)}</div><div class="m">${isCoupleFav(r.id) ? 'Both of you ♥' : (() => { const w = Object.keys(favWho(r.id)); return w.length ? esc(w[0]) + '’s favourite' : r.price + ' · ' + r.total + ' min'; })()}</div></a>`).join('')}</div><p class="small muted" style="margin-top:6px">Gold heart = you both love it. Tap the hats under “Who loves it” on a recipe.</p>` : '<div class="empty">Heart a recipe and it shows up here.</div>'}</div>
     <div class="sec"><div class="sec-title">Photo memories</div>${photos.length ? `<div class="photos">${photos.map((p) => `<a class="ph" href="#/r/${p.rid}"><img src="${p.data}" alt="">${stampHTML(p, true)}<span>${esc(shortDate(p.date))}</span></a>`).join('')}</div>` : '<div class="empty">Add a photo from any recipe page after you cook it.</div>'}</div>
@@ -4620,13 +4747,14 @@ function surprisePool(recipes, lim) {
 }
 
 // ---------------------------------------------------------------- router: tabs, direction-aware transitions, per-tab scroll memory (#5, #15)
-const TAB_ROOTS = { '#/': 'recipes', '#/pantry': 'pantry', '#/grocery': 'grocery', '#/budget': 'budget', '#/us': 'us', '#/acura': 'acura' };
+const TAB_ROOTS = { '#/': 'recipes', '#/pantry': 'pantry', '#/grocery': 'grocery', '#/budget': 'budget', '#/us': 'us', '#/acura': 'acura', '#/christmas': 'christmas' };
 function tabOf(h) {
   if (/^#\/(pantry|freezer)/.test(h)) return 'pantry';
   if (h.startsWith('#/grocery')) return 'grocery';
   if (h.startsWith('#/budget')) return 'budget';
   if (/^#\/(us|story|year|places|menu|keepsake|calendar)/.test(h)) return 'us';
   if (h.startsWith('#/acura') || h === '#/book/c/acura' || h.startsWith('#/book/t/')) return 'acura';
+  if (h === '#/christmas' || h === '#/c/christmas' || h.startsWith('#/r/christmas-')) return xmasOn() ? 'christmas' : 'recipes'; // update 12.7
   if (h.startsWith('#/settings')) return '';
   return 'recipes';
 }
@@ -4882,7 +5010,7 @@ function bookPages() {
   p.push('#/book/firsts', '#/book/together', '#/book/back'); return p;
 }
 // update 10.3: each chapter of the book has its own ink accent (divider, page tab, ornaments); Acura's are warm browns
-const BOOK_ACC = { chicken: '#B8892B', 'pasta-italian': '#B0573A', 'beef-turkey': '#9A6236', 'steak-pork': '#8A3A34', seafood: '#5B7C9C', 'takeout-at-home': '#4F8274', 'comfort-soups': '#768A58', acura: '#7A4E2E' };
+const BOOK_ACC = { christmas: '#9E2B35', chicken: '#B8892B', 'pasta-italian': '#B0573A', 'beef-turkey': '#9A6236', 'steak-pork': '#8A3A34', seafood: '#5B7C9C', 'takeout-at-home': '#4F8274', 'comfort-soups': '#768A58', acura: '#7A4E2E' };
 const bookAcc = (slug, i) => BOOK_ACC[slug] || BOOK_ACC[Object.keys(BOOK_ACC).find((k) => slug && slug.startsWith(k.split('-')[0]))] || ['#B8892B', '#B0573A', '#5B7C9C', '#768A58', '#9A6236', '#4F8274', '#8A3A34'][(i || 0) % 7];
 // update 10.3: handwritten margin notes on a recipe page, read from what we've already saved (read-only): times cooked
 // and when, our heart rating, who loves it, our love note and our tweaks. Corey writes in navy ink, Faith in plum.
@@ -4986,6 +5114,7 @@ const DOODLE = {
   seafood: '<path d="M5 18c6-8 16-8 22 0-6 8-16 8-22 0zM27 18l5-5v10z"/><circle cx="11" cy="16" r="1"/>',
   'takeout-at-home': '<path d="M8 12h20l-3 18H11zM12 12l2-6h8l2 6M5 6l12 10M9 4l10 11"/>',
   'comfort-soups': '<path d="M5 18h26c0 7-6 11-13 11S5 25 5 18zM12 13c-2-2 2-4 0-7M18 13c-2-2 2-4 0-7M24 13c-2-2 2-4 0-7"/>',
+  christmas: '<path d="M18 20c-4-6-12-6-13-1 4 0 6 2 6 6 4-1 6-3 7-5zM18 20c4-6 12-6 13-1-4 0-6 2-6 6-4-1-6-3-7-5z"/><circle cx="16" cy="23" r="1.8"/><circle cx="20" cy="23" r="1.8"/><circle cx="18" cy="26" r="1.8"/>',
 };
 const doodle = (slug) => DOODLE[slug] ? `<svg class="bk-doodle" viewBox="0 0 36 36" aria-hidden="true">${DOODLE[slug]}</svg>` : '';
 // the love-note envelope tucked inside the back cover: tap to open it, tap the card for the next note
@@ -5209,6 +5338,8 @@ async function router() {
     $$('#tabbar a').forEach((a) => a.classList.toggle('on', a.dataset.tab === tabNew));
     const acuraLook = tabNew === 'acura' && !ui.book; // the book keeps its own printed paper, even on Acura's chapter
     if (document.body.classList.contains('acura') !== acuraLook) { document.body.classList.toggle('acura', acuraLook); applyTheme(); }
+    const xmasLook = tabNew === 'christmas' && !ui.book; // update 12.7: the Christmas tab's own palette
+    if (document.body.classList.contains('xmas') !== xmasLook) { document.body.classList.toggle('xmas', xmasLook); applyTheme(); }
     await fn(...m.slice(1));
     if (turn !== routing) return;
     let y = dir === 'back' || dir === 'tab' || dir === 'none' ? scrollMem[h] || 0 : 0;
@@ -5318,6 +5449,30 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+{
+ "name": "Update 12.7",
+ "id": "u127-2026-11",
+ "date": "2026-11-23",
+ "intro": "A monthly challenge and a date-night jar.",
+ "notes": [
+  [
+   "Monthly challenge",
+   "On the Us tab: one cooking challenge each month (this month: two soup nights). Finish it and it's added to our Badges"
+  ],
+  [
+   "Date-night jar",
+   "On Budget: start the jar, and whatever we don't spend of our dinner budget each month goes in toward a night out. A month counts once we've logged at least 8 dinners. Tap We went out to take it out"
+  ],
+  [
+   "Christmas, getting ready",
+   "The Christmas tab is built and waiting (November to February, with its own pine and cranberry look). It appears once our Christmas recipes arrive"
+  ],
+  [
+   "Little fix",
+   "Longer messages at the bottom of the screen now wrap instead of running off the edge"
+  ]
+ ]
+},
 {
  "name": "Update 12.6",
  "id": "u126-2026-11",
@@ -6126,7 +6281,7 @@ async function boot() {
   const t0 = performance.now();
   applySeason();
   try { await Promise.all([loadIndex(), loadPrices()]); } catch (e) { render('<div class="wrap"><div class="empty">Could not load recipes. Check your connection and reopen the app.</div></div>'); }
-  checkMilestones(true);
+  checkMilestones(true); syncXmasTab();
   setTimeout(() => takeSnapshot('auto'), 4000); // a safety snapshot shortly after opening (skipped if a recent one matches)
   await router();
   if (!state.settings.welcomed) showWelcome();

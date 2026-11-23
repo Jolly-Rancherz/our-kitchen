@@ -1928,3 +1928,72 @@ html[data-theme="dark"] .keeps .kp b{color:var(--gold)}
   background:repeating-linear-gradient(90deg,rgba(255,255,255,.22) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(242,229,198,.9);box-shadow:0 1px 2px rgba(18,16,46,.22);opacity:.9}
 html[data-theme="dark"] .bigtotal::before,html[data-theme="dark"] .ac-jar::before{background:repeating-linear-gradient(90deg,rgba(255,255,255,.10) 0 6px,rgba(255,255,255,0) 6px 12px),rgba(222,200,150,.78)}
 .ac-plaque .lead.hand{font-size:1.32rem}
+
+/* ---------------------------------------------------------------- update 12.7: monthly challenge, date-night jar */
+.chal{position:relative;margin-top:14px;padding:14px 16px 12px}
+.chal .chk{display:flex;align-items:center;gap:6px;font-family:"Cinzel";font-weight:600;font-size:.66rem;letter-spacing:.16em;color:var(--kicker)}
+.chal .chk svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8}
+.chal h3{margin-top:6px}
+.chal .hand{font-family:"Caveat","Instrument Serif",cursive;font-size:1.25rem;line-height:1.1;color:var(--ink2);margin-top:2px}
+.chbar{height:8px;margin-top:10px;background:var(--bg2);border:1px solid var(--line-gold);overflow:hidden}
+.chbar i{display:block;height:100%;background:var(--gold);transition:width .4s ease}
+.chfoot{display:flex;justify-content:space-between;margin-top:6px;font-size:.82rem;color:var(--muted)}
+.chfoot b{color:var(--ink)}
+.chal .chstamp{position:absolute;right:14px;top:12px;display:flex;align-items:center;gap:4px;padding:3px 8px;border:2px solid rgba(56,24,72,.75);color:rgba(56,24,72,.85);font-family:"Cinzel";font-weight:700;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;transform:rotate(6deg)}
+.chal .chstamp svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2}
+html[data-theme="dark"] .chal .chstamp{border-color:var(--gold-soft);color:var(--gold-soft)}
+.chbadges{margin-top:12px}
+.chbadges .badges{margin-top:6px}
+.fund{margin-top:14px;padding:12px 14px}
+.fund-row{display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:center}
+.fjar{width:64px;height:86px}
+.fj-glass{fill:rgba(255,255,255,.18);stroke:var(--ink2);stroke-width:1.6}
+.fj-lid{fill:var(--gold);stroke:var(--gold-deep);stroke-width:1}
+.fj-fill{fill:rgba(196,150,62,.45)}
+.fj-coin{fill:var(--gold);stroke:var(--gold-deep);stroke-width:.8}
+.fj-tag{fill:var(--card);stroke:var(--plum);stroke-width:1}
+html[data-theme="dark"] .fj-glass{stroke:var(--ink2);fill:rgba(255,255,255,.06)}
+.fund .fk{display:flex;align-items:center;gap:6px;font-family:"Cinzel";font-weight:600;font-size:.66rem;letter-spacing:.16em;color:var(--kicker)}
+.fund .fk svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.8}
+.fund .famt{margin-top:4px;font-size:.92rem;color:var(--muted)}
+.fund .famt b{font-family:"Cinzel";font-size:1.5rem;color:var(--ink);margin-right:4px}
+.fund .hand{font-family:"Caveat","Instrument Serif",cursive;font-size:1.2rem;line-height:1.1;color:var(--ink2);margin-top:4px}
+
+/* ---------------------------------------------------------------- update 12.7: Christmas tab — pine, cranberry, cream and gold */
+body.xmas{
+  --bg:#F6EFE2; --bg2:#EDE2CC; --card:#FBF6EC; --ink:#1E2E25; --ink2:#2C3F33; --muted:#5E6E62;
+  --line:rgba(30,46,37,.14); --line-gold:rgba(196,150,62,.55);
+  --tile1:#1F3B2D; --tile2:#9E2B35; --tile3:#3E6B4E; --tile4:#7A2A31;
+  --kicker:#9E2B35; --group:#2F5A40; --input:#FFFBF3;
+  --bar:#1F3B2D; --bar-ink:#F6EFE2; --tabbg:#F6EFE2;
+  --navy:#1F3B2D; --plum:#9E2B35; --peri:#3E6B4E; --lavender:#B5806B; --violet:#7A2A31;
+}
+html[data-theme="dark"] body.xmas{
+  --bg:#0F1A14; --bg2:#15241B; --card:#16261D; --ink:#F3EBDD; --ink2:#E6DCCB; --muted:#A9B5AA;
+  --line:rgba(243,235,221,.12); --line-gold:rgba(196,150,62,.42);
+  --tile1:#1D3528; --tile2:#7E2530; --tile3:#2F5A40; --tile4:#5E2128;
+  --kicker:#E38A8F; --group:#9CC3A6; --input:#12201A;
+  --bar:#0C1A13; --bar-ink:#F3EBDD; --tabbg:#0E1912;
+  --navy:#16261D; --plum:#7E2530; --peri:#2F5A40; --lavender:#B5806B;
+}
+html.xmas{background:#1F3B2D}
+html.xmas[data-theme="dark"]{background:#0C1A13}
+body.xmas #toast{background:#1F3B2D}
+body.xmas .btn.gold,body.xmas .pill.gold{color:#1E2E25}
+body.xmas #cook{background:#1A3226}
+.xm .kicker svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.8;margin-right:6px;vertical-align:-2px}
+/* a quiet holly-and-snow ribbon across the top of the tab */
+.xm-band{height:14px;margin:-6px calc(var(--gutter) * -1) 14px;opacity:.75;
+  background:radial-gradient(circle at 10px 7px,#9E2B35 2.4px,transparent 2.8px) 0 0/40px 14px,
+    radial-gradient(circle at 16px 7px,#9E2B35 2.4px,transparent 2.8px) 0 0/40px 14px,
+    radial-gradient(ellipse 7px 3.2px at 28px 7px,#3E6B4E 90%,transparent) 0 0/40px 14px,
+    linear-gradient(#F6EFE2,#F6EFE2)}
+html[data-theme="dark"] .xm-band{background:radial-gradient(circle at 10px 7px,#C24A55 2.4px,transparent 2.8px) 0 0/40px 14px,radial-gradient(circle at 16px 7px,#C24A55 2.4px,transparent 2.8px) 0 0/40px 14px,radial-gradient(ellipse 7px 3.2px at 28px 7px,#4F8A62 90%,transparent) 0 0/40px 14px,linear-gradient(#0F1A14,#0F1A14)}
+.xm-note{margin-top:-4px}
+/* seven tabs in season */
+#tabbar.n7{grid-template-columns:repeat(7,1fr)}
+#tabbar.n7 a{font-size:.5rem;letter-spacing:.01em}
+#tabbar a[data-tab="christmas"] svg{fill:none}
+/* long messages wrap inside the toast instead of running past the screen edge (it was nowrap with a max width) */
+#toast{white-space:normal;line-height:1.25;width:max-content}
+#toast button{white-space:nowrap;flex:none}
