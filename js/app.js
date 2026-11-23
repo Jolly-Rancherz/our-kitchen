@@ -5185,7 +5185,8 @@ async function viewBook(part = 'title') {
     const s = treat ? null : summary(m[2]); ch = treat ? ['acura', cats.length + 1] : [s.category, cats.findIndex((c) => c.slug === s.category) + 1];
     const n = pg(location.hash); const cap = n % 3 === 0 ? (treat ? 'Acura approved ♥' : 'from our table ♥') : '';
     const label = treat ? 'Acura’s Kitchen' : esc(catOf(s.category).name) + ' · ' + pad2(s.num);
-    const line = (it) => `<li><span class="q">${esc(fmtQty(it.qty, it.unit))}</span><span>${esc(it.name)}${it.note ? `<i>, ${esc(it.note)}</i>` : ''}</span></li>`;
+    // update 13.1: the book reads amounts like the recipe page (eggs stay whole, “1 large egg” not “1 large eggs”)
+    const line = (it) => { const a = fmtQty(it.qty, it.unit, it.name); return `<li><span class="q">${esc(a)}</span><span>${esc(nameFor(it.name, a))}${it.note ? `<i>, ${esc(it.note)}</i>` : ''}</span></li>`; };
     html = `<article class="bk-rec"><div class="ch-k">${label}</div><h1 class="bk-rt">${esc(r.title)}</h1>${r.subtitle ? `<p class="bk-drop bk-sub">${esc(r.subtitle)}</p>` : ''}
       ${r.image ? `<figure class="bk-plate ${n % 2 ? 'tl' : 'tr'}">${img(r.image, r.imageAlt || r.title)}${cap ? `<figcaption>${cap}</figcaption>` : ''}</figure>` : ''}
       <p class="bk-meta">${treat ? esc(r.makes || '') : `Serves ${r.servings}`} · Prep ${r.prep} min · Cook ${r.cook} min</p>${bookMargin(m[2])}${ORN}
