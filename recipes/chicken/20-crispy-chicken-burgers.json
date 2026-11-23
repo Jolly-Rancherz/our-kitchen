@@ -1,0 +1,433 @@
+{
+  "title": "Crispy Chicken Burgers",
+  "subtitle": "thick panko-crusted chicken cutlets fried golden, on toasted buns with honey mayo, lettuce and tomato",
+  "image": "assets/img/crispy-chicken-burgers.webp",
+  "imageAlt": "A crispy golden chicken burger with lettuce and tomato on a toasted bun on a white plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "4 big burgers: dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 15,
+  "cost": {
+    "total": 15.48,
+    "breakdown": [
+      [
+        "Boneless chicken breasts, 700 g",
+        9.24,
+        "chicken-breasts-boneless"
+      ],
+      [
+        "Panko, 1½ cups",
+        1.29,
+        "panko-breadcrumbs"
+      ],
+      [
+        "Hamburger buns, 4",
+        1.5,
+        "hamburger-buns"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "Iceberg lettuce, ¼ head",
+        0.62,
+        "iceberg-lettuce"
+      ],
+      [
+        "Tomato",
+        0.75,
+        "tomatoes"
+      ],
+      [
+        "Canola oil, ½ cup",
+        0.4,
+        "canola-vegetable-oil"
+      ],
+      [
+        "Mayonnaise, ¼ cup",
+        0.3,
+        "mayonnaise"
+      ],
+      [
+        "Flour, honey, milk, spices, salt",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [
+      "weeknight",
+      "takeout-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Two chicken breasts, halved into thin cutlets, make 4 burgers that cook fast and evenly."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "2 large",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "milk",
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 90,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "canola or vegetable oil",
+          "note": "for shallow frying",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Burgers",
+      "items": [
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "mayonnaise",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Mayonnaise",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "honey",
+          "pantry": {
+            "name": "Honey",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "lemon juice",
+          "pantry": {
+            "name": "Lemon juice",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "hamburger buns",
+          "pantry": {
+            "name": "Hamburger buns",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": null,
+          "name": "head iceberg lettuce",
+          "note": "shredded",
+          "pantry": {
+            "name": "Iceberg lettuce",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "tomato",
+          "note": "sliced",
+          "pantry": {
+            "name": "Tomatoes",
+            "cat": "produce"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Cutlets",
+      "text": "Slice each breast in half horizontally to make 4 cutlets. Cover with plastic wrap and pound to an even 1.5 cm thick.",
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Set up",
+      "text": "Mix the flour, paprika, garlic powder, salt and pepper in one shallow dish. Beat the eggs with the milk in a second, and put the panko in a third.",
+      "uses": [
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8"
+      ]
+    },
+    {
+      "title": "Bread",
+      "text": "Coat each cutlet in the flour, then the egg, then press firmly into the panko on both sides.",
+      "uses": []
+    },
+    {
+      "title": "Fry",
+      "text": "Heat the oil in a large skillet over medium until a panko crumb sizzles right away. Fry 2 cutlets at a time, 4–5 minutes a side, until deep golden and 74°C (165°F) in the centre. Drain on a rack.",
+      "timer": 10,
+      "uses": [
+        "0-9"
+      ]
+    },
+    {
+      "title": "Sauce and buns",
+      "text": "Stir the mayonnaise, honey and lemon juice together. Toast the buns cut side down in a dry pan, 1 minute.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Build",
+      "text": "Spread the honey mayo on both halves of each bun, then add lettuce, a cutlet and tomato.",
+      "uses": [
+        "1-4",
+        "1-5"
+      ]
+    }
+  ],
+  "together": "AAAAB*",
+  "fixIt": [
+    {
+      "problem": "Crust falling off",
+      "fix": "Pat the chicken dry before the flour, and don't move the cutlets for the first 2 minutes in the pan."
+    },
+    {
+      "problem": "Browned outside, raw inside",
+      "fix": "The oil was too hot or the cutlets too thick. Pound them evenly and finish in a 200°C (400°F) oven for 5 minutes if needed."
+    },
+    {
+      "problem": "Greasy",
+      "fix": "The oil wasn't hot enough. Wait until a crumb sizzles hard, and drain on a rack, not paper."
+    }
+  ],
+  "saleTip": "Chicken breasts are often $8.80/kg in No Frills value packs; cut, bread and freeze extra cutlets flat.",
+  "swap": "Air fryer: spray the breaded cutlets with oil and cook at 200°C, 12–14 minutes, flipping halfway, to 74°C (165°F); no frying oil needed.",
+  "leftovers": "Reheat the cutlets in the oven or air fryer so they stay crisp; build the burger fresh.",
+  "doneness": "Chicken cutlets at 74°C (165°F) in the centre (Health Canada, poultry pieces).",
+  "source": "Based on tested crispy chicken sandwich methods (America's Test Kitchen, Food Network Canada): pounded breast cutlets, flour-egg-panko breading, shallow-fried at medium heat.",
+  "gear": [
+    "Large skillet",
+    "3 shallow dishes",
+    "Wire rack",
+    "Meat mallet or rolling pin",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Bread the cutlets up to 4 hours ahead; keep uncovered on a rack in the fridge.",
+    "Freeze breaded raw cutlets flat on a tray, then bag; fry from thawed."
+  ],
+  "reheat": "Cutlets on a rack at 200°C (400°F) for 10 minutes, or the air fryer at 190°C for 6–8 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Plain mayonnaise and lettuce.",
+      "drop": [
+        "1-1",
+        "1-2",
+        "1-5"
+      ],
+      "stepNotes": {
+        "4": "Basic: plain mayonnaise, no honey or lemon.",
+        "5": "Basic: lettuce only."
+      },
+      "costDrop": [
+        "tomato"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Melted cheddar and crisp bacon on every burger.",
+      "add": [
+        {
+          "group": "Fancy extras",
+          "items": [
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "cheddar slices",
+              "pantry": {
+                "name": "Cheddar slices",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "slices bacon",
+              "pantry": {
+                "name": "Bacon",
+                "cat": "meat"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: first bake the bacon on a sheet at 200°C (400°F), 15–18 minutes, until crisp."
+      },
+      "addSteps": [
+        {
+          "title": "Cheese and bacon",
+          "text": "Lay a cheddar slice on each hot cutlet as it comes out of the pan so it melts, and add a slice of bacon to each burger."
+        }
+      ],
+      "costAdd": [
+        [
+          "Cheddar slices, 4",
+          1.0,
+          "cheddar-slices"
+        ],
+        [
+          "Bacon, 4 slices",
+          1.4,
+          "bacon"
+        ]
+      ],
+      "plating": [
+        "Burger on the plate with a toothpick through the middle.",
+        "Cut in half to show the crunch.",
+        "Extra honey mayo in a little dish for dipping."
+      ]
+    }
+  },
+  "why": {
+    "0-8": "Panko's big flakes fry up crunchier and absorb less oil than fine crumbs.",
+    "0-7": "A splash of milk thins the egg so the coating stays even and light.",
+    "1-1": "Honey in the mayo gives that sweet-and-savoury fast-food sauce."
+  },
+  "fancyNight": false,
+  "funFact": "Panko comes from the Japanese 'pan' (bread) and 'ko' (crumb); it's made from crustless bread baked with electric current.",
+  "keeps": {
+    "fridge": "3 days",
+    "freezer": "2 months",
+    "note": "cooked cutlets only, not built burgers"
+  },
+  "pairs": [
+    [
+      "chicken-14",
+      "the air fryer fries from the chicken tenders"
+    ]
+  ]
+}

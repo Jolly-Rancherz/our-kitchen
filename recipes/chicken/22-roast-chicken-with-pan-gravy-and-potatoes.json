@@ -1,0 +1,434 @@
+{
+  "title": "Roast Chicken with Pan Gravy & Potatoes",
+  "subtitle": "a golden butter-rubbed whole chicken roasted over potatoes, carrots and onion, with gravy from the pan",
+  "image": "assets/img/roast-chicken-gravy.webp",
+  "imageAlt": "A golden roast chicken with roast potatoes and carrots and a jug of gravy on a white platter with a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for two, plus plenty for sandwiches and soup",
+  "prep": 20,
+  "cook": 100,
+  "cost": {
+    "total": 19.13,
+    "breakdown": [
+      [
+        "Whole chicken, 1.8 kg",
+        12.0,
+        "whole-chicken"
+      ],
+      [
+        "Yukon Gold potatoes, 1.2 kg",
+        2.9,
+        "yukon-gold-potatoes"
+      ],
+      [
+        "Carrots, 4",
+        0.8,
+        "carrots"
+      ],
+      [
+        "Onion",
+        0.4,
+        "yellow-onions"
+      ],
+      [
+        "Lemon",
+        0.79,
+        "lemons"
+      ],
+      [
+        "Chicken broth, 1½ cups",
+        1.04,
+        "chicken-broth"
+      ],
+      [
+        "Butter, 3 tbsp",
+        0.6,
+        "butter"
+      ],
+      [
+        "Oil, flour, spices, salt",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "comfort-night",
+      "date-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "One pan"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "A frozen whole chicken needs about 2 days in the fridge to thaw."
+    },
+    {
+      "icon": "oven",
+      "text": "Take the chicken out of the fridge 30 minutes before roasting and pat it very dry for crisp skin."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 1.8,
+          "unit": "kg",
+          "name": "whole chicken",
+          "note": "giblets removed",
+          "pantry": {
+            "name": "Whole chicken",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "softened",
+          "metric": {
+            "qty": 42,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "lemons",
+          "note": "halved",
+          "pantry": {
+            "name": "Lemons",
+            "cat": "produce"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Vegetables",
+      "items": [
+        {
+          "qty": 1.2,
+          "unit": "kg",
+          "name": "Yukon Gold potatoes",
+          "note": "cut in 4 cm chunks",
+          "pantry": {
+            "name": "Yukon Gold potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "carrots",
+          "note": "cut in 4 cm pieces",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "cut in wedges",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Gravy",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 375,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Season",
+      "text": "Heat the oven to 220°C (425°F). Pat the chicken dry. Mash the butter with the garlic powder, paprika, dried thyme, salt and pepper; rub some under the breast skin and the rest all over. Put the lemon halves inside.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Vegetables",
+      "text": "Toss the potatoes, carrots and onion with the oil and salt in a roasting pan or large metal pan. Set the chicken on top, breast side up.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4"
+      ]
+    },
+    {
+      "title": "Roast",
+      "text": "Roast 20 minutes, then lower the oven to 190°C (375°F) and roast 55–65 minutes more, until the thickest part of the thigh reads 82°C (180°F) and the juices run clear.",
+      "timer": 80,
+      "uses": []
+    },
+    {
+      "title": "Rest",
+      "text": "Lift the chicken onto a board and tent with foil for 15 minutes. Move the vegetables to a baking sheet and return them to the oven to crisp.",
+      "timer": 15,
+      "uses": []
+    },
+    {
+      "title": "Gravy",
+      "text": "Pour the pan juices into a cup and spoon 2 tbsp of the fat back into the pan. Set it over medium, whisk in the flour for 1 minute, then whisk in the broth and the juices (not the rest of the fat), scraping up the brown bits. Simmer 4–5 minutes until thick; season to taste.",
+      "timer": 5,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Carve",
+      "text": "Carve the legs, then the breasts, and serve with the vegetables and gravy.",
+      "uses": []
+    }
+  ],
+  "together": "ABA*A*",
+  "fixIt": [
+    {
+      "problem": "Skin not crisp",
+      "fix": "Dry the chicken well and don't cover it in the oven; a few minutes at 220°C (425°F) at the end helps."
+    },
+    {
+      "problem": "Breast done but thigh not",
+      "fix": "Keep roasting until the thigh reads 82°C (180°F); tent the breast loosely with foil so it doesn't dry out."
+    },
+    {
+      "problem": "Gravy too thin",
+      "fix": "Simmer a few minutes longer, or whisk in 1 tsp cornstarch mixed with 1 tbsp cold water."
+    }
+  ],
+  "saleTip": "Whole chickens are often about $6.60/kg at No Frills, cheaper per kilo than parts; the bones make next week's soup.",
+  "swap": "Russet potatoes work too; cut them a little bigger.",
+  "leftovers": "Pull the meat for sandwiches, pot pie or chicken noodle soup, and simmer the carcass for broth.",
+  "doneness": "Whole chicken at 82°C (180°F) in the thickest part of the thigh, not touching bone (Health Canada, whole poultry).",
+  "source": "Based on tested roast chicken methods (Canadian Living, America's Test Kitchen): butter-rubbed bird started at 220°C then roasted at 190°C over root vegetables, rested, with a flour-thickened pan gravy.",
+  "gear": [
+    "Roasting pan or large metal pan",
+    "Baking sheet",
+    "Whisk",
+    "Foil",
+    "Carving board",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Season the chicken the night before and leave it uncovered in the fridge for extra-crisp skin.",
+    "Cut the vegetables up to 1 day ahead; keep the potatoes covered in water."
+  ],
+  "reheat": "Sliced chicken covered with a splash of broth at 180°C (350°F) for 15 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "whole chicken",
+    "hours": 48
+  },
+  "levels": {
+    "basic": {
+      "note": "Butter, garlic powder, paprika, salt and pepper; no lemon or dried thyme.",
+      "drop": [
+        "0-4",
+        "0-7"
+      ],
+      "stepNotes": {
+        "0": "Basic: skip the dried thyme and lemon."
+      },
+      "costDrop": [
+        "lemon"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A whole head of roasted garlic and a splash of cream in the gravy.",
+      "add": [
+        {
+          "group": "Fancy gravy",
+          "items": [
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "head garlic",
+              "note": "halved crosswise",
+              "pantry": {
+                "name": "Garlic",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "35% whipping cream",
+              "metric": {
+                "qty": 60,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "35% whipping cream",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: tuck the halved garlic head, cut side up, among the vegetables."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy gravy",
+          "text": "Squeeze 4 roasted garlic cloves into the gravy and whisk in the cream; simmer 1 minute. Serve the rest of the garlic for spreading."
+        }
+      ],
+      "costAdd": [
+        [
+          "Garlic, 1 head",
+          0.66,
+          "garlic"
+        ],
+        [
+          "Cream, ¼ cup",
+          0.6,
+          "35-whipping-cream"
+        ]
+      ],
+      "plating": [
+        "Whole bird on a platter on the vegetables, carved at the table.",
+        "Gravy in a warm jug.",
+        "Roasted garlic halves on the platter."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "Butter under the skin bastes the breast from the inside.",
+    "1-0": "The potatoes roast in the chicken drippings, the best part of the pan.",
+    "2-0": "Flour cooked in the fat gives a smooth gravy with no lumps."
+  },
+  "fancyNight": true,
+  "funFact": "A rested bird loses far less juice on the board than one carved straight from the oven, so the 15 minutes are worth it.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze the meat off the bone, in gravy or broth"
+  },
+  "pairs": [
+    [
+      "comfort-soups-04",
+      "the next day, with the leftover chicken"
+    ]
+  ]
+}

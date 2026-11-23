@@ -415,6 +415,21 @@ exactly 812pt although the image continues.
 - Temps: ground pork/beef 71°C (tourtière filling), pork loin 71°C, reheats 74°C; rolls 90°C bread doneness.
 - Tourtière and the pork loin are 'main', so they join the Nov–Feb dinner pickers through `dinnerPool`.
 
+## Update 13.5 — 20 more dinners (2026-11-23)
+- Generators `app_src/b13/c5.py` and `c6.py` (c6 local helpers KETCH, WOR). Photos mapped in `img13/map135.txt`.
+  - chicken 19 souvlaki & lemon potatoes, 20 crispy chicken burgers, 21 cordon bleu, 22 roast chicken & pan gravy (82°C thigh)
+  - pasta-italian 11 stuffed shells (serves 6), 12 pepperoni pizza (prep 85 incl. 1 h rise), 13 chicken & bacon penne
+  - beef-turkey 15 Korean-style beef bowls, 16 cabbage roll casserole (serves 6), 17 beef enchiladas
+  - steak-pork 08 oven BBQ back ribs & corn, 09 sausages & mash, 10 brown sugar ham steak & scalloped potatoes
+  - seafood 08 shrimp tacos, 09 salmon cakes; takeout-at-home 08 chicken pad Thai, 09 chicken katsu
+  - comfort-soups 10 split pea & ham, 11 lasagna soup, 12 mild beef chili (all serve 6)
+- 23 new price keys (prices.json 197): the 18 new ones plus the 5 older gaps (fresh-mozzarella, aged-white-cheddar, frozen-pearl-onions, balsamic-vinegar, striploin-steak). keycheck now reports none missing.
+- Steps name herbs as "dried thyme" / "dried oregano" so audit's herb rule stays at the 20-finding baseline.
+- seafood-02 garlic butter shrimp said 70°C; now 74°C (Health Canada, shellfish) in doneness and the final step.
+- js `nameFor`: a leading container word (can, jar, slice, rack, ear, bag, package, head) now follows the shown count both ways ("1 can (398 ml) …", "2 cans (796 ml) …"; "(398 ml each)" drops "each" at one). Found by scalex at 3 servings on cabbage roll casserole and chili ("1 cans"). pwtest `scalex.mjs` plural check now also covers slices, racks, ears and bags.
+- audit_recipes.py: the "fish without a safe temp" rule looks at ingredient names only (the garlic shrimp fun fact mentions salmon).
+- Temps: chicken pieces 74°C, whole chicken 82°C thigh, ground beef 71°C, pork sausages/ribs 71°C, shrimp 74°C, salmon cakes 74°C (egg), precooked ham reheated to 74°C.
+
 ## Update 13.4 — 20 more dinners (2026-11-23)
 - Generators `app_src/b13/c3.py` and `c4.py`. New `dlib.py` helpers: `C(lines)` (cost total computed from the lines), CHED, MOZ, SCREAM, PANKO, CARROT, CELERY. `xlib.make` now also asserts every `pairs` id exists (or is listed in `PENDING`).
   - chicken 16 shawarma rice bowls, 17 one-pan cheesy chicken & rice, 18 oven BBQ drumsticks & wedges

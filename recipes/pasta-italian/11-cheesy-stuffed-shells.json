@@ -1,0 +1,413 @@
+{
+  "title": "Cheesy Stuffed Shells",
+  "subtitle": "jumbo pasta shells filled with ricotta, mozzarella and Parmesan, baked in marinara under a blanket of melted cheese",
+  "image": "assets/img/stuffed-shells.webp",
+  "imageAlt": "Baked jumbo pasta shells stuffed with ricotta in red sauce with melted mozzarella in a baking dish on a navy napkin",
+  "servings": 6,
+  "servingsNote": "a 9×13 pan: dinner for two, plus 4 lunches",
+  "prep": 30,
+  "cook": 50,
+  "cost": {
+    "total": 17.54,
+    "breakdown": [
+      [
+        "Jumbo pasta shells, 28",
+        2.6,
+        "jumbo-pasta-shells"
+      ],
+      [
+        "Ricotta, 475 g",
+        4.49,
+        "ricotta"
+      ],
+      [
+        "Mozzarella, 250 g",
+        5.07,
+        "mozzarella-shredded"
+      ],
+      [
+        "Marinara, 650 ml jar",
+        3.49,
+        "marinara-sauce"
+      ],
+      [
+        "Parmesan, ½ cup",
+        1.2,
+        "parmesan-grated"
+      ],
+      [
+        "Egg",
+        0.39,
+        "eggs"
+      ],
+      [
+        "Spices, salt",
+        0.3
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "pasta"
+    ],
+    "occasion": [
+      "comfort-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Make-ahead"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Cook a few extra shells: some always tear. You need 24 good ones."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Shells",
+      "items": [
+        {
+          "qty": 28,
+          "unit": null,
+          "name": "jumbo pasta shells",
+          "note": "about 250 g",
+          "pantry": {
+            "name": "Jumbo pasta shells",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the pasta water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Filling",
+      "items": [
+        {
+          "qty": 475,
+          "unit": "g",
+          "name": "ricotta",
+          "note": "1 tub",
+          "pantry": {
+            "name": "Ricotta",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "shredded mozzarella",
+          "metric": {
+            "qty": 150,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Mozzarella (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried Italian seasoning",
+          "pantry": {
+            "name": "Italian seasoning (dried)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To bake",
+      "items": [
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "jar (650 ml) marinara sauce",
+          "pantry": {
+            "name": "Marinara sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "shredded mozzarella",
+          "metric": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Mozzarella (shredded)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Cook the shells",
+      "text": "Heat the oven to 190°C (375°F). Boil the shells in a big pot of water with the salt for 2 minutes less than the package says. Drain, rinse with cool water and lay them apart on a tray so they don't stick.",
+      "timer": 9,
+      "uses": [
+        "0-0",
+        "0-1"
+      ]
+    },
+    {
+      "title": "Filling",
+      "text": "Stir the ricotta, 1½ cups mozzarella, Parmesan, egg, garlic powder, Italian seasoning, salt and pepper together.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6",
+        "1-7"
+      ]
+    },
+    {
+      "title": "Sauce the dish",
+      "text": "Spread 1 cup of the marinara over the bottom of a 23×33 cm (9×13 in) baking dish.",
+      "uses": [
+        "2-0=1 cup"
+      ]
+    },
+    {
+      "title": "Fill",
+      "text": "Fill 24 shells with a heaping tablespoon of filling each and set them open side up in rows in the dish.",
+      "uses": []
+    },
+    {
+      "title": "Top",
+      "text": "Spoon the rest of the marinara over and around the shells and scatter the remaining 1 cup mozzarella on top.",
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Cover with foil and bake 25 minutes. Uncover and bake 10–15 minutes more, until bubbling, the cheese is golden and the centre reads 74°C (165°F).",
+      "timer": 38,
+      "uses": []
+    },
+    {
+      "title": "Rest",
+      "text": "Rest 10 minutes so the filling sets before serving.",
+      "timer": 10,
+      "uses": []
+    }
+  ],
+  "together": "ABAA*AA",
+  "fixIt": [
+    {
+      "problem": "Shells tearing",
+      "fix": "Undercook them by 2 minutes and stir gently; they finish softening in the oven."
+    },
+    {
+      "problem": "Filling runny",
+      "fix": "Drain watery ricotta in a sieve 10 minutes, and keep the egg in; it sets the filling."
+    },
+    {
+      "problem": "Top browning before the middle is hot",
+      "fix": "Keep the foil on longer and check the centre with a thermometer."
+    }
+  ],
+  "saleTip": "Ricotta and mozzarella often go on sale together at No Frills; shredded mozzarella freezes well.",
+  "swap": "Add 450 g lean ground beef, browned to 71°C (160°F), to the marinara for a meaty version.",
+  "leftovers": "Shells reheat beautifully; pack 4 per lunch container with extra sauce.",
+  "doneness": "Bake until the centre reads 74°C (165°F) (Health Canada, egg dishes and leftovers).",
+  "source": "Based on tested baked stuffed shells methods (Canadian Living, Food Network Canada): par-cooked jumbo shells, ricotta-mozzarella-Parmesan filling bound with egg, baked covered then uncovered in marinara.",
+  "gear": [
+    "23×33 cm (9×13 in) baking dish",
+    "Large pot",
+    "Colander",
+    "Foil",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Assemble up to 1 day ahead, cover and chill; add 10 minutes to the covered bake.",
+    "Freeze assembled and unbaked up to 3 months; thaw overnight before baking."
+  ],
+  "reheat": "Covered in the microwave 2–3 minutes, or covered at 180°C (350°F) for 20 minutes, until 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Ricotta and mozzarella filling with garlic powder, salt and pepper.",
+      "drop": [
+        "1-5",
+        "1-2"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the Italian seasoning and Parmesan."
+      },
+      "costDrop": [
+        "parmesan"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Garlic bread on the side and extra Parmesan on top.",
+      "add": [
+        {
+          "group": "Fancy extras",
+          "items": [
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "baguette",
+              "pantry": {
+                "name": "Baguette",
+                "cat": "grains"
+              }
+            },
+            {
+              "qty": 3,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "softened",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "clove",
+              "name": "garlic",
+              "note": "grated",
+              "pantry": {
+                "name": "Garlic",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "grated Parmesan",
+              "note": "extra, for the top",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "4": "Fancy: scatter the extra Parmesan over the mozzarella."
+      },
+      "addSteps": [
+        {
+          "title": "Garlic bread",
+          "text": "Split the baguette, spread with the butter mashed with the garlic and bake cut side up for the last 10 minutes beside the shells."
+        }
+      ],
+      "costAdd": [
+        [
+          "Baguette",
+          2.5,
+          "baguette"
+        ],
+        [
+          "Butter, 3 tbsp",
+          0.6,
+          "butter"
+        ],
+        [
+          "Parmesan, ¼ cup",
+          0.6,
+          "parmesan-grated"
+        ],
+        [
+          "Garlic",
+          0.1
+        ]
+      ],
+      "plating": [
+        "3 or 4 shells per plate, sauce spooned over.",
+        "Garlic bread on the side.",
+        "A grind of black pepper."
+      ]
+    }
+  },
+  "why": {
+    "1-3": "The egg sets the ricotta so the filling holds its shape when you cut in.",
+    "0-0": "Undercooked shells soak up sauce in the oven instead of going mushy.",
+    "2-1": "A covered bake melts everything; uncovering at the end browns the top."
+  },
+  "fancyNight": false,
+  "funFact": "Jumbo shells are 'conchiglioni' in Italian, from 'conchiglia', seashell.",
+  "keeps": {
+    "fridge": "4 days",
+    "freezer": "3 months",
+    "note": "freezes well baked or unbaked"
+  },
+  "pairs": []
+}

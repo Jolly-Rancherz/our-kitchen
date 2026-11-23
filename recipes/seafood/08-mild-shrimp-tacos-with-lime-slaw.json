@@ -1,0 +1,387 @@
+{
+  "title": "Mild Shrimp Tacos with Lime Slaw",
+  "subtitle": "smoky-sweet seasoned shrimp in warm tortillas with a crunchy creamy lime slaw, ready in 25 minutes",
+  "image": "assets/img/shrimp-tacos.webp",
+  "imageAlt": "Three soft tortillas filled with golden shrimp and creamy shredded slaw, with lime wedges, on a cream plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "8 tacos: dinner for one big eater + one hungry eater, plus lunches",
+  "prep": 15,
+  "cook": 10,
+  "cost": {
+    "total": 15.0,
+    "breakdown": [
+      [
+        "Raw shrimp, 450 g",
+        8.58,
+        "shrimp-raw-frozen"
+      ],
+      [
+        "Small flour tortillas, 8",
+        2.79,
+        "flour-tortillas-small"
+      ],
+      [
+        "Coleslaw mix, ½ bag",
+        1.25,
+        "coleslaw-mix"
+      ],
+      [
+        "Limes, 2",
+        1.0,
+        "limes"
+      ],
+      [
+        "Sour cream, ½ cup",
+        0.75,
+        "sour-cream"
+      ],
+      [
+        "Mayonnaise, 3 tbsp",
+        0.23,
+        "mayonnaise"
+      ],
+      [
+        "Oil, spices, sugar, salt",
+        0.4
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [
+      "weeknight",
+      "takeout-night"
+    ],
+    "leftovers": []
+  },
+  "badges": [
+    "Not spicy",
+    "Under 30 minutes"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Thaw frozen shrimp in the fridge overnight, or in a sealed bag in cold water 20–30 minutes."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Shrimp",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "raw shrimp",
+          "note": "peeled and deveined, thawed",
+          "pantry": {
+            "name": "Shrimp (raw, frozen)",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground cumin",
+          "pantry": {
+            "name": "Ground cumin",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lime slaw",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "coleslaw mix",
+          "note": "about ½ bag",
+          "pantry": {
+            "name": "Coleslaw mix",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "mayonnaise",
+          "pantry": {
+            "name": "Mayonnaise",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "limes",
+          "note": "1 juiced, 1 cut in wedges",
+          "pantry": {
+            "name": "Limes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "granulated sugar",
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To serve",
+      "items": [
+        {
+          "qty": 8,
+          "unit": null,
+          "name": "small flour tortillas",
+          "pantry": {
+            "name": "Flour tortillas (small)",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "sour cream",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Sour cream",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Slaw",
+      "text": "Juice 1 lime and cut the other in wedges. Stir the mayonnaise, 1 tbsp of the lime juice, sugar and salt together, then toss with the coleslaw mix.",
+      "uses": [
+        "1-2",
+        "1-1",
+        "1-3",
+        "1-4",
+        "1-0"
+      ]
+    },
+    {
+      "title": "Season",
+      "text": "Pat the shrimp very dry and toss with the paprika, cumin, garlic powder, salt and the rest of the lime juice.",
+      "uses": [
+        "0-0",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Cook",
+      "text": "Heat the oil in a large skillet over medium-high. Cook the shrimp in one layer 1½–2 minutes a side, until pink and opaque all through, 74°C (165°F).",
+      "timer": 4,
+      "uses": [
+        "0-1"
+      ]
+    },
+    {
+      "title": "Warm the tortillas",
+      "text": "Warm the tortillas in a dry skillet 20 seconds a side, or wrapped in a damp towel in the microwave 30 seconds.",
+      "uses": [
+        "2-0"
+      ]
+    },
+    {
+      "title": "Build",
+      "text": "Fill each tortilla with slaw and shrimp, add a spoon of sour cream and serve with lime wedges.",
+      "uses": [
+        "2-1"
+      ]
+    }
+  ],
+  "together": "BAAB*",
+  "fixIt": [
+    {
+      "problem": "Shrimp rubbery",
+      "fix": "They were overcooked. Pull them as soon as they turn opaque and curl into a loose C."
+    },
+    {
+      "problem": "Watery slaw",
+      "fix": "Toss it no more than 30 minutes before eating."
+    },
+    {
+      "problem": "Tortillas cracking",
+      "fix": "Warm them right before filling and keep them wrapped in a towel."
+    }
+  ],
+  "saleTip": "Frozen raw shrimp drops to about $9.99 for 680 g at No Frills; buy two bags when it does.",
+  "swap": "Cod or haddock: cut in strips, same seasoning, cook 2–3 minutes a side to 70°C (158°F).",
+  "leftovers": "Best fresh. Cold leftover shrimp is great on a salad the next day.",
+  "doneness": "Shrimp 74°C (165°F): pink and opaque all the way through (Health Canada, shellfish).",
+  "source": "Based on tested shrimp taco methods (Food Network Canada, Budget Bytes): paprika-cumin seasoned shrimp seared quickly, a creamy lime cabbage slaw, warm flour tortillas. No chili or hot sauce.",
+  "gear": [
+    "Large skillet",
+    "Large bowl",
+    "Paper towels",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Mix the slaw dressing up to 3 days ahead; toss with the cabbage just before eating.",
+    "Season the shrimp up to 30 minutes ahead; longer and the lime softens it."
+  ],
+  "reheat": "Best cold on a salad; reheated shrimp turns rubbery. To reheat, warm briefly in a skillet over medium, 1–2 minutes, until 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Seasoned shrimp, plain slaw and sour cream; no cumin.",
+      "drop": [
+        "0-3",
+        "1-3"
+      ],
+      "stepNotes": {
+        "0": "Basic: no sugar in the slaw.",
+        "1": "Basic: skip the cumin."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Fresh mango-avocado salsa on top.",
+      "add": [
+        {
+          "group": "Fancy salsa",
+          "items": [
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "mango",
+              "note": "diced",
+              "pantry": {
+                "name": "Mangoes",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "avocado",
+              "note": "diced",
+              "pantry": {
+                "name": "Avocados",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": null,
+              "name": "red onion",
+              "note": "finely diced",
+              "pantry": {
+                "name": "Red onions",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Mango salsa",
+          "text": "Toss the mango, avocado and red onion with a squeeze of lime and a pinch of salt, and spoon it over the tacos."
+        }
+      ],
+      "costAdd": [
+        [
+          "Mango",
+          1.5,
+          "mangoes"
+        ],
+        [
+          "Avocado",
+          1.25,
+          "avocados"
+        ],
+        [
+          "Red onion, ¼",
+          0.18,
+          "red-onions"
+        ]
+      ],
+      "plating": [
+        "3 tacos standing in a row, leaning together.",
+        "Salsa on top, lime wedges on the side.",
+        "Sour cream in a little dish."
+      ]
+    }
+  },
+  "why": {
+    "0-2": "Sweet paprika and cumin give taco-truck flavour without any heat.",
+    "1-2": "Lime in both the slaw and shrimp ties the tacos together.",
+    "1-0": "Bagged coleslaw mix saves shredding and stays crunchy."
+  },
+  "fancyNight": false,
+  "funFact": "Fish and shrimp tacos are a Baja California tradition, popularised in the 1950s by street stands in Ensenada.",
+  "keeps": {
+    "fridge": "2 days",
+    "freezer": null,
+    "note": "cooked shrimp only; the slaw wilts"
+  },
+  "pairs": []
+}

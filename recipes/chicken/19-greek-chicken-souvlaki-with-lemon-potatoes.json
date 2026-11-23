@@ -1,0 +1,508 @@
+{
+  "title": "Greek Chicken Souvlaki with Lemon Potatoes",
+  "subtitle": "lemon-garlic chicken skewers, golden lemony roast potatoes and a cool garlic-cucumber sauce",
+  "image": "assets/img/chicken-souvlaki-lemon-potatoes.webp",
+  "imageAlt": "Golden chicken skewers beside lemon roast potato wedges and a bowl of white garlic-cucumber sauce on a white plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 25,
+  "cook": 45,
+  "cost": {
+    "total": 23.73,
+    "breakdown": [
+      [
+        "Boneless chicken thighs, 900 g",
+        15.3,
+        "chicken-thighs-boneless"
+      ],
+      [
+        "Yukon Gold potatoes, 1.2 kg",
+        2.9,
+        "yukon-gold-potatoes"
+      ],
+      [
+        "Lemons, 2",
+        1.58,
+        "lemons"
+      ],
+      [
+        "Sour cream, 1 cup",
+        1.5,
+        "sour-cream"
+      ],
+      [
+        "English cucumber, ½",
+        0.75,
+        "cucumbers"
+      ],
+      [
+        "Chicken broth, ½ cup",
+        0.35,
+        "chicken-broth"
+      ],
+      [
+        "Olive oil, 5 tbsp",
+        0.75,
+        "olive-oil"
+      ],
+      [
+        "Garlic, spices, salt",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "oven-bake"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "weeknight",
+      "date-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Marinate the chicken at least 30 minutes, up to overnight. Soak wooden skewers in water while it sits."
+    },
+    {
+      "icon": "oven",
+      "text": "The potatoes take 45 minutes; the skewers cook on the stovetop in the last 15."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "boneless skinless chicken thighs",
+          "note": "cut in 4 cm pieces",
+          "pantry": {
+            "name": "Chicken thighs (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "olive oil",
+          "pantry": {
+            "name": "Olive oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "lemon juice",
+          "note": "from the lemons below"
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "dried oregano",
+          "pantry": {
+            "name": "Dried oregano",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lemon potatoes",
+      "items": [
+        {
+          "qty": 1.2,
+          "unit": "kg",
+          "name": "Yukon Gold potatoes",
+          "note": "cut in wedges",
+          "pantry": {
+            "name": "Yukon Gold potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "olive oil",
+          "pantry": {
+            "name": "Olive oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "lemon juice",
+          "note": "from the lemons below"
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried oregano",
+          "pantry": {
+            "name": "Dried oregano",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Garlic-cucumber sauce",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": null,
+          "name": "English cucumber",
+          "note": "grated",
+          "pantry": {
+            "name": "Cucumbers",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "sour cream",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Sour cream",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "finely grated",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "lemon juice",
+          "note": "from the lemons below"
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "lemons",
+          "note": "juiced, for everything above",
+          "pantry": {
+            "name": "Lemons",
+            "cat": "produce"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Marinate",
+      "text": "Juice the lemons. Toss the chicken with the 3 tbsp olive oil, 3 tbsp lemon juice, garlic, dried oregano, salt and pepper. Cover and chill at least 30 minutes.",
+      "uses": [
+        "2-5",
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Roast the potatoes",
+      "text": "Heat the oven to 220°C (425°F). Toss the potatoes with the 2 tbsp olive oil, 2 tbsp lemon juice, dried oregano, garlic powder and salt in a 23×33 cm (9×13 in) metal pan. Pour the broth around them and roast 45 minutes, turning once at 25 minutes, until golden and tender.",
+      "timer": 45,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-4",
+        "1-5",
+        "1-6",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Garlic-cucumber sauce",
+      "text": "Grate the cucumber, squeeze it dry in a clean towel and stir it with the sour cream, grated garlic, 1 tsp lemon juice and salt. Chill.",
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3",
+        "2-4"
+      ]
+    },
+    {
+      "title": "Skewer",
+      "text": "Thread the chicken onto 8 skewers, leaving a little space between pieces.",
+      "uses": []
+    },
+    {
+      "title": "Cook the skewers",
+      "text": "With 15 minutes left on the potatoes, heat a large skillet or grill pan over medium-high. Cook the skewers 10–12 minutes, turning every 3 minutes, until browned and 74°C (165°F) in the thickest piece.",
+      "timer": 12,
+      "uses": []
+    },
+    {
+      "title": "Serve",
+      "text": "Pile the potatoes and skewers on plates with a big spoon of the sauce.",
+      "uses": []
+    }
+  ],
+  "together": "AABAA*",
+  "fixIt": [
+    {
+      "problem": "Potatoes pale",
+      "fix": "Use a metal pan, not glass, and roast 5–10 minutes more once the broth has cooked off."
+    },
+    {
+      "problem": "Chicken sticking",
+      "fix": "Let the pan get properly hot and don't turn the skewers until they release on their own."
+    },
+    {
+      "problem": "Sauce watery",
+      "fix": "Squeeze the grated cucumber harder; a tablespoon of liquid left in thins the whole bowl."
+    }
+  ],
+  "saleTip": "Boneless thighs drop to about $11/kg in No Frills family packs; freeze half already in the marinade.",
+  "swap": "Chicken breasts: same amount and method, 8–10 minutes, still to 74°C (165°F). Air fryer: skewers or loose pieces at 200°C, 12–14 minutes, turning halfway.",
+  "leftovers": "Chop the leftover chicken into a wrap with the sauce for lunch.",
+  "doneness": "Chicken pieces at 74°C (165°F) (Health Canada, poultry pieces).",
+  "source": "Based on tested Greek chicken souvlaki and lemon potato methods (Canadian Living, Food Network Canada): lemon-garlic-oregano marinade, pan-grilled skewers, potatoes roasted with lemon juice and broth.",
+  "gear": [
+    "23×33 cm (9×13 in) metal pan",
+    "Large skillet or grill pan",
+    "8 skewers",
+    "Box grater",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Marinate the chicken up to 1 day ahead.",
+    "The garlic-cucumber sauce keeps 3 days in the fridge."
+  ],
+  "reheat": "Chicken and potatoes on a sheet pan at 200°C (400°F) for 8–10 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "chicken thighs",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Chicken pieces cooked loose in the pan, with plain sour cream on the side.",
+      "drop": [
+        "2-0",
+        "2-2",
+        "2-3",
+        "2-4"
+      ],
+      "stepNotes": {
+        "2": "Basic: just serve the sour cream plain.",
+        "3": "Basic: skip the skewers; cook the pieces loose in the pan, stirring now and then."
+      },
+      "costDrop": [
+        "cucumber"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Warm pitas and a feta, tomato and red onion salad.",
+      "add": [
+        {
+          "group": "Fancy extras",
+          "items": [
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "pitas",
+              "note": "warmed",
+              "pantry": {
+                "name": "Pitas",
+                "cat": "grains"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": null,
+              "name": "tomatoes",
+              "note": "diced",
+              "pantry": {
+                "name": "Tomatoes",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": null,
+              "name": "red onion",
+              "note": "thinly sliced",
+              "pantry": {
+                "name": "Red onions",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 100,
+              "unit": "g",
+              "name": "feta cheese",
+              "note": "crumbled",
+              "pantry": {
+                "name": "Feta cheese",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "olive oil",
+              "note": "for the salad",
+              "pantry": {
+                "name": "Olive oil",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Salad and pitas",
+          "text": "Toss the tomatoes, red onion and feta with the 1 tbsp olive oil and a pinch of salt. Warm the pitas in a dry skillet 30 seconds a side."
+        }
+      ],
+      "costAdd": [
+        [
+          "Pitas, 4",
+          2.0,
+          "pitas"
+        ],
+        [
+          "Tomatoes, 2",
+          1.5,
+          "tomatoes"
+        ],
+        [
+          "Red onion, ¼",
+          0.18,
+          "red-onions"
+        ],
+        [
+          "Feta, 100 g",
+          1.75,
+          "feta-cheese"
+        ],
+        [
+          "Olive oil",
+          0.15
+        ]
+      ],
+      "plating": [
+        "Skewers laid across the potatoes.",
+        "Salad in its own pile, feta on top.",
+        "Sauce in a small bowl, pitas folded on the side."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Thighs stay juicy on high heat; breasts dry out faster on skewers.",
+    "1-3": "Broth in the pan steams the potatoes tender inside before they crisp, the Greek taverna way.",
+    "2-0": "Squeezed cucumber keeps the sauce thick and cool."
+  },
+  "fancyNight": false,
+  "funFact": "'Souvlaki' means 'little skewer' in Greek, from 'souvla', the big spit used for whole lambs.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze the cooked chicken only, not the sauce"
+  },
+  "pairs": []
+}

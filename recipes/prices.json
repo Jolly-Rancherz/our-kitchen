@@ -5,6 +5,10 @@
    "price": 4.49,
    "pack": "473 ml"
   },
+  "aged-white-cheddar": {
+   "price": 7.49,
+   "pack": "400 g"
+  },
   "all-purpose-flour": {
    "price": 4.99,
    "pack": "2.5 kg"
@@ -41,9 +45,17 @@
    "price": 1.79,
    "pack": "500 g"
   },
+  "balsamic-vinegar": {
+   "price": 3.99,
+   "pack": "500 ml"
+  },
   "bay-leaves": {
    "price": 1.99,
    "pack": "jar"
+  },
+  "bean-sprouts": {
+   "price": 1.99,
+   "pack": "340 g"
   },
   "beef-broth": {
    "price": 2.49,
@@ -76,6 +88,10 @@
   "candy-canes": {
    "price": 2.49,
    "pack": "box of 12"
+  },
+  "canned-salmon": {
+   "price": 4.49,
+   "pack": "213 g"
   },
   "canned-tuna": {
    "price": 1.79,
@@ -181,9 +197,17 @@
    "price": 1.49,
    "pack": "each (English)"
   },
+  "curry-powder-mild": {
+   "price": 3.49,
+   "pack": "100 g"
+  },
   "custard-powder": {
    "price": 4.99,
    "pack": "300 g"
+  },
+  "deli-ham-sliced": {
+   "price": 4.49,
+   "pack": "175 g"
   },
   "dried-cranberries": {
    "price": 3.99,
@@ -229,9 +253,17 @@
    "price": 4.99,
    "pack": "675 ml"
   },
+  "feta-cheese": {
+   "price": 5.99,
+   "pack": "200 g"
+  },
   "fettuccine": {
    "price": 2.0,
    "pack": "450 g"
+  },
+  "fish-sauce": {
+   "price": 2.99,
+   "pack": "200 ml"
   },
   "flour-tortillas-large": {
    "price": 3.99,
@@ -244,6 +276,10 @@
   "fresh-ginger": {
    "price": 1.0,
    "pack": "~100 g piece"
+  },
+  "fresh-mozzarella": {
+   "price": 5.99,
+   "pack": "200 g"
   },
   "frozen-corn": {
    "price": 2.99,
@@ -260,6 +296,10 @@
   "frozen-mixed-berries": {
    "price": 5.99,
    "pack": "600 g"
+  },
+  "frozen-pearl-onions": {
+   "price": 3.49,
+   "pack": "500 g"
   },
   "frozen-peas": {
    "price": 2.49,
@@ -296,6 +336,10 @@
   "green-beans": {
    "price": 3.3,
    "pack": "~450 g"
+  },
+  "green-cabbage": {
+   "price": 2.49,
+   "pack": "each"
   },
   "ground-allspice": {
    "price": 3.49,
@@ -393,9 +437,17 @@
    "price": 8.99,
    "pack": "3.6 kg"
   },
+  "jumbo-pasta-shells": {
+   "price": 2.99,
+   "pack": "340 g"
+  },
   "ketchup": {
    "price": 3.99,
    "pack": "1 L"
+  },
+  "kidney-beans-canned": {
+   "price": 1.29,
+   "pack": "540 ml"
   },
   "lasagna-noodles": {
    "price": 2.49,
@@ -416,6 +468,10 @@
   "linguine": {
    "price": 2.0,
    "pack": "450 g"
+  },
+  "mangoes": {
+   "price": 1.29,
+   "pack": "each"
   },
   "maple-syrup": {
    "price": 9.99,
@@ -481,6 +537,10 @@
    "price": 2.99,
    "pack": "907 g bag"
   },
+  "peanuts-unsalted": {
+   "price": 4.49,
+   "pack": "350 g"
+  },
   "pecan-halves": {
    "price": 7.99,
    "pack": "200 g"
@@ -492,6 +552,10 @@
   "peppermint-extract": {
    "price": 4.49,
    "pack": "43 ml"
+  },
+  "pepperoni-sliced": {
+   "price": 4.99,
+   "pack": "250 g"
   },
   "pineapple-chunks-canned": {
    "price": 1.99,
@@ -512,6 +576,10 @@
   "plum-sauce": {
    "price": 3.49,
    "pack": "bottle"
+  },
+  "pork-back-ribs": {
+   "price": 16.99,
+   "pack": "about 1.2 kg rack"
   },
   "pork-chops-boneless": {
    "price": 9.5,
@@ -560,6 +628,10 @@
   "refried-beans-canned": {
    "price": 1.99,
    "pack": "398 ml can"
+  },
+  "rice-noodles-flat": {
+   "price": 2.99,
+   "pack": "454 g"
   },
   "rice-vinegar": {
    "price": 2.79,
@@ -641,6 +713,10 @@
    "price": 16.5,
    "pack": "per kg"
   },
+  "striploin-steak": {
+   "price": 14.99,
+   "pack": "about 450 g"
+  },
   "sweet-potatoes": {
    "price": 3.49,
    "pack": "~1 kg"
@@ -653,6 +729,10 @@
    "price": 3.49,
    "pack": "200 g"
   },
+  "swiss-cheese-slices": {
+   "price": 4.99,
+   "pack": "240 g"
+  },
   "tomato-paste": {
    "price": 1.29,
    "pack": "156 ml can"
@@ -664,6 +744,10 @@
   "tomatoes": {
    "price": 1.5,
    "pack": "2 tomatoes"
+  },
+  "tortilla-chips": {
+   "price": 3.49,
+   "pack": "300 g"
   },
   "turkey-breast-roast": {
    "price": 19.99,
@@ -681,6 +765,10 @@
    "price": 2.49,
    "pack": "1 L"
   },
+  "whole-chicken": {
+   "price": 13.99,
+   "pack": "about 1.8 kg"
+  },
   "wonton-wrappers": {
    "price": 2.49,
    "pack": "454 g pack"
@@ -692,6 +780,10 @@
   "yellow-onions": {
    "price": 3.49,
    "pack": "3 lb bag"
+  },
+  "yellow-split-peas": {
+   "price": 2.79,
+   "pack": "900 g"
   },
   "yukon-gold-potatoes": {
    "price": 5.49,

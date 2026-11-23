@@ -122,7 +122,15 @@ function fmtQty(q, unit, name) {
 
 // a bare count of one reads singular ("1 large egg", "1 bay leaf"); counts with a unit keep their own noun
 const ONE = /^[⅛¼⅓½⅔¾]?$|^1$/;
-const nameFor = (name, amt) => (amt && /^[\d⅛¼⅓½⅔¾]+$/.test(amt) && ONE.test(amt) ? name.replace(/\bleaves$/, 'leaf').replace(/(egg|carrot|orange|onion|tortilla|banana|lemon|roll|shell|breast|noodle|tomato|potato|apple|cake)(e?s)$/, '$1') : name);
+// update 13.5: a leading container word follows the count too: "1 can (398 ml) tomato sauce", "1 slice bacon",
+// "2 cans (796 ml) crushed tomatoes" (not "1 cans (398 ml each)" or "2 can (796 ml)")
+const CONT = /^(can|jar|slice|rack|ear|bag|package|head)s?\b/;
+const nameFor = (name, amt) => {
+  if (!amt || !/^[\d⅛¼⅓½⅔¾]+$/.test(amt)) return name;
+  if (ONE.test(amt)) return name.replace(/\bleaves$/, 'leaf').replace(/(egg|carrot|orange|onion|tortilla|banana|lemon|roll|shell|breast|noodle|tomato|potato|apple|cake)(e?s)$/, '$1')
+    .replace(CONT, '$1').replace(/\((\d[\d.,]* ?(?:ml|g|kg|L)) each\)/, '($1)');
+  return name.replace(CONT, '$1s');
+};
 // ---------------------------------------------------------------- state
 const DEFAULT_STATE = () => ({
   v: 1,
@@ -5459,6 +5467,34 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+{
+ "name": "Update 13.5",
+ "id": "u135-2026-11",
+ "date": "2026-11-23",
+ "intro": "Twenty more dinners, each with Basic, Classic and Fancy.",
+ "notes": [
+  [
+   "Chicken",
+   "Greek chicken souvlaki with lemon potatoes, crispy chicken burgers, chicken cordon bleu, and roast chicken with pan gravy and potatoes"
+  ],
+  [
+   "Pasta and beef",
+   "Cheesy stuffed shells, homemade pepperoni pizza, creamy chicken and bacon penne, Korean-style beef rice bowls, cabbage roll casserole and cheesy beef enchiladas"
+  ],
+  [
+   "Pork and seafood",
+   "Oven BBQ back ribs with buttered corn, sausages and mash with onion gravy, brown sugar ham steak with scalloped potatoes, mild shrimp tacos with lime slaw, and golden salmon cakes"
+  ],
+  [
+   "Takeout and soups",
+   "Mild chicken pad Thai, chicken katsu with rice, split pea and ham soup, lasagna soup and mild beef and bean chili"
+  ],
+  [
+   "Small fixes",
+   "Garlic butter shrimp now gives the 74°C shellfish temperature, a few older ingredients now have No Frills prices, and changing servings reads \"1 can (398 ml) tomato sauce\" and \"2 cans\" instead of \"1 cans\" or \"2 can\""
+  ]
+ ]
+},
 {
  "name": "Update 13.4",
  "id": "u134-2026-11",

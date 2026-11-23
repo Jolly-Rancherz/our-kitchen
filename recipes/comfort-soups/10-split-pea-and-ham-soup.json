@@ -1,0 +1,377 @@
+{
+  "title": "Split Pea & Ham Soup",
+  "subtitle": "the Québec-style classic: thick, golden yellow split pea soup with smoky ham, carrots and celery",
+  "image": "assets/img/split-pea-ham-soup.webp",
+  "imageAlt": "A bowl of thick golden split pea soup with diced ham and carrot on a navy napkin",
+  "servings": 6,
+  "servingsNote": "a big pot: dinner for two, plus 4 bowls for lunches",
+  "prep": 15,
+  "cook": 80,
+  "cost": {
+    "total": 13.24,
+    "breakdown": [
+      [
+        "Yellow split peas, 450 g",
+        1.5,
+        "yellow-split-peas"
+      ],
+      [
+        "Ham steak, 450 g",
+        5.99,
+        "ham-steak"
+      ],
+      [
+        "Chicken broth, 6 cups",
+        4.15,
+        "chicken-broth"
+      ],
+      [
+        "Carrots, 2",
+        0.4,
+        "carrots"
+      ],
+      [
+        "Celery, 2 ribs",
+        0.4,
+        "celery"
+      ],
+      [
+        "Onion",
+        0.4,
+        "yellow-onions"
+      ],
+      [
+        "Garlic, oil, spices, salt",
+        0.4
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "One pot"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Rinse the peas and pick out any little stones. No soaking needed."
+    },
+    {
+      "icon": "knife",
+      "text": "Salt at the end: ham and broth are already salty."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Soup",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "carrots",
+          "note": "diced",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "celery ribs",
+          "note": "diced",
+          "pantry": {
+            "name": "Celery",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "yellow split peas",
+          "note": "rinsed",
+          "pantry": {
+            "name": "Yellow split peas",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 6,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 1500,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 500,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "bay leaf",
+          "pantry": {
+            "name": "Bay leaves",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "ham steak",
+          "note": "diced",
+          "pantry": {
+            "name": "Ham steak",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "note": "to taste",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Soften",
+      "text": "Heat the oil in a large pot over medium. Cook the onion, carrots and celery 6–8 minutes until soft. Add the garlic for 30 seconds.",
+      "timer": 7,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Simmer",
+      "text": "Add the split peas, broth, water, bay leaf, dried thyme and pepper. Bring to a boil, then simmer, partly covered, 60–75 minutes, stirring now and then so nothing sticks, until the peas fall apart.",
+      "timer": 70,
+      "uses": [
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9",
+        "0-10"
+      ]
+    },
+    {
+      "title": "Ham",
+      "text": "Discard the bay leaf. Stir in the diced ham and simmer 10 minutes, until the soup is thick and the ham is 74°C (165°F).",
+      "timer": 10,
+      "uses": [
+        "0-11"
+      ]
+    },
+    {
+      "title": "Season",
+      "text": "Taste and add salt only if it needs it. Thin with a splash of water if it's too thick.",
+      "uses": [
+        "0-12"
+      ]
+    }
+  ],
+  "together": "AAA*",
+  "fixIt": [
+    {
+      "problem": "Peas still whole",
+      "fix": "Old peas take longer. Keep simmering, or mash some against the pot."
+    },
+    {
+      "problem": "Too thick",
+      "fix": "It thickens a lot as it cools; stir in hot water or broth to loosen."
+    },
+    {
+      "problem": "Sticking on the bottom",
+      "fix": "Lower the heat and stir every 10 minutes, scraping the bottom."
+    }
+  ],
+  "saleTip": "A 900 g bag of yellow split peas is under $3 at No Frills and makes two pots; leftover ham from Christmas or the ham steak dinner works too.",
+  "swap": "A leftover ham bone: simmer it with the peas and pick off the meat at the end.",
+  "leftovers": "It sets almost solid in the fridge; reheat with water, stirring.",
+  "doneness": "Ham is fully cooked; simmer until 74°C (165°F) (Health Canada, reheated foods).",
+  "source": "Based on tested Québec yellow split pea soup methods (Ricardo, Canadian Living): yellow split peas simmered about an hour with ham, onion, carrot, celery, bay and thyme, salted at the end.",
+  "gear": [
+    "Large pot",
+    "Wooden spoon",
+    "Ladle",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Make it up to 4 days ahead; it gets better.",
+    "Freeze in 2-bowl containers."
+  ],
+  "reheat": "Covered over medium with a splash of water, stirring, until simmering and 74°C (165°F).",
+  "thaw": {
+    "item": "ham steak",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Peas, ham, onion and carrot; no garlic or dried thyme.",
+      "drop": [
+        "0-4",
+        "0-9"
+      ],
+      "stepNotes": {
+        "0": "Basic: skip the garlic.",
+        "1": "Basic: skip the dried thyme."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Buttery garlic croutons on top.",
+      "add": [
+        {
+          "group": "Fancy croutons",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": null,
+              "name": "baguette",
+              "note": "cut in 2 cm cubes",
+              "pantry": {
+                "name": "Baguette",
+                "cat": "grains"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "melted",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "tsp",
+              "name": "garlic powder",
+              "pantry": {
+                "name": "Garlic powder",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Croutons",
+          "text": "Toss the bread cubes with the melted butter and garlic powder and bake at 200°C (400°F) for 8–10 minutes, until golden. Scatter over the bowls."
+        }
+      ],
+      "costAdd": [
+        [
+          "Baguette, ½",
+          1.25,
+          "baguette"
+        ],
+        [
+          "Butter, garlic powder",
+          0.45
+        ]
+      ],
+      "plating": [
+        "Deep bowls, ham on top.",
+        "Croutons scattered over.",
+        "Black pepper and a crusty roll."
+      ]
+    }
+  },
+  "why": {
+    "0-5": "Yellow split peas break down into a thick, velvety soup with no cream.",
+    "0-11": "Ham gives the soup its smoky, salty depth.",
+    "0-12": "Salt goes in last because ham and broth vary so much."
+  },
+  "fancyNight": false,
+  "funFact": "Pea soup was a staple for Québec voyageurs and lumber camps; dried peas kept all winter.",
+  "keeps": {
+    "fridge": "5 days",
+    "freezer": "3 months",
+    "note": null
+  },
+  "pairs": []
+}

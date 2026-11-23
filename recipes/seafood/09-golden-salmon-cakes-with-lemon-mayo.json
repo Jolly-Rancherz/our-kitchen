@@ -1,0 +1,460 @@
+{
+  "title": "Golden Salmon Cakes with Lemon Mayo",
+  "subtitle": "crisp pan-fried salmon cakes from pantry cans, with a bright lemon-garlic mayo and buttered rice and peas",
+  "image": "assets/img/salmon-cakes.webp",
+  "imageAlt": "Golden salmon cakes with a dollop of lemon mayo and a lemon wedge beside rice and peas on a white plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "8 cakes: dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 25,
+  "cost": {
+    "total": 14.1,
+    "breakdown": [
+      [
+        "Canned salmon, 2 × 213 g",
+        8.98,
+        "canned-salmon"
+      ],
+      [
+        "Panko, ¾ cup",
+        0.65,
+        "panko-breadcrumbs"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "Lemon",
+        0.79,
+        "lemons"
+      ],
+      [
+        "Mayonnaise, ½ cup",
+        0.6,
+        "mayonnaise"
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.0,
+        "jasmine-rice"
+      ],
+      [
+        "Frozen peas, 1½ cups",
+        0.7,
+        "frozen-peas"
+      ],
+      [
+        "Oil, butter, spices, salt",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Pantry dinner"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Canned salmon has soft, edible bones and skin; mash them in for calcium or pick them out, your choice."
+    },
+    {
+      "icon": "rice",
+      "text": "Start the rice first. The cakes firm up best with 15 minutes in the fridge."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Salmon cakes",
+      "items": [
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "cans (213 g each) salmon",
+          "note": "drained",
+          "pantry": {
+            "name": "Canned salmon",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 45,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "mayonnaise",
+          "pantry": {
+            "name": "Mayonnaise",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "lemons",
+          "note": "zested, then juiced",
+          "pantry": {
+            "name": "Lemons",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "note": "for frying",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lemon mayo",
+      "items": [
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "mayonnaise",
+          "metric": {
+            "qty": 80,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Mayonnaise",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "lemon juice",
+          "note": "from the lemon above"
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rice and peas",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "frozen peas",
+          "metric": {
+            "qty": 210,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Frozen peas",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Mix",
+      "text": "Zest and juice the lemon. Flake the salmon into a bowl and mix with the panko, eggs, 2 tbsp mayonnaise, 1 tsp of the lemon zest, garlic powder, onion powder, salt and pepper.",
+      "uses": [
+        "0-4",
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8"
+      ]
+    },
+    {
+      "title": "Shape",
+      "text": "Shape into 8 cakes about 2 cm thick and chill 15 minutes on a plate.",
+      "timer": 15,
+      "uses": []
+    },
+    {
+      "title": "Lemon mayo",
+      "text": "Stir the ⅓ cup mayonnaise, 1 tbsp lemon juice and garlic powder together.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Fry",
+      "text": "Heat the oil in a large nonstick skillet over medium. Cook the cakes 4 minutes a side, until deep golden and 74°C (165°F) in the centre.",
+      "timer": 8,
+      "uses": [
+        "0-9"
+      ]
+    },
+    {
+      "title": "Peas",
+      "text": "Microwave the peas, covered, with a splash of water 3–4 minutes; stir them into the rice with the butter.",
+      "timer": 4,
+      "uses": [
+        "2-2",
+        "2-3"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Two cakes per plate with the rice and peas and a spoon of lemon mayo.",
+      "uses": []
+    }
+  ],
+  "together": "ABBAAB*",
+  "fixIt": [
+    {
+      "problem": "Cakes falling apart",
+      "fix": "Chill them longer, and don't flip until the first side is deep golden; add 2 tbsp more panko if the mix is wet."
+    },
+    {
+      "problem": "Too dry",
+      "fix": "Drain the salmon less well, or add another tablespoon of mayonnaise to the mix."
+    },
+    {
+      "problem": "Dark outside, cool inside",
+      "fix": "The heat was too high. Medium, not medium-high, and check with a thermometer."
+    }
+  ],
+  "saleTip": "Canned pink salmon is the budget pick at No Frills; sockeye is redder and richer if it's on sale.",
+  "swap": "Air fryer: brush the cakes with oil and cook at 200°C, 10–12 minutes, flipping halfway, to 74°C (165°F).",
+  "leftovers": "Cold salmon cakes make a great sandwich with the lemon mayo.",
+  "doneness": "74°C (165°F) in the centre because of the raw egg (Health Canada, egg dishes), above the 70°C (158°F) for fish; the salmon is already cooked in the can.",
+  "source": "Based on tested canned salmon cake methods (Canadian Living, Clover Leaf test kitchen): drained canned salmon bound with egg, crumbs and mayonnaise, chilled, then pan-fried over medium.",
+  "gear": [
+    "Large nonstick skillet",
+    "Mixing bowl",
+    "Microplane or fine grater",
+    "Medium pot with lid",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Shape the cakes up to 1 day ahead; keep covered in the fridge.",
+    "Freeze shaped raw cakes on a tray, then bag; cook from thawed."
+  ],
+  "reheat": "At 200°C (400°F) for 10 minutes, or the air fryer at 190°C for 6 minutes, until 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Salmon cakes with plain mayonnaise; no lemon or onion powder.",
+      "drop": [
+        "0-4",
+        "1-1",
+        "0-6"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the lemon zest and onion powder.",
+        "3": "Basic: serve plain mayonnaise."
+      },
+      "costDrop": [
+        "lemon"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Crisp quick-pickled cucumber on the side.",
+      "add": [
+        {
+          "group": "Fancy side",
+          "items": [
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "English cucumber",
+              "note": "thinly sliced",
+              "pantry": {
+                "name": "Cucumbers",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 3,
+              "unit": "tbsp",
+              "name": "rice vinegar",
+              "pantry": {
+                "name": "Rice vinegar",
+                "cat": "sauces"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "granulated sugar",
+              "pantry": {
+                "name": "Granulated sugar",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Quick cucumber",
+          "text": "Toss the cucumber with the rice vinegar, sugar and a pinch of salt and let it sit 15 minutes while the cakes chill."
+        }
+      ],
+      "costAdd": [
+        [
+          "English cucumber",
+          1.49,
+          "cucumbers"
+        ],
+        [
+          "Rice vinegar, sugar",
+          0.3
+        ]
+      ],
+      "plating": [
+        "Two cakes overlapping on the rice.",
+        "Lemon mayo on top, a lemon wedge beside.",
+        "Cucumbers in a small pile."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Canned salmon is already cooked, cheap and keeps for years in the pantry.",
+    "0-1": "Panko binds without making the cakes heavy.",
+    "0-2": "Eggs hold the cakes together as they fry."
+  },
+  "fancyNight": false,
+  "funFact": "Most canned salmon sold in Canada is wild Pacific salmon from British Columbia and Alaska.",
+  "keeps": {
+    "fridge": "3 days",
+    "freezer": "3 months",
+    "note": "freeze cooked or raw shaped cakes"
+  },
+  "pairs": []
+}

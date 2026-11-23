@@ -1,0 +1,377 @@
+{
+  "title": "Mild Chicken Pad Thai",
+  "subtitle": "chewy rice noodles with chicken, egg and bean sprouts in a sweet-tangy sauce, topped with crunchy peanuts and lime, no chilies",
+  "image": "assets/img/chicken-pad-thai.webp",
+  "imageAlt": "Glossy rice noodles with chicken, egg, bean sprouts and chopped peanuts with a lime wedge in a white bowl on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 15,
+  "cost": {
+    "total": 11.77,
+    "breakdown": [
+      [
+        "Flat rice noodles, 225 g",
+        1.5,
+        "rice-noodles-flat"
+      ],
+      [
+        "Boneless chicken breasts, 450 g",
+        5.94,
+        "chicken-breasts-boneless"
+      ],
+      [
+        "Bean sprouts, 2 cups",
+        1.0,
+        "bean-sprouts"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "Peanuts, ⅓ cup",
+        0.6,
+        "peanuts-unsalted"
+      ],
+      [
+        "Limes, 2",
+        1.0,
+        "limes"
+      ],
+      [
+        "Fish sauce, 3 tbsp",
+        0.35,
+        "fish-sauce"
+      ],
+      [
+        "Oil, brown sugar, soy, garlic",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "noodles"
+    ],
+    "occasion": [
+      "takeout-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Have everything cut and the sauce mixed before you start; it cooks in 10 minutes."
+    },
+    {
+      "icon": "knife",
+      "text": "Fish sauce smells strong in the bottle but tastes savoury, not fishy, once cooked."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Noodles and chicken",
+      "items": [
+        {
+          "qty": 225,
+          "unit": "g",
+          "name": "flat rice noodles",
+          "note": "about 5 mm wide",
+          "pantry": {
+            "name": "Rice noodles (flat)",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "thinly sliced",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "note": "beaten",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "bean sprouts",
+          "metric": {
+            "qty": 200,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Bean sprouts",
+            "cat": "produce"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sauce",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "fish sauce",
+          "pantry": {
+            "name": "Fish sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "packed brown sugar",
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "limes",
+          "note": "1 juiced (2 tbsp), 1 cut in wedges",
+          "pantry": {
+            "name": "Limes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Topping",
+      "items": [
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "unsalted roasted peanuts",
+          "note": "chopped",
+          "metric": {
+            "qty": 45,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Peanuts (unsalted)",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Soak the noodles",
+      "text": "Cover the noodles with very hot tap water and soak 8–10 minutes, until bendy but still firm. Drain.",
+      "timer": 9,
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Sauce",
+      "text": "Juice 1 lime and cut the other in wedges. Whisk the fish sauce, brown sugar, 2 tbsp lime juice, soy sauce and water until the sugar dissolves.",
+      "uses": [
+        "1-2",
+        "1-0",
+        "1-1",
+        "1-3",
+        "1-4"
+      ]
+    },
+    {
+      "title": "Chicken",
+      "text": "Heat 2 tbsp of the oil in a large skillet or wok over medium-high. Stir-fry the chicken 4–5 minutes, until no longer pink and 74°C (165°F). Add the garlic for 30 seconds, then move everything to one side.",
+      "timer": 5,
+      "uses": [
+        "0-2=2 tbsp",
+        "0-1",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Egg",
+      "text": "Add the remaining 1 tbsp oil to the empty side, pour in the eggs and scramble until just set, then stir through the chicken.",
+      "uses": [
+        "0-2",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Noodles",
+      "text": "Add the noodles and sauce and toss 2–3 minutes with tongs, until the noodles are tender and have soaked up the sauce. Toss in the bean sprouts for the last 30 seconds.",
+      "timer": 3,
+      "uses": [
+        "0-5"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Top with the chopped peanuts and serve with lime wedges.",
+      "uses": [
+        "2-0"
+      ]
+    }
+  ],
+  "together": "ABAAA*",
+  "fixIt": [
+    {
+      "problem": "Noodles mushy",
+      "fix": "They soaked too long or in boiling water. Hot tap water, and drain while still firm; they finish in the pan."
+    },
+    {
+      "problem": "Noodles clumped",
+      "fix": "Toss them with a teaspoon of oil after draining, and use tongs in the pan."
+    },
+    {
+      "problem": "Too sweet or too salty",
+      "fix": "Adjust with lime juice; taste the sauce before it goes in."
+    }
+  ],
+  "saleTip": "Rice noodles and fish sauce are in No Frills' international aisle and keep for months; one bottle of fish sauce lasts ages.",
+  "swap": "Shrimp instead of chicken: 450 g, stir-fried 2–3 minutes until pink and opaque, 74°C (165°F).",
+  "leftovers": "Add a splash of water before microwaving; rice noodles firm up in the fridge.",
+  "doneness": "Chicken at 74°C (165°F) (Health Canada, poultry pieces); eggs scrambled until set.",
+  "source": "Based on tested home pad Thai methods (Hot Thai Kitchen's beginner version, Budget Bytes): soaked rice noodles, a fish sauce, sugar and lime sauce (in place of tamarind), chicken, egg and bean sprouts. No dried chilies.",
+  "gear": [
+    "Large skillet or wok",
+    "Tongs",
+    "Large bowl",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Slice the chicken and mix the sauce up to 1 day ahead.",
+    "Chop the peanuts ahead."
+  ],
+  "reheat": "Covered in the microwave with 1 tbsp water, 2 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Chicken, egg and noodles in the sauce; no sprouts or peanuts.",
+      "drop": [
+        "0-5",
+        "2-0"
+      ],
+      "stepNotes": {
+        "4": "Basic: no bean sprouts.",
+        "5": "Basic: serve with lime wedges only."
+      },
+      "costDrop": [
+        "bean sprouts",
+        "peanuts"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Shrimp and chicken together, the restaurant way.",
+      "add": [
+        {
+          "group": "Fancy extras",
+          "items": [
+            {
+              "qty": 225,
+              "unit": "g",
+              "name": "raw shrimp",
+              "note": "peeled and deveined, thawed",
+              "pantry": {
+                "name": "Shrimp (raw, frozen)",
+                "cat": "frozen"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "2": "Fancy: add the shrimp with the garlic and stir-fry 2–3 minutes until pink and opaque, 74°C (165°F)."
+      },
+      "costAdd": [
+        [
+          "Raw shrimp, 225 g",
+          4.29,
+          "shrimp-raw-frozen"
+        ]
+      ],
+      "plating": [
+        "Noodles twirled high in shallow bowls.",
+        "Peanuts in a line across the top.",
+        "Lime wedges on the rim."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Fish sauce is the salty, savoury backbone of pad Thai.",
+    "1-2": "Lime stands in for tamarind for the tangy note, and it's easy to find.",
+    "0-0": "Soaking instead of boiling keeps rice noodles chewy, not mushy."
+  },
+  "fancyNight": false,
+  "funFact": "Pad Thai was promoted as a national dish by the Thai government in the 1930s and 40s.",
+  "keeps": {
+    "fridge": "3 days",
+    "freezer": null,
+    "note": "rice noodles go brittle when frozen"
+  },
+  "pairs": []
+}

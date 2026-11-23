@@ -1,0 +1,473 @@
+{
+  "title": "Chicken Katsu with Rice",
+  "subtitle": "crunchy panko chicken cutlets with a sweet-tangy katsu sauce, crisp cabbage and jasmine rice, Japanese diner style",
+  "image": "assets/img/chicken-katsu.webp",
+  "imageAlt": "Sliced golden panko chicken cutlet drizzled with dark katsu sauce beside rice and shredded cabbage on a white plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 25,
+  "cost": {
+    "total": 14.91,
+    "breakdown": [
+      [
+        "Boneless chicken breasts, 700 g",
+        9.24,
+        "chicken-breasts-boneless"
+      ],
+      [
+        "Panko, 2 cups",
+        1.72,
+        "panko-breadcrumbs"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.0,
+        "jasmine-rice"
+      ],
+      [
+        "Green cabbage, ¼ head",
+        0.87,
+        "green-cabbage"
+      ],
+      [
+        "Canola oil, ½ cup",
+        0.4,
+        "canola-vegetable-oil"
+      ],
+      [
+        "Ketchup, Worcestershire, soy, sugar",
+        0.6
+      ],
+      [
+        "Flour, vinegar, spices, salt",
+        0.3
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "takeout-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "rice",
+      "text": "Start the rice first; the cutlets take about 20 minutes."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "2 large",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "note": "beaten",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 120,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "canola or vegetable oil",
+          "note": "for shallow frying",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Katsu sauce",
+      "items": [
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "ketchup",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Ketchup",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "granulated sugar",
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To serve",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": null,
+          "name": "head green cabbage",
+          "note": "very thinly shredded",
+          "pantry": {
+            "name": "Green cabbage",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "rice vinegar",
+          "pantry": {
+            "name": "Rice vinegar",
+            "cat": "sauces"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Cutlets",
+      "text": "Slice each breast in half horizontally and pound to an even 1 cm. Season with the salt and pepper.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Bread",
+      "text": "Coat each cutlet in the flour, then the beaten eggs, then press firmly into the panko on both sides.",
+      "uses": [
+        "0-3",
+        "0-4",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Katsu sauce",
+      "text": "Stir the ketchup, Worcestershire, soy sauce and sugar together until the sugar dissolves.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Cabbage",
+      "text": "Toss the shredded cabbage with the rice vinegar and a pinch of salt.",
+      "uses": [
+        "2-2",
+        "2-3"
+      ]
+    },
+    {
+      "title": "Fry",
+      "text": "Heat the oil in a large skillet over medium until a panko crumb sizzles right away. Fry 2 cutlets at a time, 3–4 minutes a side, until deep golden and 74°C (165°F) in the centre. Drain on a rack and rest 2 minutes.",
+      "timer": 8,
+      "uses": [
+        "0-6"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Slice the cutlets into strips and serve with rice and cabbage, with the katsu sauce drizzled over.",
+      "uses": []
+    }
+  ],
+  "together": "BAABBA*",
+  "fixIt": [
+    {
+      "problem": "Coating patchy",
+      "fix": "Pat the chicken dry before flouring, and press the panko on firmly."
+    },
+    {
+      "problem": "Pale crust",
+      "fix": "Wait for the oil to get hot enough, and fry in batches so it stays hot."
+    },
+    {
+      "problem": "Sauce too sharp",
+      "fix": "Add another teaspoon of sugar; Worcestershire brands vary."
+    }
+  ],
+  "saleTip": "Buy chicken breasts in No Frills value packs and freeze breaded cutlets for a fast takeout night.",
+  "swap": "Pork katsu (tonkatsu): boneless pork chops pounded to 1 cm, same method, to 71°C (160°F). Air fryer: spray the breaded cutlets with oil, 200°C 12–14 minutes, flipping halfway.",
+  "leftovers": "Reheat cutlets in the oven or air fryer to keep them crisp.",
+  "doneness": "Chicken cutlets at 74°C (165°F) in the centre (Health Canada, poultry pieces).",
+  "source": "Based on tested chicken katsu methods (Just One Cookbook, America's Test Kitchen): pounded cutlets breaded in flour, egg and panko, shallow-fried, with a ketchup-Worcestershire-soy katsu sauce and shredded cabbage.",
+  "gear": [
+    "Large skillet",
+    "3 shallow dishes",
+    "Wire rack",
+    "Meat mallet or rolling pin",
+    "Medium pot with lid",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Bread the cutlets up to 4 hours ahead and chill uncovered on a rack.",
+    "Katsu sauce keeps 2 weeks in the fridge."
+  ],
+  "reheat": "Cutlets on a rack at 200°C (400°F) for 10 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Crispy chicken and rice with katsu sauce; no cabbage.",
+      "drop": [
+        "2-2",
+        "2-3"
+      ],
+      "stepNotes": {
+        "4": "Basic: skip the cabbage."
+      },
+      "costDrop": [
+        "cabbage"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Japanese-style curry sauce over the rice, mild and sweet.",
+      "add": [
+        {
+          "group": "Fancy curry sauce",
+          "items": [
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "all-purpose flour",
+              "pantry": {
+                "name": "All-purpose flour",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tsp",
+              "name": "mild curry powder",
+              "pantry": {
+                "name": "Curry powder (mild)",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 1.5,
+              "unit": "cup",
+              "name": "chicken broth",
+              "metric": {
+                "qty": 375,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "Chicken broth",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "honey",
+              "pantry": {
+                "name": "Honey",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "ketchup",
+              "pantry": {
+                "name": "Ketchup",
+                "cat": "sauces"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Curry sauce",
+          "text": "Melt the butter in a small pot over medium, stir in the flour and curry powder 1 minute, then whisk in the broth, honey and ketchup. Simmer 5 minutes until thick; spoon over the rice beside the katsu."
+        }
+      ],
+      "costAdd": [
+        [
+          "Butter, flour",
+          0.45
+        ],
+        [
+          "Curry powder, 2 tsp",
+          0.3,
+          "curry-powder-mild"
+        ],
+        [
+          "Chicken broth, 1½ cups",
+          1.04,
+          "chicken-broth"
+        ],
+        [
+          "Honey, ketchup",
+          0.4
+        ]
+      ],
+      "plating": [
+        "Cutlet sliced and set back together on the rice.",
+        "Sauce drizzled in a zigzag.",
+        "A tall pile of cabbage beside."
+      ]
+    }
+  },
+  "why": {
+    "0-5": "Panko is the Japanese crumb katsu was made for: big flakes, extra crunch.",
+    "1-1": "Worcestershire is the base of Japanese tonkatsu sauce, imported from Britain in the 1800s.",
+    "2-2": "Raw shredded cabbage is the classic side; it cuts the richness of the fried chicken."
+  },
+  "fancyNight": false,
+  "funFact": "'Katsu' is short for 'katsuretsu', the Japanese pronunciation of 'cutlet'.",
+  "keeps": {
+    "fridge": "3 days",
+    "freezer": "2 months",
+    "note": "cooked cutlets only"
+  },
+  "pairs": []
+}

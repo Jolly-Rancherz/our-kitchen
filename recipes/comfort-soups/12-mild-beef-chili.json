@@ -1,0 +1,437 @@
+{
+  "title": "Mild Beef & Bean Chili",
+  "subtitle": "a thick, hearty pot of ground beef, kidney beans and tomatoes, warmly seasoned and not hot, topped with cheddar and sour cream",
+  "image": "assets/img/mild-beef-chili.webp",
+  "imageAlt": "A bowl of thick beef and bean chili topped with shredded cheddar and sour cream on a navy napkin",
+  "servings": 6,
+  "servingsNote": "a big pot: dinner for two, plus 4 bowls for lunches",
+  "prep": 15,
+  "cook": 55,
+  "cost": {
+    "total": 17.24,
+    "breakdown": [
+      [
+        "Lean ground beef, 680 g",
+        7.48,
+        "ground-beef-lean"
+      ],
+      [
+        "Kidney beans, 2 cans",
+        2.98,
+        "kidney-beans-canned"
+      ],
+      [
+        "Crushed tomatoes, 796 ml",
+        1.99,
+        "crushed-tomatoes-canned"
+      ],
+      [
+        "Beef broth, 1 cup",
+        0.69,
+        "beef-broth"
+      ],
+      [
+        "Old cheddar, 100 g",
+        1.75,
+        "cheddar-shredded"
+      ],
+      [
+        "Sour cream, ½ cup",
+        0.75,
+        "sour-cream"
+      ],
+      [
+        "Onion, garlic, tomato paste",
+        1.0
+      ],
+      [
+        "Oil, sugar, spices, salt",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [],
+    "occasion": [
+      "comfort-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "One pot"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Use mild chili powder, which is mostly paprika and cumin. Taste before adding more."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chili",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 680,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tbsp",
+          "name": "mild chili powder",
+          "pantry": {
+            "name": "Chili powder (mild)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "ground cumin",
+          "pantry": {
+            "name": "Ground cumin",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried oregano",
+          "pantry": {
+            "name": "Dried oregano",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "tomato paste",
+          "pantry": {
+            "name": "Tomato paste",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "can (796 ml) crushed tomatoes",
+          "pantry": {
+            "name": "Crushed tomatoes (canned)",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "cans (540 ml each) red kidney beans",
+          "note": "drained and rinsed",
+          "pantry": {
+            "name": "Kidney beans (canned)",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "beef broth",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Beef broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "packed brown sugar",
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Toppings",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "metric": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "sour cream",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Sour cream",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Brown",
+      "text": "Heat the oil in a large heavy pot over medium-high. Cook the beef and onion, breaking up the beef, 8–10 minutes until no pink remains and it reads 71°C (160°F). Spoon off the fat.",
+      "timer": 9,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Spices",
+      "text": "Add the garlic, chili powder, cumin, paprika, dried oregano and tomato paste and stir 1 minute until fragrant.",
+      "timer": 1,
+      "uses": [
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8"
+      ]
+    },
+    {
+      "title": "Simmer",
+      "text": "Add the crushed tomatoes, beans, broth, brown sugar, salt and pepper. Bring to a boil, then simmer, partly covered, 40 minutes, stirring now and then, until thick.",
+      "timer": 40,
+      "uses": [
+        "0-9",
+        "0-10",
+        "0-11",
+        "0-12",
+        "0-13",
+        "0-14"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Taste for salt and ladle into bowls, topped with the cheddar and sour cream.",
+      "uses": [
+        "1-0",
+        "1-1"
+      ]
+    }
+  ],
+  "together": "AAA*",
+  "fixIt": [
+    {
+      "problem": "Too thin",
+      "fix": "Simmer uncovered 10 minutes more, or mash some of the beans against the pot."
+    },
+    {
+      "problem": "Too spicy for you",
+      "fix": "Stir in more sour cream and a little more brown sugar; next time use 2 tsp chili powder."
+    },
+    {
+      "problem": "Flat-tasting",
+      "fix": "It needs salt, or a splash of vinegar to wake it up."
+    }
+  ],
+  "saleTip": "Canned kidney beans are often 4 for $5 at No Frills; ground beef family packs are the best value.",
+  "swap": "Half beef, half lean ground turkey: cook the turkey to 74°C (165°F).",
+  "leftovers": "Chili is better the next day; spoon it over baked potatoes or rice for lunch.",
+  "doneness": "Ground beef to 71°C (160°F) with no pink (Health Canada, ground beef). Reheat to 74°C (165°F).",
+  "source": "Based on tested family beef and bean chili methods (Canadian Living, America's Test Kitchen): browned beef, bloomed mild chili powder and cumin, crushed tomatoes and kidney beans simmered about 40 minutes.",
+  "gear": [
+    "Large heavy pot or Dutch oven",
+    "Wooden spoon",
+    "Ladle",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Make it up to 4 days ahead.",
+    "Freeze in 2-bowl containers up to 3 months."
+  ],
+  "reheat": "Covered over medium with a splash of water, stirring, until 74°C (165°F).",
+  "thaw": {
+    "item": "ground beef",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Beef, beans and tomatoes with chili powder and cumin; cheddar on top.",
+      "drop": [
+        "0-7",
+        "0-6",
+        "1-1"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the dried oregano and paprika.",
+        "3": "Basic: cheddar only."
+      },
+      "costDrop": [
+        "sour cream"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Crunchy tortilla chips and fresh avocado on top.",
+      "add": [
+        {
+          "group": "Fancy toppings",
+          "items": [
+            {
+              "qty": 2,
+              "unit": "cup",
+              "name": "tortilla chips",
+              "pantry": {
+                "name": "Tortilla chips",
+                "cat": "grains"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "avocado",
+              "note": "diced",
+              "pantry": {
+                "name": "Avocados",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "lime",
+              "note": "in wedges",
+              "pantry": {
+                "name": "Limes",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Toppings",
+          "text": "Crumble chips over each bowl, add avocado and serve with lime wedges."
+        }
+      ],
+      "costAdd": [
+        [
+          "Tortilla chips, 2 cups",
+          1.0,
+          "tortilla-chips"
+        ],
+        [
+          "Avocado",
+          1.25,
+          "avocados"
+        ],
+        [
+          "Lime",
+          0.5,
+          "limes"
+        ]
+      ],
+      "plating": [
+        "Deep bowls, toppings in neat sections.",
+        "Chips tucked in at the side.",
+        "Lime wedge on the rim."
+      ]
+    }
+  },
+  "why": {
+    "0-4": "Mild chili powder is a blend of paprika, cumin and dried oregano, warm, not hot.",
+    "0-8": "Tomato paste fried with the spices deepens the colour and flavour.",
+    "0-12": "A spoon of brown sugar rounds out the tomatoes."
+  },
+  "fancyNight": false,
+  "funFact": "Chili con carne was popularised in the 1880s by San Antonio's 'chili queens', who sold it from market stalls.",
+  "keeps": {
+    "fridge": "4–5 days",
+    "freezer": "3 months",
+    "note": "freeze without the toppings"
+  },
+  "pairs": []
+}

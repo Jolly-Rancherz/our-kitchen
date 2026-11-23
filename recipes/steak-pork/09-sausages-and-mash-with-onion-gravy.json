@@ -1,0 +1,433 @@
+{
+  "title": "Sausages & Mash with Onion Gravy",
+  "subtitle": "browned mild pork sausages on creamy mashed potatoes, smothered in a rich, sweet onion gravy, with peas",
+  "image": "assets/img/sausages-and-mash.webp",
+  "imageAlt": "Browned sausages on mashed potatoes with brown onion gravy and green peas on a white plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 35,
+  "cost": {
+    "total": 13.44,
+    "breakdown": [
+      [
+        "Mild pork sausages, 500 g",
+        6.99,
+        "pork-sausages-mild"
+      ],
+      [
+        "Russet potatoes, 1.2 kg",
+        1.58,
+        "russet-potatoes"
+      ],
+      [
+        "Yellow onions, 2",
+        0.8,
+        "yellow-onions"
+      ],
+      [
+        "Beef broth, 2 cups",
+        1.38,
+        "beef-broth"
+      ],
+      [
+        "Frozen peas, 2 cups",
+        0.93,
+        "frozen-peas"
+      ],
+      [
+        "Butter, 5 tbsp",
+        1.0,
+        "butter"
+      ],
+      [
+        "Milk, ½ cup",
+        0.36,
+        "milk"
+      ],
+      [
+        "Flour, Worcestershire, sugar, spices, salt",
+        0.4
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "comfort-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Three pans going at once: potatoes, sausages and gravy. Start the potatoes first."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Mash",
+      "items": [
+        {
+          "qty": 1.2,
+          "unit": "kg",
+          "name": "russet potatoes",
+          "note": "peeled and cut in 5 cm chunks",
+          "pantry": {
+            "name": "Russet potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 42,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "milk",
+          "note": "warm",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sausages and peas",
+      "items": [
+        {
+          "qty": 500,
+          "unit": "g",
+          "name": "mild pork sausages",
+          "note": "about 6",
+          "pantry": {
+            "name": "Pork sausages (mild)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "frozen peas",
+          "metric": {
+            "qty": 280,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Frozen peas",
+            "cat": "frozen"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Onion gravy",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "yellow onions",
+          "note": "thinly sliced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "packed brown sugar",
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "beef broth",
+          "metric": {
+            "qty": 500,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Beef broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Potatoes on",
+      "text": "Cover the potatoes with cold water in a large pot, add a big pinch of salt, bring to a boil and simmer 15–18 minutes, until a knife slides in easily.",
+      "timer": 17,
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Onions",
+      "text": "Meanwhile, melt the 2 tbsp butter in a medium skillet over medium. Add the onions and brown sugar and cook 12–15 minutes, stirring often, until soft and deep golden.",
+      "timer": 13,
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2"
+      ]
+    },
+    {
+      "title": "Sausages",
+      "text": "At the same time, heat the oil in a large skillet over medium-low. Cook the sausages 15–18 minutes, turning often, until browned all over and 71°C (160°F) in the centre.",
+      "timer": 16,
+      "uses": [
+        "1-1",
+        "1-0"
+      ]
+    },
+    {
+      "title": "Gravy",
+      "text": "Sprinkle the flour over the onions and stir 1 minute. Slowly stir in the broth, then the Worcestershire, dried thyme, pepper and salt, and simmer 4–5 minutes until thick.",
+      "timer": 5,
+      "uses": [
+        "2-3",
+        "2-4",
+        "2-5",
+        "2-6",
+        "2-7",
+        "2-8"
+      ]
+    },
+    {
+      "title": "Mash",
+      "text": "Drain the potatoes and let them steam dry 1 minute. Mash with the 3 tbsp butter, warm milk and salt until smooth.",
+      "uses": [
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Peas",
+      "text": "Microwave the peas, covered, with a splash of water 3–4 minutes until hot.",
+      "timer": 4,
+      "uses": [
+        "1-2"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Mash on each plate, sausages on top, gravy over everything, peas on the side.",
+      "uses": []
+    }
+  ],
+  "together": "ABABAB*",
+  "fixIt": [
+    {
+      "problem": "Sausages split",
+      "fix": "The heat was too high. Keep it medium-low and don't prick them."
+    },
+    {
+      "problem": "Gloopy mash",
+      "fix": "Don't use a blender or overwork it; mash by hand and add the milk warm."
+    },
+    {
+      "problem": "Gravy pale",
+      "fix": "Give the onions longer; their colour is the gravy's colour. A splash more Worcestershire helps."
+    }
+  ],
+  "saleTip": "No Frills sausages are often 2 packs for $10; freeze them raw in their tray.",
+  "swap": "Mild Italian, honey garlic or breakfast sausages all work; cook pork or beef sausages to 71°C (160°F), chicken or turkey to 74°C (165°F).",
+  "leftovers": "Slice leftover sausages into the gravy and reheat together; mash reheats with a splash of milk.",
+  "doneness": "Pork sausages at 71°C (160°F) in the centre (Health Canada, ground pork). Reheat to 74°C (165°F).",
+  "source": "Based on tested British bangers and mash methods (BBC Good Food, Canadian Living): sausages pan-cooked slowly over medium-low, buttery mash, and a gravy from slowly browned onions, flour and beef stock.",
+  "gear": [
+    "Large pot",
+    "Large skillet",
+    "Medium skillet",
+    "Potato masher",
+    "Colander",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Make the onion gravy up to 3 days ahead.",
+    "Mashed potatoes keep 3 days; reheat with a splash of milk."
+  ],
+  "reheat": "Sausages and gravy covered in the microwave 2–3 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "sausages",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Sausages, mash and a simple onion gravy; no dried thyme or peas.",
+      "drop": [
+        "2-6",
+        "1-2"
+      ],
+      "stepNotes": {
+        "3": "Basic: skip the dried thyme.",
+        "5": "Basic: skip the peas."
+      },
+      "costDrop": [
+        "peas"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Old cheddar folded into the mash.",
+      "add": [
+        {
+          "group": "Fancy mash",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "cup",
+              "name": "shredded old cheddar",
+              "metric": {
+                "qty": 100,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Cheddar (shredded)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "4": "Fancy: fold the cheddar into the hot mash at the end."
+      },
+      "costAdd": [
+        [
+          "Old cheddar, 100 g",
+          1.75,
+          "cheddar-shredded"
+        ]
+      ],
+      "plating": [
+        "A big swoosh of mash across the plate.",
+        "Sausages leaning on it, gravy poured over.",
+        "Peas piled beside."
+      ]
+    }
+  },
+  "why": {
+    "2-1": "Onions cooked low and slow turn sweet and brown, which flavours the whole gravy.",
+    "1-0": "Gentle heat lets sausages cook through before the casings burst.",
+    "0-2": "Warm milk keeps the mash fluffy; cold milk makes it gluey."
+  },
+  "fancyNight": false,
+  "funFact": "Sausages are called 'bangers' in Britain because wartime sausages, packed with water, often burst with a bang in the pan.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze sausages in gravy; mash freezes well too"
+  },
+  "pairs": []
+}

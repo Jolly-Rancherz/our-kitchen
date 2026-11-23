@@ -1,0 +1,392 @@
+{
+  "title": "Creamy Chicken & Bacon Penne",
+  "subtitle": "penne with golden chicken, crisp bacon and sweet peas in a garlic Parmesan cream sauce",
+  "image": "assets/img/chicken-bacon-penne.webp",
+  "imageAlt": "Creamy penne with chicken pieces, bacon bits and green peas in a white bowl on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 25,
+  "cost": {
+    "total": 16.09,
+    "breakdown": [
+      [
+        "Penne, 450 g",
+        2.0,
+        "penne"
+      ],
+      [
+        "Boneless chicken breasts, 500 g",
+        6.6,
+        "chicken-breasts-boneless"
+      ],
+      [
+        "Bacon, 6 slices",
+        2.1,
+        "bacon"
+      ],
+      [
+        "35% cream, 1 cup",
+        2.37,
+        "35-whipping-cream"
+      ],
+      [
+        "Parmesan, ¾ cup",
+        1.8,
+        "parmesan-grated"
+      ],
+      [
+        "Frozen peas, 1 cup",
+        0.47,
+        "frozen-peas"
+      ],
+      [
+        "Chicken broth, ½ cup",
+        0.35,
+        "chicken-broth"
+      ],
+      [
+        "Garlic, spices, salt",
+        0.4
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "pasta"
+    ],
+    "occasion": [
+      "weeknight",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Under 45 minutes"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Save a cup of pasta water before draining; it makes the sauce silky."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Pasta",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "penne",
+          "pantry": {
+            "name": "Penne",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the pasta water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "frozen peas",
+          "metric": {
+            "qty": 140,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Frozen peas",
+            "cat": "frozen"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Chicken and bacon",
+      "items": [
+        {
+          "qty": 6,
+          "unit": null,
+          "name": "slices bacon",
+          "note": "chopped",
+          "pantry": {
+            "name": "Bacon",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 500,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "cut in 2 cm pieces",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sauce",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "35% whipping cream",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "35% whipping cream",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Water on",
+      "text": "Bring a big pot of water to a boil with the salt.",
+      "uses": [
+        "0-1"
+      ]
+    },
+    {
+      "title": "Bacon",
+      "text": "Cook the bacon in a large skillet over medium, 6–8 minutes, until crisp. Lift it onto paper towel and pour off all but 1 tbsp fat.",
+      "timer": 7,
+      "uses": [
+        "1-0"
+      ]
+    },
+    {
+      "title": "Chicken",
+      "text": "Toss the chicken with the garlic powder, salt and pepper. Cook it in the bacon fat over medium-high, 6–7 minutes, stirring now and then, until golden and 74°C (165°F). Move to a plate.",
+      "timer": 7,
+      "uses": [
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4"
+      ]
+    },
+    {
+      "title": "Pasta",
+      "text": "Cook the penne 1 minute less than the package says, adding the peas for the last minute. Scoop out 1 cup of the water, then drain.",
+      "timer": 10,
+      "uses": [
+        "0-0",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Sauce",
+      "text": "Lower the skillet to medium-low. Cook the garlic 30 seconds, add the cream and broth and simmer 2–3 minutes, scraping up the brown bits. Stir in the Parmesan until smooth.",
+      "timer": 3,
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3"
+      ]
+    },
+    {
+      "title": "Toss",
+      "text": "Add the pasta, peas, chicken and half the bacon and toss, adding pasta water a splash at a time until glossy. Top with the rest of the bacon.",
+      "uses": []
+    }
+  ],
+  "together": "ABBAB*",
+  "fixIt": [
+    {
+      "problem": "Sauce too thick",
+      "fix": "Loosen with the saved pasta water; it thickens as it sits."
+    },
+    {
+      "problem": "Sauce grainy",
+      "fix": "The heat was too high when the Parmesan went in. Keep it at medium-low and stir it in off the boil."
+    },
+    {
+      "problem": "Chicken dry",
+      "fix": "Cut evenly and pull it at 74°C (165°F); it warms again in the sauce."
+    }
+  ],
+  "saleTip": "No Frills bacon is often 2 for $10; freeze it in 6-slice packs.",
+  "swap": "Half-and-half instead of cream: lighter, and the Parmesan still thickens it; don't let it boil hard.",
+  "leftovers": "Add a splash of milk or broth when reheating; the sauce soaks into the pasta.",
+  "doneness": "Chicken pieces at 74°C (165°F) (Health Canada, poultry pieces). Reheat to 74°C (165°F).",
+  "source": "Based on tested creamy chicken bacon pasta methods (Canadian Living, Delish): bacon rendered first, chicken cooked in the fat, a garlic cream and Parmesan pan sauce loosened with pasta water.",
+  "gear": [
+    "Large pot",
+    "Large skillet",
+    "Colander",
+    "Liquid measuring cup",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Cut the chicken and chop the bacon up to 1 day ahead.",
+    "Cook the bacon ahead; it re-crisps in the pan in 1 minute."
+  ],
+  "reheat": "Covered in the microwave with a splash of milk, 2–3 minutes, stirring halfway, until 74°C (165°F).",
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Chicken, bacon and Parmesan cream; no peas.",
+      "drop": [
+        "0-2"
+      ],
+      "stepNotes": {
+        "3": "Basic: no peas."
+      },
+      "costDrop": [
+        "peas"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Blistered cherry tomatoes and lemon zest to brighten it.",
+      "add": [
+        {
+          "group": "Fancy extras",
+          "items": [
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "pint cherry tomatoes",
+              "pantry": {
+                "name": "Cherry tomatoes",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "lemon",
+              "note": "zested",
+              "pantry": {
+                "name": "Lemons",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: after the bacon, blister the cherry tomatoes in the fat over high heat 3–4 minutes; set them aside with the bacon."
+      },
+      "addSteps": [
+        {
+          "title": "Finish",
+          "text": "Fold in the blistered tomatoes and grate the lemon zest over each bowl."
+        }
+      ],
+      "costAdd": [
+        [
+          "Cherry tomatoes, pint",
+          2.99,
+          "cherry-tomatoes"
+        ],
+        [
+          "Lemon",
+          0.79,
+          "lemons"
+        ]
+      ],
+      "plating": [
+        "Twist into shallow bowls.",
+        "Bacon and tomatoes on top.",
+        "Extra Parmesan and black pepper."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Cooking the chicken in the bacon fat seasons it all the way through.",
+    "0-2": "Frozen peas cook in the pasta water in 1 minute and add sweetness.",
+    "2-3": "Parmesan both thickens and seasons the cream."
+  },
+  "fancyNight": false,
+  "funFact": "Penne is named for the quill pen, 'penna' in Italian; its angled ends were cut to look like a nib.",
+  "keeps": {
+    "fridge": "3 days",
+    "freezer": null,
+    "note": "cream sauces split when frozen"
+  },
+  "pairs": []
+}

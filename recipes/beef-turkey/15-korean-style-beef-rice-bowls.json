@@ -1,0 +1,419 @@
+{
+  "title": "Korean-Style Beef Rice Bowls",
+  "subtitle": "sweet-savoury ground beef with garlic, ginger and sesame over jasmine rice with crisp cucumber and carrot, all mild",
+  "image": "assets/img/korean-beef-bowls.webp",
+  "imageAlt": "Glossy browned ground beef over rice with sliced cucumber and shredded carrot and sesame seeds in a white bowl on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 10,
+  "cook": 20,
+  "cost": {
+    "total": 12.0,
+    "breakdown": [
+      [
+        "Lean ground beef, 680 g",
+        7.48,
+        "ground-beef-lean"
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.0,
+        "jasmine-rice"
+      ],
+      [
+        "English cucumber",
+        1.49,
+        "cucumbers"
+      ],
+      [
+        "Carrots, 2",
+        0.4,
+        "carrots"
+      ],
+      [
+        "Soy sauce, ⅓ cup",
+        0.6,
+        "soy-sauce"
+      ],
+      [
+        "Brown sugar, 3 tbsp",
+        0.13,
+        "brown-sugar"
+      ],
+      [
+        "Sesame oil, 1 tbsp",
+        0.25,
+        "sesame-oil"
+      ],
+      [
+        "Ginger, 1 tbsp",
+        0.2,
+        "fresh-ginger"
+      ],
+      [
+        "Sesame seeds, 1 tbsp",
+        0.2,
+        "sesame-seeds"
+      ],
+      [
+        "Garlic",
+        0.25
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "weeknight",
+      "takeout-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Under 30 minutes"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "rice",
+      "text": "Start the rice first; the beef takes 12 minutes."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Beef",
+      "items": [
+        {
+          "qty": 680,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "fresh ginger",
+          "note": "grated",
+          "pantry": {
+            "name": "Fresh ginger",
+            "cat": "produce"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sauce",
+      "items": [
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "metric": {
+            "qty": 80,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "packed brown sugar",
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "sesame oil",
+          "pantry": {
+            "name": "Sesame oil",
+            "cat": "sauces"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bowls",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "English cucumber",
+          "note": "thinly sliced",
+          "pantry": {
+            "name": "Cucumbers",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "carrots",
+          "note": "shredded",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "sesame seeds",
+          "pantry": {
+            "name": "Sesame seeds",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Vegetables",
+      "text": "While the rice cooks, thinly slice the cucumber and shred the carrots.",
+      "uses": [
+        "2-2",
+        "2-3"
+      ]
+    },
+    {
+      "title": "Sauce",
+      "text": "Whisk the soy sauce, brown sugar and sesame oil together.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Brown the beef",
+      "text": "Cook the beef in a large skillet over medium-high, breaking it up, 7–8 minutes, until browned with no pink and 71°C (160°F). Spoon off the fat.",
+      "timer": 8,
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Garlic and ginger",
+      "text": "Push the beef aside, add the garlic and ginger to the pan and cook 1 minute until fragrant, then stir through.",
+      "timer": 1,
+      "uses": [
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Glaze",
+      "text": "Pour in the sauce and simmer 2–3 minutes, stirring, until it's absorbed and the beef looks glossy.",
+      "timer": 3,
+      "uses": []
+    },
+    {
+      "title": "Bowls",
+      "text": "Rice in each bowl, then the beef, cucumber and carrot, with sesame seeds on top.",
+      "uses": [
+        "2-4"
+      ]
+    }
+  ],
+  "together": "ABBAAA*",
+  "fixIt": [
+    {
+      "problem": "Too salty",
+      "fix": "Use low-sodium soy sauce, and add a squeeze of lime or a little more sugar to balance."
+    },
+    {
+      "problem": "Beef steaming, not browning",
+      "fix": "Let the pan get hot first and leave the beef alone for 2 minutes before breaking it up."
+    },
+    {
+      "problem": "Garlic burnt",
+      "fix": "Add it only after the beef has browned, and keep it moving for just 1 minute."
+    }
+  ],
+  "saleTip": "Lean ground beef in 1 kg family packs is the best value at No Frills; freeze it in 680 g flat bags.",
+  "swap": "Lean ground turkey or pork: same method, cooked to 74°C (165°F) for turkey or 71°C (160°F) for pork.",
+  "leftovers": "Pack beef and rice together, vegetables separate; add them cold after reheating.",
+  "doneness": "Ground beef at 71°C (160°F) with no pink (Health Canada, ground beef).",
+  "source": "Based on tested Korean-style ground beef bowl methods (Budget Bytes, Allrecipes): browned ground beef glazed with soy, brown sugar, sesame oil, garlic and ginger. Gochujang left out to keep it mild.",
+  "gear": [
+    "Large skillet",
+    "Medium pot with lid",
+    "Box grater",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Mix the sauce and cut the vegetables up to 1 day ahead.",
+    "The cooked beef freezes for quick lunches."
+  ],
+  "reheat": "Beef and rice covered in the microwave with a splash of water, 2 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "ground beef",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Garlic-soy beef over rice with carrots; no ginger, cucumber or sesame seeds.",
+      "drop": [
+        "0-2",
+        "2-2",
+        "2-4"
+      ],
+      "stepNotes": {
+        "1": "Basic: carrots only.",
+        "4": "Basic: garlic only.",
+        "6": "Basic: no sesame seeds."
+      },
+      "costDrop": [
+        "cucumber",
+        "ginger",
+        "sesame seeds"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Quick-pickled cucumber and a fried egg on each bowl.",
+      "add": [
+        {
+          "group": "Fancy extras",
+          "items": [
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "large eggs",
+              "pantry": {
+                "name": "Eggs",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "rice vinegar",
+              "pantry": {
+                "name": "Rice vinegar",
+                "cat": "sauces"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "granulated sugar",
+              "pantry": {
+                "name": "Granulated sugar",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "canola or vegetable oil",
+              "note": "for the eggs",
+              "pantry": {
+                "name": "Canola / vegetable oil",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: toss the sliced cucumber with the rice vinegar, sugar and a pinch of salt; let it sit while you cook."
+      },
+      "addSteps": [
+        {
+          "title": "Fried eggs",
+          "text": "Fry the eggs in the oil over medium, covered, 3–4 minutes, until the whites are set and the yolks are firm, and set one on each bowl."
+        }
+      ],
+      "costAdd": [
+        [
+          "Eggs, 4",
+          1.56,
+          "eggs"
+        ],
+        [
+          "Rice vinegar, sugar, oil",
+          0.3
+        ]
+      ],
+      "plating": [
+        "Rice in the bowl, beef on one side.",
+        "Cucumber and carrot in their own piles.",
+        "Egg in the middle, sesame seeds over everything."
+      ]
+    }
+  },
+  "why": {
+    "1-1": "Brown sugar gives the caramel sweetness of bulgogi without hours of marinating.",
+    "1-2": "Toasted sesame oil is the flavour that makes it taste Korean; a little goes a long way.",
+    "2-2": "Cool, crisp cucumber balances the rich, sweet beef."
+  },
+  "fancyNight": false,
+  "funFact": "'Bulgogi' means 'fire meat' in Korean; this weeknight version borrows its sweet soy-sesame flavour without the grill.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze the beef only"
+  },
+  "pairs": []
+}

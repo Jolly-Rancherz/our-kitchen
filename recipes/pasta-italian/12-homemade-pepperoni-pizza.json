@@ -1,0 +1,406 @@
+{
+  "title": "Homemade Pepperoni Pizza",
+  "subtitle": "two chewy, golden homemade crusts with a quick tomato sauce, lots of mozzarella and crisp-edged pepperoni",
+  "image": "assets/img/pepperoni-pizza.webp",
+  "imageAlt": "A homemade pepperoni pizza with bubbling mozzarella, one slice pulled out, on a navy napkin",
+  "servings": 4,
+  "servingsNote": "2 large pizzas: dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 85,
+  "cook": 15,
+  "cost": {
+    "total": 12.42,
+    "breakdown": [
+      [
+        "Flour, 3½ cups",
+        0.91,
+        "all-purpose-flour"
+      ],
+      [
+        "Instant yeast, 1 pouch",
+        0.93,
+        "instant-yeast"
+      ],
+      [
+        "Mozzarella, 300 g",
+        6.08,
+        "mozzarella-shredded"
+      ],
+      [
+        "Pepperoni, 100 g",
+        3.19,
+        "pepperoni-sliced"
+      ],
+      [
+        "Tomato sauce, 1 cup",
+        0.81,
+        "tomato-sauce-canned"
+      ],
+      [
+        "Olive oil, 2 tbsp",
+        0.3,
+        "olive-oil"
+      ],
+      [
+        "Sugar, spices, salt",
+        0.2
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [
+      "takeout-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "The dough needs 1 hour to rise. Heat the oven to its hottest for at least 20 minutes before baking."
+    },
+    {
+      "icon": "knife",
+      "text": "Choose mild pepperoni; check the label."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Dough",
+      "items": [
+        {
+          "qty": 3.5,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 455,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2.25,
+          "unit": "tsp",
+          "name": "instant yeast",
+          "note": "1 pouch (8 g)",
+          "pantry": {
+            "name": "Instant yeast",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "granulated sugar",
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.25,
+          "unit": "cup",
+          "name": "water",
+          "note": "warm, about 45°C",
+          "metric": {
+            "qty": 310,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "olive oil",
+          "note": "1 for the dough, 1 for the bowl and pans",
+          "pantry": {
+            "name": "Olive oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sauce",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "canned tomato sauce",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Tomato sauce (canned)",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried oregano",
+          "pantry": {
+            "name": "Dried oregano",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Toppings",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "shredded mozzarella",
+          "metric": {
+            "qty": 300,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Mozzarella (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 100,
+          "unit": "g",
+          "name": "sliced mild pepperoni",
+          "pantry": {
+            "name": "Pepperoni (sliced)",
+            "cat": "meat"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Dough",
+      "text": "Whisk the flour, yeast, sugar and salt in a large bowl. Add the warm water and 1 tbsp of the oil, stir to a shaggy dough, then knead on the counter 5–6 minutes until smooth and springy.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5=1 tbsp"
+      ]
+    },
+    {
+      "title": "Rise",
+      "text": "Put it in a bowl rubbed with a little of the remaining oil, cover and let rise 1 hour, until doubled. After 30 minutes, heat the oven to 260°C (500°F), or as hot as it goes, with racks in the lower and upper thirds.",
+      "timer": 60,
+      "uses": [
+        "0-5"
+      ]
+    },
+    {
+      "title": "Sauce",
+      "text": "Stir the tomato sauce, dried oregano, garlic powder and salt together.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Shape",
+      "text": "Punch the dough down, divide in 2 and stretch each into a 30 cm round on 2 baking sheets brushed with the last of the oil. If it springs back, rest it 5 minutes and stretch again.",
+      "uses": []
+    },
+    {
+      "title": "Top",
+      "text": "Spread the sauce thinly to 1 cm from the edge, then cover with the mozzarella and pepperoni.",
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Bake 12–15 minutes, swapping the pans halfway, until the crust is deep golden underneath and the cheese bubbles and browns.",
+      "timer": 14,
+      "uses": []
+    },
+    {
+      "title": "Slice",
+      "text": "Rest 3 minutes, then slice.",
+      "uses": []
+    }
+  ],
+  "together": "AABA*AB",
+  "fixIt": [
+    {
+      "problem": "Dough won't rise",
+      "fix": "The water was too hot or the yeast old. Water should feel warm, not hot, on your wrist."
+    },
+    {
+      "problem": "Soggy middle",
+      "fix": "Use less sauce, and bake on the lowest rack for the last 3 minutes."
+    },
+    {
+      "problem": "Dough tearing when stretched",
+      "fix": "It needs to relax: cover and rest 10 minutes, then stretch with your knuckles, not a rolling pin."
+    }
+  ],
+  "saleTip": "Mozzarella is often $4.99 for 320 g on sale at No Frills; buy two and freeze one.",
+  "swap": "Store-bought pizza dough: about 900 g for two pizzas; let it sit out 30 minutes so it stretches easily.",
+  "leftovers": "Reheat slices in a covered dry skillet for a crisp bottom.",
+  "doneness": "Pepperoni is a cured, ready-to-eat meat; bake until the cheese bubbles and the crust bottom is browned. Reheat leftovers to 74°C (165°F).",
+  "source": "Based on tested homemade pizza dough methods (King Arthur Baking, Canadian Living): an instant-yeast dough risen 1 hour, a quick no-cook sauce, baked on sheet pans at the oven's highest heat.",
+  "gear": [
+    "Large bowl",
+    "2 rimmed baking sheets",
+    "Pizza cutter or large knife"
+  ],
+  "prepAhead": [
+    "Make the dough up to 2 days ahead and keep it covered in the fridge; it gets more flavour. Bring it out 1 hour before shaping.",
+    "Freeze dough balls up to 3 months."
+  ],
+  "reheat": "Slices in a covered dry skillet over medium 3–4 minutes, or the air fryer at 190°C for 3 minutes, until 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Cheese pizza: sauce and mozzarella only.",
+      "drop": [
+        "2-1"
+      ],
+      "stepNotes": {
+        "4": "Basic: no pepperoni."
+      },
+      "costDrop": [
+        "pepperoni"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Garlic-butter crust with Parmesan and a drizzle of honey over the pepperoni.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "melted",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "tsp",
+              "name": "garlic powder",
+              "pantry": {
+                "name": "Garlic powder",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "grated Parmesan",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "honey",
+              "pantry": {
+                "name": "Honey",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Brush the hot crust edges with the butter mixed with the garlic powder, sprinkle the Parmesan over them and drizzle the honey over the top."
+        }
+      ],
+      "costAdd": [
+        [
+          "Butter, 2 tbsp",
+          0.4,
+          "butter"
+        ],
+        [
+          "Parmesan, 2 tbsp",
+          0.3,
+          "parmesan-grated"
+        ],
+        [
+          "Honey, 2 tbsp",
+          0.6,
+          "honey"
+        ]
+      ],
+      "plating": [
+        "Serve on a board, cut in 8.",
+        "Pull one slice out a little so the cheese stretches.",
+        "Extra Parmesan at the table."
+      ]
+    }
+  },
+  "why": {
+    "0-2": "A little sugar helps the yeast get going and browns the crust.",
+    "1-0": "A no-cook sauce stays bright; it cooks on the pizza.",
+    "2-0": "Shredded low-moisture mozzarella melts and browns without making the pizza wet."
+  },
+  "fancyNight": false,
+  "funFact": "The word 'pepperoni' is an American take on the Italian 'peperoni', which in Italy means peppers, not sausage.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "2 months",
+    "note": "wrap baked slices individually"
+  },
+  "pairs": []
+}

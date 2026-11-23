@@ -1,0 +1,489 @@
+{
+  "title": "Chicken Cordon Bleu",
+  "subtitle": "chicken rolled around ham and melty Swiss, baked crisp in buttery panko, with a creamy Parmesan sauce over rice",
+  "image": "assets/img/chicken-cordon-bleu.webp",
+  "imageAlt": "A sliced golden chicken cordon bleu showing ham and melted Swiss, with creamy sauce and rice on a white plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 30,
+  "cook": 30,
+  "cost": {
+    "total": 20.74,
+    "breakdown": [
+      [
+        "Boneless chicken breasts, 4 (800 g)",
+        10.56,
+        "chicken-breasts-boneless"
+      ],
+      [
+        "Deli ham, 4 thin slices",
+        2.57,
+        "deli-ham-sliced"
+      ],
+      [
+        "Swiss cheese, 4 slices",
+        2.2,
+        "swiss-cheese-slices"
+      ],
+      [
+        "Panko, 1 cup",
+        0.86,
+        "panko-breadcrumbs"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "Milk, 1 cup",
+        0.72,
+        "milk"
+      ],
+      [
+        "Parmesan, ¼ cup",
+        0.6,
+        "parmesan-grated"
+      ],
+      [
+        "Chicken broth, ½ cup",
+        0.35,
+        "chicken-broth"
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.0,
+        "jasmine-rice"
+      ],
+      [
+        "Butter, 4 tbsp",
+        0.8,
+        "butter"
+      ],
+      [
+        "Flour, spices, salt",
+        0.3
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "stovetop"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "date-night",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Have 8 toothpicks ready to hold the rolls closed. Count them in and count them out."
+    },
+    {
+      "icon": "rice",
+      "text": "Start the rice first; it's ready when the chicken is."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "boneless skinless chicken breasts",
+          "note": "about 200 g each (800 g)",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "thin slices deli ham",
+          "pantry": {
+            "name": "Deli ham (sliced)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "slices Swiss cheese",
+          "pantry": {
+            "name": "Swiss cheese slices",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "note": "beaten",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 60,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sauce and rice",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "1-6",
+        "1-7"
+      ]
+    },
+    {
+      "title": "Pound",
+      "text": "Heat the oven to 200°C (400°F) and line a baking sheet with parchment. Pound each breast between plastic wrap to an even 6 mm. Season with the salt and pepper.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Fill and roll",
+      "text": "Lay a slice of ham and a slice of Swiss on each, folded to fit 1 cm inside the edges. Roll up from a short end and close with 2 toothpicks.",
+      "uses": [
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Bread",
+      "text": "Toss the panko with the melted butter. Roll each in the flour, then the beaten eggs, then press into the buttered panko.",
+      "uses": [
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Bake seam side down 25–30 minutes, until golden and the chicken reads 74°C (165°F) in the centre of the meat (not the cheese). Rest 5 minutes and pull out the toothpicks.",
+      "timer": 28,
+      "uses": []
+    },
+    {
+      "title": "Sauce",
+      "text": "While it bakes, melt the butter in a small pot over medium. Whisk in the flour for 1 minute, then slowly whisk in the milk and broth. Simmer 3 minutes until thick, then stir in the Parmesan and garlic powder.",
+      "timer": 3,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Slice each roll in half on an angle and serve over rice with the sauce spooned over.",
+      "uses": []
+    }
+  ],
+  "together": "BAAAAB*",
+  "fixIt": [
+    {
+      "problem": "Cheese leaking out",
+      "fix": "Keep the ham and cheese 1 cm in from the edges and roll tightly; seam side down holds it closed."
+    },
+    {
+      "problem": "Crumb pale on the bottom",
+      "fix": "Bake on the middle rack, or broil 1 minute at the end, watching closely."
+    },
+    {
+      "problem": "Lumpy sauce",
+      "fix": "Add the milk slowly while whisking; a minute of hard whisking smooths small lumps."
+    }
+  ],
+  "saleTip": "Buy deli ham sliced thin at the counter: you only need 4 slices, so ask for just 100 g.",
+  "swap": "Air fryer: 2 rolls at a time at 190°C, 18–20 minutes, turning once, to 74°C (165°F).",
+  "leftovers": "Slice cold for a lunch sandwich, or reheat in the oven so the crumb stays crisp.",
+  "doneness": "Chicken at 74°C (165°F) in the centre of the meat (Health Canada, poultry pieces).",
+  "source": "Based on tested baked chicken cordon bleu methods (Canadian Living, America's Test Kitchen): pounded breasts rolled with ham and Swiss, buttered panko crust, baked at 200°C, with a light cheese sauce.",
+  "gear": [
+    "Baking sheet",
+    "Parchment",
+    "Meat mallet or rolling pin",
+    "8 toothpicks",
+    "Small pot",
+    "Whisk",
+    "Medium pot with lid",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Roll and bread the chicken up to 1 day ahead; keep covered in the fridge.",
+    "Freeze breaded raw rolls; bake from thawed."
+  ],
+  "reheat": "At 180°C (350°F) for 15 minutes, until 74°C (165°F). Warm the sauce in a small pot with a splash of milk.",
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Crispy rolls with rice; no sauce.",
+      "drop": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5"
+      ],
+      "stepNotes": {
+        "5": "Basic: skip the sauce."
+      },
+      "costDrop": [
+        "milk",
+        "parmesan",
+        "chicken broth"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Garlic butter green beans on the side.",
+      "add": [
+        {
+          "group": "Fancy side",
+          "items": [
+            {
+              "qty": 450,
+              "unit": "g",
+              "name": "green beans",
+              "note": "trimmed",
+              "pantry": {
+                "name": "Green beans",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "butter",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "clove",
+              "name": "garlic",
+              "note": "minced",
+              "pantry": {
+                "name": "Garlic",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Green beans",
+          "text": "Boil the beans in salted water 4 minutes, drain, and toss in a hot pan with the butter and garlic for 1 minute."
+        }
+      ],
+      "costAdd": [
+        [
+          "Green beans, 450 g",
+          3.3,
+          "green-beans"
+        ],
+        [
+          "Butter, garlic",
+          0.25
+        ]
+      ],
+      "plating": [
+        "Rice in a neat mound, the two halves leaning on it cut side up.",
+        "Sauce spooned across, not over the crust.",
+        "Green beans fanned beside."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Pounding to an even thickness means the roll cooks through before the crust burns.",
+    "0-8": "Buttered panko browns in the oven like it was fried.",
+    "0-4": "Swiss melts smooth without going greasy, and it's the classic."
+  },
+  "fancyNight": true,
+  "funFact": "'Cordon bleu' means 'blue ribbon', after the sash worn by France's highest order of knights; it became a name for top-class cooking.",
+  "keeps": {
+    "fridge": "3 days",
+    "freezer": "3 months",
+    "note": "freeze baked rolls without the sauce"
+  },
+  "pairs": []
+}

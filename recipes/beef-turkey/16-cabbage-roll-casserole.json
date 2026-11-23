@@ -1,0 +1,373 @@
+{
+  "title": "Cabbage Roll Casserole",
+  "subtitle": "all the flavour of Baba's cabbage rolls with none of the rolling: beef, rice and cabbage baked in a sweet-tangy tomato sauce",
+  "image": "assets/img/cabbage-roll-casserole.webp",
+  "imageAlt": "A scoop of cabbage roll casserole with tender cabbage, beef and rice in red tomato sauce in a white bowl on a navy napkin",
+  "servings": 6,
+  "servingsNote": "a 9×13 pan: dinner for two, plus 4 lunches",
+  "prep": 25,
+  "cook": 100,
+  "cost": {
+    "total": 14.8,
+    "breakdown": [
+      [
+        "Lean ground beef, 680 g",
+        7.48,
+        "ground-beef-lean"
+      ],
+      [
+        "Green cabbage, 1 small head",
+        3.49,
+        "green-cabbage"
+      ],
+      [
+        "Tomato sauce, 2 cans",
+        2.58,
+        "tomato-sauce-canned"
+      ],
+      [
+        "Jasmine rice, 100 g",
+        0.25,
+        "jasmine-rice"
+      ],
+      [
+        "Onion",
+        0.4,
+        "yellow-onions"
+      ],
+      [
+        "Brown sugar, vinegar, garlic, spices, salt",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "oven-bake"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Make-ahead"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "It bakes 1½ hours, so start early; it reheats even better the next day."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Beef and rice",
+      "items": [
+        {
+          "qty": 680,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "uncooked, rinsed",
+          "metric": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cabbage and sauce",
+      "items": [
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "small head green cabbage",
+          "note": "about 1 kg, cored and cut in 3 cm pieces",
+          "pantry": {
+            "name": "Green cabbage",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "cans (398 ml each) tomato sauce",
+          "pantry": {
+            "name": "Tomato sauce (canned)",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "packed brown sugar",
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "white vinegar",
+          "pantry": {
+            "name": "White vinegar",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Brown the beef",
+      "text": "Heat the oven to 180°C (350°F). Cook the beef and onion in a large skillet over medium-high, breaking it up, 8 minutes, until browned with no pink left. Add the garlic for 1 minute. Spoon off the fat; the beef finishes cooking to 74°C (165°F) in the oven.",
+      "timer": 9,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Add the rice",
+      "text": "Stir the rinsed uncooked rice, paprika, salt and pepper into the beef.",
+      "uses": [
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Sauce",
+      "text": "Whisk the tomato sauce, water, brown sugar and vinegar together.",
+      "uses": [
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4"
+      ]
+    },
+    {
+      "title": "Layer",
+      "text": "In a greased 23×33 cm (9×13 in) baking dish, spread half the cabbage, then all the beef and rice, then the rest of the cabbage. Pour the sauce evenly over and press the cabbage down.",
+      "uses": [
+        "1-0"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Cover tightly with foil and bake 75 minutes. Uncover, press down again and bake 15 minutes more, until the rice and cabbage are tender and the centre reads 74°C (165°F).",
+      "timer": 90,
+      "uses": []
+    },
+    {
+      "title": "Rest",
+      "text": "Rest 10 minutes before serving.",
+      "timer": 10,
+      "uses": []
+    }
+  ],
+  "together": "ABBA*A",
+  "fixIt": [
+    {
+      "problem": "Rice still firm",
+      "fix": "Stir in ½ cup hot water, cover again and bake 15 minutes more."
+    },
+    {
+      "problem": "Watery",
+      "fix": "Bake uncovered 10–15 minutes more; it also thickens as it rests."
+    },
+    {
+      "problem": "Sauce too sharp",
+      "fix": "Stir in another tablespoon of brown sugar; tomato sauces vary."
+    }
+  ],
+  "saleTip": "Cabbage is one of the cheapest vegetables at No Frills, often under $1/lb; one small head is enough.",
+  "swap": "Half ground pork, half beef, like many Ukrainian and Polish family recipes; the pork also to 71°C (160°F).",
+  "leftovers": "Like cabbage rolls, it's better the next day. Pack with a spoon of sour cream.",
+  "doneness": "Ground beef to 71°C (160°F) (Health Canada, ground beef); bake until the centre reads 74°C (165°F) so the rice and sauce are hot through.",
+  "source": "Based on tested unrolled (lazy) cabbage roll casserole methods (Canadian Living, Allrecipes): browned beef with uncooked rice layered with chopped cabbage and a sweet-sour tomato sauce, baked covered about 1½ hours.",
+  "gear": [
+    "Large skillet",
+    "23×33 cm (9×13 in) baking dish",
+    "Foil",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Assemble up to 1 day ahead and chill; add 15 minutes to the covered bake.",
+    "Freezes well in portions."
+  ],
+  "reheat": "Covered in the microwave 3 minutes, stirring halfway, or covered at 180°C (350°F) for 25 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "ground beef",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Beef, rice, cabbage and tomato sauce; no garlic or paprika.",
+      "drop": [
+        "0-2",
+        "0-4"
+      ],
+      "stepNotes": {
+        "0": "Basic: skip the garlic.",
+        "1": "Basic: skip the paprika."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Crisp bacon on top and a dollop of sour cream, the Ukrainian way.",
+      "add": [
+        {
+          "group": "Fancy topping",
+          "items": [
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "slices bacon",
+              "note": "chopped",
+              "pantry": {
+                "name": "Bacon",
+                "cat": "meat"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "cup",
+              "name": "sour cream",
+              "note": "for serving",
+              "metric": {
+                "qty": 250,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "Sour cream",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: first cook the bacon in the skillet until crisp; set it aside and brown the beef in a little of the fat."
+      },
+      "addSteps": [
+        {
+          "title": "To serve",
+          "text": "Scatter the bacon over the casserole and serve each scoop with a spoon of sour cream."
+        }
+      ],
+      "costAdd": [
+        [
+          "Bacon, 4 slices",
+          1.4,
+          "bacon"
+        ],
+        [
+          "Sour cream, 1 cup",
+          1.5,
+          "sour-cream"
+        ]
+      ],
+      "plating": [
+        "Deep scoops in shallow bowls.",
+        "Sour cream on top, bacon over that.",
+        "Black pepper and a slice of rye bread on the side."
+      ]
+    }
+  },
+  "why": {
+    "0-3": "Uncooked rice soaks up the sauce as it bakes, just like the filling of a real cabbage roll.",
+    "1-4": "A spoon of vinegar with the sugar gives the classic sweet-sour sauce.",
+    "1-0": "Chopped cabbage turns silky in the long bake: no blanching or rolling."
+  },
+  "fancyNight": false,
+  "funFact": "Cabbage rolls, holubtsi in Ukrainian, came to the Prairies with Ukrainian settlers in the 1890s and are a church-supper staple across Canada.",
+  "keeps": {
+    "fridge": "4–5 days",
+    "freezer": "3 months",
+    "note": null
+  },
+  "pairs": []
+}

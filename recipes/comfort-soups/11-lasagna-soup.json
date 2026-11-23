@@ -1,0 +1,421 @@
+{
+  "title": "Lasagna Soup",
+  "subtitle": "all the flavour of lasagna in one pot: beefy tomato broth with broken noodles, topped with a scoop of cheesy ricotta",
+  "image": "assets/img/lasagna-soup.webp",
+  "imageAlt": "A bowl of tomato soup with ruffled lasagna noodles and ground beef topped with a melting scoop of ricotta and mozzarella on a navy napkin",
+  "servings": 6,
+  "servingsNote": "a big pot: dinner for two, plus 4 bowls for lunches",
+  "prep": 15,
+  "cook": 40,
+  "cost": {
+    "total": 18.12,
+    "breakdown": [
+      [
+        "Lean ground beef, 450 g",
+        4.95,
+        "ground-beef-lean"
+      ],
+      [
+        "Lasagna noodles, 8 (about 200 g)",
+        1.33,
+        "lasagna-noodles"
+      ],
+      [
+        "Crushed tomatoes, 796 ml",
+        1.99,
+        "crushed-tomatoes-canned"
+      ],
+      [
+        "Chicken broth, 5 cups",
+        3.46,
+        "chicken-broth"
+      ],
+      [
+        "Ricotta, 1 cup",
+        2.36,
+        "ricotta"
+      ],
+      [
+        "Mozzarella, 100 g",
+        2.03,
+        "mozzarella-shredded"
+      ],
+      [
+        "Parmesan, ¼ cup",
+        0.6,
+        "parmesan-grated"
+      ],
+      [
+        "Onion, garlic, tomato paste",
+        1.1
+      ],
+      [
+        "Oil, sugar, spices, salt",
+        0.3
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "pasta"
+    ],
+    "occasion": [
+      "comfort-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "One pot"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "The noodles keep drinking broth; if you're saving some for later, cook the noodles separately for those bowls."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Soup",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "tomato paste",
+          "pantry": {
+            "name": "Tomato paste",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "can (796 ml) crushed tomatoes",
+          "pantry": {
+            "name": "Crushed tomatoes (canned)",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 5,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 1250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "dried Italian seasoning",
+          "pantry": {
+            "name": "Italian seasoning (dried)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "granulated sugar",
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 8,
+          "unit": null,
+          "name": "lasagna noodles",
+          "note": "broken in 5 cm pieces",
+          "pantry": {
+            "name": "Lasagna noodles",
+            "cat": "grains"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cheesy topping",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "ricotta",
+          "metric": {
+            "qty": 250,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Ricotta",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "shredded mozzarella",
+          "metric": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Mozzarella (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Brown",
+      "text": "Heat the oil in a large pot over medium-high. Cook the beef and onion, breaking up the beef, 8–10 minutes until no pink remains and it reads 71°C (160°F). Spoon off the fat. Add the garlic and tomato paste and stir 1 minute.",
+      "timer": 9,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Simmer",
+      "text": "Add the crushed tomatoes, broth, Italian seasoning, sugar, salt and pepper. Bring to a boil, then simmer 10 minutes.",
+      "timer": 10,
+      "uses": [
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9",
+        "0-10"
+      ]
+    },
+    {
+      "title": "Noodles",
+      "text": "Stir in the broken noodles and simmer 10–12 minutes, stirring often so they don't stick, until tender.",
+      "timer": 11,
+      "uses": [
+        "0-11"
+      ]
+    },
+    {
+      "title": "Cheesy topping",
+      "text": "While the noodles cook, stir the ricotta, mozzarella and Parmesan together.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Ladle into bowls and top each with a big spoon of the cheese mixture; it melts into the hot soup.",
+      "uses": []
+    }
+  ],
+  "together": "AAAB*",
+  "fixIt": [
+    {
+      "problem": "Soup too thick",
+      "fix": "The noodles absorbed the broth. Stir in hot broth or water."
+    },
+    {
+      "problem": "Noodles stuck together",
+      "fix": "Break them as they go in and stir often for the first 3 minutes."
+    },
+    {
+      "problem": "Too acidic",
+      "fix": "Stir in another ½ tsp sugar."
+    }
+  ],
+  "saleTip": "Broken lasagna noodles from the bottom of the box are perfect here; use up the odd ends.",
+  "swap": "Mild Italian sausage instead of beef: squeeze it out of the casings and brown the same way, to 71°C (160°F).",
+  "leftovers": "Store with the noodles; add broth when reheating, and fresh cheese on top.",
+  "doneness": "Ground beef to 71°C (160°F) with no pink (Health Canada, ground beef). Reheat to 74°C (165°F).",
+  "source": "Based on tested lasagna soup methods (Canadian Living, Allrecipes): browned beef, crushed tomatoes and broth simmered with broken lasagna noodles, served with a ricotta-mozzarella dollop.",
+  "gear": [
+    "Large pot",
+    "Wooden spoon",
+    "Ladle",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Make the soup base without the noodles up to 3 days ahead or freeze it; add noodles when reheating.",
+    "Mix the cheese topping up to 2 days ahead."
+  ],
+  "reheat": "Covered over medium with a splash of broth, stirring, until 74°C (165°F).",
+  "thaw": {
+    "item": "ground beef",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Beefy tomato noodle soup with mozzarella on top; no ricotta.",
+      "drop": [
+        "1-0",
+        "1-2"
+      ],
+      "stepNotes": {
+        "3": "Basic: just mozzarella on top."
+      },
+      "costDrop": [
+        "ricotta",
+        "parmesan"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Garlic toast for dunking.",
+      "add": [
+        {
+          "group": "Fancy garlic toast",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": null,
+              "name": "baguette",
+              "note": "sliced",
+              "pantry": {
+                "name": "Baguette",
+                "cat": "grains"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "softened",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "tsp",
+              "name": "garlic powder",
+              "pantry": {
+                "name": "Garlic powder",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Garlic toast",
+          "text": "Spread the baguette slices with butter mixed with the garlic powder and broil 1–2 minutes until golden, watching closely."
+        }
+      ],
+      "costAdd": [
+        [
+          "Baguette, ½",
+          1.25,
+          "baguette"
+        ],
+        [
+          "Butter, garlic powder",
+          0.45
+        ]
+      ],
+      "plating": [
+        "Wide bowls, noodles ruffled on top.",
+        "Cheese scoop in the middle.",
+        "Garlic toast on the side."
+      ]
+    }
+  },
+  "why": {
+    "0-11": "Broken lasagna noodles give the ruffled bites of a real lasagna.",
+    "1-0": "A cold scoop of ricotta melts into the hot soup like the cheese layer.",
+    "0-8": "A little sugar takes the sharp edge off canned tomatoes."
+  },
+  "fancyNight": false,
+  "funFact": "Lasagna soup became a viral weeknight hit in the 2010s, but Italian cooks have long used broken pasta ends, 'pasta mista', in soup.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "freeze the base without the noodles"
+  },
+  "pairs": []
+}

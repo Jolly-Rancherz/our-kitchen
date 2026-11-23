@@ -1,0 +1,487 @@
+{
+  "title": "Cheesy Beef Enchiladas",
+  "subtitle": "tortillas rolled around mild seasoned beef, corn and cheddar, baked in a homemade red sauce until bubbling",
+  "image": "assets/img/beef-enchiladas.webp",
+  "imageAlt": "A baking dish of rolled enchiladas in red sauce under melted cheddar, one served with sour cream, on a navy napkin",
+  "servings": 4,
+  "servingsNote": "8 enchiladas: dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 30,
+  "cook": 25,
+  "cost": {
+    "total": 15.42,
+    "breakdown": [
+      [
+        "Lean ground beef, 450 g",
+        4.95,
+        "ground-beef-lean"
+      ],
+      [
+        "Small flour tortillas, 8",
+        2.79,
+        "flour-tortillas-small"
+      ],
+      [
+        "Old cheddar, 200 g",
+        3.5,
+        "cheddar-shredded"
+      ],
+      [
+        "Chicken broth, 2 cups",
+        1.38,
+        "chicken-broth"
+      ],
+      [
+        "Frozen corn, 1 cup",
+        0.6,
+        "frozen-corn"
+      ],
+      [
+        "Sour cream, ½ cup",
+        0.75,
+        "sour-cream"
+      ],
+      [
+        "Tomato paste, 2 tbsp",
+        0.35,
+        "tomato-paste"
+      ],
+      [
+        "Onion",
+        0.4,
+        "yellow-onions"
+      ],
+      [
+        "Oil, flour, garlic, spices, salt",
+        0.7
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "oven-bake"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [
+      "takeout-night",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Use mild chili powder: it's mostly paprika and cumin. Check the label."
+    },
+    {
+      "icon": "oven",
+      "text": "Warm the tortillas 20 seconds in the microwave so they roll without cracking."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Red sauce",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "mild chili powder",
+          "pantry": {
+            "name": "Chili powder (mild)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground cumin",
+          "pantry": {
+            "name": "Ground cumin",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "tomato paste",
+          "pantry": {
+            "name": "Tomato paste",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 500,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Filling",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "mild chili powder",
+          "pantry": {
+            "name": "Chili powder (mild)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "ground cumin",
+          "pantry": {
+            "name": "Ground cumin",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "frozen corn",
+          "metric": {
+            "qty": 140,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Frozen corn",
+            "cat": "frozen"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To bake",
+      "items": [
+        {
+          "qty": 8,
+          "unit": null,
+          "name": "small flour tortillas",
+          "note": "about 20 cm",
+          "pantry": {
+            "name": "Flour tortillas (small)",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "metric": {
+            "qty": 200,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "sour cream",
+          "note": "for serving",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Sour cream",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Red sauce",
+      "text": "Heat the oil in a medium pot over medium. Whisk in the flour, 1 tbsp chili powder, ½ tsp cumin and the garlic powder for 1 minute. Whisk in the tomato paste, then the broth, and simmer 8–10 minutes until it coats a spoon. Season with the salt.",
+      "timer": 9,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Filling",
+      "text": "Heat the oven to 190°C (375°F). Cook the beef and onion in a large skillet over medium-high, breaking it up, 8 minutes, until no pink remains and it reads 71°C (160°F). Spoon off the fat. Stir in the garlic, 2 tsp chili powder, 1 tsp cumin and the salt for 1 minute, then the corn and ½ cup of the sauce.",
+      "timer": 9,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6"
+      ]
+    },
+    {
+      "title": "Sauce the dish",
+      "text": "Spread ½ cup of the sauce in a 23×33 cm (9×13 in) baking dish.",
+      "uses": []
+    },
+    {
+      "title": "Roll",
+      "text": "Warm the tortillas. Divide the filling among them, scatter 1 cup of the cheddar over the filling, roll up and set seam side down in the dish.",
+      "uses": [
+        "2-0",
+        "2-1=1 cup"
+      ]
+    },
+    {
+      "title": "Top",
+      "text": "Pour the rest of the sauce over and scatter the remaining 1 cup cheddar on top.",
+      "uses": [
+        "2-1"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Bake uncovered 20 minutes, until bubbling and the centre reads 74°C (165°F).",
+      "timer": 20,
+      "uses": []
+    },
+    {
+      "title": "Serve",
+      "text": "Rest 5 minutes and serve with the sour cream.",
+      "uses": [
+        "2-2"
+      ]
+    }
+  ],
+  "together": "ABAA*AB",
+  "fixIt": [
+    {
+      "problem": "Tortillas cracking",
+      "fix": "Warm them first, stacked under a damp paper towel, 20–30 seconds in the microwave."
+    },
+    {
+      "problem": "Sauce too thick",
+      "fix": "Whisk in a splash more broth; it should pour like heavy cream."
+    },
+    {
+      "problem": "Edges hard",
+      "fix": "Make sure the sauce covers the tortilla ends; dry edges crisp up."
+    }
+  ],
+  "saleTip": "Old cheddar blocks are often $4.99 at No Frills; shred your own for better melting.",
+  "swap": "Shredded cooked chicken (2 cups) instead of beef: just warm it through with the spices and sauce.",
+  "leftovers": "Reheat covered so the tortillas stay soft.",
+  "doneness": "Ground beef to 71°C (160°F) (Health Canada, ground beef); bake until the centre reads 74°C (165°F).",
+  "source": "Based on tested beef enchilada methods (Canadian Living, Budget Bytes): a homemade roux-based red sauce with tomato paste and broth, browned beef filling, rolled tortillas baked under cheese. Chili powder kept mild and modest.",
+  "gear": [
+    "Medium pot",
+    "Whisk",
+    "Large skillet",
+    "23×33 cm (9×13 in) baking dish",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Make the sauce up to 4 days ahead.",
+    "Assemble up to 1 day ahead without the top sauce and cheese; add them just before baking."
+  ],
+  "reheat": "Covered in the microwave 2 minutes, or covered at 180°C (350°F) for 20 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "ground beef",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Beef and cheese only; no corn or sour cream.",
+      "drop": [
+        "1-6",
+        "2-2"
+      ],
+      "stepNotes": {
+        "1": "Basic: no corn.",
+        "6": "Basic: serve as is."
+      },
+      "costDrop": [
+        "corn",
+        "sour cream"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Fresh avocado, tomato and lime on top.",
+      "add": [
+        {
+          "group": "Fancy topping",
+          "items": [
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "avocado",
+              "note": "diced",
+              "pantry": {
+                "name": "Avocados",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "tomato",
+              "note": "diced",
+              "pantry": {
+                "name": "Tomatoes",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "lime",
+              "note": "juiced",
+              "pantry": {
+                "name": "Limes",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Fresh topping",
+          "text": "Toss the avocado and tomato with the lime juice and a pinch of salt and spoon it over the hot enchiladas."
+        }
+      ],
+      "costAdd": [
+        [
+          "Avocado",
+          1.25,
+          "avocados"
+        ],
+        [
+          "Tomato",
+          0.75,
+          "tomatoes"
+        ],
+        [
+          "Lime",
+          0.5,
+          "limes"
+        ]
+      ],
+      "plating": [
+        "2 enchiladas per plate, lifted out with a wide spatula.",
+        "Avocado-tomato down the middle.",
+        "Sour cream on the side."
+      ]
+    }
+  },
+  "why": {
+    "0-5": "Tomato paste gives the sauce colour and body without needing dried chilies.",
+    "0-2": "Mild chili powder is mostly paprika and cumin: warm, not hot.",
+    "2-1": "Old cheddar has more flavour than mild, so it stands up to the sauce."
+  },
+  "fancyNight": false,
+  "funFact": "'Enchilada' comes from the Spanish 'enchilar', to season with chili; this one keeps the name and skips the heat.",
+  "keeps": {
+    "fridge": "4 days",
+    "freezer": "3 months",
+    "note": "freeze baked, without the sour cream"
+  },
+  "pairs": []
+}

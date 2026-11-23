@@ -63,7 +63,8 @@ for path in sorted(glob.glob(os.path.join(ROOT, "*", "*.json"))):
     dn = (r.get("doneness") or "").lower()
     if re.search(r"chicken|turkey", low) and "74" not in txt and "165" not in txt: f(rid, "poultry without 74°C/165°F")
     if re.search(r"ground (beef|turkey|pork)", low) and not re.search(r"71\s*°C|74\s*°C", txt): f(rid, "ground meat without 71°C (160°F)")
-    if "salmon" in low and "70" not in txt and "63" not in txt: f(rid, "fish without a safe temp")
+    inames = " ".join(it["name"] for it in items.values()).lower()  # 13.5: ingredients only, not fun facts
+    if "salmon" in inames and "70" not in txt and "63" not in txt: f(rid, "fish without a safe temp")
     if "pork" in low and "pork" in r["title"].lower() and "71" not in txt and "63" not in txt: f(rid, "pork without a safe temp")
     # times
     tim = sum(st.get("timer", 0) for st in r["steps"])
