@@ -1,0 +1,408 @@
+{
+  "title": "Red Velvet Cupcakes",
+  "subtitle": "soft cocoa-kissed cupcakes with fluffy cream cheese frosting",
+  "image": "assets/img/red-velvet-cupcakes.webp",
+  "imageAlt": "Red velvet cupcakes with swirls of white cream cheese frosting and a few heart sprinkles on a cream plate beside a navy napkin",
+  "servings": 12,
+  "servingsNote": "12 cupcakes",
+  "prep": 25,
+  "cook": 20,
+  "cost": {
+    "total": 6.74,
+    "breakdown": [
+      [
+        "Flour, 1¼ cups",
+        0.33,
+        "all-purpose-flour"
+      ],
+      [
+        "Cream cheese, 125 g",
+        1.75,
+        "cream-cheese-brick"
+      ],
+      [
+        "Icing sugar, 2 cups",
+        1.2,
+        "icing-sugar"
+      ],
+      [
+        "Butter, ¼ cup",
+        0.8,
+        "butter"
+      ],
+      [
+        "Buttermilk, ½ cup",
+        0.31,
+        "buttermilk"
+      ],
+      [
+        "Red food colouring",
+        0.75,
+        "red-food-colouring"
+      ],
+      [
+        "Oil, sugar, cocoa, egg, vanilla, vinegar, soda",
+        1.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "dessert"
+    ],
+    "holiday": [
+      "valentines"
+    ]
+  },
+  "badges": [
+    "Valentine's"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Soften the cream cheese and butter on the counter for the frosting."
+    },
+    {
+      "icon": "oven",
+      "text": "Cool the cupcakes completely before frosting or it will slide off."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Cupcakes",
+      "items": [
+        {
+          "qty": 1.25,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 160,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "granulated sugar",
+          "metric": {
+            "qty": 150,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "cocoa powder",
+          "pantry": {
+            "name": "Cocoa powder",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "baking soda",
+          "pantry": {
+            "name": "Baking soda",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "canola or vegetable oil",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "buttermilk",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Buttermilk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "white vinegar",
+          "pantry": {
+            "name": "White vinegar",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "red liquid food colouring",
+          "note": "or 1 tsp gel",
+          "pantry": {
+            "name": "Red food colouring",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cream cheese frosting",
+      "items": [
+        {
+          "qty": 125,
+          "unit": "g",
+          "name": "brick cream cheese",
+          "note": "softened",
+          "pantry": {
+            "name": "Cream cheese (brick)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "butter",
+          "note": "softened",
+          "metric": {
+            "qty": 57,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "icing sugar",
+          "metric": {
+            "qty": 250,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Icing sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Heat",
+      "text": "Heat the oven to 175°C (350°F) and line a 12-cup muffin tin with paper liners.",
+      "uses": []
+    },
+    {
+      "title": "Dry",
+      "text": "Whisk the flour, sugar, cocoa, baking soda and salt.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Wet",
+      "text": "Whisk the oil, buttermilk, egg, vanilla, vinegar and food colouring, then stir into the dry just until smooth.",
+      "uses": [
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9",
+        "0-10"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Fill the liners ⅔ full and bake 18–20 minutes, until a toothpick comes out clean. Cool completely, about 45 minutes.",
+      "timer": 19,
+      "uses": []
+    },
+    {
+      "title": "Frost",
+      "text": "Beat the cream cheese and butter until smooth, then beat in the icing sugar and vanilla until fluffy. Pipe or spread onto the cupcakes.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    }
+  ],
+  "together": "AAAA*",
+  "fixIt": [
+    {
+      "problem": "Colour looks brown",
+      "fix": "Use gel colouring for a deeper red, and natural (not Dutch-process) cocoa."
+    },
+    {
+      "problem": "Runny frosting",
+      "fix": "The cream cheese was too warm; chill the frosting 20 minutes and beat again."
+    },
+    {
+      "problem": "Domed and cracked",
+      "fix": "Fill only ⅔ full."
+    }
+  ],
+  "saleTip": "Brick cream cheese at No Frills is usually cheapest in the 250 g size; use the other half for bagels.",
+  "swap": "Milk with 1½ tsp lemon juice for buttermilk. Beet juice for food colouring (paler).",
+  "leftovers": "Keep frosted cupcakes in the fridge; let them sit out 20 minutes before eating.",
+  "doneness": "No meat; bake until a toothpick in the centre comes out clean. The egg is fully cooked by then.",
+  "source": "Based on tested red velvet methods (Southern Living, King Arthur Baking): an oil and buttermilk batter with a little cocoa, vinegar and soda, topped with cream cheese frosting.",
+  "gear": [
+    "12-cup muffin tin",
+    "Paper liners",
+    "Mixing bowls",
+    "Hand mixer",
+    "Piping bag or zip bag (optional)"
+  ],
+  "prepAhead": [
+    "Bake the day before and keep unfrosted in a sealed container.",
+    "Frosting keeps 3 days in the fridge."
+  ],
+  "reheat": "Served at room temperature; no reheating needed.",
+  "levels": {
+    "basic": {
+      "note": "Chocolate-buttermilk cupcakes without the red colouring.",
+      "drop": [
+        "0-10"
+      ],
+      "stepNotes": {
+        "2": "Basic: skip the food colouring."
+      },
+      "costDrop": [
+        "red-food-colouring"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Heart sprinkles and a fresh raspberry on each.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "heart sprinkles",
+              "pantry": {
+                "name": "Holiday sprinkles",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 12,
+              "unit": null,
+              "name": "fresh raspberries",
+              "pantry": {
+                "name": "Raspberries",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "4": "Fancy: top each with a raspberry and a few heart sprinkles."
+      },
+      "costAdd": [
+        [
+          "Sprinkles",
+          0.5,
+          "holiday-sprinkles"
+        ],
+        [
+          "Raspberries, 12",
+          2.0,
+          "raspberries"
+        ]
+      ],
+      "plating": [
+        "Pipe a tall swirl with a star tip.",
+        "Raspberry on top, hearts scattered.",
+        "On a cake stand or a pretty plate."
+      ]
+    }
+  },
+  "why": {
+    "0-9": "Vinegar and buttermilk react with the soda for a soft, velvety crumb.",
+    "0-2": "Just a little cocoa: red velvet is a hint of chocolate, not a chocolate cake."
+  },
+  "fancyNight": false,
+  "funFact": "Red velvet cake became famous at New York's Waldorf-Astoria hotel in the 1930s.",
+  "keeps": {
+    "room": "1 day unfrosted, covered",
+    "fridge": "4 days (frosted)",
+    "freezer": "2 months",
+    "note": "freeze unfrosted",
+    "thaw": "Thaw on the counter 1 hour, then frost"
+  },
+  "drink": "A glass of cold milk, or coffee.",
+  "pairs": []
+}

@@ -1,0 +1,425 @@
+{
+  "title": "Carrot Cake with Cream Cheese Frosting",
+  "subtitle": "a moist spiced carrot sheet cake under thick cream cheese frosting",
+  "image": "assets/img/carrot-cake.webp",
+  "imageAlt": "A square of moist carrot cake with thick cream cheese frosting on a cream plate, the rest of the sheet cake behind, beside a navy napkin",
+  "servings": 15,
+  "servingsNote": "a 9×13 cake, 15 pieces",
+  "prep": 30,
+  "cook": 40,
+  "cost": {
+    "total": 12.75,
+    "breakdown": [
+      [
+        "Carrots, 3 cups grated (about 6)",
+        1.2,
+        "carrots"
+      ],
+      [
+        "Cream cheese, 250 g",
+        3.49,
+        "cream-cheese-brick"
+      ],
+      [
+        "Icing sugar, 3 cups",
+        1.8,
+        "icing-sugar"
+      ],
+      [
+        "Butter, ½ cup",
+        1.6,
+        "butter"
+      ],
+      [
+        "Eggs, 4",
+        1.56,
+        "eggs"
+      ],
+      [
+        "Oil, 1 cup",
+        1.2,
+        "canola-vegetable-oil"
+      ],
+      [
+        "Flour, sugars, spices, leaveners",
+        1.9
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "dessert"
+    ],
+    "holiday": [
+      "easter"
+    ]
+  },
+  "badges": [
+    "Make-ahead"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Grate the carrots on the fine side of a box grater so they melt into the cake."
+    },
+    {
+      "icon": "thaw",
+      "text": "Soften the cream cheese and butter on the counter for the frosting."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Cake",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 260,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "baking powder",
+          "pantry": {
+            "name": "Baking powder",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "baking soda",
+          "pantry": {
+            "name": "Baking soda",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground nutmeg",
+          "pantry": {
+            "name": "Ground nutmeg",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "canola or vegetable oil",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 210,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "granulated sugar",
+          "metric": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "finely grated carrots",
+          "note": "about 6 carrots",
+          "metric": {
+            "qty": 300,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Frosting",
+      "items": [
+        {
+          "qty": 250,
+          "unit": "g",
+          "name": "brick cream cheese",
+          "note": "softened",
+          "pantry": {
+            "name": "Cream cheese (brick)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "butter",
+          "note": "softened",
+          "metric": {
+            "qty": 113,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "icing sugar",
+          "metric": {
+            "qty": 375,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Icing sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Heat",
+      "text": "Heat the oven to 175°C (350°F). Grease a 23×33 cm (9×13 in) pan and line the bottom with parchment.",
+      "uses": []
+    },
+    {
+      "title": "Dry",
+      "text": "Whisk the flour, baking powder, baking soda, cinnamon, nutmeg and salt.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Wet",
+      "text": "Whisk the eggs, oil, brown sugar, white sugar and vanilla until smooth. Stir in the dry ingredients, then fold in the carrots.",
+      "uses": [
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9",
+        "0-10",
+        "0-11"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Spread in the pan and bake 35–40 minutes, until a toothpick in the centre comes out clean. Cool completely in the pan, about 1½ hours.",
+      "timer": 38,
+      "uses": []
+    },
+    {
+      "title": "Frost",
+      "text": "Beat the cream cheese and butter until smooth, then beat in the icing sugar and vanilla until fluffy. Spread thickly over the cooled cake.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    }
+  ],
+  "together": "AABA*",
+  "fixIt": [
+    {
+      "problem": "Sunk in the middle",
+      "fix": "Underbaked; test right in the centre and give it 5 minutes more."
+    },
+    {
+      "problem": "Frosting runny",
+      "fix": "Chill it 20 minutes and beat again; use brick cream cheese, not tub."
+    },
+    {
+      "problem": "Dry cake",
+      "fix": "Pack the carrots in the cup and don't overbake."
+    }
+  ],
+  "saleTip": "The 2 lb bag of carrots at No Frills costs less than buying 6 loose.",
+  "swap": "Add ½ cup crushed pineapple, drained, for extra moistness. Half whole wheat flour.",
+  "leftovers": "Keep frosted cake covered in the fridge; serve slightly cool.",
+  "doneness": "No meat; bake until a toothpick in the centre comes out clean. The eggs are fully cooked by then.",
+  "source": "Based on tested carrot cake methods (Canadian Living, King Arthur Baking): an oil-based spiced batter with finely grated carrots, baked at 175°C, with cream cheese frosting.",
+  "gear": [
+    "23×33 cm (9×13 in) pan",
+    "Parchment",
+    "Box grater",
+    "Mixing bowls",
+    "Hand mixer"
+  ],
+  "prepAhead": [
+    "Bake the cake a day ahead and frost on the day.",
+    "The frosted cake keeps 4 days in the fridge."
+  ],
+  "reheat": "Served cool or at room temperature; no reheating needed.",
+  "levels": {
+    "basic": {
+      "note": "Cinnamon carrot cake with cream cheese frosting; no nutmeg.",
+      "drop": [
+        "0-4"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the nutmeg."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Toasted pecans pressed around the top and a little orange zest in the frosting.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 0.75,
+              "unit": "cup",
+              "name": "pecans",
+              "note": "toasted and chopped",
+              "metric": {
+                "qty": 85,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Pecan halves",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "orange",
+              "note": "zest only",
+              "pantry": {
+                "name": "Oranges",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "4": "Fancy: beat the orange zest into the frosting and scatter the toasted pecans over the top."
+      },
+      "costAdd": [
+        [
+          "Pecans, ¾ cup",
+          3.0,
+          "pecan-halves"
+        ],
+        [
+          "Orange",
+          0.99,
+          "oranges"
+        ]
+      ],
+      "plating": [
+        "Cut neat squares with a hot knife.",
+        "Pecans along the edge.",
+        "Serve with tea."
+      ]
+    }
+  },
+  "why": {
+    "0-7": "Oil keeps carrot cake moist for days, even from the fridge.",
+    "0-11": "Finely grated carrots melt into the crumb and add natural sweetness."
+  },
+  "fancyNight": false,
+  "funFact": "Carrots were used to sweeten cakes in medieval Europe when sugar was rare and expensive.",
+  "keeps": {
+    "fridge": "4 days (frosted)",
+    "freezer": "3 months",
+    "note": "freeze unfrosted, wrapped",
+    "thaw": "Thaw on the counter 2 hours, then frost"
+  },
+  "drink": "Tea or coffee with cream.",
+  "pairs": []
+}

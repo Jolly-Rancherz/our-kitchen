@@ -1,0 +1,449 @@
+{
+  "title": "Roast Turkey Thighs with Pan Gravy",
+  "subtitle": "all the Thanksgiving turkey flavour for two, with crisp skin and real drippings gravy",
+  "image": "assets/img/turkey-thighs-gravy.webp",
+  "imageAlt": "Two golden roast turkey thighs with crisp skin on a cream plate with roasted carrots and a jug of gravy beside a navy napkin",
+  "servings": 4,
+  "servingsNote": "Thanksgiving dinner for two, plus leftovers for sandwiches",
+  "prep": 20,
+  "cook": 95,
+  "cost": {
+    "total": 16.59,
+    "breakdown": [
+      [
+        "Bone-in turkey thighs, 1.4 kg",
+        12.59,
+        "turkey-thighs-bone-in"
+      ],
+      [
+        "Carrots, celery, onion",
+        1.6
+      ],
+      [
+        "Butter, 4 tbsp",
+        0.8,
+        "butter"
+      ],
+      [
+        "Chicken broth, 2 cups",
+        1.0,
+        "chicken-broth"
+      ],
+      [
+        "Flour, dried herbs, spices",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ],
+    "course": [
+      "main"
+    ],
+    "holiday": [
+      "thanksgiving"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Thanksgiving for two"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen thighs need about 24 hours in the fridge to thaw."
+    },
+    {
+      "icon": "oven",
+      "text": "Pat the skin very dry and leave it uncovered in the fridge an hour if you can: crisper skin."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Turkey",
+      "items": [
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "bone-in, skin-on turkey thighs",
+          "note": "about 1.4 kg total",
+          "pantry": {
+            "name": "Turkey thighs (bone-in)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "softened",
+          "metric": {
+            "qty": 42,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried sage",
+          "pantry": {
+            "name": "Dried sage",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Roasting bed",
+      "items": [
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "cut in wedges",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": null,
+          "name": "carrots",
+          "note": "cut in 5 cm pieces",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "celery ribs",
+          "note": "cut in 5 cm pieces",
+          "pantry": {
+            "name": "Celery",
+            "cat": "produce"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pan gravy",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 500,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Season",
+      "text": "Heat the oven to 190°C (375°F). Pat the thighs dry. Mash the soft butter with the garlic powder, onion powder, paprika, dried thyme, dried sage, salt and pepper, and rub it under and over the skin.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8"
+      ]
+    },
+    {
+      "title": "Roast",
+      "text": "Spread the onion, carrots and celery in a roasting pan or 23×33 cm (9×13 in) dish, set the thighs on top skin side up and roast 75–90 minutes, until the skin is deep golden and the thickest part reads at least 74°C (165°F); thighs are most tender at 80–82°C (175–180°F). Baste once halfway.",
+      "timer": 85,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Rest",
+      "text": "Move the turkey and vegetables to a platter and tent with foil 15 minutes.",
+      "timer": 15,
+      "uses": []
+    },
+    {
+      "title": "Gravy",
+      "text": "Pour the pan juices into a cup and spoon off all but 2 tbsp fat. Set the pan over medium, add the butter and that fat, whisk in the flour and cook 1 minute. Whisk in the broth and the juices, scraping up the browned bits, and simmer 5 minutes until thick. Season with salt.",
+      "timer": 6,
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3"
+      ]
+    },
+    {
+      "title": "Carve",
+      "text": "Slice the meat off the bone and serve with the vegetables and gravy.",
+      "uses": []
+    }
+  ],
+  "together": "AABBA",
+  "fixIt": [
+    {
+      "problem": "Skin not crisp",
+      "fix": "Turn the oven to 220°C (425°F) for the last 10 minutes."
+    },
+    {
+      "problem": "Lumpy gravy",
+      "fix": "Pour it through a sieve, or whisk hard over the heat."
+    },
+    {
+      "problem": "Gravy too thin",
+      "fix": "Simmer 3–4 minutes more; it thickens as it reduces."
+    }
+  ],
+  "saleTip": "Turkey thighs go on sale at No Frills the week before Thanksgiving; freeze a pack for later.",
+  "swap": "Bone-in chicken thighs (roast 40–45 minutes to 74°C / 165°F). Turkey drumsticks work too.",
+  "leftovers": "Turkey sandwiches with gravy, or into turkey soup.",
+  "doneness": "Poultry pieces to at least 74°C (165°F) in the thickest part, not touching bone (Health Canada).",
+  "source": "Based on tested roast turkey thigh and pan gravy methods (Canadian Living, America's Test Kitchen): butter-rubbed thighs roasted at 190°C on vegetables, drippings roux gravy.",
+  "gear": [
+    "Roasting pan or 23×33 cm (9×13 in) dish",
+    "Whisk",
+    "Fat separator or measuring cup",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Season the thighs the night before and keep uncovered in the fridge.",
+    "Make the gravy ahead and reheat until bubbling."
+  ],
+  "reheat": "Sliced turkey with a splash of gravy, covered, at 160°C (325°F) for 15–20 minutes or in the microwave, until 74°C (165°F).",
+  "thaw": {
+    "item": "turkey thighs",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Garlic and paprika thighs with pan gravy; no dried herbs or vegetable bed.",
+      "drop": [
+        "0-3",
+        "0-5",
+        "0-6",
+        "1-0",
+        "1-1",
+        "1-2"
+      ],
+      "stepNotes": {
+        "0": "Basic: skip the onion powder, dried thyme and sage.",
+        "1": "Basic: roast the thighs straight in the pan."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A maple and apple cider glaze on the skin and cranberry sauce on the side.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "maple syrup",
+              "pantry": {
+                "name": "Maple syrup",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "apple cider vinegar",
+              "pantry": {
+                "name": "Apple cider vinegar",
+                "cat": "sauces"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "cup",
+              "name": "fresh or frozen cranberries",
+              "pantry": {
+                "name": "Cranberries (fresh or frozen)",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 0.33,
+              "unit": "cup",
+              "name": "granulated sugar",
+              "pantry": {
+                "name": "Granulated sugar",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: stir the maple syrup and vinegar and brush the skin for the last 15 minutes."
+      },
+      "addSteps": [
+        {
+          "title": "Cranberry sauce",
+          "text": "Simmer the cranberries, sugar and ¼ cup water 8–10 minutes until the berries burst. Cool."
+        }
+      ],
+      "costAdd": [
+        [
+          "Maple syrup, cider vinegar",
+          0.75
+        ],
+        [
+          "Cranberries, 1 cup",
+          1.5,
+          "cranberries-fresh-or-frozen"
+        ],
+        [
+          "Sugar",
+          0.15,
+          "granulated-sugar"
+        ]
+      ],
+      "plating": [
+        "Carve thick slices and fan them on warm plates.",
+        "Gravy in a jug, cranberry in a small bowl.",
+        "Candles and the good napkins."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Thighs stay juicy where a whole bird's breast dries out, and roast in half the time.",
+    "0-1": "Butter under the skin bastes the meat and crisps the skin."
+  },
+  "fancyNight": true,
+  "funFact": "Canadian Thanksgiving became a fixed national holiday on the second Monday of October in 1957.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "slice and freeze with a little gravy"
+  },
+  "drink": "An Ontario Pinot Noir or Chardonnay, or sparkling apple cider.",
+  "pairs": [
+    [
+      "holidays-02",
+      "the sweet potato side"
+    ],
+    [
+      "holidays-03",
+      "the green bean side"
+    ]
+  ]
+}

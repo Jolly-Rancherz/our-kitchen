@@ -1,0 +1,344 @@
+{
+  "title": "Apple Crisp",
+  "subtitle": "soft cinnamon apples under a buttery oat crumble",
+  "image": "assets/img/apple-crisp.webp",
+  "imageAlt": "A baking dish of bubbling apple crisp with a golden oat topping, a scoop on a cream plate with vanilla ice cream beside a navy napkin",
+  "servings": 6,
+  "servingsNote": "an 8 in square dish, 6 servings",
+  "prep": 20,
+  "cook": 45,
+  "cost": {
+    "total": 8.07,
+    "breakdown": [
+      [
+        "Gala apples, 6 (1.2 kg)",
+        4.8,
+        "apples-gala"
+      ],
+      [
+        "Rolled oats, 1 cup",
+        0.6,
+        "rolled-oats"
+      ],
+      [
+        "Butter, ½ cup",
+        1.6,
+        "butter"
+      ],
+      [
+        "Brown sugar, ½ cup",
+        0.37,
+        "brown-sugar"
+      ],
+      [
+        "Flour, sugar, lemon, cinnamon",
+        0.7
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "dessert"
+    ],
+    "holiday": [
+      "thanksgiving"
+    ]
+  },
+  "badges": [
+    "Budget"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Slice the apples about 5 mm thick so they turn soft in time."
+    },
+    {
+      "icon": "cup",
+      "text": "Keep the butter cold for a crumbly topping."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Apples",
+      "items": [
+        {
+          "qty": 6,
+          "unit": null,
+          "name": "Gala or Honeycrisp apples",
+          "note": "peeled, cored and sliced (about 1.2 kg)",
+          "pantry": {
+            "name": "Apples (Gala)",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "granulated sugar",
+          "metric": {
+            "qty": 50,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "lemon juice",
+          "pantry": {
+            "name": "Lemon juice",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Oat crumble",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "large-flake rolled oats",
+          "metric": {
+            "qty": 90,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Rolled oats",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 65,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 110,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.125,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "cold butter",
+          "note": "cubed",
+          "metric": {
+            "qty": 113,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Apples",
+      "text": "Heat the oven to 190°C (375°F). Toss the apples with the sugar, lemon juice, cinnamon and 1 tbsp flour and spread in a 20 cm (8 in) square baking dish.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Crumble",
+      "text": "Mix the oats, flour, brown sugar, cinnamon and salt, then rub in the cold butter with your fingers until clumpy. Scatter over the apples.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Bake 40–45 minutes, until golden, bubbling at the edges and the apples are tender when poked with a knife.",
+      "timer": 42,
+      "uses": []
+    },
+    {
+      "title": "Rest",
+      "text": "Cool 10 minutes so the juices thicken.",
+      "timer": 10,
+      "uses": []
+    }
+  ],
+  "together": "AAA*",
+  "fixIt": [
+    {
+      "problem": "Apples still firm",
+      "fix": "Cover with foil and bake 10 minutes more."
+    },
+    {
+      "problem": "Topping sandy",
+      "fix": "The butter was too soft; chill the topping 10 minutes before scattering."
+    },
+    {
+      "problem": "Runny",
+      "fix": "Rest it longer; the juices thicken as it cools."
+    }
+  ],
+  "saleTip": "Ontario apples by the 3 lb bag are cheapest in the fall.",
+  "swap": "Half pears. Quick oats work but give a finer topping.",
+  "leftovers": "Warm a bowl for breakfast with yogurt.",
+  "doneness": "No meat or eggs; bake until bubbling and the apples are tender.",
+  "source": "Based on tested apple crisp methods (Canadian Living, King Arthur Baking): lemon-cinnamon apples under a rubbed oat crumble, 40–45 minutes at 190°C.",
+  "gear": [
+    "20 cm (8 in) square baking dish",
+    "Peeler",
+    "Mixing bowls"
+  ],
+  "prepAhead": [
+    "Make the crumble ahead and freeze it in a bag; scatter straight from frozen."
+  ],
+  "reheat": "Microwave a portion 45–60 seconds, or 180°C (350°F) for 10–15 minutes to re-crisp.",
+  "airFryer": "Make individual crisps in oven-safe ramekins and air-fry at 160°C (325°F) for 15–20 minutes, covering with foil if the tops brown early, until bubbling and the apples are tender.",
+  "levels": {
+    "basic": {
+      "note": "Apples and crumble; no lemon.",
+      "drop": [
+        "0-2"
+      ],
+      "stepNotes": {
+        "0": "Basic: skip the lemon juice."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "With vanilla ice cream and a quick salted maple drizzle.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 6,
+              "unit": null,
+              "name": "scoops vanilla ice cream",
+              "pantry": {
+                "name": "Vanilla ice cream",
+                "cat": "frozen"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "maple syrup",
+              "note": "warmed with a pinch of salt",
+              "pantry": {
+                "name": "Maple syrup",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: top each bowl with ice cream and a drizzle of the warm salted maple."
+      },
+      "costAdd": [
+        [
+          "Vanilla ice cream",
+          2.0,
+          "vanilla-ice-cream"
+        ],
+        [
+          "Maple syrup",
+          1.16,
+          "maple-syrup"
+        ]
+      ],
+      "plating": [
+        "Serve warm in bowls.",
+        "Ice cream melting on top.",
+        "Maple drizzle last."
+      ]
+    }
+  },
+  "why": {
+    "0-2": "Lemon keeps the apples bright and balances the sugar.",
+    "1-0": "Large-flake oats stay crunchy."
+  },
+  "fancyNight": false,
+  "funFact": "Ontario grows over 15 apple varieties commercially; Gala and Honeycrisp hold their shape when baked.",
+  "keeps": {
+    "fridge": "4 days",
+    "freezer": "3 months",
+    "note": "the topping softens a little",
+    "thaw": "Thaw overnight in the fridge, then warm in the oven"
+  },
+  "drink": "Hot apple cider or coffee.",
+  "pairs": []
+}
