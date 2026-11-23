@@ -1,0 +1,460 @@
+{
+  "title": "Herb-Butter Roast Turkey Breast",
+  "subtitle": "a juicy boneless turkey breast under garlic and dried-herb butter, with real pan gravy — Christmas dinner without the whole bird",
+  "image": "assets/img/herb-butter-roast-turkey-breast.webp",
+  "imageAlt": "Sliced herb-butter roast turkey breast on a white platter with a small jug of pan gravy",
+  "servings": 6,
+  "servingsNote": "Christmas dinner for two, plus 4 portions for turkey sandwiches",
+  "prep": 15,
+  "cook": 100,
+  "cost": {
+    "total": 25,
+    "breakdown": [
+      [
+        "Boneless turkey breast roast, 1.4 kg",
+        20.0,
+        "turkey-breast-roast"
+      ],
+      [
+        "Chicken broth, 625 ml",
+        1.75,
+        "chicken-broth"
+      ],
+      [
+        "Butter, 6 tbsp",
+        1.2,
+        "butter"
+      ],
+      [
+        "Onion, garlic",
+        0.8
+      ],
+      [
+        "Dried thyme, sage, rosemary, paprika",
+        0.9
+      ],
+      [
+        "Flour, Worcestershire",
+        0.3
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [
+      "date-night",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ],
+    "course": [
+      "main"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Christmas dinner"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen roast? Thaw it in its wrapper in the fridge, about 10 hours per kg — start the day before."
+    },
+    {
+      "icon": "oven",
+      "text": "Oven at 190°C (375°F), rack in the lower middle so the top browns without scorching."
+    },
+    {
+      "icon": "knife",
+      "text": "Have an instant-read thermometer ready — it comes out at 74°C (165°F), not by the clock."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Turkey",
+      "items": [
+        {
+          "qty": 1.4,
+          "unit": "kg",
+          "name": "boneless turkey breast roast",
+          "note": "thawed, netting left on",
+          "pantry": {
+            "name": "Turkey breast roast",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "cut in thick rings",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "chicken broth",
+          "note": "for the pan",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Herb butter",
+      "items": [
+        {
+          "qty": 4,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "softened",
+          "metric": {
+            "qty": 56,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried sage",
+          "note": "rubbed",
+          "pantry": {
+            "name": "Dried sage",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried rosemary",
+          "note": "crumbled fine",
+          "pantry": {
+            "name": "Dried rosemary",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pan gravy",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "chicken broth",
+          "note": "plus the pan juices",
+          "metric": {
+            "qty": 375,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Heat the oven",
+      "text": "Heat the oven to 190°C (375°F). Unwrap the roast (set aside any gravy packet for another day), leave the netting on and pat it very dry with paper towel.",
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Make the herb butter",
+      "text": "Mash the soft butter with the garlic, thyme, sage, rosemary and paprika until evenly mixed.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5"
+      ]
+    },
+    {
+      "title": "Season",
+      "text": "Season the roast all over with the salt and pepper, then spread the herb butter over the top and sides. Lay the onion rings in a small roasting pan or 9×13 dish, set the roast on top and pour the broth around it.",
+      "uses": [
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Roast",
+      "text": "Roast uncovered, basting with the pan juices every 30 minutes, until a thermometer in the thickest part reads 74°C (165°F): about 1¼–1½ hours for a 1.4 kg roast (roughly 55 minutes per kg). If the top browns too fast, lay a loose sheet of foil over it.",
+      "timer": 80,
+      "uses": []
+    },
+    {
+      "title": "Rest",
+      "text": "Move the roast to a board, tent loosely with foil and rest 15 minutes so the juices settle back into the meat.",
+      "timer": 15,
+      "uses": []
+    },
+    {
+      "title": "Make the gravy",
+      "text": "Pour the pan juices through a sieve into a measuring cup, pressing on the onions, and spoon off the fat. Melt the butter in a saucepan over medium, whisk in the flour and cook 2 minutes until light golden. Whisk in the pan juices, broth and Worcestershire a little at a time until smooth, then simmer 4–5 minutes until it coats a spoon. Season with salt and pepper.",
+      "timer": 6,
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3"
+      ]
+    },
+    {
+      "title": "Carve",
+      "text": "Snip off the netting and slice the turkey about 1 cm thick. Serve with the hot gravy.",
+      "uses": []
+    }
+  ],
+  "together": "ABAAAB*",
+  "fixIt": [
+    {
+      "problem": "Browning fast, centre still under 74°C",
+      "fix": "Lay foil loosely over the top and keep roasting in 10-minute stretches. Lower the rack one notch next time."
+    },
+    {
+      "problem": "Turkey is dry",
+      "fix": "It went well past 74°C. Slice thinner, spoon warm gravy over, and pull it right at 74°C next time — it climbs a few degrees while resting."
+    },
+    {
+      "problem": "Lumpy gravy",
+      "fix": "Whisk hard for 30 seconds, or pour it through the sieve. Adding the liquid gradually prevents it."
+    },
+    {
+      "problem": "Gravy too thin",
+      "fix": "Simmer 3–4 minutes more, or whisk in 1 tsp cornstarch mixed with 1 tbsp cold water and bubble 1 minute."
+    }
+  ],
+  "saleTip": "Frozen boneless turkey breast roasts go on sale at No Frills in December, often $15–18. Buy two and keep one in the freezer for January.",
+  "swap": "Bone-in turkey breast (about 2 kg): same herb butter, roast at 180°C (350°F) for 1½–2 hours to 74°C (165°F) in the thickest part, not touching the bone.",
+  "leftovers": "Turkey sandwiches with cranberry sauce, hot turkey and gravy over toast, or chopped into a pot pie.",
+  "doneness": "74°C (165°F) in the thickest part of the breast (Health Canada, poultry pieces). It rises a few degrees while it rests. Reheat leftovers to 74°C (165°F).",
+  "source": "Based on tested boneless turkey breast roast methods (Turkey Farmers of Canada, Butterball roasting guides): roasted at 190°C (375°F) to 74°C (165°F) and rested, with a classic roux pan gravy.",
+  "gear": [
+    "Small roasting pan or 9×13 dish",
+    "Instant-read thermometer",
+    "Foil",
+    "Fine sieve",
+    "Saucepan & whisk",
+    "Carving knife & board"
+  ],
+  "prepAhead": [
+    "Make the herb butter up to 3 days ahead and keep it in the fridge; let it soften before spreading.",
+    "Move the frozen roast to the fridge 1–2 days before Christmas dinner."
+  ],
+  "reheat": "Lay slices in a dish with a few spoonfuls of gravy or broth, cover with foil and warm at 160°C (325°F) about 20 minutes, until 74°C (165°F). Microwave single plates covered, 1–2 minutes.",
+  "thaw": {
+    "item": "turkey breast roast",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Butter, thyme, salt and pepper, and a quick gravy from the pan juices.",
+      "drop": [
+        "1-1",
+        "1-3",
+        "1-4",
+        "2-3"
+      ],
+      "stepNotes": {
+        "1": "Basic: mash the butter with the thyme and paprika only.",
+        "5": "Basic: skip the Worcestershire."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A bacon blanket keeps the breast extra juicy, and a splash of cream makes the gravy silky.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 6,
+              "unit": "strip",
+              "name": "bacon",
+              "note": "regular cut",
+              "pantry": {
+                "name": "Bacon",
+                "cat": "meat"
+              }
+            },
+            {
+              "qty": 3,
+              "unit": "tbsp",
+              "name": "35% whipping cream",
+              "note": "for the gravy",
+              "pantry": {
+                "name": "35% whipping cream",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "2": "Fancy: after the herb butter, lay the bacon strips side by side over the top, tucking the ends under.",
+        "3": "Fancy: if the bacon is crisp before the turkey reaches 74°C, cover it loosely with foil.",
+        "5": "Fancy: whisk in the cream for the last minute of simmering."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Carve through the bacon so every slice keeps a crisp strip. Pour the gravy into a warmed jug."
+        }
+      ],
+      "costAdd": [
+        [
+          "Bacon, 6 strips",
+          3.5,
+          "bacon"
+        ],
+        [
+          "35% cream, 3 tbsp",
+          0.45,
+          "35-whipping-cream"
+        ]
+      ],
+      "plating": [
+        "Fan the slices down a warm platter, bacon edge up.",
+        "Gravy in a jug on the side, not poured over.",
+        "A spoon of cranberry sauce at the end of the platter."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "A dry surface browns; a wet one steams. Leaving the netting on keeps the roast round so it cooks evenly.",
+    "0-3": "The onion lifts the roast off the pan and flavours the drippings that become the gravy.",
+    "0-4": "Broth in the pan stops the drippings from burning in a hot oven.",
+    "2-1": "Cooking the flour in butter first takes away the raw taste and stops lumps."
+  },
+  "fancyNight": true,
+  "funFact": "Turkey breast is very lean, so it's done the moment it reaches 74°C. Every minute past that dries it out, which is why the thermometer matters more than the clock.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "2–3 months",
+    "note": "slice it and freeze with a little gravy so it stays moist"
+  },
+  "pairs": [
+    [
+      "christmas-03",
+      "stuffing baked alongside"
+    ],
+    [
+      "christmas-06",
+      "the classic partner"
+    ],
+    [
+      "christmas-04",
+      "cheesy and rich beside lean turkey"
+    ],
+    [
+      "christmas-05",
+      "sweet roast veg, same oven"
+    ]
+  ]
+}

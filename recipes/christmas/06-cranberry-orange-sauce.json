@@ -1,0 +1,288 @@
+{
+  "title": "Cranberry Orange Sauce",
+  "subtitle": "fresh cranberries simmered with orange until they burst, then left to set: ten minutes, and miles better than the can",
+  "image": "assets/img/cranberry-orange-sauce.webp",
+  "imageAlt": "Glossy whole-berry cranberry sauce with orange zest in a white bowl with a spoon",
+  "servings": 8,
+  "servingsNote": "about 2 cups: for turkey, sandwiches and morning toast",
+  "prep": 5,
+  "cook": 15,
+  "cost": {
+    "total": 5,
+    "breakdown": [
+      [
+        "Cranberries, 340 g bag",
+        3.49,
+        "cranberries-fresh-or-frozen"
+      ],
+      [
+        "Sugar, ¾ cup",
+        0.3,
+        "granulated-sugar"
+      ],
+      [
+        "Orange juice, ½ cup",
+        0.33,
+        "orange-juice"
+      ],
+      [
+        "Orange",
+        0.6,
+        "oranges"
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "side"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Make-ahead"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Use a medium saucepan; the berries foam up as they pop."
+    },
+    {
+      "icon": "thaw",
+      "text": "Frozen cranberries go straight in, no thawing. Add 1–2 minutes to the simmer."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Sauce",
+      "items": [
+        {
+          "qty": 340,
+          "unit": "g",
+          "name": "cranberries",
+          "note": "fresh or frozen, 1 bag",
+          "pantry": {
+            "name": "Cranberries (fresh or frozen)",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "granulated sugar",
+          "metric": {
+            "qty": 150,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "orange juice",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Orange juice",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "orange",
+          "note": "finely grated zest only",
+          "pantry": {
+            "name": "Oranges",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.125,
+          "unit": "tsp",
+          "name": "salt",
+          "note": "a pinch",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Dissolve the sugar",
+      "text": "Bring the sugar, orange juice and water to a boil in a medium saucepan over medium-high, stirring until the sugar dissolves.",
+      "timer": 3,
+      "uses": [
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Simmer",
+      "text": "Add the cranberries and salt. Simmer 8–10 minutes, stirring now and then, until most of the berries have burst and the sauce starts to thicken.",
+      "timer": 9,
+      "uses": [
+        "0-0",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Finish and cool",
+      "text": "Off the heat, stir in the orange zest. Cool to room temperature, about 1 hour (it sets as it cools), then refrigerate.",
+      "uses": [
+        "0-4"
+      ]
+    }
+  ],
+  "together": "AA*",
+  "fixIt": [
+    {
+      "problem": "Too tart",
+      "fix": "Stir in sugar 1 tbsp at a time while it's still warm."
+    },
+    {
+      "problem": "Too runny",
+      "fix": "Give it time: it thickens a lot as it cools. If it's still loose once cold, simmer 3–4 minutes more."
+    },
+    {
+      "problem": "Too thick or jammy",
+      "fix": "Stir in a spoonful or two of water or orange juice."
+    }
+  ],
+  "saleTip": "Fresh cranberries are about $3–4 a bag at No Frills in November and December. Buy an extra bag for the freezer; they keep a year.",
+  "swap": "All water instead of orange juice gives the pure, tart classic. A cinnamon pinch or a spoon of maple syrup are both nice additions.",
+  "leftovers": "Swirl into yogurt or oatmeal, spread in a turkey sandwich, or spoon over brie.",
+  "doneness": "Done when most berries have popped and the sauce coats a spoon; it thickens a lot as it cools.",
+  "source": "Based on the classic cranberry sauce ratio printed on the bag (340 g berries, sugar, 1 cup liquid), with orange juice for half the water and a little less sugar.",
+  "gear": [
+    "Medium saucepan",
+    "Wooden spoon",
+    "Microplane or fine grater",
+    "Jar or container"
+  ],
+  "prepAhead": [
+    "Make it up to a week before Christmas and keep it in the fridge. It's best made at least a day ahead."
+  ],
+  "reheat": "Serve cold or at room temperature. To warm it, heat gently in a small pot 2–3 minutes with a splash of water.",
+  "levels": {
+    "basic": {
+      "note": "The straight classic: berries, sugar and water.",
+      "drop": [
+        "0-4"
+      ],
+      "swap": {
+        "0-2": {
+          "name": "water",
+          "pantry": null
+        }
+      },
+      "stepNotes": {
+        "0": "Basic: use water in place of the orange juice.",
+        "2": "Basic: no zest; just cool and chill."
+      },
+      "costDrop": [
+        "orange juice",
+        "orange"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Maple and a pinch of cinnamon.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "maple syrup",
+              "note": "pure",
+              "pantry": {
+                "name": "Maple syrup",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "tsp",
+              "name": "ground cinnamon",
+              "pantry": {
+                "name": "Ground cinnamon",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "2": "Fancy: stir in the maple syrup and cinnamon with the zest."
+      },
+      "costAdd": [
+        [
+          "Maple syrup, 2 tbsp",
+          0.55,
+          "maple-syrup"
+        ],
+        [
+          "Ground cinnamon",
+          0.15,
+          "ground-cinnamon"
+        ]
+      ],
+      "plating": [
+        "Serve in a small glass bowl so the colour shows.",
+        "A few strands of zest on top.",
+        "Room temperature, not fridge-cold."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Cranberries are full of natural pectin, so the sauce gels on its own as it cools.",
+    "0-5": "A pinch of salt makes the fruit taste brighter, not salty."
+  },
+  "fancyNight": false,
+  "funFact": "Ripe cranberries bounce. Growers used to sort them by bouncing them down wooden steps; firm ones made it over the barrier and soft ones didn't.",
+  "keeps": {
+    "fridge": "10–14 days",
+    "freezer": "1–2 months",
+    "note": "freeze in a jar with room at the top",
+    "thaw": "Overnight in the fridge, then stir; serve cold or warm it gently"
+  },
+  "pairs": [
+    [
+      "christmas-01",
+      "the classic partner"
+    ],
+    [
+      "christmas-03",
+      "a spoon on top of the stuffing"
+    ]
+  ]
+}
