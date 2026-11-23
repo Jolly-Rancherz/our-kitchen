@@ -1,0 +1,354 @@
+{
+  "title": "Honey-Orange Glazed Ham",
+  "subtitle": "a fully cooked ham warmed gently, then lacquered with brown sugar, honey and orange: easy, glossy, and leftovers all week",
+  "image": "assets/img/honey-orange-glazed-ham.webp",
+  "imageAlt": "Diamond-scored glazed ham with thick slices on a white platter in a pool of orange glaze",
+  "servings": 8,
+  "servingsNote": "Christmas dinner for two, plus sandwiches and breakfasts for days",
+  "prep": 15,
+  "cook": 80,
+  "cost": {
+    "total": 20,
+    "breakdown": [
+      [
+        "Fully cooked boneless ham, 1.5 kg",
+        17.0,
+        "ham-fully-cooked"
+      ],
+      [
+        "Honey, ¼ cup",
+        1.2,
+        "honey"
+      ],
+      [
+        "Brown sugar, ½ cup",
+        0.35,
+        "brown-sugar"
+      ],
+      [
+        "Orange & orange juice",
+        0.9,
+        "oranges"
+      ],
+      [
+        "Butter, 2 tbsp",
+        0.4,
+        "butter"
+      ],
+      [
+        "Ground cloves",
+        0.2,
+        "ground-cloves"
+      ],
+      [
+        "Ground cinnamon",
+        0.15,
+        "ground-cinnamon"
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ],
+    "course": [
+      "main"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Christmas dinner",
+    "Feeds a crowd"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Buy a fully cooked ham — the label says “fully cooked” or “ready to eat”. You're only warming it and glazing."
+    },
+    {
+      "icon": "oven",
+      "text": "Oven at 160°C (325°F) to warm it, then up to 200°C (400°F) to set the glaze."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Ham",
+      "items": [
+        {
+          "qty": 1.5,
+          "unit": "kg",
+          "name": "fully cooked boneless ham",
+          "note": "the label says fully cooked",
+          "pantry": {
+            "name": "Ham (fully cooked)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Glaze",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "honey",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Honey",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "orange juice",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Orange juice",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "finely grated orange zest",
+          "note": "from 1 orange",
+          "pantry": {
+            "name": "Oranges",
+            "cat": "produce"
+          },
+          "asWritten": true
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "ground cloves",
+          "pantry": {
+            "name": "Ground cloves",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Score the ham",
+      "text": "Heat the oven to 160°C (325°F). Pat the ham dry and score the top in a 2–3 cm diamond pattern about 5 mm deep. Set it flat side down in a roasting pan or 9×13 dish, pour the water around it and cover tightly with foil.",
+      "uses": [
+        "0-0",
+        "0-1"
+      ]
+    },
+    {
+      "title": "Warm it through",
+      "text": "Bake covered 45 minutes (about 30 minutes per kg).",
+      "timer": 45,
+      "uses": []
+    },
+    {
+      "title": "Make the glaze",
+      "text": "Meanwhile, simmer the brown sugar, honey, orange juice, orange zest, butter, cloves and cinnamon in a small saucepan over medium, stirring, 3–4 minutes until syrupy. It thickens more as it cools.",
+      "timer": 4,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6"
+      ]
+    },
+    {
+      "title": "Glaze",
+      "text": "Raise the oven to 200°C (400°F). Uncover the ham and brush with half the glaze. Bake 10 minutes, brush with the rest and bake 10–15 minutes more, until the glaze bubbles and caramelizes and the centre reads 60°C (140°F). Watch the last few minutes: sugar glazes catch fast.",
+      "timer": 20,
+      "uses": []
+    },
+    {
+      "title": "Rest and slice",
+      "text": "Rest 10 minutes, then slice thinly and spoon the pan juices over.",
+      "timer": 10,
+      "uses": []
+    }
+  ],
+  "together": "AABA*",
+  "fixIt": [
+    {
+      "problem": "Glaze is burning at the edges",
+      "fix": "Lay foil loosely over the darkest spots and finish on a lower rack."
+    },
+    {
+      "problem": "Glaze is too runny to stick",
+      "fix": "Simmer it 1–2 minutes longer; it should coat a spoon. It also thickens as it cools."
+    },
+    {
+      "problem": "Ham is dry on the outside",
+      "fix": "Keep it tightly covered with the water in the pan until the glazing stage, and don't heat it past about 60°C (140°F)."
+    },
+    {
+      "problem": "Too salty",
+      "fix": "Ham varies by brand. Slice thinner and serve with the sweeter sides: carrots and parsnips, cranberry sauce."
+    }
+  ],
+  "saleTip": "Hams are cheapest at No Frills in the weeks before Christmas and Easter. Check the flyer and buy ahead; they keep for weeks sealed in the fridge.",
+  "swap": "Bone-in spiral ham (2.5–3 kg): bake covered at 160°C (325°F) about 12–15 minutes per 500 g to 60°C (140°F), then glaze the same way, brushing it between the slices.",
+  "leftovers": "Ham sandwiches, ham and cheese omelettes, scalloped potatoes with ham, or ham and pea soup with the end bits.",
+  "doneness": "Fully cooked ham only needs heating through: 60°C (140°F) in the centre (USDA guidance for factory-packaged fully cooked ham). Reheat leftovers to 74°C (165°F).",
+  "source": "Based on tested glazed ham methods (USDA ham guide, Canadian Living): fully cooked ham warmed covered at 160°C (325°F), then glazed uncovered in a hotter oven.",
+  "gear": [
+    "Roasting pan or 9×13 dish",
+    "Foil",
+    "Small saucepan",
+    "Pastry brush",
+    "Instant-read thermometer",
+    "Carving knife & board"
+  ],
+  "prepAhead": [
+    "Make the glaze up to 3 days ahead and keep it in the fridge; warm it to brush.",
+    "Score the ham the morning of and keep it covered in the fridge."
+  ],
+  "reheat": "Cover slices with foil and a splash of water and warm at 160°C (325°F) for 10–15 minutes, or fry slices in a dry pan 1–2 minutes a side, until 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "A simple brown sugar, honey and orange juice glaze — no zest or spices.",
+      "drop": [
+        "1-3",
+        "1-5",
+        "1-6"
+      ],
+      "stepNotes": {
+        "2": "Basic: just brown sugar, honey, orange juice and butter."
+      },
+      "costDrop": [
+        "ground-cloves",
+        "ground-cinnamon"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Retro and glossy: pineapple rings set into the glaze, and the pan juices boiled into a sauce.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "can",
+              "name": "pineapple rings",
+              "note": "398 ml, drained, juice saved",
+              "pantry": {
+                "name": "Pineapple rings (canned)",
+                "cat": "baking"
+              },
+              "asWritten": true
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: after the first brush of glaze, pin the pineapple rings over the top with toothpicks, then brush the rest of the glaze over them."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy sauce",
+          "text": "While the ham rests, pour the pan juices into a small saucepan with 3 tbsp of the saved pineapple juice and boil 3–4 minutes until syrupy. Spoon over the slices."
+        }
+      ],
+      "costAdd": [
+        [
+          "Pineapple rings, 1 can",
+          1.99,
+          "pineapple-rings-canned"
+        ]
+      ],
+      "plating": [
+        "Slice only the front third; leave the glazed ring-topped end whole for the table.",
+        "Overlap the slices down the platter.",
+        "Sauce in a small jug, toothpicks out before serving."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "Water under the foil keeps the ham moist while it warms.",
+    "1-0": "Brown sugar caramelizes into the shiny crust.",
+    "1-5": "A little ground clove is the classic ham spice: warm, not hot."
+  },
+  "fancyNight": true,
+  "funFact": "Most hams at the store are already fully cooked: cured, smoked and cooked at the plant. Baking one at home is really just warming it and making the glaze.",
+  "keeps": {
+    "fridge": "3–5 days",
+    "freezer": "1–2 months",
+    "note": "slice first; frozen ham comes out a little softer"
+  },
+  "pairs": [
+    [
+      "christmas-04",
+      "the classic ham-dinner partner"
+    ],
+    [
+      "christmas-05",
+      "maple and orange belong together"
+    ]
+  ]
+}

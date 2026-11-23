@@ -1004,6 +1004,11 @@ const XMAS = 'christmas';
 const xmasSeason = (d = new Date()) => [10, 11, 0, 1].includes(d.getMonth());
 const xmasRecipes = () => (typeof INDEX !== 'undefined' && INDEX && INDEX.recipes ? visibleRecipes().filter((r) => r.category === XMAS) : []);
 const xmasOn = () => xmasSeason() && xmasRecipes().length > 0;
+// update 13.1: Christmas recipes stay in the book and in search all year, but only Christmas mains join the dinner
+// pickers (Tonight's pick, Spin the wheel, Surprise me, More ideas, Mystery meal and Home's nudges), and only Nov–Feb.
+// Sides and desserts never pose as tonight's dinner.
+const courseOf = (r) => ((r && r.tags) || {}).course || [];
+const dinnerPool = (list) => list.filter((r) => r.category !== XMAS || (xmasSeason() && courseOf(r).includes('main')));
 function syncXmasTab() {
   const bar = $('#tabbar'); if (!bar) return;
   let a = $('a[data-tab="christmas"]', bar); const on = xmasOn();
@@ -1850,7 +1855,7 @@ function whoseTurn() {
 function pickCards(list) { return list.length ? `<div class="rlist">${list.map(rcard).join('')}</div>` : '<div class="empty">Nothing to suggest yet.</div>'; }
 const withTag = (html, tag) => html.replace(/<\/a>$/, `<span class="usetag">${esc(tag)}</span></a>`);
 function openIdeas(tab) {
-  const recipes = visibleRecipes();
+  const recipes = dinnerPool(visibleRecipes());
   let cur = tab || 'surprise'; let mood = ui.mood || 'cozy';
   const lim = ui.surprise || (ui.surprise = { time: 0, price: '', mood: '' }); let pickId = null;
   const surpriseHTML = () => {
@@ -2270,11 +2275,14 @@ function laneOwner(r, i) { const l = (togetherLanes(r) || '')[i]; return l === '
 function laneWho(r, i, who) { const o = laneOwner(r, i); return o === 'both' ? 'both' : o === who ? 'mine' : 'other'; }
 // update 12.6: how long a dish keeps (Health Canada: fridge within 2 hours, leftovers 2–4 days, reheat to 74°C;
 // freezer times from the USDA FoodKeeper ranges), and which of our other recipes go great with it
+// update 13.1: cookies and bars can keep on the counter (k.room) and may skip the fridge line; k.thaw overrides the
+// reheat-to-74°C thaw line for things served cold (cranberry sauce, Nanaimo bars)
 function keepsHTML(k) {
   return `<details class="keeps"><summary>How long it keeps</summary><ul class="kp">
-    <li><b>Fridge</b><span>${esc(k.fridge)} in a sealed container — into the fridge within 2 hours of cooking</span></li>
+    ${k.room ? `<li><b>Counter</b><span>${esc(k.room)}</span></li>` : ''}
+    ${k.fridge ? `<li><b>Fridge</b><span>${esc(k.fridge)} in a sealed container — into the fridge within 2 hours of ${k.room ? 'baking' : 'cooking'}</span></li>` : ''}
     <li><b>Freezer</b><span>${k.freezer ? `${esc(k.freezer)} — ${esc(k.note)}` : `Not recommended — ${esc(k.note)}`}</span></li>
-    ${k.freezer ? '<li><b>Thaw</b><span>Overnight in the fridge, then reheat until steaming hot, 74°C (165°F) in the centre</span></li>' : ''}</ul>
+    ${k.freezer ? `<li><b>Thaw</b><span>${esc(k.thaw || 'Overnight in the fridge, then reheat until steaming hot, 74°C (165°F) in the centre')}</span></li>` : ''}</ul>
     <p class="small muted">Times from Health Canada and the USDA FoodKeeper.</p></details>`;
 }
 function pairsHTML(r) {
@@ -2894,7 +2902,7 @@ function spinPool() {
   Object.entries(state.ratings).forEach(([id, v]) => { if (v && v <= 2) no.add(id); });
   realDinners().forEach((c) => { const meh = Object.values(c.reactions || {}).filter((v) => v === 'meh').length; const h = Object.values(c.hearts || {}).filter(Boolean); if (meh >= 2 || (h.length && h.reduce((a, x) => a + x, 0) / h.length <= 2)) no.add(c.recipeId); });
   const filt = !!(ui.q || filterCount());
-  const all = visibleRecipes().filter((r) => !filt || matchesFilters(r));
+  const all = dinnerPool(visibleRecipes()).filter((r) => !filt || matchesFilters(r));
   const pool = all.filter((r) => !no.has(r.id));
   return { pool: pool.length ? pool : all, skipped: all.length - pool.length, filt };
 }
@@ -3010,8 +3018,8 @@ function swapHomeBody(html) {
 function viewHome(partial) {
   partial = partial === true && !!$('#homeBody') && !!$('#q');
   if (!partial) { setTop({ title: 'OUR KITCHEN', left: `<a class="iconbtn bookbtn" href="#/book/title" aria-label="Open our cookbook">${svg('book')}</a>` }); HOME_CARDS.clear(); syncPlanToTonight(); }
-  const recipes = visibleRecipes();
-  ui.pick = ui.pick && recipes.find((r) => r.id === ui.pick) ? ui.pick : seasonalPick(recipes);
+  const recipes = visibleRecipes(); const dinners = dinnerPool(recipes);
+  ui.pick = ui.pick && dinners.find((r) => r.id === ui.pick) ? ui.pick : seasonalPick(dinners);
   const searching = ui.q || filterCount();
   let body = '';
   if (searching) {
@@ -3028,18 +3036,18 @@ function viewHome(partial) {
     const pk = recipes.find((r) => r.id === ui.pick);
     const plan = tonightPlan();
     const lefts = Object.values(state.leftovers).sort((a, b) => (a.date < b.date ? -1 : 1));
-    const nudge = cookAgainNudge(recipes);
+    const nudge = cookAgainNudge(dinners);
     const lastMonth = lastMonthKey();
     const rc = new Date().getDate() <= 10 && !state.recapSeen[lastMonth] ? monthRecap(lastMonth) : null;
-    const uu = useItUp(recipes);
+    const uu = useItUp(dinners);
     const turn = whoseTurn();
     const rcook = recentlyCooked(recipes);
-    const row = recipeOfWeek(recipes);
+    const row = recipeOfWeek(dinners);
     const fb = !state.flashSeen[todayISO()] ? flashback() : null;
     const an = annivSoon(); const showAn = an && !state.annivSeen[an.key];
     const ny = yearInReviewDue();
-    const wn = !plan ? weatherNudge(recipes) : null;
-    const fcl = isFriday() ? fridgeClear(recipes) : null;
+    const wn = !plan ? weatherNudge(dinners) : null;
+    const fcl = isFriday() ? fridgeClear(dinners) : null;
     const tmr = plannedFor(isoPlus(1)); const thaw = tmr ? thawLine(summary(tmr)) : '';
     body = `
       ${thanksCard()}${whatsNewCard()}${stripMoveCard()}${backupCard()}
@@ -3112,7 +3120,7 @@ function viewHome(partial) {
   // once horizontal it owns the gesture (preventDefault), so the page can't scroll during a sideways swipe.
   const pc = $('.sec.pick:not(.tonight) .pick-card');
   if (pc && $('#pickNo')) {
-    const others = () => recipes.filter((r) => r.id !== ui.pick);
+    const others = () => dinners.filter((r) => r.id !== ui.pick);
     const choose = () => { const o = others(); return o.length ? o[Math.floor(Math.random() * o.length)] : null; };
     let pre = null; // the next photo as a ready <img> element, swapped in whole (the visible one never shows blank)
     const preload = (r) => { pre = null; if (!r || !r.image) return Promise.resolve(); const im = new Image(); im.alt = r.title; im.className = 'ld'; im.src = r.image; pre = im;
@@ -4497,7 +4505,7 @@ function openMystery() {
   const m = state.mystery && !state.mystery.revealed && summary(state.mystery.recipeId) ? state.mystery : null;
   const me = state.profile.me || 'Corey';
   const pickStep = (b) => {
-    const list = dayShuffle(visibleRecipes(), 7);
+    const list = dayShuffle(dinnerPool(visibleRecipes()), 7);
     b.innerHTML = `<h2>Mystery meal</h2><p class="sub">${esc(me)}, pick tonight's dinner in secret. ${esc(other(me))} will only see the ingredients until the reveal.</p>
       <div class="mylist">${list.map((r) => `<button data-my="${r.id}"><b>${esc(r.title)}</b><small>${r.price} · ${r.total} min</small></button>`).join('')}</div>
       <div class="foot"><button class="btn" data-close>Cancel</button></div>`;
@@ -5177,7 +5185,8 @@ async function viewBook(part = 'title') {
     const s = treat ? null : summary(m[2]); ch = treat ? ['acura', cats.length + 1] : [s.category, cats.findIndex((c) => c.slug === s.category) + 1];
     const n = pg(location.hash); const cap = n % 3 === 0 ? (treat ? 'Acura approved ♥' : 'from our table ♥') : '';
     const label = treat ? 'Acura’s Kitchen' : esc(catOf(s.category).name) + ' · ' + pad2(s.num);
-    const line = (it) => `<li><span class="q">${esc(fmtQty(it.qty, it.unit))}</span><span>${esc(it.name)}${it.note ? `<i>, ${esc(it.note)}</i>` : ''}</span></li>`;
+    // update 13.1: the book reads amounts like the recipe page (eggs stay whole, “1 large egg” not “1 large eggs”)
+    const line = (it) => { const a = fmtQty(it.qty, it.unit, it.name); return `<li><span class="q">${esc(a)}</span><span>${esc(nameFor(it.name, a))}${it.note ? `<i>, ${esc(it.note)}</i>` : ''}</span></li>`; };
     html = `<article class="bk-rec"><div class="ch-k">${label}</div><h1 class="bk-rt">${esc(r.title)}</h1>${r.subtitle ? `<p class="bk-drop bk-sub">${esc(r.subtitle)}</p>` : ''}
       ${r.image ? `<figure class="bk-plate ${n % 2 ? 'tl' : 'tr'}">${img(r.image, r.imageAlt || r.title)}${cap ? `<figcaption>${cap}</figcaption>` : ''}</figure>` : ''}
       <p class="bk-meta">${treat ? esc(r.makes || '') : `Serves ${r.servings}`} · Prep ${r.prep} min · Cook ${r.cook} min</p>${bookMargin(m[2])}${ORN}
@@ -5449,6 +5458,30 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+{
+ "name": "Update 13.1",
+ "id": "u131-2026-11",
+ "date": "2026-11-23",
+ "intro": "Christmas is here: the first 10 Christmas recipes, and the Christmas tab is on.",
+ "notes": [
+  [
+   "Christmas foods",
+   "Herb-butter roast turkey breast with pan gravy, honey-orange glazed ham, classic bread stuffing, cheesy scalloped potatoes, maple-roasted carrots and parsnips, and cranberry orange sauce"
+  ],
+  [
+   "Christmas desserts",
+   "Gingerbread cookies, classic butter shortbread, Nanaimo bars and butter tarts"
+  ],
+  [
+   "Every one, the full treatment",
+   "Basic, Classic and Fancy, cook together, how long it keeps, goes great with, No Frills prices and aisles, and a Christmas chapter in our cookbook"
+  ],
+  [
+   "Christmas stays at Christmas",
+   "The Christmas tab shows November to February. Christmas dishes stay out of Tonight's pick, Spin the wheel and Surprise me the rest of the year, but they're always in search and in the book. Sides and desserts never show up as tonight's dinner"
+  ]
+ ]
+},
 {
  "name": "Update 12.7",
  "id": "u127-2026-11",
@@ -6289,6 +6322,6 @@ async function boot() {
   const wait = updatedNow ? 0 : Math.max(0, 800 - (performance.now() - t0));
   setTimeout(() => { $('#splash').classList.add('out'); setTimeout(() => $('#splash').remove(), 700); }, wait);
 }
-window.OK_DEBUG = { get state() { return state; }, set state(v) { state = v; save(); }, stripGuide: () => openStripMove(), snapshot: () => takeSnapshot('auto', true) };
+window.OK_DEBUG = { get state() { return state; }, set state(v) { state = v; save(); }, stripGuide: () => openStripMove(), snapshot: () => takeSnapshot('auto', true), pools: () => ({ spin: spinPool().pool.map((r) => r.id), dinners: dinnerPool(visibleRecipes()).map((r) => r.id), pick: ui.pick }) };
 boot();
 })();

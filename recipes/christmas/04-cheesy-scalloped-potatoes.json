@@ -1,0 +1,369 @@
+{
+  "title": "Cheesy Scalloped Potatoes",
+  "subtitle": "thin Yukon Golds layered with a creamy cheddar sauce and baked until bubbling and golden",
+  "image": "assets/img/cheesy-scalloped-potatoes.webp",
+  "imageAlt": "Cheesy scalloped potatoes with a browned top in a white baking dish, one portion lifted out to show the layers",
+  "servings": 6,
+  "servingsNote": "Christmas side for two, plus 4 more portions",
+  "prep": 25,
+  "cook": 90,
+  "cost": {
+    "total": 10,
+    "breakdown": [
+      [
+        "Yukon Gold potatoes, 1.4 kg",
+        3.4,
+        "yukon-gold-potatoes"
+      ],
+      [
+        "Cheddar, 200 g",
+        3.5,
+        "cheddar-shredded"
+      ],
+      [
+        "Milk, 625 ml",
+        1.8,
+        "milk"
+      ],
+      [
+        "Butter, 3 tbsp",
+        0.6,
+        "butter"
+      ],
+      [
+        "Flour, garlic, dried thyme",
+        0.5
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ],
+    "course": [
+      "side"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Extra cheesy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cheese",
+      "text": "Grate the cheddar from a block if you can. Pre-shredded works, but melts a little grainier."
+    },
+    {
+      "icon": "knife",
+      "text": "Even 3 mm slices cook evenly; a mandoline makes it quick (use the guard)."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Potatoes",
+      "items": [
+        {
+          "qty": 1.4,
+          "unit": "kg",
+          "name": "Yukon Gold potatoes",
+          "note": "peeled",
+          "pantry": {
+            "name": "Yukon Gold potatoes",
+            "cat": "produce"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cheese sauce",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 42,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 30,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2.5,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 625,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "note": "divided",
+          "metric": {
+            "qty": 200,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Heat the oven",
+      "text": "Heat the oven to 190°C (375°F) and grease a 9×13 (3 L) baking dish.",
+      "uses": []
+    },
+    {
+      "title": "Make the sauce",
+      "text": "Melt the butter in a saucepan over medium and cook the garlic 30 seconds. Whisk in the flour and cook 1 minute, then slowly whisk in the milk. Add the salt, pepper and dried thyme and simmer 3–4 minutes, whisking, until it's as thick as heavy cream. Off the heat, stir in half the cheddar until melted.",
+      "timer": 5,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6",
+        "1-7=1 cup"
+      ]
+    },
+    {
+      "title": "Slice the potatoes",
+      "text": "Slice the potatoes 3 mm thick right before layering. Don't rinse them; their starch helps thicken the sauce.",
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Layer",
+      "text": "Overlap a third of the potatoes in the dish and pour over a third of the sauce. Repeat twice, finishing with sauce.",
+      "uses": []
+    },
+    {
+      "title": "Bake covered",
+      "text": "Cover tightly with foil and bake 45 minutes.",
+      "timer": 45,
+      "uses": []
+    },
+    {
+      "title": "Cheese and brown",
+      "text": "Uncover, scatter the rest of the cheddar over the top and bake 25–30 minutes more, until golden and bubbling and a knife slides through the potatoes easily.",
+      "timer": 28,
+      "uses": [
+        "1-7=1 cup"
+      ]
+    },
+    {
+      "title": "Rest",
+      "text": "Rest 10 minutes before serving so the sauce settles and slices hold.",
+      "timer": 10,
+      "uses": []
+    }
+  ],
+  "together": "ABA*AA*",
+  "fixIt": [
+    {
+      "problem": "Potatoes still firm",
+      "fix": "Cover again and keep baking in 10-minute stretches. Thicker slices need longer."
+    },
+    {
+      "problem": "Sauce looks greasy or split",
+      "fix": "The cheese overheated or was a low-fat kind. Next time add the cheese off the heat and use old cheddar."
+    },
+    {
+      "problem": "Watery at the bottom",
+      "fix": "Let it rest the full 10 minutes. Potatoes that sat in water before layering add extra liquid."
+    },
+    {
+      "problem": "Top browning too early",
+      "fix": "Lay foil loosely over it for the rest of the bake."
+    }
+  ],
+  "saleTip": "Block cheddar (400 g) is often $5–6 on sale at No Frills, cheaper than pre-shredded. Yukon Golds in 5 lb bags are the best value.",
+  "swap": "Russet potatoes work too; they come out softer and more absorbent. Add diced leftover ham between the layers for a one-dish meal.",
+  "leftovers": "Reheated with a fried egg for breakfast, or beside leftover ham.",
+  "doneness": "Done when a knife slides through the centre potatoes with no resistance and the sauce bubbles at the edges. Reheat leftovers to 74°C (165°F).",
+  "source": "Based on tested scalloped potato methods (Canadian Living, Simply Recipes): thin Yukon Golds layered with a cheddar béchamel, baked covered then uncovered at 190°C (375°F).",
+  "gear": [
+    "9×13 (3 L) baking dish",
+    "Saucepan & whisk",
+    "Mandoline or sharp knife",
+    "Box grater",
+    "Foil"
+  ],
+  "prepAhead": [
+    "Make the cheese sauce up to 2 days ahead; warm it before layering.",
+    "Bake fully a day ahead, cool, refrigerate and reheat covered. It slices even neater."
+  ],
+  "reheat": "Covered with foil at 180°C (350°F) for 20–25 minutes, until 74°C (165°F) in the centre. Microwave single portions covered, about 2 minutes.",
+  "levels": {
+    "basic": {
+      "note": "Plain cheddar sauce: no garlic or dried thyme.",
+      "drop": [
+        "1-1",
+        "1-6"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the garlic and dried thyme."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Gruyère and cream for a nuttier, silkier gratin.",
+      "swap": {
+        "1-7": {
+          "name": "shredded Gruyère and old cheddar, half and half",
+          "pantry": {
+            "name": "Gruyere cheese",
+            "cat": "dairy"
+          }
+        }
+      },
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "35% whipping cream",
+              "metric": {
+                "qty": 125,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "35% whipping cream",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.125,
+              "unit": "tsp",
+              "name": "ground nutmeg",
+              "pantry": {
+                "name": "Ground nutmeg",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: whisk in the cream with the milk and add the nutmeg with the salt."
+      },
+      "costAdd": [
+        [
+          "Gruyère for half the cheddar (difference)",
+          3.0,
+          "gruyere-cheese"
+        ],
+        [
+          "35% cream, ½ cup",
+          1.15,
+          "35-whipping-cream"
+        ]
+      ],
+      "plating": [
+        "Cut neat squares with a thin spatula after the full rest.",
+        "Serve browned side up, edge pieces for whoever loves the crispy bits.",
+        "A crack of black pepper on top."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Yukon Golds hold their slices but still turn creamy.",
+    "1-2": "The flour roux keeps the milk from curdling during the long bake.",
+    "1-7": "Old cheddar has more flavour, so it tastes cheesy without being heavy."
+  },
+  "fancyNight": false,
+  "funFact": "Strictly speaking, scalloped potatoes are baked in cream sauce and the cheesy version is “au gratin”. Most Canadian cookbooks call both scalloped.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "the cream sauce turns grainy and the potatoes watery once frozen"
+  },
+  "pairs": [
+    [
+      "christmas-02",
+      "the classic ham-dinner partner"
+    ],
+    [
+      "christmas-01",
+      "rich and creamy beside lean turkey"
+    ]
+  ]
+}

@@ -1,0 +1,375 @@
+{
+  "title": "Butter Tarts",
+  "subtitle": "flaky shells filled with brown sugar, butter and a runny caramel centre, raisins optional",
+  "image": "assets/img/butter-tarts.webp",
+  "imageAlt": "Canadian butter tarts with glossy caramel filling and raisins on a white plate, one bitten to show a runny centre",
+  "servings": 6,
+  "servingsNote": "12 tarts: 2 each",
+  "prep": 15,
+  "cook": 30,
+  "cost": {
+    "total": 8.3,
+    "breakdown": [
+      [
+        "Frozen deep tart shells, 12",
+        4.49,
+        "frozen-tart-shells"
+      ],
+      [
+        "Golden corn syrup, ½ cup",
+        1.0,
+        "corn-syrup-golden"
+      ],
+      [
+        "Butter, ¼ cup",
+        0.81,
+        "butter"
+      ],
+      [
+        "Vanilla",
+        0.81,
+        "vanilla-extract"
+      ],
+      [
+        "Raisins, ⅓ cup",
+        0.44,
+        "raisins"
+      ],
+      [
+        "Egg",
+        0.39,
+        "eggs"
+      ],
+      [
+        "Brown sugar, ½ cup",
+        0.35,
+        "brown-sugar"
+      ],
+      [
+        "Vinegar, salt",
+        0.03
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "dessert"
+    ]
+  },
+  "badges": [
+    "Canadian classic",
+    "Raisins optional"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "Bake on the lowest rack so the bottoms of the shells crisp."
+    },
+    {
+      "icon": "knife",
+      "text": "Keep the shells frozen until they're filled: cold pastry stays flakier."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Butter tarts",
+      "items": [
+        {
+          "qty": 12,
+          "unit": null,
+          "name": "frozen deep tart shells",
+          "note": "7.5 cm (3-inch), kept frozen",
+          "pantry": {
+            "name": "Frozen tart shells",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "raisins",
+          "metric": {
+            "qty": 50,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Raisins",
+            "cat": "baking"
+          },
+          "optional": true
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "golden corn syrup",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Corn syrup (golden)",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 57,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "white vinegar",
+          "pantry": {
+            "name": "White vinegar",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.125,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Heat the oven",
+      "text": "Heat the oven to 190°C (375°F) with a rack in the lowest position. Set the frozen tart shells on a rimmed baking sheet and scatter the raisins into them, if using.",
+      "uses": [
+        "0-0",
+        "0-1"
+      ]
+    },
+    {
+      "title": "Mix the filling",
+      "text": "Whisk the brown sugar, corn syrup, melted butter, egg, vanilla, vinegar and salt just until smooth. Don't whisk in air or it will foam up in the oven.",
+      "uses": [
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8"
+      ]
+    },
+    {
+      "title": "Fill",
+      "text": "Fill each shell about two-thirds full. Any fuller and it bubbles over.",
+      "uses": []
+    },
+    {
+      "title": "Bake",
+      "text": "Bake 15–18 minutes, until the pastry is golden and the filling is puffed and bubbling across the whole surface. The centres will still jiggle slightly.",
+      "timer": 16,
+      "uses": []
+    },
+    {
+      "title": "Cool",
+      "text": "Cool 10 minutes on the sheet, then lift onto a rack. The filling sets as it cools; a runny centre is the Canadian way.",
+      "timer": 10,
+      "uses": []
+    }
+  ],
+  "together": "BA*A*",
+  "fixIt": [
+    {
+      "problem": "Filling bubbled over",
+      "fix": "Fill only two-thirds full and always bake on a rimmed sheet."
+    },
+    {
+      "problem": "Still liquid after cooling",
+      "fix": "They came out too soon. Bake until the filling bubbles all over, not just at the edges."
+    },
+    {
+      "problem": "Pale, soggy bottoms",
+      "fix": "Use the lowest rack, and put the shells in straight from the freezer."
+    },
+    {
+      "problem": "Filling grainy or crystallized",
+      "fix": "Don't skip the vinegar, and don't overbake."
+    }
+  ],
+  "saleTip": "Tenderflake and store-brand frozen tart shells are often 2 for $7 at No Frills in December.",
+  "swap": "Currants instead of raisins are the old-fashioned choice. Maple syrup can replace half the corn syrup for a maple butter tart; the filling sets a little softer.",
+  "leftovers": "Warm one for 5 minutes in the oven and serve with vanilla ice cream.",
+  "doneness": "The filling is puffed and bubbling across the whole surface, not just at the edges. That's when the egg is cooked. The centres may still jiggle.",
+  "source": "Based on classic Canadian butter tart methods (Canadian Living, Tenderflake): brown sugar, corn syrup, butter, egg and a little vinegar, baked in deep tart shells on the bottom rack.",
+  "gear": [
+    "Rimmed baking sheet",
+    "Mixing bowl & whisk",
+    "Measuring cup with spout",
+    "Cooling rack"
+  ],
+  "prepAhead": [
+    "Mix the filling up to 2 days ahead and keep it in the fridge; whisk before filling.",
+    "Bake and freeze: they thaw in about 30 minutes."
+  ],
+  "reheat": "Serve at room temperature (20 minutes out of the fridge), or warm 5 minutes at 180°C (350°F).",
+  "levels": {
+    "basic": {
+      "note": "The plain filling: no raisins, no vanilla.",
+      "drop": [
+        "0-1",
+        "0-6"
+      ],
+      "stepNotes": {
+        "0": "Basic: no raisins.",
+        "1": "Basic: skip the vanilla."
+      },
+      "costDrop": [
+        "raisins",
+        "vanilla"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Pecan butter tarts with softly whipped cream.",
+      "swap": {
+        "0-1": {
+          "name": "pecan halves",
+          "note": "roughly chopped",
+          "metric": {
+            "qty": 35,
+            "unit": "g"
+          },
+          "optional": false,
+          "pantry": {
+            "name": "Pecan halves",
+            "cat": "baking"
+          }
+        }
+      },
+      "add": [
+        {
+          "group": "To serve",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "35% whipping cream",
+              "metric": {
+                "qty": 125,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "35% whipping cream",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "icing sugar",
+              "pantry": {
+                "name": "Icing sugar",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: scatter the chopped pecans into the shells instead of raisins."
+      },
+      "addSteps": [
+        {
+          "title": "Whip the cream",
+          "text": "Whip the cream with the icing sugar to soft peaks and spoon a little beside each tart."
+        }
+      ],
+      "costDrop": [
+        "raisins"
+      ],
+      "costAdd": [
+        [
+          "Pecans, ⅓ cup",
+          1.4,
+          "pecan-halves"
+        ],
+        [
+          "35% cream, ½ cup",
+          1.15,
+          "35-whipping-cream"
+        ]
+      ],
+      "plating": [
+        "Serve slightly warm so the centre runs.",
+        "A spoon of whipped cream on the side, not on top.",
+        "Two per plate, one cut open."
+      ]
+    }
+  },
+  "why": {
+    "0-7": "A teaspoon of vinegar keeps the sugar from crystallizing, so the filling stays smooth and gooey.",
+    "0-3": "Golden corn syrup gives the classic runny centre."
+  },
+  "fancyNight": false,
+  "funFact": "Butter tarts are one of the few truly Canadian desserts. The earliest printed recipe is in the Royal Victoria Hospital cookbook from Barrie, Ontario, in 1900, and raisins-or-no-raisins is still a national argument.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "1–2 months",
+    "note": "cool completely, freeze on a tray, then bag",
+    "thaw": "On the counter about 30 minutes, or warm 5 minutes at 180°C (350°F)"
+  },
+  "pairs": [
+    [
+      "christmas-09",
+      "a Canadian Christmas tray"
+    ]
+  ]
+}

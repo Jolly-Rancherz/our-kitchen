@@ -1,0 +1,301 @@
+{
+  "title": "Maple-Roasted Carrots & Parsnips",
+  "subtitle": "Ontario winter roots roasted hot, then tossed in maple butter until the edges caramelize",
+  "image": "assets/img/maple-roasted-carrots-parsnips.webp",
+  "imageAlt": "Maple-roasted carrot and parsnip batons with caramelized edges on a white oval platter",
+  "servings": 4,
+  "servingsNote": "Christmas side for two, plus leftovers",
+  "prep": 15,
+  "cook": 35,
+  "cost": {
+    "total": 4.4,
+    "breakdown": [
+      [
+        "Carrots, 500 g",
+        1.4,
+        "carrots"
+      ],
+      [
+        "Parsnips, 500 g",
+        1.65,
+        "parsnips"
+      ],
+      [
+        "Maple syrup, 2 tbsp",
+        0.55,
+        "maple-syrup"
+      ],
+      [
+        "Oil, butter",
+        0.45
+      ],
+      [
+        "Dried thyme, salt, pepper",
+        0.3
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [
+      "weeknight",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ],
+    "course": [
+      "side"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Ontario winter veg"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "A hot oven, 220°C (425°F), and plenty of room on the sheet are what make them caramelize."
+    },
+    {
+      "icon": "knife",
+      "text": "Cut everything to the same size so it all finishes together."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Vegetables",
+      "items": [
+        {
+          "qty": 500,
+          "unit": "g",
+          "name": "carrots",
+          "note": "peeled",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 500,
+          "unit": "g",
+          "name": "parsnips",
+          "note": "peeled",
+          "pantry": {
+            "name": "Parsnips",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Maple glaze",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "maple syrup",
+          "note": "pure",
+          "pantry": {
+            "name": "Maple syrup",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Heat the oven",
+      "text": "Heat the oven to 220°C (425°F) and line a large rimmed baking sheet with parchment.",
+      "uses": []
+    },
+    {
+      "title": "Cut",
+      "text": "Cut the carrots and parsnips into batons about 8 cm long and 1.5 cm thick. Halve or quarter the thick parsnip tops to match, and cut out the core if it's woody.",
+      "uses": [
+        "0-0",
+        "0-1"
+      ]
+    },
+    {
+      "title": "Season and roast",
+      "text": "Toss on the sheet with the oil, salt, pepper and dried thyme, then spread in one layer with space between. Roast 20 minutes.",
+      "timer": 20,
+      "uses": [
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Glaze",
+      "text": "Stir the maple syrup and melted butter together, drizzle over the vegetables and toss. Roast 10–12 minutes more, until tender with caramelized edges.",
+      "timer": 11,
+      "uses": [
+        "1-0",
+        "1-1"
+      ]
+    }
+  ],
+  "together": "ABAA",
+  "fixIt": [
+    {
+      "problem": "Pale and soft, not browned",
+      "fix": "The pan was crowded. Use two sheets, or move it to the top rack for the last 5 minutes."
+    },
+    {
+      "problem": "Glaze burnt",
+      "fix": "Add the maple only for the last 10–12 minutes. Sugar burns at this heat."
+    },
+    {
+      "problem": "Parsnips stringy",
+      "fix": "Large parsnips have a woody core. Cut it out next time."
+    }
+  ],
+  "saleTip": "Ontario carrots and parsnips are cheapest in 2 lb bags all winter, about $2.50–3.50 a bag at No Frills.",
+  "swap": "All carrots works fine, or use sweet potato for the parsnips (same size, same time). Honey works instead of maple.",
+  "leftovers": "Warm in a pan for a side, or blend with hot broth into a quick soup.",
+  "doneness": "Done when a knife slides into the thickest parsnip piece with no resistance and the edges are browned.",
+  "source": "Based on tested maple-roasted root vegetable methods (Canadian Living, Ricardo): roasted at 220°C (425°F), glazed with maple for the last 10 minutes.",
+  "gear": [
+    "Large rimmed baking sheet",
+    "Parchment",
+    "Vegetable peeler",
+    "Chef's knife & board",
+    "Small bowl"
+  ],
+  "prepAhead": [
+    "Peel and cut the vegetables up to 2 days ahead; keep in a sealed container in the fridge with a damp paper towel."
+  ],
+  "reheat": "Spread on a sheet at 200°C (400°F) for 8–10 minutes until hot, or microwave 1–2 minutes.",
+  "levels": {
+    "basic": {
+      "note": "Maple alone: no butter or dried thyme.",
+      "drop": [
+        "0-5",
+        "1-1"
+      ],
+      "stepNotes": {
+        "2": "Basic: oil, salt and pepper only.",
+        "3": "Basic: drizzle the maple syrup on its own."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Toasted pecans for crunch.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.33,
+              "unit": "cup",
+              "name": "pecan halves",
+              "note": "roughly chopped",
+              "metric": {
+                "qty": 35,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Pecan halves",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: scatter the pecans over the vegetables for the last 5 minutes so they toast."
+      },
+      "costAdd": [
+        [
+          "Pecans, ⅓ cup",
+          1.4,
+          "pecan-halves"
+        ]
+      ],
+      "plating": [
+        "Pile the batons criss-cross on a warm platter.",
+        "Spoon any maple butter from the sheet over the top.",
+        "Pecans last, so they stay crunchy."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "Parsnips are sweet and nutty once roasted; they brown faster than carrots, so cut them a touch thicker.",
+    "1-0": "Maple added late caramelizes without burning."
+  },
+  "fancyNight": false,
+  "funFact": "Parsnips taste sweeter after a frost: the cold turns some of their starch into sugar, which is why they're a winter vegetable in Ontario.",
+  "keeps": {
+    "fridge": "3–5 days",
+    "freezer": null,
+    "note": "roasted carrots and parsnips turn soft and watery once thawed"
+  },
+  "pairs": [
+    [
+      "christmas-01",
+      "same oven, same dinner"
+    ],
+    [
+      "christmas-02",
+      "maple and orange belong together"
+    ]
+  ]
+}

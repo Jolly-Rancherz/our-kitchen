@@ -1,0 +1,367 @@
+{
+  "title": "Classic Bread Stuffing",
+  "subtitle": "buttery onion and celery, dried sage and thyme, baked in its own dish until crisp on top and soft inside",
+  "image": "assets/img/classic-bread-stuffing.webp",
+  "imageAlt": "Golden baked bread stuffing with celery and onion in a white baking dish with a serving spoon",
+  "servings": 8,
+  "servingsNote": "a full 9×13: Christmas sides for two, with plenty to freeze",
+  "prep": 20,
+  "cook": 70,
+  "cost": {
+    "total": 10,
+    "breakdown": [
+      [
+        "White sandwich bread, 1 loaf",
+        2.99,
+        "sandwich-bread-white"
+      ],
+      [
+        "Butter, ½ cup",
+        1.62,
+        "butter"
+      ],
+      [
+        "Chicken broth, 625 ml",
+        1.75,
+        "chicken-broth"
+      ],
+      [
+        "Celery, ⅓ bunch",
+        1.0,
+        "celery"
+      ],
+      [
+        "Onion",
+        0.5,
+        "yellow-onions"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "Dried sage, thyme, salt, pepper",
+        0.9
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ],
+    "course": [
+      "side"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Freezer-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "Baked in its own dish, not in the bird — it reaches a safe 74°C (165°F) without overcooking the turkey."
+    },
+    {
+      "icon": "knife",
+      "text": "Day-old bread works best. Fresh bread is fine once it's dried in the oven (step 1)."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Stuffing",
+      "items": [
+        {
+          "qty": 675,
+          "unit": "g",
+          "name": "white sandwich bread",
+          "note": "1 loaf, cut in 2 cm cubes",
+          "pantry": {
+            "name": "Sandwich bread (white)",
+            "cat": "grains"
+          },
+          "asWritten": true
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "butter",
+          "metric": {
+            "qty": 115,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "large, diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "celery",
+          "note": "diced (about 3 ribs)",
+          "metric": {
+            "qty": 150,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Celery",
+            "cat": "produce"
+          },
+          "asWritten": true
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "dried sage",
+          "note": "rubbed",
+          "pantry": {
+            "name": "Dried sage",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2.5,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 625,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "note": "beaten",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Dry the bread",
+      "text": "Heat the oven to 160°C (325°F). Spread the bread cubes on 2 baking sheets and bake 15–20 minutes, stirring once, until dry but not browned. Tip into your biggest bowl.",
+      "timer": 18,
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Soften the vegetables",
+      "text": "Melt the butter in a large skillet over medium. Cook the onion and celery with the dried sage and thyme, salt and pepper 8–10 minutes, until soft but not browned.",
+      "timer": 9,
+      "uses": [
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Mix",
+      "text": "Scrape the vegetables and butter over the bread. Whisk the eggs into the broth, pour it over and fold gently until evenly moistened. It should look wet but not swimming. Let it soak 5 minutes.",
+      "uses": [
+        "0-8",
+        "0-9"
+      ]
+    },
+    {
+      "title": "Bake covered",
+      "text": "Raise the oven to 190°C (375°F). Grease a 9×13 dish, pile the stuffing in loosely and cover with foil. Bake 25 minutes.",
+      "timer": 25,
+      "uses": []
+    },
+    {
+      "title": "Crisp the top",
+      "text": "Uncover and bake 20 minutes more, until the top is golden and crisp and the centre reads 74°C (165°F).",
+      "timer": 20,
+      "uses": []
+    }
+  ],
+  "together": "AB*AA",
+  "fixIt": [
+    {
+      "problem": "Soggy in the middle",
+      "fix": "Bake uncovered 10 minutes more. Next time dry the bread longer or hold back ½ cup of broth."
+    },
+    {
+      "problem": "Dry and crumbly",
+      "fix": "Drizzle a few spoonfuls of warm broth over, cover and bake 5 minutes."
+    },
+    {
+      "problem": "Top won't crisp",
+      "fix": "Dot with a little butter and broil 1–2 minutes, watching closely."
+    },
+    {
+      "problem": "Tastes flat",
+      "fix": "It almost always needs salt. Taste the vegetable mix before it goes on the bread."
+    }
+  ],
+  "saleTip": "Store-brand sandwich bread is often 2 for $5 at No Frills. Buy it a few days early so it's already stale.",
+  "swap": "Short on time? Use a 300 g bag of dried stuffing cubes and skip step 1. A small 8×8 dish takes half of everything; bake 20 minutes covered and 15 uncovered.",
+  "leftovers": "Turkey-and-stuffing sandwiches, or press cold stuffing into patties and fry in butter until crisp.",
+  "doneness": "Bake until the centre reads 74°C (165°F), the safe temperature for stuffing cooked on its own (Health Canada).",
+  "source": "Based on tested oven-baked bread stuffing methods (Simply Recipes, Canadian Living): dried bread cubes, butter-softened onion and celery, broth and egg, baked covered and then uncovered.",
+  "gear": [
+    "2 baking sheets",
+    "Large skillet",
+    "Biggest mixing bowl",
+    "9×13 baking dish",
+    "Foil",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Cube and dry the bread up to 2 days ahead and keep it in a bag.",
+    "Assemble the whole dish the night before (up to step 3), cover and refrigerate. Add 10 minutes to the covered bake."
+  ],
+  "reheat": "Covered with foil at 180°C (350°F) for 20–25 minutes with a splash of broth, uncovered for the last 5, until 74°C (165°F) in the centre.",
+  "levels": {
+    "basic": {
+      "note": "Onion, celery and dried sage: the plain classic.",
+      "drop": [
+        "0-5"
+      ],
+      "stepNotes": {
+        "1": "Basic: season with the dried sage, salt and pepper only."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Browned sausage and dried cranberries folded through.",
+      "add": [
+        {
+          "group": "Fancy add-ins",
+          "items": [
+            {
+              "qty": 375,
+              "unit": "g",
+              "name": "mild pork sausages",
+              "note": "casings removed",
+              "pantry": {
+                "name": "Pork sausages (mild)",
+                "cat": "meat"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "dried cranberries",
+              "metric": {
+                "qty": 70,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Dried cranberries",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: first brown the sausage meat in the skillet, breaking it up, 6–8 minutes until no pink remains (71°C / 160°F). Lift it into the bread bowl, then cook the vegetables in the butter as written.",
+        "2": "Fancy: fold in the dried cranberries with the vegetables."
+      },
+      "costAdd": [
+        [
+          "Mild pork sausages, 375 g",
+          5.25,
+          "pork-sausages-mild"
+        ],
+        [
+          "Dried cranberries, ½ cup",
+          1.65,
+          "dried-cranberries"
+        ]
+      ],
+      "plating": [
+        "Scoop from the crispiest corner first.",
+        "Serve right in the baking dish on a folded napkin.",
+        "A spoon of gravy over the top at the table."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Dry bread soaks up broth like a sponge without turning to paste.",
+    "0-9": "Egg sets the stuffing so it scoops in soft pieces instead of crumbs.",
+    "0-3": "Celery is the classic stuffing flavour and keeps a little bite."
+  },
+  "fancyNight": false,
+  "funFact": "Baked outside the bird, it's technically “dressing”, but most Canadians call it stuffing either way. Baking it separately is the safer choice: the centre of a stuffed bird is the last place to get hot.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "1 month",
+    "note": "freeze baked portions and reheat covered so they stay moist"
+  },
+  "pairs": [
+    [
+      "christmas-01",
+      "turkey and gravy's best friend"
+    ],
+    [
+      "christmas-06",
+      "a spoon of cranberry on top"
+    ]
+  ]
+}
