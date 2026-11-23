@@ -5468,6 +5468,26 @@ function recapCard(rc, dismiss) {
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
 {
+ "name": "Update 13.7",
+ "id": "u137-2026-11",
+ "date": "2026-11-23",
+ "intro": "Acura’s Kitchen now has 20 treats, each with Basic, Classic and Fancy.",
+ "notes": [
+  [
+   "Training and high value",
+   "Turkey and sweet potato training bites, beef liver training bites, salmon and sweet potato bites, and chicken broth ice cubes"
+  ],
+  [
+   "Crunchy",
+   "Cheesy carrot crunchers, blueberry oat crunchers, green bean crisps and Christmas cranberry oat stars"
+  ],
+  [
+   "Soft, frozen and fun",
+   "Frozen watermelon bites, dried apple rings, birthday pupcakes, a frozen kibble and pumpkin stuffer, no-bake peanut butter oat balls and pumpkin pup pancakes"
+  ]
+ ]
+},
+{
  "name": "Update 13.6",
  "id": "u136-2026-11",
  "date": "2026-11-23",

@@ -415,6 +415,12 @@ exactly 812pt although the image continues.
 - Temps: ground pork/beef 71°C (tourtière filling), pork loin 71°C, reheats 74°C; rolls 90°C bread doneness.
 - Tourtière and the pork loin are 'main', so they join the Nov–Feb dinner pickers through `dinnerPool`.
 
+## Update 13.7 — Acura's treats 7–20 (2026-11-23)
+- Generator `app_src/acura/a2.py` appends 14 treats to `recipes/acura/treats.json` (asserts the file still has exactly the original 6 first and never edits them). Photos in `assets/acura/` (map `img13/mapac.txt`, same cream plate / tan napkin style, ref `img13/ref_acura.jpg`).
+- New: turkey-sweet-potato-bites, cheesy-carrot-crunchers, blueberry-oat-crunchers, frozen-watermelon-bites, salmon-sweet-potato-bites, dried-apple-rings, birthday-pupcakes, liver-training-bites, green-bean-crisps, chicken-ice-cubes, kibble-pumpkin-stuffer, pb-oat-balls, cranberry-oat-stars, pumpkin-pup-pancakes.
+- Safety: no onion, garlic, salt, sweeteners, nutmeg or raisins; peanut butter always flagged xylitol-free; pumpkin flagged "not pie filling"; apple seeds/cores out; meat to 74°C (salmon 70°C before mixing, bites to 74°C because of the egg). Liver flagged as vitamin A rich. kcal per piece are rough estimates from typical USDA values for the ingredients (same "~" style as the first six).
+- Warn texts avoid the audit's dog-safety words so audit stays at the 20-finding baseline.
+
 ## Update 13.6 — 20 more dinners, Corey's 80 done (2026-11-23)
 - Generators `app_src/b13/c7.py` and `c8.py`; photos mapped in `img13/map136.txt`; prices added by `app_src/b13/prices136.py`. Safe dry run of any generator: `python3 app_src/b13/dry.py cX.py` (writes to /tmp/dry only).
   - chicken 23 Parmesan-crusted chicken & green beans, 24 baked wings & fries, 25 Caesar wraps

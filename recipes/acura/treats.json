@@ -672,6 +672,1567 @@
     "fancy": 4
    },
    "funFact": "Apple is a great crunchy snack for dogs, but the core and seeds always come out: apple seeds contain amygdalin, which releases cyanide when chewed."
+  },
+  {
+   "id": "turkey-sweet-potato-bites",
+   "title": "Turkey & Sweet Potato Training Bites",
+   "subtitle": "soft little squares for training — easy to break, easy to love",
+   "image": "assets/acura/turkey-sweet-potato-bites.webp",
+   "makes": "about 100 small squares",
+   "prep": 15,
+   "cook": 30,
+   "kcal": "~12 kcal per square",
+   "tags": [
+    "Baked",
+    "Soft",
+    "Training treat",
+    "Freezer-friendly"
+   ],
+   "dogSafe": "Plain cooked turkey and sweet potato are both dog-safe. No salt, onion or garlic, and the turkey is baked to 74°C (165°F).",
+   "groups": [
+    {
+     "name": "Bites",
+     "items": [
+      {
+       "qty": 450,
+       "unit": "g",
+       "name": "lean ground turkey",
+       "note": "plain, not seasoned or 'self-basting'"
+      },
+      {
+       "qty": 1,
+       "unit": "cup",
+       "name": "mashed cooked sweet potato",
+       "note": "plain, about 1 medium, cooled"
+      },
+      {
+       "qty": 1,
+       "unit": null,
+       "name": "large egg"
+      },
+      {
+       "qty": 0.5,
+       "unit": "cup",
+       "name": "oat flour",
+       "note": "or blended rolled oats"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Heat the oven",
+     "text": "Heat the oven to 175°C (350°F) and line a 23×33 cm (9×13 in) pan with parchment."
+    },
+    {
+     "title": "Mix",
+     "text": "Mix the turkey, sweet potato, egg and oat flour with your hands until even."
+    },
+    {
+     "title": "Spread",
+     "text": "Press it into the pan in an even layer about 1 cm thick."
+    },
+    {
+     "title": "Bake",
+     "text": "Bake 25–30 minutes, until firm, lightly golden and 74°C (165°F) in the centre.",
+     "timer": 28
+    },
+    {
+     "title": "Cool and cut",
+     "text": "Cool in the pan, lift out on the parchment and cut into 1.5 cm squares. Wash hands, boards and counters after the raw turkey."
+    }
+   ],
+   "storage": "Fridge in an airtight container 4 days; freezer bag 3 months (thaw a handful at a time).",
+   "keepDays": 4,
+   "tips": [
+    "Freeze in small bags so only a few days' worth is thawed.",
+    "Cut smaller for a puppy class: 1 cm squares are about 6 kcal."
+   ],
+   "source": "Ground poultry cooked to 74°C (165°F) per Health Canada; dog-safety per AKC and ASPCA Animal Poison Control.",
+   "levels": {
+    "basic": {
+     "note": "Turkey, egg and oat flour only.",
+     "drop": [
+      "0-1"
+     ],
+     "stepNotes": {
+      "1": "Basic: no sweet potato; add 2 tbsp water if it's crumbly."
+     }
+    },
+    "fancy": {
+     "note": "Carrot and peas folded through for colour.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 0.25,
+         "unit": "cup",
+         "name": "finely grated carrot"
+        },
+        {
+         "qty": 0.25,
+         "unit": "cup",
+         "name": "frozen peas",
+         "note": "thawed"
+        }
+       ]
+      }
+     ],
+     "stepNotes": {
+      "1": "Fancy: mix in the carrot and peas too."
+     }
+    }
+   },
+   "why": {
+    "0-1": "Sweet potato keeps the bites soft and adds fibre.",
+    "0-2": "The egg binds it so the squares hold together."
+   },
+   "levelCost": {
+    "basic": 7,
+    "classic": 8,
+    "fancy": 9
+   },
+   "funFact": "Food rewards work best in tiny pieces: trainers aim for a bite a dog can swallow in a second so the lesson keeps moving."
+  },
+  {
+   "id": "cheesy-carrot-crunchers",
+   "title": "Cheesy Carrot Crunchers",
+   "subtitle": "crunchy biscuits with a little cheddar and carrot",
+   "image": "assets/acura/cheesy-carrot-crunchers.webp",
+   "makes": "about 35 biscuits",
+   "prep": 20,
+   "cook": 90,
+   "kcal": "~30 kcal each",
+   "tags": [
+    "Baked",
+    "Crunchy"
+   ],
+   "dogSafe": "Carrots are dog-safe and a little mild cheddar is fine for most dogs. Skip the cheese if Acura's tummy is sensitive to dairy.",
+   "groups": [
+    {
+     "name": "Dough",
+     "items": [
+      {
+       "qty": 2,
+       "unit": "cup",
+       "name": "whole wheat flour"
+      },
+      {
+       "qty": 1,
+       "unit": "cup",
+       "name": "finely grated carrot",
+       "note": "about 2 carrots"
+      },
+      {
+       "qty": 0.5,
+       "unit": "cup",
+       "name": "shredded mild cheddar",
+       "note": "a little goes a long way"
+      },
+      {
+       "qty": 1,
+       "unit": null,
+       "name": "large egg"
+      },
+      {
+       "qty": 0.33,
+       "unit": "cup",
+       "name": "water",
+       "note": "more only if needed"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Heat the oven",
+     "text": "Heat the oven to 175°C (350°F) and line a baking sheet with parchment."
+    },
+    {
+     "title": "Mix the dough",
+     "text": "Stir the flour, carrot, cheddar and egg together, then add the water a little at a time until it holds as a firm dough."
+    },
+    {
+     "title": "Roll and cut",
+     "text": "Roll out on a floured counter about 1 cm thick and cut into bones or squares. Set them on the sheet; they don't spread."
+    },
+    {
+     "title": "Bake",
+     "text": "Bake 25–30 minutes, flipping halfway, until firm and golden at the edges.",
+     "timer": 28
+    },
+    {
+     "title": "Dry out for crunch",
+     "text": "Turn the oven off and leave them inside with the door cracked for 1 hour.",
+     "timer": 60
+    },
+    {
+     "title": "Cool",
+     "text": "Cool completely on a rack before storing."
+    }
+   ],
+   "storage": "Airtight jar 1 week; fridge 2 weeks; freezer 3 months.",
+   "keepDays": 7,
+   "tips": [
+    "Grate the carrot finely so the dough rolls smoothly.",
+    "Small cutter = fewer calories per treat."
+   ],
+   "source": "Adapted from AKC homemade biscuit guidance; ingredient safety per ASPCA Animal Poison Control.",
+   "levels": {
+    "basic": {
+     "note": "Carrot biscuits with no cheese.",
+     "drop": [
+      "0-2"
+     ],
+     "stepNotes": {
+      "1": "Basic: skip the cheddar."
+     }
+    },
+    "fancy": {
+     "note": "A pinch of cheddar melted on top of each one.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 2,
+         "unit": "tbsp",
+         "name": "shredded mild cheddar",
+         "note": "extra, for the tops"
+        }
+       ]
+      }
+     ],
+     "stepNotes": {
+      "3": "Fancy: sprinkle the extra cheddar over the tops before baking."
+     }
+    }
+   },
+   "why": {
+    "0-2": "Cheese makes them smell irresistible; a little is plenty.",
+    "0-3": "The egg binds the dough."
+   },
+   "levelCost": {
+    "basic": 2.5,
+    "classic": 3.5,
+    "fancy": 4
+   },
+   "funFact": "A dog's nose has up to 300 million scent receptors to our roughly 6 million, so a little cheddar smells like a lot."
+  },
+  {
+   "id": "blueberry-oat-crunchers",
+   "title": "Blueberry Oat Crunchers",
+   "subtitle": "purple-speckled oat biscuits with pumpkin",
+   "image": "assets/acura/blueberry-oat-crunchers.webp",
+   "makes": "about 30 biscuits",
+   "prep": 15,
+   "cook": 85,
+   "kcal": "~30 kcal each",
+   "tags": [
+    "Baked",
+    "Crunchy",
+    "Fruit & veg"
+   ],
+   "dogSafe": "Blueberries, oats and plain pumpkin are all dog-safe. Wheat-free for pups who do better without it.",
+   "groups": [
+    {
+     "name": "Dough",
+     "items": [
+      {
+       "qty": 2,
+       "unit": "cup",
+       "name": "oat flour",
+       "note": "or blended rolled oats"
+      },
+      {
+       "qty": 0.5,
+       "unit": "cup",
+       "name": "blueberries",
+       "note": "fresh or frozen, mashed"
+      },
+      {
+       "qty": 0.5,
+       "unit": "cup",
+       "name": "pure pumpkin purée",
+       "note": "NOT pumpkin pie filling",
+       "warn": "Use 100% pure pumpkin, not pie filling (it is spiced and sweetened)."
+      },
+      {
+       "qty": 1,
+       "unit": null,
+       "name": "large egg"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Heat the oven",
+     "text": "Heat the oven to 175°C (350°F) and line a baking sheet with parchment."
+    },
+    {
+     "title": "Mix the dough",
+     "text": "Stir the oat flour, blueberries, pumpkin and egg into a soft dough. Add a spoon more oat flour if it's sticky."
+    },
+    {
+     "title": "Roll and cut",
+     "text": "Roll out between two sheets of parchment about 1 cm thick and cut into small shapes."
+    },
+    {
+     "title": "Bake",
+     "text": "Bake 22–25 minutes until firm and dry on top.",
+     "timer": 24
+    },
+    {
+     "title": "Dry out for crunch",
+     "text": "Turn the oven off and leave them inside with the door cracked for 1 hour.",
+     "timer": 60
+    },
+    {
+     "title": "Cool",
+     "text": "Cool completely on a rack."
+    }
+   ],
+   "storage": "Airtight jar 1 week; fridge 2 weeks; freezer 3 months.",
+   "keepDays": 7,
+   "tips": [
+    "Oat dough is stickier than wheat; parchment on top makes rolling easy.",
+    "Frozen wild blueberries are cheapest and work well."
+   ],
+   "source": "Ingredient safety per ASPCA Animal Poison Control and AKC 'Can dogs eat blueberries?'.",
+   "levels": {
+    "basic": {
+     "note": "Pumpkin oat biscuits, no berries.",
+     "drop": [
+      "0-1"
+     ],
+     "stepNotes": {
+      "1": "Basic: skip the blueberries."
+     }
+    },
+    "fancy": {
+     "note": "A thin drizzle of plain yogurt on top.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 2,
+         "unit": "tbsp",
+         "name": "plain unsweetened yogurt",
+         "note": "drizzle, a little only",
+         "warn": "Plain, unsweetened, no xylitol."
+        }
+       ]
+      }
+     ],
+     "addSteps": [
+      {
+       "title": "Fancy finish",
+       "text": "Once completely cool, drizzle thin lines of yogurt over them and let them set in the fridge. Keep the drizzled ones in the fridge."
+      }
+     ]
+    }
+   },
+   "why": {
+    "0-2": "Pumpkin binds the oat dough and is gentle on tummies."
+   },
+   "levelCost": {
+    "basic": 2.5,
+    "classic": 3.5,
+    "fancy": 4
+   },
+   "funFact": "Blueberries get their deep colour from anthocyanins, the same family of pigments that makes red cabbage purple."
+  },
+  {
+   "id": "frozen-watermelon-bites",
+   "title": "Frozen Watermelon Bites",
+   "subtitle": "one-ingredient summer cool-downs",
+   "image": "assets/acura/frozen-watermelon-bites.webp",
+   "makes": "about 60 small cubes",
+   "prep": 15,
+   "cook": 0,
+   "chill": 120,
+   "kcal": "~3 kcal per cube",
+   "tags": [
+    "No bake",
+    "Frozen",
+    "Summer",
+    "Single ingredient"
+   ],
+   "dogSafe": "Watermelon flesh is dog-safe and mostly water. Remove all seeds and the rind, which can upset tummies.",
+   "groups": [
+    {
+     "name": "Bites",
+     "items": [
+      {
+       "qty": 4,
+       "unit": "cup",
+       "name": "seedless watermelon",
+       "note": "cut in 1.5 cm cubes, rind and any seeds removed"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Prep",
+     "text": "Cut the flesh off the rind and pick out any seeds. Cut into 1.5 cm cubes."
+    },
+    {
+     "title": "Freeze",
+     "text": "Spread the cubes on a parchment-lined tray, not touching, and freeze 2 hours until firm.",
+     "timer": 120
+    },
+    {
+     "title": "Store",
+     "text": "Tip into a freezer bag."
+    },
+    {
+     "title": "Serve",
+     "text": "Give a few at a time outside on a hot day. Let a very cold cube sit a minute for a small dog."
+    }
+   ],
+   "storage": "Freezer bag up to 1 month.",
+   "keepDays": 30,
+   "tips": [
+    "Watermelon is about 92% water, a nice way to help her drink on hot days.",
+    "Big dog? Give larger chunks so she chews instead of gulping."
+   ],
+   "source": "AKC 'Can dogs eat watermelon?'; ASPCA Animal Poison Control.",
+   "levels": {
+    "basic": {
+     "note": "Plain frozen cubes."
+    },
+    "fancy": {
+     "note": "Watermelon and yogurt swirl paws.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 0.5,
+         "unit": "cup",
+         "name": "plain unsweetened yogurt",
+         "warn": "Plain, unsweetened, no xylitol."
+        }
+       ]
+      }
+     ],
+     "stepNotes": {
+      "1": "Fancy: blend half the cubes smooth, swirl with the yogurt in a silicone paw mould and freeze 4 hours with the cubes."
+     }
+    }
+   },
+   "why": {
+    "0-0": "Seeds and rind come off: the rind is tough to digest and seeds can cause a blockage."
+   },
+   "levelCost": {
+    "basic": 3,
+    "classic": 3,
+    "fancy": 4
+   },
+   "funFact": "Watermelon is a berry botanically, and it's about 92% water."
+  },
+  {
+   "id": "salmon-sweet-potato-bites",
+   "title": "Salmon & Sweet Potato Bites",
+   "subtitle": "soft fishy bites she'll do anything for",
+   "image": "assets/acura/salmon-sweet-potato-bites.webp",
+   "makes": "about 40 bites",
+   "prep": 20,
+   "cook": 35,
+   "kcal": "~30 kcal each",
+   "tags": [
+    "Baked",
+    "Soft",
+    "High value"
+   ],
+   "dogSafe": "Plain cooked salmon is dog-safe. Cook it through (never raw), remove every bone and skip seasoning.",
+   "groups": [
+    {
+     "name": "Bites",
+     "items": [
+      {
+       "qty": 200,
+       "unit": "g",
+       "name": "skinless salmon fillet",
+       "note": "plain, no glaze or seasoning"
+      },
+      {
+       "qty": 1,
+       "unit": "cup",
+       "name": "mashed cooked sweet potato",
+       "note": "plain, cooled"
+      },
+      {
+       "qty": 1,
+       "unit": null,
+       "name": "large egg"
+      },
+      {
+       "qty": 1,
+       "unit": "cup",
+       "name": "oat flour",
+       "note": "or blended rolled oats"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Cook the salmon",
+     "text": "Heat the oven to 200°C (400°F). Bake the salmon on a parchment-lined sheet 12–15 minutes, until it flakes and reads 70°C (158°F). Cool, flake and pick out any bones.",
+     "timer": 14
+    },
+    {
+     "title": "Mix",
+     "text": "Lower the oven to 175°C (350°F). Mash the salmon, sweet potato, egg and oat flour together."
+    },
+    {
+     "title": "Shape",
+     "text": "Roll into 2 cm balls, set them on the sheet and press each flat with a fork."
+    },
+    {
+     "title": "Bake",
+     "text": "Bake 18–20 minutes, until firm and 74°C (165°F) in the centre.",
+     "timer": 19
+    },
+    {
+     "title": "Cool",
+     "text": "Cool completely on a rack."
+    }
+   ],
+   "storage": "Fridge 4 days; freezer 2 months.",
+   "keepDays": 4,
+   "tips": [
+    "Run your fingers through the flaked salmon twice; pin bones hide.",
+    "Leftover plain salmon from dinner works if it had no glaze or garlic."
+   ],
+   "source": "Fish cooked to 70°C (158°F) per Health Canada; dog-safety per AKC 'Can dogs eat salmon?'.",
+   "levels": {
+    "basic": {
+     "note": "Plain salmon, sweet potato, egg and oats, as written."
+    },
+    "fancy": {
+     "note": "Peas folded in.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 0.25,
+         "unit": "cup",
+         "name": "frozen peas",
+         "note": "thawed"
+        }
+       ]
+      }
+     ],
+     "stepNotes": {
+      "1": "Fancy: fold in the peas."
+     }
+    }
+   },
+   "why": {
+    "0-0": "Salmon brings omega-3 fats dogs love the smell of.",
+    "0-2": "The egg binds the bites so they hold."
+   },
+   "levelCost": {
+    "basic": 6,
+    "classic": 6,
+    "fancy": 6.5
+   },
+   "funFact": "Salmon is rich in omega-3 fats, which is why so many dog foods and coat supplements use fish oil."
+  },
+  {
+   "id": "dried-apple-rings",
+   "title": "Dried Apple Rings",
+   "subtitle": "chewy single-ingredient rings, seeds gone",
+   "image": "assets/acura/dried-apple-rings.webp",
+   "makes": "about 45 rings",
+   "prep": 15,
+   "cook": 150,
+   "kcal": "~6 kcal per ring",
+   "tags": [
+    "Baked",
+    "Chewy",
+    "Fruit & veg",
+    "Single ingredient"
+   ],
+   "dogSafe": "Apple flesh is dog-safe. The core and seeds always come out.",
+   "groups": [
+    {
+     "name": "Rings",
+     "items": [
+      {
+       "qty": 3,
+       "unit": null,
+       "name": "Gala apples",
+       "note": "cored, every seed removed",
+       "warn": "Apple seeds and cores are on the never list."
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Heat the oven",
+     "text": "Heat the oven to 95°C (200°F) and line two baking sheets with parchment."
+    },
+    {
+     "title": "Slice",
+     "text": "Core the apples with a corer and check each slice for seeds. Slice 3 mm thick and lay them flat, not touching."
+    },
+    {
+     "title": "Dry low and slow",
+     "text": "Bake 2–2½ hours, flipping halfway, until leathery and dry with no wet spots.",
+     "timer": 140
+    },
+    {
+     "title": "Cool",
+     "text": "Cool on the sheets; they firm up as they cool."
+    }
+   ],
+   "storage": "Airtight jar 2 weeks.",
+   "keepDays": 14,
+   "tips": [
+    "A mandoline makes even slices so they dry at the same rate.",
+    "Break a ring in pieces for a small dog."
+   ],
+   "source": "AKC 'Can dogs eat apples?'; ASPCA Animal Poison Control (apple seeds and cores).",
+   "levels": {
+    "basic": {
+     "note": "Plain apple rings."
+    },
+    "fancy": {
+     "note": "Peanut butter sandwich rings at serving.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 2,
+         "unit": "tbsp",
+         "name": "natural peanut butter",
+         "warn": "Check the label: NO xylitol (also called birch sugar). Plain, unsalted is best."
+        }
+       ]
+      }
+     ],
+     "addSteps": [
+      {
+       "title": "Fancy finish",
+       "text": "To serve, spread a thin layer of peanut butter between two rings. Make them just before giving."
+      }
+     ]
+    }
+   },
+   "why": {
+    "0-0": "Gala is naturally sweet, so nothing else is needed."
+   },
+   "levelCost": {
+    "basic": 3,
+    "classic": 3,
+    "fancy": 3.5
+   },
+   "funFact": "Apple seeds contain amygdalin, which releases cyanide when crushed, which is why the core always comes out."
+  },
+  {
+   "id": "birthday-pupcakes",
+   "title": "Birthday Pupcakes",
+   "subtitle": "mini pumpkin-peanut cakes with yogurt frosting",
+   "image": "assets/acura/birthday-pupcakes.webp",
+   "makes": "24 mini pupcakes",
+   "prep": 20,
+   "cook": 18,
+   "kcal": "~50 kcal each",
+   "tags": [
+    "Baked",
+    "Soft",
+    "Special occasion"
+   ],
+   "dogSafe": "Every ingredient is dog-safe: xylitol-free peanut butter, plain pumpkin, carrot and plain yogurt. No icing, sprinkles or chocolate.",
+   "groups": [
+    {
+     "name": "Pupcakes",
+     "items": [
+      {
+       "qty": 1,
+       "unit": "cup",
+       "name": "whole wheat flour"
+      },
+      {
+       "qty": 1,
+       "unit": "tsp",
+       "name": "baking powder"
+      },
+      {
+       "qty": 1,
+       "unit": null,
+       "name": "large egg"
+      },
+      {
+       "qty": 0.25,
+       "unit": "cup",
+       "name": "natural peanut butter",
+       "warn": "Check the label: NO xylitol (also called birch sugar). Plain, unsalted is best."
+      },
+      {
+       "qty": 0.5,
+       "unit": "cup",
+       "name": "pure pumpkin purée",
+       "note": "NOT pumpkin pie filling",
+       "warn": "Use 100% pure pumpkin, not pie filling (it is spiced and sweetened)."
+      },
+      {
+       "qty": 0.5,
+       "unit": "cup",
+       "name": "finely grated carrot"
+      },
+      {
+       "qty": 2,
+       "unit": "tbsp",
+       "name": "canola oil"
+      },
+      {
+       "qty": 0.33,
+       "unit": "cup",
+       "name": "water"
+      }
+     ]
+    },
+    {
+     "name": "Frosting",
+     "items": [
+      {
+       "qty": 0.5,
+       "unit": "cup",
+       "name": "plain unsweetened Greek yogurt",
+       "warn": "Plain, unsweetened, no xylitol."
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Heat the oven",
+     "text": "Heat the oven to 175°C (350°F) and grease a 24-cup mini muffin tin."
+    },
+    {
+     "title": "Mix",
+     "text": "Whisk the flour and baking powder. In another bowl stir the egg, peanut butter, pumpkin, carrot, oil and water, then fold in the flour until just mixed."
+    },
+    {
+     "title": "Bake",
+     "text": "Fill the cups two-thirds full and bake 15–18 minutes, until a toothpick comes out clean.",
+     "timer": 16
+    },
+    {
+     "title": "Cool",
+     "text": "Cool 10 minutes in the tin, then completely on a rack."
+    },
+    {
+     "title": "Frost",
+     "text": "Spread or pipe a little yogurt on each just before the party. Keep frosted ones in the fridge."
+    }
+   ],
+   "storage": "Unfrosted: fridge 4 days, freezer 2 months. Frosted: fridge 2 days.",
+   "keepDays": 4,
+   "tips": [
+    "One mini pupcake is a big treat for a small dog; halve it.",
+    "Freeze extras unfrosted for next time."
+   ],
+   "source": "Adapted from AKC dog birthday cake guidance; ingredient safety per ASPCA Animal Poison Control.",
+   "levels": {
+    "basic": {
+     "note": "Unfrosted pupcakes.",
+     "drop": [
+      "1-0"
+     ],
+     "stepNotes": {
+      "4": "Basic: skip the frosting."
+     }
+    },
+    "fancy": {
+     "note": "A blueberry crown on each one.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 0.25,
+         "unit": "cup",
+         "name": "fresh blueberries"
+        }
+       ]
+      }
+     ],
+     "stepNotes": {
+      "4": "Fancy: press a few blueberries into the frosting."
+     }
+    }
+   },
+   "why": {
+    "0-1": "Baking powder makes them light and cake-like.",
+    "0-4": "Pumpkin keeps them moist without anything sweet added."
+   },
+   "levelCost": {
+    "basic": 4,
+    "classic": 5,
+    "fancy": 6.5
+   },
+   "funFact": "Dogs can taste sweetness, but much more weakly than we do; the peanut butter smell is what gets the party going."
+  },
+  {
+   "id": "liver-training-bites",
+   "title": "Beef Liver Training Bites",
+   "subtitle": "the jackpot treat for recall practice",
+   "image": "assets/acura/liver-training-bites.webp",
+   "makes": "about 100 tiny cubes",
+   "prep": 15,
+   "cook": 25,
+   "kcal": "~8 kcal per cube",
+   "tags": [
+    "Baked",
+    "Soft",
+    "Training treat",
+    "High value",
+    "Freezer-friendly"
+   ],
+   "dogSafe": "Cooked liver is dog-safe in small amounts. It's very rich in vitamin A, so keep it to a few bites a day.",
+   "groups": [
+    {
+     "name": "Bites",
+     "items": [
+      {
+       "qty": 225,
+       "unit": "g",
+       "name": "beef liver",
+       "note": "rinsed and patted dry"
+      },
+      {
+       "qty": 1,
+       "unit": "cup",
+       "name": "oat flour",
+       "note": "or blended rolled oats"
+      },
+      {
+       "qty": 1,
+       "unit": null,
+       "name": "large egg"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Heat the oven",
+     "text": "Heat the oven to 175°C (350°F) and line a 20×20 cm (8 in) pan with parchment."
+    },
+    {
+     "title": "Blend",
+     "text": "Blend the liver smooth in a blender or food processor, then add the egg and oat flour and pulse to a thick batter."
+    },
+    {
+     "title": "Bake",
+     "text": "Spread it 1 cm thick in the pan and bake 20–25 minutes, until firm, springy and 74°C (165°F) in the centre.",
+     "timer": 23
+    },
+    {
+     "title": "Cool and cut",
+     "text": "Cool, lift out and cut into 1 cm cubes. Wash the blender, hands and counters well after raw liver."
+    }
+   ],
+   "storage": "Fridge 5 days; freezer 3 months.",
+   "keepDays": 5,
+   "tips": [
+    "Liver is very rich in vitamin A: a few cubes a day, not handfuls.",
+    "Freeze most of the batch in small bags for training weeks."
+   ],
+   "source": "Dog-safety and vitamin A caution per AKC 'Can dogs eat liver?'; cooked to 74°C (165°F) per Health Canada for organ meats and egg dishes.",
+   "levels": {
+    "basic": {
+     "note": "Liver, egg and oats, as written."
+    },
+    "fancy": {
+     "note": "Softer pumpkin-liver bites.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 0.25,
+         "unit": "cup",
+         "name": "pure pumpkin purée",
+         "warn": "Use 100% pure pumpkin, not pie filling (it is spiced and sweetened)."
+        }
+       ]
+      }
+     ],
+     "stepNotes": {
+      "1": "Fancy: blend in the pumpkin with the egg."
+     }
+    }
+   },
+   "why": {
+    "0-0": "Liver is the strongest-smelling, highest-value reward for hard lessons."
+   },
+   "levelCost": {
+    "basic": 3,
+    "classic": 3,
+    "fancy": 3.5
+   },
+   "funFact": "Liver is the body's vitamin A store: 100 g of beef liver has several days' worth for a medium dog, which is why it's a treat, not a meal."
+  },
+  {
+   "id": "green-bean-crisps",
+   "title": "Green Bean Crisps",
+   "subtitle": "light, crunchy, nearly calorie-free",
+   "image": "assets/acura/green-bean-crisps.webp",
+   "makes": "about 90 crisps",
+   "prep": 10,
+   "cook": 120,
+   "kcal": "~2 kcal each",
+   "tags": [
+    "Baked",
+    "Crunchy",
+    "Single ingredient",
+    "Fruit & veg"
+   ],
+   "dogSafe": "Plain green beans are dog-safe and low in calories. No oil or salt.",
+   "groups": [
+    {
+     "name": "Crisps",
+     "items": [
+      {
+       "qty": 450,
+       "unit": "g",
+       "name": "fresh green beans",
+       "note": "trimmed"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Heat the oven",
+     "text": "Heat the oven to 120°C (250°F) and line two baking sheets with parchment."
+    },
+    {
+     "title": "Blanch",
+     "text": "Boil the beans 3 minutes, drain and pat completely dry.",
+     "timer": 3
+    },
+    {
+     "title": "Dry",
+     "text": "Spread them on the sheets, not touching, and bake 1½–2 hours, shaking the pans every 30 minutes, until crisp and snapping.",
+     "timer": 105
+    },
+    {
+     "title": "Cool",
+     "text": "Cool on the sheets; any bendy ones go back in for 15 minutes."
+    }
+   ],
+   "storage": "Airtight jar 1 week.",
+   "keepDays": 7,
+   "tips": [
+    "A good swap when she's watching her weight.",
+    "Store with a paper towel in the jar to keep them crisp."
+   ],
+   "source": "AKC 'Can dogs eat green beans?'.",
+   "levels": {
+    "basic": {
+     "note": "Plain green bean crisps."
+    },
+    "fancy": {
+     "note": "A mix of green beans and carrot coins.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 2,
+         "unit": null,
+         "name": "carrots",
+         "note": "sliced 3 mm thick"
+        }
+       ]
+      }
+     ],
+     "stepNotes": {
+      "1": "Fancy: blanch the carrot coins with the beans."
+     }
+    }
+   },
+   "why": {
+    "0-0": "Blanching first sets the colour and helps them dry evenly."
+   },
+   "levelCost": {
+    "basic": 3,
+    "classic": 3,
+    "fancy": 3.5
+   },
+   "funFact": "Vets often suggest green beans as a low-calorie filler for dogs that need to slim down."
+  },
+  {
+   "id": "chicken-ice-cubes",
+   "title": "Chicken Broth Ice Cubes",
+   "subtitle": "homemade no-salt broth frozen with chicken bits",
+   "image": "assets/acura/chicken-ice-cubes.webp",
+   "makes": "about 28 cubes",
+   "prep": 10,
+   "cook": 25,
+   "chill": 240,
+   "kcal": "~10 kcal per cube",
+   "tags": [
+    "Frozen",
+    "Summer",
+    "High value"
+   ],
+   "dogSafe": "Made from plain chicken and water. Never use store-bought broth: most are seasoned and very salty.",
+   "groups": [
+    {
+     "name": "Broth",
+     "items": [
+      {
+       "qty": 450,
+       "unit": "g",
+       "name": "boneless skinless chicken thighs",
+       "note": "fat trimmed"
+      },
+      {
+       "qty": 6,
+       "unit": "cup",
+       "name": "water"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Simmer",
+     "text": "Simmer the chicken in the water, partly covered, 20–25 minutes, until 74°C (165°F) in the thickest part.",
+     "timer": 23
+    },
+    {
+     "title": "Cool and skim",
+     "text": "Lift out the chicken. Cool the broth, then chill it and lift off the fat."
+    },
+    {
+     "title": "Fill the trays",
+     "text": "Chop a little of the chicken very small and drop a few bits into each ice-cube cup. Pour the broth over."
+    },
+    {
+     "title": "Freeze",
+     "text": "Freeze at least 4 hours, until solid, then pop into a freezer bag. Keep the rest of the plain chicken for her dinners this week.",
+     "timer": 240
+    }
+   ],
+   "storage": "Freezer bag up to 2 months.",
+   "keepDays": 60,
+   "tips": [
+    "Skimming the fat keeps them gentle on her tummy.",
+    "Pop one in her water bowl on a hot day."
+   ],
+   "source": "Poultry cooked to 74°C (165°F) per Health Canada; ASPCA Animal Poison Control on seasoned foods.",
+   "levels": {
+    "basic": {
+     "note": "Plain broth cubes, no chicken bits.",
+     "stepNotes": {
+      "2": "Basic: broth only."
+     }
+    },
+    "fancy": {
+     "note": "Peas and carrot frozen in with the chicken.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 0.25,
+         "unit": "cup",
+         "name": "frozen peas"
+        },
+        {
+         "qty": 1,
+         "unit": null,
+         "name": "carrot",
+         "note": "finely diced"
+        }
+       ]
+      }
+     ],
+     "stepNotes": {
+      "0": "Fancy: add the carrot and peas for the last 5 minutes.",
+      "2": "Fancy: spoon a little carrot and peas into each cup too."
+     }
+    }
+   },
+   "why": {
+    "0-0": "Thighs give a richer broth; trim the fat so it's light."
+   },
+   "levelCost": {
+    "basic": 6,
+    "classic": 6,
+    "fancy": 6.5
+   },
+   "funFact": "Dogs cool off mostly by panting; the only places they really sweat are their paw pads."
+  },
+  {
+   "id": "kibble-pumpkin-stuffer",
+   "title": "Frozen Kibble & Pumpkin Stuffer",
+   "subtitle": "a long-lasting lick-and-chew puzzle for a chew toy",
+   "image": "assets/acura/kibble-pumpkin-stuffer.webp",
+   "makes": "2 stuffed chew toys",
+   "prep": 10,
+   "cook": 0,
+   "chill": 240,
+   "kcal": "~20 kcal per toy plus the kibble (count it in her meal)",
+   "tags": [
+    "No bake",
+    "Frozen",
+    "Enrichment"
+   ],
+   "dogSafe": "Her own kibble plus plain pumpkin and plain yogurt. Count the kibble as part of her daily food.",
+   "groups": [
+    {
+     "name": "Stuffer",
+     "items": [
+      {
+       "qty": 0.5,
+       "unit": "cup",
+       "name": "Acura's regular kibble",
+       "note": "taken from her daily amount"
+      },
+      {
+       "qty": 0.25,
+       "unit": "cup",
+       "name": "pure pumpkin purée",
+       "note": "NOT pumpkin pie filling",
+       "warn": "Use 100% pure pumpkin, not pie filling (it is spiced and sweetened)."
+      },
+      {
+       "qty": 2,
+       "unit": "tbsp",
+       "name": "plain unsweetened yogurt",
+       "warn": "Plain, unsweetened, no xylitol."
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Soften",
+     "text": "Soak the kibble in warm water 10 minutes until soft, then drain.",
+     "timer": 10
+    },
+    {
+     "title": "Mix",
+     "text": "Mash the kibble with the pumpkin and yogurt."
+    },
+    {
+     "title": "Stuff",
+     "text": "Pack it into two hollow rubber chew toys, pressing it in firmly."
+    },
+    {
+     "title": "Freeze",
+     "text": "Stand the toys upright in a mug and freeze at least 4 hours.",
+     "timer": 240
+    }
+   ],
+   "storage": "Freezer up to 1 month.",
+   "keepDays": 30,
+   "tips": [
+    "Frozen toys take longer: great for when we leave the house.",
+    "Wash the toys well between uses."
+   ],
+   "source": "Enrichment guidance per AKC; ingredient safety per ASPCA Animal Poison Control.",
+   "levels": {
+    "basic": {
+     "note": "Kibble and pumpkin only.",
+     "drop": [
+      "0-2"
+     ],
+     "stepNotes": {
+      "1": "Basic: skip the yogurt."
+     }
+    },
+    "fancy": {
+     "note": "Layered with blueberries.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 2,
+         "unit": "tbsp",
+         "name": "blueberries"
+        }
+       ]
+      }
+     ],
+     "stepNotes": {
+      "2": "Fancy: drop a few blueberries in between the layers."
+     }
+    }
+   },
+   "why": {
+    "0-0": "Using her own kibble keeps the calories in her normal day."
+   },
+   "levelCost": {
+    "basic": 1,
+    "classic": 1.5,
+    "fancy": 2
+   },
+   "funFact": "Licking and chewing release calming endorphins in dogs, which is why trainers use frozen toys for alone time."
+  },
+  {
+   "id": "pb-oat-balls",
+   "title": "No-Bake Peanut Butter Oat Balls",
+   "subtitle": "five-minute rolled bites from the fridge",
+   "image": "assets/acura/pb-oat-balls.webp",
+   "makes": "about 30 small balls",
+   "prep": 15,
+   "cook": 0,
+   "chill": 30,
+   "kcal": "~30 kcal each",
+   "tags": [
+    "No bake",
+    "Soft"
+   ],
+   "dogSafe": "Rolled oats, plain pumpkin and xylitol-free peanut butter are all dog-safe.",
+   "groups": [
+    {
+     "name": "Balls",
+     "items": [
+      {
+       "qty": 1,
+       "unit": "cup",
+       "name": "quick rolled oats"
+      },
+      {
+       "qty": 0.33,
+       "unit": "cup",
+       "name": "natural peanut butter",
+       "warn": "Check the label: NO xylitol (also called birch sugar). Plain, unsalted is best."
+      },
+      {
+       "qty": 0.25,
+       "unit": "cup",
+       "name": "pure pumpkin purée",
+       "note": "NOT pumpkin pie filling",
+       "warn": "Use 100% pure pumpkin, not pie filling (it is spiced and sweetened)."
+      },
+      {
+       "qty": 2,
+       "unit": "tbsp",
+       "name": "ground flaxseed"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Mix",
+     "text": "Stir the oats, peanut butter, pumpkin and flaxseed into a stiff mix. Add a spoon of oats if it's sticky."
+    },
+    {
+     "title": "Roll",
+     "text": "Roll into 1.5 cm balls and set them on a parchment-lined plate."
+    },
+    {
+     "title": "Chill",
+     "text": "Chill 30 minutes until firm.",
+     "timer": 30
+    }
+   ],
+   "storage": "Fridge 1 week; freezer 2 months.",
+   "keepDays": 7,
+   "tips": [
+    "Damp hands stop the mix sticking.",
+    "Quick oats roll smoother than large flakes."
+   ],
+   "source": "Ingredient safety per ASPCA Animal Poison Control; AKC 'Can dogs eat oatmeal?'.",
+   "levels": {
+    "basic": {
+     "note": "Oats, peanut butter and pumpkin.",
+     "drop": [
+      "0-3"
+     ],
+     "stepNotes": {
+      "0": "Basic: skip the flaxseed."
+     }
+    },
+    "fancy": {
+     "note": "A blueberry pressed into each.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 0.25,
+         "unit": "cup",
+         "name": "fresh blueberries"
+        }
+       ]
+      }
+     ],
+     "stepNotes": {
+      "1": "Fancy: press a blueberry into each ball."
+     }
+    }
+   },
+   "why": {
+    "0-3": "Flax adds omega-3 fats for a shiny coat."
+   },
+   "levelCost": {
+    "basic": 2.5,
+    "classic": 3,
+    "fancy": 4
+   },
+   "funFact": "Oats are one of the few grains naturally rich in soluble fibre called beta-glucan."
+  },
+  {
+   "id": "cranberry-oat-stars",
+   "title": "Christmas Cranberry Oat Stars",
+   "subtitle": "crunchy holiday stars for her stocking",
+   "image": "assets/acura/cranberry-oat-stars.webp",
+   "makes": "about 40 stars",
+   "prep": 20,
+   "cook": 90,
+   "kcal": "~30 kcal each",
+   "tags": [
+    "Baked",
+    "Crunchy",
+    "Holiday"
+   ],
+   "dogSafe": "Fresh cranberries are dog-safe in small amounts. Never use dried cranberry mixes; they can hide other dried fruit and sweeteners.",
+   "groups": [
+    {
+     "name": "Dough",
+     "items": [
+      {
+       "qty": 2,
+       "unit": "cup",
+       "name": "whole wheat flour"
+      },
+      {
+       "qty": 1,
+       "unit": "cup",
+       "name": "quick rolled oats"
+      },
+      {
+       "qty": 0.5,
+       "unit": "cup",
+       "name": "pure pumpkin purée",
+       "note": "NOT pumpkin pie filling",
+       "warn": "Use 100% pure pumpkin, not pie filling (it is spiced and sweetened)."
+      },
+      {
+       "qty": 1,
+       "unit": null,
+       "name": "large egg"
+      },
+      {
+       "qty": 0.33,
+       "unit": "cup",
+       "name": "fresh or frozen cranberries",
+       "note": "finely chopped",
+       "warn": "Fresh or frozen only: dried mixes can hide other dried fruit."
+      },
+      {
+       "qty": 0.33,
+       "unit": "cup",
+       "name": "water",
+       "note": "more only if needed"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Heat the oven",
+     "text": "Heat the oven to 175°C (350°F) and line a baking sheet with parchment."
+    },
+    {
+     "title": "Mix the dough",
+     "text": "Stir the flour, oats, pumpkin, egg and cranberries together, adding the water a little at a time until it holds."
+    },
+    {
+     "title": "Roll and cut",
+     "text": "Roll out on a floured counter about 1 cm thick and cut into stars."
+    },
+    {
+     "title": "Bake",
+     "text": "Bake 25–30 minutes, flipping halfway, until firm and golden.",
+     "timer": 28
+    },
+    {
+     "title": "Dry out for crunch",
+     "text": "Turn the oven off and leave them inside with the door cracked for 1 hour.",
+     "timer": 60
+    },
+    {
+     "title": "Cool",
+     "text": "Cool completely on a rack."
+    }
+   ],
+   "storage": "Airtight jar 1 week; freezer 3 months.",
+   "keepDays": 7,
+   "tips": [
+    "Tie a few in a cellophane bag with ribbon for her stocking.",
+    "Make them small: she'll get more of them."
+   ],
+   "source": "AKC 'Can dogs eat cranberries?'; ASPCA Animal Poison Control.",
+   "levels": {
+    "basic": {
+     "note": "Pumpkin oat stars, no cranberries.",
+     "drop": [
+      "0-4"
+     ],
+     "stepNotes": {
+      "1": "Basic: skip the cranberries."
+     }
+    },
+    "fancy": {
+     "note": "Half-dipped in plain Greek yogurt.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 0.33,
+         "unit": "cup",
+         "name": "plain unsweetened Greek yogurt",
+         "warn": "Plain, unsweetened, no xylitol."
+        }
+       ]
+      }
+     ],
+     "addSteps": [
+      {
+       "title": "Fancy finish",
+       "text": "Dip one point of each cooled star in the yogurt, set on parchment and freeze 1 hour to set. Keep the dipped ones in the freezer."
+      }
+     ]
+    }
+   },
+   "why": {
+    "0-4": "Chopped fresh cranberries give red flecks without anything sweet."
+   },
+   "levelCost": {
+    "basic": 3,
+    "classic": 4,
+    "fancy": 5
+   },
+   "funFact": "Ripe cranberries bounce: growers have sorted them for over a century by dropping them past bounce boards."
+  },
+  {
+   "id": "pumpkin-pup-pancakes",
+   "title": "Pumpkin Pup Pancakes",
+   "subtitle": "silver-dollar weekend pancakes, plain for her",
+   "image": "assets/acura/pumpkin-pup-pancakes.webp",
+   "makes": "about 24 small pancakes",
+   "prep": 10,
+   "cook": 15,
+   "kcal": "~13 kcal each",
+   "tags": [
+    "Soft",
+    "Training treat"
+   ],
+   "dogSafe": "Plain flour, pumpkin and egg cooked through. No butter, syrup or toppings from our plates.",
+   "groups": [
+    {
+     "name": "Batter",
+     "items": [
+      {
+       "qty": 0.5,
+       "unit": "cup",
+       "name": "whole wheat flour"
+      },
+      {
+       "qty": 0.5,
+       "unit": "cup",
+       "name": "pure pumpkin purée",
+       "note": "NOT pumpkin pie filling",
+       "warn": "Use 100% pure pumpkin, not pie filling (it is spiced and sweetened)."
+      },
+      {
+       "qty": 1,
+       "unit": null,
+       "name": "large egg"
+      },
+      {
+       "qty": 0.25,
+       "unit": "cup",
+       "name": "water"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    {
+     "title": "Mix",
+     "text": "Whisk the flour, pumpkin, egg and water into a thick batter."
+    },
+    {
+     "title": "Cook",
+     "text": "Heat a nonstick skillet over medium-low with no butter or oil. Drop teaspoons of batter and cook 2 minutes a side until set all the way through, in batches.",
+     "timer": 12
+    },
+    {
+     "title": "Cool",
+     "text": "Cool on a rack, then break into pieces for training or give whole."
+    }
+   ],
+   "storage": "Fridge 4 days; freezer 2 months.",
+   "keepDays": 4,
+   "tips": [
+    "Make hers while ours cook; use a separate pan with nothing in it.",
+    "Freeze flat, then bag."
+   ],
+   "source": "Ingredient safety per ASPCA Animal Poison Control and AKC.",
+   "levels": {
+    "basic": {
+     "note": "Plain pumpkin pancakes, as written."
+    },
+    "fancy": {
+     "note": "Blueberries in the batter and a dab of yogurt on top.",
+     "add": [
+      {
+       "group": "Fancy finish",
+       "items": [
+        {
+         "qty": 0.25,
+         "unit": "cup",
+         "name": "fresh blueberries"
+        },
+        {
+         "qty": 2,
+         "unit": "tbsp",
+         "name": "plain unsweetened yogurt",
+         "warn": "Plain, unsweetened, no xylitol."
+        }
+       ]
+      }
+     ],
+     "stepNotes": {
+      "1": "Fancy: press a blueberry or two into each one as it cooks.",
+      "2": "Fancy: add a tiny dab of yogurt just before serving."
+     }
+    }
+   },
+   "why": {
+    "0-2": "The egg makes them hold together; cook until no wet batter shows."
+   },
+   "levelCost": {
+    "basic": 1,
+    "classic": 1,
+    "fancy": 2
+   },
+   "funFact": "Most canned pumpkin in North America is the Dickinson variety, a tan-skinned squash that looks nothing like a jack-o'-lantern."
   }
  ],
  "safety": {
