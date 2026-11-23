@@ -73,7 +73,8 @@
           "pantry": {
             "name": "Cranberries (fresh or frozen)",
             "cat": "produce"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 0.75,
@@ -118,13 +119,13 @@
           "pantry": {
             "name": "Oranges",
             "cat": "produce"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 0.125,
           "unit": "tsp",
           "name": "salt",
-          "note": "a pinch",
           "pantry": {
             "name": "Salt",
             "cat": "spices"

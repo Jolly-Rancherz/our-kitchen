@@ -103,7 +103,6 @@
           "qty": 0.125,
           "unit": "tsp",
           "name": "salt",
-          "note": "a pinch",
           "pantry": {
             "name": "Salt",
             "cat": "spices"

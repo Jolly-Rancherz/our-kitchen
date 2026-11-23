@@ -86,7 +86,7 @@
           "qty": 1.5,
           "unit": "kg",
           "name": "fully cooked boneless ham",
-          "note": "label says fully cooked",
+          "note": "the label says fully cooked",
           "pantry": {
             "name": "Ham (fully cooked)",
             "cat": "meat"
@@ -153,7 +153,8 @@
           "pantry": {
             "name": "Oranges",
             "cat": "produce"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 2,

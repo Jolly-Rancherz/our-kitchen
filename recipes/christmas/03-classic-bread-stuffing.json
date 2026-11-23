@@ -90,7 +90,8 @@
           "pantry": {
             "name": "Sandwich bread (white)",
             "cat": "grains"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 0.5,
@@ -127,7 +128,8 @@
           "pantry": {
             "name": "Celery",
             "cat": "produce"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 1.5,

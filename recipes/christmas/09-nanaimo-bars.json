@@ -140,7 +140,7 @@
         {
           "qty": 1,
           "unit": null,
-          "name": "large egg",
+          "name": "large eggs",
           "note": "beaten",
           "pantry": {
             "name": "Eggs",
@@ -257,7 +257,8 @@
           "pantry": {
             "name": "Semi-sweet chocolate (baking)",
             "cat": "baking"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 2,

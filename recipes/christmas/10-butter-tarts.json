@@ -149,7 +149,7 @@
         {
           "qty": 1,
           "unit": null,
-          "name": "large egg",
+          "name": "large eggs",
           "pantry": {
             "name": "Eggs",
             "cat": "dairy"
@@ -177,7 +177,6 @@
           "qty": 0.125,
           "unit": "tsp",
           "name": "salt",
-          "note": "a pinch",
           "pantry": {
             "name": "Salt",
             "cat": "spices"
