@@ -362,3 +362,13 @@ exactly 812pt although the image continues.
 - Links: Us → "Our calendar" tile (first in Just for us), week plan sheet → "Open our calendar", Year in review → "See YYYY day by day" (busiest month), calendar → "Our YYYY in review".
 - Us scrapbook touch: `.lead.hand` line, washi tape on `.sigcard`.
 - crawl.mjs now includes #/calendar and #/calendar/2026-01.
+
+## Update 12.4 — book: close, sounds, lamp, envelope, firsts, doodles (2026-11-23)
+- New saved fields (additive only): `settings.bookSound` (false) and `settings.bookLamp` (false); filled by the settings-default merge.
+- `closeBook()`: fixed `.bk-shut` overlay; a navy back cover (`--tile1`, gold border + heart) rotates from rotateY(-172deg) to 0 on its left spine (0.82 s), small settle, then `go('#/')` underneath and fade out. Reduced motion → straight home. Used by the back page's Close button and by turning past the last page (swipe forward on #/book/back).
+- `bookSound('turn')`: a short filtered-noise paper rustle via Web Audio (no audio files). Only when `bookSound` is on. Called from `turnTo` inside the book.
+- Corner controls `.bkctl` (#bookSnd, #bookLamp) next to the × , drawn by `bookCtlDraw`; hidden when a sheet or cook mode is open. Lamp = `#bkLampGlow` fixed multiply layer (its own element, so the grain on body::after is untouched).
+- Back page: `envelopeHTML()` / `bindEnvelope()` — sealed envelope (CSS only); tap opens it and shows a love note (`state.loveNotes`), tap again for the next. Part of NO_TURN so it never starts a page turn. Page still fits without scrolling (checked 360–430, Bigger text).
+- `#/book/firsts` (before Cooked together, in Contents): `ourFirsts()` reads cooked entries, photos, love notes and Acura treats — read only.
+- `doodle(slug)`: small SVG per chapter on chapter opening pages (not Acura's, which has paw prints).
+- Tests: pwtest/t124.mjs (firsts, doodle, lamp, sound toggle saved, envelope, no-scroll back page, close animation frames, lands on #/). Previews app_preview/u124-*.png.

@@ -135,7 +135,9 @@ const DEFAULT_STATE = () => ({
     // update 3 (added fields only)
     sounds: false, chime: 'bell', shake: false, playlist: '', dinnerAt: '18:30', seasonal: true,
     // update 12.2 (added field only): the store we shop at, drives the list title, prices and the Flipp flyer link
-    store: 'nofrills' },
+    store: 'nofrills',
+    // update 12.4 (added fields only): page-turn sounds and the night-reading lamp in the book
+    bookSound: false, bookLamp: false },
   favourites: { 'comfort-soups-01': now() },      // recipeId -> ts (Mom's soup pre-hearted)
   recent: [],          // [recipeId]
   hidden: {},          // recipeId -> ts
@@ -2213,6 +2215,8 @@ ICON.more = '<circle cx="5.5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/>
 ICON.pumpkin = '<path d="M12 7c-1.2-.9-3.6-1.2-5.4.2C4.2 9 4 13.6 5.6 16.4 7 19 9.6 19.6 12 18.6c2.4 1 5 .4 6.4-2.2 1.6-2.8 1.4-7.4-1-9.2C15.6 5.8 13.2 6.1 12 7z"/><path d="M12 7c.2-1.4.9-2.6 2.2-3.3M12 7c-1.4 2.6-1.4 8.6 0 11.6"/>';
 ICON.dice2 = ICON.dice;
 ICON.edit = '<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/>';
+ICON.mute = '<path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/>';
+ICON.lamp = '<path d="M8 4h8l3 7H5z"/><path d="M12 11v8M8 20h8"/><path d="M10 14.5c.6.6 1.3.9 2 .9"/>';
 ICON.bowl = '<path d="M3.5 11.5h17l-1.6 6.2a2 2 0 0 1-1.9 1.5H7a2 2 0 0 1-1.9-1.5z"/><path d="M8 11.5c0-2 1.8-3.4 4-3.4s4 1.4 4 3.4"/>';
 
 // ---------------------------------------------------------------- scroll container helpers (#4: fixed app shell)
@@ -4642,7 +4646,7 @@ const cookedStamp = (n, word = 'Cooked') => (n ? `<i class="stamp" aria-label="$
 // Never starts in the left 28px (the iOS swipe-back edge), on a horizontal scroller, a slider, the level switch or a field,
 // only once the move is clearly sideways, and never while a sheet, cook mode or a timer alarm is up.
 const TURN_EDGE = 28;
-const NO_TURN = '.bk-rib,.pick-card,.scratch,input,textarea,select,.chips,.plan,.lvbar,.photos,.hrow,.portion,.bonechips,.favtiles,.rcook,.snackchips,.dishes,table';
+const NO_TURN = '.bk-env,.bk-rib,.pick-card,.scratch,input,textarea,select,.chips,.plan,.lvbar,.photos,.hrow,.portion,.bonechips,.favtiles,.rcook,.snackchips,.dishes,table';
 let PT = null;
 function turnList() {
   const h = location.hash; let m;
@@ -4696,6 +4700,7 @@ function turnIn() {
 function turnTo(hash, dir, k) {
   if (reducedMotion()) { turnClean(); ui.flip = dir; location.replace(hash); return; }
   if (!document.body.classList.contains('turning')) turnBegin(dir);
+  if (location.hash.startsWith('#/book')) bookSound('turn');
   turnOut(dir, k, () => { ui.flip = dir; location.replace(hash); }); // replace: a turn is a sideways step, not a new level of Back
 }
 function initPageTurn() {
@@ -4727,6 +4732,7 @@ function initPageTurn() {
     const p = PT; PT = null; if (!p || !p.lock) return;
     const k = Math.max(0, (-p.dir * p.dx) / v.clientWidth); const vel = (-p.dir * p.dx) / Math.max(1, p.t1 - p.t0);
     if (!cancel && p.to && (k > 0.28 || (k > 0.08 && vel > 0.45))) turnTo(p.to, p.dir, k);
+    else if (!cancel && !p.to && p.dir === 1 && location.hash === '#/book/back' && (k > 0.2 || vel > 0.45)) { turnBack(); closeBook(); } // turning past the last page closes the book
     else if (!reducedMotion()) turnBack();
   };
   v.addEventListener('touchend', () => end(false));
@@ -4742,7 +4748,7 @@ function bookPages() {
   const p = ['#/book/title', '#/book/dedication', '#/book/about', '#/book/contents'];
   bookCats().forEach((c) => { p.push('#/book/c/' + c.slug); p.push(...chapterList(c.slug).map((h) => '#/book/' + h.slice(2))); });
   if (ACURA) { p.push('#/book/c/acura'); p.push(...acOrder(ACURA.treats).map((t) => '#/book/t/' + t.id)); }
-  p.push('#/book/together', '#/book/back'); return p;
+  p.push('#/book/firsts', '#/book/together', '#/book/back'); return p;
 }
 // update 10.3: each chapter of the book has its own ink accent (divider, page tab, ornaments); Acura's are warm browns
 const BOOK_ACC = { chicken: '#B8892B', 'pasta-italian': '#B0573A', 'beef-turkey': '#9A6236', 'steak-pork': '#8A3A34', seafood: '#5B7C9C', 'takeout-at-home': '#4F8274', 'comfort-soups': '#768A58', acura: '#7A4E2E' };
@@ -4780,6 +4786,93 @@ function bindBookRibbon(part) {
   };
 }
 const HEART_SVG = '<svg class="splash-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.6 4.6 0 0 1 8-3.1A4.6 4.6 0 0 1 20 10c0 5.8-8 11-8 11z"/></svg>';
+// ---------------------------------------------------------------- update 12.4: the book's last touches
+// Closing: the back cover swings shut over the last page on a spine hinge (left edge), its shadow falls across the page,
+// it settles with a small give, then the app comes back. Reduced motion just closes.
+function closeBook() {
+  if (reducedMotion() || $('.bk-shut')) { go('#/'); return; }
+  const w = document.createElement('div'); w.className = 'bk-shut'; w.setAttribute('aria-hidden', 'true');
+  w.innerHTML = '<i class="bk-shade"></i><div class="bk-cv"><div class="bk-cvin"><span class="bk-cvh">' + HEART_SVG + '</span></div></div>';
+  document.body.appendChild(w); bookSound('close');
+  requestAnimationFrame(() => requestAnimationFrame(() => w.classList.add('go')));
+  setTimeout(() => w.classList.add('settle'), 820);
+  setTimeout(() => { go('#/'); w.classList.add('out'); setTimeout(() => w.remove(), 320); }, 1180);
+}
+// page sounds: a soft paper rustle (filtered noise) on each turn, and a low book thump on close. Off unless turned on
+// with the little speaker in the book's corner (settings.bookSound, an added field).
+let bookAC = null;
+function bookSound(kind) {
+  if (!state.settings.bookSound) return;
+  try {
+    bookAC = bookAC || new (window.AudioContext || window.webkitAudioContext)(); const ac = bookAC; if (ac.state === 'suspended') ac.resume();
+    const t = ac.currentTime; const len = kind === 'close' ? 0.32 : 0.26;
+    const buf = ac.createBuffer(1, Math.floor(ac.sampleRate * len), ac.sampleRate); const d = buf.getChannelData(0);
+    for (let i = 0; i < d.length; i++) { const x = i / d.length; d[i] = (Math.random() * 2 - 1) * (kind === 'close' ? Math.exp(-x * 9) : Math.sin(Math.PI * x) ** 1.6 * (0.6 + 0.4 * Math.random())); }
+    const src = ac.createBufferSource(); src.buffer = buf;
+    const f = ac.createBiquadFilter(); f.type = kind === 'close' ? 'lowpass' : 'bandpass'; f.frequency.value = kind === 'close' ? 380 : 2600; f.Q.value = kind === 'close' ? 0.7 : 0.6;
+    const g = ac.createGain(); g.gain.setValueAtTime(kind === 'close' ? 0.55 : 0.16, t); g.gain.exponentialRampToValueAtTime(0.001, t + len);
+    src.connect(f); f.connect(g); g.connect(ac.destination); src.start(t); src.stop(t + len + 0.02);
+  } catch (e) {}
+}
+// corner controls inside the book: sound and the night-reading lamp, beside the close ×
+(() => {
+  const mk = (id, label) => { const b = document.createElement('button'); b.id = id; b.className = 'bkctl'; b.setAttribute('aria-label', label); document.body.appendChild(b); return b; };
+  const snd = mk('bookSnd', 'Page sounds'); const lamp = mk('bookLamp', 'Reading lamp');
+  const glow = document.createElement('div'); glow.id = 'bkLampGlow'; glow.setAttribute('aria-hidden', 'true'); document.body.appendChild(glow);
+  const draw = () => {
+    snd.innerHTML = svg(state.settings.bookSound ? 'speaker' : 'mute'); snd.setAttribute('aria-pressed', !!state.settings.bookSound);
+    lamp.innerHTML = svg('lamp'); lamp.setAttribute('aria-pressed', !!state.settings.bookLamp); lamp.classList.toggle('on', !!state.settings.bookLamp);
+    document.body.classList.toggle('bklamp', !!state.settings.bookLamp);
+  };
+  snd.onclick = () => { state.settings.bookSound = !state.settings.bookSound; save(); draw(); if (state.settings.bookSound) bookSound('turn'); toast(state.settings.bookSound ? 'Page sounds on' : 'Page sounds off'); };
+  lamp.onclick = () => { state.settings.bookLamp = !state.settings.bookLamp; save(); draw(); };
+  window.bookCtlDraw = draw; setTimeout(draw, 0);
+})();
+// "Our firsts": the first time for things, read from what we've already saved
+function ourFirsts(treats) {
+  const ds = Object.values(state.cooked || {}).filter((e) => e && e.date && e.recipeId !== 'receipt').sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : (a.at || 0) - (b.at || 0)));
+  const title = (e) => (summary(e.recipeId) || {}).title || e.title || 'Dinner';
+  const out = []; const f = (pred) => ds.find(pred);
+  const a = f((e) => summary(e.recipeId)); if (a) out.push(['Our first dinner in this book', title(a), a.date, 'navy']);
+  const c = f((e) => summary(e.recipeId) && (e.by === 'Corey')); if (c) out.push(['Corey cooked first', title(c), c.date, 'navy']);
+  const fa = f((e) => summary(e.recipeId) && (e.by === 'Faith')); if (fa) out.push(['Faith cooked first', title(fa), fa.date, 'plum']);
+  const b = f((e) => summary(e.recipeId) && e.by === 'Both'); if (b) out.push(['First one we made together', title(b), b.date, 'plum']);
+  const fancy = Object.entries(state.levelNotes || {}).flatMap(([id, l]) => (l.fancy && l.fancy.at ? [[id, l.fancy.at]] : [])).sort((x, y) => x[1] - y[1])[0];
+  if (fancy && summary(fancy[0])) out.push(['First Fancy night', summary(fancy[0]).title, isoOf(new Date(fancy[1])), 'sepia']);
+  const ph = Object.entries(state.photos || {}).flatMap(([id, ps]) => (ps || []).map((p) => [id, p.date])).filter((x) => x[1]).sort((x, y) => (x[1] < y[1] ? -1 : 1))[0];
+  if (ph && summary(ph[0])) out.push(['First photo in the book', summary(ph[0]).title, ph[1], 'sepia']);
+  const ln = Object.entries(state.loveNotes || {}).filter(([, n]) => n && n.date).sort((x, y) => (x[1].date < y[1].date ? -1 : 1))[0];
+  if (ln && summary(ln[0])) out.push([`First love note${ln[1].by ? ' — from ' + ln[1].by : ''}`, summary(ln[0]).title, ln[1].date, inkOf(ln[1].by)]);
+  const tr = ds.find((e) => treats.some((t) => t.id === e.recipeId)); if (tr) out.push(['Acura’s first homemade treat', (treats.find((t) => t.id === tr.recipeId) || {}).title || 'A treat', tr.date, 'sepia']);
+  return out;
+}
+// tiny pen doodles for a chapter's margin, drawn in its accent ink (decoration only)
+const DOODLE = {
+  chicken: '<path d="M6 30c6-2 9-8 9-14M15 16c3-1 6-4 6-8M15 16c-3-1-5-4-5-7M21 8c2 0 3 1 3 3"/><circle cx="23" cy="26" r="3"/>',
+  'pasta-italian': '<path d="M4 26c4-6 8 6 12 0s8 6 12 0M4 18c4-6 8 6 12 0s8 6 12 0"/><path d="M30 6v22"/>',
+  'beef-turkey': '<path d="M5 22h26M7 22c0-8 6-12 11-12s11 4 11 12M18 10V6M14 7l4-1 4 1"/>',
+  'steak-pork': '<path d="M8 9c8-4 18 0 18 9s-8 11-15 9-9-12-3-18z"/><path d="M14 16c2 1 4 1 6 0"/>',
+  seafood: '<path d="M5 18c6-8 16-8 22 0-6 8-16 8-22 0zM27 18l5-5v10z"/><circle cx="11" cy="16" r="1"/>',
+  'takeout-at-home': '<path d="M8 12h20l-3 18H11zM12 12l2-6h8l2 6M5 6l12 10M9 4l10 11"/>',
+  'comfort-soups': '<path d="M5 18h26c0 7-6 11-13 11S5 25 5 18zM12 13c-2-2 2-4 0-7M18 13c-2-2 2-4 0-7M24 13c-2-2 2-4 0-7"/>',
+};
+const doodle = (slug) => DOODLE[slug] ? `<svg class="bk-doodle" viewBox="0 0 36 36" aria-hidden="true">${DOODLE[slug]}</svg>` : '';
+// the love-note envelope tucked inside the back cover: tap to open it, tap the card for the next note
+function envelopeHTML() {
+  const notes = Object.entries(state.loveNotes || {}).filter(([, n]) => n && n.text).sort((a, b) => ((a[1].date || '') < (b[1].date || '') ? 1 : -1));
+  const card = notes.length ? notes.map(([id, n], i) => `<div class="env-note${i ? '' : ' on'}" data-i="${i}"><p class="hw ${inkOf(n.by)}">“${esc(n.text)}”</p><p class="hw sepia env-by">${n.by ? '— ' + esc(n.by) + ', ' : ''}${esc((summary(id) || {}).title || '')}</p></div>`).join('')
+    : '<div class="env-note on"><p class="hw sepia">Leave a love note on any recipe and it gets tucked in here.</p></div>';
+  return `<button class="bk-env" id="bkEnv" aria-label="Open the love-note envelope" aria-expanded="false"><span class="env-back"></span><span class="env-card">${card}${notes.length > 1 ? `<span class="env-n hw sepia">1 / ${notes.length}</span>` : ''}</span><span class="env-front"></span><span class="env-flap"></span><span class="env-seal">${HEART_SVG}</span></button>`;
+}
+function bindEnvelope() {
+  const e = $('#bkEnv'); if (!e) return; let i = 0;
+  e.onclick = () => {
+    if (!e.classList.contains('open')) { e.classList.add('open'); e.setAttribute('aria-expanded', 'true'); bookSound('turn'); return; }
+    const ns = $$('.env-note', e); if (ns.length < 2) { e.classList.remove('open'); e.setAttribute('aria-expanded', 'false'); return; }
+    ns[i].classList.remove('on'); i = (i + 1) % ns.length; ns[i].classList.add('on'); const c = $('.env-n', e); if (c) c.textContent = `${i + 1} / ${ns.length}`;
+  };
+}
+
 async function viewBook(part = 'title') {
   if (part === 'cover') { history.replaceState(null, '', '#/book/title'); part = 'title'; } // update 10.5: the title page is the front cover now
   await loadAcura(); if (!location.hash.startsWith('#/book')) return;
@@ -4796,6 +4889,9 @@ async function viewBook(part = 'title') {
     const top = Object.entries(by).sort((a, b) => b[1].n - a[1].n).slice(0, 5);
     html = `<div class="bk-page"><div class="ch-k">Cooked together</div>${ORN}<div class="bk-index"><p class="hw navy big">${done.length ? `${done.length} dinner${done.length === 1 ? '' : 's'}, ${Object.keys(by).length} different recipe${Object.keys(by).length === 1 ? '' : 's'}` : 'our first dinner goes here'}</p>
       ${top.map(([id, x]) => `<div class="tl-row"><span class="hw sepia">${esc((summary(id) || {}).title || x.title || '')}</span>${tally(x.n)}</div>`).join('')}</div>${ORN}</div>`; }
+  else if (part === 'firsts') {
+    const fs = ourFirsts(treats);
+    html = `<div class="bk-page"><div class="ch-k">Our firsts</div>${ORN}<div class="bk-index bk-firsts">${fs.length ? fs.map(([k, t, d, ink]) => `<div class="fs-row"><span class="fs-k">${esc(k)}</span><span class="hw ${ink}">${esc(t)}</span><span class="hw sepia fs-d">${esc(longDate(d))}</span></div>`).join('') : '<p class="hw sepia big">our firsts get written here, one dinner at a time</p>'}</div>${doodle('comfort-soups')}${ORN}</div>`; }
   else if (part === 'about') html = `<div class="bk-page"><div class="ch-k">About this book</div>${ORN}
     <div class="bk-scrap"><p class="bk-drop">This is our kitchen, written down. Every recipe in here is one we cook for each other: mild, cozy and made for two, with no mushrooms, mustard or olives.</p>
     <p>Each dish can be made Basic, Classic or Fancy, and the pages remember how we liked it. There are ${cats.length} chapters of dinners${treats.length ? ', and Acura has her own chapter at the back' : ''}.</p>
@@ -4803,6 +4899,7 @@ async function viewBook(part = 'title') {
   else if (part === 'contents') html = `<div class="bk-page"><div class="ch-k">Contents</div>${ORN}<div class="bk-index"><ol class="bk-toc">
     ${cats.map((c, i) => `<li><a href="#/book/c/${c.slug}"><span class="n">${roman(i + 1)}</span><b>${esc(c.name)}${marks.some((k) => k === 'c/' + c.slug || (k.startsWith('r/') && (summary(k.slice(2)) || {}).category === c.slug)) ? '<em class="mini-rib" aria-label="bookmarked"></em>' : ''}</b><i></i><span class="p">${pg('#/book/c/' + c.slug)}</span></a></li>`).join('')}
     ${treats.length ? `<li><a href="#/book/c/acura"><span class="n">${roman(cats.length + 1)}</span><b>Acura’s Kitchen${marks.some((k) => k === 'c/acura' || k.startsWith('t/')) ? '<em class="mini-rib" aria-label="bookmarked"></em>' : ''}</b><i></i><span class="p">${pg('#/book/c/acura')}</span></a></li>` : ''}
+    <li><a href="#/book/firsts"><span class="n">✦</span><b>Our firsts</b><i></i><span class="p">${pg('#/book/firsts')}</span></a></li>
     <li><a href="#/book/together"><span class="n">♥</span><b>Cooked together</b><i></i><span class="p">${pg('#/book/together')}</span></a></li></ol>
     ${marks.length ? `<div class="bk-marks"><p class="bm-h"><em class="mini-rib"></em>Bookmarked</p>${marks.slice(0, 8).map((k) => `<a href="#/book/${k}"><span class="hw navy">${esc(bkTitleOf(k))}</span><i></i><span class="hw sepia">${pg('#/book/' + k)}</span></a>`).join('')}</div>` : ''}</div></div>`;
   else if ((m = part.match(/^c\/([\w-]+)$/))) {
@@ -4811,7 +4908,7 @@ async function viewBook(part = 'title') {
     const stk = acura ? `<span class="bk-sticker paw-st">${PAW()}</span>` : catOf(m[1]).tile ? `<img class="bk-sticker" src="${catOf(m[1]).tile}" alt="" aria-hidden="true">` : '';
     html = `<div class="chapter bk-ch">${stk}<div class="ch-k">Chapter ${roman(ci || 1)}</div>${ORN}<h1 class="ch-t">${acura ? 'Acura’s Kitchen' : esc(catOf(m[1]).name)}</h1>
       <p class="ch-s">${acura ? 'Treats for our good girl' : list.length + ' recipe' + (list.length === 1 ? '' : 's')}</p>${acura ? `<div class="bk-trail" aria-hidden="true">${PAW().repeat(7)}</div>` : ''}${ORN}
-      <ul class="bk-list">${list.map((x) => `<li><a href="${x.h}"><b>${esc(x.title || '')}</b><i></i><span class="p">${pg(x.h)}</span></a></li>`).join('')}</ul></div>`;
+      <ul class="bk-list">${list.map((x) => `<li><a href="${x.h}"><b>${esc(x.title || '')}</b><i></i><span class="p">${pg(x.h)}</span></a></li>`).join('')}</ul>${acura ? '' : doodle(m[1])}</div>`;
   } else if ((m = part.match(/^(r|t)\/([\w-]+)$/))) {
     // a printed recipe page: read-only (the recipe as written, Classic), cooking happens in the app
     const treat = m[1] === 't'; const r = treat ? treats.find((t) => t.id === m[2]) : await getRecipe(m[2]);
@@ -4828,7 +4925,7 @@ async function viewBook(part = 'title') {
       <hr class="bk-dots"><h2 class="bk-h">Method</h2><ol class="bk-steps">${r.steps.map((st) => `<li><b>${esc(st.title)}.</b> ${esc(st.text)}</li>`).join('')}</ol>
       <div class="bk-stamp">${treat ? PAW() : ''}<span>from our<br>kitchen</span></div>
       <p class="bk-foot">${pages.indexOf(location.hash) + 1}</p></article>`;
-  } else if (part === 'back') html = `<div class="bk-back">${ORN}<p class="bk-end">The end — for now.</p><p class="small">More pages get written every time we cook.</p><div class="splash-names">Corey ${HEART_SVG} Faith</div><p class="small muted">London, Ontario</p>${ORN}<button class="btn sm" id="bkClose">Close the book</button></div>`;
+  } else if (part === 'back') html = `<div class="bk-back">${ORN}<p class="bk-end">The end — for now.</p><p class="small">More pages get written every time we cook.</p><div class="splash-names">Corey ${HEART_SVG} Faith</div><p class="small muted">London, Ontario</p>${envelopeHTML()}<button class="btn sm" id="bkClose">Close the book</button></div>`;
   else { go('#/book/title'); return; }
   const fixed = ['cover', 'title', 'dedication', 'back'].includes(part); // full-page designs: exactly one screen, never scroll
   const acc = ch ? bookAcc(ch[0], ch[1] - 1) : '';
@@ -4840,7 +4937,8 @@ async function viewBook(part = 'title') {
   bindBookRibbon(part);
   $('#view').classList.toggle('bk-cover-on', part === 'cover'); document.body.classList.toggle('bkcover', part === 'cover');
   bookScrollFit();
-  $('#bkClose') && ($('#bkClose').onclick = () => go('#/'));
+  $('#bkClose') && ($('#bkClose').onclick = closeBook);
+  bindEnvelope(); window.bookCtlDraw && window.bookCtlDraw();
 }
 // update 10.3: a book page may scroll only when its content is taller than the page; one that fits stays put (no drag,
 // no rubber band). Measured after it is drawn (and again when a photo or font settles), so it follows the real content.
@@ -5089,6 +5187,38 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+{
+ "name": "Update 12.4",
+ "id": "u124-2026-11",
+ "date": "2026-11-23",
+ "intro": "The book closes like a real one.",
+ "notes": [
+  [
+   "Closing the book",
+   "Tap Close the book, or turn past the last page, and the back cover swings shut on its spine before you land back home"
+  ],
+  [
+   "Page sounds",
+   "A soft paper rustle on each page turn. Off unless you turn it on with the little speaker at the top of the book"
+  ],
+  [
+   "Reading lamp",
+   "The lamp at the top of the book warms the pages for reading in bed"
+  ],
+  [
+   "Love-note envelope",
+   "Inside the back cover, tap the sealed envelope to open it and read one of our love notes. Tap again for another"
+  ],
+  [
+   "Our firsts",
+   "A new page near the end: our first dinner in the book, the first each of us cooked, the first one we made together, the first photo and more, with dates"
+  ],
+  [
+   "Chapter doodles",
+   "A small hand-drawn doodle in each chapter's ink on its opening page"
+  ]
+ ]
+},
  {
   "name": "Update 12.3",
   "id": "u123-2026-11",
