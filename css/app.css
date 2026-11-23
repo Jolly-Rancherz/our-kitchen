@@ -1678,3 +1678,13 @@ body.book{--ink:#16204A;--ink2:#4A3526;--muted:#7A6450;--kicker:#6A2440;--group:
 #homeBody>.sec+.sec::before,#homeBody>.sec+.nudge+.sec::before{content:"";display:block;height:1px;margin:0 8% 16px;background:linear-gradient(90deg,transparent,var(--line-gold),transparent)}
 /* update 10.6: prices and totals use even-width digits so columns line up (Budget, Grocery, Pantry) */
 #view .amt,#view .pill,#view button{font-variant-numeric:tabular-nums}
+/* update 11: Pantry stock buttons get a taller tap target; Grocery trip card shows how much is in the cart */
+.seg button{height:40px}
+.trip .tprog{grid-column:1/-1;display:block;height:3px;margin-top:8px;background:rgba(245,230,206,.18);overflow:hidden}
+.trip .tprog i{display:block;height:100%;background:var(--gold);transform-origin:left;transition:transform .3s ease}
+.trip small.tdone{margin-top:4px}
+.sec-title .act{white-space:nowrap} /* update 11: header actions never wrap to two lines */
+/* update 11: two-up button rows keep their labels on one line (Bigger text on small phones) */
+.btnrow .btn{white-space:nowrap;min-width:0}
+html.big .btnrow .btn{font-size:.82rem;padding-left:8px;padding-right:8px}
+.sec.pick{overflow-x:clip} /* update 11.0: the sliding pick card never widens the page mid-swipe */

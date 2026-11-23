@@ -868,7 +868,7 @@ function viewPantry() {
         return `<div class="prow" data-k="${x.key}"><div class="nm"><button class="nmbtn" data-pk="${x.key}">${esc(x.name)}</button><small>${used}</small>${useByTag(state.pantry[x.key])}${['low', 'out'].includes(l) ? (onList(x.key) ? '<span class="addl onlist">✓ On list</span>' : `<button class="addl" data-add="${x.key}">+ Grocery list</button>`) : ''}</div>
           <div class="seg">${LEVELS.map(([lk, short, long]) => `<button data-l="${lk}" class="${l === lk ? 'on' : ''}" aria-label="${long}">${short}</button>`).join('')}</div></div>`;
       }).join('')}</div>`;
-    }).join('') || '<div class="empty" style="margin-top:14px">Nothing here.</div>'}
+    }).join('') || `<div class="empty" style="margin-top:14px">${pf === 'need' ? 'Nothing is low or out. The pantry is stocked ♥' : pf === 'unset' ? 'Every item has a stock level.' : 'Nothing here yet.'}</div>`}
     <div class="sec"><div class="sec-title">Add a pantry item</div>
       <div class="addrow"><input id="pNew" placeholder="e.g. Paper towel, ketchup…" enterkeyhint="done"><button class="btn primary" id="pAdd" aria-label="Add">${svg('plus')}</button></div></div>
   </div>`);
@@ -930,8 +930,8 @@ function viewBudget() {
       <div class="bar"><div class="fill ${total > hi ? 'over' : ''}" style="width:${pct(total)}%"></div><div class="band" style="left:${pct(lo)}%;width:${pct(hi) - pct(lo)}%"></div></div>
       <div class="barlbl"><span>$0</span><span>target ${money(lo)}–${money(hi)}</span></div>
       <p>${esc(msg)}</p>${pace ? `<p class="pace">${esc(pace)}</p>` : ''}</div>
-    <div class="sec"><div class="sec-title">Cooked this month<button class="act" id="addOther">+ Add other</button><button class="act" id="scanB">Scan receipt</button></div>
-      ${entries.length ? `<ul class="cooked">${entries.map((c) => `<li><div><div class="t">${esc(c.title)}</div><div class="d">${esc(shortDate(c.date))}${c.receipt ? '<span class="est">grocery receipt</span>' : c.inReceipts ? '<span class="est">counted in receipts</span>' : c.estimate ? '<span class="est">estimate</span>' : '<span class="est">receipt</span>'}${c.by ? ' · ' + esc(c.by === 'Both' ? 'both' : c.by) : ''}</div></div><button class="a" data-e="${c.id}">${c.inReceipts ? '—' : money(c.amount, true)}</button></li>`).join('')}</ul>` : '<div class="empty">No dinners logged yet.</div>'}
+    <div class="sec"><div class="sec-title">Cooked this month<button class="act" id="addOther">+ Add</button><button class="act" id="scanB">Scan receipt</button></div>
+      ${entries.length ? `<ul class="cooked">${entries.map((c) => `<li><div><div class="t">${esc(c.title)}</div><div class="d">${esc(shortDate(c.date))}${c.receipt ? '<span class="est">grocery receipt</span>' : c.inReceipts ? '<span class="est">counted in receipts</span>' : c.estimate ? '<span class="est">estimate</span>' : '<span class="est">receipt</span>'}${c.by ? ' · ' + esc(c.by === 'Both' ? 'both' : c.by) : ''}</div></div><button class="a" data-e="${c.id}">${c.inReceipts ? '—' : money(c.amount, true)}</button></li>`).join('')}</ul>` : '<div class="empty">No dinners logged this month yet. Cook something and it shows up here with what it cost.</div>'}
     </div>
     <div class="sec"><div class="sec-title">Us, so far</div>
       <div class="statgrid"><div class="s"><b>${all.length}</b><span>Meals cooked</span></div><div class="s"><b>${entries.length}</b><span>This month</span></div>
@@ -2001,9 +2001,27 @@ function ensureTick() {
     if (!cookTimers.length) { clearInterval(timerTick); timerTick = null; }
   }, 1000);
 }
+// update 11: read-aloud uses the most natural English voice on the phone — Siri, then Premium / Enhanced / neural
+// voices, then the regular ones (Canadian, then US, then UK/AU); iOS novelty voices are never picked. The list loads
+// late on iOS, so it is re-ranked when voices change.
+let VOICE = undefined;
+const NOVELTY = /albert|bad news|bahh|bells|boing|bubbles|cellos|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|fred|junior|ralph|kathy|grandma|grandpa|eddy|flo|reed|rocko|sandy|shelley/i;
+function bestVoice() {
+  if (VOICE !== undefined) return VOICE;
+  let list = []; try { list = speechSynthesis.getVoices() || []; } catch (e) {}
+  const score = (v) => { const n = (v.name + ' ' + v.voiceURI).toLowerCase(); const l = (v.lang || '').replace('_', '-');
+    if (!/^en/i.test(l) || NOVELTY.test(v.name)) return -1;
+    return (/siri/.test(n) ? 100 : 0) + (/premium/.test(n) ? 80 : 0) + (/enhanced/.test(n) ? 60 : 0) + (/neural|natural/.test(n) ? 50 : 0)
+      + (/\b(ava|zoe|evan|nathan|samantha|allison|susan|tom|serena|daniel|karen|moira|tessa|nicky|aaron|joelle|noelle)\b/.test(n) ? 20 : 0)
+      + ({ 'en-CA': 15, 'en-US': 10, 'en-GB': 8, 'en-AU': 6 }[l] || 0) + (v.localService ? 5 : 0); };
+  const best = list.map((v) => [score(v), v]).filter(([sc]) => sc >= 0).sort((a, b) => b[0] - a[0])[0];
+  VOICE = best ? best[1] : null; if (!list.length) VOICE = undefined; // not loaded yet: try again next time
+  return VOICE || null;
+}
+if ('speechSynthesis' in window) try { speechSynthesis.addEventListener('voiceschanged', () => { VOICE = undefined; }); } catch (e) {}
 function speak(text) {
   if (!('speechSynthesis' in window) || !(cookSession && cookSession.read)) return;
-  try { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(text); u.lang = 'en-CA'; u.rate = 0.98; speechSynthesis.speak(u); } catch (e) {}
+  try { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(text); const v = bestVoice(); if (v) { u.voice = v; u.lang = v.lang; } else u.lang = 'en-CA'; u.rate = 0.98; speechSynthesis.speak(u); } catch (e) {}
 }
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 function openCook(r, s, f) {
@@ -3163,12 +3181,12 @@ function viewGrocery() {
     <div class="kicker">No Frills run<span class="rule"></span></div>
     <h1 class="h1" style="margin-top:6px">Grocery List</h1>
     <p class="lead" style="margin-top:4px">${left ? `${left} thing${left === 1 ? '' : 's'} to grab` : items.length ? 'All done — nice.' : 'Empty for now.'}</p>
-    ${gd ? dateModeCard(items) : (() => { const t = tripEstimate(); return t.n && t.priced ? `<div class="trip"><span>Estimated trip</span><b>~${money(t.total)}</b><small>${t.priced === t.n ? 'all' : t.priced + ' of ' + t.n} items priced · typical No Frills packs${Object.keys(state.prices).length ? ' + your receipts' : ''}</small></div>` : ''; })()}
+    ${gd ? dateModeCard(items) : (() => { const t = tripEstimate(); return t.n && t.priced ? `<div class="trip"><span>Estimated trip</span><b>~${money(t.total)}</b><small>${t.priced === t.n ? 'all' : t.priced + ' of ' + t.n} items priced · typical No Frills packs${Object.keys(state.prices).length ? ' + your receipts' : ''}</small>${(() => { const dn = items.filter((g) => g.checked).length; return dn ? `<span class="tprog" aria-label="${dn} of ${items.length} in the cart"><i style="transform:scaleX(${(dn / items.length).toFixed(3)})"></i></span><small class="tdone">${dn} of ${items.length} in the cart</small>` : ''; })()}</div>` : ''; })()}
     <div class="btnrow" style="margin-top:10px">${gd ? '' : `<button class="btn ghost" id="gdStart" ${left ? '' : 'disabled style="opacity:.4"'}>${svg('heart')}Shop together</button>`}<button class="btn ghost" id="scanG" ${gd ? 'style="grid-column:1/-1"' : ''}>${svg('camera')}Scan receipt</button></div>
     ${gd ? '' : `<div class="btnrow" style="margin-top:8px"><button class="btn ghost" id="wkBtn">${svg('calendar')}Plan the week</button><button class="btn ghost" id="stBtn">${svg('plus')}Staples</button></div>`}
     <div class="addrow"><input id="gNew" placeholder="Add an item…" enterkeyhint="done" autocomplete="off"><button class="btn primary" id="gAdd" aria-label="Add">${svg('plus')}</button>
       <select id="gCat" aria-label="Aisle"><option value="">Aisle: auto</option>${AISLES.map(([k, n]) => `<option value="${k}">${esc(n)}</option>`).join('')}</select></div>
-    ${items.length ? `<p class="small muted swhint">Swipe right to tick · left to delete${gd ? ' · tap the hat to say who grabs it' : ''}</p>` : ''}
+    ${items.length ? `<p class="small muted swhint">Swipe → to tick · ← to delete${gd ? ' · tap the hat to say who grabs it' : ''}</p>` : ''}
     ${items.length ? AISLES.map(([ak, an]) => {
       const rows = shown.filter((g) => aisleOf(g) === ak).sort((a, b) => a.checked - b.checked || a.name.localeCompare(b.name));
       if (!rows.length) return '';
@@ -4834,6 +4852,34 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+ {
+  "name": "Update 11.1",
+  "id": "u111-2026-11",
+  "date": "2026-11-22",
+  "intro": "A full check of every tab, and some tidying.",
+  "notes": [
+   [
+    "Checked everything",
+    "Every tab, button, sheet and gesture was tested on small and large phones, in light and dark, with Bigger text on and off"
+   ],
+   [
+    "Pantry",
+    "Taller stock buttons that are easier to tap, and kinder messages when a filter is empty"
+   ],
+   [
+    "Grocery",
+    "The trip card shows how much is already in the cart, and buttons keep their labels on one line"
+   ],
+   [
+    "Budget",
+    "A tidier Cooked this month header and a friendlier empty month"
+   ],
+   [
+    "Read aloud",
+    "Cook mode reads with the most natural voice on your iPhone (Premium or Enhanced voices if you've downloaded them)"
+   ]
+  ]
+ },
  {
   "name": "Update 11.0",
   "id": "u110-2026-11",
