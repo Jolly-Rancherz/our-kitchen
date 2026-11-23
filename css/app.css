@@ -398,7 +398,7 @@ html[data-theme="dark"] #toast button{color:var(--gold-deep)}
 #cook .ctop{display:flex;justify-content:space-between;align-items:center}
 #cook .ctop .iconbtn{color:#F5E6CE}
 #cook .cstep{font-family:"Cinzel";font-size:.74rem;letter-spacing:.18em;color:var(--gold-soft)}
-#cook .prog{display:flex;gap:4px;margin-top:12px}
+#cook .prog{display:flex;gap:4px;margin-top:2px;padding:10px 0;cursor:pointer;-webkit-tap-highlight-color:transparent}
 #cook .prog i{flex:1;height:4px;background:rgba(245,230,206,.18)}
 #cook .prog i.on{background:var(--gold)}
 #cook .cbody{flex:1;overflow:auto;padding-top:26px}
@@ -1852,3 +1852,15 @@ body.book.bklamp:has(#sheetWrap:not([hidden])) #bkLampGlow{display:none}
 /* chapter doodles in the margin, in the chapter's ink */
 .bk-doodle{display:block;width:46px;height:46px;margin:14px 6px 0 auto;fill:none;stroke:var(--acc,#B8892B);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;opacity:.55;transform:rotate(-8deg)}
 @media (prefers-reduced-motion:reduce){.env-card,.env-flap,.bk-shut .bk-cv{transition:none}}
+
+/* ---------------------------------------------------------------- update 12.5 cooking: scrapbook-tidy recipe page and cook mode */
+/* one strip of washi tape holds the recipe photo in at the top-left corner (outside the tile, so it never covers the dish) */
+.hero::before{content:"";position:absolute;z-index:2;left:-12px;top:10px;width:78px;height:21px;transform:rotate(-34deg);pointer-events:none;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.22) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(242,229,198,.9);box-shadow:0 1px 3px rgba(18,16,46,.28);opacity:.92}
+html[data-theme="dark"] .hero::before{background:repeating-linear-gradient(90deg,rgba(255,255,255,.10) 0 6px,rgba(255,255,255,0) 6px 12px),rgba(222,200,150,.78)}
+.r-head .lead.hand{margin-top:4px}
+/* the note we left ourselves reads as handwriting in cook mode */
+#cook .cbody p.cnotes{font-family:"Caveat","Instrument Serif",cursive;font-style:normal;font-weight:500;font-size:1.4rem;line-height:1.12}
+/* step counter stays on one line at 360 pt with Bigger text (it wrapped as "STEP 1 OF / 6") */
+#cook .cstep{white-space:nowrap;flex:1;min-width:0;text-align:center;overflow:hidden;text-overflow:clip}
+html.big #cook .cstep{letter-spacing:.1em}

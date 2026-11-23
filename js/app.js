@@ -610,7 +610,7 @@ async function viewRecipe(id) {
   <div class="r-head">
     <div class="kicker"><span class="sw" style="background:${c.colour}"></span>${esc(c.name)} ${pad2(s.num)}<span class="rule"></span>${turnIndicator()}</div>
     <h1 class="h1">${esc(r.title)}</h1>
-    ${r.subtitle ? `<p class="lead">${esc(r.subtitle)}</p>` : ''}${nickLine(id)}
+    ${r.subtitle ? `<p class="lead hand">${esc(r.subtitle)}</p>` : ''}${nickLine(id)}
     <div class="pills">${pills.join('')}</div>
   </div>
   <div class="hero"><div class="tile">${r.image ? img(r.image, r.imageAlt || r.title) : placeholderArt(s)}</div><i class="acc a1"></i><i class="acc a2"></i><i class="acc a3"></i>${cookedStamp(cooked.length)}</div>
@@ -635,7 +635,7 @@ async function viewRecipe(id) {
     </div>
 
     <div class="sec"><div class="sec-title">Method</div>
-      <button class="btn primary block" id="cookBtn">${svg('play')}Step-by-step cook mode</button>
+      <button class="btn primary block" id="cookBtn">${svg('play')}${cookResumeAt(id, r) ? `Pick up at step ${cookResumeAt(id, r) + 1}` : 'Step-by-step cook mode'}</button>
       <ul class="checklist steps" style="margin-top:8px">${r.steps.map((st, si) => `<li data-s="${si}" class="${ck.s[si] ? 'done' : ''}"><span class="stepnum"><span>${si + 1}</span>${CHECK}</span><span class="txt"><strong>${esc(st.title)}.</strong> ${tx(st.text)}${st.lvNote ? `<em class="lvstep">${esc(st.lvNote)}</em>` : ''}${useChips(r, st, id, f)}${st.timer ? `<span class="tm">${svg('timer', 'style="width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2"')}${st.timer} min</span>` : ''}</span></li>`).join('')}</ul>
       ${sv !== base ? `<p class="small muted" style="margin-top:6px">Amounts in the list and in each step are scaled for ${sv} servings; pan sizes and times in the steps are written for ${base}.</p>` : ''}
     </div>
@@ -2082,12 +2082,20 @@ function speak(text) {
   try { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(text); const v = bestVoice(); if (v) { u.voice = v; u.lang = v.lang; } else u.lang = 'en-CA'; u.rate = 0.98; speechSynthesis.speak(u); } catch (e) {}
 }
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+// update 12.5: pick up where we left off. Steps ticked in cook mode (or on the page) in the last 12 hours, with some left,
+// reopen cook mode on the first unticked step. Read-only on state.checks (which cook mode already writes).
+function cookResumeAt(id, r) {
+  const ck = state.checks[id]; if (!ck || !ck.at || now() - ck.at > 12 * 3600e3 || !r || !r.steps) return 0;
+  const i = r.steps.findIndex((_, k) => !ck.s[k]);
+  return i > 0 ? i : 0;
+}
 function openCook(r, s, f) {
   const el = $('#cook');
   if (cookSession && cookSession.s0 && cookSession.s0.id === s.id && !el.hidden) return;
   const prefs = state.settings.cook || {};
   const isDate = (rr) => ((rr.tags || {}).occasion || []).includes('date-night');
-  const sess = cookSession = { s0: s, dishes: [{ r, s, f, i: 0 }], cur: 0, showIngs: false, read: false, hands: false, rec: null, candle: isDate(r) && prefs.candle !== false };
+  const at0 = cookResumeAt(s.id, r);
+  const sess = cookSession = { s0: s, t0: now(), from0: !at0, dishes: [{ r, s, f, i: at0 }], cur: 0, showIngs: false, read: false, hands: false, rec: null, candle: isDate(r) && prefs.candle !== false };
   document.body.classList.add('cooking');
   lockScreen().then((ok) => { const a = $('.awake', el); if (a) a.textContent = ok ? 'Screen will stay awake while cooking' : 'Tip: turn off auto-lock while cooking'; });
   const D = () => sess.dishes[sess.cur];
@@ -2102,7 +2110,8 @@ function openCook(r, s, f) {
         d.done = true;
         const nxt = pending();
         if (nxt >= 0) { sess.cur = nxt; sess.showIngs = false; buzz(12); draw(); speak(stepSpeech()); return; }
-        close(); toast('Enjoy dinner ♥', 'Mark as cooked', () => $('#cookedBtn') && $('#cookedBtn').click()); return;
+        const mins = Math.round((now() - sess.t0) / 6e4);
+        close(); toast(sess.from0 && mins >= 5 && sess.dishes.length < 2 ? `Enjoy dinner ♥ · ${mins} min at the stove` : 'Enjoy dinner ♥', 'Mark as cooked', () => $('#cookedBtn') && $('#cookedBtn').click()); return;
       }
       d.i++;
     } else { if (d.i === 0) return; d.i--; }
@@ -2137,7 +2146,7 @@ function openCook(r, s, f) {
         <div class="ctools">${'speechSynthesis' in window ? `<button class="iconbtn ${sess.read ? 'on' : ''}" id="cRead" aria-label="Read aloud" aria-pressed="${sess.read}">${svg('speaker')}</button>` : ''}<button class="iconbtn ${sess.hands ? 'on' : ''}" id="cHands" aria-label="Hands-free" aria-pressed="${sess.hands}">${svg('mic')}</button>${isDate(rr) ? `<button class="iconbtn ${sess.candle ? 'on' : ''}" id="cCandle" aria-label="Candle light" aria-pressed="${sess.candle}">${svg('candle')}</button>` : ''}<button class="iconbtn" id="cMusic" aria-label="Kitchen playlist">${svg('music')}</button><button class="iconbtn ${sess.showIngs ? 'on' : ''}" id="cIngs" aria-label="Ingredients">${svg('cart')}</button></div></div>
       ${sess.dishes.length > 1 ? `<div class="dishes">${sess.dishes.map((x, k) => `<button data-dish="${k}" class="${k === sess.cur ? 'on' : ''}">${esc(short(x.r.title))}<small>${x.done ? 'done ✓' : 'step ' + (x.i + 1) + '/' + x.r.steps.length}</small></button>`).join('')}</div>` : ''}
       ${alignHTML(sess)}
-      <div class="prog">${rr.steps.map((_, k) => `<i class="${k <= d.i ? 'on' : ''}"></i>`).join('')}</div>
+      <div class="prog" id="cProg" role="group" aria-label="Jump to a step">${rr.steps.map((_, k) => `<i class="${k <= d.i ? 'on' : ''}"></i>`).join('')}</div>
       <div class="cbody" id="cBody">${sess.showIngs ? `<div class="k">INGREDIENTS · ${esc(rr.title.toUpperCase())}</div><div class="ings">${rr.groups.map((g) => (g.name ? `<div class="k" style="margin-top:12px">${esc(g.name.toUpperCase())}</div>` : '') + g.items.map((it) => `<div>• ${ingLine(it, d.f, false)}</div>`).join('')).join('')}</div>${state.notes[d.s.id] ? `<div class="k" style="margin-top:16px">OUR NOTES</div><p class="cnotes">${esc(state.notes[d.s.id])}</p>` : ''}`
         : `<div class="k">${esc(rr.title.toUpperCase())}</div><h2>${esc(st.title)}</h2>${d.i === 0 && state.notes[d.s.id] ? `<p class="cnotes">${svg('edit')}${esc(state.notes[d.s.id])}</p>` : ''}${uses.length ? `<div class="cuses">${(st.uses || []).map((ref) => { const t = stepUses(rr, { uses: [ref] }, d.f)[0]; return t ? `<button class="use ${ui.used && ui.used[d.s.id] && ui.used[d.s.id][ref] ? 'on' : ''}" data-use="${esc(ref)}">${esc(t)}</button>` : ''; }).join('')}</div>` : ''}<p>${tx(st.text)}</p>${st.lvNote ? `<p class="lvstep">${esc(st.lvNote)}</p>` : ''}
         ${st.timer ? `<button class="timer ${myT ? 'run' : ''}" id="cTimer">${svg('timer')}<span id="cTimerTxt" ${myT ? `data-tleft="${myT.id}"` : ''}>${myT ? fmtSec(myT.left) : 'Start ' + st.timer + ' min timer'}</span></button><button class="linkbtn csound" id="cSound">${svg('speaker')}Alarm: ${esc((CHIMES[state.settings.chime] || CHIMES.bell)[0])}</button>` : ''}`}
@@ -2150,6 +2159,8 @@ function openCook(r, s, f) {
     $('#cClose', el).onclick = close;
     $('#cIngs', el).onclick = () => { sess.showIngs = !sess.showIngs; draw(); };
     $('#cPrev', el).onclick = () => move(-1);
+    // update 12.5: tap the progress bar to jump straight to a step (no ticks change)
+    $('#cProg', el).onclick = (e) => { const b = e.currentTarget.getBoundingClientRect(); const k = Math.max(0, Math.min(rr.steps.length - 1, Math.floor(((e.clientX - b.left) / b.width) * rr.steps.length))); if (k === d.i) return; d.i = k; sess.showIngs = false; buzz(8); draw(); speak(stepSpeech()); };
     $('#cNext', el).onclick = () => move(1);
     if ($('#cRead', el)) $('#cRead', el).onclick = () => { sess.read = !sess.read; if (sess.read) speak(stepSpeech()); else { try { speechSynthesis.cancel(); } catch (e) {} } draw(); };
     $('#cHands', el).onclick = () => {
@@ -5187,6 +5198,30 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+{
+ "name": "Update 12.5",
+ "id": "u125-2026-11",
+ "date": "2026-11-23",
+ "intro": "Cooking, a little easier.",
+ "notes": [
+  [
+   "Pick up where we left off",
+   "Close cook mode halfway and the recipe's button says Pick up at step 4 (for 12 hours). Cook mode opens right on that step"
+  ],
+  [
+   "Jump to a step",
+   "Tap the progress bar at the top of cook mode to jump straight to any step"
+  ],
+  [
+   "Time at the stove",
+   "When we finish a recipe from step 1, the goodbye note says how long we were cooking"
+  ],
+  [
+   "Recipe pages",
+   "The recipe subtitle is handwritten, a strip of washi tape holds the photo in, and our own note reads as handwriting in cook mode"
+  ]
+ ]
+},
 {
  "name": "Update 12.4",
  "id": "u124-2026-11",

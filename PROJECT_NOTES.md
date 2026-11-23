@@ -372,3 +372,10 @@ exactly 812pt although the image continues.
 - `#/book/firsts` (before Cooked together, in Contents): `ourFirsts()` reads cooked entries, photos, love notes and Acura treats — read only.
 - `doodle(slug)`: small SVG per chapter on chapter opening pages (not Acura's, which has paw prints).
 - Tests: pwtest/t124.mjs (firsts, doodle, lamp, sound toggle saved, envelope, no-scroll back page, close animation frames, lands on #/). Previews app_preview/u124-*.png.
+
+## Update 12.5 — cooking (2026-11-23)
+- `cookResumeAt(id, r)`: reads `state.checks[id]` (written by cook mode / the page); if ticked in the last 12 h with steps left, returns the first unticked step. `openCook` starts there; the recipe's cook button reads "Pick up at step N". No new saved data.
+- Cook-mode progress bar `#cProg` is tappable (10 px padding hit area): jumps to the tapped step, no ticks change, reads it aloud if read-aloud is on.
+- Done toast adds "· N min at the stove" when the session started at step 1, single dish, ≥ 5 min (`sess.t0`, `sess.from0`; session only).
+- Scrapbook-tidy: recipe subtitle `.lead.hand`, one washi strip `.hero::before` on the recipe (and Acura treat) hero, cook-mode note `.cnotes` in Caveat.
+- Test: pwtest/t125.mjs. Previews app_preview/u125-*.png.
