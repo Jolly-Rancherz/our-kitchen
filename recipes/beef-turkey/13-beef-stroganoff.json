@@ -1,0 +1,410 @@
+{
+  "title": "Beef Stroganoff",
+  "subtitle": "tender strips of sirloin in a silky sour cream and onion gravy over buttered egg noodles",
+  "image": "assets/img/beef-stroganoff.webp",
+  "imageAlt": "Strips of beef in a creamy pale-brown sauce over egg noodles in a white bowl on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 25,
+  "cost": {
+    "total": 23.25,
+    "breakdown": [
+      [
+        "Sirloin steak, 700 g",
+        16.3,
+        "sirloin-steak"
+      ],
+      [
+        "Sour cream, ¾ cup",
+        1.12,
+        "sour-cream"
+      ],
+      [
+        "Broad egg noodles, 340 g",
+        2.49,
+        "egg-noodles-broad"
+      ],
+      [
+        "Beef broth, 1½ cups",
+        1.04,
+        "beef-broth"
+      ],
+      [
+        "Butter, 4 tbsp",
+        0.8,
+        "butter"
+      ],
+      [
+        "Onions, 2, garlic",
+        1.0
+      ],
+      [
+        "Flour, oil, Worcestershire, paprika, salt",
+        0.5
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "noodles"
+    ],
+    "occasion": [
+      "comfort-night",
+      "date-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Firm the steak in the freezer 20 minutes so it slices thinly. Cut across the grain in 5 mm strips."
+    },
+    {
+      "icon": "cup",
+      "text": "Take the sour cream out of the fridge when you start, so it doesn't split when it meets the pan."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Beef",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "sirloin steak",
+          "note": "sliced across the grain in 5 mm strips",
+          "pantry": {
+            "name": "Sirloin steak",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sauce",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "yellow onions",
+          "note": "thinly sliced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "beef broth",
+          "metric": {
+            "qty": 375,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Beef broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "sour cream",
+          "note": "at room temperature",
+          "metric": {
+            "qty": 175,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Sour cream",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Noodles",
+      "items": [
+        {
+          "qty": 340,
+          "unit": "g",
+          "name": "broad egg noodles",
+          "pantry": {
+            "name": "Egg noodles (broad)",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Water on",
+      "text": "Bring a large pot of water to a boil and add the salt.",
+      "uses": [
+        "2-1"
+      ]
+    },
+    {
+      "title": "Sear the beef",
+      "text": "Pat the beef dry and season with the salt and pepper. Heat 1 tbsp of the oil in a large skillet over high. Sear the beef in 2 batches, adding the rest of the oil for the second, 1–2 minutes a side, just until browned. Move to a plate.",
+      "timer": 4,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Onions",
+      "text": "Lower the heat to medium. Melt the butter and cook the onions 8–10 minutes, stirring, until soft and golden. Add the garlic for 30 seconds.",
+      "timer": 9,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Gravy",
+      "text": "Sprinkle in the flour and paprika and stir 1 minute. Whisk in the broth a little at a time and the Worcestershire, and simmer 3–4 minutes until thick.",
+      "timer": 4,
+      "uses": [
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6"
+      ]
+    },
+    {
+      "title": "Noodles",
+      "text": "Meanwhile, cook the noodles 6–8 minutes until tender, drain and toss with the butter.",
+      "timer": 7,
+      "uses": [
+        "2-0",
+        "2-2"
+      ]
+    },
+    {
+      "title": "Finish",
+      "text": "Turn the heat to low. Stir the sour cream into the gravy, then return the beef and its juices and warm 1–2 minutes without boiling, until the beef is hot through, at least 63°C (145°F). Serve over the noodles.",
+      "uses": [
+        "1-7"
+      ]
+    }
+  ],
+  "together": "BAAAB*",
+  "fixIt": [
+    {
+      "problem": "Sauce split or curdled",
+      "fix": "It boiled after the sour cream went in. Keep it on low, and use room-temperature full-fat sour cream."
+    },
+    {
+      "problem": "Beef chewy",
+      "fix": "Slice thinly across the grain, sear fast in batches and only warm it through at the end."
+    },
+    {
+      "problem": "Sauce too thick",
+      "fix": "Loosen with a splash of broth or noodle water."
+    }
+  ],
+  "saleTip": "Sirloin goes on sale at No Frills for about $15–17/kg; buy a big steak and slice it yourself.",
+  "swap": "Lean ground beef: 680 g browned to 71°C (160°F) with no pink, instead of the steak strips.",
+  "leftovers": "Reheat gently; don't let it boil.",
+  "doneness": "Beef strips seared to at least 63°C (145°F) (Health Canada, whole cuts of beef); thin strips get there in the sear and the sauce.",
+  "source": "Based on tested beef stroganoff methods (Canadian Living, America's Test Kitchen): seared sirloin strips, onion and beef broth gravy finished with sour cream off the boil; this version keeps it to onions and garlic.",
+  "gear": [
+    "Large skillet",
+    "Large pot",
+    "Colander",
+    "Whisk"
+  ],
+  "prepAhead": [
+    "Slice the beef up to 1 day ahead; keep it covered in the fridge.",
+    "Slice the onions the night before."
+  ],
+  "reheat": "Covered over low with a splash of broth, stirring, 5–6 minutes, until 74°C (165°F); don't let it boil.",
+  "thaw": {
+    "item": "sirloin steak",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Beef, onion and a sour cream gravy; no garlic or Worcestershire.",
+      "drop": [
+        "1-2",
+        "1-6",
+        "1-4"
+      ],
+      "stepNotes": {
+        "2": "Basic: onions only.",
+        "3": "Basic: flour and broth only."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A splash of cream in the gravy, and brown-butter noodles.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "35% whipping cream",
+              "metric": {
+                "qty": 60,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "35% whipping cream",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "4": "Fancy: brown the noodle butter in a small pan 2–3 minutes until nutty before tossing.",
+        "5": "Fancy: stir the cream in with the sour cream."
+      },
+      "costAdd": [
+        [
+          "35% cream, ¼ cup",
+          0.6,
+          "35-whipping-cream"
+        ]
+      ],
+      "plating": [
+        "Noodles in a wide nest.",
+        "Beef and gravy spooned into the middle.",
+        "A crack of black pepper on top."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Sirloin is tender enough to sear quickly, and much cheaper than tenderloin.",
+    "1-7": "Room-temperature sour cream stirred in off the boil stays silky instead of curdling.",
+    "1-3": "A little flour thickens the gravy and also stops the sour cream from splitting."
+  },
+  "fancyNight": true,
+  "funFact": "Beef Stroganoff is named for the Stroganov family of 19th-century Russia; the first printed recipe appeared in 1861.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "sour cream sauces split when frozen"
+  },
+  "pairs": []
+}

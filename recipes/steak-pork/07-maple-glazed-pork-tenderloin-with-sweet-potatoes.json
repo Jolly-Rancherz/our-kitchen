@@ -1,0 +1,413 @@
+{
+  "title": "Maple-Glazed Pork Tenderloin with Sweet Potatoes",
+  "subtitle": "seared pork tenderloin roasted with a sticky maple-garlic glaze, beside caramelised sweet potato chunks",
+  "image": "assets/img/maple-pork-tenderloin.webp",
+  "imageAlt": "Sliced maple-glazed pork tenderloin with roasted sweet potato chunks on a white plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 45,
+  "cost": {
+    "total": 22.98,
+    "breakdown": [
+      [
+        "Pork tenderloins, 2 (about 1 kg)",
+        16.98,
+        "pork-tenderloin"
+      ],
+      [
+        "Sweet potatoes, 1 kg",
+        3.49,
+        "sweet-potatoes"
+      ],
+      [
+        "Maple syrup, ¼ cup",
+        1.16,
+        "maple-syrup"
+      ],
+      [
+        "Soy sauce, cider vinegar, garlic",
+        0.6
+      ],
+      [
+        "Oil, butter, spices, salt",
+        0.75
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "stovetop"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "date-night",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "Oven at 220°C (425°F). You need an oven-safe skillet for the pork."
+    },
+    {
+      "icon": "knife",
+      "text": "Trim the thin, shiny silver skin off the tenderloins with a sharp knife; it turns chewy."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Sweet potatoes",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "kg",
+          "name": "sweet potatoes",
+          "note": "about 2 large, peeled and cut in 3 cm chunks",
+          "pantry": {
+            "name": "Sweet potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pork",
+      "items": [
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "pork tenderloins",
+          "note": "about 500 g each, silver skin trimmed",
+          "pantry": {
+            "name": "Pork tenderloin",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Maple glaze",
+      "items": [
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "maple syrup",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Maple syrup",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "apple cider vinegar",
+          "pantry": {
+            "name": "Apple cider vinegar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Sweet potatoes in",
+      "text": "Heat the oven to 220°C (425°F). Toss the sweet potatoes with the oil, salt and cinnamon on a parchment-lined rimmed baking sheet and roast 35–40 minutes, turning once, until caramelised at the edges.",
+      "timer": 38,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Season",
+      "text": "Pat the pork dry and rub with the salt, pepper, garlic powder and paprika.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4"
+      ]
+    },
+    {
+      "title": "Glaze",
+      "text": "Stir the maple syrup, soy sauce, vinegar and garlic together.",
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3"
+      ]
+    },
+    {
+      "title": "Sear",
+      "text": "Heat the oil in an oven-safe skillet over medium-high and brown the tenderloins on all sides, 6–8 minutes in all.",
+      "timer": 7,
+      "uses": [
+        "1-5"
+      ]
+    },
+    {
+      "title": "Roast",
+      "text": "Pour half the glaze over the pork and move the skillet to the oven. Roast 12–15 minutes, brushing with the rest of the glaze halfway, until the centre reads 71°C (160°F).",
+      "timer": 14,
+      "uses": []
+    },
+    {
+      "title": "Rest",
+      "text": "Move the pork to a board and rest 8 minutes. Set the skillet over medium (the handle is hot), stir in the butter and simmer the pan glaze 1–2 minutes until syrupy.",
+      "timer": 8,
+      "uses": [
+        "2-4"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Slice the pork 1.5 cm thick, spoon the glaze over and serve with the sweet potatoes.",
+      "uses": []
+    }
+  ],
+  "together": "BAAAAA*",
+  "fixIt": [
+    {
+      "problem": "Glaze burnt in the pan",
+      "fix": "Add a splash of water to the skillet as it goes into the oven; maple burns quickly on bare metal."
+    },
+    {
+      "problem": "Pork dry",
+      "fix": "Tenderloin is lean; pull it at 71°C (160°F) and rest it. A blush of pink is fine."
+    },
+    {
+      "problem": "Sweet potatoes soft, not caramelised",
+      "fix": "Spread them out so they don't touch and roast on the upper rack."
+    }
+  ],
+  "saleTip": "Pork tenderloin 2-packs are a regular No Frills deal; freeze one for another night.",
+  "swap": "Honey instead of maple syrup: same amount.",
+  "leftovers": "Slice cold for sandwiches, or reheat gently with a spoon of water.",
+  "doneness": "71°C (160°F) in the centre (Health Canada, pork); a faint blush of pink is fine. Reheat to 74°C (165°F).",
+  "source": "Based on tested maple-glazed pork tenderloin methods (Canadian Living, Ricardo): seared tenderloin finished in a 220°C oven with a maple-soy glaze, rested to 71°C.",
+  "gear": [
+    "Oven-safe skillet",
+    "Rimmed baking sheet",
+    "Parchment",
+    "Pastry brush",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Trim and season the pork up to 1 day ahead.",
+    "Peel and cut the sweet potatoes the night before; keep them covered in the fridge."
+  ],
+  "reheat": "Slices covered in a skillet over low with a spoon of water 3–4 minutes, or in the microwave 1 minute, until 74°C (165°F).",
+  "thaw": {
+    "item": "pork tenderloins",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Salt-and-pepper pork with a maple and soy glaze; plain roasted sweet potatoes.",
+      "drop": [
+        "0-3",
+        "1-3",
+        "1-4",
+        "2-2",
+        "2-4"
+      ],
+      "stepNotes": {
+        "0": "Basic: oil and salt only.",
+        "1": "Basic: salt and pepper only.",
+        "2": "Basic: maple, soy and garlic.",
+        "5": "Basic: skip the butter; spoon the glaze straight over."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A toasted pecan crumble over the sweet potatoes.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 0.33,
+              "unit": "cup",
+              "name": "pecan halves",
+              "note": "chopped",
+              "pantry": {
+                "name": "Pecan halves",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "maple syrup",
+              "note": "extra",
+              "pantry": {
+                "name": "Maple syrup",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: for the last 5 minutes, scatter the pecans over the sweet potatoes and drizzle with the extra maple syrup."
+      },
+      "costAdd": [
+        [
+          "Pecans, ⅓ cup",
+          1.4,
+          "pecan-halves"
+        ],
+        [
+          "Maple syrup, 1 tbsp",
+          0.3,
+          "maple-syrup"
+        ]
+      ],
+      "plating": [
+        "Pork slices fanned and overlapping.",
+        "Sweet potatoes piled alongside, pecans on top.",
+        "Pan glaze in a little jug."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Tenderloin is the leanest, most tender pork cut and cooks in under 25 minutes.",
+    "2-2": "A splash of vinegar keeps the maple glaze from tasting flat and too sweet.",
+    "0-3": "A pinch of cinnamon brings out the sweet potatoes' natural sweetness."
+  },
+  "fancyNight": true,
+  "funFact": "Canada produces about three-quarters of the world's maple syrup, most of it in Quebec.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze sliced pork in its glaze"
+  },
+  "pairs": []
+}

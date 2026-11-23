@@ -1,0 +1,465 @@
+{
+  "title": "Oven Pulled Pork Sandwiches with Coleslaw",
+  "subtitle": "pork shoulder slow-roasted until it falls apart, tossed in homemade barbecue sauce and piled on buns with creamy coleslaw",
+  "image": "assets/img/pulled-pork-sandwiches.webp",
+  "imageAlt": "A soft bun piled with saucy pulled pork and creamy coleslaw on a white plate with a navy napkin",
+  "servings": 6,
+  "servingsNote": "8 big sandwiches: dinner for two, plus lunches for days",
+  "prep": 20,
+  "cook": 240,
+  "cost": {
+    "total": 18.78,
+    "breakdown": [
+      [
+        "Boneless pork shoulder, 1.5 kg",
+        9.9,
+        "pork-shoulder-boneless"
+      ],
+      [
+        "Hamburger buns, 8",
+        2.99,
+        "hamburger-buns"
+      ],
+      [
+        "Coleslaw mix, 397 g",
+        2.49,
+        "coleslaw-mix"
+      ],
+      [
+        "Ketchup, 1 cup",
+        1.0,
+        "ketchup"
+      ],
+      [
+        "Brown sugar, ½ cup",
+        0.6,
+        "brown-sugar"
+      ],
+      [
+        "Mayonnaise, ½ cup",
+        0.6,
+        "mayonnaise"
+      ],
+      [
+        "Vinegar, Worcestershire, spices, salt",
+        1.2
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Feeds a crowd"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "This is a weekend recipe: 4 hours in a 150°C (300°F) oven, almost all hands-off."
+    },
+    {
+      "icon": "pot",
+      "text": "Use a Dutch oven or a deep roasting pan you can cover tightly with foil."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Pork",
+      "items": [
+        {
+          "qty": 1.5,
+          "unit": "kg",
+          "name": "boneless pork shoulder (blade roast)",
+          "pantry": {
+            "name": "Pork shoulder (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "packed brown sugar",
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BBQ sauce",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "ketchup",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Ketchup",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 65,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "apple cider vinegar",
+          "pantry": {
+            "name": "Apple cider vinegar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Coleslaw",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "bag",
+          "name": "coleslaw mix",
+          "note": "397 g",
+          "pantry": {
+            "name": "Coleslaw mix",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "mayonnaise",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Mayonnaise",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "apple cider vinegar",
+          "note": "for the coleslaw"
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "granulated sugar",
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To serve",
+      "items": [
+        {
+          "qty": 8,
+          "unit": null,
+          "name": "hamburger buns",
+          "note": "split and toasted",
+          "pantry": {
+            "name": "Hamburger buns",
+            "cat": "grains"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Rub",
+      "text": "Heat the oven to 150°C (300°F). Mix the 2 tbsp brown sugar, paprika, garlic powder, onion powder, salt and pepper and rub all over the pork.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Slow-roast",
+      "text": "Set the pork in the Dutch oven, pour the water around it, cover tightly and roast 3½–4 hours, until a fork twists in with no resistance (about 90–95°C / 195–205°F inside).",
+      "timer": 225,
+      "uses": [
+        "0-7"
+      ]
+    },
+    {
+      "title": "BBQ sauce",
+      "text": "Near the end, simmer the ketchup, ⅓ cup brown sugar, 3 tbsp vinegar, Worcestershire and garlic powder in a small pot 5 minutes, until slightly thick.",
+      "timer": 5,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4"
+      ]
+    },
+    {
+      "title": "Coleslaw",
+      "text": "Stir the mayonnaise, 1 tbsp vinegar, sugar and salt together and toss with the coleslaw mix. Chill until serving.",
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3",
+        "2-4"
+      ]
+    },
+    {
+      "title": "Shred",
+      "text": "Rest the pork 15 minutes, then shred it with 2 forks, discarding any big pieces of fat. Skim the fat off the pan juices and stir ½ cup of the juices and the BBQ sauce into the pork.",
+      "timer": 15,
+      "uses": []
+    },
+    {
+      "title": "Serve",
+      "text": "Pile the pork onto the toasted buns and top with coleslaw.",
+      "uses": [
+        "3-0"
+      ]
+    }
+  ],
+  "together": "AABBA*",
+  "fixIt": [
+    {
+      "problem": "Pork won't shred",
+      "fix": "It needs more time, not more heat. Cover and roast another 30 minutes, then check again."
+    },
+    {
+      "problem": "Pork dry",
+      "fix": "Stir in more of the pan juices; shoulder needs the fat and juices to stay moist."
+    },
+    {
+      "problem": "Coleslaw watery",
+      "fix": "Dress it no more than 2 hours ahead, and drain any liquid before serving."
+    }
+  ],
+  "saleTip": "Pork shoulder blade roasts are often under $5/kg at No Frills; it's the cheapest way to feed a crowd.",
+  "swap": "Slow cooker: rub the pork, add ½ cup water and cook on low 8–9 hours until it shreds.",
+  "leftovers": "Freeze the pork in its sauce in 2-cup bags; it reheats perfectly for sandwiches, rice bowls or quesadillas.",
+  "doneness": "Safe at 71°C (160°F) (Health Canada, pork); pulled pork is cooked on to about 90–95°C (195–205°F) so it falls apart. Reheat to 74°C (165°F).",
+  "source": "Based on tested oven pulled pork methods (Canadian Living, America's Test Kitchen): dry-rubbed shoulder slow-roasted covered at 150°C until shreddable, tossed with a homemade ketchup-based barbecue sauce.",
+  "gear": [
+    "Dutch oven or roasting pan with foil",
+    "Small pot",
+    "2 forks",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Rub the pork the night before and keep it covered in the fridge.",
+    "Make the BBQ sauce up to 1 week ahead.",
+    "The cooked pork keeps 4 days and reheats well."
+  ],
+  "reheat": "Covered over medium-low with a splash of water, stirring, or in the microwave 2 minutes, stirring halfway, until 74°C (165°F).",
+  "thaw": {
+    "item": "pork shoulder",
+    "hours": 36
+  },
+  "levels": {
+    "basic": {
+      "note": "Salt, pepper, paprika and brown sugar on the pork, and the sauce from ketchup and brown sugar; no coleslaw.",
+      "drop": [
+        "0-3",
+        "0-4",
+        "1-3",
+        "1-4",
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3",
+        "2-4"
+      ],
+      "stepNotes": {
+        "0": "Basic: brown sugar, paprika, salt and pepper.",
+        "2": "Basic: ketchup, brown sugar and vinegar only.",
+        "3": "Basic: skip the coleslaw."
+      },
+      "costDrop": [
+        "coleslaw-mix",
+        "mayonnaise"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Melted cheddar on the pork and sweet pickles on top.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 8,
+              "unit": null,
+              "name": "slices cheddar cheese",
+              "pantry": {
+                "name": "Cheddar slices",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "bread-and-butter pickle slices",
+              "pantry": {
+                "name": "Bread and butter pickles",
+                "cat": "sauces"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "5": "Fancy: top the pork on the bottom buns with cheddar and broil 1 minute to melt, then add pickles and coleslaw."
+      },
+      "costAdd": [
+        [
+          "Cheddar slices, 8",
+          2.0,
+          "cheddar-slices"
+        ],
+        [
+          "Pickles, ½ cup",
+          0.5,
+          "bread-and-butter-pickles"
+        ]
+      ],
+      "plating": [
+        "Pile the pork high.",
+        "Coleslaw on top, not on the side.",
+        "Extra sauce in a small jug."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Shoulder has lots of fat and connective tissue that melt in a long, low roast, so it shreds and stays juicy.",
+    "1-2": "Vinegar balances the sweet, rich pork and is the classic barbecue sauce tang.",
+    "2-0": "Cool, crunchy coleslaw cuts through the rich pork."
+  },
+  "fancyNight": false,
+  "funFact": "Pulled pork comes from the Carolinas, where whole hogs were slow-smoked for hours and pulled apart by hand.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze the pork in its sauce; coleslaw doesn't freeze"
+  },
+  "pairs": []
+}

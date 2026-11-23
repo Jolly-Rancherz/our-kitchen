@@ -1,0 +1,368 @@
+{
+  "title": "Shrimp Scampi Linguine",
+  "subtitle": "plump garlic-butter shrimp with lemon and Parmesan, tossed through linguine in under 30 minutes",
+  "image": "assets/img/shrimp-scampi-linguine.webp",
+  "imageAlt": "Linguine twirled with garlic butter shrimp and Parmesan in a white bowl with a lemon wedge on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 15,
+  "cost": {
+    "total": 19.3,
+    "breakdown": [
+      [
+        "Raw shrimp, 680 g",
+        12.99,
+        "shrimp-raw-frozen"
+      ],
+      [
+        "Linguine, 450 g",
+        2.0,
+        "linguine"
+      ],
+      [
+        "Butter, 5 tbsp",
+        1.0,
+        "butter"
+      ],
+      [
+        "Parmesan, ½ cup",
+        1.4,
+        "parmesan-grated"
+      ],
+      [
+        "Chicken broth, ¾ cup",
+        0.52,
+        "chicken-broth"
+      ],
+      [
+        "Lemon",
+        0.79,
+        "lemons"
+      ],
+      [
+        "Garlic, oil, salt, pepper",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "pasta"
+    ],
+    "occasion": [
+      "date-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Thaw the shrimp overnight in the fridge, or in a bowl of cold water 15 minutes. Peel and devein if needed; pat dry."
+    },
+    {
+      "icon": "knife",
+      "text": "This moves fast: have everything chopped and measured before the pasta goes in."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Pasta",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "linguine",
+          "pantry": {
+            "name": "Linguine",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the pasta water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Shrimp",
+      "items": [
+        {
+          "qty": 680,
+          "unit": "g",
+          "name": "raw shrimp (31–40 size)",
+          "note": "peeled and deveined, thawed",
+          "pantry": {
+            "name": "Shrimp (raw, frozen)",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 5,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 70,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 6,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 175,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "lemons",
+          "note": "zest finely grated, then juiced",
+          "pantry": {
+            "name": "Lemons",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Cook the pasta",
+      "text": "Bring a large pot of water to a boil with the salt and cook the linguine until al dente. Save 1 cup of the pasta water, then drain.",
+      "timer": 10,
+      "uses": [
+        "0-0",
+        "0-1"
+      ]
+    },
+    {
+      "title": "Sear the shrimp",
+      "text": "Meanwhile, season the shrimp with the salt and pepper. Heat the oil and 1 tbsp of the butter in a large skillet over medium-high and cook the shrimp in one layer 1–2 minutes a side, until pink, opaque and 74°C (165°F). Move to a plate.",
+      "timer": 3,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4=1 tbsp"
+      ]
+    },
+    {
+      "title": "Garlic butter sauce",
+      "text": "Lower the heat to medium. Add 2 tbsp of the butter and the garlic and cook 1 minute without browning. Add the broth, lemon zest and juice and simmer 2–3 minutes to reduce by half.",
+      "timer": 3,
+      "uses": [
+        "1-4=2 tbsp",
+        "1-5",
+        "1-6",
+        "1-7"
+      ]
+    },
+    {
+      "title": "Toss",
+      "text": "Add the linguine, the remaining 2 tbsp butter, the Parmesan and a splash of pasta water and toss until glossy. Return the shrimp and their juices and toss 30 seconds to warm.",
+      "uses": [
+        "1-4=2 tbsp",
+        "1-8"
+      ]
+    }
+  ],
+  "together": "BAA*",
+  "fixIt": [
+    {
+      "problem": "Shrimp rubbery",
+      "fix": "They overcooked. Take them out as soon as they curl into a C and turn opaque; they warm again at the end."
+    },
+    {
+      "problem": "Garlic bitter",
+      "fix": "It browned. Cook it over medium, just until fragrant."
+    },
+    {
+      "problem": "Sauce greasy, not creamy",
+      "fix": "Toss hard with more pasta water; the starch brings the butter and Parmesan together."
+    }
+  ],
+  "saleTip": "Frozen raw shrimp bags at No Frills go on sale for about $10; 31–40 size is the best value.",
+  "swap": "Spaghetti instead of linguine.",
+  "leftovers": "Reheat gently with a splash of water; shrimp toughen if they boil.",
+  "doneness": "Shrimp 74°C (165°F): pink and opaque all the way through (Health Canada, shellfish).",
+  "source": "Based on tested shrimp scampi methods (America's Test Kitchen, Canadian Living): seared shrimp, garlic butter and lemon pan sauce, with chicken broth in place of white wine.",
+  "gear": [
+    "Large pot",
+    "Large skillet",
+    "Tongs",
+    "Fine grater"
+  ],
+  "prepAhead": [
+    "Peel and devein the shrimp up to 1 day ahead; keep them covered in the fridge."
+  ],
+  "reheat": "Covered over low with a splash of water 3–4 minutes, or in the microwave 1–2 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "shrimp",
+    "hours": 12
+  },
+  "levels": {
+    "basic": {
+      "note": "Garlic, butter and shrimp with linguine; no lemon zest or broth.",
+      "drop": [
+        "1-6"
+      ],
+      "stepNotes": {
+        "2": "Basic: skip the broth and zest; use just the lemon juice and ½ cup of the pasta water."
+      },
+      "costDrop": [
+        "chicken-broth"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Cherry tomatoes blistered in the pan and a crunchy garlic crumb.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "pint",
+              "name": "cherry tomatoes",
+              "note": "halved",
+              "pantry": {
+                "name": "Cherry tomatoes",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "panko breadcrumbs",
+              "pantry": {
+                "name": "Panko breadcrumbs",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "olive oil",
+              "pantry": {
+                "name": "Olive oil",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: first toast the panko in the olive oil in the skillet over medium 3 minutes until golden; set aside and wipe the pan.",
+        "2": "Fancy: add the cherry tomatoes with the garlic and cook 2 minutes until they soften."
+      },
+      "addSteps": [
+        {
+          "title": "Crumb",
+          "text": "Scatter the garlic crumb over each bowl."
+        }
+      ],
+      "costAdd": [
+        [
+          "Cherry tomatoes",
+          2.99,
+          "cherry-tomatoes"
+        ],
+        [
+          "Panko, olive oil",
+          0.6
+        ]
+      ],
+      "plating": [
+        "Twirl the pasta high with tongs.",
+        "Shrimp tucked around the top.",
+        "Crumb over the top, lemon wedge alongside."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Searing the shrimp first and returning them at the end keeps them tender.",
+    "1-6": "Chicken broth stands in for the usual white wine and still gives the sauce body.",
+    "1-8": "Parmesan and starchy pasta water turn the butter into a silky sauce."
+  },
+  "fancyNight": true,
+  "funFact": "'Scampi' is the Italian name for langoustines; Italian-American cooks used shrimp instead and kept the name.",
+  "keeps": {
+    "fridge": "2–3 days",
+    "freezer": null,
+    "note": "shrimp and butter sauces don't freeze well"
+  },
+  "pairs": []
+}

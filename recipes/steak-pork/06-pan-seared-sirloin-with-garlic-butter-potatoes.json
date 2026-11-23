@@ -1,0 +1,409 @@
+{
+  "title": "Pan-Seared Sirloin with Garlic Butter Potatoes",
+  "subtitle": "a steakhouse-style dinner at home: crusty seared sirloin basted in garlic butter, with crispy roasted baby potatoes",
+  "image": "assets/img/sirloin-garlic-butter-potatoes.webp",
+  "imageAlt": "Sliced pan-seared sirloin with garlic butter beside roasted baby potatoes on a white plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 10,
+  "cook": 40,
+  "cost": {
+    "total": 25.4,
+    "breakdown": [
+      [
+        "Sirloin steaks, 900 g",
+        21.0,
+        "sirloin-steak"
+      ],
+      [
+        "Baby potatoes, 900 g",
+        2.7,
+        "baby-potatoes"
+      ],
+      [
+        "Butter, 4 tbsp",
+        0.8,
+        "butter"
+      ],
+      [
+        "Garlic, 6 cloves",
+        0.3,
+        "garlic"
+      ],
+      [
+        "Oil, dried thyme, salt, pepper",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "oven-bake"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "date-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Take the steaks out of the fridge 30 minutes before cooking and pat them very dry; they sear better."
+    },
+    {
+      "icon": "oven",
+      "text": "Oven at 220°C (425°F) for the potatoes, which take longest."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Potatoes",
+      "items": [
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "baby potatoes",
+          "note": "halved",
+          "pantry": {
+            "name": "Baby potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Steak",
+      "items": [
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "sirloin steaks",
+          "note": "2 steaks about 2.5 cm thick",
+          "pantry": {
+            "name": "Sirloin steak",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 42,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "lightly smashed",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Roast the potatoes",
+      "text": "Heat the oven to 220°C (425°F). Toss the potatoes with the oil, salt and garlic powder and roast cut side down on a rimmed baking sheet 30–35 minutes, until golden and tender.",
+      "timer": 33,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Season",
+      "text": "Pat the steaks dry and season all over with the salt and pepper.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Sear",
+      "text": "With 15 minutes left on the potatoes, heat the oil in a large heavy skillet over high until it shimmers. Sear the steaks 4 minutes, without moving them, until deeply browned. Turn and cook 3 minutes.",
+      "timer": 7,
+      "uses": [
+        "1-3"
+      ]
+    },
+    {
+      "title": "Baste",
+      "text": "Lower the heat to medium. Add the butter, smashed garlic and dried thyme and spoon the foaming butter over the steaks 1–2 minutes, until 63°C (145°F) for medium, Health Canada's minimum (or 57°C / 135°F if you prefer medium-rare).",
+      "timer": 2,
+      "uses": [
+        "1-4",
+        "1-5",
+        "1-6"
+      ]
+    },
+    {
+      "title": "Rest",
+      "text": "Rest the steaks on a board 8 minutes; the temperature rises a few degrees. Keep the garlic butter in the pan.",
+      "timer": 8,
+      "uses": []
+    },
+    {
+      "title": "Garlic butter potatoes",
+      "text": "Melt the 1 tbsp butter with the minced garlic in a small pan or the microwave 30 seconds, and toss with the hot potatoes.",
+      "uses": [
+        "0-4",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Slice and serve",
+      "text": "Slice the steak across the grain and spoon the pan garlic butter over it. Serve with the potatoes.",
+      "uses": []
+    }
+  ],
+  "together": "BAAAAB*",
+  "fixIt": [
+    {
+      "problem": "No crust",
+      "fix": "The steak was wet or the pan wasn't hot enough. Dry it well and wait for the oil to shimmer."
+    },
+    {
+      "problem": "Garlic burnt in the butter",
+      "fix": "Lower the heat to medium before adding the butter and garlic."
+    },
+    {
+      "problem": "Steak tough",
+      "fix": "Slice thinly across the grain, and rest it the full 8 minutes."
+    }
+  ],
+  "saleTip": "Sirloin is often half the price of striploin at No Frills; watch for 'family pack' sirloin on sale.",
+  "swap": "Striploin steaks: same method, slightly more tender.",
+  "leftovers": "Slice cold steak for sandwiches or steak and rice bowls; reheat gently or it overcooks.",
+  "doneness": "Health Canada's minimum for whole cuts of beef is 63°C (145°F), medium. Medium-rare is 57°C (135°F), a personal choice below that minimum. Reheat leftovers to 74°C (165°F).",
+  "source": "Based on tested pan-seared, butter-basted steak methods (America's Test Kitchen, Canadian Living): dry, seasoned steaks seared in a hot pan, basted with garlic-thyme butter, rested before slicing.",
+  "gear": [
+    "Large heavy skillet (cast iron is best)",
+    "Rimmed baking sheet",
+    "Tongs",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Season the steaks up to 1 day ahead and leave them uncovered on a rack in the fridge for a drier, crustier sear."
+  ],
+  "reheat": "Slices in a covered skillet over low with a spoon of butter, 2–3 minutes, until 74°C (165°F); potatoes at 200°C (400°F) 10 minutes.",
+  "thaw": {
+    "item": "steaks",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Salt-and-pepper steak and plain roasted potatoes.",
+      "drop": [
+        "1-6",
+        "0-3",
+        "0-4",
+        "0-5"
+      ],
+      "stepNotes": {
+        "0": "Basic: oil and salt only.",
+        "3": "Basic: butter and garlic only.",
+        "5": "Basic: skip; serve the potatoes as they are."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A quick creamy pan sauce and green beans.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "beef broth",
+              "metric": {
+                "qty": 125,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "Beef broth",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 0.33,
+              "unit": "cup",
+              "name": "35% whipping cream",
+              "metric": {
+                "qty": 80,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "35% whipping cream",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 300,
+              "unit": "g",
+              "name": "green beans",
+              "note": "trimmed",
+              "pantry": {
+                "name": "Green beans",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "4": "Fancy: while the steaks rest, pour the broth into the skillet and boil 2 minutes, scraping up the brown bits. Add the cream and simmer 2 minutes until it coats a spoon."
+      },
+      "addSteps": [
+        {
+          "title": "Green beans",
+          "text": "Boil the green beans 3–4 minutes until bright and just tender, drain and toss with a little of the pan sauce."
+        }
+      ],
+      "costAdd": [
+        [
+          "Beef broth, ½ cup",
+          0.35,
+          "beef-broth"
+        ],
+        [
+          "35% cream, ⅓ cup",
+          0.8,
+          "35-whipping-cream"
+        ],
+        [
+          "Green beans, 300 g",
+          2.2,
+          "green-beans"
+        ]
+      ],
+      "plating": [
+        "Slices fanned on a warm plate.",
+        "Pan sauce spooned beside, not over the crust.",
+        "Potatoes and green beans alongside."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "A thick steak gets a deep crust before the inside overcooks.",
+    "1-4": "Basting with foaming butter browns the crust and carries the garlic flavour.",
+    "0-0": "Baby potatoes roast creamy inside with no peeling."
+  },
+  "fancyNight": true,
+  "funFact": "Butter basting, 'arroser' in French, is how restaurant kitchens finish most steaks.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "cooked steak dries out when frozen and reheated"
+  },
+  "pairs": []
+}

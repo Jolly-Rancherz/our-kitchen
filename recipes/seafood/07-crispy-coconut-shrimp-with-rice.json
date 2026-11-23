@@ -1,0 +1,397 @@
+{
+  "title": "Crispy Coconut Shrimp with Rice",
+  "subtitle": "golden coconut-panko shrimp baked crisp, with jasmine rice and a sweet orange dipping sauce",
+  "image": "assets/img/coconut-shrimp.webp",
+  "imageAlt": "Golden coconut-crusted shrimp with a small bowl of orange dipping sauce and rice on a white plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 25,
+  "cook": 25,
+  "cost": {
+    "total": 18.63,
+    "breakdown": [
+      [
+        "Raw shrimp, 680 g",
+        12.99,
+        "shrimp-raw-frozen"
+      ],
+      [
+        "Shredded coconut, 1 cup",
+        1.4,
+        "sweetened-shredded-coconut"
+      ],
+      [
+        "Panko, 1 cup",
+        0.86,
+        "panko-breadcrumbs"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "Orange marmalade, ½ cup",
+        1.0,
+        "orange-marmalade"
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.0,
+        "jasmine-rice"
+      ],
+      [
+        "Flour, oil, lemon juice, soy, salt",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "date-night",
+      "takeout-night"
+    ],
+    "leftovers": []
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Thaw the shrimp overnight in the fridge. Peel, leaving the tails on, devein and pat very dry."
+    },
+    {
+      "icon": "oven",
+      "text": "Oven at 220°C (425°F) with a wire rack set on a rimmed baking sheet, so the bottoms crisp too."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Shrimp",
+      "items": [
+        {
+          "qty": 680,
+          "unit": "g",
+          "name": "raw shrimp (21–25 size)",
+          "note": "peeled, tails on, deveined",
+          "pantry": {
+            "name": "Shrimp (raw, frozen)",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 40,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "note": "beaten",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "sweetened shredded coconut",
+          "metric": {
+            "qty": 80,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Sweetened shredded coconut",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 60,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "note": "for spraying or drizzling",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Orange dip",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "orange marmalade",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Orange marmalade",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "lemon juice",
+          "pantry": {
+            "name": "Lemon juice",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rice",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Set up",
+      "text": "Heat the oven to 220°C (425°F). Season the shrimp with the salt. Put the flour in one shallow dish, the eggs in another, and the coconut and panko mixed in a third.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Coat",
+      "text": "Holding each shrimp by the tail, dip it in flour, then egg, then press firmly into the coconut mix. Lay on the rack and drizzle or brush lightly with the oil.",
+      "uses": [
+        "0-6"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Bake 10–12 minutes, turning once, until golden and the shrimp are pink, opaque and 74°C (165°F).",
+      "timer": 11,
+      "uses": []
+    },
+    {
+      "title": "Dip",
+      "text": "Warm the marmalade with the lemon juice and soy sauce in the microwave 30 seconds and stir smooth.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Serve the shrimp with the rice and the dip on the side.",
+      "uses": []
+    }
+  ],
+  "together": "BAAAB*",
+  "fixIt": [
+    {
+      "problem": "Coating falls off",
+      "fix": "Dry the shrimp well and press them firmly into the coconut mix."
+    },
+    {
+      "problem": "Coconut too dark before the shrimp are done",
+      "fix": "Move the pan to a lower rack and drop the heat to 200°C (400°F)."
+    },
+    {
+      "problem": "Soggy bottoms",
+      "fix": "Bake on a wire rack, or turn them halfway."
+    }
+  ],
+  "saleTip": "Larger 21–25 shrimp are worth it here; watch for the No Frills frozen seafood sale.",
+  "swap": "Air fryer: 200°C (400°F) 7–8 minutes in one layer, in batches, turning once.",
+  "leftovers": "Best fresh; re-crisp in the air fryer 3–4 minutes.",
+  "doneness": "Shrimp 74°C (165°F): pink and opaque all the way through (Health Canada, shellfish).",
+  "source": "Based on tested baked coconut shrimp methods (Canadian Living, Food Network Canada): flour, egg and coconut-panko coating baked on a rack at 220°C, served with an orange marmalade dip instead of sweet chili sauce.",
+  "gear": [
+    "Rimmed baking sheet with wire rack",
+    "3 shallow dishes",
+    "Medium pot with lid"
+  ],
+  "prepAhead": [
+    "Coat the shrimp up to 4 hours ahead; keep them uncovered on the rack in the fridge."
+  ],
+  "reheat": "Air fryer at 190°C (375°F) 3–4 minutes, until 74°C (165°F) and crisp.",
+  "thaw": {
+    "item": "shrimp",
+    "hours": 12
+  },
+  "levels": {
+    "basic": {
+      "note": "Panko-coconut shrimp with plain marmalade to dip.",
+      "drop": [
+        "1-1",
+        "1-2"
+      ],
+      "stepNotes": {
+        "4": "Basic: warm the marmalade on its own."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Coconut rice and a squeeze of lime.",
+      "swap": {
+        "2-1": {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "water",
+          "note": "plus the coconut milk below",
+          "metric": {
+            "qty": 375,
+            "unit": "ml"
+          }
+        }
+      },
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "can",
+              "name": "coconut milk",
+              "note": "400 ml, shaken",
+              "pantry": {
+                "name": "Coconut milk (canned)",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": null,
+              "name": "limes",
+              "note": "cut in wedges",
+              "pantry": {
+                "name": "Limes",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: cook the rice in the coconut milk and 1½ cups water instead of 3 cups water."
+      },
+      "costAdd": [
+        [
+          "Coconut milk, 400 ml",
+          1.99,
+          "coconut-milk-canned"
+        ],
+        [
+          "Limes, 2",
+          1.0,
+          "limes"
+        ]
+      ],
+      "plating": [
+        "Rice pressed into a small bowl and turned out.",
+        "Shrimp leaning against it, tails up.",
+        "Dip and lime wedges on the side."
+      ]
+    }
+  },
+  "why": {
+    "0-4": "Sweetened coconut toasts golden and gives the classic sweet crunch.",
+    "0-5": "Panko keeps the coating crisp and stops the coconut from burning too fast.",
+    "1-0": "Marmalade makes an instant sweet-tangy dip with no heat."
+  },
+  "fancyNight": true,
+  "funFact": "Coconut shrimp became a 1980s restaurant favourite across North America, inspired by Caribbean and Thai flavours.",
+  "keeps": {
+    "fridge": "2–3 days",
+    "freezer": null,
+    "note": "the coating goes soft"
+  },
+  "pairs": []
+}

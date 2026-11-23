@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-23T11:49:38",
- "count": 61,
+ "generated": "2026-11-23T12:13:25",
+ "count": 81,
  "categories": [
   {
    "slug": "chicken",
@@ -1238,6 +1238,350 @@
    "fancyNight": false
   },
   {
+   "id": "chicken-16",
+   "category": "chicken",
+   "num": 16,
+   "file": "recipes/chicken/16-chicken-shawarma-rice-bowls.json",
+   "title": "Chicken Shawarma Rice Bowls",
+   "subtitle": "warm-spiced chicken thighs over jasmine rice with cucumber, tomato and a creamy garlic sauce: shawarma-shop flavour, no heat",
+   "image": "assets/img/chicken-shawarma-bowls.webp",
+   "prep": 20,
+   "cook": 25,
+   "total": 45,
+   "servings": 4,
+   "cost": 22.03,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "stovetop"
+    ],
+    "base": [
+     "rice"
+    ],
+    "occasion": [
+     "takeout-night",
+     "weeknight"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "boneless skinless chicken thighs",
+    "canola or vegetable oil",
+    "lemon juice",
+    "ground cumin",
+    "sweet paprika",
+    "garlic powder",
+    "ground turmeric",
+    "ground cinnamon",
+    "salt",
+    "black pepper",
+    "sour cream",
+    "mayonnaise",
+    "garlic",
+    "lemon juice",
+    "salt",
+    "jasmine rice",
+    "water",
+    "lemons",
+    "English cucumber",
+    "tomatoes"
+   ],
+   "pantry": [
+    {
+     "name": "Chicken thighs (boneless)",
+     "cat": "meat"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Ground cumin",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground turmeric",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground cinnamon",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Sour cream",
+     "cat": "dairy"
+    },
+    {
+     "name": "Mayonnaise",
+     "cat": "sauces"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Jasmine rice",
+     "cat": "grains"
+    },
+    {
+     "name": "Lemons",
+     "cat": "produce"
+    },
+    {
+     "name": "Cucumbers",
+     "cat": "produce"
+    },
+    {
+     "name": "Tomatoes",
+     "cat": "produce"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "chicken-17",
+   "category": "chicken",
+   "num": 17,
+   "file": "recipes/chicken/17-one-pan-cheesy-chicken-and-rice.json",
+   "title": "One-Pan Cheesy Chicken & Rice",
+   "subtitle": "chicken, rice and broccoli simmered together in one pan and finished with old cheddar: a weeknight casserole without the oven",
+   "image": "assets/img/cheesy-chicken-rice.webp",
+   "prep": 15,
+   "cook": 35,
+   "total": 50,
+   "servings": 4,
+   "cost": 18.58,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "one-pan"
+    ],
+    "base": [
+     "rice"
+    ],
+    "occasion": [
+     "weeknight",
+     "comfort-night"
+    ],
+    "leftovers": [
+     "lunch"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "boneless skinless chicken breasts",
+    "sweet paprika",
+    "garlic powder",
+    "salt",
+    "black pepper",
+    "canola or vegetable oil",
+    "butter",
+    "yellow onion",
+    "garlic",
+    "jasmine rice",
+    "chicken broth",
+    "broccoli crown",
+    "milk",
+    "shredded old cheddar"
+   ],
+   "pantry": [
+    {
+     "name": "Chicken breasts (boneless)",
+     "cat": "meat"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Jasmine rice",
+     "cat": "grains"
+    },
+    {
+     "name": "Chicken broth",
+     "cat": "baking"
+    },
+    {
+     "name": "Broccoli",
+     "cat": "produce"
+    },
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Cheddar (shredded)",
+     "cat": "dairy"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "chicken-18",
+   "category": "chicken",
+   "num": 18,
+   "file": "recipes/chicken/18-oven-bbq-chicken-drumsticks-with-potato-wedges.json",
+   "title": "Oven BBQ Chicken Drumsticks with Potato Wedges",
+   "subtitle": "sticky homemade barbecue-glazed drumsticks and crispy seasoned wedges, all from the oven",
+   "image": "assets/img/bbq-drumsticks-wedges.webp",
+   "prep": 15,
+   "cook": 50,
+   "total": 65,
+   "servings": 4,
+   "cost": 13.9,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [
+     "potatoes"
+    ],
+    "occasion": [
+     "weeknight",
+     "comfort-night"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "chicken drumsticks",
+    "canola or vegetable oil",
+    "sweet paprika",
+    "garlic powder",
+    "onion powder",
+    "salt",
+    "black pepper",
+    "ketchup",
+    "packed brown sugar",
+    "apple cider vinegar",
+    "Worcestershire sauce",
+    "sweet paprika",
+    "russet potatoes",
+    "canola or vegetable oil",
+    "garlic powder",
+    "salt"
+   ],
+   "pantry": [
+    {
+     "name": "Chicken drumsticks",
+     "cat": "meat"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Onion powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Ketchup",
+     "cat": "sauces"
+    },
+    {
+     "name": "Brown sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Apple cider vinegar",
+     "cat": "baking"
+    },
+    {
+     "name": "Worcestershire sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Russet potatoes",
+     "cat": "produce"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
    "id": "pasta-italian-01",
    "category": "pasta-italian",
    "num": 1,
@@ -1889,6 +2233,226 @@
     }
    ],
    "fancyNight": false
+  },
+  {
+   "id": "pasta-italian-09",
+   "category": "pasta-italian",
+   "num": 9,
+   "file": "recipes/pasta-italian/09-spaghetti-bolognese.json",
+   "title": "Spaghetti Bolognese",
+   "subtitle": "a slow-simmered meat sauce with carrot, celery and a splash of milk for a rich, mellow tomato flavour",
+   "image": "assets/img/spaghetti-bolognese.webp",
+   "prep": 15,
+   "cook": 55,
+   "total": 70,
+   "servings": 4,
+   "cost": 15.68,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop"
+    ],
+    "base": [
+     "pasta"
+    ],
+    "occasion": [
+     "comfort-night",
+     "weeknight"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "canola or vegetable oil",
+    "yellow onion",
+    "carrots",
+    "celery ribs",
+    "lean ground beef",
+    "garlic",
+    "tomato paste",
+    "milk",
+    "crushed tomatoes",
+    "beef broth",
+    "dried oregano",
+    "bay leaf",
+    "salt",
+    "black pepper",
+    "spaghetti",
+    "salt",
+    "grated Parmesan"
+   ],
+   "pantry": [
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Carrots",
+     "cat": "produce"
+    },
+    {
+     "name": "Celery",
+     "cat": "produce"
+    },
+    {
+     "name": "Ground beef (lean)",
+     "cat": "meat"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Tomato paste",
+     "cat": "baking"
+    },
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Crushed tomatoes (canned)",
+     "cat": "baking"
+    },
+    {
+     "name": "Beef broth",
+     "cat": "baking"
+    },
+    {
+     "name": "Dried oregano",
+     "cat": "spices"
+    },
+    {
+     "name": "Bay leaves",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Spaghetti",
+     "cat": "grains"
+    },
+    {
+     "name": "Parmesan (grated)",
+     "cat": "dairy"
+    }
+   ],
+   "fancyNight": true
+  },
+  {
+   "id": "pasta-italian-10",
+   "category": "pasta-italian",
+   "num": 10,
+   "file": "recipes/pasta-italian/10-sausage-and-tomato-rigatoni.json",
+   "title": "Sausage & Tomato Rigatoni",
+   "subtitle": "mild Italian sausage in a quick tomato-cream sauce, tossed with rigatoni and Parmesan",
+   "image": "assets/img/sausage-rigatoni.webp",
+   "prep": 10,
+   "cook": 25,
+   "total": 35,
+   "servings": 4,
+   "cost": 14.42,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop"
+    ],
+    "base": [
+     "pasta"
+    ],
+    "occasion": [
+     "weeknight",
+     "date-night"
+    ],
+    "leftovers": [
+     "lunch"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "rigatoni",
+    "salt",
+    "canola or vegetable oil",
+    "mild Italian sausages",
+    "yellow onion",
+    "garlic",
+    "dried Italian seasoning",
+    "crushed tomatoes",
+    "granulated sugar",
+    "salt",
+    "35% whipping cream",
+    "grated Parmesan"
+   ],
+   "pantry": [
+    {
+     "name": "Rigatoni",
+     "cat": "grains"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Pork sausages (mild)",
+     "cat": "meat"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Italian seasoning (dried)",
+     "cat": "spices"
+    },
+    {
+     "name": "Crushed tomatoes (canned)",
+     "cat": "baking"
+    },
+    {
+     "name": "Granulated sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "35% whipping cream",
+     "cat": "dairy"
+    },
+    {
+     "name": "Parmesan (grated)",
+     "cat": "dairy"
+    }
+   ],
+   "fancyNight": true
   },
   {
    "id": "beef-turkey-01",
@@ -2752,6 +3316,365 @@
    "fancyNight": false
   },
   {
+   "id": "beef-turkey-12",
+   "category": "beef-turkey",
+   "num": 12,
+   "file": "recipes/beef-turkey/12-classic-cheeseburgers-with-oven-fries.json",
+   "title": "Classic Cheeseburgers with Oven Fries",
+   "subtitle": "juicy pan-seared cheddar burgers on toasted buns, with crispy homemade oven fries",
+   "image": "assets/img/cheeseburgers-oven-fries.webp",
+   "prep": 20,
+   "cook": 40,
+   "total": 60,
+   "servings": 4,
+   "cost": 18.29,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "oven-bake"
+    ],
+    "base": [
+     "bread-wraps",
+     "potatoes"
+    ],
+    "occasion": [
+     "weeknight",
+     "comfort-night"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "russet potatoes",
+    "canola or vegetable oil",
+    "salt",
+    "sweet paprika",
+    "lean ground beef",
+    "Worcestershire sauce",
+    "garlic powder",
+    "onion powder",
+    "salt",
+    "black pepper",
+    "canola or vegetable oil",
+    "slices cheddar cheese",
+    "hamburger buns",
+    "tomatoes",
+    "iceberg lettuce leaves",
+    "ketchup",
+    "mayonnaise",
+    "bread-and-butter pickle slices"
+   ],
+   "pantry": [
+    {
+     "name": "Russet potatoes",
+     "cat": "produce"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground beef (lean)",
+     "cat": "meat"
+    },
+    {
+     "name": "Worcestershire sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Onion powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Cheddar slices",
+     "cat": "dairy"
+    },
+    {
+     "name": "Hamburger buns",
+     "cat": "grains"
+    },
+    {
+     "name": "Tomatoes",
+     "cat": "produce"
+    },
+    {
+     "name": "Iceberg lettuce",
+     "cat": "produce"
+    },
+    {
+     "name": "Ketchup",
+     "cat": "sauces"
+    },
+    {
+     "name": "Mayonnaise",
+     "cat": "sauces"
+    },
+    {
+     "name": "Bread and butter pickles",
+     "cat": "sauces"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "beef-turkey-13",
+   "category": "beef-turkey",
+   "num": 13,
+   "file": "recipes/beef-turkey/13-beef-stroganoff.json",
+   "title": "Beef Stroganoff",
+   "subtitle": "tender strips of sirloin in a silky sour cream and onion gravy over buttered egg noodles",
+   "image": "assets/img/beef-stroganoff.webp",
+   "prep": 15,
+   "cook": 25,
+   "total": 40,
+   "servings": 4,
+   "cost": 23.25,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "stovetop"
+    ],
+    "base": [
+     "noodles"
+    ],
+    "occasion": [
+     "comfort-night",
+     "date-night"
+    ],
+    "leftovers": [
+     "lunch"
+    ],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "sirloin steak",
+    "salt",
+    "black pepper",
+    "canola or vegetable oil",
+    "butter",
+    "yellow onions",
+    "garlic",
+    "all-purpose flour",
+    "sweet paprika",
+    "beef broth",
+    "Worcestershire sauce",
+    "sour cream",
+    "broad egg noodles",
+    "salt",
+    "butter"
+   ],
+   "pantry": [
+    {
+     "name": "Sirloin steak",
+     "cat": "meat"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Beef broth",
+     "cat": "baking"
+    },
+    {
+     "name": "Worcestershire sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Sour cream",
+     "cat": "dairy"
+    },
+    {
+     "name": "Egg noodles (broad)",
+     "cat": "grains"
+    }
+   ],
+   "fancyNight": true
+  },
+  {
+   "id": "beef-turkey-14",
+   "category": "beef-turkey",
+   "num": 14,
+   "file": "recipes/beef-turkey/14-beef-and-bean-burritos.json",
+   "title": "Beef & Bean Burritos",
+   "subtitle": "mild seasoned beef, refried beans, rice and cheddar rolled in big tortillas and toasted crisp",
+   "image": "assets/img/beef-bean-burritos.webp",
+   "prep": 20,
+   "cook": 30,
+   "total": 50,
+   "servings": 4,
+   "cost": 19.71,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop"
+    ],
+    "base": [
+     "bread-wraps",
+     "rice"
+    ],
+    "occasion": [
+     "weeknight",
+     "takeout-night"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "jasmine rice",
+    "water",
+    "canola or vegetable oil",
+    "yellow onion",
+    "lean ground beef",
+    "garlic",
+    "mild chili powder",
+    "ground cumin",
+    "sweet paprika",
+    "dried oregano",
+    "tomato paste",
+    "salt",
+    "water",
+    "refried beans",
+    "large flour tortillas",
+    "shredded old cheddar",
+    "mild salsa",
+    "sour cream"
+   ],
+   "pantry": [
+    {
+     "name": "Jasmine rice",
+     "cat": "grains"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Ground beef (lean)",
+     "cat": "meat"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Chili powder (mild)",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground cumin",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried oregano",
+     "cat": "spices"
+    },
+    {
+     "name": "Tomato paste",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Refried beans (canned)",
+     "cat": "baking"
+    },
+    {
+     "name": "Flour tortillas (large)",
+     "cat": "grains"
+    },
+    {
+     "name": "Cheddar (shredded)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Salsa (mild)",
+     "cat": "sauces"
+    },
+    {
+     "name": "Sour cream",
+     "cat": "dairy"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
    "id": "steak-pork-01",
    "category": "steak-pork",
    "num": 1,
@@ -3165,6 +4088,322 @@
     {
      "name": "Egg noodles (broad)",
      "cat": "grains"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    }
+   ],
+   "fancyNight": true
+  },
+  {
+   "id": "steak-pork-05",
+   "category": "steak-pork",
+   "num": 5,
+   "file": "recipes/steak-pork/05-oven-pulled-pork-sandwiches.json",
+   "title": "Oven Pulled Pork Sandwiches with Coleslaw",
+   "subtitle": "pork shoulder slow-roasted until it falls apart, tossed in homemade barbecue sauce and piled on buns with creamy coleslaw",
+   "image": "assets/img/pulled-pork-sandwiches.webp",
+   "prep": 20,
+   "cook": 240,
+   "total": 260,
+   "servings": 6,
+   "cost": 18.78,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [
+     "bread-wraps"
+    ],
+    "occasion": [
+     "comfort-night"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "boneless pork shoulder (blade roast)",
+    "packed brown sugar",
+    "sweet paprika",
+    "garlic powder",
+    "onion powder",
+    "salt",
+    "black pepper",
+    "water",
+    "ketchup",
+    "packed brown sugar",
+    "apple cider vinegar",
+    "Worcestershire sauce",
+    "garlic powder",
+    "coleslaw mix",
+    "mayonnaise",
+    "apple cider vinegar",
+    "granulated sugar",
+    "salt",
+    "hamburger buns"
+   ],
+   "pantry": [
+    {
+     "name": "Pork shoulder (boneless)",
+     "cat": "meat"
+    },
+    {
+     "name": "Brown sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Onion powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Ketchup",
+     "cat": "sauces"
+    },
+    {
+     "name": "Apple cider vinegar",
+     "cat": "baking"
+    },
+    {
+     "name": "Worcestershire sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Coleslaw mix",
+     "cat": "produce"
+    },
+    {
+     "name": "Mayonnaise",
+     "cat": "sauces"
+    },
+    {
+     "name": "Granulated sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Hamburger buns",
+     "cat": "grains"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "steak-pork-06",
+   "category": "steak-pork",
+   "num": 6,
+   "file": "recipes/steak-pork/06-pan-seared-sirloin-with-garlic-butter-potatoes.json",
+   "title": "Pan-Seared Sirloin with Garlic Butter Potatoes",
+   "subtitle": "a steakhouse-style dinner at home: crusty seared sirloin basted in garlic butter, with crispy roasted baby potatoes",
+   "image": "assets/img/sirloin-garlic-butter-potatoes.webp",
+   "prep": 10,
+   "cook": 40,
+   "total": 50,
+   "servings": 4,
+   "cost": 25.4,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "oven-bake"
+    ],
+    "base": [
+     "potatoes"
+    ],
+    "occasion": [
+     "date-night"
+    ],
+    "leftovers": [
+     "lunch"
+    ],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "baby potatoes",
+    "canola or vegetable oil",
+    "salt",
+    "garlic powder",
+    "butter",
+    "garlic",
+    "sirloin steaks",
+    "salt",
+    "black pepper",
+    "canola or vegetable oil",
+    "butter",
+    "garlic",
+    "dried thyme"
+   ],
+   "pantry": [
+    {
+     "name": "Baby potatoes",
+     "cat": "produce"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Sirloin steak",
+     "cat": "meat"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried thyme",
+     "cat": "spices"
+    }
+   ],
+   "fancyNight": true
+  },
+  {
+   "id": "steak-pork-07",
+   "category": "steak-pork",
+   "num": 7,
+   "file": "recipes/steak-pork/07-maple-glazed-pork-tenderloin-with-sweet-potatoes.json",
+   "title": "Maple-Glazed Pork Tenderloin with Sweet Potatoes",
+   "subtitle": "seared pork tenderloin roasted with a sticky maple-garlic glaze, beside caramelised sweet potato chunks",
+   "image": "assets/img/maple-pork-tenderloin.webp",
+   "prep": 15,
+   "cook": 45,
+   "total": 60,
+   "servings": 4,
+   "cost": 22.98,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "oven-bake",
+     "stovetop"
+    ],
+    "base": [
+     "potatoes"
+    ],
+    "occasion": [
+     "date-night",
+     "comfort-night"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "sweet potatoes",
+    "canola or vegetable oil",
+    "salt",
+    "ground cinnamon",
+    "pork tenderloins",
+    "salt",
+    "black pepper",
+    "garlic powder",
+    "sweet paprika",
+    "canola or vegetable oil",
+    "maple syrup",
+    "soy sauce",
+    "apple cider vinegar",
+    "garlic",
+    "butter"
+   ],
+   "pantry": [
+    {
+     "name": "Sweet potatoes",
+     "cat": "produce"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground cinnamon",
+     "cat": "spices"
+    },
+    {
+     "name": "Pork tenderloin",
+     "cat": "meat"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Maple syrup",
+     "cat": "baking"
+    },
+    {
+     "name": "Soy sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Apple cider vinegar",
+     "cat": "baking"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
     },
     {
      "name": "Butter",
@@ -3618,6 +4857,299 @@
    "fancyNight": false
   },
   {
+   "id": "seafood-05",
+   "category": "seafood",
+   "num": 5,
+   "file": "recipes/seafood/05-oven-fish-and-chips.json",
+   "title": "Oven Fish & Chips",
+   "subtitle": "crunchy panko-crusted haddock and thick-cut oven chips, with a quick lemon tartar sauce",
+   "image": "assets/img/oven-fish-and-chips.webp",
+   "prep": 20,
+   "cook": 40,
+   "total": 60,
+   "servings": 4,
+   "cost": 22.54,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [
+     "potatoes"
+    ],
+    "occasion": [
+     "weeknight",
+     "takeout-night"
+    ],
+    "leftovers": [],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "russet potatoes",
+    "canola or vegetable oil",
+    "salt",
+    "haddock fillets",
+    "salt",
+    "black pepper",
+    "all-purpose flour",
+    "large eggs",
+    "panko breadcrumbs",
+    "sweet paprika",
+    "garlic powder",
+    "canola or vegetable oil",
+    "mayonnaise",
+    "bread-and-butter pickles",
+    "lemons"
+   ],
+   "pantry": [
+    {
+     "name": "Russet potatoes",
+     "cat": "produce"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Haddock fillets (frozen)",
+     "cat": "frozen"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Panko breadcrumbs",
+     "cat": "baking"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Mayonnaise",
+     "cat": "sauces"
+    },
+    {
+     "name": "Bread and butter pickles",
+     "cat": "sauces"
+    },
+    {
+     "name": "Lemons",
+     "cat": "produce"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "seafood-06",
+   "category": "seafood",
+   "num": 6,
+   "file": "recipes/seafood/06-shrimp-scampi-linguine.json",
+   "title": "Shrimp Scampi Linguine",
+   "subtitle": "plump garlic-butter shrimp with lemon and Parmesan, tossed through linguine in under 30 minutes",
+   "image": "assets/img/shrimp-scampi-linguine.webp",
+   "prep": 15,
+   "cook": 15,
+   "total": 30,
+   "servings": 4,
+   "cost": 19.3,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop"
+    ],
+    "base": [
+     "pasta"
+    ],
+    "occasion": [
+     "date-night",
+     "weeknight"
+    ],
+    "leftovers": [
+     "lunch"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "under-30"
+    ]
+   },
+   "ingredients": [
+    "linguine",
+    "salt",
+    "raw shrimp (31–40 size)",
+    "salt",
+    "black pepper",
+    "canola or vegetable oil",
+    "butter",
+    "garlic",
+    "chicken broth",
+    "lemons",
+    "grated Parmesan"
+   ],
+   "pantry": [
+    {
+     "name": "Linguine",
+     "cat": "grains"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Shrimp (raw, frozen)",
+     "cat": "frozen"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Chicken broth",
+     "cat": "baking"
+    },
+    {
+     "name": "Lemons",
+     "cat": "produce"
+    },
+    {
+     "name": "Parmesan (grated)",
+     "cat": "dairy"
+    }
+   ],
+   "fancyNight": true
+  },
+  {
+   "id": "seafood-07",
+   "category": "seafood",
+   "num": 7,
+   "file": "recipes/seafood/07-crispy-coconut-shrimp-with-rice.json",
+   "title": "Crispy Coconut Shrimp with Rice",
+   "subtitle": "golden coconut-panko shrimp baked crisp, with jasmine rice and a sweet orange dipping sauce",
+   "image": "assets/img/coconut-shrimp.webp",
+   "prep": 25,
+   "cook": 25,
+   "total": 50,
+   "servings": 4,
+   "cost": 18.63,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [
+     "rice"
+    ],
+    "occasion": [
+     "date-night",
+     "takeout-night"
+    ],
+    "leftovers": [],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "raw shrimp (21–25 size)",
+    "salt",
+    "all-purpose flour",
+    "large eggs",
+    "sweetened shredded coconut",
+    "panko breadcrumbs",
+    "canola or vegetable oil",
+    "orange marmalade",
+    "lemon juice",
+    "soy sauce",
+    "jasmine rice",
+    "water"
+   ],
+   "pantry": [
+    {
+     "name": "Shrimp (raw, frozen)",
+     "cat": "frozen"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Sweetened shredded coconut",
+     "cat": "baking"
+    },
+    {
+     "name": "Panko breadcrumbs",
+     "cat": "baking"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Orange marmalade",
+     "cat": "baking"
+    },
+    {
+     "name": "Lemon juice",
+     "cat": "baking"
+    },
+    {
+     "name": "Soy sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Jasmine rice",
+     "cat": "grains"
+    }
+   ],
+   "fancyNight": true
+  },
+  {
    "id": "takeout-at-home-01",
    "category": "takeout-at-home",
    "num": 1,
@@ -4058,6 +5590,314 @@
     {
      "name": "Rice vinegar",
      "cat": "sauces"
+    },
+    {
+     "name": "Jasmine rice",
+     "cat": "grains"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "takeout-at-home-05",
+   "category": "takeout-at-home",
+   "num": 5,
+   "file": "recipes/takeout-at-home/05-cashew-chicken.json",
+   "title": "Cashew Chicken",
+   "subtitle": "tender chicken, crunchy toasted cashews and vegetables in a glossy honey-soy garlic sauce, over jasmine rice",
+   "image": "assets/img/cashew-chicken.webp",
+   "prep": 20,
+   "cook": 25,
+   "total": 45,
+   "servings": 4,
+   "cost": 17.48,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop"
+    ],
+    "base": [
+     "rice"
+    ],
+    "occasion": [
+     "takeout-night",
+     "weeknight"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "boneless skinless chicken breasts",
+    "cornstarch",
+    "soy sauce",
+    "canola or vegetable oil",
+    "soy sauce",
+    "oyster sauce",
+    "honey",
+    "rice vinegar",
+    "cornstarch",
+    "water",
+    "sesame oil",
+    "unsalted cashews",
+    "broccoli crown",
+    "carrots",
+    "yellow onion",
+    "garlic",
+    "fresh ginger",
+    "jasmine rice",
+    "water"
+   ],
+   "pantry": [
+    {
+     "name": "Chicken breasts (boneless)",
+     "cat": "meat"
+    },
+    {
+     "name": "Cornstarch",
+     "cat": "baking"
+    },
+    {
+     "name": "Soy sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Oyster sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Honey",
+     "cat": "baking"
+    },
+    {
+     "name": "Rice vinegar",
+     "cat": "sauces"
+    },
+    {
+     "name": "Sesame oil",
+     "cat": "sauces"
+    },
+    {
+     "name": "Cashews (unsalted)",
+     "cat": "baking"
+    },
+    {
+     "name": "Broccoli",
+     "cat": "produce"
+    },
+    {
+     "name": "Carrots",
+     "cat": "produce"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Fresh ginger",
+     "cat": "produce"
+    },
+    {
+     "name": "Jasmine rice",
+     "cat": "grains"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "takeout-at-home-06",
+   "category": "takeout-at-home",
+   "num": 6,
+   "file": "recipes/takeout-at-home/06-pork-egg-roll-bowls.json",
+   "title": "Pork Egg Roll Bowls",
+   "subtitle": "everything inside an egg roll, stir-fried in one pan: ground pork, cabbage and carrot in a ginger-soy sauce over rice",
+   "image": "assets/img/egg-roll-bowls.webp",
+   "prep": 10,
+   "cook": 25,
+   "total": 35,
+   "servings": 4,
+   "cost": 15.97,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "one-pan"
+    ],
+    "base": [
+     "rice"
+    ],
+    "occasion": [
+     "weeknight",
+     "takeout-night"
+    ],
+    "leftovers": [
+     "lunch"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "canola or vegetable oil",
+    "ground pork",
+    "yellow onion",
+    "garlic",
+    "fresh ginger",
+    "coleslaw mix",
+    "soy sauce",
+    "rice vinegar",
+    "packed brown sugar",
+    "sesame oil",
+    "jasmine rice",
+    "water"
+   ],
+   "pantry": [
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Ground pork",
+     "cat": "meat"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Fresh ginger",
+     "cat": "produce"
+    },
+    {
+     "name": "Coleslaw mix",
+     "cat": "produce"
+    },
+    {
+     "name": "Soy sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Rice vinegar",
+     "cat": "sauces"
+    },
+    {
+     "name": "Brown sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Sesame oil",
+     "cat": "sauces"
+    },
+    {
+     "name": "Jasmine rice",
+     "cat": "grains"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "takeout-at-home-07",
+   "category": "takeout-at-home",
+   "num": 7,
+   "file": "recipes/takeout-at-home/07-mild-mongolian-beef.json",
+   "title": "Mild Mongolian Beef",
+   "subtitle": "seared strips of beef in a sticky brown sugar, soy and garlic sauce, with onions and jasmine rice: the takeout favourite without the chilies",
+   "image": "assets/img/mongolian-beef.webp",
+   "prep": 20,
+   "cook": 20,
+   "total": 40,
+   "servings": 4,
+   "cost": 20.3,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "stovetop"
+    ],
+    "base": [
+     "rice"
+    ],
+    "occasion": [
+     "takeout-night",
+     "date-night"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "sirloin steak",
+    "cornstarch",
+    "canola or vegetable oil",
+    "soy sauce",
+    "packed brown sugar",
+    "water",
+    "garlic",
+    "fresh ginger",
+    "yellow onions",
+    "jasmine rice",
+    "water"
+   ],
+   "pantry": [
+    {
+     "name": "Sirloin steak",
+     "cat": "meat"
+    },
+    {
+     "name": "Cornstarch",
+     "cat": "baking"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Soy sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Brown sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Fresh ginger",
+     "cat": "produce"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
     },
     {
      "name": "Jasmine rice",
@@ -4763,6 +6603,351 @@
     {
      "name": "Egg noodles (broad)",
      "cat": "grains"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "comfort-soups-07",
+   "category": "comfort-soups",
+   "num": 7,
+   "file": "recipes/comfort-soups/07-creamy-tomato-soup-with-grilled-cheese.json",
+   "title": "Creamy Tomato Soup with Grilled Cheese",
+   "subtitle": "a smooth, cozy tomato soup from pantry cans, with golden grilled cheese sandwiches for dunking",
+   "image": "assets/img/tomato-soup-grilled-cheese.webp",
+   "prep": 10,
+   "cook": 35,
+   "total": 45,
+   "servings": 4,
+   "cost": 13.15,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "one-pan"
+    ],
+    "base": [
+     "bread-wraps"
+    ],
+    "occasion": [
+     "comfort-night",
+     "weeknight"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "butter",
+    "yellow onion",
+    "garlic",
+    "crushed tomatoes",
+    "chicken broth",
+    "granulated sugar",
+    "dried Italian seasoning",
+    "salt",
+    "black pepper",
+    "35% whipping cream",
+    "slices white sandwich bread",
+    "shredded old cheddar",
+    "butter"
+   ],
+   "pantry": [
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Crushed tomatoes (canned)",
+     "cat": "baking"
+    },
+    {
+     "name": "Chicken broth",
+     "cat": "baking"
+    },
+    {
+     "name": "Granulated sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Italian seasoning (dried)",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "35% whipping cream",
+     "cat": "dairy"
+    },
+    {
+     "name": "Sandwich bread (white)",
+     "cat": "grains"
+    },
+    {
+     "name": "Cheddar (shredded)",
+     "cat": "dairy"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "comfort-soups-08",
+   "category": "comfort-soups",
+   "num": 8,
+   "file": "recipes/comfort-soups/08-chicken-and-dumplings.json",
+   "title": "Chicken & Dumplings",
+   "subtitle": "a creamy chicken stew with carrots and celery, topped with soft, fluffy drop dumplings steamed right in the pot",
+   "image": "assets/img/chicken-and-dumplings.webp",
+   "prep": 20,
+   "cook": 45,
+   "total": 65,
+   "servings": 4,
+   "cost": 19.95,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "one-pan"
+    ],
+    "base": [],
+    "occasion": [
+     "comfort-night"
+    ],
+    "leftovers": [
+     "lunch"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "butter",
+    "yellow onion",
+    "carrots",
+    "celery ribs",
+    "garlic",
+    "all-purpose flour",
+    "dried thyme",
+    "dried sage",
+    "chicken broth",
+    "boneless skinless chicken thighs",
+    "milk",
+    "frozen peas",
+    "salt",
+    "black pepper",
+    "all-purpose flour",
+    "baking powder",
+    "salt",
+    "butter",
+    "milk"
+   ],
+   "pantry": [
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Carrots",
+     "cat": "produce"
+    },
+    {
+     "name": "Celery",
+     "cat": "produce"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Dried thyme",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried sage",
+     "cat": "spices"
+    },
+    {
+     "name": "Chicken broth",
+     "cat": "baking"
+    },
+    {
+     "name": "Chicken thighs (boneless)",
+     "cat": "meat"
+    },
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Frozen peas",
+     "cat": "frozen"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Baking powder",
+     "cat": "baking"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "comfort-soups-09",
+   "category": "comfort-soups",
+   "num": 9,
+   "file": "recipes/comfort-soups/09-hamburger-soup.json",
+   "title": "Hamburger Soup",
+   "subtitle": "the Canadian church-cookbook classic: ground beef, potatoes and vegetables in a hearty tomato-beef broth",
+   "image": "assets/img/hamburger-soup.webp",
+   "prep": 15,
+   "cook": 45,
+   "total": 60,
+   "servings": 6,
+   "cost": 17.57,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "one-pan"
+    ],
+    "base": [
+     "potatoes"
+    ],
+    "occasion": [
+     "comfort-night",
+     "weeknight"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "canola or vegetable oil",
+    "lean ground beef",
+    "yellow onion",
+    "carrots",
+    "celery ribs",
+    "garlic",
+    "tomato paste",
+    "crushed tomatoes",
+    "beef broth",
+    "Yukon Gold potatoes",
+    "Worcestershire sauce",
+    "dried thyme",
+    "bay leaf",
+    "salt",
+    "black pepper",
+    "frozen corn"
+   ],
+   "pantry": [
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Ground beef (lean)",
+     "cat": "meat"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Carrots",
+     "cat": "produce"
+    },
+    {
+     "name": "Celery",
+     "cat": "produce"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Tomato paste",
+     "cat": "baking"
+    },
+    {
+     "name": "Crushed tomatoes (canned)",
+     "cat": "baking"
+    },
+    {
+     "name": "Beef broth",
+     "cat": "baking"
+    },
+    {
+     "name": "Yukon Gold potatoes",
+     "cat": "produce"
+    },
+    {
+     "name": "Worcestershire sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Dried thyme",
+     "cat": "spices"
+    },
+    {
+     "name": "Bay leaves",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Frozen corn",
+     "cat": "frozen"
     }
    ],
    "fancyNight": false

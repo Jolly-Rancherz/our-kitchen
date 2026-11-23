@@ -1,0 +1,483 @@
+{
+  "title": "Spaghetti Bolognese",
+  "subtitle": "a slow-simmered meat sauce with carrot, celery and a splash of milk for a rich, mellow tomato flavour",
+  "image": "assets/img/spaghetti-bolognese.webp",
+  "imageAlt": "Spaghetti twirled with a rich meat sauce and Parmesan in a white bowl on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 55,
+  "cost": {
+    "total": 15.68,
+    "breakdown": [
+      [
+        "Lean ground beef, 680 g",
+        7.48,
+        "ground-beef-lean"
+      ],
+      [
+        "Crushed tomatoes, 796 ml",
+        1.99,
+        "crushed-tomatoes-canned"
+      ],
+      [
+        "Spaghetti, 450 g",
+        2.0,
+        "spaghetti"
+      ],
+      [
+        "Parmesan, ½ cup",
+        1.4,
+        "parmesan-grated"
+      ],
+      [
+        "Onion, carrot, celery, garlic",
+        1.1
+      ],
+      [
+        "Milk, ½ cup",
+        0.36,
+        "milk"
+      ],
+      [
+        "Tomato paste, beef broth",
+        0.95
+      ],
+      [
+        "Oil, dried herbs, salt, pepper",
+        0.4
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "pasta"
+    ],
+    "occasion": [
+      "comfort-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Use a heavy pot or Dutch oven for the sauce so it can bubble gently without catching."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Sauce",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "carrots",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "celery ribs",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Celery",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 680,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "tomato paste",
+          "pantry": {
+            "name": "Tomato paste",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "can",
+          "name": "crushed tomatoes",
+          "note": "796 ml",
+          "pantry": {
+            "name": "Crushed tomatoes (canned)",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "beef broth",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Beef broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried oregano",
+          "pantry": {
+            "name": "Dried oregano",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "bay leaf",
+          "pantry": {
+            "name": "Bay leaves",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pasta",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "spaghetti",
+          "pantry": {
+            "name": "Spaghetti",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the pasta water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "note": "for serving",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Soften the vegetables",
+      "text": "Heat the oil in a heavy pot over medium. Cook the onion, carrot and celery 8 minutes, stirring, until soft.",
+      "timer": 8,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Brown the beef",
+      "text": "Turn the heat to medium-high, add the beef and cook, breaking it up, 8–10 minutes until no pink remains and it reads 71°C (160°F). Spoon off any fat. Add the garlic and tomato paste and stir 1 minute.",
+      "timer": 10,
+      "uses": [
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Milk",
+      "text": "Pour in the milk and simmer, stirring, until it has almost disappeared, about 3 minutes.",
+      "timer": 3,
+      "uses": [
+        "0-7"
+      ]
+    },
+    {
+      "title": "Simmer",
+      "text": "Add the crushed tomatoes, broth, dried oregano, bay leaf, salt and pepper. Bring to a bubble, then simmer gently, partly covered, 30 minutes, stirring now and then. Discard the bay leaf.",
+      "timer": 30,
+      "uses": [
+        "0-8",
+        "0-9",
+        "0-10",
+        "0-11",
+        "0-12",
+        "0-13"
+      ]
+    },
+    {
+      "title": "Cook the pasta",
+      "text": "For the last 15 minutes, bring a large pot of water to a boil with the salt and cook the spaghetti until al dente. Save ½ cup of the pasta water, then drain.",
+      "timer": 10,
+      "uses": [
+        "1-0",
+        "1-1"
+      ]
+    },
+    {
+      "title": "Toss and serve",
+      "text": "Toss the spaghetti with about half the sauce and a splash of pasta water, then top each bowl with more sauce and the Parmesan.",
+      "uses": [
+        "1-2"
+      ]
+    }
+  ],
+  "together": "AAAAB*",
+  "fixIt": [
+    {
+      "problem": "Sauce too thin",
+      "fix": "Simmer uncovered 5–10 minutes more."
+    },
+    {
+      "problem": "Sauce sharp or acidic",
+      "fix": "Simmer longer and add a pinch of sugar; the milk also mellows it."
+    },
+    {
+      "problem": "Pasta and sauce slide apart",
+      "fix": "Toss the pasta in the sauce with a splash of starchy pasta water before serving."
+    }
+  ],
+  "saleTip": "Ground beef is cheapest in the 1.5 kg family pack; split it into 680 g bags for this and the freezer.",
+  "swap": "Half ground pork, half beef: richer and very traditional. Cook the pork to 71°C (160°F) too.",
+  "leftovers": "The sauce is even better on day two. Freeze it on its own and cook fresh pasta.",
+  "doneness": "Ground beef cooked to 71°C (160°F) with no pink (Health Canada). Reheat sauce to 74°C (165°F).",
+  "source": "Based on tested Bolognese-style meat sauce methods (Marcella Hazan's milk step, Canadian Living): soffritto, browned beef, milk, then tomatoes simmered slowly.",
+  "gear": [
+    "Heavy pot or Dutch oven",
+    "Large pot for pasta",
+    "Colander"
+  ],
+  "prepAhead": [
+    "Make the sauce up to 3 days ahead; it improves overnight.",
+    "Dice the onion, carrot and celery the night before."
+  ],
+  "reheat": "Sauce covered over medium-low with a splash of water, or in the microwave 2–3 minutes, stirring halfway, until 74°C (165°F).",
+  "thaw": {
+    "item": "ground beef",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Beef, onion and tomatoes; no carrot, celery or milk.",
+      "drop": [
+        "0-2",
+        "0-3",
+        "0-7",
+        "0-11"
+      ],
+      "stepNotes": {
+        "0": "Basic: onion only, 5 minutes.",
+        "2": "Basic: skip the milk step.",
+        "3": "Basic: no bay leaf."
+      },
+      "costDrop": [
+        "milk"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Half ground pork for richness, and garlic bread on the side.",
+      "swap": {
+        "0-4": {
+          "qty": 340,
+          "unit": "g",
+          "name": "lean ground beef",
+          "note": "plus 340 g ground pork below",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        }
+      },
+      "add": [
+        {
+          "group": "Fancy extras",
+          "items": [
+            {
+              "qty": 340,
+              "unit": "g",
+              "name": "ground pork",
+              "pantry": {
+                "name": "Ground pork",
+                "cat": "meat"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": null,
+              "name": "baguette",
+              "note": "split lengthwise",
+              "pantry": {
+                "name": "Baguette",
+                "cat": "grains"
+              }
+            },
+            {
+              "qty": 3,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "softened",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "garlic clove",
+              "note": "finely grated",
+              "pantry": {
+                "name": "Garlic",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: brown the pork with the beef, to 71°C (160°F) with no pink."
+      },
+      "addSteps": [
+        {
+          "title": "Garlic bread",
+          "text": "Mash the butter with the grated garlic, spread over the cut baguette and broil 2–3 minutes until golden at the edges."
+        }
+      ],
+      "costDrop": [
+        "ground beef"
+      ],
+      "costAdd": [
+        [
+          "Lean ground beef, 340 g",
+          3.74,
+          "ground-beef-lean"
+        ],
+        [
+          "Ground pork, 340 g",
+          4.15,
+          "ground-pork"
+        ],
+        [
+          "Baguette, ½",
+          1.25,
+          "baguette"
+        ],
+        [
+          "Butter, garlic",
+          0.7
+        ]
+      ],
+      "plating": [
+        "Twirl the pasta high in the bowl with tongs.",
+        "Sauce spooned into the centre.",
+        "A snowfall of Parmesan; garlic bread on the rim."
+      ]
+    }
+  },
+  "why": {
+    "0-7": "Simmering milk into the meat before the tomatoes makes it tender and mellows the sauce.",
+    "0-2": "Finely diced carrot adds natural sweetness, so no sugar is needed.",
+    "0-8": "Crushed tomatoes give a smooth, thick sauce without blending."
+  },
+  "fancyNight": true,
+  "funFact": "In Bologna, ragù is served with tagliatelle, not spaghetti; 'spag bol' is the British and Canadian version.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze the sauce without the pasta"
+  },
+  "pairs": []
+}

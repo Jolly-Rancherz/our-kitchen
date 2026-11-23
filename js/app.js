@@ -5460,6 +5460,34 @@ function recapCard(rc, dismiss) {
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
 {
+ "name": "Update 13.4",
+ "id": "u134-2026-11",
+ "date": "2026-11-23",
+ "intro": "Twenty more dinners, each with Basic, Classic and Fancy.",
+ "notes": [
+  [
+   "Chicken and pasta",
+   "Chicken shawarma rice bowls, one-pan cheesy chicken and rice, oven BBQ drumsticks with potato wedges, spaghetti Bolognese, and sausage and tomato rigatoni"
+  ],
+  [
+   "Beef and pork",
+   "Classic cheeseburgers with oven fries, beef stroganoff, beef and bean burritos, oven pulled pork sandwiches, pan-seared sirloin with garlic butter potatoes, and maple-glazed pork tenderloin with sweet potatoes"
+  ],
+  [
+   "Seafood and takeout",
+   "Oven fish and chips, shrimp scampi linguine, crispy coconut shrimp, cashew chicken, pork egg roll bowls and mild Mongolian beef"
+  ],
+  [
+   "Soups",
+   "Creamy tomato soup with grilled cheese, chicken and dumplings, and hamburger soup"
+  ],
+  [
+   "Clearer safe temperatures",
+   "Ground beef, beef strip, ham and baked-dish steps now say the exact safe temperature to check for"
+  ]
+ ]
+},
+{
  "name": "Update 13.3",
  "id": "u133-2026-11",
  "date": "2026-11-23",

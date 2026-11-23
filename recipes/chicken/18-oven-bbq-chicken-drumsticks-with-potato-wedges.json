@@ -1,0 +1,426 @@
+{
+  "title": "Oven BBQ Chicken Drumsticks with Potato Wedges",
+  "subtitle": "sticky homemade barbecue-glazed drumsticks and crispy seasoned wedges, all from the oven",
+  "image": "assets/img/bbq-drumsticks-wedges.webp",
+  "imageAlt": "Glossy barbecue chicken drumsticks beside golden potato wedges on a white plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 50,
+  "cost": {
+    "total": 13.9,
+    "breakdown": [
+      [
+        "Chicken drumsticks, 1.4 kg",
+        9.8,
+        "chicken-drumsticks"
+      ],
+      [
+        "Russet potatoes, 1.2 kg",
+        1.6,
+        "russet-potatoes"
+      ],
+      [
+        "Ketchup, ¾ cup",
+        0.75,
+        "ketchup"
+      ],
+      [
+        "Brown sugar, ¼ cup",
+        0.45,
+        "brown-sugar"
+      ],
+      [
+        "Cider vinegar, Worcestershire",
+        0.45
+      ],
+      [
+        "Oil, spices, salt",
+        0.85
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "weeknight",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "Oven at 220°C (425°F) with racks in the upper and lower thirds. Line 2 rimmed baking sheets with foil; the glaze is sticky."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 1.4,
+          "unit": "kg",
+          "name": "chicken drumsticks",
+          "note": "about 12",
+          "pantry": {
+            "name": "Chicken drumsticks",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BBQ glaze",
+      "items": [
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "ketchup",
+          "metric": {
+            "qty": 175,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Ketchup",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 50,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "apple cider vinegar",
+          "pantry": {
+            "name": "Apple cider vinegar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Wedges",
+      "items": [
+        {
+          "qty": 1.2,
+          "unit": "kg",
+          "name": "russet potatoes",
+          "note": "about 4, scrubbed and cut in 8 wedges each",
+          "pantry": {
+            "name": "Russet potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Heat the oven",
+      "text": "Heat the oven to 220°C (425°F).",
+      "uses": []
+    },
+    {
+      "title": "Season the chicken",
+      "text": "Pat the drumsticks dry and toss with the oil, 1½ tsp paprika, garlic powder, onion powder, salt and pepper. Spread on one sheet.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Season the wedges",
+      "text": "Toss the potato wedges with the oil, garlic powder and salt and spread cut side down on the second sheet.",
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3"
+      ]
+    },
+    {
+      "title": "Roast",
+      "text": "Roast both sheets 30 minutes, turning the drumsticks and wedges once and switching the sheets halfway.",
+      "timer": 30,
+      "uses": []
+    },
+    {
+      "title": "Glaze",
+      "text": "Meanwhile, simmer the ketchup, brown sugar, vinegar, Worcestershire and ½ tsp paprika in a small pot 3–4 minutes until slightly thick.",
+      "timer": 4,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4"
+      ]
+    },
+    {
+      "title": "Glaze and finish",
+      "text": "Brush the drumsticks with half the glaze and roast 8 minutes; brush with the rest and roast 5–8 minutes more, until sticky and the thickest drumstick reads 74°C (165°F) near (not touching) the bone. The wedges finish at the same time.",
+      "timer": 15,
+      "uses": []
+    },
+    {
+      "title": "Serve",
+      "text": "Rest the chicken 5 minutes and serve with the wedges.",
+      "uses": []
+    }
+  ],
+  "together": "*ABAAA*",
+  "fixIt": [
+    {
+      "problem": "Glaze burning",
+      "fix": "Brush it on only in the last 15 minutes; sugar burns if it goes on at the start."
+    },
+    {
+      "problem": "Wedges soft",
+      "fix": "Spread them out with space between, cut side down, and roast a few minutes longer on the upper rack."
+    },
+    {
+      "problem": "Chicken pink near the bone",
+      "fix": "Pink near the bone can be normal in drumsticks; trust the thermometer. 74°C (165°F) is safe; 80–85°C is more tender."
+    }
+  ],
+  "saleTip": "Drumsticks are one of the cheapest cuts at No Frills, often about $7/kg in family packs.",
+  "swap": "Bone-in thighs: same time and temperature, skin side up.",
+  "leftovers": "Cold BBQ drumsticks are a great lunch; reheat the wedges in the air fryer.",
+  "doneness": "74°C (165°F) in the thickest drumstick, not touching the bone (Health Canada, poultry pieces). Even more tender at 80–85°C.",
+  "source": "Based on tested oven-baked barbecue drumstick methods (Canadian Living, Food Network Canada): seasoned drumsticks roasted at 220°C, glazed with a homemade ketchup-brown sugar sauce for the last 15 minutes.",
+  "gear": [
+    "2 rimmed baking sheets",
+    "Foil",
+    "Small pot",
+    "Pastry brush",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Make the glaze up to 1 week ahead; keep it in a jar in the fridge.",
+    "Season the drumsticks the night before."
+  ],
+  "reheat": "At 200°C (400°F) 12–15 minutes, or in the air fryer at 190°C (375°F) 8 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "chicken drumsticks",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "No onion powder on the chicken, and a simple ketchup, brown sugar and vinegar glaze.",
+      "drop": [
+        "0-4",
+        "1-3",
+        "1-4"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the onion powder.",
+        "4": "Basic: ketchup, brown sugar and vinegar only."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A honey-butter corn on the cob alongside.",
+      "add": [
+        {
+          "group": "Fancy side",
+          "items": [
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "cobs of corn",
+              "note": "husked, or frozen cobs",
+              "pantry": {
+                "name": "Corn on the cob",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "melted",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "honey",
+              "pantry": {
+                "name": "Honey",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Fancy side",
+          "text": "Boil the corn 5–7 minutes until tender. Brush with the melted butter stirred with the honey, and sprinkle with a pinch of salt."
+        }
+      ],
+      "costAdd": [
+        [
+          "Corn, 4 cobs",
+          2.5,
+          "corn-on-the-cob"
+        ],
+        [
+          "Butter, honey",
+          0.6
+        ]
+      ],
+      "plating": [
+        "Drumsticks stacked in a pile.",
+        "Wedges and corn alongside.",
+        "Extra napkins on the table."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Drumsticks have lots of connective tissue, so they stay juicy at high heat.",
+    "1-1": "Brown sugar caramelises in the oven into a sticky glaze.",
+    "2-0": "Russets have a dry, starchy flesh that roasts fluffy inside and crisp outside."
+  },
+  "fancyNight": false,
+  "funFact": "Barbecue sauce as a bottled product dates to 1909, but ketchup-based sauces have been home staples since the 1800s.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze the chicken; the wedges go mealy"
+  },
+  "pairs": []
+}

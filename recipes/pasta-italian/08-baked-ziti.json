@@ -251,7 +251,7 @@
     },
     {
       "title": "Brown the beef",
-      "text": "Meanwhile, brown the beef and onion in a large deep skillet over medium-high, breaking it up, 8–10 minutes until no pink remains. Spoon off the fat and add the garlic for 30 seconds.",
+      "text": "Meanwhile, brown the beef and onion in a large deep skillet over medium-high, breaking it up, 8–10 minutes until no pink remains and it reads 71°C (160°F). Spoon off the fat and add the garlic for 30 seconds.",
       "timer": 9,
       "uses": [
         "1-0",
@@ -290,7 +290,7 @@
     },
     {
       "title": "Bake",
-      "text": "Cover with foil and bake 20 minutes. Uncover and bake 15 minutes more, until the cheese is bubbling and browned at the edges. Rest 10 minutes.",
+      "text": "Cover with foil and bake 20 minutes. Uncover and bake 15 minutes more, until the cheese is bubbling and browned at the edges and the centre reads 74°C (165°F). Rest 10 minutes.",
       "timer": 35,
       "uses": []
     }

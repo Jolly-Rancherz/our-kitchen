@@ -415,6 +415,21 @@ exactly 812pt although the image continues.
 - Temps: ground pork/beef 71°C (tourtière filling), pork loin 71°C, reheats 74°C; rolls 90°C bread doneness.
 - Tourtière and the pork loin are 'main', so they join the Nov–Feb dinner pickers through `dinnerPool`.
 
+## Update 13.4 — 20 more dinners (2026-11-23)
+- Generators `app_src/b13/c3.py` and `c4.py`. New `dlib.py` helpers: `C(lines)` (cost total computed from the lines), CHED, MOZ, SCREAM, PANKO, CARROT, CELERY. `xlib.make` now also asserts every `pairs` id exists (or is listed in `PENDING`).
+  - chicken 16 shawarma rice bowls, 17 one-pan cheesy chicken & rice, 18 oven BBQ drumsticks & wedges
+  - pasta-italian 09 spaghetti Bolognese, 10 sausage & tomato rigatoni
+  - beef-turkey 12 cheeseburgers & oven fries, 13 beef stroganoff, 14 beef & bean burritos
+  - steak-pork 05 oven pulled pork sandwiches (serves 6), 06 pan-seared sirloin & garlic butter potatoes, 07 maple-glazed pork tenderloin & sweet potatoes
+  - seafood 05 oven fish & chips, 06 shrimp scampi linguine, 07 crispy coconut shrimp
+  - takeout-at-home 05 cashew chicken, 06 pork egg roll bowls, 07 mild Mongolian beef
+  - comfort-soups 07 creamy tomato soup & grilled cheese, 08 chicken & dumplings, 09 hamburger soup
+- 23 new price keys (prices.json 174), incl. red-onions and baguette that were missing before. Still missing (older): fresh-mozzarella, aged-white-cheddar, frozen-pearl-onions, balsamic-vinegar, striploin-steak.
+- Pasta-water salt is now 1 tbsp (`salt2`) in every pasta recipe.
+- `app_src/b13/deepcheck.py REGEX`: flags ingredients never named in step text, doneness temps missing from steps, and meat recipes with no safe temp in the steps. It found steps that only said "no pink" / "steaming hot": sloppy Joes, cheeseburger macaroni, baked ziti, ham chowder, ginger beef (13.3) and burritos, stroganoff, hamburger soup, Bolognese, Mongolian beef (13.4) now state 71°C / 63°C / 74°C in the step.
+- pwtest `scalex.mjs`: the "1 cloves" plural check matched "11 cloves" (false alarm on shrimp scampi at 7 servings); now anchored to a word start.
+- Temps: chicken 74°C, ground meat 71°C, pork shoulder/tenderloin 71°C (shoulder taken on to ~90°C to pull), sirloin and beef strips 63°C, fish 70°C, shrimp opaque/70°C, reheats 74°C.
+
 ## Update 13.3 — 20 new dinners (2026-11-23)
 - Generators `app_src/b13/c1.py` and `c2.py` (helpers `dlib.py`: herb, SP, BROTH(kind=), EGGS, RWATER, LEMON, MILK, CREAM, PARM, FLR, OREG, THY). Numbered after each category's current max; existing gaps left alone. All serve 4 (`NOTE2`) except baked ziti, tuna casserole, chicken noodle soup, chowder and meatloaf (6).
   - chicken 11 butter chicken, 12 pot pie, 13 sheet-pan lemon garlic chicken, 14 air fryer tenders & fries, 15 quesadillas

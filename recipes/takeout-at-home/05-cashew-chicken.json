@@ -1,0 +1,470 @@
+{
+  "title": "Cashew Chicken",
+  "subtitle": "tender chicken, crunchy toasted cashews and vegetables in a glossy honey-soy garlic sauce, over jasmine rice",
+  "image": "assets/img/cashew-chicken.webp",
+  "imageAlt": "Chicken pieces with cashews, broccoli and carrots in a glossy brown sauce over rice in a white bowl on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 25,
+  "cost": {
+    "total": 17.48,
+    "breakdown": [
+      [
+        "Boneless chicken breasts, 700 g",
+        9.24,
+        "chicken-breasts-boneless"
+      ],
+      [
+        "Unsalted cashews, ¾ cup",
+        2.25,
+        "cashews-unsalted"
+      ],
+      [
+        "Broccoli, 1 crown",
+        2.49,
+        "broccoli"
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.0,
+        "jasmine-rice"
+      ],
+      [
+        "Carrot, onion, garlic, ginger",
+        0.9
+      ],
+      [
+        "Soy, oyster sauce, honey, vinegar",
+        1.1
+      ],
+      [
+        "Cornstarch, oil, sesame oil",
+        0.5
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "takeout-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "rice",
+      "text": "Start the rice first. Stir-frying is fast, so have everything cut and the sauce mixed before you turn on the heat."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "cut in 2 cm pieces",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "cornstarch",
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sauce",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "oyster sauce",
+          "pantry": {
+            "name": "Oyster sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "honey",
+          "pantry": {
+            "name": "Honey",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "rice vinegar",
+          "pantry": {
+            "name": "Rice vinegar",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "cornstarch",
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sesame oil",
+          "pantry": {
+            "name": "Sesame oil",
+            "cat": "sauces"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Vegetables",
+      "items": [
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "unsalted cashews",
+          "metric": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cashews (unsalted)",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "broccoli crown",
+          "note": "cut in small florets",
+          "pantry": {
+            "name": "Broccoli",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "carrots",
+          "note": "thinly sliced on an angle",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "cut in 2 cm pieces",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "fresh ginger",
+          "note": "finely grated",
+          "pantry": {
+            "name": "Fresh ginger",
+            "cat": "produce"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rice",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "3-0",
+        "3-1"
+      ]
+    },
+    {
+      "title": "Marinate",
+      "text": "Toss the chicken with 1 tbsp cornstarch and 1 tbsp soy sauce. Stir the sauce ingredients together: 3 tbsp soy sauce, the oyster sauce, honey, vinegar, 1 tbsp cornstarch, water and sesame oil.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6"
+      ]
+    },
+    {
+      "title": "Toast the cashews",
+      "text": "Toast the cashews in a dry large skillet or wok over medium 3–4 minutes, shaking, until golden. Tip onto a plate.",
+      "timer": 4,
+      "uses": [
+        "2-0"
+      ]
+    },
+    {
+      "title": "Cook the chicken",
+      "text": "Heat 1 tbsp of the oil over medium-high and cook the chicken in one layer 5–6 minutes, turning, until golden and 74°C (165°F). Move to a plate.",
+      "timer": 6,
+      "uses": [
+        "0-3=1 tbsp"
+      ]
+    },
+    {
+      "title": "Vegetables",
+      "text": "Add the remaining 1 tbsp oil, the broccoli, carrot and onion and stir-fry 4–5 minutes, until the broccoli is bright green and tender-crisp. Add the garlic and ginger for 30 seconds.",
+      "timer": 5,
+      "uses": [
+        "0-3=1 tbsp",
+        "2-1",
+        "2-2",
+        "2-3",
+        "2-4",
+        "2-5"
+      ]
+    },
+    {
+      "title": "Sauce",
+      "text": "Stir the sauce, pour it in with the chicken and simmer 1–2 minutes, tossing, until thick and glossy. Toss in the cashews and serve over the rice.",
+      "timer": 2,
+      "uses": []
+    }
+  ],
+  "together": "BAAAA*",
+  "fixIt": [
+    {
+      "problem": "Sauce gluey",
+      "fix": "Add a splash of water and toss; cornstarch sauces thicken fast."
+    },
+    {
+      "problem": "Cashews soft",
+      "fix": "Add them right at the end so they stay crunchy."
+    },
+    {
+      "problem": "Vegetables raw in the middle",
+      "fix": "Cut the broccoli in small florets and the carrot thinly, or cover the pan for 1 minute."
+    }
+  ],
+  "saleTip": "Bulk unsalted cashews at No Frills are cheaper than small bags; store extras in the freezer.",
+  "swap": "Boneless thighs: same amount, cooked 6–7 minutes to 74°C (165°F).",
+  "leftovers": "Keeps well for lunches; the cashews soften a little but still taste great.",
+  "doneness": "Chicken pieces at 74°C (165°F) (Health Canada, poultry pieces). Reheat to 74°C (165°F).",
+  "source": "Based on tested cashew chicken stir-fry methods (Canadian Living, The Woks of Life): cornstarch-marinated chicken, toasted cashews and a soy-oyster-honey sauce; dried chilies left out.",
+  "gear": [
+    "Large skillet or wok",
+    "Medium pot with lid"
+  ],
+  "prepAhead": [
+    "Cut the chicken and vegetables and mix the sauce up to 1 day ahead."
+  ],
+  "reheat": "Covered in the microwave 2 minutes, stirring halfway, until 74°C (165°F).",
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Chicken and cashews in a honey-soy sauce; onion only.",
+      "drop": [
+        "2-1",
+        "2-2",
+        "2-5",
+        "1-1",
+        "1-6"
+      ],
+      "stepNotes": {
+        "1": "Basic: sauce with soy, honey, vinegar, cornstarch and water.",
+        "4": "Basic: onion and garlic only; stir-fry the onion 2–3 minutes."
+      },
+      "costDrop": [
+        "broccoli"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Snow peas for crunch and toasted sesame seeds.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 150,
+              "unit": "g",
+              "name": "snow peas",
+              "note": "trimmed",
+              "pantry": {
+                "name": "Snow peas",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "sesame seeds",
+              "note": "toasted",
+              "pantry": {
+                "name": "Sesame seeds",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "4": "Fancy: add the snow peas with the broccoli."
+      },
+      "addSteps": [
+        {
+          "title": "Sesame",
+          "text": "Scatter the sesame seeds over each bowl."
+        }
+      ],
+      "costAdd": [
+        [
+          "Snow peas, 150 g",
+          2.0,
+          "snow-peas"
+        ],
+        [
+          "Sesame seeds",
+          0.3,
+          "sesame-seeds"
+        ]
+      ],
+      "plating": [
+        "Rice packed in a bowl and turned out.",
+        "Chicken and vegetables spooned beside it.",
+        "Extra cashews on top."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "A cornstarch coating (velveting) keeps the chicken silky and helps the sauce cling.",
+    "2-0": "Toasting the cashews deepens their flavour and crunch.",
+    "1-1": "Oyster sauce adds the savoury takeout depth; it isn't fishy."
+  },
+  "fancyNight": false,
+  "funFact": "Cashew chicken in its saucy North American form was popularised in Springfield, Missouri, in the 1960s.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "2 months",
+    "note": "freeze without the rice; the cashews soften"
+  },
+  "pairs": [
+    [
+      "takeout-at-home-02",
+      "fried rice instead of plain for a takeout night"
+    ]
+  ]
+}

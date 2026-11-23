@@ -1,0 +1,386 @@
+{
+  "title": "Pork Egg Roll Bowls",
+  "subtitle": "everything inside an egg roll, stir-fried in one pan: ground pork, cabbage and carrot in a ginger-soy sauce over rice",
+  "image": "assets/img/egg-roll-bowls.webp",
+  "imageAlt": "Stir-fried ground pork with shredded cabbage and carrot over rice in a white bowl on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 10,
+  "cook": 25,
+  "cost": {
+    "total": 15.97,
+    "breakdown": [
+      [
+        "Ground pork, 680 g",
+        8.24,
+        "ground-pork"
+      ],
+      [
+        "Coleslaw mix, 2 bags",
+        4.98,
+        "coleslaw-mix"
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.0,
+        "jasmine-rice"
+      ],
+      [
+        "Onion, garlic, ginger",
+        0.75
+      ],
+      [
+        "Soy, rice vinegar, sesame oil, brown sugar",
+        0.9
+      ],
+      [
+        "Oil",
+        0.1
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "weeknight",
+      "takeout-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "One pan"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "rice",
+      "text": "Start the rice first; the stir-fry is done in 15 minutes."
+    },
+    {
+      "icon": "pot",
+      "text": "Use your biggest skillet or a wok; 2 bags of coleslaw mix look like a lot but cook down by half."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Stir-fry",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 680,
+          "unit": "g",
+          "name": "ground pork",
+          "pantry": {
+            "name": "Ground pork",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "thinly sliced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "fresh ginger",
+          "note": "finely grated",
+          "pantry": {
+            "name": "Fresh ginger",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "bag",
+          "name": "coleslaw mix",
+          "note": "397 g each (cabbage and carrot)",
+          "pantry": {
+            "name": "Coleslaw mix",
+            "cat": "produce"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sauce",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "rice vinegar",
+          "pantry": {
+            "name": "Rice vinegar",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "packed brown sugar",
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "sesame oil",
+          "pantry": {
+            "name": "Sesame oil",
+            "cat": "sauces"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rice",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Sauce",
+      "text": "Stir the soy sauce, vinegar, brown sugar and sesame oil together.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Brown the pork",
+      "text": "Heat the oil in a large skillet or wok over medium-high. Cook the pork and onion, breaking up the pork, 8–10 minutes until browned and no pink remains (71°C / 160°F). Spoon off any fat.",
+      "timer": 9,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Aromatics",
+      "text": "Add the garlic and ginger and stir 30 seconds.",
+      "uses": [
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Cabbage",
+      "text": "Add the coleslaw mix and the sauce and stir-fry 4–5 minutes, until the cabbage is tender-crisp.",
+      "timer": 5,
+      "uses": [
+        "0-5"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Taste for soy and serve over the rice.",
+      "uses": []
+    }
+  ],
+  "together": "BAAAA*",
+  "fixIt": [
+    {
+      "problem": "Watery",
+      "fix": "Keep the heat high and cook a minute or two longer, uncovered, so the cabbage juices evaporate."
+    },
+    {
+      "problem": "Cabbage limp",
+      "fix": "Take it off while it still has some crunch; it keeps softening off the heat."
+    },
+    {
+      "problem": "Bland",
+      "fix": "Add another splash of soy and a little more vinegar at the end."
+    }
+  ],
+  "saleTip": "Coleslaw mix is often 2 for $4 at No Frills; a small green cabbage shredded at home is cheaper still.",
+  "swap": "Ground chicken or turkey: same method, cooked to 74°C (165°F).",
+  "leftovers": "Great for lunches; keep the rice separate so it doesn't go soggy.",
+  "doneness": "Ground pork cooked to 71°C (160°F) with no pink (Health Canada). Reheat to 74°C (165°F).",
+  "source": "Based on tested 'egg roll in a bowl' methods (Budget Bytes, Canadian Living): browned ground pork, ginger and garlic, coleslaw mix stir-fried in a soy-sesame sauce.",
+  "gear": [
+    "Large skillet or wok",
+    "Medium pot with lid"
+  ],
+  "prepAhead": [
+    "Mix the sauce and slice the onion up to 1 day ahead."
+  ],
+  "reheat": "Covered in the microwave 2 minutes, stirring halfway, until 74°C (165°F).",
+  "thaw": {
+    "item": "ground pork",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Pork, cabbage and soy sauce; no fresh ginger or vinegar.",
+      "drop": [
+        "0-4",
+        "1-1",
+        "1-3"
+      ],
+      "stepNotes": {
+        "1": "Basic: soy sauce and brown sugar only.",
+        "3": "Basic: garlic only."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Crispy wonton strips on top and a sweet plum dip, like the real thing.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 12,
+              "unit": null,
+              "name": "wonton wrappers",
+              "note": "cut in strips",
+              "pantry": {
+                "name": "Wonton wrappers",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "canola or vegetable oil",
+              "note": "for frying",
+              "pantry": {
+                "name": "Canola / vegetable oil",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "plum sauce",
+              "pantry": {
+                "name": "Plum sauce",
+                "cat": "sauces"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Wonton crisps",
+          "text": "Heat the oil in a small skillet over medium-high and fry the wonton strips in batches 30–60 seconds, until golden. Drain on paper towel and pile on the bowls, with plum sauce to drizzle."
+        }
+      ],
+      "costAdd": [
+        [
+          "Wonton wrappers",
+          2.49,
+          "wonton-wrappers"
+        ],
+        [
+          "Oil",
+          0.3
+        ],
+        [
+          "Plum sauce, ¼ cup",
+          0.9,
+          "plum-sauce"
+        ]
+      ],
+      "plating": [
+        "Rice on the bottom, stir-fry piled on top.",
+        "Wonton crisps scattered over.",
+        "Plum sauce drizzled in a zigzag."
+      ]
+    }
+  },
+  "why": {
+    "0-5": "Bagged coleslaw mix is already shredded cabbage and carrot; no chopping.",
+    "0-4": "Fresh ginger and garlic are what make it taste like an egg roll filling.",
+    "1-3": "Sesame oil added at the end keeps its toasty flavour."
+  },
+  "fancyNight": false,
+  "funFact": "Egg rolls are a Chinese-American invention from the 1930s, thicker and crunchier than Chinese spring rolls.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "the cabbage goes watery when thawed"
+  },
+  "pairs": []
+}

@@ -1,0 +1,430 @@
+{
+  "title": "One-Pan Cheesy Chicken & Rice",
+  "subtitle": "chicken, rice and broccoli simmered together in one pan and finished with old cheddar: a weeknight casserole without the oven",
+  "image": "assets/img/cheesy-chicken-rice.webp",
+  "imageAlt": "Creamy cheesy rice with chicken and broccoli in a skillet, a serving in a white bowl, on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 35,
+  "cost": {
+    "total": 18.58,
+    "breakdown": [
+      [
+        "Boneless chicken breasts, 700 g",
+        9.24,
+        "chicken-breasts-boneless"
+      ],
+      [
+        "Old cheddar, 150 g",
+        2.62,
+        "cheddar-shredded"
+      ],
+      [
+        "Broccoli, 1 crown",
+        2.49,
+        "broccoli"
+      ],
+      [
+        "Chicken broth, 3 cups",
+        2.07,
+        "chicken-broth"
+      ],
+      [
+        "Jasmine rice, 300 g",
+        0.75,
+        "jasmine-rice"
+      ],
+      [
+        "Milk, ½ cup",
+        0.36,
+        "milk"
+      ],
+      [
+        "Onion, garlic",
+        0.5
+      ],
+      [
+        "Butter, oil, spices, salt",
+        0.55
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "weeknight",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "One pan"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Use a large deep skillet or sauté pan with a tight lid, at least 30 cm across."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "cut in 2 cm pieces",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rice",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 300,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "broccoli crown",
+          "note": "cut in small florets",
+          "pantry": {
+            "name": "Broccoli",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "metric": {
+            "qty": 150,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Season",
+      "text": "Toss the chicken with the paprika, garlic powder, salt and pepper.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Brown the chicken",
+      "text": "Heat the oil in the skillet over medium-high and brown the chicken 4–5 minutes, stirring once or twice; it finishes cooking with the rice. Move to a plate.",
+      "timer": 5,
+      "uses": [
+        "0-5"
+      ]
+    },
+    {
+      "title": "Toast the rice",
+      "text": "Lower the heat to medium. Melt the butter and cook the onion 4 minutes, then the garlic and rice 1 minute, stirring.",
+      "timer": 5,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Simmer",
+      "text": "Add the broth and the chicken with its juices and bring to a boil. Cover, turn the heat to low and simmer 12 minutes.",
+      "timer": 12,
+      "uses": [
+        "1-4"
+      ]
+    },
+    {
+      "title": "Broccoli",
+      "text": "Scatter the broccoli over the top, cover again and cook 6–8 minutes more, until the rice is tender, the liquid is absorbed and the chicken reaches 74°C (165°F).",
+      "timer": 7,
+      "uses": [
+        "1-5"
+      ]
+    },
+    {
+      "title": "Cheese",
+      "text": "Off the heat, stir in the milk and cheddar until creamy. Rest 2 minutes before serving.",
+      "uses": [
+        "1-6",
+        "1-7"
+      ]
+    }
+  ],
+  "together": "AAAAA*",
+  "fixIt": [
+    {
+      "problem": "Rice still hard but the pan is dry",
+      "fix": "Add ¼ cup hot water or broth, cover and cook 3–4 minutes more on low."
+    },
+    {
+      "problem": "Stuck on the bottom",
+      "fix": "The heat was above low. Keep it at the lowest steady simmer and don't lift the lid early."
+    },
+    {
+      "problem": "Cheese stringy or oily",
+      "fix": "Stir it in off the heat with the milk; shred your own from a block for the smoothest sauce."
+    }
+  ],
+  "saleTip": "Broccoli crowns are often under $2 at No Frills; frozen florets work too, added straight from frozen.",
+  "swap": "Boneless thighs: same amount, same method; they stay even juicier. Still 74°C (165°F).",
+  "leftovers": "Add a splash of milk when reheating; it firms up in the fridge.",
+  "doneness": "Chicken pieces at 74°C (165°F) (Health Canada, poultry pieces). Reheat to 74°C (165°F).",
+  "source": "Based on tested one-pan cheesy chicken, broccoli and rice methods (Canadian Living, Budget Bytes): browned chicken, rice simmered in broth, broccoli steamed on top, cheddar stirred in at the end.",
+  "gear": [
+    "Large deep skillet with lid",
+    "Wooden spoon",
+    "Box grater"
+  ],
+  "prepAhead": [
+    "Cut the chicken and broccoli up to 1 day ahead.",
+    "Best fresh; it reheats well for lunches."
+  ],
+  "reheat": "Covered in the microwave with a splash of milk, 2–3 minutes, stirring halfway, until 74°C (165°F).",
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Chicken, rice and cheddar; no broccoli or garlic.",
+      "drop": [
+        "1-5",
+        "1-2"
+      ],
+      "stepNotes": {
+        "2": "Basic: onion and rice only.",
+        "4": "Basic: no broccoli; cover and cook the last 6–8 minutes as written."
+      },
+      "costDrop": [
+        "broccoli"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A crunchy buttered crumb and cheddar top, browned under the broiler.",
+      "add": [
+        {
+          "group": "Fancy topping",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "panko breadcrumbs",
+              "pantry": {
+                "name": "Panko breadcrumbs",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "melted",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "shredded old cheddar",
+              "note": "extra, for the top",
+              "pantry": {
+                "name": "Cheddar (shredded)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Fancy topping",
+          "text": "Heat the broiler. Toss the panko with the melted butter, scatter it and the extra cheddar over the pan (it must be oven-safe) and broil 2–3 minutes, watching closely, until golden."
+        }
+      ],
+      "costAdd": [
+        [
+          "Panko, ½ cup",
+          0.43,
+          "panko-breadcrumbs"
+        ],
+        [
+          "Butter, 1 tbsp",
+          0.2,
+          "butter"
+        ],
+        [
+          "Old cheddar, 50 g",
+          0.88,
+          "cheddar-shredded"
+        ]
+      ],
+      "plating": [
+        "Serve from the skillet at the table.",
+        "Scoop deep so everyone gets the crunchy top.",
+        "Black pepper over each bowl."
+      ]
+    }
+  },
+  "why": {
+    "1-3": "Toasting the rice in butter keeps the grains separate and adds a nutty flavour.",
+    "1-5": "Broccoli steams on top of the rice for the last few minutes, so it stays bright, not mushy.",
+    "1-7": "Old cheddar gives real cheese flavour with less of it."
+  },
+  "fancyNight": false,
+  "funFact": "Chicken, broccoli and rice casserole was a 1970s potluck classic, usually made with canned soup; this one uses none.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "the rice goes grainy and the sauce splits"
+  },
+  "pairs": []
+}

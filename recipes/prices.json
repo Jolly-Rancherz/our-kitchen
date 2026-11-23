@@ -29,6 +29,10 @@
    "price": 6.99,
    "pack": "375 g"
   },
+  "baguette": {
+   "price": 2.49,
+   "pack": "each"
+  },
   "baking-powder": {
    "price": 2.99,
    "pack": "225 g"
@@ -85,6 +89,10 @@
    "price": 2.49,
    "pack": "907 g bag"
   },
+  "cashews-unsalted": {
+   "price": 5.99,
+   "pack": "300 g"
+  },
   "celery": {
    "price": 2.99,
    "pack": "bunch"
@@ -93,9 +101,17 @@
    "price": 6.99,
    "pack": "400 g block"
   },
+  "cheddar-slices": {
+   "price": 3.99,
+   "pack": "16 slices"
+  },
   "cheese-tortellini": {
    "price": 4.99,
    "pack": "350 g"
+  },
+  "cherry-tomatoes": {
+   "price": 2.99,
+   "pack": "pint"
   },
   "chicken-breasts-boneless": {
    "price": 13.2,
@@ -104,6 +120,10 @@
   "chicken-broth": {
    "price": 2.49,
    "pack": "900 ml"
+  },
+  "chicken-drumsticks": {
+   "price": 9.79,
+   "pack": "~1.4 kg family pack"
   },
   "chicken-thighs-bone-in": {
    "price": 9.99,
@@ -121,6 +141,10 @@
    "price": 5.49,
    "pack": "227 g"
   },
+  "coconut-milk-canned": {
+   "price": 1.99,
+   "pack": "400 ml can"
+  },
   "cod-fillets-frozen": {
    "price": 9.99,
    "pack": "454 g"
@@ -128,6 +152,10 @@
   "coleslaw-mix": {
    "price": 2.49,
    "pack": "397 g"
+  },
+  "corn-on-the-cob": {
+   "price": 2.5,
+   "pack": "4 cobs"
   },
   "corn-syrup-golden": {
    "price": 3.99,
@@ -141,9 +169,17 @@
    "price": 3.49,
    "pack": "340 g bag"
   },
+  "crushed-tomatoes-canned": {
+   "price": 1.99,
+   "pack": "796 ml can"
+  },
   "crusty-bread": {
    "price": 3.49,
    "pack": "loaf"
+  },
+  "cucumbers": {
+   "price": 1.49,
+   "pack": "each (English)"
   },
   "custard-powder": {
    "price": 4.99,
@@ -301,6 +337,10 @@
    "price": 8.99,
    "pack": "200 g"
   },
+  "haddock-fillets-frozen": {
+   "price": 10.99,
+   "pack": "454 g"
+  },
   "half-and-half-10": {
    "price": 3.99,
    "pack": "1 L"
@@ -369,6 +409,14 @@
    "price": 0.79,
    "pack": "each"
   },
+  "limes": {
+   "price": 0.5,
+   "pack": "each"
+  },
+  "linguine": {
+   "price": 2.0,
+   "pack": "450 g"
+  },
   "maple-syrup": {
    "price": 9.99,
    "pack": "540 ml"
@@ -404,6 +452,10 @@
   "orange-juice": {
    "price": 3.99,
    "pack": "1.54 L"
+  },
+  "orange-marmalade": {
+   "price": 3.99,
+   "pack": "500 ml"
   },
   "oranges": {
    "price": 3.99,
@@ -449,9 +501,17 @@
    "price": 1.99,
    "pack": "398 ml"
   },
+  "pitas": {
+   "price": 2.99,
+   "pack": "6 pack"
+  },
   "pitted-dates": {
    "price": 3.99,
    "pack": "375 g"
+  },
+  "plum-sauce": {
+   "price": 3.49,
+   "pack": "bottle"
   },
   "pork-chops-boneless": {
    "price": 9.5,
@@ -464,6 +524,14 @@
   "pork-sausages-mild": {
    "price": 6.99,
    "pack": "500 g"
+  },
+  "pork-shoulder-boneless": {
+   "price": 9.9,
+   "pack": "~1.5 kg blade roast"
+  },
+  "pork-tenderloin": {
+   "price": 8.49,
+   "pack": "each, ~500 g"
   },
   "pound-cake-frozen": {
    "price": 4.49,
@@ -485,6 +553,14 @@
    "price": 3.99,
    "pack": "500 ml"
   },
+  "red-onions": {
+   "price": 0.7,
+   "pack": "each"
+  },
+  "refried-beans-canned": {
+   "price": 1.99,
+   "pack": "398 ml can"
+  },
   "rice-vinegar": {
    "price": 2.79,
    "pack": "355 ml"
@@ -492,6 +568,10 @@
   "ricotta": {
    "price": 4.49,
    "pack": "475 g"
+  },
+  "rigatoni": {
+   "price": 2.0,
+   "pack": "450 g"
   },
   "russet-potatoes": {
    "price": 5.99,
@@ -541,6 +621,10 @@
    "price": 4.99,
    "pack": "200 g"
   },
+  "snow-peas": {
+   "price": 3.99,
+   "pack": "300 g"
+  },
   "sour-cream": {
    "price": 2.99,
    "pack": "500 ml"
@@ -556,6 +640,10 @@
   "stewing-beef": {
    "price": 16.5,
    "pack": "per kg"
+  },
+  "sweet-potatoes": {
+   "price": 3.49,
+   "pack": "~1 kg"
   },
   "sweetened-condensed-milk": {
    "price": 2.99,
@@ -592,6 +680,10 @@
   "white-vinegar": {
    "price": 2.49,
    "pack": "1 L"
+  },
+  "wonton-wrappers": {
+   "price": 2.49,
+   "pack": "454 g pack"
   },
   "worcestershire-sauce": {
    "price": 3.49,

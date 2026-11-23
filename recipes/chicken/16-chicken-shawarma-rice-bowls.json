@@ -1,0 +1,505 @@
+{
+  "title": "Chicken Shawarma Rice Bowls",
+  "subtitle": "warm-spiced chicken thighs over jasmine rice with cucumber, tomato and a creamy garlic sauce: shawarma-shop flavour, no heat",
+  "image": "assets/img/chicken-shawarma-bowls.webp",
+  "imageAlt": "Sliced golden spiced chicken over rice with cucumber, tomato and garlic sauce in a white bowl on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 25,
+  "cost": {
+    "total": 22.03,
+    "breakdown": [
+      [
+        "Boneless chicken thighs, 900 g",
+        15.3,
+        "chicken-thighs-boneless"
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.0,
+        "jasmine-rice"
+      ],
+      [
+        "English cucumber",
+        1.49,
+        "cucumbers"
+      ],
+      [
+        "Tomatoes, 2",
+        1.5,
+        "tomatoes"
+      ],
+      [
+        "Sour cream, ½ cup",
+        0.75,
+        "sour-cream"
+      ],
+      [
+        "Mayonnaise, ¼ cup",
+        0.3,
+        "mayonnaise"
+      ],
+      [
+        "Lemon",
+        0.79,
+        "lemons"
+      ],
+      [
+        "Garlic, oil, spices, salt",
+        0.9
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "takeout-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "The spices are warm, not hot: cumin, paprika, a little turmeric and cinnamon. No chili."
+    },
+    {
+      "icon": "rice",
+      "text": "Start the rice first; it's ready when the chicken is."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "boneless skinless chicken thighs",
+          "pantry": {
+            "name": "Chicken thighs (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "lemon juice",
+          "note": "from the lemon below"
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "ground cumin",
+          "pantry": {
+            "name": "Ground cumin",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground turmeric",
+          "pantry": {
+            "name": "Ground turmeric",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Garlic sauce",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "sour cream",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Sour cream",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "mayonnaise",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Mayonnaise",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "finely grated",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "lemon juice",
+          "note": "from the lemon below"
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bowls",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "lemons",
+          "note": "juiced, for the chicken and sauce",
+          "pantry": {
+            "name": "Lemons",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "English cucumber",
+          "note": "diced",
+          "pantry": {
+            "name": "Cucumbers",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "tomatoes",
+          "note": "diced",
+          "pantry": {
+            "name": "Tomatoes",
+            "cat": "produce"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Season",
+      "text": "Juice the lemon. Toss the chicken with 1 tbsp of the oil, 1 tbsp of the lemon juice, the cumin, paprika, garlic powder, turmeric, cinnamon, salt and pepper. Let it sit while the rice cooks, up to 30 minutes.",
+      "uses": [
+        "2-2",
+        "0-0",
+        "0-1=1 tbsp",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9"
+      ]
+    },
+    {
+      "title": "Garlic sauce",
+      "text": "Stir the sour cream, mayonnaise, grated garlic, the other 1 tbsp lemon juice and the salt together. Chill until serving.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4"
+      ]
+    },
+    {
+      "title": "Cook the chicken",
+      "text": "Heat the remaining 1 tbsp oil in a large skillet over medium-high. Cook the thighs 5–6 minutes a side, until well browned and 74°C (165°F) in the thickest part. Rest 5 minutes, then slice.",
+      "timer": 12,
+      "uses": [
+        "0-1=1 tbsp"
+      ]
+    },
+    {
+      "title": "Chop",
+      "text": "While the chicken cooks, dice the cucumber and tomatoes.",
+      "uses": [
+        "2-3",
+        "2-4"
+      ]
+    },
+    {
+      "title": "Build the bowls",
+      "text": "Rice in each bowl, then the sliced chicken, cucumber and tomato, with a big spoon of garlic sauce.",
+      "uses": []
+    }
+  ],
+  "together": "BABAB*",
+  "fixIt": [
+    {
+      "problem": "Spices scorched",
+      "fix": "The pan was too hot. Drop to medium once the first side has browned."
+    },
+    {
+      "problem": "Chicken pale",
+      "fix": "Pat it dry and don't move it for the first 4 minutes; crowding makes it steam, so use 2 batches if needed."
+    },
+    {
+      "problem": "Garlic sauce too sharp",
+      "fix": "Raw garlic mellows after 15 minutes in the fridge; make it first."
+    }
+  ],
+  "saleTip": "Boneless thighs at No Frills drop to about $11–13/kg on sale; English cucumbers are often 2 for $3.",
+  "swap": "Chicken breast: same amount, pounded to an even 2 cm and cooked 4–5 minutes a side to 74°C (165°F).",
+  "leftovers": "Pack the chicken and rice together and the cucumber, tomato and sauce in a separate container so they stay fresh.",
+  "doneness": "Chicken thighs at 74°C (165°F) in the thickest part (Health Canada, poultry pieces). Reheat leftovers to 74°C (165°F).",
+  "source": "Based on tested home-style chicken shawarma methods (Canadian Living, Serious Eats): thighs in a warm cumin-paprika-turmeric marinade, pan-seared, with a garlic sauce; chili left out.",
+  "gear": [
+    "Large skillet",
+    "Medium pot with lid",
+    "Fine grater"
+  ],
+  "prepAhead": [
+    "Season the chicken up to 1 day ahead; keep covered in the fridge.",
+    "The garlic sauce keeps 3 days in the fridge."
+  ],
+  "reheat": "Chicken and rice covered in the microwave 2 minutes with a splash of water, until 74°C (165°F). Add the cold toppings after.",
+  "thaw": {
+    "item": "chicken thighs",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Cumin, paprika, garlic powder, salt and pepper, and a simple sour-cream garlic sauce.",
+      "drop": [
+        "0-6",
+        "0-7",
+        "1-1"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the turmeric and cinnamon.",
+        "2": "Basic: sour cream, garlic, lemon and salt; no mayonnaise."
+      },
+      "costDrop": [
+        "mayonnaise"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Warm pitas on the side and a quick pickled onion.",
+      "add": [
+        {
+          "group": "Fancy extras",
+          "items": [
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "pitas",
+              "note": "warmed",
+              "pantry": {
+                "name": "Pitas",
+                "cat": "grains"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": null,
+              "name": "red onion",
+              "note": "thinly sliced",
+              "pantry": {
+                "name": "Red onions",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "white vinegar",
+              "pantry": {
+                "name": "White vinegar",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "granulated sugar",
+              "pantry": {
+                "name": "Granulated sugar",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "tsp",
+              "name": "salt",
+              "note": "for the onions",
+              "pantry": {
+                "name": "Salt",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: first toss the red onion with the vinegar, sugar and salt; it's pink and tangy by serving time."
+      },
+      "addSteps": [
+        {
+          "title": "Warm the pitas",
+          "text": "Warm the pitas in a dry skillet 30 seconds a side and serve alongside, with the pickled onions over the bowls."
+        }
+      ],
+      "costAdd": [
+        [
+          "Pitas, 4",
+          2.0,
+          "pitas"
+        ],
+        [
+          "Red onion, ½",
+          0.35,
+          "red-onions"
+        ],
+        [
+          "Vinegar, sugar",
+          0.15
+        ]
+      ],
+      "plating": [
+        "Rice on one side, chicken fanned beside it.",
+        "Cucumber and tomato in their own little piles.",
+        "Garlic sauce in a big swoosh, pickled onions on top."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Thighs stay juicy over high heat, the way shawarma meat does on the spit.",
+    "0-7": "A pinch of cinnamon is the warm note that makes it taste like shawarma, not taco night.",
+    "1-1": "Mayonnaise makes the garlic sauce smooth and rich, like toum, without hours of whisking."
+  },
+  "fancyNight": false,
+  "funFact": "Shawarma comes from the Turkish 'çevirme', meaning 'turning', for the slowly rotating spit.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze the cooked chicken only"
+  },
+  "pairs": []
+}

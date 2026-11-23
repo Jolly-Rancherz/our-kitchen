@@ -1,0 +1,363 @@
+{
+  "title": "Sausage & Tomato Rigatoni",
+  "subtitle": "mild Italian sausage in a quick tomato-cream sauce, tossed with rigatoni and Parmesan",
+  "image": "assets/img/sausage-rigatoni.webp",
+  "imageAlt": "Rigatoni with crumbled sausage in a pink tomato sauce and Parmesan in a white bowl on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 10,
+  "cook": 25,
+  "cost": {
+    "total": 14.42,
+    "breakdown": [
+      [
+        "Mild Italian sausage, 500 g",
+        6.99,
+        "pork-sausages-mild"
+      ],
+      [
+        "Rigatoni, 450 g",
+        2.0,
+        "rigatoni"
+      ],
+      [
+        "Crushed tomatoes, 796 ml",
+        1.99,
+        "crushed-tomatoes-canned"
+      ],
+      [
+        "35% cream, ½ cup",
+        1.19,
+        "35-whipping-cream"
+      ],
+      [
+        "Parmesan, ½ cup",
+        1.4,
+        "parmesan-grated"
+      ],
+      [
+        "Onion, garlic",
+        0.5
+      ],
+      [
+        "Oil, Italian seasoning, salt, sugar",
+        0.35
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "pasta"
+    ],
+    "occasion": [
+      "weeknight",
+      "date-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Buy mild (not hot) Italian sausage. Slit the casings and squeeze the meat out."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Pasta",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "rigatoni",
+          "pantry": {
+            "name": "Rigatoni",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the pasta water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sauce",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 500,
+          "unit": "g",
+          "name": "mild Italian sausages",
+          "note": "casings removed",
+          "pantry": {
+            "name": "Pork sausages (mild)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried Italian seasoning",
+          "pantry": {
+            "name": "Italian seasoning (dried)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "can",
+          "name": "crushed tomatoes",
+          "note": "796 ml",
+          "pantry": {
+            "name": "Crushed tomatoes (canned)",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "granulated sugar",
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "35% whipping cream",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "35% whipping cream",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Water on",
+      "text": "Bring a large pot of water to a boil and add the salt.",
+      "uses": [
+        "0-1"
+      ]
+    },
+    {
+      "title": "Brown the sausage",
+      "text": "Heat the oil in a large deep skillet over medium-high. Cook the sausage meat, breaking it up, 7–8 minutes until browned and no pink remains (71°C / 160°F). Spoon off all but 1 tbsp fat.",
+      "timer": 8,
+      "uses": [
+        "1-0",
+        "1-1"
+      ]
+    },
+    {
+      "title": "Onion and garlic",
+      "text": "Lower the heat to medium, add the onion and cook 5 minutes, then the garlic and Italian seasoning for 30 seconds.",
+      "timer": 5,
+      "uses": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ]
+    },
+    {
+      "title": "Simmer",
+      "text": "Add the crushed tomatoes, sugar and salt and simmer 10 minutes. Meanwhile, cook the rigatoni until al dente; save 1 cup of the pasta water, then drain.",
+      "timer": 10,
+      "uses": [
+        "1-5",
+        "1-6",
+        "1-7",
+        "0-0"
+      ]
+    },
+    {
+      "title": "Finish",
+      "text": "Stir the cream into the sauce, then add the rigatoni and the Parmesan and toss over low heat, adding pasta water a splash at a time until glossy.",
+      "uses": [
+        "1-8",
+        "1-9"
+      ]
+    }
+  ],
+  "together": "BAAA*",
+  "fixIt": [
+    {
+      "problem": "Greasy sauce",
+      "fix": "Spoon off the sausage fat before the onion goes in."
+    },
+    {
+      "problem": "Sauce too thick",
+      "fix": "Loosen with pasta water; it thickens fast as it sits."
+    },
+    {
+      "problem": "Too salty",
+      "fix": "Sausage is salty; taste before adding the ½ tsp salt."
+    }
+  ],
+  "saleTip": "Mild Italian sausage is often $5 a pack at No Frills; rigatoni and penne go on sale 2 for $3.",
+  "swap": "Penne works the same way.",
+  "leftovers": "Reheat with a splash of milk or water to loosen.",
+  "doneness": "Sausage meat cooked to 71°C (160°F) with no pink (Health Canada, ground pork). Reheat to 74°C (165°F).",
+  "source": "Based on tested sausage-and-tomato-cream pasta methods (Canadian Living, Bon Appétit): browned sausage, crushed tomato sauce finished with cream, Parmesan and pasta water.",
+  "gear": [
+    "Large pot",
+    "Large deep skillet",
+    "Colander"
+  ],
+  "prepAhead": [
+    "The sauce keeps 3 days in the fridge; cook the pasta fresh."
+  ],
+  "reheat": "Covered in a pan over medium-low with a splash of milk or water, stirring, or in the microwave 2 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "sausages",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Sausage and tomato sauce with Parmesan; no cream.",
+      "drop": [
+        "1-8",
+        "1-4"
+      ],
+      "stepNotes": {
+        "2": "Basic: onion and garlic only.",
+        "4": "Basic: no cream; toss with the Parmesan and pasta water."
+      },
+      "costDrop": [
+        "cream"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Creamy ricotta dollops and extra Parmesan on top.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "ricotta",
+              "pantry": {
+                "name": "Ricotta",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "grated Parmesan",
+              "note": "extra, for the top",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Top each bowl with a spoon of ricotta and a sprinkle of the extra Parmesan."
+        }
+      ],
+      "costAdd": [
+        [
+          "Ricotta, ½ cup",
+          1.1,
+          "ricotta"
+        ],
+        [
+          "Parmesan, ¼ cup",
+          0.7,
+          "parmesan-grated"
+        ]
+      ],
+      "plating": [
+        "Shallow warm bowls.",
+        "A spoon of cold ricotta on the hot pasta.",
+        "Black pepper and Parmesan over the top."
+      ]
+    }
+  },
+  "why": {
+    "1-1": "Sausage is already seasoned, so the sauce tastes slow-cooked in 25 minutes.",
+    "0-0": "Rigatoni's wide ridged tubes catch the sauce and bits of sausage.",
+    "1-6": "A little sugar softens the acidity of canned tomatoes."
+  },
+  "fancyNight": true,
+  "funFact": "Rigatoni comes from the Italian 'rigato', meaning ridged or lined.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "cream sauces turn grainy when frozen"
+  },
+  "pairs": []
+}

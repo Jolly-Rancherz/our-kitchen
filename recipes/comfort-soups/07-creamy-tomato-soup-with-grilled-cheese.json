@@ -1,0 +1,396 @@
+{
+  "title": "Creamy Tomato Soup with Grilled Cheese",
+  "subtitle": "a smooth, cozy tomato soup from pantry cans, with golden grilled cheese sandwiches for dunking",
+  "image": "assets/img/tomato-soup-grilled-cheese.webp",
+  "imageAlt": "A bowl of creamy tomato soup beside a golden grilled cheese sandwich cut in half on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 10,
+  "cook": 35,
+  "cost": {
+    "total": 13.15,
+    "breakdown": [
+      [
+        "Crushed tomatoes, 2 × 796 ml",
+        3.98,
+        "crushed-tomatoes-canned"
+      ],
+      [
+        "Chicken broth, 2 cups",
+        1.38,
+        "chicken-broth"
+      ],
+      [
+        "35% cream, ½ cup",
+        1.19,
+        "35-whipping-cream"
+      ],
+      [
+        "White bread, 8 slices",
+        1.2,
+        "sandwich-bread-white"
+      ],
+      [
+        "Old cheddar, 200 g",
+        3.5,
+        "cheddar-shredded"
+      ],
+      [
+        "Butter, 6 tbsp",
+        1.2,
+        "butter"
+      ],
+      [
+        "Onion, garlic, sugar, spices",
+        0.7
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [
+      "comfort-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Pantry dinner"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Use a hand (immersion) blender if you have one; a regular blender works too, filled only halfway with the lid vented."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Soup",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "chopped",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "can",
+          "name": "crushed tomatoes",
+          "note": "796 ml each",
+          "pantry": {
+            "name": "Crushed tomatoes (canned)",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 500,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "granulated sugar",
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried Italian seasoning",
+          "pantry": {
+            "name": "Italian seasoning (dried)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "35% whipping cream",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "35% whipping cream",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Grilled cheese",
+      "items": [
+        {
+          "qty": 8,
+          "unit": null,
+          "name": "slices white sandwich bread",
+          "pantry": {
+            "name": "Sandwich bread (white)",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "metric": {
+            "qty": 200,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "softened",
+          "metric": {
+            "qty": 56,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Soften",
+      "text": "Melt the butter in a large pot over medium and cook the onion 6–7 minutes until soft. Add the garlic for 30 seconds.",
+      "timer": 7,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Simmer",
+      "text": "Add the crushed tomatoes, broth, sugar, Italian seasoning, salt and pepper. Bring to a boil, then simmer, partly covered, 20 minutes.",
+      "timer": 20,
+      "uses": [
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8"
+      ]
+    },
+    {
+      "title": "Blend",
+      "text": "Take off the heat and blend until smooth. Stir in the cream and warm through without boiling. Taste for salt.",
+      "uses": [
+        "0-9"
+      ]
+    },
+    {
+      "title": "Build the sandwiches",
+      "text": "While the soup simmers, butter one side of each bread slice. Put 4 slices butter side down, cover with the cheddar and top with the other 4, butter side up.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Grill",
+      "text": "Cook in a large skillet over medium-low 3–4 minutes a side, pressing lightly, until deep golden and the cheese has melted. Cut in half.",
+      "timer": 8,
+      "uses": []
+    },
+    {
+      "title": "Serve",
+      "text": "Ladle the soup into bowls and serve with the grilled cheese for dunking.",
+      "uses": []
+    }
+  ],
+  "together": "AAABB*",
+  "fixIt": [
+    {
+      "problem": "Soup too acidic",
+      "fix": "Add another pinch of sugar, or a little more cream."
+    },
+    {
+      "problem": "Grilled cheese burnt but cheese not melted",
+      "fix": "The heat was too high. Use medium-low and cover the pan for the first side."
+    },
+    {
+      "problem": "Soup too thick",
+      "fix": "Thin with a splash of broth or water."
+    }
+  ],
+  "saleTip": "Canned tomatoes are cheapest in No Frills' no name brand, and often 10 for $10 during case-lot sales.",
+  "swap": "Vegetable broth for chicken broth: same amount.",
+  "leftovers": "The soup tastes even better the next day; make grilled cheese fresh.",
+  "doneness": "Soup steaming hot; grilled cheese golden with fully melted cheese. Reheat soup to a simmer, 74°C (165°F).",
+  "source": "Based on tested creamy tomato soup methods (Canadian Living, America's Test Kitchen): onion and garlic in butter, canned tomatoes and broth simmered, blended and finished with cream; classic skillet grilled cheese.",
+  "gear": [
+    "Large pot",
+    "Immersion or regular blender",
+    "Large skillet",
+    "Spatula"
+  ],
+  "prepAhead": [
+    "Make the soup up to 3 days ahead; add the cream when reheating."
+  ],
+  "reheat": "Over medium-low, stirring, until steaming, 74°C (165°F); don't let it boil hard after the cream is in.",
+  "levels": {
+    "basic": {
+      "note": "Tomato soup without cream, and plain cheddar grilled cheese.",
+      "drop": [
+        "0-9",
+        "0-6",
+        "0-2"
+      ],
+      "stepNotes": {
+        "0": "Basic: onion only.",
+        "1": "Basic: no Italian seasoning.",
+        "2": "Basic: no cream; just blend."
+      },
+      "costDrop": [
+        "cream"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Grilled cheese with mozzarella and Parmesan-crusted bread.",
+      "add": [
+        {
+          "group": "Fancy grilled cheese",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "cup",
+              "name": "shredded mozzarella",
+              "metric": {
+                "qty": 100,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Mozzarella (shredded)",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "grated Parmesan",
+              "note": "for the outside",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: mix the mozzarella with the cheddar for the filling, and press the Parmesan onto the buttered outsides."
+      },
+      "costAdd": [
+        [
+          "Mozzarella, 100 g",
+          2.03,
+          "mozzarella-shredded"
+        ],
+        [
+          "Parmesan, ¼ cup",
+          0.7,
+          "parmesan-grated"
+        ]
+      ],
+      "plating": [
+        "Soup in a wide mug or bowl.",
+        "Grilled cheese cut in soldiers for dunking.",
+        "A swirl of cream and black pepper on the soup."
+      ]
+    }
+  },
+  "why": {
+    "0-3": "Good canned tomatoes beat out-of-season fresh ones for soup.",
+    "0-5": "A little sugar rounds off the tomatoes' acidity.",
+    "1-2": "Buttering the outside of the bread gives an even, golden crust."
+  },
+  "fancyNight": false,
+  "funFact": "Campbell's condensed tomato soup launched in 1897; grilled cheese became its partner during the Depression.",
+  "keeps": {
+    "fridge": "4–5 days",
+    "freezer": "3 months",
+    "note": "freeze the soup before adding the cream"
+  },
+  "pairs": []
+}

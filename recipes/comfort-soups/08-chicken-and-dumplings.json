@@ -1,0 +1,472 @@
+{
+  "title": "Chicken & Dumplings",
+  "subtitle": "a creamy chicken stew with carrots and celery, topped with soft, fluffy drop dumplings steamed right in the pot",
+  "image": "assets/img/chicken-and-dumplings.webp",
+  "imageAlt": "Creamy chicken stew with carrots, celery and fluffy dumplings in a white bowl on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 45,
+  "cost": {
+    "total": 19.95,
+    "breakdown": [
+      [
+        "Boneless chicken thighs, 700 g",
+        11.9,
+        "chicken-thighs-boneless"
+      ],
+      [
+        "Chicken broth, 5 cups",
+        3.45,
+        "chicken-broth"
+      ],
+      [
+        "Milk, 1¼ cups",
+        0.9,
+        "milk"
+      ],
+      [
+        "Carrots, celery, onion, garlic",
+        1.5
+      ],
+      [
+        "Butter, 5 tbsp",
+        1.0,
+        "butter"
+      ],
+      [
+        "Flour, baking powder, frozen peas",
+        0.9
+      ],
+      [
+        "Dried herbs, salt, pepper",
+        0.3
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "One pot"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Use a wide Dutch oven or soup pot with a tight lid; the dumplings steam on top and need the lid closed."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Stew",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 42,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": null,
+          "name": "carrots",
+          "note": "peeled and sliced 1 cm",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "celery ribs",
+          "note": "sliced 1 cm",
+          "pantry": {
+            "name": "Celery",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 40,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried sage",
+          "note": "rubbed",
+          "pantry": {
+            "name": "Dried sage",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 5,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 1250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "boneless skinless chicken thighs",
+          "note": "left whole",
+          "pantry": {
+            "name": "Chicken thighs (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "frozen peas",
+          "metric": {
+            "qty": 140,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Frozen peas",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dumplings",
+      "items": [
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 195,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "baking powder",
+          "pantry": {
+            "name": "Baking powder",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 175,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Soften",
+      "text": "Melt the butter in the pot over medium. Cook the onion, carrots and celery 7–8 minutes until softened. Add the garlic for 30 seconds.",
+      "timer": 8,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Thicken",
+      "text": "Stir in the flour, dried thyme and dried sage for 1 minute, then whisk in the broth a little at a time.",
+      "timer": 1,
+      "uses": [
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8"
+      ]
+    },
+    {
+      "title": "Poach the chicken",
+      "text": "Add the chicken, bring to a simmer and cook, partly covered, 15–18 minutes, until the chicken reaches 74°C (165°F). Lift it out, shred with 2 forks and return it to the pot with the milk, peas, salt and pepper.",
+      "timer": 17,
+      "uses": [
+        "0-9",
+        "0-10",
+        "0-11",
+        "0-12",
+        "0-13"
+      ]
+    },
+    {
+      "title": "Dumpling dough",
+      "text": "While the chicken poaches, whisk the flour, baking powder and salt in a bowl. Stir in the melted butter and milk with a fork just until a soft, sticky dough forms.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4"
+      ]
+    },
+    {
+      "title": "Steam the dumplings",
+      "text": "Bring the stew back to a gentle simmer. Drop in heaping tablespoons of dough (about 12) over the surface. Cover and simmer 15 minutes without lifting the lid, until the dumplings are puffed and cooked through (a toothpick comes out clean).",
+      "timer": 15,
+      "uses": []
+    },
+    {
+      "title": "Serve",
+      "text": "Ladle the stew and dumplings into bowls.",
+      "uses": []
+    }
+  ],
+  "together": "AAAB**",
+  "fixIt": [
+    {
+      "problem": "Dumplings dense or gummy",
+      "fix": "Mix the dough only until it comes together, and don't lift the lid while they steam."
+    },
+    {
+      "problem": "Dumplings dissolving",
+      "fix": "The stew was boiling hard. Keep it at a gentle simmer."
+    },
+    {
+      "problem": "Stew too thick",
+      "fix": "The dumplings absorb liquid; stir in a splash of broth when serving."
+    }
+  ],
+  "saleTip": "Boneless thighs drop to about $11–13/kg on sale at No Frills; buy the family pack and freeze in 700 g bags.",
+  "swap": "Chicken breasts: same amount, poached 12–15 minutes to 74°C (165°F).",
+  "leftovers": "Reheat gently with a splash of broth; the dumplings soak up the sauce overnight.",
+  "doneness": "Chicken at 74°C (165°F) (Health Canada, poultry pieces); dumplings cooked through. Reheat to 74°C (165°F).",
+  "source": "Based on tested chicken and drop-dumpling methods (Canadian Living, America's Test Kitchen): a flour-thickened chicken stew with baking-powder dumplings steamed covered for 15 minutes.",
+  "gear": [
+    "Wide Dutch oven or soup pot with lid",
+    "Mixing bowl",
+    "2 forks"
+  ],
+  "prepAhead": [
+    "Make the stew up to 2 days ahead; bring back to a simmer and add fresh dumplings."
+  ],
+  "reheat": "Covered over medium-low with a splash of broth, 8–10 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "chicken thighs",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Chicken, carrots and dumplings in a simple broth gravy.",
+      "drop": [
+        "0-3",
+        "0-4",
+        "0-7",
+        "0-11"
+      ],
+      "stepNotes": {
+        "0": "Basic: onion and carrots only.",
+        "1": "Basic: dried thyme only.",
+        "2": "Basic: no peas."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Cheddar dumplings and a splash of cream in the stew.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "shredded old cheddar",
+              "metric": {
+                "qty": 50,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Cheddar (shredded)",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "35% whipping cream",
+              "metric": {
+                "qty": 60,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "35% whipping cream",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "2": "Fancy: add the cream with the milk.",
+        "3": "Fancy: stir the cheddar into the dry ingredients before the butter and milk."
+      },
+      "costAdd": [
+        [
+          "Old cheddar, 50 g",
+          0.88,
+          "cheddar-shredded"
+        ],
+        [
+          "35% cream, ¼ cup",
+          0.6,
+          "35-whipping-cream"
+        ]
+      ],
+      "plating": [
+        "Wide shallow bowls.",
+        "Two or three dumplings on top of each.",
+        "Black pepper over the dumplings."
+      ]
+    }
+  },
+  "why": {
+    "0-9": "Thighs stay tender while they poach and give the stew more flavour.",
+    "1-1": "Baking powder makes the dumplings puff up light and fluffy in the steam.",
+    "0-5": "Cooking the flour in butter thickens the broth into a creamy stew."
+  },
+  "fancyNight": false,
+  "funFact": "Chicken and dumplings is a Depression-era Southern staple, stretching one chicken to feed a whole family.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "dumplings go mushy when frozen; freeze the stew alone before adding them"
+  },
+  "pairs": []
+}

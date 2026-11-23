@@ -1,0 +1,434 @@
+{
+  "title": "Hamburger Soup",
+  "subtitle": "the Canadian church-cookbook classic: ground beef, potatoes and vegetables in a hearty tomato-beef broth",
+  "image": "assets/img/hamburger-soup.webp",
+  "imageAlt": "A bowl of hearty tomato soup with ground beef, potatoes, carrots and celery on a navy napkin",
+  "servings": 6,
+  "servingsNote": "a big pot: dinner for two, plus 4 bowls for lunches",
+  "prep": 15,
+  "cook": 45,
+  "cost": {
+    "total": 17.57,
+    "breakdown": [
+      [
+        "Lean ground beef, 680 g",
+        7.48,
+        "ground-beef-lean"
+      ],
+      [
+        "Crushed tomatoes, 796 ml",
+        1.99,
+        "crushed-tomatoes-canned"
+      ],
+      [
+        "Beef broth, 6 cups",
+        4.15,
+        "beef-broth"
+      ],
+      [
+        "Yukon Gold potatoes, 450 g",
+        1.09,
+        "yukon-gold-potatoes"
+      ],
+      [
+        "Carrots, celery, onion, garlic",
+        1.5
+      ],
+      [
+        "Frozen corn, 1 cup",
+        0.56,
+        "frozen-corn"
+      ],
+      [
+        "Oil, tomato paste, Worcestershire, herbs",
+        0.8
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "comfort-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "One pot"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Use a big soup pot, at least 6 L."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Soup",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 680,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": null,
+          "name": "carrots",
+          "note": "peeled and diced",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "celery ribs",
+          "note": "diced",
+          "pantry": {
+            "name": "Celery",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "tomato paste",
+          "pantry": {
+            "name": "Tomato paste",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "can",
+          "name": "crushed tomatoes",
+          "note": "796 ml",
+          "pantry": {
+            "name": "Crushed tomatoes (canned)",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 6,
+          "unit": "cup",
+          "name": "beef broth",
+          "metric": {
+            "qty": 1500,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Beef broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "Yukon Gold potatoes",
+          "note": "peeled and cut in 1.5 cm dice",
+          "pantry": {
+            "name": "Yukon Gold potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "bay leaf",
+          "pantry": {
+            "name": "Bay leaves",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "frozen corn",
+          "metric": {
+            "qty": 140,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Frozen corn",
+            "cat": "frozen"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Brown the beef",
+      "text": "Heat the oil in the pot over medium-high. Cook the beef and onion, breaking up the beef, 8–10 minutes until no pink remains and it reads 71°C (160°F). Spoon off the fat.",
+      "timer": 9,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Vegetables",
+      "text": "Add the carrots and celery and cook 5 minutes. Stir in the garlic and tomato paste for 1 minute.",
+      "timer": 6,
+      "uses": [
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Simmer",
+      "text": "Add the crushed tomatoes, broth, potatoes, Worcestershire, dried thyme, bay leaf, salt and pepper. Bring to a boil, then simmer, partly covered, 20–25 minutes, until the potatoes are tender.",
+      "timer": 22,
+      "uses": [
+        "0-7",
+        "0-8",
+        "0-9",
+        "0-10",
+        "0-11",
+        "0-12",
+        "0-13",
+        "0-14"
+      ]
+    },
+    {
+      "title": "Corn",
+      "text": "Stir in the corn and simmer 3 minutes. Discard the bay leaf and taste for salt.",
+      "timer": 3,
+      "uses": [
+        "0-15"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Ladle into big bowls.",
+      "uses": []
+    }
+  ],
+  "together": "AAAA*",
+  "fixIt": [
+    {
+      "problem": "Soup greasy",
+      "fix": "Spoon off the beef fat before adding the vegetables; chill leftovers and lift off any fat."
+    },
+    {
+      "problem": "Potatoes falling apart",
+      "fix": "Yukon Golds hold their shape; simmer gently, not at a rolling boil."
+    },
+    {
+      "problem": "Too thick the next day",
+      "fix": "Thin with broth or water when reheating."
+    }
+  ],
+  "saleTip": "Everything here is a No Frills staple; buy beef broth in the 900 ml cartons on multi-buy deals.",
+  "swap": "Ground turkey: same method, cooked to 74°C (165°F).",
+  "leftovers": "Freezes and reheats beautifully for lunches.",
+  "doneness": "Ground beef cooked to 71°C (160°F) with no pink (Health Canada); potatoes tender. Reheat to a full simmer, 74°C (165°F).",
+  "source": "Based on the classic Canadian community-cookbook hamburger soup (Canadian Living, Company's Coming): browned ground beef, vegetables, canned tomatoes and beef broth, simmered until the potatoes are tender.",
+  "gear": [
+    "Large soup pot (6 L)",
+    "Wooden spoon",
+    "Ladle"
+  ],
+  "prepAhead": [
+    "Dice all the vegetables up to 1 day ahead.",
+    "The soup keeps 4 days and tastes better on day two."
+  ],
+  "reheat": "Over medium, stirring, until simmering, 74°C (165°F), or in the microwave 2–3 minutes, stirring halfway.",
+  "thaw": {
+    "item": "ground beef",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Beef, potatoes, carrots and tomatoes in broth; no celery, corn or Worcestershire.",
+      "drop": [
+        "0-4",
+        "0-15",
+        "0-10",
+        "0-12"
+      ],
+      "stepNotes": {
+        "1": "Basic: carrots only.",
+        "2": "Basic: no Worcestershire or bay leaf.",
+        "3": "Basic: skip the corn; just taste for salt."
+      },
+      "costDrop": [
+        "frozen-corn"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Small pasta in the soup and cheesy toast on the side.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 0.75,
+              "unit": "cup",
+              "name": "elbow macaroni",
+              "metric": {
+                "qty": 85,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Elbow macaroni",
+                "cat": "grains"
+              }
+            },
+            {
+              "qty": 6,
+              "unit": null,
+              "name": "slices crusty bread",
+              "pantry": {
+                "name": "Crusty bread",
+                "cat": "grains"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "cup",
+              "name": "shredded old cheddar",
+              "metric": {
+                "qty": 100,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Cheddar (shredded)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: add the macaroni with the corn and simmer 8–9 minutes until tender, adding a splash of water if it gets thick."
+      },
+      "addSteps": [
+        {
+          "title": "Cheesy toast",
+          "text": "Top the bread with the cheddar and broil 2–3 minutes until bubbling. Serve alongside."
+        }
+      ],
+      "costAdd": [
+        [
+          "Elbow macaroni, ¾ cup",
+          0.4,
+          "elbow-macaroni"
+        ],
+        [
+          "Crusty bread",
+          1.75,
+          "crusty-bread"
+        ],
+        [
+          "Old cheddar, 100 g",
+          1.75,
+          "cheddar-shredded"
+        ]
+      ],
+      "plating": [
+        "Big deep bowls.",
+        "Cheesy toast on the side for dipping.",
+        "Black pepper on top."
+      ]
+    }
+  },
+  "why": {
+    "0-9": "Yukon Golds stay in neat cubes and make the broth slightly creamy.",
+    "0-6": "Cooking the tomato paste for a minute deepens the broth's colour and flavour.",
+    "0-10": "Worcestershire adds a savoury, beefy depth."
+  },
+  "fancyNight": false,
+  "funFact": "Hamburger soup appears in almost every Canadian community and church cookbook from the 1970s on.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze in 2-cup containers for lunches"
+  },
+  "pairs": []
+}
