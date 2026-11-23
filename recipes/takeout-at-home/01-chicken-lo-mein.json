@@ -441,5 +441,21 @@
     "2-0": "Rinsing the noodles stops them clumping."
   },
   "fancyNight": false,
-  "funFact": "Lo mein means “stirred noodles” in Cantonese: the noodles are boiled, then tossed with sauce. Chow mein means “fried noodles”, which are fried until crisp."
+  "funFact": "Lo mein means “stirred noodles” in Cantonese: the noodles are boiled, then tossed with sauce. Chow mein means “fried noodles”, which are fried until crisp.",
+  "together": "ABBAA*",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "the noodles go mushy"
+  },
+  "pairs": [
+    [
+      "chicken-10",
+      "Takeout night — orange chicken air-fries while the noodles cook"
+    ],
+    [
+      "beef-turkey-07",
+      "Takeout night — make both and share"
+    ]
+  ]
 }

@@ -448,5 +448,21 @@
     "1-7": "Cornstarch thickens the sauce so it coats instead of running off."
   },
   "fancyNight": false,
-  "funFact": "Beef and broccoli was born in North American Chinese restaurants: cooks swapped in Western broccoli for gai lan, the leafy Chinese broccoli used back home."
+  "funFact": "Beef and broccoli was born in North American Chinese restaurants: cooks swapped in Western broccoli for gai lan, the leafy Chinese broccoli used back home.",
+  "together": "BABAA*",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "2–3 months",
+    "note": "the beef and sauce freeze well; the broccoli softens"
+  },
+  "pairs": [
+    [
+      "takeout-at-home-02",
+      "Swap the plain rice for fried rice (use day-old rice)"
+    ],
+    [
+      "takeout-at-home-01",
+      "Takeout night — make both and share"
+    ]
+  ]
 }

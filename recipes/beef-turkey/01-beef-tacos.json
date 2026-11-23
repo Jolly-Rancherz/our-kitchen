@@ -540,5 +540,11 @@
     "0-6": "Salt wakes up every spice — taco beef tastes flat without enough of it."
   },
   "fancyNight": false,
-  "funFact": "The crunchy U-shaped taco shell is a North American idea: a New York restaurant owner, Juvencio Maldonado, patented a frame for frying them in 1950. In Mexico, tacos are almost always soft corn tortillas."
+  "funFact": "The crunchy U-shaped taco shell is a North American idea: a New York restaurant owner, Juvencio Maldonado, patented a frame for frying them in 1950. In Mexico, tacos are almost always soft corn tortillas.",
+  "together": "BAAB*",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "2–3 months",
+    "note": "the taco meat only — keep the toppings fresh"
+  }
 }

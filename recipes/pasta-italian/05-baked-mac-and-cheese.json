@@ -469,5 +469,11 @@
     "2-0": "Panko gives the crunchy top. Skip it for a softer, saucier mac."
   },
   "fancyNight": false,
-  "funFact": "Canadians buy more boxed macaroni and cheese per person than any other country. Kraft Dinner is so loved here that it’s simply called KD."
+  "funFact": "Canadians buy more boxed macaroni and cheese per person than any other country. Kraft Dinner is so loved here that it’s simply called KD.",
+  "together": "BAAA*A*",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "1–2 months",
+    "note": "add a splash of milk when you reheat"
+  }
 }

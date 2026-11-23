@@ -453,5 +453,11 @@
     "1-4": "Worcestershire adds tang and savoury depth; skip it and add a little extra salt."
   },
   "fancyNight": false,
-  "funFact": "Stew beef turns tender only with long, slow cooking: its tough connective tissue (collagen) slowly melts into gelatin, which is also what gives the gravy its body."
+  "funFact": "Stew beef turns tender only with long, slow cooking: its tough connective tissue (collagen) slowly melts into gelatin, which is also what gives the gravy its body.",
+  "together": "BAAAA*",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "2–3 months",
+    "note": "the potatoes soften a little — still lovely"
+  }
 }

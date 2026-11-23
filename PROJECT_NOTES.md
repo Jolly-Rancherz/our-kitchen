@@ -379,3 +379,14 @@ exactly 812pt although the image continues.
 - Done toast adds "· N min at the stove" when the session started at step 1, single dish, ≥ 5 min (`sess.t0`, `sess.from0`; session only).
 - Scrapbook-tidy: recipe subtitle `.lead.hand`, one washi strip `.hero::before` on the recipe (and Acura treat) hero, cook-mode note `.cnotes` in Caveat.
 - Test: pwtest/t125.mjs. Previews app_preview/u125-*.png.
+
+## Update 12.6 — cook together, landscape, keeps, pairs, snapshots, strip move (2026-11-23)
+- Recipe files (additive fields): `together` (one lane letter per Classic step: A = mains, B = sides & prep, * = both; hand-written per recipe; Broccoli Cheddar Soup and Chicken Fried Rice have none — one pot / one wok), `keeps` { fridge, freezer|null, note } (Health Canada 2-hour rule, 2–4 day leftovers, reheat to 74°C; freezer ranges from USDA FoodKeeper; null where texture suffers), `pairs` [[recipeId, why]] only between real existing recipes.
+- Cook together (`togetherLanes`, `laneOwner`, `laneWho`; session `sess.together`, `sess.who` defaults to profile.me): Next/Back skip the other person's steps; `.tgbar` name toggle, Swap jobs (saved as `settings.togetherMain`, added field), "Meanwhile, X: …" line, partner steps dashed in the progress bar. Not offered for our own recipes, step-edited copies or recipes without lanes.
+- Landscape (`orientation:landscape` and height ≤ 540): cook mode becomes a two-column grid, step text 1.8rem (2rem Bigger text) on the left, controls on the right. The manifest stays portrait (iOS home-screen apps rotate anyway when rotation lock is off).
+- Candlelight: `isDate()` in openCook now also true for `rr.lvl === 'fancy'` or `isFancyNight(id)`. Level notes in cook mode were plum on navy — now gold-soft.
+- Safety snapshots: IndexedDB `ourkitchen-snapshots` (never localStorage, not in backups), 4 s after boot and then at most every 6 h on save, skipped when identical to the newest, last 5 kept. Settings → Backup → Safety snapshots → Restore (confirm; snapshots the current state first; then `restoreState`, which has Undo).
+- Strip install move: only when `FIT.strip` — a home card (`stripMoveCard`, hide = `settings.stripMoveHide`, added) and a Settings row → `openStripMove` (Export → re-add icon → Restore from backup).
+- Scrapbook-tidy: Budget gets a handwritten lead and tape on the spent card; Acura's plaque lead is handwritten and the treat jar is taped. (Pantry already had the handwritten lead.)
+- Skipped/flagged: "make-ahead and reheat" already existed on all 21 recipes (with temps) — added the keeps/freezer/thaw info instead; candlelight already existed for date nights — extended to Fancy.
+- Tests: pwtest/t126.mjs (together sequence, swap saved, landscape geometry, candle on Fancy, keeps, pairs), t126b.mjs (snapshots: taken on open, forced, restore with confirm, no extra localStorage keys; strip guide; tab screenshots).

@@ -589,5 +589,17 @@
     "3-6": "Parmesan crisps on the broccoli. Leave it off for a lighter side."
   },
   "fancyNight": true,
-  "funFact": "An air fryer is really a small, strong convection oven: a fan whips hot air around the food so it crisps with a spoonful of oil. Philips launched the first one in 2010."
+  "funFact": "An air fryer is really a small, strong convection oven: a fan whips hot air around the food so it crisps with a spoonful of oil. Philips launched the first one in 2010.",
+  "together": "BBAAB*",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "best fresh — the crunch doesn't survive the freezer"
+  },
+  "pairs": [
+    [
+      "takeout-at-home-01",
+      "Takeout night — the noodles toss together while the chicken air-fries"
+    ]
+  ]
 }

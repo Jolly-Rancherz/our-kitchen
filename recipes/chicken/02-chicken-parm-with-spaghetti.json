@@ -527,5 +527,11 @@
     "1-6": "Enough oil fries the crumb golden; too little and it goes patchy."
   },
   "fancyNight": true,
-  "funFact": "Chicken parm is an Italian-American creation. Its ancestor, parmigiana from southern Italy, is made with fried eggplant, not chicken."
+  "funFact": "Chicken parm is an Italian-American creation. Its ancestor, parmigiana from southern Italy, is made with fried eggplant, not chicken.",
+  "together": "ABAAB*",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "2–3 months",
+    "note": "the baked cutlets, wrapped one by one; cook the spaghetti fresh"
+  }
 }

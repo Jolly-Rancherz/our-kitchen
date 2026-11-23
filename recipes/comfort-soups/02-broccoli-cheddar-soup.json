@@ -443,5 +443,16 @@
     "0-13": "Freshly shredded cheddar melts smoothly; bagged has starch that can make it gritty."
   },
   "fancyNight": false,
-  "funFact": "Cheddar is named after the village of Cheddar in Somerset, England, where cheese was once aged in the cool caves of Cheddar Gorge."
+  "funFact": "Cheddar is named after the village of Cheddar in Somerset, England, where cheese was once aged in the cool caves of Cheddar Gorge.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "the cheese sauce goes grainy once frozen"
+  },
+  "pairs": [
+    [
+      "steak-pork-02",
+      "Soup and sandwich night — make the Philly while the soup simmers"
+    ]
+  ]
 }

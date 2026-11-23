@@ -461,5 +461,11 @@
     "0-9": "Lemon brightens the rich butter."
   },
   "fancyNight": true,
-  "funFact": "Raw shrimp look grey-blue because their red pigment, astaxanthin, is locked up in proteins. Heat frees it, and they turn pink: the same pigment that makes salmon pink."
+  "funFact": "Raw shrimp look grey-blue because their red pigment, astaxanthin, is locked up in proteins. Heat frees it, and they turn pink: the same pigment that makes salmon pink.",
+  "together": "BBAAA*",
+  "keeps": {
+    "fridge": "up to 3 days",
+    "freezer": null,
+    "note": "the shrimp turn rubbery"
+  }
 }

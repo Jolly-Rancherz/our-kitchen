@@ -482,5 +482,21 @@
     "0-5": "Cornstarch in the coating is what makes it crunchy."
   },
   "fancyNight": false,
-  "funFact": "Orange chicken was created in 1987 by chef Andy Kao at a Panda Express in Hawaii, inspired by Hunan-style cooking. It’s now the chain’s best-known dish."
+  "funFact": "Orange chicken was created in 1987 by chef Andy Kao at a Panda Express in Hawaii, inspired by Hunan-style cooking. It’s now the chain’s best-known dish.",
+  "together": "BAAB*",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "best fresh — the coating goes soft"
+  },
+  "pairs": [
+    [
+      "takeout-at-home-01",
+      "Takeout night — cook the lo mein while the chicken air-fries"
+    ],
+    [
+      "takeout-at-home-02",
+      "Swap the plain rice for fried rice (use day-old rice)"
+    ]
+  ]
 }

@@ -512,5 +512,17 @@
     "0-4": "Broth is the backbone of the flavour. Water works in a pinch with extra salt."
   },
   "fancyNight": false,
-  "funFact": "Prince Edward Island, Canada’s smallest province, grows roughly a quarter of all the potatoes in the country."
+  "funFact": "Prince Edward Island, Canada’s smallest province, grows roughly a quarter of all the potatoes in the country.",
+  "together": "BAAAAAA*",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "the potatoes turn grainy and the cream can split"
+  },
+  "pairs": [
+    [
+      "steak-pork-02",
+      "Soup and sandwich night — make the Philly while the soup simmers"
+    ]
+  ]
 }

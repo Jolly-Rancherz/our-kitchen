@@ -137,7 +137,10 @@ const DEFAULT_STATE = () => ({
     // update 12.2 (added field only): the store we shop at, drives the list title, prices and the Flipp flyer link
     store: 'nofrills',
     // update 12.4 (added fields only): page-turn sounds and the night-reading lamp in the book
-    bookSound: false, bookLamp: false },
+    bookSound: false, bookLamp: false,
+    // update 12.6 (added field only): who takes the mains when we cook together
+    togetherMain: 'Corey',
+    stripMoveHide: false },
   favourites: { 'comfort-soups-01': now() },      // recipeId -> ts (Mom's soup pre-hearted)
   recent: [],          // [recipeId]
   hidden: {},          // recipeId -> ts
@@ -222,6 +225,7 @@ function save() {
   clearTimeout(saveTimer);
   saveTimer = setTimeout(() => {
     try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) { toast('Storage is full — export a backup'); }
+    if (typeof maybeSnapshot === 'function') maybeSnapshot();
   }, 120);
   updateBadge();
 }
@@ -645,9 +649,11 @@ async function viewRecipe(id) {
 
     ${(r.fixIt || []).length ? `<div class="sec"><div class="sec-title">Fix it</div><div class="card fix" style="padding-top:2px;padding-bottom:2px">${r.fixIt.map((x) => `<details><summary>${esc(x.problem)}</summary><p>${tx(x.fix)}</p></details>`).join('')}</div></div>` : ''}
 
-    ${(r.prepAhead || []).length || r.reheat ? `<div class="sec"><div class="sec-title">Good to know</div><div class="card fix" style="padding-top:2px;padding-bottom:2px">
+    ${(r.prepAhead || []).length || r.reheat || r.keeps ? `<div class="sec"><div class="sec-title">Good to know</div><div class="card fix" style="padding-top:2px;padding-bottom:2px">
       ${(r.prepAhead || []).length ? `<details><summary>Make ahead</summary><ul class="tips">${r.prepAhead.map((t) => `<li>${tx(t)}</li>`).join('')}</ul></details>` : ''}
-      ${r.reheat ? `<details><summary>Reheating leftovers</summary><p>${tx(r.reheat)}</p></details>` : ''}</div></div>` : ''}
+      ${r.reheat ? `<details><summary>Reheating leftovers</summary><p>${tx(r.reheat)}</p></details>` : ''}
+      ${r.keeps ? keepsHTML(r.keeps) : ''}</div></div>` : ''}
+    ${pairsHTML(r)}
 
     <div class="sec row2">
       ${r.swap ? `<div class="mini"><h3>SWAP</h3><p>${tx(r.swap)}</p></div>` : ''}
@@ -966,6 +972,7 @@ function viewBudget() {
   }
   render(`<div class="wrap">
     <div class="kicker">Dinner money<span class="rule"></span></div>
+    <p class="lead hand">Good dinners that are kind to our wallet.</p>
     <div class="monthnav"><button id="mPrev" aria-label="Previous month">${svg('chevL')}</button><div class="m">${esc(monthName(key).toUpperCase())}</div><button id="mNext" aria-label="Next month" ${isNow ? 'disabled style="opacity:.3"' : ''}>${svg('chevR')}</button></div>
     <div class="bigtotal"><div class="lbl">SPENT ON DINNERS</div><div class="amt">${money(total, total % 1 !== 0)}<small>of ${money(lo)}–${money(hi)}</small></div>
       <div class="bar"><div class="fill ${total > hi ? 'over' : ''}" style="width:${pct(total)}%"></div><div class="band" style="left:${pct(lo)}%;width:${pct(hi) - pct(lo)}%"></div></div>
@@ -1053,6 +1060,8 @@ function viewSettings() {
     <div class="setgroup"><div class="sec-title">Backup</div>
       <p class="small muted">Everything is saved on this phone. Export a backup now and then (or to move to a new phone).${st.lastBackup ? ` Last backup: ${esc(new Date(st.lastBackup).toLocaleDateString('en-CA', { month: 'short', day: 'numeric', year: 'numeric' }))}.` : ''} A reminder shows on the home screen once a month.</p>
       <div class="btnrow" style="margin-top:10px"><button class="btn ghost" id="exp">${svg('share')}Export</button><label class="btn ghost" style="cursor:pointer">${svg('reset')}Restore${RESTORE_INPUT}</label></div>
+      <div class="setrow" style="margin-top:6px"><span class="l"><b>Safety snapshots</b><span>Automatic copies of the last few days on this phone</span></span><button class="btn sm ghost" id="snapsBtn">View</button></div>
+      ${stripInstall() ? '<div class="setrow"><span class="l"><b>Move to the new install</b><span>Fixes the gap at the bottom of this phone</span></span><button class="btn sm ghost" id="stripSet">How</button></div>' : ''}
     </div>
     <div class="setgroup"><div class="sec-title">More</div>
       <div class="setrow"><span class="l"><b>What's new</b><span>The latest update, in one place</span></span><button class="btn sm ghost" id="showWN">Show</button></div>
@@ -1079,6 +1088,7 @@ function viewSettings() {
   $$('[data-undel]').forEach((b) => (b.onclick = () => { restoreRecipe(b.dataset.undel); viewSettings(); toast('Back in the book ♥'); }));
   $$('[data-unhide]').forEach((b) => (b.onclick = () => { delete state.hidden[b.dataset.unhide]; save(); viewSettings(); toast('Back in the book'); }));
   $('#exp').onclick = exportBackup;
+  $('#snapsBtn') && ($('#snapsBtn').onclick = openSnapshots); $('#stripSet') && ($('#stripSet').onclick = openStripMove);
   bindRestore($('#view'));
   $('#showW').onclick = showWelcome;
   $('#resetAll').onclick = () => confirmSheet('Reset everything?', 'This wipes favourites, pantry levels, the grocery list, the budget log and your own recipes on this phone. Export a backup first if you might want it back.', 'Reset everything', () => {
@@ -1122,6 +1132,71 @@ function importBackup(file) {
   };
   rd.onerror = () => toast("Couldn't read that file");
   rd.readAsText(file);
+}
+// update 12.6: rolling safety snapshots. A copy of the saved state goes into this phone's IndexedDB (its own database,
+// never localStorage, so it can't fill the space the app needs and isn't part of a backup file) when the app opens and
+// then at most every 6 hours while we use it, skipping copies identical to the newest. The last 5 are kept. Restoring
+// one asks first and takes a fresh snapshot of what's there now, so nothing is ever lost.
+const SNAP_DB = 'ourkitchen-snapshots', SNAP_KEEP = 5, SNAP_EVERY = 6 * 3600e3;
+let snapLast = 0;
+function snapDb() {
+  return new Promise((ok, no) => {
+    if (!window.indexedDB) { no(new Error('no idb')); return; }
+    const rq = indexedDB.open(SNAP_DB, 1);
+    rq.onupgradeneeded = () => rq.result.createObjectStore('snaps', { keyPath: 'at' });
+    rq.onsuccess = () => ok(rq.result); rq.onerror = () => no(rq.error);
+  });
+}
+async function snapList() {
+  try { const db = await snapDb(); return await new Promise((ok) => { const rq = db.transaction('snaps').objectStore('snaps').getAll(); rq.onsuccess = () => ok((rq.result || []).sort((a, b) => b.at - a.at)); rq.onerror = () => ok([]); }); } catch (e) { return []; }
+}
+function snapHash(t) { let h = 0; for (let i = 0; i < t.length; i += 7) h = (h * 31 + t.charCodeAt(i)) | 0; return t.length + ':' + h; }
+async function takeSnapshot(why = 'auto', force = false) {
+  try {
+    const list = await snapList(); const json = JSON.stringify(state); const hash = snapHash(json);
+    snapLast = now();
+    if (!force && list[0] && (list[0].hash === hash || now() - list[0].at < SNAP_EVERY)) return false;
+    if (list[0] && list[0].hash === hash) return false;
+    const db = await snapDb(); const tx = db.transaction('snaps', 'readwrite'); const os = tx.objectStore('snaps');
+    os.put({ at: now(), why, hash, size: json.length, dinners: Object.keys(state.cooked || {}).length, json });
+    list.slice(SNAP_KEEP - 1).forEach((x) => os.delete(x.at));
+    return await new Promise((ok) => { tx.oncomplete = () => ok(true); tx.onerror = () => ok(false); });
+  } catch (e) { return false; }
+}
+function maybeSnapshot() { if (now() - snapLast > SNAP_EVERY) takeSnapshot('auto'); }
+async function openSnapshots() {
+  const list = await snapList();
+  const when = (t) => new Date(t).toLocaleString('en-CA', { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+  openSheet(`<h2>Safety snapshots</h2><p class="sub">Automatic copies of everything on this phone, taken when the app opens and every few hours. The last ${SNAP_KEEP} are kept. They stay on this phone — still export a backup now and then.</p>
+    <div class="snaps">${list.length ? list.map((x) => `<div class="setrow"><span class="l"><b>${esc(when(x.at))}</b><span>${x.why === 'restore' ? 'Taken before a restore' : 'Automatic'} · ${x.dinners} dinner${x.dinners === 1 ? '' : 's'} logged · ${Math.max(1, Math.round(x.size / 1024))} KB</span></span><button class="btn sm ghost" data-snap="${x.at}">Restore</button></div>`).join('') : '<p class="small muted">No snapshots yet — the first one is taken the next time the app opens.</p>'}</div>
+    <div class="foot"><button class="btn" data-close>Close</button></div>`, (b) => {
+    $$('[data-snap]', b).forEach((btn) => (btn.onclick = () => {
+      const x = list.find((y) => String(y.at) === btn.dataset.snap); if (!x) return;
+      confirmSheet('Restore this snapshot?', `From ${when(x.at)}. What's on this phone now is saved as a new snapshot first, so you can come back to it.`, 'Restore', async () => {
+        let st = null; try { st = migrate(JSON.parse(x.json)); } catch (e) {}
+        if (!st || typeof st.settings !== 'object') { toast("That snapshot couldn't be read"); return; }
+        await takeSnapshot('restore', true); restoreState(st);
+      });
+    }));
+  });
+}
+// update 12.6: Faith's phone still runs the old "strip" install (the app stops one status bar short of the bottom).
+// Re-adding the icon fixes it; the data lives with the icon, so the guide walks through Export → re-add → Restore.
+const stripInstall = () => !!(FIT && FIT.strip);
+function stripMoveCard() {
+  if (!stripInstall() || state.settings.stripMoveHide) return '';
+  return `<div class="card stripmove"><h3>${svg('star')}A quick fix for this phone</h3><p>This phone has the app's older home-screen install, which stops a little short of the bottom. Moving to a fresh install fixes it — about two minutes, and nothing gets lost.</p>
+    <div class="btnrow" style="margin-top:10px"><button class="btn gold sm" id="stripGo">Show me how</button><button class="btn ghost sm" id="stripLater">Not now</button></div></div>`;
+}
+function openStripMove() {
+  openSheet(`<h2>Move to the new install</h2><p class="sub">Your recipes, photos and notes live inside this home-screen icon, so we save them first and bring them back after.</p>
+    <ol class="stripsteps">
+      <li><b>Export a backup</b><span>Save the file to Files (On My iPhone). <button class="btn sm gold" id="stripExp">${svg('share')}Export now</button></span></li>
+      <li><b>Re-add the icon</b><span>Open <b>jolly-rancherz.github.io/our-kitchen</b> in Safari, tap Share → <b>Add to Home Screen</b>, then delete the old icon (Remove App → Delete from Home Screen).</span></li>
+      <li><b>Restore</b><span>Open the new icon, tap <b>Restore from backup</b> at the bottom of the welcome screen and pick the file from step 1.</span></li>
+    </ol>
+    <p class="small muted">Not sure it worked? Settings → Backup shows the date of your last backup, and the new icon fills the whole screen.</p>
+    <div class="foot"><button class="btn" data-close>Done</button></div>`, (b) => { $('#stripExp', b).onclick = exportBackup; });
 }
 // put a backup back exactly as it was saved (written as-is, without a new "updated" time), then show it
 function restoreState(st, extra) {
@@ -2084,6 +2159,34 @@ function speak(text) {
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 // update 12.5: pick up where we left off. Steps ticked in cook mode (or on the page) in the last 12 hours, with some left,
 // reopen cook mode on the first unticked step. Read-only on state.checks (which cook mode already writes).
+// update 12.6, cook together. A recipe's "together" string gives each step (as written, Classic) a lane: A = the main
+// cook (the protein, at the stove), B = sides and prep, * = both. Level extra steps are for both. A recipe edited to
+// different steps, our own recipes and one-pot dishes have no lanes, so cook together isn't offered there.
+function togetherLanes(r) {
+  if (!r || r.custom || typeof r.together !== 'string') return null;
+  if (r.edited && state.edits[r.id] && state.edits[r.id].steps) return null;
+  return r.together;
+}
+const mainCook = () => (state.settings.togetherMain === 'Faith' ? 'Faith' : 'Corey');
+const otherOf = (n) => (n === 'Corey' ? 'Faith' : 'Corey');
+const me2 = () => (state.profile.me === 'Faith' ? 'Faith' : 'Corey');
+function laneOwner(r, i) { const l = (togetherLanes(r) || '')[i]; return l === 'A' ? mainCook() : l === 'B' ? otherOf(mainCook()) : 'both'; }
+function laneWho(r, i, who) { const o = laneOwner(r, i); return o === 'both' ? 'both' : o === who ? 'mine' : 'other'; }
+// update 12.6: how long a dish keeps (Health Canada: fridge within 2 hours, leftovers 2–4 days, reheat to 74°C;
+// freezer times from the USDA FoodKeeper ranges), and which of our other recipes go great with it
+function keepsHTML(k) {
+  return `<details class="keeps"><summary>How long it keeps</summary><ul class="kp">
+    <li><b>Fridge</b><span>${esc(k.fridge)} in a sealed container — into the fridge within 2 hours of cooking</span></li>
+    <li><b>Freezer</b><span>${k.freezer ? `${esc(k.freezer)} — ${esc(k.note)}` : `Not recommended — ${esc(k.note)}`}</span></li>
+    ${k.freezer ? '<li><b>Thaw</b><span>Overnight in the fridge, then reheat until steaming hot, 74°C (165°F) in the centre</span></li>' : ''}</ul>
+    <p class="small muted">Times from Health Canada and the USDA FoodKeeper.</p></details>`;
+}
+function pairsHTML(r) {
+  const ps = (r.pairs || []).map(([id, why]) => [summary(id), why]).filter(([x]) => x && !state.hidden[x.id]);
+  if (!ps.length) return '';
+  return `<div class="sec"><div class="sec-title">Goes great with</div><div class="pairs">${ps.map(([x, why]) => `<a class="pair" href="#/r/${x.id}"><span class="pim">${x.image ? img(thumb(x.image), '') : ''}</span><span class="ptx"><b>${esc(x.title)}</b><span class="hand">${esc(why)}</span></span></a>`).join('')}</div>
+    <p class="small muted" style="margin-top:6px">Cooking both? Start one in cook mode, then “+ Cook a second dish” keeps both sets of steps and timers together.</p></div>`;
+}
 function cookResumeAt(id, r) {
   const ck = state.checks[id]; if (!ck || !ck.at || now() - ck.at > 12 * 3600e3 || !r || !r.steps) return 0;
   const i = r.steps.findIndex((_, k) => !ck.s[k]);
@@ -2093,17 +2196,28 @@ function openCook(r, s, f) {
   const el = $('#cook');
   if (cookSession && cookSession.s0 && cookSession.s0.id === s.id && !el.hidden) return;
   const prefs = state.settings.cook || {};
-  const isDate = (rr) => ((rr.tags || {}).occasion || []).includes('date-night');
+  // update 12.6: candlelight also on Fancy (the Fancy level, or a recipe marked for Fancy night), not only date-night dishes
+  const isDate = (rr) => ((rr.tags || {}).occasion || []).includes('date-night') || rr.lvl === 'fancy' || (!!rr.id && isFancyNight(rr.id));
   const at0 = cookResumeAt(s.id, r);
-  const sess = cookSession = { s0: s, t0: now(), from0: !at0, dishes: [{ r, s, f, i: at0 }], cur: 0, showIngs: false, read: false, hands: false, rec: null, candle: isDate(r) && prefs.candle !== false };
+  const sess = cookSession = { s0: s, t0: now(), from0: !at0, dishes: [{ r, s, f, i: at0 }], cur: 0, showIngs: false, read: false, hands: false, rec: null, candle: isDate(r) && prefs.candle !== false, together: false, who: me2() };
   document.body.classList.add('cooking');
   lockScreen().then((ok) => { const a = $('.awake', el); if (a) a.textContent = ok ? 'Screen will stay awake while cooking' : 'Tip: turn off auto-lock while cooking'; });
   const D = () => sess.dishes[sess.cur];
   const short = (t) => (t.length > 20 ? t.split(' ').slice(0, 3).join(' ') : t);
   const stepSpeech = () => { const d = D(); const st = d.r.steps[d.i]; const u = stepUses(d.r, st, d.f); return `Step ${d.i + 1}. ${st.title}. ${tempText(st.text).replace(/°C/g, ' degrees Celsius').replace(/°F/g, ' degrees Fahrenheit')}${u.length ? ' You need: ' + u.join(', ') + '.' : ''}`; };
   const pending = () => sess.dishes.findIndex((x, k) => k !== sess.cur && !x.done);
+  // update 12.6, cook together: each step belongs to the main cook (A), the sides-and-prep cook (B) or both (*)
+  const tog = (d) => !!(sess.together && togetherLanes(d.r));
+  const mine = (d, i) => !tog(d) || laneWho(d.r, i, sess.who) !== 'other';
+  const nextMine = (d, from, dir) => { for (let j = from + dir; j >= 0 && j < d.r.steps.length; j += dir) if (mine(d, j)) return j; return -1; };
   const move = (dir) => {
     const d = D();
+    if (tog(d)) {
+      const j = nextMine(d, d.i, dir);
+      if (dir < 0) { if (j < 0) return; d.i = j; sess.showIngs = false; buzz(12); draw(); speak(stepSpeech()); return; }
+      if (j >= 0) { const ck = state.checks[d.s.id] || (state.checks[d.s.id] = { i: {}, s: {} }); ck.s[d.i] = 1; ck.at = now(); save(); d.i = j; sess.showIngs = false; buzz(12); draw(); speak(stepSpeech()); return; }
+      d.i = d.r.steps.length - 1; // our last step done: finish like the last step
+    }
     if (dir > 0) {
       const ck = state.checks[d.s.id] || (state.checks[d.s.id] = { i: {}, s: {} }); ck.s[d.i] = 1; ck.at = now(); save();
       if (d.i === d.r.steps.length - 1) {
@@ -2134,7 +2248,7 @@ function openCook(r, s, f) {
   };
   const stopRec = () => { const r0 = sess.rec; sess.rec = null; if (r0) { try { r0.stop(); } catch (e) {} } };
   function draw() {
-    const d = D(); const rr = d.r; const st = rr.steps[d.i]; const last = d.i === rr.steps.length - 1;
+    const d = D(); const rr = d.r; const st = rr.steps[d.i]; const tg = tog(d); const nm = tg ? nextMine(d, d.i, 1) : d.i + 1; const last = d.i === rr.steps.length - 1 || nm < 0;
     const uses = stepUses(rr, st, d.f);
     const myT = cookTimers.find((t) => t.rid === d.s.id && t.step === d.i);
     const others = cookTimers.filter((t) => t !== myT);
@@ -2146,15 +2260,16 @@ function openCook(r, s, f) {
         <div class="ctools">${'speechSynthesis' in window ? `<button class="iconbtn ${sess.read ? 'on' : ''}" id="cRead" aria-label="Read aloud" aria-pressed="${sess.read}">${svg('speaker')}</button>` : ''}<button class="iconbtn ${sess.hands ? 'on' : ''}" id="cHands" aria-label="Hands-free" aria-pressed="${sess.hands}">${svg('mic')}</button>${isDate(rr) ? `<button class="iconbtn ${sess.candle ? 'on' : ''}" id="cCandle" aria-label="Candle light" aria-pressed="${sess.candle}">${svg('candle')}</button>` : ''}<button class="iconbtn" id="cMusic" aria-label="Kitchen playlist">${svg('music')}</button><button class="iconbtn ${sess.showIngs ? 'on' : ''}" id="cIngs" aria-label="Ingredients">${svg('cart')}</button></div></div>
       ${sess.dishes.length > 1 ? `<div class="dishes">${sess.dishes.map((x, k) => `<button data-dish="${k}" class="${k === sess.cur ? 'on' : ''}">${esc(short(x.r.title))}<small>${x.done ? 'done ✓' : 'step ' + (x.i + 1) + '/' + x.r.steps.length}</small></button>`).join('')}</div>` : ''}
       ${alignHTML(sess)}
-      <div class="prog" id="cProg" role="group" aria-label="Jump to a step">${rr.steps.map((_, k) => `<i class="${k <= d.i ? 'on' : ''}"></i>`).join('')}</div>
+      ${tg ? `<div class="tgbar"><span class="tgk">${svg('users')}Together</span><div class="tgseg">${['Corey', 'Faith'].map((n) => `<button data-tw="${n}" class="${sess.who === n ? 'on' : ''}" aria-pressed="${sess.who === n}">${n}</button>`).join('')}</div><button class="linkbtn" id="cTgSwap">Swap jobs</button><button class="iconbtn" id="cTgOff" aria-label="Stop cooking together">${svg('close')}</button></div><p class="tgjobs">${mainCook()}: the mains · ${otherOf(mainCook())}: sides &amp; prep</p>` : ''}
+      <div class="prog" id="cProg" role="group" aria-label="Jump to a step">${rr.steps.map((_, k) => `<i class="${k <= d.i ? 'on' : ''}${tg && !mine(d, k) ? ' oth' : ''}"></i>`).join('')}</div>
       <div class="cbody" id="cBody">${sess.showIngs ? `<div class="k">INGREDIENTS · ${esc(rr.title.toUpperCase())}</div><div class="ings">${rr.groups.map((g) => (g.name ? `<div class="k" style="margin-top:12px">${esc(g.name.toUpperCase())}</div>` : '') + g.items.map((it) => `<div>• ${ingLine(it, d.f, false)}</div>`).join('')).join('')}</div>${state.notes[d.s.id] ? `<div class="k" style="margin-top:16px">OUR NOTES</div><p class="cnotes">${esc(state.notes[d.s.id])}</p>` : ''}`
-        : `<div class="k">${esc(rr.title.toUpperCase())}</div><h2>${esc(st.title)}</h2>${d.i === 0 && state.notes[d.s.id] ? `<p class="cnotes">${svg('edit')}${esc(state.notes[d.s.id])}</p>` : ''}${uses.length ? `<div class="cuses">${(st.uses || []).map((ref) => { const t = stepUses(rr, { uses: [ref] }, d.f)[0]; return t ? `<button class="use ${ui.used && ui.used[d.s.id] && ui.used[d.s.id][ref] ? 'on' : ''}" data-use="${esc(ref)}">${esc(t)}</button>` : ''; }).join('')}</div>` : ''}<p>${tx(st.text)}</p>${st.lvNote ? `<p class="lvstep">${esc(st.lvNote)}</p>` : ''}
+        : `<div class="k">${esc(rr.title.toUpperCase())}</div>${tg ? `<div class="tgwho ${laneOwner(rr, d.i) === 'both' ? 'both' : ''}">${laneOwner(rr, d.i) === 'both' ? 'Both of you' : esc(laneOwner(rr, d.i)) + '’s step'}</div>` : ''}<h2>${esc(st.title)}</h2>${tg ? (() => { const o = otherOf(sess.who); let j = -1; for (let k = d.i + 1; k < rr.steps.length && j < 0; k++) if (laneOwner(rr, k) === o) j = k; if (j < 0) for (let k = d.i - 1; k >= 0 && j < 0; k--) if (laneOwner(rr, k) === o) j = k; return j >= 0 && laneOwner(rr, d.i) !== 'both' ? `<p class="tgmean">Meanwhile, ${o}: <b>${esc(rr.steps[j].title)}</b></p>` : ''; })() : ''}${d.i === 0 && state.notes[d.s.id] ? `<p class="cnotes">${svg('edit')}${esc(state.notes[d.s.id])}</p>` : ''}${uses.length ? `<div class="cuses">${(st.uses || []).map((ref) => { const t = stepUses(rr, { uses: [ref] }, d.f)[0]; return t ? `<button class="use ${ui.used && ui.used[d.s.id] && ui.used[d.s.id][ref] ? 'on' : ''}" data-use="${esc(ref)}">${esc(t)}</button>` : ''; }).join('')}</div>` : ''}<p>${tx(st.text)}</p>${st.lvNote ? `<p class="lvstep">${esc(st.lvNote)}</p>` : ''}
         ${st.timer ? `<button class="timer ${myT ? 'run' : ''}" id="cTimer">${svg('timer')}<span id="cTimerTxt" ${myT ? `data-tleft="${myT.id}"` : ''}>${myT ? fmtSec(myT.left) : 'Start ' + st.timer + ' min timer'}</span></button><button class="linkbtn csound" id="cSound">${svg('speaker')}Alarm: ${esc((CHIMES[state.settings.chime] || CHIMES.bell)[0])}</button>` : ''}`}
         ${sess.hands ? `<p class="handshint">${sess.rec ? 'Listening — say “next”, “back” or “repeat”. ' : ''}Tap anywhere on the right for next, the left for back.</p>` : ''}</div>
-      ${!sess.showIngs && !last ? `<div class="cnext"><span>NEXT</span><b>${esc(rr.steps[d.i + 1].title)}</b> — ${esc(rr.steps[d.i + 1].text.split(/(?<=\.)\s/)[0])}</div>` : ''}
+      ${!sess.showIngs && !last ? `<div class="cnext"><span>NEXT</span><b>${esc(rr.steps[nm].title)}</b> — ${esc(rr.steps[nm].text.split(/(?<=\.)\s/)[0])}</div>` : ''}
       ${others.length ? `<div class="ttray">${others.map((t) => `<button data-tgo="${t.id}"><b data-tleft="${t.id}">${fmtSec(t.left)}</b><span>${t.label ? esc(short(t.label)) : esc(short(t.dish)) + ' · step ' + (t.step + 1)}</span></button>`).join('')}</div>` : ''}
       <div class="cnav"><button class="btn" id="cPrev" ${d.i === 0 ? 'disabled style="opacity:.35"' : ''}>Back</button><button class="btn gold" id="cNext">${last ? (more ? 'Next dish' : 'Done ♥') : 'Next step'}</button></div>
-      <div class="cfoot">${sess.dishes.length < 2 ? '<button class="linkbtn" id="cAdd">+ Cook a second dish</button>' : ''}<span class="awake">${wakeLock ? 'Screen will stay awake while cooking' : ''}</span></div>`;
+      <div class="cfoot"><span class="cfl">${sess.dishes.length < 2 ? '<button class="linkbtn" id="cAdd">+ Cook a second dish</button>' : ''}${togetherLanes(rr) && !tg ? '<button class="linkbtn" id="cTg">Cook together</button>' : ''}</span><span class="awake">${wakeLock ? 'Screen will stay awake while cooking' : ''}</span></div>`;
     if (keepY && $('.cbody', el)) $('.cbody', el).scrollTop = keepY;
     $('#cClose', el).onclick = close;
     $('#cIngs', el).onclick = () => { sess.showIngs = !sess.showIngs; draw(); };
@@ -2173,6 +2288,10 @@ function openCook(r, s, f) {
     $$('[data-dish]', el).forEach((b) => (b.onclick = () => { sess.cur = +b.dataset.dish; sess.showIngs = false; draw(); }));
     $$('[data-tgo]', el).forEach((b) => (b.onclick = () => { const t = cookTimers.find((x) => x.id === b.dataset.tgo); if (!t) return; const k = sess.dishes.findIndex((x) => x.s.id === t.rid); if (k >= 0) { sess.cur = k; sess.dishes[k].i = t.step; sess.dishes[k].done = false; sess.showIngs = false; draw(); } }));
     if ($('#cAdd', el)) $('#cAdd', el).onclick = pickSecond;
+    if ($('#cTg', el)) $('#cTg', el).onclick = () => { sess.together = true; if (!mine(d, d.i)) { const j = nextMine(d, d.i, 1); if (j >= 0) d.i = j; } buzz(8); draw(); toast(`Cooking together — ${sess.who}’s steps on this phone`); };
+    if ($('#cTgOff', el)) $('#cTgOff', el).onclick = () => { sess.together = false; draw(); };
+    if ($('#cTgSwap', el)) $('#cTgSwap', el).onclick = () => { state.settings.togetherMain = otherOf(mainCook()); save(); if (!mine(d, d.i)) { const j = nextMine(d, d.i, 1); if (j >= 0) d.i = j; } draw(); };
+    $$('[data-tw]', el).forEach((b) => (b.onclick = () => { sess.who = b.dataset.tw; if (!mine(d, d.i)) { const j = nextMine(d, d.i, 1); if (j < 0) { const k = nextMine(d, d.i, -1); if (k >= 0) d.i = k; } else d.i = j; } draw(); }));
     $('#cMusic', el).onclick = openPlaylist;
     if ($('#cAlign', el)) $('#cAlign', el).onclick = () => { startAlign(sess); draw(); };
     $$('.use', el).forEach((b) => (b.onclick = (e) => { e.stopPropagation(); useIngredient(d.r, d.s.id, b.dataset.use, b); }));
@@ -2827,7 +2946,7 @@ function viewHome(partial) {
     const fcl = isFriday() ? fridgeClear(recipes) : null;
     const tmr = plannedFor(isoPlus(1)); const thaw = tmr ? thawLine(summary(tmr)) : '';
     body = `
-      ${thanksCard()}${whatsNewCard()}${backupCard()}
+      ${thanksCard()}${whatsNewCard()}${stripMoveCard()}${backupCard()}
       ${showAn ? `<div class="annv"><div class="fk">${an.days === 1 ? 'TOMORROW' : `IN ${an.days} DAYS`} · ${an.yrs}-YEAR ANNIVERSARY<button class="x" id="anX" aria-label="Dismiss">×</button></div><p>${an.sug ? `How about <b>${esc(an.sug.title)}</b> — ${esc(an.sigWhy)}?` : 'Plan something special to cook together.'}</p>${an.sug ? `<div class="btnrow" style="margin-top:10px"><a class="btn sm ghost" href="#/r/${an.sug.id}">Open recipe</a><button class="btn sm gold" id="anPlan">Plan date night</button></div>` : ''}</div>` : ''}
       ${ourDishCard()}
       ${rc ? recapCard(rc, true) : ''}
@@ -2948,6 +3067,7 @@ function viewHome(partial) {
   $('#wnX') && ($('#wnX').onclick = $('#wnOk').onclick = () => { state.seenWhatsNew = WHATSNEW_ID; save(); redraw(); });
   $('#wnMore') && ($('#wnMore').onclick = () => { openWhatsNew(); });
   $('#bkNow') && ($('#bkNow').onclick = () => { exportBackup(); redraw(); });
+  $('#stripGo') && ($('#stripGo').onclick = openStripMove); $('#stripLater') && ($('#stripLater').onclick = () => { state.settings.stripMoveHide = true; save(); redraw(); });
   $('#bkLater') && ($('#bkLater').onclick = () => { state.settings.backupSnooze = now() + DAYS(7); save(); redraw(); toast("I'll remind you next week"); });
   $('#recapX') && ($('#recapX').onclick = () => { state.recapSeen[lastMonthKey()] = now(); save(); redraw(); });
   $('#flashX') && ($('#flashX').onclick = (e) => { e.preventDefault(); state.flashSeen[todayISO()] = now(); save(); redraw(); });
@@ -3868,7 +3988,7 @@ async function viewAcura() {
   const bakedN = Object.keys(a.baked).length;
   render(`<div class="ac">
     <div class="ac-head"><div class="ac-band" style="background-image:${acPattern()}"></div>
-      <div class="ac-plaque">${bowlArt()}<div class="ac-k">${PAW('sm')}Homemade · vet-safe${PAW('sm')}</div><h1 class="ac-h">Acura’s Kitchen</h1><p class="lead">Pawfect treats, made with love for our good pup</p></div></div>
+      <div class="ac-plaque">${bowlArt()}<div class="ac-k">${PAW('sm')}Homemade · vet-safe${PAW('sm')}</div><h1 class="ac-h">Acura’s Kitchen</h1><p class="lead hand">Pawfect treats, made with love for our good pup</p></div></div>
     <div class="ac-words" style="background-image:${acPattern()}" aria-hidden="true"><span class="bone w1">Acura</span><span class="bone w2">Good pup</span><span class="bone w3">Treat time</span></div>
     <div class="wrap" style="padding-top:6px">
       ${bd && bd.days <= 14 ? `<div class="ac-bday">${PAW()}<span>${bd.days === 0 ? `Happy birthday, Acura! ${bd.age > 0 ? bd.age + ' today' : ''} ♥ Bake something special.` : `Acura’s birthday is in ${bd.days} day${bd.days === 1 ? '' : 's'} — Pupsicles party?`}</span></div>` : ''}
@@ -5199,6 +5319,42 @@ function recapCard(rc, dismiss) {
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
 {
+ "name": "Update 12.6",
+ "id": "u126-2026-11",
+ "date": "2026-11-23",
+ "intro": "Cooking together, and a safety net.",
+ "notes": [
+  [
+   "Cook together",
+   "In cook mode, tap Cook together: the steps split between us, one on the mains and one on sides and prep. Pick your name on your own phone to see only your steps, with what the other is doing meanwhile. Swap jobs any time"
+  ],
+  [
+   "Phone on a stand",
+   "Turn the phone sideways in cook mode: the step fills the screen in big type with the buttons on the side"
+  ],
+  [
+   "How long it keeps",
+   "Every recipe's Good to know now says how long it keeps in the fridge, whether it freezes well and for how long, and how to thaw it safely"
+  ],
+  [
+   "Goes great with",
+   "Recipes that pair well (soup and sandwich night, takeout night, steakhouse night) point to each other"
+  ],
+  [
+   "Candlelight on Fancy",
+   "The warm candlelight look in cook mode now also comes on for Fancy and Fancy-night dinners"
+  ],
+  [
+   "Safety snapshots",
+   "The app keeps automatic copies of the last few days on this phone. Settings → Backup → Safety snapshots to bring one back (it always asks first, and saves what's there now)"
+  ],
+  [
+   "Scrapbook touches",
+   "Handwritten notes and washi tape on Budget and Acura's Kitchen too"
+  ]
+ ]
+},
+{
  "name": "Update 12.5",
  "id": "u125-2026-11",
  "date": "2026-11-23",
@@ -5971,12 +6127,13 @@ async function boot() {
   applySeason();
   try { await Promise.all([loadIndex(), loadPrices()]); } catch (e) { render('<div class="wrap"><div class="empty">Could not load recipes. Check your connection and reopen the app.</div></div>'); }
   checkMilestones(true);
+  setTimeout(() => takeSnapshot('auto'), 4000); // a safety snapshot shortly after opening (skipped if a recent one matches)
   await router();
   if (!state.settings.welcomed) showWelcome();
   setTimeout(loadWeather, 1500);
   const wait = updatedNow ? 0 : Math.max(0, 800 - (performance.now() - t0));
   setTimeout(() => { $('#splash').classList.add('out'); setTimeout(() => $('#splash').remove(), 700); }, wait);
 }
-window.OK_DEBUG = { get state() { return state; }, set state(v) { state = v; save(); } };
+window.OK_DEBUG = { get state() { return state; }, set state(v) { state = v; save(); }, stripGuide: () => openStripMove(), snapshot: () => takeSnapshot('auto', true) };
 boot();
 })();

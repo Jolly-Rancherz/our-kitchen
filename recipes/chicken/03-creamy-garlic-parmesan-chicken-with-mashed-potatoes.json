@@ -605,5 +605,11 @@
     "0-5": "Flour helps the chicken brown and lightly thickens the sauce later."
   },
   "fancyNight": true,
-  "funFact": "A real wheel of Parmigiano-Reggiano takes about 550 litres of milk, weighs around 40 kg and must age at least 12 months before it can carry the name."
+  "funFact": "A real wheel of Parmigiano-Reggiano takes about 550 litres of milk, weighs around 40 kg and must age at least 12 months before it can carry the name.",
+  "together": "BAABAB*",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "the cream sauce can split once frozen"
+  }
 }

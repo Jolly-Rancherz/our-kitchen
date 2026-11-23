@@ -439,5 +439,11 @@
     "0-4": "Parmesan seasons the meatballs from the inside."
   },
   "fancyNight": false,
-  "funFact": "Spaghetti and meatballs was born in New York around 1900, among Italian immigrants. In Italy, meatballs (polpette) are smaller and usually served on their own."
+  "funFact": "Spaghetti and meatballs was born in New York around 1900, among Italian immigrants. In Italy, meatballs (polpette) are smaller and usually served on their own.",
+  "together": "A*AAB*",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "2–3 months",
+    "note": "the meatballs in their sauce; cook the spaghetti fresh"
+  }
 }

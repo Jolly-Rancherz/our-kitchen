@@ -406,5 +406,20 @@
     "2-6": "Oyster sauce adds the savoury takeout depth."
   },
   "fancyNight": false,
-  "funFact": "Day-old rice makes the best fried rice: as cooked rice chills, its starch firms up and the grains dry out a little, so they fry instead of turning mushy."
+  "funFact": "Day-old rice makes the best fried rice: as cooked rice chills, its starch firms up and the grains dry out a little, so they fry instead of turning mushy.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "1–2 months",
+    "note": "spread flat in a bag so it thaws fast"
+  },
+  "pairs": [
+    [
+      "chicken-10",
+      "Fried rice instead of plain rice under the orange chicken"
+    ],
+    [
+      "beef-turkey-07",
+      "Fried rice instead of plain rice under the beef and broccoli"
+    ]
+  ]
 }

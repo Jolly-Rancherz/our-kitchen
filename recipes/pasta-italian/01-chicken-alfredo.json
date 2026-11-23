@@ -479,5 +479,11 @@
     "1-0": "Cooking the pasta a minute short lets it finish in the sauce without going soft."
   },
   "fancyNight": true,
-  "funFact": "Fettuccine Alfredo comes from Alfredo di Lelio’s restaurant in Rome, where it was just pasta, butter and Parmesan. Silent-film stars Mary Pickford and Douglas Fairbanks made it famous in North America after their 1920 honeymoon. The cream and chicken came later, over here."
+  "funFact": "Fettuccine Alfredo comes from Alfredo di Lelio’s restaurant in Rome, where it was just pasta, butter and Parmesan. Silent-film stars Mary Pickford and Douglas Fairbanks made it famous in North America after their 1920 honeymoon. The cream and chicken came later, over here.",
+  "together": "BABAA*",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "the Alfredo sauce separates once frozen"
+  }
 }

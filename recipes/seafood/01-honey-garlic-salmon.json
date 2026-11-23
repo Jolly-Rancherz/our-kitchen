@@ -434,5 +434,11 @@
     "0-5": "A hot oiled pan gives the crisp, golden crust."
   },
   "fancyNight": true,
-  "funFact": "Wild salmon find their way back to the very stream where they hatched, mostly by smell, sometimes after years at sea and journeys of hundreds of kilometres."
+  "funFact": "Wild salmon find their way back to the very stream where they hatched, mostly by smell, sometimes after years at sea and journeys of hundreds of kilometres.",
+  "together": "BABAA*",
+  "keeps": {
+    "fridge": "up to 3 days",
+    "freezer": null,
+    "note": "cooked salmon dries out in the freezer — enjoy it cold over rice instead"
+  }
 }

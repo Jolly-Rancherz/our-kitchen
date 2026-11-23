@@ -435,5 +435,17 @@
     "1-5": "Very hot oil gives the crust — don't crowd the pan."
   },
   "fancyNight": true,
-  "funFact": "Searing doesn’t “seal in the juices”; food scientists have tested it. What it does do is build flavour: the brown crust comes from the Maillard reaction between proteins and sugars."
+  "funFact": "Searing doesn’t “seal in the juices”; food scientists have tested it. What it does do is build flavour: the brown crust comes from the Maillard reaction between proteins and sugars.",
+  "together": "BAAAA*",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "2–3 months",
+    "note": "the steak keeps cooking when reheated, so warm it briefly"
+  },
+  "pairs": [
+    [
+      "pasta-italian-05",
+      "Steakhouse night — bake the mac while the potatoes roast (skip the potatoes if you like)"
+    ]
+  ]
 }

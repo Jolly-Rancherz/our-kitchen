@@ -395,5 +395,21 @@
     "1-1": "Buttered, toasted rolls stay crisp under the juicy filling."
   },
   "fancyNight": false,
-  "funFact": "The Philly cheesesteak began in 1930 at Pat Olivieri’s hot dog stand in Philadelphia, as a grilled beef sandwich. The cheese was added years later."
+  "funFact": "The Philly cheesesteak began in 1930 at Pat Olivieri’s hot dog stand in Philadelphia, as a grilled beef sandwich. The cheese was added years later.",
+  "together": "ABAA*",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "2–3 months",
+    "note": "the steak and onion filling only; toast fresh rolls"
+  },
+  "pairs": [
+    [
+      "comfort-soups-01",
+      "Soup and sandwich night — start the soup first, it holds on low while the steak sears"
+    ],
+    [
+      "comfort-soups-02",
+      "Soup and sandwich night — the soup simmers while the onions soften"
+    ]
+  ]
 }
