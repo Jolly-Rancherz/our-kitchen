@@ -1,0 +1,239 @@
+{
+  "title": "Italian Seasoning",
+  "subtitle": "a dried-herb blend for sauces, meatballs, garlic bread and roasted vegetables",
+  "image": "assets/img/blend-italian-seasoning.webp",
+  "imageAlt": "A small glass jar of green dried Italian herb seasoning with a spoonful on a cream plate beside a navy napkin",
+  "servings": 8,
+  "servingsNote": "about ⅓ cup: 8 batches of 2 tsp",
+  "prep": 5,
+  "cook": 0,
+  "cost": {
+    "total": 1.3,
+    "breakdown": [
+      [
+        "Dried oregano, 2 tbsp",
+        0.4,
+        "dried-oregano"
+      ],
+      [
+        "Dried basil, 2 tbsp",
+        0.45,
+        "dried-basil"
+      ],
+      [
+        "Dried thyme, dried rosemary, garlic powder",
+        0.45
+      ]
+    ]
+  },
+  "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+      "blend"
+    ]
+  },
+  "badges": [
+    "Dried herbs only",
+    "No cooking"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "Use a clean, completely dry jar and spoon: any moisture makes the blend clump."
+    },
+    {
+      "icon": "knife",
+      "text": "Check the dates on your jars; spices older than a year lose most of their flavour."
+    }
+  ],
+  "groups": [
+    {
+      "name": "The blend",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "dried oregano",
+          "pantry": {
+            "name": "Dried oregano",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "dried basil",
+          "pantry": {
+            "name": "Dried basil",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried rosemary",
+          "note": "crushed fine between your fingers",
+          "pantry": {
+            "name": "Dried rosemary",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Measure",
+      "text": "Measure everything into a small bowl.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Mix",
+      "text": "Whisk with a fork until the colour is even, breaking up any lumps.",
+      "uses": []
+    },
+    {
+      "title": "Jar it",
+      "text": "Spoon into a clean, dry jar, seal and label it with the name and date.",
+      "uses": []
+    },
+    {
+      "title": "Use it",
+      "text": "Use 2 tsp per 700 ml jar of pasta sauce or 500 g of meatballs, 1 tsp in garlic butter for a loaf, or 1 tbsp with oil and salt for a sheet pan of vegetables. Rub it between your fingers as you add it to wake it up.",
+      "uses": []
+    }
+  ],
+  "together": "AAA*",
+  "fixIt": [
+    {
+      "problem": "Clumping",
+      "fix": "Moisture got in; break it up with a fork and keep the jar away from the stove's steam."
+    },
+    {
+      "problem": "Tastes flat",
+      "fix": "The spices are old; replace the oldest jar and remix."
+    },
+    {
+      "problem": "Too salty for you",
+      "fix": "Make the next batch with half the salt and salt the food separately."
+    }
+  ],
+  "saleTip": "No Frills bulk bins sell spices by weight: buy just a few tablespoons for a fraction of the jar price.",
+  "swap": "Leave out any one spice you don't have; the blend still works.",
+  "leftovers": "Keeps for months; a small jar makes a nice gift.",
+  "doneness": "No cooking. Season raw meat or fish with a clean spoon (never dip a spoon that touched raw meat back into the jar) and cook the food to its safe temperature.",
+  "source": "Based on common Canadian grocery-store and test-kitchen versions of this blend (Club House, Canadian Living, Serious Eats), made mild for us.",
+  "gear": [
+    "Measuring spoons",
+    "Small bowl",
+    "Fork",
+    "Small airtight jar",
+    "Label"
+  ],
+  "prepAhead": [
+    "Make a double batch; it keeps 6 months in a sealed jar."
+  ],
+  "reheat": "Nothing to reheat. Leftovers cooked with it reheat to 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Just dried oregano, dried basil and dried thyme.",
+      "drop": [
+        "0-3",
+        "0-4"
+      ],
+      "stepNotes": {},
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Add dried marjoram and a little onion powder for a rounder, pizzeria-style blend.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "dried marjoram",
+              "pantry": {
+                "name": "Dried marjoram",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "onion powder",
+              "pantry": {
+                "name": "Onion powder",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: add the marjoram and onion powder."
+      },
+      "costAdd": [
+        [
+          "Dried marjoram, onion powder",
+          0.45
+        ]
+      ],
+      "plating": [
+        "Pour into a small glass jar.",
+        "Hand-write the label with the date.",
+        "Tie twine around the lid if it's a gift."
+      ]
+    }
+  },
+  "why": {
+    "0-3": "Crushing the dried rosemary keeps the needles from being noticeable.",
+    "0-1": "Dried basil is sweet and mellow, so the blend works in tomato and cream sauces."
+  },
+  "fancyNight": false,
+  "funFact": "Italian cooks don't actually use a jar called 'Italian seasoning'; the blend was created for North American kitchens in the 1900s.",
+  "keeps": {
+    "room": "6 months in a sealed jar, away from heat and light",
+    "freezer": null,
+    "note": "no need; the cupboard is best (the freezer adds moisture)"
+  },
+  "pairs": [
+    [
+      "pasta-italian-06",
+      "in the meatballs and sauce"
+    ],
+    [
+      "pasta-italian-12",
+      "sprinkled on the pizza sauce"
+    ]
+  ]
+}

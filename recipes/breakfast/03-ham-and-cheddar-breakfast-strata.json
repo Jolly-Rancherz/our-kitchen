@@ -1,0 +1,343 @@
+{
+  "title": "Ham & Cheddar Breakfast Strata",
+  "subtitle": "a make-ahead bread, ham and cheddar bake that puffs up golden in the morning",
+  "image": "assets/img/ham-cheddar-strata.webp",
+  "imageAlt": "A golden puffed ham and cheddar breakfast strata in a baking dish with one square served on a cream plate beside a navy napkin",
+  "servings": 6,
+  "servingsNote": "a 9×13 dish: brunch for two, plus 4 portions for the week",
+  "prep": 20,
+  "cook": 50,
+  "cost": {
+    "total": 13.29,
+    "breakdown": [
+      [
+        "Eggs, 8",
+        3.13,
+        "eggs"
+      ],
+      [
+        "Deli ham, 175 g",
+        4.49,
+        "deli-ham-sliced"
+      ],
+      [
+        "Cheddar, 150 g",
+        2.62,
+        "cheddar-shredded"
+      ],
+      [
+        "Bread, 8 slices",
+        1.2,
+        "sandwich-bread-white"
+      ],
+      [
+        "Milk, 2 cups",
+        1.45,
+        "milk"
+      ],
+      [
+        "Butter, spices",
+        0.4
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ],
+    "course": [
+      "breakfast"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Make-ahead"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Assemble it the night before: it needs at least 2 hours in the fridge so the bread soaks up the custard."
+    },
+    {
+      "icon": "oven",
+      "text": "Take it out of the fridge while the oven heats."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Strata",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "for the dish",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 8,
+          "unit": null,
+          "name": "slices white sandwich bread",
+          "note": "day-old, cut in 2 cm cubes",
+          "pantry": {
+            "name": "Sandwich bread (white)",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 175,
+          "unit": "g",
+          "name": "sliced deli ham",
+          "note": "chopped",
+          "pantry": {
+            "name": "Deli ham (sliced)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "metric": {
+            "qty": 150,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Custard",
+      "items": [
+        {
+          "qty": 8,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 500,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Layer",
+      "text": "Butter a 23×33 cm (9×13 in) baking dish. Scatter half the bread, then half the ham and cheddar; repeat.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Custard",
+      "text": "Whisk the eggs, milk, onion powder, salt and pepper and pour it evenly over the dish. Press the bread down so it soaks.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4"
+      ]
+    },
+    {
+      "title": "Soak",
+      "text": "Cover and refrigerate at least 2 hours, or overnight.",
+      "uses": []
+    },
+    {
+      "title": "Bake",
+      "text": "Heat the oven to 175°C (350°F). Bake uncovered 45–55 minutes, until puffed, golden and 74°C (165°F) in the centre and a knife comes out clean.",
+      "timer": 50,
+      "uses": []
+    },
+    {
+      "title": "Rest",
+      "text": "Rest 10 minutes, then cut into squares.",
+      "timer": 10,
+      "uses": []
+    }
+  ],
+  "together": "AAAA*",
+  "fixIt": [
+    {
+      "problem": "Soggy middle",
+      "fix": "Bake longer until it reads 74°C (165°F); tent with foil if the top browns first."
+    },
+    {
+      "problem": "Dry",
+      "fix": "Use day-old bread, not toasted, and soak it at least 2 hours."
+    },
+    {
+      "problem": "Top too dark",
+      "fix": "Lay foil loosely over it for the last 15 minutes."
+    }
+  ],
+  "saleTip": "Ask the No Frills deli counter for ham ends; they're cheaper and perfect chopped.",
+  "swap": "Cooked crumbled sausage or bacon for ham. Swiss for cheddar.",
+  "leftovers": "Squares reheat well for weekday breakfasts or lunch.",
+  "doneness": "Egg dishes to 74°C (165°F) in the centre (Health Canada); the ham is fully cooked.",
+  "source": "Based on tested make-ahead strata methods (Canadian Living, America's Test Kitchen): cubed day-old bread soaked overnight in an egg and milk custard, baked at 175°C until set.",
+  "gear": [
+    "23×33 cm (9×13 in) baking dish",
+    "Large bowl",
+    "Whisk",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Assemble up to 24 hours ahead and keep covered in the fridge."
+  ],
+  "reheat": "Squares covered in the microwave 1–2 minutes, or at 180°C (350°F) for 15 minutes, until 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Ham, cheddar, eggs and milk; no onion powder.",
+      "drop": [
+        "1-2"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the onion powder."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Gruyère and soft sautéed onion through the layers.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 100,
+              "unit": "g",
+              "name": "Gruyère",
+              "note": "shredded",
+              "pantry": {
+                "name": "Gruyere cheese",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "yellow onion",
+              "note": "thinly sliced",
+              "pantry": {
+                "name": "Yellow onions",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "butter",
+              "metric": {
+                "qty": 14,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Onion first",
+          "text": "Before layering, cook the onion in the butter over medium-low 10 minutes until soft and golden. Layer it and the Gruyère with the ham."
+        }
+      ],
+      "costAdd": [
+        [
+          "Gruyère, 100 g",
+          4.5,
+          "gruyere-cheese"
+        ],
+        [
+          "Onion, butter",
+          0.5
+        ]
+      ],
+      "plating": [
+        "Cut neat squares with a hot knife.",
+        "Serve on warm plates.",
+        "Fruit salad on the side."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "Day-old bread soaks up custard without turning to mush.",
+    "1-0": "Eight eggs to two cups of milk sets into a tender, sliceable custard."
+  },
+  "fancyNight": false,
+  "funFact": "'Strata' is Latin for layers; the dish became a North American church-brunch favourite in the mid-1900s.",
+  "keeps": {
+    "fridge": "4 days",
+    "freezer": "2 months",
+    "note": "freeze baked squares wrapped"
+  },
+  "drink": "Coffee and orange juice, or a pot of English Breakfast tea.",
+  "pairs": []
+}

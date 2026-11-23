@@ -1,0 +1,299 @@
+{
+  "title": "Peameal, Egg & Cheddar Breakfast Sandwiches",
+  "subtitle": "better-than-the-drive-thru English muffins with Toronto's own peameal bacon",
+  "image": "assets/img/breakfast-sandwiches.webp",
+  "imageAlt": "Two toasted English muffin breakfast sandwiches with peameal bacon, a round egg and melted cheddar on a cream plate with a navy napkin",
+  "servings": 2,
+  "servingsNote": "4 sandwiches: 2 each, or 1 each plus 2 for the freezer",
+  "prep": 5,
+  "cook": 15,
+  "cost": {
+    "total": 9.54,
+    "breakdown": [
+      [
+        "English muffins, 4",
+        2.0,
+        "english-muffins"
+      ],
+      [
+        "Peameal bacon, 4 slices (250 g)",
+        4.25,
+        "peameal-bacon"
+      ],
+      [
+        "Eggs, 4",
+        1.56,
+        "eggs"
+      ],
+      [
+        "Cheddar slices, 4",
+        1.33,
+        "cheddar-slices"
+      ],
+      [
+        "Butter, salt, pepper",
+        0.4
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "breakfast"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "20 minutes"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "A clean wide-mouth canning ring (or a crumpled foil ring) makes the egg perfectly round."
+    },
+    {
+      "icon": "knife",
+      "text": "Split the muffins with a fork for the craggiest toast."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Sandwiches",
+      "items": [
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "English muffins",
+          "note": "split",
+          "pantry": {
+            "name": "English muffins",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "slices peameal bacon",
+          "note": "about 6 mm thick (250 g)",
+          "pantry": {
+            "name": "Peameal bacon",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.125,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.125,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "slices cheddar",
+          "pantry": {
+            "name": "Cheddar slices",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Peameal",
+      "text": "Heat a large nonstick skillet over medium. Cook the peameal 3–4 minutes a side, until golden and 71°C (160°F). Set aside on a plate.",
+      "timer": 7,
+      "uses": [
+        "0-1"
+      ]
+    },
+    {
+      "title": "Toast",
+      "text": "Toast the English muffins and spread with half the butter.",
+      "uses": [
+        "0-0",
+        "0-2=1 tbsp"
+      ]
+    },
+    {
+      "title": "Eggs",
+      "text": "Melt the rest of the butter in the skillet over medium-low. Set greased rings in the pan, crack an egg into each and break the yolk with a fork. Season, add 2 tbsp water to the pan, cover and cook 3–4 minutes, until fully set.",
+      "timer": 4,
+      "uses": [
+        "0-2=1 tbsp",
+        "0-3",
+        "0-4",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Stack",
+      "text": "Lift off the rings, top each egg with cheddar and cover 30 seconds to melt. Stack muffin, peameal, cheesy egg, muffin.",
+      "uses": [
+        "0-6"
+      ]
+    }
+  ],
+  "together": "BAA*",
+  "fixIt": [
+    {
+      "problem": "Egg sticking to the ring",
+      "fix": "Grease the inside of the ring well with butter or oil."
+    },
+    {
+      "problem": "Peameal tough",
+      "fix": "Cook just to 71°C (160°F); it's lean and dries out quickly."
+    },
+    {
+      "problem": "Soggy muffin",
+      "fix": "Toast until really golden and assemble right before eating."
+    }
+  ],
+  "saleTip": "Buy a whole peameal roast on sale and slice it yourself; it's cheaper per kilo than pre-sliced.",
+  "swap": "Back bacon or deli ham for peameal. Fried egg folded in quarters if you don't have rings.",
+  "leftovers": "Wrap cooled sandwiches in parchment and foil and freeze.",
+  "doneness": "Peameal bacon (pork) to 71°C (160°F); eggs cooked until firm (Health Canada). Reheat to 74°C (165°F).",
+  "source": "Based on classic Canadian peameal bacon and tested homemade English muffin sandwich methods (Canadian Living, Serious Eats): ring-set steamed eggs and pan-seared peameal.",
+  "gear": [
+    "Large nonstick skillet with lid",
+    "2–4 canning rings or foil rings",
+    "Toaster",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Make a batch and freeze up to 1 month for grab-and-go mornings."
+  ],
+  "reheat": "From frozen: unwrap, wrap in a paper towel and microwave 1½–2 minutes, flipping once, until 74°C (165°F).",
+  "airFryer": "Cook the peameal slices at 190°C (375°F) for 6–8 minutes, flipping halfway, to 71°C (160°F), and toast the muffins in the basket for 2–3 minutes. Reheat frozen sandwiches (unwrapped) at 160°C (325°F) for 10–12 minutes until 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Egg and cheddar sandwiches; no peameal.",
+      "drop": [
+        "0-1"
+      ],
+      "stepNotes": {
+        "0": "Basic: skip the peameal."
+      },
+      "costDrop": [
+        "peameal-bacon"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A crispy hash brown patty and a swipe of maple mayo inside each one.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "frozen hash brown patties",
+              "pantry": {
+                "name": "Frozen hash brown patties",
+                "cat": "frozen"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "mayonnaise",
+              "pantry": {
+                "name": "Mayonnaise",
+                "cat": "sauces"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "maple syrup",
+              "pantry": {
+                "name": "Maple syrup",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Hash browns",
+          "text": "Start first: bake the hash brown patties at 220°C (425°F) for 15–18 minutes, flipping halfway, until crisp (or air-fry 10 minutes at 200°C / 400°F). Stir the mayo and maple syrup, spread on the muffin tops and tuck a patty into each sandwich."
+        }
+      ],
+      "costAdd": [
+        [
+          "Hash brown patties, 4",
+          1.6,
+          "frozen-hash-brown-patties"
+        ],
+        [
+          "Mayo, maple syrup",
+          0.3
+        ]
+      ],
+      "plating": [
+        "Wrap the bottom half in parchment, diner-style.",
+        "Cut one in half to show the layers.",
+        "Coffee alongside."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "Peameal is lean cured pork loin rolled in cornmeal: Toronto's signature bacon.",
+    "0-3": "Breaking the yolk and steaming under a lid sets the egg evenly and keeps it from dripping."
+  },
+  "fancyNight": false,
+  "funFact": "Peameal bacon was first rolled in ground dried peas; the switch to cornmeal came after the First World War.",
+  "keeps": {
+    "fridge": "3 days",
+    "freezer": "1 month",
+    "note": "wrap each sandwich in parchment then foil",
+    "thaw": "No need to thaw: reheat from frozen until 74°C (165°F) in the centre"
+  },
+  "drink": "Coffee, double-double if you like, or an orange juice.",
+  "pairs": []
+}

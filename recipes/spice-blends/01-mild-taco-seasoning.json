@@ -1,0 +1,269 @@
+{
+  "title": "Mild Taco Seasoning",
+  "subtitle": "everything the packet does, for a fraction of the price and none of the heat",
+  "image": "assets/img/blend-mild-taco-seasoning.webp",
+  "imageAlt": "A small glass jar of rust-red mild taco seasoning with a spoonful on a cream plate beside a navy napkin",
+  "servings": 4,
+  "servingsNote": "about ⅓ cup: 4 batches of 2 tbsp (one packet's worth)",
+  "prep": 5,
+  "cook": 0,
+  "cost": {
+    "total": 1.45,
+    "breakdown": [
+      [
+        "Mild chili powder, 2 tbsp",
+        0.6,
+        "chili-powder-mild"
+      ],
+      [
+        "Cumin, 1 tbsp",
+        0.35,
+        "ground-cumin"
+      ],
+      [
+        "Paprika, garlic, onion, dried oregano, salt, pepper",
+        0.5
+      ]
+    ]
+  },
+  "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+      "blend"
+    ]
+  },
+  "badges": [
+    "Mild",
+    "No cooking"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "Use a clean, completely dry jar and spoon: any moisture makes the blend clump."
+    },
+    {
+      "icon": "knife",
+      "text": "Check the dates on your jars; spices older than a year lose most of their flavour."
+    }
+  ],
+  "groups": [
+    {
+      "name": "The blend",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "mild chili powder",
+          "pantry": {
+            "name": "Chili powder (mild)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "ground cumin",
+          "pantry": {
+            "name": "Ground cumin",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "paprika",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried oregano",
+          "pantry": {
+            "name": "Dried oregano",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Measure",
+      "text": "Measure everything into a small bowl.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Mix",
+      "text": "Whisk with a fork until the colour is even, breaking up any lumps.",
+      "uses": []
+    },
+    {
+      "title": "Jar it",
+      "text": "Spoon into a clean, dry jar, seal and label it with the name and date.",
+      "uses": []
+    },
+    {
+      "title": "Use it",
+      "text": "Use 2 tbsp (one packet's worth) per 500 g ground beef or turkey: brown the meat to 71°C (160°F) for beef or 74°C (165°F) for turkey, then add the seasoning with ⅔ cup water and simmer 5 minutes until saucy.",
+      "uses": []
+    }
+  ],
+  "together": "AAA*",
+  "fixIt": [
+    {
+      "problem": "Clumping",
+      "fix": "Moisture got in; break it up with a fork and keep the jar away from the stove's steam."
+    },
+    {
+      "problem": "Tastes flat",
+      "fix": "The spices are old; replace the oldest jar and remix."
+    },
+    {
+      "problem": "Too salty for you",
+      "fix": "Make the next batch with half the salt and salt the food separately."
+    }
+  ],
+  "saleTip": "No Frills bulk bins sell spices by weight: buy just a few tablespoons for a fraction of the jar price.",
+  "swap": "Leave out any one spice you don't have; the blend still works.",
+  "leftovers": "Keeps for months; a small jar makes a nice gift.",
+  "doneness": "No cooking. Season raw meat or fish with a clean spoon (never dip a spoon that touched raw meat back into the jar) and cook the food to its safe temperature.",
+  "source": "Based on common Canadian grocery-store and test-kitchen versions of this blend (Club House, Canadian Living, Serious Eats), made mild for us.",
+  "gear": [
+    "Measuring spoons",
+    "Small bowl",
+    "Fork",
+    "Small airtight jar",
+    "Label"
+  ],
+  "prepAhead": [
+    "Make a double batch; it keeps 6 months in a sealed jar."
+  ],
+  "reheat": "Nothing to reheat. Leftovers cooked with it reheat to 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Just chili powder, cumin, garlic, salt and pepper.",
+      "drop": [
+        "0-2",
+        "0-4",
+        "0-5"
+      ],
+      "stepNotes": {},
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Smoked paprika for a gentle campfire note, and a pinch of cocoa for depth.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "smoked paprika",
+              "pantry": {
+                "name": "Smoked paprika",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "tsp",
+              "name": "cocoa powder",
+              "pantry": {
+                "name": "Cocoa powder",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: add the smoked paprika and cocoa."
+      },
+      "costAdd": [
+        [
+          "Smoked paprika, cocoa",
+          0.3
+        ]
+      ],
+      "plating": [
+        "Pour into a small glass jar.",
+        "Hand-write the label with the date.",
+        "Tie twine around the lid if it's a gift."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Canadian 'chili powder' is a mild blend, not pure ground chilies; mild keeps it family-friendly.",
+    "0-1": "Cumin is the warm, earthy taste you know from taco night."
+  },
+  "fancyNight": false,
+  "funFact": "Packaged taco seasoning first hit North American shelves in the 1960s, and most packets are about 2 tbsp.",
+  "keeps": {
+    "room": "6 months in a sealed jar, away from heat and light",
+    "freezer": null,
+    "note": "no need; the cupboard is best (the freezer adds moisture)"
+  },
+  "pairs": [
+    [
+      "beef-turkey-01",
+      "the taco night it was made for"
+    ],
+    [
+      "beef-turkey-14",
+      "in the beef and bean filling"
+    ]
+  ]
+}

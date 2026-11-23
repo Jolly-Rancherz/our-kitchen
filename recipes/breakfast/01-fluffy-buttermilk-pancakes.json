@@ -1,0 +1,391 @@
+{
+  "title": "Fluffy Buttermilk Pancakes",
+  "subtitle": "tall, tender diner-style pancakes with butter and real maple syrup",
+  "image": "assets/img/buttermilk-pancakes.webp",
+  "imageAlt": "A tall stack of golden buttermilk pancakes with butter and maple syrup on a cream plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "about 12 pancakes: breakfast for two, plus 2 more for tomorrow",
+  "prep": 10,
+  "cook": 20,
+  "cost": {
+    "total": 6.91,
+    "breakdown": [
+      [
+        "Buttermilk, 2 cups",
+        1.25,
+        "buttermilk"
+      ],
+      [
+        "Flour, 2 cups",
+        0.52,
+        "all-purpose-flour"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "Butter, 5 tbsp",
+        1.0,
+        "butter"
+      ],
+      [
+        "Maple syrup, ½ cup",
+        2.31,
+        "maple-syrup"
+      ],
+      [
+        "Vanilla, sugar, leaveners, oil",
+        1.05
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "breakfast"
+    ]
+  },
+  "badges": [
+    "Weekend brunch"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "Don't overmix: a few lumps make tall, tender pancakes."
+    },
+    {
+      "icon": "pot",
+      "text": "Medium heat, not high. The first pancake is a test; adjust the heat after it."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Batter",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 260,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "granulated sugar",
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "baking powder",
+          "pantry": {
+            "name": "Baking powder",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "baking soda",
+          "pantry": {
+            "name": "Baking soda",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "buttermilk",
+          "metric": {
+            "qty": 500,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Buttermilk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 42,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To cook and serve",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "note": "for the pan",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "for serving",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "maple syrup",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Maple syrup",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Dry",
+      "text": "Whisk the flour, sugar, baking powder, baking soda and salt in a large bowl.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Wet",
+      "text": "Whisk the buttermilk, eggs, melted butter and vanilla in another bowl.",
+      "uses": [
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8"
+      ]
+    },
+    {
+      "title": "Combine",
+      "text": "Pour the wet into the dry and stir just until no dry flour shows; lumps are good. Rest 5 minutes while the pan heats.",
+      "timer": 5,
+      "uses": []
+    },
+    {
+      "title": "Cook",
+      "text": "Heat a large nonstick skillet or griddle over medium and wipe with a little oil. Pour ¼ cup batter per pancake. Cook 2–3 minutes until bubbles pop on top and the edges look set, flip and cook 1–2 minutes more until golden and springy in the centre. Repeat, oiling the pan as needed.",
+      "timer": 15,
+      "uses": [
+        "1-0"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Stack them hot with butter and warm maple syrup.",
+      "uses": [
+        "1-1",
+        "1-2"
+      ]
+    }
+  ],
+  "together": "ABA**",
+  "fixIt": [
+    {
+      "problem": "Pancakes flat",
+      "fix": "The batter was overmixed or the baking powder is old; stir less and check the date."
+    },
+    {
+      "problem": "Dark outside, raw inside",
+      "fix": "The pan is too hot; turn it down a notch and cook a little longer."
+    },
+    {
+      "problem": "No buttermilk",
+      "fix": "Stir 2 tbsp lemon juice or white vinegar into 2 cups milk and let it stand 5 minutes."
+    }
+  ],
+  "saleTip": "Buttermilk is about $2.49 a litre at No Frills; freeze the rest in 1-cup portions for the next batch.",
+  "swap": "Whole wheat flour for half the flour. Milk soured with lemon juice for buttermilk.",
+  "leftovers": "Freeze extra pancakes flat between parchment; toast them straight from frozen on a weekday.",
+  "doneness": "Cook until springy in the centre with no wet batter; the eggs in the batter cook through as they set (Health Canada, egg dishes to 74°C / 165°F).",
+  "source": "Based on tested buttermilk pancake methods (Canadian Living, America's Test Kitchen): a thick lumpy batter with baking powder and soda, rested 5 minutes and cooked on a medium griddle.",
+  "gear": [
+    "2 mixing bowls",
+    "Whisk",
+    "Large nonstick skillet or griddle",
+    "Flipper",
+    "¼-cup measure"
+  ],
+  "prepAhead": [
+    "Mix the dry ingredients the night before and cover.",
+    "Cooked pancakes freeze up to 2 months."
+  ],
+  "reheat": "From the fridge or freezer: toaster or microwave 30–60 seconds until hot, 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Plain pancakes with butter and syrup; no vanilla.",
+      "drop": [
+        "0-8"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the vanilla."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Blueberry pancakes with maple whipped cream.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "cup",
+              "name": "frozen wild blueberries",
+              "note": "straight from the freezer",
+              "pantry": {
+                "name": "Frozen blueberries",
+                "cat": "frozen"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "35% whipping cream",
+              "metric": {
+                "qty": 125,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "35% whipping cream",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "maple syrup",
+              "note": "for the cream",
+              "pantry": {
+                "name": "Maple syrup",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: scatter a few blueberries onto each pancake right after pouring."
+      },
+      "addSteps": [
+        {
+          "title": "Maple cream",
+          "text": "Whip the cream with 1 tbsp maple syrup to soft peaks and spoon over the stacks."
+        }
+      ],
+      "costAdd": [
+        [
+          "Blueberries, 1 cup",
+          1.5,
+          "frozen-blueberries"
+        ],
+        [
+          "Whipping cream, ½ cup",
+          1.19,
+          "35-whipping-cream"
+        ],
+        [
+          "Maple syrup, 1 tbsp",
+          0.29,
+          "maple-syrup"
+        ]
+      ],
+      "plating": [
+        "Stack three high, berries on top.",
+        "A spoon of maple cream and a drizzle of syrup.",
+        "Warm the syrup in a small jug."
+      ]
+    }
+  },
+  "why": {
+    "0-5": "Buttermilk's acid reacts with the baking soda for extra lift and a tender crumb.",
+    "0-2": "Baking powder adds a second rise on the griddle so they stay tall."
+  },
+  "fancyNight": false,
+  "funFact": "Canada makes about 70% of the world's maple syrup, most of it in Quebec.",
+  "keeps": {
+    "fridge": "3 days",
+    "freezer": "2 months",
+    "note": "freeze flat between parchment",
+    "thaw": "No need to thaw: toast or microwave straight from frozen until hot"
+  },
+  "drink": "Hot coffee or tea and a glass of cold milk; orange juice on a weekend.",
+  "pairs": []
+}

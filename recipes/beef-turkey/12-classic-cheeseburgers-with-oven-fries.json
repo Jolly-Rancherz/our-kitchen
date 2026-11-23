@@ -456,5 +456,6 @@
     "freezer": "3 months",
     "note": "freeze cooked patties with parchment between them"
   },
-  "pairs": []
+  "pairs": [],
+  "airFryer": "Fries: air-fry the dried, oiled potato sticks at 200°C (400°F) for 18–22 minutes, shaking every 6 minutes, until golden. Burgers: air-fry the patties at 190°C (375°F) for 10–12 minutes, flipping halfway, to 71°C (160°F), cheese on for the last minute."
 }

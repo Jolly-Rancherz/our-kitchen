@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-23T13:53:23",
- "count": 121,
+ "generated": "2026-11-23T16:47:59",
+ "count": 139,
  "categories": [
   {
    "slug": "chicken",
@@ -48,6 +48,25 @@
    "slug": "christmas",
    "name": "Christmas",
    "colour": "#9E2B35"
+  },
+  {
+   "slug": "breakfast",
+   "name": "Breakfast & Brunch",
+   "colour": "#C4963E",
+   "tile": "assets/tiles/breakfast.webp"
+  },
+  {
+   "slug": "spice-blends",
+   "name": "Spice Blends",
+   "colour": "#381848",
+   "tile": "assets/tiles/spice-blends.webp",
+   "noun": "blend"
+  },
+  {
+   "slug": "holidays",
+   "name": "Holidays",
+   "colour": "#5070A8",
+   "tile": "assets/tiles/holidays.webp"
   }
  ],
  "recipes": [
@@ -12989,6 +13008,1463 @@
     }
    ],
    "fancyNight": true
+  },
+  {
+   "id": "breakfast-01",
+   "category": "breakfast",
+   "num": 1,
+   "file": "recipes/breakfast/01-fluffy-buttermilk-pancakes.json",
+   "title": "Fluffy Buttermilk Pancakes",
+   "subtitle": "tall, tender diner-style pancakes with butter and real maple syrup",
+   "image": "assets/img/buttermilk-pancakes.webp",
+   "prep": 10,
+   "cook": 20,
+   "total": 30,
+   "servings": 4,
+   "cost": 6.91,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+     "freezer"
+    ],
+    "course": [
+     "breakfast"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "under-30"
+    ]
+   },
+   "ingredients": [
+    "all-purpose flour",
+    "granulated sugar",
+    "baking powder",
+    "baking soda",
+    "salt",
+    "buttermilk",
+    "large eggs",
+    "butter",
+    "vanilla extract",
+    "canola or vegetable oil",
+    "butter",
+    "maple syrup"
+   ],
+   "pantry": [
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Granulated sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Baking powder",
+     "cat": "baking"
+    },
+    {
+     "name": "Baking soda",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Buttermilk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Vanilla extract",
+     "cat": "baking"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Maple syrup",
+     "cat": "baking"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "breakfast-02",
+   "category": "breakfast",
+   "num": 2,
+   "file": "recipes/breakfast/02-classic-diner-breakfast.json",
+   "title": "Classic Diner Breakfast",
+   "subtitle": "eggs your way, crispy bacon, golden home fries and buttered toast",
+   "image": "assets/img/diner-breakfast.webp",
+   "prep": 10,
+   "cook": 30,
+   "total": 40,
+   "servings": 2,
+   "cost": 7.07,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "oven-bake"
+    ],
+    "base": [
+     "potatoes",
+     "bread-wraps"
+    ],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+     "breakfast"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "Yukon Gold potatoes",
+    "canola or vegetable oil",
+    "yellow onion",
+    "sweet paprika",
+    "salt",
+    "black pepper",
+    "slices bacon",
+    "butter",
+    "large eggs",
+    "salt",
+    "slices white sandwich bread",
+    "butter"
+   ],
+   "pantry": [
+    {
+     "name": "Yukon Gold potatoes",
+     "cat": "produce"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Bacon",
+     "cat": "meat"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Sandwich bread (white)",
+     "cat": "grains"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "breakfast-03",
+   "category": "breakfast",
+   "num": 3,
+   "file": "recipes/breakfast/03-ham-and-cheddar-breakfast-strata.json",
+   "title": "Ham & Cheddar Breakfast Strata",
+   "subtitle": "a make-ahead bread, ham and cheddar bake that puffs up golden in the morning",
+   "image": "assets/img/ham-cheddar-strata.webp",
+   "prep": 20,
+   "cook": 50,
+   "total": 70,
+   "servings": 6,
+   "cost": 13.29,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [
+     "bread-wraps"
+    ],
+    "occasion": [],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "course": [
+     "breakfast"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "butter",
+    "slices white sandwich bread",
+    "sliced deli ham",
+    "shredded old cheddar",
+    "large eggs",
+    "milk",
+    "onion powder",
+    "salt",
+    "black pepper"
+   ],
+   "pantry": [
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Sandwich bread (white)",
+     "cat": "grains"
+    },
+    {
+     "name": "Deli ham (sliced)",
+     "cat": "meat"
+    },
+    {
+     "name": "Cheddar (shredded)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Onion powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "breakfast-04",
+   "category": "breakfast",
+   "num": 4,
+   "file": "recipes/breakfast/04-overnight-baked-french-toast.json",
+   "title": "Overnight Baked French Toast",
+   "subtitle": "cinnamon custard-soaked bread under a buttery brown sugar crust, ready to bake",
+   "image": "assets/img/baked-french-toast.webp",
+   "prep": 20,
+   "cook": 50,
+   "total": 70,
+   "servings": 6,
+   "cost": 12.26,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [
+     "bread-wraps"
+    ],
+    "occasion": [],
+    "leftovers": [
+     "freezer"
+    ],
+    "course": [
+     "breakfast"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "butter",
+    "loaf crusty bread",
+    "large eggs",
+    "milk",
+    "packed brown sugar",
+    "ground cinnamon",
+    "vanilla extract",
+    "salt",
+    "butter",
+    "packed brown sugar",
+    "ground cinnamon",
+    "maple syrup"
+   ],
+   "pantry": [
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Crusty bread",
+     "cat": "grains"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Brown sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Ground cinnamon",
+     "cat": "spices"
+    },
+    {
+     "name": "Vanilla extract",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Maple syrup",
+     "cat": "baking"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "breakfast-05",
+   "category": "breakfast",
+   "num": 5,
+   "file": "recipes/breakfast/05-sausage-and-egg-breakfast-burritos.json",
+   "title": "Sausage & Egg Breakfast Burritos",
+   "subtitle": "big freezer-friendly burritos with sausage, crispy potatoes, eggs and cheddar",
+   "image": "assets/img/breakfast-burritos.webp",
+   "prep": 15,
+   "cook": 30,
+   "total": 45,
+   "servings": 6,
+   "cost": 17.7,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop"
+    ],
+    "base": [
+     "bread-wraps",
+     "potatoes"
+    ],
+    "occasion": [],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "course": [
+     "breakfast"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "Yukon Gold potatoes",
+    "mild pork sausages",
+    "canola or vegetable oil",
+    "sweet paprika",
+    "salt",
+    "large eggs",
+    "milk",
+    "butter",
+    "salt",
+    "black pepper",
+    "large flour tortillas",
+    "shredded old cheddar",
+    "mild salsa"
+   ],
+   "pantry": [
+    {
+     "name": "Yukon Gold potatoes",
+     "cat": "produce"
+    },
+    {
+     "name": "Pork sausages (mild)",
+     "cat": "meat"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Flour tortillas (large)",
+     "cat": "grains"
+    },
+    {
+     "name": "Cheddar (shredded)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Salsa (mild)",
+     "cat": "sauces"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "breakfast-06",
+   "category": "breakfast",
+   "num": 6,
+   "file": "recipes/breakfast/06-sausage-and-cheddar-egg-muffins.json",
+   "title": "Sausage & Cheddar Egg Muffins",
+   "subtitle": "grab-and-go baked egg cups with mild sausage, onion and old cheddar",
+   "image": "assets/img/egg-muffins.webp",
+   "prep": 15,
+   "cook": 30,
+   "total": 45,
+   "servings": 6,
+   "cost": 9.91,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "course": [
+     "breakfast"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "mild pork sausages",
+    "yellow onions",
+    "shredded old cheddar",
+    "butter",
+    "large eggs",
+    "milk",
+    "salt",
+    "black pepper",
+    "garlic powder"
+   ],
+   "pantry": [
+    {
+     "name": "Pork sausages (mild)",
+     "cat": "meat"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Cheddar (shredded)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "breakfast-07",
+   "category": "breakfast",
+   "num": 7,
+   "file": "recipes/breakfast/07-banana-bread.json",
+   "title": "Banana Bread",
+   "subtitle": "moist, brown sugar banana bread for the browning bananas on the counter",
+   "image": "assets/img/banana-bread.webp",
+   "prep": 15,
+   "cook": 60,
+   "total": 75,
+   "servings": 10,
+   "cost": 3.86,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "course": [
+     "breakfast"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "very ripe bananas",
+    "butter",
+    "packed brown sugar",
+    "large eggs",
+    "vanilla extract",
+    "all-purpose flour",
+    "baking soda",
+    "salt",
+    "ground cinnamon"
+   ],
+   "pantry": [
+    {
+     "name": "Bananas",
+     "cat": "produce"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Brown sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Vanilla extract",
+     "cat": "baking"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Baking soda",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground cinnamon",
+     "cat": "spices"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "breakfast-08",
+   "category": "breakfast",
+   "num": 8,
+   "file": "recipes/breakfast/08-blueberry-muffins.json",
+   "title": "Bakery-Style Blueberry Muffins",
+   "subtitle": "tall, golden muffins bursting with wild blueberries and a sugar-crisp top",
+   "image": "assets/img/blueberry-muffins.webp",
+   "prep": 15,
+   "cook": 22,
+   "total": 37,
+   "servings": 12,
+   "cost": 6.61,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "course": [
+     "breakfast"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "all-purpose flour",
+    "granulated sugar",
+    "baking powder",
+    "salt",
+    "butter",
+    "large eggs",
+    "milk",
+    "vanilla extract",
+    "frozen wild blueberries",
+    "all-purpose flour",
+    "granulated sugar"
+   ],
+   "pantry": [
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Granulated sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Baking powder",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Vanilla extract",
+     "cat": "baking"
+    },
+    {
+     "name": "Frozen blueberries",
+     "cat": "frozen"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "breakfast-09",
+   "category": "breakfast",
+   "num": 9,
+   "file": "recipes/breakfast/09-cinnamon-rolls.json",
+   "title": "Cinnamon Rolls with Cream Cheese Icing",
+   "subtitle": "soft, pull-apart rolls with a brown sugar cinnamon swirl and tangy icing",
+   "image": "assets/img/cinnamon-rolls.webp",
+   "prep": 120,
+   "cook": 25,
+   "total": 145,
+   "servings": 12,
+   "cost": 8.23,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+     "freezer"
+    ],
+    "course": [
+     "breakfast"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "milk",
+    "pouch (8 g) instant yeast",
+    "granulated sugar",
+    "butter",
+    "large eggs",
+    "all-purpose flour",
+    "salt",
+    "butter",
+    "packed brown sugar",
+    "ground cinnamon",
+    "brick cream cheese",
+    "butter",
+    "icing sugar",
+    "vanilla extract"
+   ],
+   "pantry": [
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Instant yeast",
+     "cat": "baking"
+    },
+    {
+     "name": "Granulated sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Brown sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Ground cinnamon",
+     "cat": "spices"
+    },
+    {
+     "name": "Cream cheese (brick)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Icing sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Vanilla extract",
+     "cat": "baking"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "breakfast-10",
+   "category": "breakfast",
+   "num": 10,
+   "file": "recipes/breakfast/10-peameal-egg-and-cheddar-breakfast-sandwiches.json",
+   "title": "Peameal, Egg & Cheddar Breakfast Sandwiches",
+   "subtitle": "better-than-the-drive-thru English muffins with Toronto's own peameal bacon",
+   "image": "assets/img/breakfast-sandwiches.webp",
+   "prep": 5,
+   "cook": 15,
+   "total": 20,
+   "servings": 2,
+   "cost": 9.54,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop"
+    ],
+    "base": [
+     "bread-wraps"
+    ],
+    "occasion": [],
+    "leftovers": [
+     "freezer"
+    ],
+    "course": [
+     "breakfast"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "under-30"
+    ]
+   },
+   "ingredients": [
+    "English muffins",
+    "slices peameal bacon",
+    "butter",
+    "large eggs",
+    "salt",
+    "black pepper",
+    "slices cheddar"
+   ],
+   "pantry": [
+    {
+     "name": "English muffins",
+     "cat": "grains"
+    },
+    {
+     "name": "Peameal bacon",
+     "cat": "meat"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Cheddar slices",
+     "cat": "dairy"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "spice-blends-01",
+   "category": "spice-blends",
+   "num": 1,
+   "file": "recipes/spice-blends/01-mild-taco-seasoning.json",
+   "title": "Mild Taco Seasoning",
+   "subtitle": "everything the packet does, for a fraction of the price and none of the heat",
+   "image": "assets/img/blend-mild-taco-seasoning.webp",
+   "prep": 5,
+   "cook": 0,
+   "total": 5,
+   "servings": 4,
+   "cost": 1.45,
+   "price": "$",
+   "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+     "blend"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "under-30"
+    ]
+   },
+   "ingredients": [
+    "mild chili powder",
+    "ground cumin",
+    "paprika",
+    "garlic powder",
+    "onion powder",
+    "dried oregano",
+    "salt",
+    "black pepper"
+   ],
+   "pantry": [
+    {
+     "name": "Chili powder (mild)",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground cumin",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Onion powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried oregano",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "spice-blends-02",
+   "category": "spice-blends",
+   "num": 2,
+   "file": "recipes/spice-blends/02-italian-seasoning.json",
+   "title": "Italian Seasoning",
+   "subtitle": "a dried-herb blend for sauces, meatballs, garlic bread and roasted vegetables",
+   "image": "assets/img/blend-italian-seasoning.webp",
+   "prep": 5,
+   "cook": 0,
+   "total": 5,
+   "servings": 8,
+   "cost": 1.3,
+   "price": "$",
+   "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+     "blend"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "under-30"
+    ]
+   },
+   "ingredients": [
+    "dried oregano",
+    "dried basil",
+    "dried thyme",
+    "dried rosemary",
+    "garlic powder"
+   ],
+   "pantry": [
+    {
+     "name": "Dried oregano",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried basil",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried thyme",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried rosemary",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "spice-blends-03",
+   "category": "spice-blends",
+   "num": 3,
+   "file": "recipes/spice-blends/03-all-purpose-chicken-seasoning.json",
+   "title": "All-Purpose Chicken Seasoning",
+   "subtitle": "a golden, savoury rub for roast, baked or grilled chicken any night",
+   "image": "assets/img/blend-all-purpose-chicken-seasoning.webp",
+   "prep": 5,
+   "cook": 0,
+   "total": 5,
+   "servings": 4,
+   "cost": 1.4,
+   "price": "$",
+   "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+     "blend"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "under-30"
+    ]
+   },
+   "ingredients": [
+    "paprika",
+    "garlic powder",
+    "onion powder",
+    "dried thyme",
+    "packed brown sugar",
+    "salt",
+    "black pepper"
+   ],
+   "pantry": [
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Onion powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried thyme",
+     "cat": "spices"
+    },
+    {
+     "name": "Brown sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "spice-blends-04",
+   "category": "spice-blends",
+   "num": 4,
+   "file": "recipes/spice-blends/04-mild-steak-spice.json",
+   "title": "Mild Steak Spice",
+   "subtitle": "a mild Montreal-style steak rub, all flavour and no heat",
+   "image": "assets/img/blend-mild-steak-spice.webp",
+   "prep": 5,
+   "cook": 0,
+   "total": 5,
+   "servings": 5,
+   "cost": 1.15,
+   "price": "$",
+   "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+     "blend"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "under-30"
+    ]
+   },
+   "ingredients": [
+    "coarse salt",
+    "coarse black pepper",
+    "garlic powder",
+    "onion powder",
+    "paprika",
+    "ground coriander"
+   ],
+   "pantry": [
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Onion powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground coriander",
+     "cat": "spices"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "spice-blends-05",
+   "category": "spice-blends",
+   "num": 5,
+   "file": "recipes/spice-blends/05-sweet-bbq-rub.json",
+   "title": "Sweet BBQ Rub",
+   "subtitle": "a brown sugar and paprika rub for ribs, pulled pork and drumsticks",
+   "image": "assets/img/blend-sweet-bbq-rub.webp",
+   "prep": 5,
+   "cook": 0,
+   "total": 5,
+   "servings": 3,
+   "cost": 1.45,
+   "price": "$",
+   "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+     "blend"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "under-30"
+    ]
+   },
+   "ingredients": [
+    "packed brown sugar",
+    "paprika",
+    "mild chili powder",
+    "garlic powder",
+    "onion powder",
+    "salt",
+    "black pepper"
+   ],
+   "pantry": [
+    {
+     "name": "Brown sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Chili powder (mild)",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Onion powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "spice-blends-06",
+   "category": "spice-blends",
+   "num": 6,
+   "file": "recipes/spice-blends/06-shawarma-spice.json",
+   "title": "Shawarma Spice",
+   "subtitle": "a warm, fragrant blend for chicken shawarma, kebabs and roasted cauliflower",
+   "image": "assets/img/blend-shawarma-spice.webp",
+   "prep": 5,
+   "cook": 0,
+   "total": 5,
+   "servings": 4,
+   "cost": 1.4,
+   "price": "$",
+   "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+     "blend"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "under-30"
+    ]
+   },
+   "ingredients": [
+    "ground cumin",
+    "ground coriander",
+    "paprika",
+    "ground turmeric",
+    "garlic powder",
+    "ground cinnamon",
+    "ground allspice",
+    "salt",
+    "black pepper"
+   ],
+   "pantry": [
+    {
+     "name": "Ground cumin",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground coriander",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground turmeric",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground cinnamon",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground allspice",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "spice-blends-07",
+   "category": "spice-blends",
+   "num": 7,
+   "file": "recipes/spice-blends/07-greek-seasoning.json",
+   "title": "Greek Seasoning",
+   "subtitle": "a lemony blend of dried oregano and garlic for souvlaki, potatoes and pork",
+   "image": "assets/img/blend-greek-seasoning.webp",
+   "prep": 5,
+   "cook": 0,
+   "total": 5,
+   "servings": 4,
+   "cost": 1.1,
+   "price": "$",
+   "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+     "blend"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "under-30"
+    ]
+   },
+   "ingredients": [
+    "dried oregano",
+    "garlic powder",
+    "onion powder",
+    "dried thyme",
+    "ground cinnamon",
+    "paprika",
+    "salt",
+    "black pepper"
+   ],
+   "pantry": [
+    {
+     "name": "Dried oregano",
+     "cat": "spices"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Onion powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried thyme",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground cinnamon",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "spice-blends-08",
+   "category": "spice-blends",
+   "num": 8,
+   "file": "recipes/spice-blends/08-pumpkin-pie-spice.json",
+   "title": "Pumpkin Pie Spice",
+   "subtitle": "the cozy fall blend for pies, lattes, muffins and French toast",
+   "image": "assets/img/blend-pumpkin-pie-spice.webp",
+   "prep": 5,
+   "cook": 0,
+   "total": 5,
+   "servings": 6,
+   "cost": 1.6,
+   "price": "$",
+   "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+     "blend"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "under-30"
+    ]
+   },
+   "ingredients": [
+    "ground cinnamon",
+    "ground ginger",
+    "ground nutmeg",
+    "ground allspice",
+    "ground cloves"
+   ],
+   "pantry": [
+    {
+     "name": "Ground cinnamon",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground ginger",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground nutmeg",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground allspice",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground cloves",
+     "cat": "spices"
+    }
+   ],
+   "fancyNight": false
   }
  ]
 }

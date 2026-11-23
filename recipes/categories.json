@@ -46,6 +46,25 @@
       "slug": "christmas",
       "name": "Christmas",
       "colour": "#9E2B35"
+    },
+    {
+      "slug": "breakfast",
+      "name": "Breakfast & Brunch",
+      "colour": "#C4963E",
+      "tile": "assets/tiles/breakfast.webp"
+    },
+    {
+      "slug": "spice-blends",
+      "name": "Spice Blends",
+      "colour": "#381848",
+      "tile": "assets/tiles/spice-blends.webp",
+      "noun": "blend"
+    },
+    {
+      "slug": "holidays",
+      "name": "Holidays",
+      "colour": "#5070A8",
+      "tile": "assets/tiles/holidays.webp"
     }
   ]
 }

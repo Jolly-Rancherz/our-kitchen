@@ -240,6 +240,7 @@ html[data-theme="dark"] .opt{color:var(--gold-soft)}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .mini{padding:10px 12px;color:#F5E6CE;background:var(--tile2)}
 .mini.navy{background:var(--tile1)}
+.mini.drink{background:var(--tile4)} /* update 14.0 drink pairing */
 .mini h3{font-family:"Cinzel";font-weight:600;font-size:.64rem;letter-spacing:.14em;color:var(--gold-soft);margin-bottom:4px}
 .mini p{font-size:.9rem;line-height:1.3}
 .wide{grid-column:1/-1}
@@ -1997,3 +1998,23 @@ html[data-theme="dark"] .xm-band{background:radial-gradient(circle at 10px 7px,#
 /* long messages wrap inside the toast instead of running past the screen edge (it was nowrap with a max width) */
 #toast{white-space:normal;line-height:1.25;width:max-content}
 #toast button{white-space:nowrap;flex:none}
+/* update 14.0: one seasonal tab slot (Christmas Nov 1–Dec 31, or the holiday in season). A day change while the app is
+   open cross-fades the bar's contents; the grid then simply has six or seven equal columns, so no gap is ever left. */
+#tabbar a{transition:opacity .16s ease}
+#tabbar.swap a{opacity:0}
+@media (prefers-reduced-motion:reduce){#tabbar a{transition:none}}
+#tabbar a[data-tab="holiday"] svg{fill:none}
+/* the holiday tab: a quiet ribbon in the holiday's colours, like Christmas's holly band */
+.hol-band{height:6px;margin:-6px calc(var(--gutter) * -1) 18px;border-radius:0 0 3px 3px;opacity:.8;background:repeating-linear-gradient(90deg,var(--hb1) 0 18px,var(--hb2) 18px 36px)}
+.hol-valentines{--hb1:#B0485A;--hb2:#E8B4BC}
+.hol-easter{--hb1:#8FB08A;--hb2:#E6CF7A}
+.hol-thanksgiving{--hb1:#B0573A;--hb2:#D4A24C}
+html[data-theme="dark"] .hol-band{opacity:.55}
+/* holiday recipes, out of the way at the foot of Home */
+.holrow{display:flex;align-items:center;gap:10px;margin:6px 0 4px;padding:12px 4px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
+.holrow span{font-weight:600;color:var(--ink);opacity:.8}
+.holrow small{flex:1;font-size:.72rem;text-align:right}
+.holrow svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;flex:none}
+/* update 14.0: with an odd number of chapters the last tile runs the full width (same height as the others),
+   so the grid ends square instead of leaving an empty half-row */
+.cats .cat-tile:last-child:nth-child(odd){grid-column:1/-1;aspect-ratio:2.2/1}

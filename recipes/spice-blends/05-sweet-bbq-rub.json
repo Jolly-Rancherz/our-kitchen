@@ -1,0 +1,263 @@
+{
+  "title": "Sweet BBQ Rub",
+  "subtitle": "a brown sugar and paprika rub for ribs, pulled pork and drumsticks",
+  "image": "assets/img/blend-sweet-bbq-rub.webp",
+  "imageAlt": "A small glass jar of dark red-brown sweet BBQ rub with a spoonful on a cream plate beside a navy napkin",
+  "servings": 3,
+  "servingsNote": "about ⅔ cup: 3 batches of about 3 tbsp",
+  "prep": 5,
+  "cook": 0,
+  "cost": {
+    "total": 1.45,
+    "breakdown": [
+      [
+        "Brown sugar, ¼ cup",
+        0.2,
+        "brown-sugar"
+      ],
+      [
+        "Paprika, 2 tbsp",
+        0.5,
+        "paprika"
+      ],
+      [
+        "Chili powder, garlic, onion, salt, pepper",
+        0.75
+      ]
+    ]
+  },
+  "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+      "blend"
+    ]
+  },
+  "badges": [
+    "Mild",
+    "No cooking"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "Use a clean, completely dry jar and spoon: any moisture makes the blend clump."
+    },
+    {
+      "icon": "knife",
+      "text": "Check the dates on your jars; spices older than a year lose most of their flavour."
+    }
+  ],
+  "groups": [
+    {
+      "name": "The blend",
+      "items": [
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 55,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "paprika",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "mild chili powder",
+          "pantry": {
+            "name": "Chili powder (mild)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Measure",
+      "text": "Measure everything into a small bowl.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Mix",
+      "text": "Whisk with a fork until the colour is even, breaking up any lumps.",
+      "uses": []
+    },
+    {
+      "title": "Jar it",
+      "text": "Spoon into a clean, dry jar, seal and label it with the name and date.",
+      "uses": []
+    },
+    {
+      "title": "Use it",
+      "text": "Use 3 tbsp per rack of back ribs or 1 kg pork shoulder or chicken. Rub it on, rest 30 minutes (or overnight in the fridge), then cook low and slow: pork to at least 71°C (160°F) (pulled pork to about 90°C / 195°F so it shreds), chicken to 74°C (165°F).",
+      "uses": []
+    }
+  ],
+  "together": "AAA*",
+  "fixIt": [
+    {
+      "problem": "Clumping",
+      "fix": "Moisture got in; break it up with a fork and keep the jar away from the stove's steam."
+    },
+    {
+      "problem": "Tastes flat",
+      "fix": "The spices are old; replace the oldest jar and remix."
+    },
+    {
+      "problem": "Too salty for you",
+      "fix": "Make the next batch with half the salt and salt the food separately."
+    }
+  ],
+  "saleTip": "No Frills bulk bins sell spices by weight: buy just a few tablespoons for a fraction of the jar price.",
+  "swap": "Leave out any one spice you don't have; the blend still works.",
+  "leftovers": "Keeps for months; a small jar makes a nice gift.",
+  "doneness": "No cooking. Season raw meat or fish with a clean spoon (never dip a spoon that touched raw meat back into the jar) and cook the food to its safe temperature.",
+  "source": "Based on common Canadian grocery-store and test-kitchen versions of this blend (Club House, Canadian Living, Serious Eats), made mild for us.",
+  "gear": [
+    "Measuring spoons",
+    "Small bowl",
+    "Fork",
+    "Small airtight jar",
+    "Label"
+  ],
+  "prepAhead": [
+    "Make a double batch; it keeps 4 months in a sealed jar."
+  ],
+  "reheat": "Nothing to reheat. Leftovers cooked with it reheat to 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Brown sugar, paprika, garlic and salt.",
+      "drop": [
+        "0-2",
+        "0-4",
+        "0-6"
+      ],
+      "stepNotes": {},
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Smoked paprika and a little cinnamon for a deeper, smokehouse rub.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 2,
+              "unit": "tsp",
+              "name": "smoked paprika",
+              "pantry": {
+                "name": "Smoked paprika",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "tsp",
+              "name": "ground cinnamon",
+              "pantry": {
+                "name": "Ground cinnamon",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: add the smoked paprika and cinnamon."
+      },
+      "costAdd": [
+        [
+          "Smoked paprika, cinnamon",
+          0.3
+        ]
+      ],
+      "plating": [
+        "Pour into a small glass jar.",
+        "Hand-write the label with the date.",
+        "Tie twine around the lid if it's a gift."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Brown sugar caramelizes into a sticky bark.",
+    "0-2": "Mild chili powder adds depth without heat."
+  },
+  "fancyNight": false,
+  "funFact": "Barbecue rubs date back to colonial-era smoke pits; sugar-heavy sweet rubs are the Kansas City style.",
+  "keeps": {
+    "room": "4 months in a sealed jar, away from heat and light",
+    "freezer": null,
+    "note": "no need; the cupboard is best (the freezer adds moisture)"
+  },
+  "pairs": [
+    [
+      "steak-pork-08",
+      "rubbed on the ribs"
+    ],
+    [
+      "steak-pork-05",
+      "on the pork shoulder"
+    ]
+  ]
+}

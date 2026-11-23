@@ -1,0 +1,262 @@
+{
+  "title": "Greek Seasoning",
+  "subtitle": "a lemony blend of dried oregano and garlic for souvlaki, potatoes and pork",
+  "image": "assets/img/blend-greek-seasoning.webp",
+  "imageAlt": "A small glass jar of greenish Greek seasoning blend with a spoonful on a cream plate beside a navy napkin",
+  "servings": 4,
+  "servingsNote": "about ⅓ cup: 4 batches of 4 tsp",
+  "prep": 5,
+  "cook": 0,
+  "cost": {
+    "total": 1.1,
+    "breakdown": [
+      [
+        "Dried oregano, 2 tbsp",
+        0.4,
+        "dried-oregano"
+      ],
+      [
+        "Garlic and onion powder",
+        0.35,
+        "garlic-powder"
+      ],
+      [
+        "Dried thyme, cinnamon, paprika, salt, pepper",
+        0.35
+      ]
+    ]
+  },
+  "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+      "blend"
+    ]
+  },
+  "badges": [
+    "Dried herbs only",
+    "No cooking"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "Use a clean, completely dry jar and spoon: any moisture makes the blend clump."
+    },
+    {
+      "icon": "knife",
+      "text": "Check the dates on your jars; spices older than a year lose most of their flavour."
+    }
+  ],
+  "groups": [
+    {
+      "name": "The blend",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "dried oregano",
+          "pantry": {
+            "name": "Dried oregano",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "paprika",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Measure",
+      "text": "Measure everything into a small bowl.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Mix",
+      "text": "Whisk with a fork until the colour is even, breaking up any lumps.",
+      "uses": []
+    },
+    {
+      "title": "Jar it",
+      "text": "Spoon into a clean, dry jar, seal and label it with the name and date.",
+      "uses": []
+    },
+    {
+      "title": "Use it",
+      "text": "Use 4 tsp per 700 g chicken or pork with 2 tbsp olive oil and the juice of 1 lemon; marinate 1–8 hours in the fridge. Cook chicken to 74°C (165°F) and pork to 71°C (160°F). For lemon potatoes, 1 tbsp per 1 kg.",
+      "uses": []
+    }
+  ],
+  "together": "AAA*",
+  "fixIt": [
+    {
+      "problem": "Clumping",
+      "fix": "Moisture got in; break it up with a fork and keep the jar away from the stove's steam."
+    },
+    {
+      "problem": "Tastes flat",
+      "fix": "The spices are old; replace the oldest jar and remix."
+    },
+    {
+      "problem": "Too salty for you",
+      "fix": "Make the next batch with half the salt and salt the food separately."
+    }
+  ],
+  "saleTip": "No Frills bulk bins sell spices by weight: buy just a few tablespoons for a fraction of the jar price.",
+  "swap": "Leave out any one spice you don't have; the blend still works.",
+  "leftovers": "Keeps for months; a small jar makes a nice gift.",
+  "doneness": "No cooking. Season raw meat or fish with a clean spoon (never dip a spoon that touched raw meat back into the jar) and cook the food to its safe temperature.",
+  "source": "Based on common Canadian grocery-store and test-kitchen versions of this blend (Club House, Canadian Living, Serious Eats), made mild for us.",
+  "gear": [
+    "Measuring spoons",
+    "Small bowl",
+    "Fork",
+    "Small airtight jar",
+    "Label"
+  ],
+  "prepAhead": [
+    "Make a double batch; it keeps 6 months in a sealed jar."
+  ],
+  "reheat": "Nothing to reheat. Leftovers cooked with it reheat to 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Dried oregano, garlic, salt and pepper.",
+      "drop": [
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5"
+      ],
+      "stepNotes": {},
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Dried lemon zest stirred in for a bright, finished blend.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "lemon",
+              "note": "zest only, dried 1 hour on a plate",
+              "pantry": {
+                "name": "Lemons",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Dry the zest",
+          "text": "Spread the lemon zest on a plate 1 hour (or microwave 1 minute in 20-second bursts) until dry, then stir it in."
+        }
+      ],
+      "costAdd": [
+        [
+          "Lemon",
+          0.79,
+          "lemons"
+        ]
+      ],
+      "plating": [
+        "Pour into a small glass jar.",
+        "Hand-write the label with the date.",
+        "Tie twine around the lid if it's a gift."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Dried Greek oregano is the backbone: earthy and a little minty.",
+    "0-4": "A pinch of cinnamon is a Greek kitchen secret in meat dishes."
+  },
+  "fancyNight": false,
+  "funFact": "Greek cooks call dried oregano rigani and hang wild bunches to dry; its old Greek name is often translated as 'joy of the mountain'.",
+  "keeps": {
+    "room": "6 months in a sealed jar, away from heat and light",
+    "freezer": null,
+    "note": "no need; the cupboard is best (the freezer adds moisture)"
+  },
+  "pairs": [
+    [
+      "chicken-19",
+      "in the souvlaki marinade"
+    ]
+  ]
+}

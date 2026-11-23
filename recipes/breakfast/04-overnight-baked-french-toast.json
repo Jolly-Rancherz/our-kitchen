@@ -1,0 +1,382 @@
+{
+  "title": "Overnight Baked French Toast",
+  "subtitle": "cinnamon custard-soaked bread under a buttery brown sugar crust, ready to bake",
+  "image": "assets/img/baked-french-toast.webp",
+  "imageAlt": "A golden baked French toast casserole with a caramelized brown sugar top, one portion on a cream plate with maple syrup and a navy napkin",
+  "servings": 6,
+  "servingsNote": "a 9×13 dish: brunch for two, plus 4 more",
+  "prep": 20,
+  "cook": 50,
+  "cost": {
+    "total": 12.26,
+    "breakdown": [
+      [
+        "Crusty bread, 1 loaf",
+        3.49,
+        "crusty-bread"
+      ],
+      [
+        "Eggs, 6",
+        2.35,
+        "eggs"
+      ],
+      [
+        "Milk, 2½ cups",
+        1.81,
+        "milk"
+      ],
+      [
+        "Brown sugar, ⅔ cup",
+        0.5,
+        "brown-sugar"
+      ],
+      [
+        "Butter, ¼ cup",
+        0.8,
+        "butter"
+      ],
+      [
+        "Maple syrup, ½ cup",
+        2.31,
+        "maple-syrup"
+      ],
+      [
+        "Vanilla, cinnamon, salt",
+        1.0
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "breakfast"
+    ]
+  },
+  "badges": [
+    "Make-ahead",
+    "Weekend brunch"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Soak it at least 4 hours or overnight in the fridge."
+    },
+    {
+      "icon": "knife",
+      "text": "Day-old crusty bread holds its shape best."
+    }
+  ],
+  "groups": [
+    {
+      "name": "French toast",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "for the dish",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "loaf crusty bread",
+          "note": "about 450 g, day-old, torn in 3 cm pieces",
+          "pantry": {
+            "name": "Crusty bread",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 6,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2.5,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 625,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 70,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Crumble top",
+      "items": [
+        {
+          "qty": 4,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 56,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 70,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To serve",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "maple syrup",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Maple syrup",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Fill the dish",
+      "text": "Butter a 23×33 cm (9×13 in) baking dish and pile in the bread.",
+      "uses": [
+        "0-0",
+        "0-1"
+      ]
+    },
+    {
+      "title": "Custard",
+      "text": "Whisk the eggs, milk, brown sugar, cinnamon, vanilla and salt. Pour evenly over the bread and press it down.",
+      "uses": [
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Soak",
+      "text": "Cover and refrigerate at least 4 hours, or overnight.",
+      "uses": []
+    },
+    {
+      "title": "Top and bake",
+      "text": "Heat the oven to 175°C (350°F). Stir the melted butter, brown sugar and cinnamon together and drizzle over the top. Bake uncovered 45–50 minutes, until puffed, golden and 74°C (165°F) in the centre.",
+      "timer": 48,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Rest 10 minutes and serve with warm maple syrup.",
+      "timer": 10,
+      "uses": [
+        "2-0"
+      ]
+    }
+  ],
+  "together": "AAAA*",
+  "fixIt": [
+    {
+      "problem": "Wet in the middle",
+      "fix": "Bake 10 minutes more, tented with foil, until 74°C (165°F)."
+    },
+    {
+      "problem": "Top burning",
+      "fix": "Tent loosely with foil after 30 minutes."
+    },
+    {
+      "problem": "Too dense",
+      "fix": "Use crusty bread rather than soft sandwich bread, and tear, don't cube."
+    }
+  ],
+  "saleTip": "No Frills bakery marks day-old loaves down in the evening; perfect for this.",
+  "swap": "Challah or brioche for crusty bread. Half-and-half for some of the milk.",
+  "leftovers": "Reheat squares in the toaster oven for a crisp top.",
+  "doneness": "Egg dishes to 74°C (165°F) in the centre (Health Canada).",
+  "source": "Based on tested overnight French toast casserole methods (Canadian Living, Allrecipes test kitchen): torn day-old bread soaked in a cinnamon custard, topped with butter and brown sugar and baked at 175°C.",
+  "gear": [
+    "23×33 cm (9×13 in) baking dish",
+    "Large bowl",
+    "Whisk",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Assemble up to 24 hours ahead; add the topping just before baking."
+  ],
+  "reheat": "Covered in the microwave 1–2 minutes, or at 180°C (350°F) for 12 minutes, until 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Cinnamon French toast bake with syrup; no crumble top.",
+      "drop": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ],
+      "stepNotes": {
+        "3": "Basic: skip the topping; just bake."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Berries baked on top and a dusting of icing sugar.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 1.5,
+              "unit": "cup",
+              "name": "frozen mixed berries",
+              "pantry": {
+                "name": "Frozen mixed berries",
+                "cat": "frozen"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "icing sugar",
+              "pantry": {
+                "name": "Icing sugar",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: scatter the berries over the top before the crumble.",
+        "4": "Fancy: dust with icing sugar through a sieve."
+      },
+      "costAdd": [
+        [
+          "Frozen berries, 1½ cups",
+          2.25,
+          "frozen-mixed-berries"
+        ],
+        [
+          "Icing sugar",
+          0.1,
+          "icing-sugar"
+        ]
+      ],
+      "plating": [
+        "Scoop, don't slice, for the craggy top.",
+        "Icing sugar snow on top.",
+        "Syrup in a small jug."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "Crusty bread soaks up the custard and keeps a little chew.",
+    "1-1": "The brown sugar and butter top bakes into a crackly crust."
+  },
+  "fancyNight": false,
+  "funFact": "French toast is far older than France: a Roman cookbook from about the 4th century soaks bread in milk and egg and fries it.",
+  "keeps": {
+    "fridge": "4 days",
+    "freezer": "2 months",
+    "note": "freeze baked squares"
+  },
+  "drink": "Hot coffee with cream, or cold milk.",
+  "pairs": []
+}

@@ -1,0 +1,369 @@
+{
+  "title": "Classic Diner Breakfast",
+  "subtitle": "eggs your way, crispy bacon, golden home fries and buttered toast",
+  "image": "assets/img/diner-breakfast.webp",
+  "imageAlt": "Two fried eggs, crispy bacon strips, golden home fries and buttered toast on a cream plate with a navy napkin",
+  "servings": 2,
+  "servingsNote": "a big breakfast for two",
+  "prep": 10,
+  "cook": 30,
+  "cost": {
+    "total": 7.07,
+    "breakdown": [
+      [
+        "Eggs, 4",
+        1.56,
+        "eggs"
+      ],
+      [
+        "Bacon, 6 slices",
+        2.8,
+        "bacon"
+      ],
+      [
+        "Yukon Gold potatoes, 500 g",
+        1.21,
+        "yukon-gold-potatoes"
+      ],
+      [
+        "Bread, 4 slices",
+        0.6,
+        "sandwich-bread-white"
+      ],
+      [
+        "Butter, onion, oil, spices",
+        0.9
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "oven-bake"
+    ],
+    "base": [
+      "potatoes",
+      "bread-wraps"
+    ],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+      "breakfast"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Weekend brunch"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "Bacon goes in the oven so the stove is free for potatoes and eggs."
+    },
+    {
+      "icon": "pot",
+      "text": "Par-cook the potatoes in the microwave so the home fries crisp in 12 minutes."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Home fries",
+      "items": [
+        {
+          "qty": 500,
+          "unit": "g",
+          "name": "Yukon Gold potatoes",
+          "note": "cut in 2 cm cubes",
+          "pantry": {
+            "name": "Yukon Gold potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bacon and eggs",
+      "items": [
+        {
+          "qty": 6,
+          "unit": null,
+          "name": "slices bacon",
+          "pantry": {
+            "name": "Bacon",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.125,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Toast",
+      "items": [
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "slices white sandwich bread",
+          "pantry": {
+            "name": "Sandwich bread (white)",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "softened",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Bacon",
+      "text": "Heat the oven to 200°C (400°F). Lay the bacon on a foil-lined baking sheet and bake 15–18 minutes, until crisp. Drain on paper towel.",
+      "timer": 16,
+      "uses": [
+        "1-0"
+      ]
+    },
+    {
+      "title": "Par-cook",
+      "text": "Meanwhile, microwave the potatoes in a covered bowl with 2 tbsp water for 5 minutes, until just tender. Drain.",
+      "timer": 5,
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Home fries",
+      "text": "Heat the oil in a large skillet over medium-high. Add the potatoes in one layer and cook 10–12 minutes, turning every few minutes, until golden. Add the onion, paprika, salt and pepper for the last 5 minutes. Keep warm in the oven, turned off.",
+      "timer": 11,
+      "uses": [
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Eggs",
+      "text": "Melt the butter in a nonstick skillet over medium-low. Crack in the eggs, sprinkle with salt, cover and cook 3–4 minutes, until the whites are completely set and the yolks are firm. Flip for over-easy if you like, 30 seconds.",
+      "timer": 4,
+      "uses": [
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Toast and serve",
+      "text": "Toast and butter the bread. Plate the eggs, bacon, home fries and toast.",
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    }
+  ],
+  "together": "ABAB*",
+  "fixIt": [
+    {
+      "problem": "Bacon curling",
+      "fix": "Start it in a cold oven next time, or use thicker slices."
+    },
+    {
+      "problem": "Egg whites crispy and brown",
+      "fix": "Lower the heat; covering the pan sets the tops gently."
+    },
+    {
+      "problem": "Home fries pale",
+      "fix": "Dry the potatoes well and don't crowd the pan."
+    }
+  ],
+  "saleTip": "No Frills bacon is often 2 for $10; freeze one pack flat.",
+  "swap": "Peameal bacon slices for bacon (cook to 71°C / 160°F). Rye or whole wheat toast.",
+  "leftovers": "Leftover home fries and bacon go into breakfast burritos.",
+  "doneness": "Fried eggs until the whites and yolks are firm, the Health Canada advice for eggs; bacon cooked crisp.",
+  "source": "Based on classic Canadian diner breakfasts and tested oven-bacon and home fry methods (Canadian Living, Serious Eats).",
+  "gear": [
+    "Rimmed baking sheet",
+    "Large skillet",
+    "Nonstick skillet with lid",
+    "Toaster"
+  ],
+  "prepAhead": [
+    "Cube the potatoes the night before and keep them covered in cold water in the fridge."
+  ],
+  "reheat": "Home fries and bacon in a skillet over medium 3–4 minutes, until 74°C (165°F). Cook eggs fresh.",
+  "levels": {
+    "basic": {
+      "note": "Eggs, bacon and toast; no home fries.",
+      "drop": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the potatoes.",
+        "2": "Basic: no home fries."
+      },
+      "costDrop": [
+        "yukon-gold-potatoes"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Add warm baked beans and pan-fried tomato halves, a full Sunday plate.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "can (398 ml) baked beans",
+              "pantry": {
+                "name": "Baked beans (canned)",
+                "cat": "canned"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": null,
+              "name": "tomatoes",
+              "note": "halved",
+              "pantry": {
+                "name": "Tomatoes",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Beans and tomatoes",
+          "text": "Warm the beans in a small pot until bubbling. Sear the tomato halves cut side down in the bacon pan drippings 2 minutes."
+        }
+      ],
+      "costAdd": [
+        [
+          "Baked beans, 1 can",
+          1.49,
+          "baked-beans-canned"
+        ],
+        [
+          "Tomatoes, 2",
+          1.5,
+          "tomatoes"
+        ]
+      ],
+      "plating": [
+        "Eggs at the centre, bacon crossed beside.",
+        "Toast cut in triangles.",
+        "Beans in a small dish."
+      ]
+    }
+  },
+  "why": {
+    "1-2": "Covering the pan steams the tops so the yolks firm up without crisping the whites.",
+    "0-0": "Yukon Golds crisp outside and stay creamy inside."
+  },
+  "fancyNight": false,
+  "funFact": "The 'diner' gets its name from railway dining cars; many early diners were built in factories and shipped on trucks.",
+  "keeps": {
+    "fridge": "3 days",
+    "freezer": null,
+    "note": "eggs and toast are best fresh; keep leftover home fries and bacon in the fridge"
+  },
+  "drink": "Bottomless coffee, or orange juice with a splash of soda water.",
+  "pairs": []
+}

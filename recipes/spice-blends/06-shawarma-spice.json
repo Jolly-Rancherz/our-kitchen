@@ -1,0 +1,277 @@
+{
+  "title": "Shawarma Spice",
+  "subtitle": "a warm, fragrant blend for chicken shawarma, kebabs and roasted cauliflower",
+  "image": "assets/img/blend-shawarma-spice.webp",
+  "imageAlt": "A small glass jar of golden-brown shawarma spice blend with a spoonful on a cream plate beside a navy napkin",
+  "servings": 4,
+  "servingsNote": "about ⅓ cup: 4 batches of 4 tsp",
+  "prep": 5,
+  "cook": 0,
+  "cost": {
+    "total": 1.4,
+    "breakdown": [
+      [
+        "Cumin and coriander, 1 tbsp each",
+        0.65,
+        "ground-coriander"
+      ],
+      [
+        "Paprika, turmeric, garlic",
+        0.45,
+        "ground-turmeric"
+      ],
+      [
+        "Cinnamon, allspice, salt, pepper",
+        0.3
+      ]
+    ]
+  },
+  "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+      "blend"
+    ]
+  },
+  "badges": [
+    "Mild",
+    "No cooking"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "Use a clean, completely dry jar and spoon: any moisture makes the blend clump."
+    },
+    {
+      "icon": "knife",
+      "text": "Check the dates on your jars; spices older than a year lose most of their flavour."
+    }
+  ],
+  "groups": [
+    {
+      "name": "The blend",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "ground cumin",
+          "pantry": {
+            "name": "Ground cumin",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "ground coriander",
+          "pantry": {
+            "name": "Ground coriander",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "paprika",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "ground turmeric",
+          "pantry": {
+            "name": "Ground turmeric",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground allspice",
+          "pantry": {
+            "name": "Ground allspice",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Measure",
+      "text": "Measure everything into a small bowl.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8"
+      ]
+    },
+    {
+      "title": "Mix",
+      "text": "Whisk with a fork until the colour is even, breaking up any lumps.",
+      "uses": []
+    },
+    {
+      "title": "Jar it",
+      "text": "Spoon into a clean, dry jar, seal and label it with the name and date.",
+      "uses": []
+    },
+    {
+      "title": "Use it",
+      "text": "Use 4 tsp per 700 g chicken thighs with 2 tbsp oil, 2 tbsp lemon juice and 2 cloves garlic; marinate 1–24 hours in the fridge and cook to 74°C (165°F).",
+      "uses": []
+    }
+  ],
+  "together": "AAA*",
+  "fixIt": [
+    {
+      "problem": "Clumping",
+      "fix": "Moisture got in; break it up with a fork and keep the jar away from the stove's steam."
+    },
+    {
+      "problem": "Tastes flat",
+      "fix": "The spices are old; replace the oldest jar and remix."
+    },
+    {
+      "problem": "Too salty for you",
+      "fix": "Make the next batch with half the salt and salt the food separately."
+    }
+  ],
+  "saleTip": "No Frills bulk bins sell spices by weight: buy just a few tablespoons for a fraction of the jar price.",
+  "swap": "Leave out any one spice you don't have; the blend still works.",
+  "leftovers": "Keeps for months; a small jar makes a nice gift.",
+  "doneness": "No cooking. Season raw meat or fish with a clean spoon (never dip a spoon that touched raw meat back into the jar) and cook the food to its safe temperature.",
+  "source": "Based on common Canadian grocery-store and test-kitchen versions of this blend (Club House, Canadian Living, Serious Eats), made mild for us.",
+  "gear": [
+    "Measuring spoons",
+    "Small bowl",
+    "Fork",
+    "Small airtight jar",
+    "Label"
+  ],
+  "prepAhead": [
+    "Make a double batch; it keeps 6 months in a sealed jar."
+  ],
+  "reheat": "Nothing to reheat. Leftovers cooked with it reheat to 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Cumin, coriander, paprika, garlic and salt.",
+      "drop": [
+        "0-3",
+        "0-5",
+        "0-6"
+      ],
+      "stepNotes": {},
+      "costDrop": [
+        "ground-turmeric"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Add ground cardamom and ginger for a deeper, restaurant-style blend.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 0.25,
+              "unit": "tsp",
+              "name": "ground cardamom",
+              "pantry": {
+                "name": "Ground cardamom",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "tsp",
+              "name": "ground ginger",
+              "pantry": {
+                "name": "Ground ginger",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: add the cardamom and ginger."
+      },
+      "costAdd": [
+        [
+          "Cardamom, ginger",
+          0.45
+        ]
+      ],
+      "plating": [
+        "Pour into a small glass jar.",
+        "Hand-write the label with the date.",
+        "Tie twine around the lid if it's a gift."
+      ]
+    }
+  },
+  "why": {
+    "0-5": "A little cinnamon and allspice give shawarma its warm, sweet-spice smell.",
+    "0-3": "Turmeric gives the golden colour."
+  },
+  "fancyNight": false,
+  "funFact": "Shawarma comes from the Turkish word çevirme, 'turning', for the slowly rotating vertical spit.",
+  "keeps": {
+    "room": "6 months in a sealed jar, away from heat and light",
+    "freezer": null,
+    "note": "no need; the cupboard is best (the freezer adds moisture)"
+  },
+  "pairs": [
+    [
+      "chicken-16",
+      "in the chicken marinade"
+    ]
+  ]
+}

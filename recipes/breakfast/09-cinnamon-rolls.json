@@ -1,0 +1,442 @@
+{
+  "title": "Cinnamon Rolls with Cream Cheese Icing",
+  "subtitle": "soft, pull-apart rolls with a brown sugar cinnamon swirl and tangy icing",
+  "image": "assets/img/cinnamon-rolls.webp",
+  "imageAlt": "A pan of soft cinnamon rolls spread with cream cheese icing, one lifted onto a cream plate beside a navy napkin",
+  "servings": 12,
+  "servingsNote": "12 rolls in a 9×13 pan",
+  "prep": 120,
+  "cook": 25,
+  "cost": {
+    "total": 8.23,
+    "breakdown": [
+      [
+        "Flour, 3½ cups",
+        0.91,
+        "all-purpose-flour"
+      ],
+      [
+        "Milk, 1 cup",
+        0.73,
+        "milk"
+      ],
+      [
+        "Instant yeast, 1 pouch",
+        0.66,
+        "instant-yeast"
+      ],
+      [
+        "Butter, ⅔ cup",
+        2.13,
+        "butter"
+      ],
+      [
+        "Brown sugar, ⅔ cup",
+        0.5,
+        "brown-sugar"
+      ],
+      [
+        "Cream cheese, 125 g",
+        1.5,
+        "cream-cheese-brick"
+      ],
+      [
+        "Icing sugar, 1 cup",
+        0.6,
+        "icing-sugar"
+      ],
+      [
+        "Egg, sugar, cinnamon, vanilla, salt",
+        1.2
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "breakfast"
+    ]
+  },
+  "badges": [
+    "Weekend project",
+    "Make-ahead"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "Warm the milk to about 45°C (110°F): warm to the touch, not hot, or it kills the yeast."
+    },
+    {
+      "icon": "thaw",
+      "text": "Soften the cream cheese and butter on the counter for the icing."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Dough",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "milk",
+          "note": "warmed to 45°C (110°F)",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "pouch (8 g) instant yeast",
+          "note": "2¼ tsp",
+          "pantry": {
+            "name": "Instant yeast",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "granulated sugar",
+          "metric": {
+            "qty": 50,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 75,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 3.5,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "note": "plus a little for rolling",
+          "metric": {
+            "qty": 455,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Filling",
+      "items": [
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "butter",
+          "note": "very soft",
+          "metric": {
+            "qty": 57,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.67,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 140,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cream cheese icing",
+      "items": [
+        {
+          "qty": 125,
+          "unit": "g",
+          "name": "brick cream cheese",
+          "note": "softened",
+          "pantry": {
+            "name": "Cream cheese (brick)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "softened",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "icing sugar",
+          "metric": {
+            "qty": 125,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Icing sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Dough",
+      "text": "Stir the warm milk, yeast and sugar in a large bowl. Add the melted butter, egg, salt and 3 cups of the flour and stir into a shaggy dough.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-6",
+        "0-5=3 cups"
+      ]
+    },
+    {
+      "title": "Knead",
+      "text": "Knead in the rest of the flour on a floured counter 6–8 minutes, until smooth and just tacky.",
+      "uses": [
+        "0-5=½ cup"
+      ]
+    },
+    {
+      "title": "First rise",
+      "text": "Place in a greased bowl, cover and let rise somewhere warm about 1 hour, until doubled.",
+      "timer": 60,
+      "uses": []
+    },
+    {
+      "title": "Roll and fill",
+      "text": "Roll the dough into a 40×30 cm (16×12 in) rectangle. Spread with the soft butter, then sprinkle the brown sugar and cinnamon to the edges. Roll up tightly from the long side, pinch the seam and cut into 12 slices with floss or a sharp knife.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Second rise",
+      "text": "Arrange in a greased 23×33 cm (9×13 in) pan, cover and let rise 30–45 minutes, until puffy and touching. Heat the oven to 175°C (350°F).",
+      "timer": 40,
+      "uses": []
+    },
+    {
+      "title": "Bake",
+      "text": "Bake 22–26 minutes, until golden and the centre roll reads 88°C (190°F).",
+      "timer": 24,
+      "uses": []
+    },
+    {
+      "title": "Ice",
+      "text": "Beat the cream cheese, butter, icing sugar and vanilla until smooth. Spread over the warm rolls.",
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3"
+      ]
+    }
+  ],
+  "together": "AAAAAA*",
+  "fixIt": [
+    {
+      "problem": "Dough didn't rise",
+      "fix": "The milk was too hot or the yeast old; move it somewhere warmer, like the oven with just the light on."
+    },
+    {
+      "problem": "Filling leaking",
+      "fix": "Roll tighter and keep the butter soft, not melted."
+    },
+    {
+      "problem": "Squashed slices",
+      "fix": "Cut with unflavoured dental floss: slide under, cross and pull."
+    }
+  ],
+  "saleTip": "Instant yeast in the jar is far cheaper than pouches if you bake often; keep it in the freezer.",
+  "swap": "Active dry yeast: let it foam in the milk 10 minutes first. Plain glaze for the icing.",
+  "leftovers": "Warm a roll 15 seconds in the microwave.",
+  "doneness": "Bake until golden and the centre roll reads 88°C (190°F); the egg in the dough is fully cooked. No meat.",
+  "source": "Based on tested cinnamon roll methods (King Arthur Baking, Canadian Living): an enriched milk dough with instant yeast, two rises, rolled with butter, brown sugar and cinnamon and baked at 175°C.",
+  "gear": [
+    "Large bowl",
+    "Rolling pin",
+    "23×33 cm (9×13 in) pan",
+    "Dental floss or sharp knife",
+    "Mixer or wooden spoon",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Overnight: after cutting and arranging, cover and refrigerate up to 16 hours. Let them sit out 45 minutes to finish rising, then bake.",
+    "Freeze baked, un-iced rolls up to 2 months."
+  ],
+  "reheat": "Microwave a roll 15–20 seconds; no food-safety reheat needed.",
+  "levels": {
+    "basic": {
+      "note": "A simple icing sugar and water glaze instead of cream cheese icing.",
+      "drop": [
+        "2-0",
+        "2-1",
+        "2-3"
+      ],
+      "stepNotes": {
+        "6": "Basic: stir the icing sugar with 2 tbsp water and drizzle it over."
+      },
+      "costDrop": [
+        "cream-cheese-brick"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Toasted pecans in the swirl and a maple cream cheese icing.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "pecans",
+              "note": "toasted and chopped",
+              "metric": {
+                "qty": 55,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Pecan halves",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "maple syrup",
+              "note": "for the icing",
+              "pantry": {
+                "name": "Maple syrup",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: scatter the pecans over the cinnamon sugar before rolling.",
+        "6": "Fancy: beat the maple syrup into the icing."
+      },
+      "costAdd": [
+        [
+          "Pecans, ½ cup",
+          2.0,
+          "pecan-halves"
+        ],
+        [
+          "Maple syrup, 2 tbsp",
+          0.58,
+          "maple-syrup"
+        ]
+      ],
+      "plating": [
+        "Pull one out of the corner for the gooiest piece.",
+        "Extra icing on top.",
+        "Serve warm."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "Instant yeast works straight from the pouch with warm milk, no proofing step.",
+    "2-0": "Cream cheese adds a tang that balances the sweet swirl."
+  },
+  "fancyNight": false,
+  "funFact": "Sweden celebrates Cinnamon Bun Day (Kanelbullens dag) every October 4.",
+  "keeps": {
+    "room": "2 days, covered",
+    "fridge": "4 days (iced rolls)",
+    "freezer": "2 months",
+    "note": "freeze un-iced",
+    "thaw": "Thaw on the counter 1 hour, then warm 15–20 seconds and ice"
+  },
+  "drink": "A latte or hot coffee; cold milk for the kids at heart.",
+  "pairs": []
+}

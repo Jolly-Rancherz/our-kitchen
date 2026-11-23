@@ -1,0 +1,252 @@
+{
+  "title": "Mild Steak Spice",
+  "subtitle": "a mild Montreal-style steak rub, all flavour and no heat",
+  "image": "assets/img/blend-mild-steak-spice.webp",
+  "imageAlt": "A small glass jar of coarse speckled steak spice with a spoonful on a cream plate beside a navy napkin",
+  "servings": 5,
+  "servingsNote": "about ⅓ cup: 5 batches of 1 tbsp",
+  "prep": 5,
+  "cook": 0,
+  "cost": {
+    "total": 1.15,
+    "breakdown": [
+      [
+        "Coarse salt and pepper, 1 tbsp each",
+        0.35,
+        "black-pepper"
+      ],
+      [
+        "Garlic and onion powder, paprika",
+        0.6,
+        "garlic-powder"
+      ],
+      [
+        "Ground coriander, 1 tsp",
+        0.2,
+        "ground-coriander"
+      ]
+    ]
+  },
+  "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+      "blend"
+    ]
+  },
+  "badges": [
+    "Mild",
+    "No cooking"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "Use a clean, completely dry jar and spoon: any moisture makes the blend clump."
+    },
+    {
+      "icon": "knife",
+      "text": "Check the dates on your jars; spices older than a year lose most of their flavour."
+    }
+  ],
+  "groups": [
+    {
+      "name": "The blend",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "coarse salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "coarse black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "paprika",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "ground coriander",
+          "pantry": {
+            "name": "Ground coriander",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Measure",
+      "text": "Measure everything into a small bowl.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Mix",
+      "text": "Whisk with a fork until the colour is even, breaking up any lumps.",
+      "uses": []
+    },
+    {
+      "title": "Jar it",
+      "text": "Spoon into a clean, dry jar, seal and label it with the name and date.",
+      "uses": []
+    },
+    {
+      "title": "Use it",
+      "text": "Use 1 tbsp per 500 g steak, chops or burgers. Pat the meat dry, oil it lightly, press the spice on and cook steaks to at least 63°C (145°F), pork to 71°C (160°F) and burgers to 71°C (160°F).",
+      "uses": []
+    }
+  ],
+  "together": "AAA*",
+  "fixIt": [
+    {
+      "problem": "Clumping",
+      "fix": "Moisture got in; break it up with a fork and keep the jar away from the stove's steam."
+    },
+    {
+      "problem": "Tastes flat",
+      "fix": "The spices are old; replace the oldest jar and remix."
+    },
+    {
+      "problem": "Too salty for you",
+      "fix": "Make the next batch with half the salt and salt the food separately."
+    }
+  ],
+  "saleTip": "No Frills bulk bins sell spices by weight: buy just a few tablespoons for a fraction of the jar price.",
+  "swap": "Leave out any one spice you don't have; the blend still works.",
+  "leftovers": "Keeps for months; a small jar makes a nice gift.",
+  "doneness": "No cooking. Season raw meat or fish with a clean spoon (never dip a spoon that touched raw meat back into the jar) and cook the food to its safe temperature.",
+  "source": "Based on common Canadian grocery-store and test-kitchen versions of this blend (Club House, Canadian Living, Serious Eats), made mild for us.",
+  "gear": [
+    "Measuring spoons",
+    "Small bowl",
+    "Fork",
+    "Small airtight jar",
+    "Label"
+  ],
+  "prepAhead": [
+    "Make a double batch; it keeps 6 months in a sealed jar."
+  ],
+  "reheat": "Nothing to reheat. Leftovers cooked with it reheat to 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Salt, pepper and garlic powder only.",
+      "drop": [
+        "0-3",
+        "0-4",
+        "0-5"
+      ],
+      "stepNotes": {},
+      "costDrop": [
+        "ground-coriander"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Add brown sugar and a little smoked paprika for a steakhouse crust.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "packed brown sugar",
+              "pantry": {
+                "name": "Brown sugar",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "smoked paprika",
+              "pantry": {
+                "name": "Smoked paprika",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: add the brown sugar and smoked paprika."
+      },
+      "costAdd": [
+        [
+          "Brown sugar, smoked paprika",
+          0.2
+        ]
+      ],
+      "plating": [
+        "Pour into a small glass jar.",
+        "Hand-write the label with the date.",
+        "Tie twine around the lid if it's a gift."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "Coarse pepper gives the crunchy crust Montreal steak spice is known for.",
+    "0-5": "Coriander seed adds a light citrusy note instead of the usual seeds."
+  },
+  "fancyNight": false,
+  "funFact": "Montreal steak spice comes from the pickling spices used on Montreal smoked meat; a deli broiler-man started sprinkling it on steaks in the 1940s.",
+  "keeps": {
+    "room": "6 months in a sealed jar, away from heat and light",
+    "freezer": null,
+    "note": "no need; the cupboard is best (the freezer adds moisture)"
+  },
+  "pairs": [
+    [
+      "steak-pork-06",
+      "pressed on the sirloin"
+    ],
+    [
+      "steak-pork-11",
+      "on the striploin"
+    ]
+  ]
+}

@@ -1,0 +1,334 @@
+{
+  "title": "Banana Bread",
+  "subtitle": "moist, brown sugar banana bread for the browning bananas on the counter",
+  "image": "assets/img/banana-bread.webp",
+  "imageAlt": "A golden loaf of banana bread with two thick slices cut and buttered on a cream plate beside a navy napkin",
+  "servings": 10,
+  "servingsNote": "one loaf, 10 slices",
+  "prep": 15,
+  "cook": 60,
+  "cost": {
+    "total": 3.86,
+    "breakdown": [
+      [
+        "Bananas, 3 very ripe",
+        0.9,
+        "bananas"
+      ],
+      [
+        "Flour, 1½ cups",
+        0.39,
+        "all-purpose-flour"
+      ],
+      [
+        "Brown sugar, ¾ cup",
+        0.56,
+        "brown-sugar"
+      ],
+      [
+        "Butter, ⅓ cup",
+        1.07,
+        "butter"
+      ],
+      [
+        "Egg",
+        0.39,
+        "eggs"
+      ],
+      [
+        "Vanilla, soda, salt, cinnamon",
+        0.55
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ],
+    "course": [
+      "breakfast"
+    ]
+  },
+  "badges": [
+    "Budget",
+    "Freezer-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "The bananas should be heavily speckled or black; that's where the flavour is."
+    },
+    {
+      "icon": "oven",
+      "text": "Line the loaf pan with parchment for an easy lift-out."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Wet",
+      "items": [
+        {
+          "qty": 3,
+          "unit": null,
+          "name": "very ripe bananas",
+          "note": "mashed (about 1½ cups)",
+          "pantry": {
+            "name": "Bananas",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 75,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 160,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dry",
+      "items": [
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 195,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "baking soda",
+          "pantry": {
+            "name": "Baking soda",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Heat",
+      "text": "Heat the oven to 175°C (350°F). Grease a 23×13 cm (9×5 in) loaf pan and line it with parchment.",
+      "uses": []
+    },
+    {
+      "title": "Wet",
+      "text": "Mash the bananas in a large bowl, then whisk in the melted butter, brown sugar, egg and vanilla.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Dry",
+      "text": "Sprinkle the baking soda, salt and cinnamon over the top and stir in, then fold in the flour just until no streaks remain.",
+      "uses": [
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-0"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Scrape into the pan and bake 55–65 minutes, until a toothpick in the centre comes out clean and the centre reads about 93°C (200°F). Tent with foil after 40 minutes if it browns fast.",
+      "timer": 60,
+      "uses": []
+    },
+    {
+      "title": "Cool",
+      "text": "Cool 10 minutes in the pan, then lift out and cool on a rack before slicing.",
+      "timer": 10,
+      "uses": []
+    }
+  ],
+  "together": "AAAA*",
+  "fixIt": [
+    {
+      "problem": "Sunk in the middle",
+      "fix": "Underbaked; check with a toothpick right in the centre and bake until clean."
+    },
+    {
+      "problem": "Dense and gummy",
+      "fix": "Fold the flour in gently and stop as soon as it disappears."
+    },
+    {
+      "problem": "Bananas not ripe",
+      "fix": "Bake them in their peels at 150°C (300°F) for 15–20 minutes until black, then cool."
+    }
+  ],
+  "saleTip": "Ask about the reduced banana bag at No Frills; overripe is exactly what you want. Freeze them peeled.",
+  "swap": "Melted coconut oil for butter. Half whole wheat flour.",
+  "leftovers": "Toast a slice and butter it.",
+  "doneness": "No meat; bake until a toothpick comes out clean, about 93°C (200°F) in the centre. The egg is fully cooked by then.",
+  "source": "Based on tested banana bread methods (Canadian Living, King Arthur Baking): melted butter and brown sugar with 3 ripe bananas, baking soda only, 55–65 minutes at 175°C.",
+  "gear": [
+    "23×13 cm (9×5 in) loaf pan",
+    "Parchment",
+    "Large bowl",
+    "Fork or masher",
+    "Cooling rack"
+  ],
+  "prepAhead": [
+    "Freeze overripe bananas in their peels; thaw and use the liquid too."
+  ],
+  "reheat": "Toast or microwave a slice 15 seconds; no food-safety reheat needed.",
+  "levels": {
+    "basic": {
+      "note": "Plain banana bread; no cinnamon or vanilla.",
+      "drop": [
+        "1-3",
+        "0-4"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the vanilla.",
+        "2": "Basic: skip the cinnamon."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Chocolate chips through the loaf and a crackly sugar top.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 0.75,
+              "unit": "cup",
+              "name": "semi-sweet chocolate chips",
+              "metric": {
+                "qty": 130,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Semi-sweet chocolate chips",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "granulated sugar",
+              "note": "for the top",
+              "pantry": {
+                "name": "Granulated sugar",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "2": "Fancy: fold in the chocolate chips with the flour.",
+        "3": "Fancy: sprinkle the sugar over the top before baking."
+      },
+      "costAdd": [
+        [
+          "Chocolate chips, ¾ cup",
+          1.75,
+          "semi-sweet-chocolate-chips"
+        ],
+        [
+          "Sugar",
+          0.03,
+          "granulated-sugar"
+        ]
+      ],
+      "plating": [
+        "Thick slices, a little butter.",
+        "Serve slightly warm.",
+        "Pair with a coffee."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Very ripe bananas are sweeter and softer, so the loaf is moist with less sugar.",
+    "1-1": "Baking soda reacts with the bananas' natural acid and browns the crust."
+  },
+  "fancyNight": false,
+  "funFact": "Banana bread took off in the 1930s when baking soda and baking powder became common in home kitchens.",
+  "keeps": {
+    "room": "3 days, wrapped",
+    "fridge": "1 week",
+    "freezer": "3 months",
+    "note": "wrap slices individually",
+    "thaw": "Thaw slices on the counter 30 minutes, or toast from frozen"
+  },
+  "drink": "Coffee with milk, or a cold glass of milk.",
+  "pairs": []
+}

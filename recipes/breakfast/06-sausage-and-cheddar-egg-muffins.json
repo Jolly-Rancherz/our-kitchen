@@ -1,0 +1,322 @@
+{
+  "title": "Sausage & Cheddar Egg Muffins",
+  "subtitle": "grab-and-go baked egg cups with mild sausage, onion and old cheddar",
+  "image": "assets/img/egg-muffins.webp",
+  "imageAlt": "Golden baked egg muffins studded with sausage and cheddar on a cream plate, one split open, with a navy napkin",
+  "servings": 6,
+  "servingsNote": "12 egg muffins: 2 each, a week of breakfasts for two",
+  "prep": 15,
+  "cook": 30,
+  "cost": {
+    "total": 9.91,
+    "breakdown": [
+      [
+        "Eggs, 10",
+        3.91,
+        "eggs"
+      ],
+      [
+        "Mild pork sausages, 250 g",
+        3.5,
+        "pork-sausages-mild"
+      ],
+      [
+        "Cheddar, 100 g",
+        1.75,
+        "cheddar-shredded"
+      ],
+      [
+        "Milk, onion, butter, spices",
+        0.75
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ],
+    "course": [
+      "breakfast"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Meal prep"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "Grease the muffin tin well, or use silicone cups, so the eggs release cleanly."
+    },
+    {
+      "icon": "knife",
+      "text": "Squeeze the sausage meat out of the casings."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Filling",
+      "items": [
+        {
+          "qty": 250,
+          "unit": "g",
+          "name": "mild pork sausages",
+          "note": "casings removed (about 3)",
+          "pantry": {
+            "name": "Pork sausages (mild)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": null,
+          "name": "yellow onions",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "metric": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Eggs",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted, for the tin",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 10,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 80,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Heat",
+      "text": "Heat the oven to 175°C (350°F) and brush a 12-cup muffin tin well with the melted butter.",
+      "uses": [
+        "1-0"
+      ]
+    },
+    {
+      "title": "Sausage",
+      "text": "Brown the sausage meat and onion in a skillet over medium-high, breaking it up, 8–10 minutes, until no pink remains and it reads 71°C (160°F). Drain on paper towel.",
+      "timer": 9,
+      "uses": [
+        "0-0",
+        "0-1"
+      ]
+    },
+    {
+      "title": "Whisk",
+      "text": "Whisk the eggs, milk, salt, pepper and garlic powder in a large measuring jug.",
+      "uses": [
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5"
+      ]
+    },
+    {
+      "title": "Fill",
+      "text": "Divide the sausage and cheddar among the cups, then pour in the eggs until each is ¾ full.",
+      "uses": [
+        "0-2"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Bake 20–22 minutes, until puffed, set in the centre and 74°C (165°F). Cool 5 minutes, then run a knife around each and lift out.",
+      "timer": 21,
+      "uses": []
+    }
+  ],
+  "together": "ABAA*",
+  "fixIt": [
+    {
+      "problem": "Sticking",
+      "fix": "Grease more heavily, or use paper liners sprayed with oil."
+    },
+    {
+      "problem": "Watery bottoms",
+      "fix": "Drain the sausage well and don't add raw watery vegetables."
+    },
+    {
+      "problem": "Deflate a lot",
+      "fix": "That's normal; they sink as they cool. Don't overbake or they turn rubbery."
+    }
+  ],
+  "saleTip": "Buy the big sausage pack on sale; use half here and freeze the rest for burritos.",
+  "swap": "Diced ham or crumbled bacon for sausage. Mozzarella for cheddar.",
+  "leftovers": "Keep in a container lined with paper towel; reheat two for breakfast.",
+  "doneness": "Sausage meat to 71°C (160°F); egg dishes to 74°C (165°F) in the centre (Health Canada).",
+  "source": "Based on tested baked egg muffin methods (Budget Bytes, Canadian Living): cooked filling in a greased muffin tin, topped with whisked eggs and baked at 175°C until set.",
+  "gear": [
+    "12-cup muffin tin",
+    "Skillet",
+    "Large measuring jug",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Cook the sausage up to 2 days ahead.",
+    "Baked muffins freeze up to 2 months."
+  ],
+  "reheat": "Microwave 2 muffins 45–60 seconds (from frozen 1½–2 minutes), until 74°C (165°F).",
+  "airFryer": "Bake in silicone muffin cups in the air fryer at 150°C (300°F) for 12–15 minutes, until set and 74°C (165°F). Reheat cold ones at 160°C (325°F) for 4–5 minutes.",
+  "levels": {
+    "basic": {
+      "note": "Sausage, egg and cheddar; no onion or garlic powder.",
+      "drop": [
+        "0-1",
+        "1-5"
+      ],
+      "stepNotes": {
+        "1": "Basic: brown the sausage on its own."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Add crisp bacon and diced tomato for a 'loaded' egg muffin.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "slices bacon",
+              "note": "cooked crisp and crumbled",
+              "pantry": {
+                "name": "Bacon",
+                "cat": "meat"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "tomato",
+              "note": "seeded and diced",
+              "pantry": {
+                "name": "Tomatoes",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: first cook the bacon in the skillet 6–8 minutes until crisp, drain and crumble, then brown the sausage.",
+        "3": "Fancy: add bacon and tomato with the cheddar."
+      },
+      "costAdd": [
+        [
+          "Bacon, 4 slices",
+          1.87,
+          "bacon"
+        ],
+        [
+          "Tomato",
+          0.75,
+          "tomatoes"
+        ]
+      ],
+      "plating": [
+        "Two muffins, one split open.",
+        "Fresh fruit on the side.",
+        "Toast soldiers if you like."
+      ]
+    }
+  },
+  "why": {
+    "1-2": "A little milk keeps the eggs tender instead of rubbery.",
+    "0-0": "Pre-cooking the sausage drains its fat so the muffins don't go greasy."
+  },
+  "fancyNight": false,
+  "funFact": "Canadian hens lay about 9 billion eggs a year, roughly 240 for every person in the country.",
+  "keeps": {
+    "fridge": "4 days",
+    "freezer": "2 months",
+    "note": "freeze on a tray, then bag"
+  },
+  "drink": "Coffee or tea; a smoothie on busy mornings.",
+  "pairs": []
+}

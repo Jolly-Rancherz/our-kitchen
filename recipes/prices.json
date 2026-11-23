@@ -37,6 +37,10 @@
    "price": 2.49,
    "pack": "each"
   },
+  "baked-beans-canned": {
+   "price": 1.49,
+   "pack": "398 ml can"
+  },
   "baking-powder": {
    "price": 2.99,
    "pack": "225 g"
@@ -48,6 +52,10 @@
   "balsamic-vinegar": {
    "price": 3.99,
    "pack": "500 ml"
+  },
+  "bananas": {
+   "price": 0.79,
+   "pack": "per lb (about 3)"
   },
   "bay-leaves": {
    "price": 1.99,
@@ -96,6 +104,10 @@
   "butter": {
    "price": 6.49,
    "pack": "454 g"
+  },
+  "buttermilk": {
+   "price": 2.49,
+   "pack": "1 L"
   },
   "candy-canes": {
    "price": 2.49,
@@ -201,6 +213,10 @@
    "price": 3.49,
    "pack": "340 g bag"
   },
+  "cream-cheese-brick": {
+   "price": 3.49,
+   "pack": "250 g brick"
+  },
   "crushed-tomatoes-canned": {
    "price": 1.99,
    "pack": "796 ml can"
@@ -225,9 +241,17 @@
    "price": 4.49,
    "pack": "175 g"
   },
+  "dried-basil": {
+   "price": 2.49,
+   "pack": "jar"
+  },
   "dried-cranberries": {
    "price": 3.99,
    "pack": "170 g"
+  },
+  "dried-marjoram": {
+   "price": 2.99,
+   "pack": "jar"
   },
   "dried-oregano": {
    "price": 2.49,
@@ -260,6 +284,10 @@
   "elbow-macaroni": {
    "price": 2.0,
    "pack": "450 g"
+  },
+  "english-muffins": {
+   "price": 2.99,
+   "pack": "6 pack"
   },
   "evaporated-milk": {
    "price": 2.29,
@@ -297,6 +325,10 @@
    "price": 5.99,
    "pack": "200 g"
   },
+  "frozen-blueberries": {
+   "price": 5.49,
+   "pack": "600 g bag, wild"
+  },
   "frozen-corn": {
    "price": 2.99,
    "pack": "750 g"
@@ -308,6 +340,10 @@
   "frozen-french-fries": {
    "price": 3.49,
    "pack": "1 kg"
+  },
+  "frozen-hash-brown-patties": {
+   "price": 3.99,
+   "pack": "10 patties"
   },
   "frozen-mixed-berries": {
    "price": 5.99,
@@ -365,12 +401,20 @@
    "price": 11.0,
    "pack": "~1 kg"
   },
+  "ground-cardamom": {
+   "price": 5.49,
+   "pack": "jar"
+  },
   "ground-cinnamon": {
    "price": 2.99,
    "pack": "jar"
   },
   "ground-cloves": {
    "price": 3.49,
+   "pack": "jar"
+  },
+  "ground-coriander": {
+   "price": 2.79,
    "pack": "jar"
   },
   "ground-cumin": {
@@ -744,6 +788,10 @@
   "sliced-almonds": {
    "price": 4.99,
    "pack": "200 g"
+  },
+  "smoked-paprika": {
+   "price": 3.49,
+   "pack": "jar"
   },
   "snow-peas": {
    "price": 3.99,

@@ -1,0 +1,224 @@
+{
+  "title": "Pumpkin Pie Spice",
+  "subtitle": "the cozy fall blend for pies, lattes, muffins and French toast",
+  "image": "assets/img/blend-pumpkin-pie-spice.webp",
+  "imageAlt": "A small glass jar of warm brown pumpkin pie spice with a spoonful on a cream plate beside a navy napkin",
+  "servings": 6,
+  "servingsNote": "about ⅓ cup: 6 batches of 2½ tsp",
+  "prep": 5,
+  "cook": 0,
+  "cost": {
+    "total": 1.6,
+    "breakdown": [
+      [
+        "Cinnamon, 3 tbsp",
+        0.75,
+        "ground-cinnamon"
+      ],
+      [
+        "Ginger, nutmeg, allspice, cloves",
+        0.85
+      ]
+    ]
+  },
+  "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+      "blend"
+    ]
+  },
+  "badges": [
+    "Sweet spice",
+    "No cooking"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "Use a clean, completely dry jar and spoon: any moisture makes the blend clump."
+    },
+    {
+      "icon": "knife",
+      "text": "Check the dates on your jars; spices older than a year lose most of their flavour."
+    }
+  ],
+  "groups": [
+    {
+      "name": "The blend",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "ground ginger",
+          "pantry": {
+            "name": "Ground ginger",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "ground nutmeg",
+          "pantry": {
+            "name": "Ground nutmeg",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "ground allspice",
+          "pantry": {
+            "name": "Ground allspice",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground cloves",
+          "pantry": {
+            "name": "Ground cloves",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Measure",
+      "text": "Measure everything into a small bowl.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Mix",
+      "text": "Whisk with a fork until the colour is even, breaking up any lumps.",
+      "uses": []
+    },
+    {
+      "title": "Jar it",
+      "text": "Spoon into a clean, dry jar, seal and label it with the name and date.",
+      "uses": []
+    },
+    {
+      "title": "Use it",
+      "text": "Use 2½ tsp in a pumpkin pie, 1–2 tsp in a batch of muffins, banana bread or French toast, and a pinch in coffee with frothed milk.",
+      "uses": []
+    }
+  ],
+  "together": "AAA*",
+  "fixIt": [
+    {
+      "problem": "Clumping",
+      "fix": "Moisture got in; break it up with a fork and keep the jar away from the stove's steam."
+    },
+    {
+      "problem": "Tastes flat",
+      "fix": "The spices are old; replace the oldest jar and remix."
+    },
+    {
+      "problem": "Too salty for you",
+      "fix": "Make the next batch with half the salt and salt the food separately."
+    }
+  ],
+  "saleTip": "No Frills bulk bins sell spices by weight: buy just a few tablespoons for a fraction of the jar price.",
+  "swap": "Leave out any one spice you don't have; the blend still works.",
+  "leftovers": "Keeps for months; a small jar makes a nice gift.",
+  "doneness": "No cooking. Season raw meat or fish with a clean spoon (never dip a spoon that touched raw meat back into the jar) and cook the food to its safe temperature.",
+  "source": "Based on common Canadian grocery-store and test-kitchen versions of this blend (Club House, Canadian Living, Serious Eats), made mild for us.",
+  "gear": [
+    "Measuring spoons",
+    "Small bowl",
+    "Fork",
+    "Small airtight jar",
+    "Label"
+  ],
+  "prepAhead": [
+    "Make a double batch; it keeps 6 months in a sealed jar."
+  ],
+  "reheat": "Nothing to reheat. Leftovers cooked with it reheat to 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Cinnamon, ginger and nutmeg only.",
+      "drop": [
+        "0-3",
+        "0-4"
+      ],
+      "stepNotes": {},
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A little ground cardamom and black pepper for a chai-like warmth.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "tsp",
+              "name": "ground cardamom",
+              "pantry": {
+                "name": "Ground cardamom",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 0.125,
+              "unit": "tsp",
+              "name": "black pepper",
+              "pantry": {
+                "name": "Black pepper",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: add the cardamom and pepper."
+      },
+      "costAdd": [
+        [
+          "Cardamom, pepper",
+          0.45
+        ]
+      ],
+      "plating": [
+        "Pour into a small glass jar.",
+        "Hand-write the label with the date.",
+        "Tie twine around the lid if it's a gift."
+      ]
+    }
+  },
+  "why": {
+    "0-4": "Cloves are strong; half a teaspoon is plenty.",
+    "0-1": "Ginger adds a gentle warmth that brightens the cinnamon."
+  },
+  "fancyNight": false,
+  "funFact": "There's no pumpkin in pumpkin spice; McCormick started selling the blend in 1934 to save bakers measuring five jars.",
+  "keeps": {
+    "room": "6 months in a sealed jar, away from heat and light",
+    "freezer": null,
+    "note": "no need; the cupboard is best (the freezer adds moisture)"
+  },
+  "pairs": []
+}

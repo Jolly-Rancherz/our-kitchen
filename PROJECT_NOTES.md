@@ -415,6 +415,16 @@ exactly 812pt although the image continues.
 - Temps: ground pork/beef 71°C (tourtière filling), pork loin 71°C, reheats 74°C; rolls 90°C bread doneness.
 - Tourtière and the pork loin are 'main', so they join the Nov–Feb dinner pickers through `dinnerPool`.
 
+## Update 14.0 — Breakfast & Brunch, Spice Blends, seasonal tab slot (2026-11-23)
+- Generators in `app_src/b14/` (`lib.py` helpers, `bf1–5.py` breakfast, `sb.py` blends, `extras140.py` add-only `airFryer`/`drink` on 13 crispy + 29 Fancy-night recipes; it inserts keys as text and asserts nothing else changes). Dry-run with `python3 dry.py file.py` (writes /tmp/dry). Photos map `img14/map140.txt`.
+- New optional recipe fields: `drink` (DRINK PAIRING card) and `airFryer` ("Air fryer version" in Good to know). `keeps.room`/`keeps.thaw` used for baked goods.
+- Categories: `breakfast` (10), `spice-blends` (8, `"noun":"blend"`, course `blend`), `holidays` (0 so far; reserved). Book order: … Comfort & Soups (VII), Christmas (VIII, unchanged), Breakfast (IX), Spice Blends (X). `holidays` is never a book chapter and never a Home tile (`bookCats`, Home `cats` filter).
+- Blends: no Mark as cooked / Plan tonight / Cook for me / Acura's share (hidden, bindings kept); DONENESS card reads FOOD SAFETY without the thermometer line. Breakfast and blends never join the dinner pickers (`NOT_DINNER`).
+- Seasonal tab slot (Corey): ONE slot before Acura. Christmas Nov 1–Dec 31 (was Nov–Feb; pickers follow `xmasSeason`). Holidays use `HOLIDAY_WINDOWS`: Valentine's Feb 1–14, Thanksgiving Sept 25–Oct 14, Easter = computus Sunday −14 days … Easter Monday. In season the holiday takes the slot (`#/holiday`, short labels Valentine / Easter / Harvest so 7 tabs keep today's size); its mains join the pickers only then. Out of season: a quiet `.holrow` at the very foot of Home opens `#/holidays` (all sections, next first); `#/c/holidays` redirects there. Search keeps them all year.
+- Tab bar: grid columns = tab count (6 or 7), so no gap; 7-tab size is unchanged from 13.x. A day change while open re-syncs (60 s check + visibilitychange) and cross-fades the bar (`#tabbar.swap`), boot sync happens under the splash. Test `pwtest/t140.mjs` covers all 4 widths × light/dark × Bigger text × {Christmas, none, holiday} and the Dec 31→Jan 1 switch (no height/page shift).
+- Odd tile count: the last Home tile runs full width (`.cats .cat-tile:last-child:nth-child(odd)`), existing tiles untouched.
+- Holidays recipes (Thanksgiving, Valentine's, Easter) are planned for 14.1: put them in `recipes/holidays/` with `tags.holiday` and `tags.course`.
+
 ## Update 13.7 — Acura's treats 7–20 (2026-11-23)
 - Generator `app_src/acura/a2.py` appends 14 treats to `recipes/acura/treats.json` (asserts the file still has exactly the original 6 first and never edits them). Photos in `assets/acura/` (map `img13/mapac.txt`, same cream plate / tan napkin style, ref `img13/ref_acura.jpg`).
 - New: turkey-sweet-potato-bites, cheesy-carrot-crunchers, blueberry-oat-crunchers, frozen-watermelon-bites, salmon-sweet-potato-bites, dried-apple-rings, birthday-pupcakes, liver-training-bites, green-bean-crisps, chicken-ice-cubes, kibble-pumpkin-stuffer, pb-oat-balls, cranberry-oat-stars, pumpkin-pup-pancakes.

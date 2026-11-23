@@ -450,6 +450,8 @@ const routes = [
   [/^#\/year(?:\/(\d{4}))?$/, viewYear],
   [/^#\/calendar(?:\/(\d{4}-\d{2}))?$/, viewCalendar],
   [/^#\/christmas$/, viewChristmas],
+  [/^#\/holiday$/, viewHoliday],
+  [/^#\/holidays$/, viewHolidays],
   [/^#\/acura$/, viewAcura],
   [/^#\/acura\/t\/([\w-]+)$/, viewTreat],
   [/^#\/acura\/safety$/, viewAcuraSafety],
@@ -602,6 +604,7 @@ async function viewRecipe(id) {
   setTop({ title: esc(c.name.toUpperCase()) + ' <span class="h">·</span> ' + pad2(s.num), back: '#/',
     right: `<button class="iconbtn fav ${fav ? 'on' : ''}" id="favBtn" aria-label="Favourite">${svg('heart')}</button>` });
   const tags = r.tags || {};
+  const isBlend = s.category === 'spice-blends'; // update 14.0: a blend isn't a dinner: no Mark as cooked, plan tonight or Acura's share
   const pills = [`<span class="pill gold price">${priceTier(lc.total)}</span>`];
   (tags.method || []).slice(0, 1).forEach((m) => pills.push(`<span class="pill navy">${esc(TAGLABEL['method:' + m] || m)}</span>`));
   if (r.family) pills.push(`<span class="pill fam">${svg('heart')}Family recipe</span>`);
@@ -633,8 +636,8 @@ async function viewRecipe(id) {
   </div>
   <div class="hero"><div class="tile">${r.image ? img(r.image, r.imageAlt || r.title) : placeholderArt(s)}</div><i class="acc a1"></i><i class="acc a2"></i><i class="acc a3"></i>${cookedStamp(cooked.length)}</div>
   <div class="stats"><div class="stat"><b>${r.prep} min</b><span>Prep</span></div><div class="stat plum"><b>${r.cook} min</b><span>Cook</span></div><div class="stat peri"><b>${r.prep + r.cook} min</b><span>Total</span></div></div>${ORN}
-  <div class="serves"><strong>${guests ? `Guest mode · ${guests} people` : esc(sv === base && r.servingsNote ? r.servingsNote : sv + ' servings')}</strong><span class="muted">Est. ~${money(per, true)} a portion</span></div>
-  <div class="plan"><button class="chip" id="startBy">${svg('clock')}Start cooking by…</button><button class="chip ${guests ? 'on' : ''}" id="guestBtn">${svg('users')}${guests ? guests + ' people' : 'Guests'}</button>${!cooked.length || pend ? `<button class="chip ${pend ? 'on' : ''}" id="tasteChip">${svg('thumbUp')}${pend ? 'Taste test on' : 'Taste test'}</button>` : ''}${hasLevels(r0) ? `<button class="chip ${isFancyNight(id) ? 'on' : ''}" id="fnChip">${svg('star')}Fancy night</button>` : ''}</div>
+  <div class="serves"><strong>${guests ? `Guest mode · ${guests} people` : esc(sv === base && r.servingsNote ? r.servingsNote : sv + (isBlend ? ' batches' : ' servings'))}</strong><span class="muted">Est. ~${money(per, true)} a ${isBlend ? 'batch' : 'portion'}</span></div>
+  <div class="plan"${isBlend ? ' hidden' : ''}><button class="chip" id="startBy">${svg('clock')}Start cooking by…</button><button class="chip ${guests ? 'on' : ''}" id="guestBtn">${svg('users')}${guests ? guests + ' people' : 'Guests'}</button>${!cooked.length || pend ? `<button class="chip ${pend ? 'on' : ''}" id="tasteChip">${svg('thumbUp')}${pend ? 'Taste test on' : 'Taste test'}</button>` : ''}${hasLevels(r0) ? `<button class="chip ${isFancyNight(id) ? 'on' : ''}" id="fnChip">${svg('star')}Fancy night</button>` : ''}</div>
 
   <div class="wrap">
     ${cooked.length ? '' : scratchCard(id, r0.funFact)}
@@ -646,7 +649,7 @@ async function viewRecipe(id) {
       ${(r.gear || []).length ? `<details class="gear"><summary>Gear you'll need (${r.gear.length})</summary><ul>${r.gear.map((g) => `<li>${esc(g)}</li>`).join('')}</ul></details>` : ''}</div>` : ''}
 
     <div class="sec"><div class="sec-title">Ingredients<button class="act" id="resetBtn">Reset ticks</button><button class="act unitbtn" id="unitBtn" aria-label="Units">${units === 'metric' ? 'grams' : units === 'us' ? 'cups' : 'cups + g'}</button></div>
-      <div class="portion"><div class="val" id="svVal">${sv}</div><input type="range" id="sv" min="1" max="10" step="1" value="${sv}" style="--p:${((sv - 1) / 9) * 100}%" aria-label="Servings"><div class="lbl">servings<br>${sv === base ? 'as written' : '× ' + (Math.round(f * 100) / 100)}</div></div>
+      <div class="portion"><div class="val" id="svVal">${sv}</div><input type="range" id="sv" min="1" max="10" step="1" value="${sv}" style="--p:${((sv - 1) / 9) * 100}%" aria-label="${isBlend ? 'Batches' : 'Servings'}"><div class="lbl">${isBlend ? 'batches' : 'servings'}<br>${sv === base ? 'as written' : '× ' + (Math.round(f * 100) / 100)}</div></div>
       ${r.groups.map((g, gi) => `<div class="ing-group">${g.name ? `<div class="group-name">${esc(g.name)}</div>` : ''}<ul class="checklist">
         ${g.items.map((it) => `<li data-i="${it.ref}" class="${ck.i[it.ref] ? 'done' : ''} ${subBtn(it) || outBtn(it) ? 'hasbtn' : ''}${it.added ? ' lvadd' : ''}"><span class="box">${CHECK}</span><span class="txt">${ingLine(it, f)}${whyHTML(it)}${backupHTML(it)}</span>${subBtn(it) || outBtn(it) ? `<span class="ibtns">${subBtn(it)}${outBtn(it)}</span>` : ''}</li>`).join('')}</ul></div>`).join('')}
       <button class="btn ghost block" id="missingBtn" style="margin-top:12px">${svg('cart')}Add to grocery list</button>
@@ -659,12 +662,13 @@ async function viewRecipe(id) {
     </div>
     ${platingCard(r0, lv, isFancyNight(id))}
 
-    ${r.doneness ? `<div class="sec card"><h3>DONENESS</h3><p style="font-size:.95rem">${tx(r.doneness)} Check with an instant-read thermometer in the thickest part.</p></div>` : ''}
+    ${r.doneness ? `<div class="sec card"><h3>${isBlend ? 'FOOD SAFETY' : 'DONENESS'}</h3><p style="font-size:.95rem">${tx(r.doneness)}${isBlend ? '' : ' Check with an instant-read thermometer in the thickest part.'}</p></div>` : ''}
 
     ${(r.fixIt || []).length ? `<div class="sec"><div class="sec-title">Fix it</div><div class="card fix" style="padding-top:2px;padding-bottom:2px">${r.fixIt.map((x) => `<details><summary>${esc(x.problem)}</summary><p>${tx(x.fix)}</p></details>`).join('')}</div></div>` : ''}
 
-    ${(r.prepAhead || []).length || r.reheat || r.keeps ? `<div class="sec"><div class="sec-title">Good to know</div><div class="card fix" style="padding-top:2px;padding-bottom:2px">
+    ${(r.prepAhead || []).length || r.reheat || r.keeps || r.airFryer ? `<div class="sec"><div class="sec-title">Good to know</div><div class="card fix" style="padding-top:2px;padding-bottom:2px">
       ${(r.prepAhead || []).length ? `<details><summary>Make ahead</summary><ul class="tips">${r.prepAhead.map((t) => `<li>${tx(t)}</li>`).join('')}</ul></details>` : ''}
+      ${r.airFryer ? `<details><summary>Air fryer version</summary><p>${tx(r.airFryer)}</p></details>` : ''}
       ${r.reheat ? `<details><summary>Reheating leftovers</summary><p>${tx(r.reheat)}</p></details>` : ''}
       ${r.keeps ? keepsHTML(r.keeps) : ''}</div></div>` : ''}
     ${pairsHTML(r)}
@@ -672,14 +676,15 @@ async function viewRecipe(id) {
     <div class="sec row2">
       ${r.swap ? `<div class="mini"><h3>SWAP</h3><p>${tx(r.swap)}</p></div>` : ''}
       ${r.leftovers ? `<div class="mini navy"><h3>LEFTOVERS</h3><p>${tx(r.leftovers)}</p></div>` : ''}
+      ${r.drink ? `<div class="mini wide drink"><h3>DRINK PAIRING</h3><p>${tx(r.drink)}</p></div>` : ''}
       ${r.saleTip ? `<div class="mini wide" style="background:var(--tile3)"><h3>SALE TIP · NO FRILLS</h3><p>${esc(r.saleTip)}</p></div>` : ''}
     </div>
     ${r.source ? `<p class="small muted" style="margin-top:10px;font-style:italic">${esc(r.source)}</p>` : ''}
-    <details class="card fix pupcard"><summary>${PAW('sm')}Acura's share</summary><div id="pupBox">${ACURA ? pupShareHTML(r, ACURA) : ''}</div></details>
+    <details class="card fix pupcard"${isBlend ? ' hidden' : ''}><summary>${PAW('sm')}Acura's share</summary><div id="pupBox">${ACURA ? pupShareHTML(r, ACURA) : ''}</div></details>
 
     <div class="sec money">
-      <div class="top"><span>About ${money(cost)} total</span><span>~${money(per, true)} a portion</span></div>
-      <p>A <strong>${priceTier(cost)}</strong> dinner. Your month is <strong>${money(budgetMin)}–${money(budgetMax)}</strong> — about 13 dinners at ~$27–30 average${s.price === '$' ? ', so this one leaves room for a $$$ night.' : s.price === '$$$' ? '; pair it with a $ meal like Mom\'s potato soup.' : '.'}</p>
+      <div class="top"><span>About ${money(cost)} total</span><span>~${money(per, true)} a ${isBlend ? 'batch' : 'portion'}</span></div>
+      ${s.category === 'spice-blends' ? `<p>A jar of this blend costs about ${money(cost)} from what's already in the spice drawer, and seasons ${sv} batches.</p>` : `<p>A <strong>${priceTier(cost)}</strong> ${s.category === 'breakfast' ? 'breakfast' : 'dinner'}. Your month is <strong>${money(budgetMin)}–${money(budgetMax)}</strong> — about 13 dinners at ~$27–30 average${s.price === '$' ? ', so this one leaves room for a $$$ night.' : s.price === '$$$' ? '; pair it with a $ meal like Mom\'s potato soup.' : '.'}</p>`}
       ${lc.lines.length ? `<details><summary>Where the money goes (${sv} servings${hasLevels(r0) ? ' · ' + LEVEL_NAME[lv] : ''})</summary><table>${lc.lines.map(([n, v, k, mine, added]) => `<tr><td>${esc(n)}${mine ? ' <span class="mine">your price</span>' : ''}${added ? ` <span class="mine">${LEVEL_NAME[lv]}</span>` : ''}</td><td>${money(v * f, true)}</td></tr>`).join('')}</table></details>` : ''}
       ${lc.mine && !r.edited && !r.custom ? `<div class="legend">Updated with ${lc.mine} price${lc.mine === 1 ? '' : 's'} from your receipts.</div>` : ''}
       <div class="legend">$ under $20 · $$ $20–30 · $$$ over $30 · CAD, No Frills London ON estimates, Nov 2026</div>
@@ -700,11 +705,11 @@ async function viewRecipe(id) {
       </div></div>
 
     <div class="sec r-actions">
-      <button class="btn gold block" id="cookedBtn">${svg('check')}Mark as cooked</button>
-      <div class="btnrow"><button class="btn ghost" id="cravBtn">${svg('heart')}Cook for me?</button><button class="btn ghost ${planned ? 'on' : ''}" id="tonightBtn">${svg('clock')}${planned ? 'Tonight ✓' : 'Plan tonight'}</button></div>
+      <button class="btn gold block" id="cookedBtn"${isBlend ? ' hidden' : ''}>${svg('check')}Mark as cooked</button>
+      <div class="btnrow"${isBlend ? ' hidden' : ''}><button class="btn ghost" id="cravBtn">${svg('heart')}Cook for me?</button><button class="btn ghost ${planned ? 'on' : ''}" id="tonightBtn">${svg('clock')}${planned ? 'Tonight ✓' : 'Plan tonight'}</button></div>
       <div class="btnrow"><button class="btn ghost" id="shareBtn">${svg('share')}Share</button><button class="btn ghost" id="moreBtn">${svg('more')}More…</button></div>
       ${state.versions[id] ? `<p class="small muted" style="text-align:center">${r.edited || r.custom ? 'Edited recipe' : 'Original recipe'} · <button class="linkbtn" id="verBtn">Switch to the ${state.versions[id].prev.base ? 'original' : 'other'} version</button></p>` : ''}
-      <p class="small muted cookline">${cooked.length ? `${hat(cooked[0].by, 15)}Cooked ${cooked.length} time${cooked.length === 1 ? '' : 's'} · last ${esc(shortDate(cooked[0].date))}${cooked[0].by ? ' by ' + esc(cooked[0].by === 'Both' ? 'both of you' : cooked[0].by) : ''}` : 'Not cooked yet — first time!'}</p>
+      <p class="small muted cookline"${isBlend ? ' hidden' : ''}>${cooked.length ? `${hat(cooked[0].by, 15)}Cooked ${cooked.length} time${cooked.length === 1 ? '' : 's'} · last ${esc(shortDate(cooked[0].date))}${cooked[0].by ? ' by ' + esc(cooked[0].by === 'Both' ? 'both of you' : cooked[0].by) : ''}` : 'Not cooked yet — first time!'}</p>
       ${first ? `<p class="memory">${svg('heart')}First made ${first.by === 'Corey' || first.by === 'Faith' ? 'by ' + esc(first.by) : 'together'} · ${esc(longDate(first.date))}</p>` : ''}
       ${lastReact ? `<p class="small muted" style="text-align:center;margin-top:-4px">Last time: ${esc(reactLine(lastReact))}</p>` : ''}
     </div>
@@ -1006,28 +1011,83 @@ function bindFund(redraw) {
   });
 }
 // ---------------------------------------------------------------- update 12.7: the Christmas tab (framework)
-// A seasonal tab, November through February only, and only once Christmas recipes exist (category slug 'christmas';
+// A seasonal tab, November 1 to December 31 only (update 14.0; it was Nov–Feb), and only once Christmas recipes exist (category slug 'christmas';
 // a recipe whose tags.course includes 'dessert' goes under Desserts, everything else under Foods). Until the first
 // Christmas batch lands, the tab stays hidden — nothing shows. The chapter joins the book automatically (bookCats).
 const XMAS = 'christmas';
-const xmasSeason = (d = new Date()) => [10, 11, 0, 1].includes(d.getMonth());
+const xmasSeason = (d = new Date()) => [10, 11].includes(d.getMonth());
 const xmasRecipes = () => (typeof INDEX !== 'undefined' && INDEX && INDEX.recipes ? visibleRecipes().filter((r) => r.category === XMAS) : []);
 const xmasOn = () => xmasSeason() && xmasRecipes().length > 0;
 // update 13.1: Christmas recipes stay in the book and in search all year, but only Christmas mains join the dinner
-// pickers (Tonight's pick, Spin the wheel, Surprise me, More ideas, Mystery meal and Home's nudges), and only Nov–Feb.
+// pickers (Tonight's pick, Spin the wheel, Surprise me, More ideas, Mystery meal and Home's nudges), and only Nov–Dec.
 // Sides and desserts never pose as tonight's dinner.
 const courseOf = (r) => ((r && r.tags) || {}).course || [];
-const dinnerPool = (list) => list.filter((r) => r.category !== XMAS || (xmasSeason() && courseOf(r).includes('main')));
-function syncXmasTab() {
-  const bar = $('#tabbar'); if (!bar) return;
-  let a = $('a[data-tab="christmas"]', bar); const on = xmasOn();
-  if (on && !a) {
-    a = document.createElement('a'); a.href = '#/christmas'; a.dataset.tab = 'christmas'; a.setAttribute('aria-label', 'Christmas');
-    a.innerHTML = '<svg viewBox="0 0 24 24"><path d="M12 3l4 5h-2.5l3.5 4.5h-2.5l4 5H5.5l4-5H7l3.5-4.5H8z"/><path d="M12 17.5V21"/></svg><span>Christmas</span>';
-    bar.insertBefore(a, $('a[data-tab="acura"]', bar));
-  } else if (!on && a) a.remove();
-  bar.classList.toggle('n7', on);
+// update 14.0: breakfast and spice blends never pose as tonight's dinner; holiday mains only join in their own season
+// (HOLIDAY_WINDOWS) and holiday sides and desserts never do.
+const NOT_DINNER = new Set(['breakfast', 'spice-blends']);
+// update 14.0: each holiday has its own season (Corey): Valentine's Feb 1–14, Canadian Thanksgiving Sept 25–Oct 14,
+// Easter two weeks before Easter Sunday through Easter Monday. In season it takes the Christmas tab's spot in the tab
+// bar (the seasons never overlap); out of season its dishes leave the pickers. The holidays aren't a book chapter and
+// have no Home tile: a quiet row at the foot of Home opens all of them, and they're in search all year.
+const HOLIDAYS = [['thanksgiving', 'Thanksgiving', 'Canadian Thanksgiving, the second Monday of October.'], ['valentines', 'Valentine’s Day', 'A special dinner for two, and something sweet.'], ['easter', 'Easter', 'Spring dinner, brunch bakes and dessert.']];
+const easterSunday = (y) => { // anonymous Gregorian computus
+  const a = y % 19, b = Math.floor(y / 100), c = y % 100, d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25), g = Math.floor((b - f + 1) / 3);
+  const h = (19 * a + b - d - g + 15) % 30, i = Math.floor(c / 4), k = c % 4, l = (32 + 2 * e + 2 * i - h - k) % 7, m = Math.floor((a + 11 * h + 22 * l) / 451);
+  return new Date(y, Math.floor((h + l - 7 * m + 114) / 31) - 1, ((h + l - 7 * m + 114) % 31) + 1);
+};
+const HOLIDAY_WINDOWS = {
+  valentines: (y) => [new Date(y, 1, 1), new Date(y, 1, 14)],
+  thanksgiving: (y) => [new Date(y, 8, 25), new Date(y, 9, 14)],
+  easter: (y) => { const e = easterSunday(y); return [new Date(y, e.getMonth(), e.getDate() - 14), new Date(y, e.getMonth(), e.getDate() + 1)]; },
+};
+const dayOnly = (d) => new Date(d.getFullYear(), d.getMonth(), d.getDate());
+const holidayKeyOn = (k, d = new Date()) => { const w = HOLIDAY_WINDOWS[k]; if (!w) return false; const t = dayOnly(d); const [a, b] = w(d.getFullYear()); return t >= a && t <= b; };
+const holidaysOn = (d = new Date()) => HOLIDAYS.map(([k]) => k).filter((k) => holidayKeyOn(k, d));
+const holidayStart = (k, d = new Date()) => { const t = dayOnly(d); for (const y of [d.getFullYear(), d.getFullYear() + 1]) { const [a, b] = HOLIDAY_WINDOWS[k](y); if (b >= t) return a; } return null; };
+const holidayOf = (r) => (((r && r.tags) || {}).holiday || [])[0] || '';
+const holidayNow = (r, d = new Date()) => holidayKeyOn(holidayOf(r), d);
+const HOLIDAY_CAT = 'holidays';
+const holidayRecipes = (k) => (typeof INDEX !== 'undefined' && INDEX && INDEX.recipes ? visibleRecipes().filter((r) => r.category === HOLIDAY_CAT && (!k || holidayOf(r) === k)) : []);
+const holidayTabKey = (d = new Date()) => holidaysOn(d).find((k) => holidayRecipes(k).length) || '';
+// tab labels stay as short as CHRISTMAS so the seven-tab bar keeps its size
+const HOLIDAY_TAB = {
+  thanksgiving: { label: 'Harvest', icon: '<path d="M12 6.5c-1.6-1.8-6.5-1.2-7.3 3.7-.7 4.6 2.7 9.3 7.3 9.3s8-4.7 7.3-9.3C18.5 5.3 13.6 4.7 12 6.5z"/><path d="M12 6.5V9.5M12 6.5c0-1.6.8-2.8 2.3-3.3"/><path d="M9 7.2c-1 2.6-1 8.6 1.2 12M15 7.2c1 2.6 1 8.6-1.2 12"/>' },
+  valentines: { label: 'Valentine', icon: '<rect x="3.5" y="6" width="17" height="12.5" rx="1.6"/><path d="M3.8 6.6l8.2 6.4 8.2-6.4"/><path d="M12 17s-2.6-1.6-2.6-3.3a1.3 1.3 0 0 1 2.6-.5 1.3 1.3 0 0 1 2.6.5C14.6 15.4 12 17 12 17z"/>' },
+  easter: { label: 'Easter', icon: '<path d="M12 3.5c-3.6 0-6.5 5.7-6.5 9.8A6.5 6.5 0 0 0 12 20.5a6.5 6.5 0 0 0 6.5-7.2C18.5 9.2 15.6 3.5 12 3.5z"/><path d="M5.9 11.2l2.4 1.6 2.4-1.6 2.6 1.6 2.4-1.6 2.4 1.4M5.6 15.2l2.7-1.5 2.4 1.5 2.6-1.5 2.4 1.5 2.7-1.5"/>' },
+};
+const dinnerPool = (list) => list.filter((r) => !NOT_DINNER.has(r.category) && (r.category !== 'holidays' || (holidayNow(r) && courseOf(r).includes('main'))) && (r.category !== XMAS || (xmasSeason() && courseOf(r).includes('main'))));
+const catNoun = (c, n) => { const w = (c && c.noun) || 'recipe'; return `${n} ${w}${n === 1 ? '' : 's'}`; };
+// update 14.0: one seasonal slot before Acura's tab: Christmas (Nov 1–Dec 31) or the holiday in season. When the
+// season ends the slot is removed and the six tabs share the bar evenly (grid columns follow the tab count, so there
+// is never a gap). It's set at boot under the splash; a day change while the app is open swaps it, cross-faded.
+function seasonTab(d = new Date()) {
+  if (xmasSeason(d) && xmasRecipes().length) return { tab: 'christmas', href: '#/christmas', label: 'Christmas', icon: '<path d="M12 3l4 5h-2.5l3.5 4.5h-2.5l4 5H5.5l4-5H7l3.5-4.5H8z"/><path d="M12 17.5V21"/>' };
+  const k = holidayTabKey(d); if (!k) return null;
+  return { tab: 'holiday', href: '#/holiday', label: HOLIDAY_TAB[k].label, icon: HOLIDAY_TAB[k].icon, key: k };
 }
+function syncXmasTab(fade) {
+  const bar = $('#tabbar'); if (!bar) return;
+  const want = seasonTab(); const cur = $('a[data-season]', bar);
+  if ((cur && cur.dataset.season) === (want ? want.tab + ':' + (want.key || '') : undefined)) return;
+  const apply = () => {
+    if (cur) cur.remove();
+    if (want) {
+      const a = document.createElement('a'); a.href = want.href; a.dataset.tab = want.tab; a.dataset.season = want.tab + ':' + (want.key || ''); a.setAttribute('aria-label', want.label);
+      a.innerHTML = `<svg viewBox="0 0 24 24">${want.icon}</svg><span>${want.label}</span>`;
+      bar.insertBefore(a, $('a[data-tab="acura"]', bar));
+    }
+    bar.classList.toggle('n7', !!want);
+    const t = tabOf(location.hash || '#/'); $$('#tabbar a').forEach((x) => x.classList.toggle('on', x.dataset.tab === t));
+  };
+  if (fade && !document.hidden && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    bar.classList.add('swap'); setTimeout(() => { apply(); requestAnimationFrame(() => bar.classList.remove('swap')); }, 160);
+  } else apply();
+  if (!want && /^#\/(christmas|holiday)$/.test(location.hash)) go('#/');
+}
+let seasonDay = new Date().toDateString();
+const seasonCheck = () => { const d = new Date().toDateString(); if (d === seasonDay) return; seasonDay = d; syncXmasTab(true); };
+document.addEventListener('visibilitychange', () => { if (!document.hidden) { const d = new Date().toDateString(); if (d !== seasonDay) { seasonDay = d; syncXmasTab(false); } } });
+setInterval(seasonCheck, 60e3);
 function daysToChristmas() { const d = new Date(); const y = d.getMonth() === 11 && d.getDate() > 25 ? d.getFullYear() + 1 : d.getFullYear(); return Math.round((new Date(y, 11, 25) - new Date(d.getFullYear(), d.getMonth(), d.getDate())) / 864e5); }
 function viewChristmas() {
   if (!xmasOn()) { go('#/'); return; }
@@ -1046,6 +1106,36 @@ function viewChristmas() {
     ${sec('Foods', foods, 'Mains and sides for the holidays.')}
     ${sec('Desserts', sweets, 'Cookies, treats and something for Santa.')}
   </div>`);
+}
+// update 14.0: the holiday tab (only in its season), laid out like the Christmas tab: mains, then sides and sweets
+function daysTo(d) { const t = new Date(); return Math.round((d - new Date(t.getFullYear(), t.getMonth(), t.getDate())) / 864e5); }
+const HOLIDAY_DAY = { valentines: (y) => new Date(y, 1, 14), easter: (y) => easterSunday(y), thanksgiving: (y) => { const d = new Date(y, 9, 1); d.setDate(1 + ((8 - d.getDay()) % 7) + 7); return d; } };
+function viewHoliday() {
+  const k = holidayTabKey(); if (!k) { go('#/holidays'); return; }
+  const [, name, note] = HOLIDAYS.find((h) => h[0] === k);
+  setTop({ title: name.toUpperCase() });
+  const rs = holidayRecipes(k).sort((a, b) => a.num - b.num);
+  const mains = rs.filter((r) => courseOf(r).includes('main')), rest = rs.filter((r) => !courseOf(r).includes('main'));
+  const dd = daysTo(HOLIDAY_DAY[k](new Date().getFullYear()));
+  const count = dd > 0 ? `${dd} sleep${dd === 1 ? '' : 's'} until ${name}` : dd === 0 ? `Happy ${name} ♥` : `Still ${name} weekend`;
+  const sec = (t, list, n) => (list.length ? `<div class="sec"><div class="sec-title">${t}<span class="act">${list.length}</span></div><p class="small muted xm-note">${n}</p><div class="rlist" style="margin-top:10px">${list.map(rcard).join('')}</div></div>` : '');
+  render(`<div class="wrap hol hol-${k}">
+    <div class="hol-band" aria-hidden="true"></div>
+    <div class="kicker">${svg('star')}Our ${esc(name)} kitchen<span class="rule"></span></div>
+    <h1 class="h1" style="margin-top:6px">${esc(name)}</h1>
+    <p class="lead hand">${esc(count)}</p>
+    ${sec('The main event', mains, note)}
+    ${sec(k === 'valentines' ? 'Something sweet' : 'Sides and sweets', rest, 'Make-ahead friendly, so the day stays easy.')}
+  </div>`);
+}
+// all the holidays, all year: the quiet row at the foot of Home opens this (not a book chapter, no Home tile)
+function viewHolidays() {
+  setTop({ title: 'HOLIDAYS' });
+  const items = holidayRecipes();
+  render(`<div class="wrap"><div class="kicker">${svg('star')}Holiday recipes<span class="rule"></span></div>
+    <h1 class="h1" style="margin-top:6px">Holidays</h1>
+    <p class="lead">Each holiday gets its own tab in its season. They're here, and in search, all year.</p>
+    ${holidaySections(items)}</div>`);
 }
 function viewBudget() {
   setTop({ title: 'BUDGET' });
@@ -2856,6 +2946,7 @@ function sortRecipes(list) {
 function sortChips() { return `<div class="sortrow" role="group" aria-label="Sort">${SORTS.map(([k, n]) => `<button class="${(ui.sort || 'book') === k ? 'on' : ''}" data-sort="${k}">${n}</button>`).join('')}</div>`; }
 function bindSort(redraw) { $$('[data-sort]').forEach((b) => (b.onclick = () => { ui.sort = b.dataset.sort; redraw(); })); }
 function viewCategory(slugName) {
+  if (slugName === HOLIDAY_CAT) { go('#/holidays'); return; }
   const c = catOf(slugName);
   setTop({ title: esc(c.name.toUpperCase()), back: '#/' });
   const items = sortRecipes(visibleRecipes().filter((r) => r.category === slugName).sort((a, b) => a.num - b.num));
@@ -2863,12 +2954,18 @@ function viewCategory(slugName) {
   const ci = bookCats().findIndex((x) => x.slug === slugName) + 1;
   render(`<div class="wrap"><div class="chapter"><div class="ch-k">Chapter ${roman(ci || 1)}</div>${ORN}
     <h1 class="ch-t">${esc(c.name)}</h1>
-    <p class="ch-s">${items.length} recipe${items.length === 1 ? '' : 's'} so far</p>${ORN}</div>
+    <p class="ch-s">${catNoun(c, items.length)}</p>${ORN}</div>
     ${items.length > 1 ? sortChips() : ''}
     <div class="rlist" style="margin-top:14px">${items.map(rcard).join('') || '<div class="empty">No recipes here yet.</div>'}</div></div>`);
   bindSort(() => viewCategory(slugName));
 }
 
+// update 14.0: the holiday recipes page lists every holiday, the one in season (or coming next) first
+function holidaySections(items) {
+  const fmt = (d) => d.toLocaleDateString('en-CA', { month: 'long', day: 'numeric' }); const on = holidaysOn();
+  return HOLIDAYS.map(([k, name, note]) => [k, name, note, holidayStart(k)]).sort((a, b) => a[3] - b[3]).map(([k, name, note, st]) => { const list = items.filter((r) => holidayOf(r) === k);
+    return list.length ? `<div class="sec"><div class="sec-title">${name}<span class="act">${list.length}</span></div><p class="small muted xm-note">${note} ${on.includes(k) ? 'In season now.' : `Its tab opens ${fmt(st)}.`}</p><div class="rlist" style="margin-top:10px">${list.map(rcard).join('')}</div></div>` : ''; }).join('');
+}
 // ---------------------------------------------------------------- tonight's plan (#31)
 function tonightPlan() { const t = state.tonight; return t && t.date === todayISO() && summary(t.recipeId) && !state.hidden[t.recipeId] ? t : null; }
 function eatTime(t) { const [h, m] = ((t && t.eatAt) || state.settings.dinnerAt || '18:30').split(':').map(Number); const d = new Date(); d.setHours(h, m || 0, 0, 0); return d; }
@@ -3040,7 +3137,7 @@ function viewHome(partial) {
   } else {
     const favs = Object.entries(state.favourites).sort((a, b) => b[1] - a[1]).map(([id]) => recipes.find((r) => r.id === id)).filter(Boolean);
     const recent = state.recent.map((id) => recipes.find((r) => r.id === id)).filter(Boolean).slice(0, 8);
-    const cats = INDEX.categories.filter((c) => c.slug !== XMAS).map((c) => ({ ...c, items: recipes.filter((r) => r.category === c.slug).sort((a, b) => a.num - b.num) }));
+    const cats = INDEX.categories.filter((c) => c.slug !== XMAS).map((c) => ({ ...c, items: recipes.filter((r) => r.category === c.slug).sort((a, b) => a.num - b.num) })).filter((c) => c.slug !== HOLIDAY_CAT);
     const withRecipes = cats.filter((c) => c.items.length);
     const pk = recipes.find((r) => r.id === ui.pick);
     const plan = tonightPlan();
@@ -3079,7 +3176,7 @@ function viewHome(partial) {
       ${nudge ? `<a class="nudge" href="#/r/${nudge.r.id}"><span>${svg('reset')}</span><span>It's been <b>${nudge.days} days</b> since ${esc(nudge.r.title)}. Cook it again?</span></a>` : ''}
       <div class="sec"><div class="sec-title">Categories</div>
         <div class="cats">${withRecipes.map((c, i) => `<a class="cat-tile r${(i % 4) + 1}" href="#/c/${c.slug}" style="background:${c.colour}">${img(c.tile, '')}
-          <div class="lbl"><b>${esc(c.name)}</b><span>${c.items.length} recipe${c.items.length === 1 ? '' : 's'}</span></div></a>`).join('')}</div></div>
+          <div class="lbl"><b>${esc(c.name)}</b><span>${catNoun(c, c.items.length)}</span></div></a>`).join('')}</div></div>
       <div class="sec"><div class="sec-title">Favourites${favs.length > 4 ? `<span class="act">${favs.length}</span>` : ''}</div>
         ${favs.length ? `<div class="favtiles">${favs.slice(0, 4).map((r) => `<a class="favtile" href="#/r/${r.id}">${r.image ? img(r.image, r.title) : placeholderArt(r)}<span class="ft">${esc(r.title)}</span>${isCoupleFav(r.id) ? `<i class="gh" title="Both of you love this">${svg('heart')}</i>` : ''}${state.signature === r.id ? '<i class="sg">★</i>' : ''}</a>`).join('')}</div>
           ${favs.length > 4 ? `<div class="hrow" style="margin-top:10px">${favs.slice(4).map(miniCard).join('')}</div>` : ''}` : `<div class="empty">Tap the ♡ on a recipe and it'll live here.</div>`}</div>
@@ -3089,12 +3186,13 @@ function viewHome(partial) {
       <details class="sec toc-fold"><summary class="sec-title">Contents<span class="act">${recipes.length} recipes</span></summary>
         ${withRecipes.map((c) => `<div class="toc-sec"><div class="sh"><span class="sq" style="background:${c.colour}"></span>${esc(c.name)}</div>
           ${c.items.map((r) => `<a href="#/r/${r.id}"><em>${pad2(r.num)}</em><span>${esc(r.title)}</span><i>${r.price}</i></a>`).join('')}</div>`).join('')}
-        <p class="small muted" style="margin-top:10px">${recipes.length} of 101 recipes so far — more are added in small batches.</p>
+        <p class="small muted" style="margin-top:10px">Christmas has its own tab from November 1 to December 31, and each holiday gets the same spot in its season; Acura’s treats live in her tab.</p>
       </details>
       <div class="sec guides"><h3>GUIDES</h3><div class="gl">
         <a href="#/guide"><span>°</span>Safe temps</a><a href="#/guide"><span>❄</span>Thawing</a>
         <a href="#/budget"><span>$</span>$350 month</a><a href="#/add"><span>+</span>Add a recipe</a><a href="#/story"><span>❦</span>Our story</a>
-        <a href="#/freezer"><span>❄</span>Freezer</a><a href="#/places"><span>✦</span>Places we love</a><a href="#/wish"><span>✧</span>Wish list</a><a href="#/scan"><span>▤</span>Scan receipt</a><a href="#/settings"><span>⚙</span>Settings</a></div></div>`;
+        <a href="#/freezer"><span>❄</span>Freezer</a><a href="#/places"><span>✦</span>Places we love</a><a href="#/wish"><span>✧</span>Wish list</a><a href="#/scan"><span>▤</span>Scan receipt</a><a href="#/settings"><span>⚙</span>Settings</a></div></div>
+      ${holidayRecipes().length ? `<a class="holrow" href="#/holidays"><span>Holiday recipes</span><small>${HOLIDAYS.filter(([k]) => holidayRecipes(k).length).map((h) => h[1]).join(' · ')}</small>${svg('chevR')}</a>` : ''}`;
   }
   const fc = filterCount();
   const dn = dateNightInfo();
@@ -4764,7 +4862,7 @@ function surprisePool(recipes, lim) {
 }
 
 // ---------------------------------------------------------------- router: tabs, direction-aware transitions, per-tab scroll memory (#5, #15)
-const TAB_ROOTS = { '#/': 'recipes', '#/pantry': 'pantry', '#/grocery': 'grocery', '#/budget': 'budget', '#/us': 'us', '#/acura': 'acura', '#/christmas': 'christmas' };
+const TAB_ROOTS = { '#/': 'recipes', '#/pantry': 'pantry', '#/grocery': 'grocery', '#/budget': 'budget', '#/us': 'us', '#/acura': 'acura', '#/christmas': 'christmas', '#/holiday': 'holiday' };
 function tabOf(h) {
   if (/^#\/(pantry|freezer)/.test(h)) return 'pantry';
   if (h.startsWith('#/grocery')) return 'grocery';
@@ -4772,6 +4870,8 @@ function tabOf(h) {
   if (/^#\/(us|story|year|places|menu|keepsake|calendar)/.test(h)) return 'us';
   if (h.startsWith('#/acura') || h === '#/book/c/acura' || h.startsWith('#/book/t/')) return 'acura';
   if (h === '#/christmas' || h === '#/c/christmas' || h.startsWith('#/r/christmas-')) return xmasOn() ? 'christmas' : 'recipes'; // update 12.7
+  if (h === '#/holiday') return holidayTabKey() ? 'holiday' : 'recipes'; // update 14.0
+  if (h.startsWith('#/r/' + HOLIDAY_CAT + '-')) { const r = summary(h.slice(4)); return r && holidayTabKey() && holidayOf(r) === holidayTabKey() ? 'holiday' : 'recipes'; }
   if (h.startsWith('#/settings')) return '';
   return 'recipes';
 }
@@ -5019,7 +5119,7 @@ function initPageTurn() {
 // Cover (the welcome design), title page (the splash), About, Contents, then every category in the order of Home's
 // tiles — a chapter plate and its recipes — then Acura's chapter and a back page, turned continuously. Recipe and
 // treat pages are the app's own pages, shown full-screen as book pages.
-function bookCats() { const rs = visibleRecipes(); return INDEX.categories.filter((c) => rs.some((r) => r.category === c.slug)); }
+function bookCats() { const rs = visibleRecipes(); return INDEX.categories.filter((c) => c.slug !== HOLIDAY_CAT && rs.some((r) => r.category === c.slug)); } // 14.0: holidays aren't a chapter
 function bookPages() {
   const p = ['#/book/title', '#/book/dedication', '#/book/about', '#/book/contents'];
   bookCats().forEach((c) => { p.push('#/book/c/' + c.slug); p.push(...chapterList(c.slug).map((h) => '#/book/' + h.slice(2))); });
@@ -5027,7 +5127,7 @@ function bookPages() {
   p.push('#/book/firsts', '#/book/together', '#/book/back'); return p;
 }
 // update 10.3: each chapter of the book has its own ink accent (divider, page tab, ornaments); Acura's are warm browns
-const BOOK_ACC = { christmas: '#9E2B35', chicken: '#B8892B', 'pasta-italian': '#B0573A', 'beef-turkey': '#9A6236', 'steak-pork': '#8A3A34', seafood: '#5B7C9C', 'takeout-at-home': '#4F8274', 'comfort-soups': '#768A58', acura: '#7A4E2E' };
+const BOOK_ACC = { christmas: '#9E2B35', breakfast: '#C08A2E', 'spice-blends': '#A0522D', chicken: '#B8892B', 'pasta-italian': '#B0573A', 'beef-turkey': '#9A6236', 'steak-pork': '#8A3A34', seafood: '#5B7C9C', 'takeout-at-home': '#4F8274', 'comfort-soups': '#768A58', acura: '#7A4E2E' };
 const bookAcc = (slug, i) => BOOK_ACC[slug] || BOOK_ACC[Object.keys(BOOK_ACC).find((k) => slug && slug.startsWith(k.split('-')[0]))] || ['#B8892B', '#B0573A', '#5B7C9C', '#768A58', '#9A6236', '#4F8274', '#8A3A34'][(i || 0) % 7];
 // update 10.3: handwritten margin notes on a recipe page, read from what we've already saved (read-only): times cooked
 // and when, our heart rating, who loves it, our love note and our tweaks. Corey writes in navy ink, Faith in plum.
@@ -5131,6 +5231,8 @@ const DOODLE = {
   seafood: '<path d="M5 18c6-8 16-8 22 0-6 8-16 8-22 0zM27 18l5-5v10z"/><circle cx="11" cy="16" r="1"/>',
   'takeout-at-home': '<path d="M8 12h20l-3 18H11zM12 12l2-6h8l2 6M5 6l12 10M9 4l10 11"/>',
   'comfort-soups': '<path d="M5 18h26c0 7-6 11-13 11S5 25 5 18zM12 13c-2-2 2-4 0-7M18 13c-2-2 2-4 0-7M24 13c-2-2 2-4 0-7"/>',
+  breakfast: '<circle cx="18" cy="18" r="11"/><circle cx="16" cy="17" r="4"/><path d="M27 10l5-4"/>',
+  'spice-blends': '<path d="M12 10h12v20H12zM11 6h14v4H11zM15 18h6"/>',
   christmas: '<path d="M18 20c-4-6-12-6-13-1 4 0 6 2 6 6 4-1 6-3 7-5zM18 20c4-6 12-6 13-1-4 0-6 2-6 6-4-1-6-3-7-5z"/><circle cx="16" cy="23" r="1.8"/><circle cx="20" cy="23" r="1.8"/><circle cx="18" cy="26" r="1.8"/>',
 };
 const doodle = (slug) => DOODLE[slug] ? `<svg class="bk-doodle" viewBox="0 0 36 36" aria-hidden="true">${DOODLE[slug]}</svg>` : '';
@@ -5171,7 +5273,7 @@ async function viewBook(part = 'title') {
     html = `<div class="bk-page"><div class="ch-k">Our firsts</div>${ORN}<div class="bk-index bk-firsts">${fs.length ? fs.map(([k, t, d, ink]) => `<div class="fs-row"><span class="fs-k">${esc(k)}</span><span class="hw ${ink}">${esc(t)}</span><span class="hw sepia fs-d">${esc(longDate(d))}</span></div>`).join('') : '<p class="hw sepia big">our firsts get written here, one dinner at a time</p>'}</div>${doodle('comfort-soups')}${ORN}</div>`; }
   else if (part === 'about') html = `<div class="bk-page"><div class="ch-k">About this book</div>${ORN}
     <div class="bk-scrap"><p class="bk-drop">This is our kitchen, written down. Every recipe in here is one we cook for each other: mild, cozy and made for two, with no mushrooms, mustard or olives.</p>
-    <p>Each dish can be made Basic, Classic or Fancy, and the pages remember how we liked it. There are ${cats.length} chapters of dinners${treats.length ? ', and Acura has her own chapter at the back' : ''}.</p>
+    <p>Each dish can be made Basic, Classic or Fancy, and the pages remember how we liked it. There are ${cats.length} chapters: dinners, Christmas, breakfast and our spice blends${treats.length ? ', and Acura has her own chapter at the back' : ''}.</p>
     <p>Turn the pages with a swipe. Our notes, hearts and how often we've made each dish are pencilled in the margins.</p></div>${ORN}</div>`;
   else if (part === 'contents') html = `<div class="bk-page"><div class="ch-k">Contents</div>${ORN}<div class="bk-index"><ol class="bk-toc">
     ${cats.map((c, i) => `<li><a href="#/book/c/${c.slug}"><span class="n">${roman(i + 1)}</span><b>${esc(c.name)}${marks.some((k) => k === 'c/' + c.slug || (k.startsWith('r/') && (summary(k.slice(2)) || {}).category === c.slug)) ? '<em class="mini-rib" aria-label="bookmarked"></em>' : ''}</b><i></i><span class="p">${pg('#/book/c/' + c.slug)}</span></a></li>`).join('')}
@@ -5184,7 +5286,7 @@ async function viewBook(part = 'title') {
     const list = acura ? treats.map((t) => ({ h: '#/book/t/' + t.id, title: t.title })) : chapterList(m[1]).map((h) => ({ h: '#/book/' + h.slice(2), title: (summary(h.slice(4)) || {}).title }));
     const stk = acura ? `<span class="bk-sticker paw-st">${PAW()}</span>` : catOf(m[1]).tile ? `<img class="bk-sticker" src="${catOf(m[1]).tile}" alt="" aria-hidden="true">` : '';
     html = `<div class="chapter bk-ch">${stk}<div class="ch-k">Chapter ${roman(ci || 1)}</div>${ORN}<h1 class="ch-t">${acura ? 'Acura’s Kitchen' : esc(catOf(m[1]).name)}</h1>
-      <p class="ch-s">${acura ? 'Treats for our good girl' : list.length + ' recipe' + (list.length === 1 ? '' : 's')}</p>${acura ? `<div class="bk-trail" aria-hidden="true">${PAW().repeat(7)}</div>` : ''}${ORN}
+      <p class="ch-s">${acura ? 'Treats for our good girl' : catNoun(catOf(m[1]), list.length)}</p>${acura ? `<div class="bk-trail" aria-hidden="true">${PAW().repeat(7)}</div>` : ''}${ORN}
       <ul class="bk-list">${list.map((x) => `<li><a href="${x.h}"><b>${esc(x.title || '')}</b><i></i><span class="p">${pg(x.h)}</span></a></li>`).join('')}</ul>${acura ? '' : doodle(m[1])}</div>`;
   } else if ((m = part.match(/^(r|t)\/([\w-]+)$/))) {
     // a printed recipe page: read-only (the recipe as written, Classic), cooking happens in the app
@@ -5467,6 +5569,30 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+{
+ "name": "Update 14.0",
+ "id": "u140-2026-11",
+ "date": "2026-11-23",
+ "intro": "Two new chapters, Breakfast & Brunch and Spice Blends, and the seasonal tab now follows the calendar.",
+ "notes": [
+  [
+   "Breakfast & Brunch",
+   "Buttermilk pancakes, a classic diner breakfast, ham and cheddar strata, overnight baked French toast, sausage and egg burritos, egg muffins, banana bread, blueberry muffins, cinnamon rolls and peameal breakfast sandwiches"
+  ],
+  [
+   "Spice Blends",
+   "Mild taco, Italian, all-purpose chicken, mild steak spice, sweet BBQ rub, shawarma, Greek and pumpkin pie spice, each with how much to use and which of our dinners it goes in. Blends stay out of the dinner picks"
+  ],
+  [
+   "Drinks and air fryer",
+   "A drink pairing on every breakfast and Fancy-night dinner, and an air fryer version on the crispy ones (wings, schnitzel, katsu, fish and chips, coconut shrimp and more)"
+  ],
+  [
+   "Seasonal tab",
+   "Christmas now shows November 1 to December 31. Holiday sections (Valentine’s, Easter, Thanksgiving) will take the same spot only in their own season. When no seasonal tab is showing, the other tabs spread out evenly. Holiday recipes will be at the bottom of Home and in search all year, but not in the book"
+  ]
+ ]
+},
 {
  "name": "Update 13.7",
  "id": "u137-2026-11",
@@ -6475,6 +6601,6 @@ async function boot() {
   const wait = updatedNow ? 0 : Math.max(0, 800 - (performance.now() - t0));
   setTimeout(() => { $('#splash').classList.add('out'); setTimeout(() => $('#splash').remove(), 700); }, wait);
 }
-window.OK_DEBUG = { get state() { return state; }, set state(v) { state = v; save(); }, stripGuide: () => openStripMove(), snapshot: () => takeSnapshot('auto', true), pools: () => ({ spin: spinPool().pool.map((r) => r.id), dinners: dinnerPool(visibleRecipes()).map((r) => r.id), pick: ui.pick }) };
+window.OK_DEBUG = { get index() { return INDEX; }, syncSeason: () => syncXmasTab(), bookCats: () => bookCats().map((c) => c.slug), get state() { return state; }, set state(v) { state = v; save(); }, stripGuide: () => openStripMove(), snapshot: () => takeSnapshot('auto', true), pools: () => ({ spin: spinPool().pool.map((r) => r.id), dinners: dinnerPool(visibleRecipes()).map((r) => r.id), pick: ui.pick }) };
 boot();
 })();
