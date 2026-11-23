@@ -1132,7 +1132,7 @@ function viewHoliday() {
 function viewHolidays() {
   setTop({ title: 'HOLIDAYS' });
   const items = holidayRecipes();
-  render(`<div class="wrap"><div class="kicker">${svg('star')}Holiday recipes<span class="rule"></span></div>
+  render(`<div class="wrap hols"><div class="kicker">${svg('star')}Holiday recipes<span class="rule"></span></div>
     <h1 class="h1" style="margin-top:6px">Holidays</h1>
     <p class="lead">Each holiday gets its own tab in its season. They're here, and in search, all year.</p>
     ${holidaySections(items)}</div>`);
@@ -5569,6 +5569,30 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+{
+ "name": "Update 14.1",
+ "id": "u141-2026-11",
+ "date": "2026-11-23",
+ "intro": "Holiday recipes for Thanksgiving, Valentine’s Day and Easter. Each one gets its own tab only in its season.",
+ "notes": [
+  [
+   "Thanksgiving",
+   "Roast turkey thighs with pan gravy, sweet potato casserole with pecan crumble, green bean casserole (no canned soup), classic pumpkin pie and apple crisp. The tab is called Harvest so it fits the bar, from September 25 to October 14"
+  ],
+  [
+   "Valentine’s Day",
+   "Filet mignon with red wine pan sauce, garlic butter baked lobster tails, red velvet cupcakes and chocolate-dipped strawberries, from February 1 to 14"
+  ],
+  [
+   "Easter",
+   "Garlic roast leg of lamb with potatoes, classic deviled eggs, hot cross buns and carrot cake with cream cheese frosting, from two weeks before Easter through Easter Monday"
+  ],
+  [
+   "All year",
+   "Outside their season they’re under Holiday recipes at the bottom of Home, and in search. They aren’t in the book, and their mains only show up in Tonight’s pick and the wheel in their own season"
+  ]
+ ]
+},
 {
  "name": "Update 14.0",
  "id": "u140-2026-11",

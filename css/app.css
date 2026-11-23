@@ -1982,7 +1982,7 @@ html.xmas[data-theme="dark"]{background:#0C1A13}
 body.xmas #toast{background:#1F3B2D}
 body.xmas .btn.gold,body.xmas .pill.gold{color:#1E2E25}
 body.xmas #cook{background:#1A3226}
-.xm .kicker svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.8;margin-right:6px;vertical-align:-2px}
+.xm .kicker svg,.hol .kicker svg,.hols .kicker svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.8;margin-right:6px;vertical-align:-2px}
 /* a quiet holly-and-snow ribbon across the top of the tab */
 .xm-band{height:14px;margin:-6px calc(var(--gutter) * -1) 14px;opacity:.75;
   background:radial-gradient(circle at 10px 7px,#9E2B35 2.4px,transparent 2.8px) 0 0/40px 14px,
