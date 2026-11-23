@@ -95,17 +95,32 @@ function fraction(q) {
   return (whole ? whole : '') + best[1];
 }
 const PLURAL = { cup: 'cups', clove: 'cloves', crown: 'crowns', slice: 'slices', can: 'cans', head: 'heads', bunch: 'bunches', package: 'packages', jar: 'jars', strip: 'strips' };
-function fmtQty(q, unit) {
+// update 11.2: scaled amounts read like a cookbook — eggs, bay leaves, slices and strips stay whole; 3+ tsp become
+// tbsp and 4+ tbsp become cups when that lands on a kitchen fraction (6 tsp → 2 tbsp, 8 tbsp → ½ cup); tiny cups and
+// tbsp step down (⅛ cup → 2 tbsp, ¼ tbsp → ¾ tsp), 1000+ g reads in kg, and the plural follows the number shown
+const WHOLE = /\begg|bay lea|\bslices?\b|\bstrips?\b|tortilla|\bbuns?\b|\brolls?\b|fillet/i;
+const onFR = (x) => FR.some(([v]) => Math.abs((x - Math.floor(x)) - v) < 0.02);
+function fmtQty(q, unit, name) {
   if (q == null) return '';
+  if (unit === 'tsp' && q >= 3 && onFR(q / 3)) { q = q / 3; unit = 'tbsp'; }
+  if (unit === 'tbsp' && q >= 4 && onFR(q / 16)) { q = q / 16; unit = 'cup'; }
+  if (unit === 'cup' && q < 0.24) { q *= 16; unit = 'tbsp'; }
+  if (unit === 'tbsp' && q < 0.9) { q *= 3; unit = 'tsp'; }
+  if (unit === 'kg' && q < 1) { q *= 1000; unit = 'g'; } else if (unit === 'L' && q < 1) { q *= 1000; unit = 'ml'; }
+  else if (unit === 'g' && q >= 1000) { q /= 1000; unit = 'kg'; } else if (unit === 'ml' && q >= 1000) { q /= 1000; unit = 'L'; }
   let txt;
-  if (['cup', 'tbsp', 'tsp', 'lb'].includes(unit)) txt = fraction(q);
+  if (['clove', 'slice', 'strip'].includes(unit) || (!unit && name && WHOLE.test(name))) txt = String(Math.max(1, Math.round(q)));
+  else if (['cup', 'tbsp', 'tsp', 'lb'].includes(unit)) txt = fraction(q);
   else if (unit === 'g' || unit === 'ml') txt = String(q >= 100 ? Math.round(q / 10) * 10 : Math.max(5, Math.round(q / 5) * 5));
   else if (unit === 'kg' || unit === 'L') txt = String(Math.round(q * 20) / 20).replace(/\.?0+$/, '');
   else txt = fraction(Math.max(0.5, Math.round(q * 2) / 2));
-  const u = unit ? (q > 1 && PLURAL[unit] ? PLURAL[unit] : unit) : '';
+  const u = unit ? (txt !== '1' && !/^[⅛¼⅓½⅔¾]$/.test(txt) && PLURAL[unit] ? PLURAL[unit] : unit) : '';
   return (txt + (u ? ' ' + u : '')).trim();
 }
 
+// a bare count of one reads singular ("1 large egg", "1 bay leaf"); counts with a unit keep their own noun
+const ONE = /^[⅛¼⅓½⅔¾]?$|^1$/;
+const nameFor = (name, amt) => (amt && /^[\d⅛¼⅓½⅔¾]+$/.test(amt) && ONE.test(amt) ? name.replace(/\bleaves$/, 'leaf').replace(/(egg|carrot|orange|onion|tortilla|banana|lemon|roll|shell|breast|noodle|tomato)(e?s)$/, '$1') : name);
 // ---------------------------------------------------------------- state
 const DEFAULT_STATE = () => ({
   v: 1,
@@ -521,7 +536,7 @@ function ingLine(it, f, withHave = true) {
     const l = levelOf(pantryKey(it.pantry.name));
     if (l === 'out') have = '<span class="have out">Out</span>'; else if (l === 'low') have = '<span class="have low">Low</span>';
   }
-  return `${amt ? `<span class="amt">${esc(amt)}</span>${met} ` : ''}${esc(it.name)}${it.note ? `<span class="note">, ${esc(it.note)}</span>` : ''}${it.optional ? '<span class="opt">optional</span>' : ''}${have}`;
+  return `${amt ? `<span class="amt">${esc(amt)}</span>${met} ` : ''}${esc(nameFor(it.name, amt))}${it.note ? `<span class="note">, ${esc(it.note)}${it.asWritten && f !== 1 ? ' (as written)' : ''}</span>` : ''}${it.optional ? '<span class="opt">optional</span>' : ''}${have}`;
 }
 function cookedEntries(id) { return Object.values(state.cooked).filter((c) => c.recipeId === id).sort((a, b) => (a.date < b.date ? 1 : -1)); }
 
@@ -1394,7 +1409,7 @@ function amtText(it, f) {
   if (it.qty == null) return '';
   const u = state.settings.units;
   if (u === 'metric' && it.metric) return fmtQty(it.metric.qty * f, it.metric.unit);
-  return fmtQty(it.qty * f, it.unit);
+  return fmtQty(it.qty * f, it.unit, it.name);
 }
 // "uses" line for a step: ["0-1", "2-0=1 tbsp"]
 function stepUses(r, st, f) {
@@ -1409,12 +1424,12 @@ function stepUses(r, st, f) {
       const unit = m && m[2] ? (UNITS[m[2].toLowerCase()] || m[2]) : it.unit;
       if (q != null) {
         if (state.settings.units === 'metric' && it.metric && unit === it.unit && it.qty) return fmtQty(it.metric.qty * (q / it.qty) * f, it.metric.unit) + ' ' + it.name;
-        return fmtQty(q * f, unit) + ' ' + it.name;
+        const t = fmtQty(q * f, unit, it.name); return t + ' ' + nameFor(it.name, t);
       }
       return part + ' ' + it.name;
     }
     const a = amtText(it, f);
-    return (a ? a + ' ' : '') + it.name;
+    return (a ? a + ' ' : '') + nameFor(it.name, a);
   }).filter(Boolean);
 }
 const usesHTML = (list) => (list.length ? `<span class="uses">${list.map((u) => `<i>${esc(u)}</i>`).join('')}</span>` : '');
@@ -4852,6 +4867,30 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+ {
+  "name": "Update 11.2",
+  "id": "u112-2026-11",
+  "date": "2026-11-23",
+  "intro": "Every recipe and every one of Acura's treats, checked line by line.",
+  "notes": [
+   [
+    "Recipes",
+    "Clearer wording in a few steps, cooking times that match the steps, and a done-test for the soups and mac and cheese"
+   ],
+   [
+    "Safe temperatures",
+    "Salmon now cooks to Health Canada's 70°C (158°F), and every oven temperature shows °F too"
+   ],
+   [
+    "Scaling",
+    "Changing servings keeps eggs, cloves and bacon slices whole, says 1 egg rather than 1 eggs, turns 6 tsp into 2 tbsp and tiny cups into tablespoons, reads big weights in kg, and marks notes like ‘1 box’ as written for the full recipe"
+   ],
+   [
+    "Acura",
+    "All six treats re-checked for dog safety"
+   ]
+  ]
+ },
  {
   "name": "Update 11.1",
   "id": "u111-2026-11",

@@ -258,7 +258,8 @@
           "pantry": {
             "name": "Lasagna noodles",
             "cat": "grains"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 4,
@@ -361,7 +362,7 @@
     },
     {
       "title": "Rest, then slice",
-      "text": "Let it rest 20 minutes before cutting — this is what gives you clean, tall layers instead of a landslide. Cut into 8 squares.",
+      "text": "Rest 20 minutes before cutting so the layers hold. Cut into 8 squares.",
       "timer": 20,
       "uses": []
     }
@@ -468,7 +469,7 @@
       "plating": [
         "Rest the full 20 minutes — it's what makes tall layers.",
         "Lift squares with a wide spatula onto warm plates.",
-        "Spoon a little extra hot sauce beside, not on top."
+        "Spoon a little extra warm sauce beside, not on top."
       ]
     }
   },

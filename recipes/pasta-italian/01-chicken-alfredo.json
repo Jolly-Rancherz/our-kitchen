@@ -100,7 +100,8 @@
           "pantry": {
             "name": "Chicken breasts (boneless)",
             "cat": "meat"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 0.75,
@@ -173,7 +174,8 @@
           "pantry": {
             "name": "Fettuccine",
             "cat": "grains"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 1,
@@ -301,8 +303,8 @@
     },
     {
       "title": "Sear the chicken",
-      "text": "Heat the oil and 1 tbsp butter in a large skillet over medium-high. Cook the cutlets 5–6 minutes per side until golden and 74°C (165°F) inside. Rest on a board 5 minutes, then slice.",
-      "timer": 12,
+      "text": "Heat the oil and 1 tbsp butter in a large skillet over medium-high. Cook the cutlets 4–5 minutes per side until golden and 74°C (165°F) inside. Rest on a board 5 minutes, then slice.",
+      "timer": 10,
       "uses": [
         "0-5",
         "0-6"
@@ -318,7 +320,7 @@
     },
     {
       "title": "Make the garlic butter",
-      "text": "In the same skillet (don't wash it — that's flavour), melt the butter over medium-low. Add the garlic and cook 1 minute until fragrant, without browning.",
+      "text": "In the same skillet (the brown bits add flavour), melt the butter over medium-low. Add the garlic and cook 1 minute until fragrant, without browning.",
       "uses": [
         "2-0",
         "2-1"
@@ -429,6 +431,16 @@
                 "cat": "grains"
               },
               "note": "sliced, for garlic toast"
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "extra, for the garlic toast",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
             }
           ]
         }

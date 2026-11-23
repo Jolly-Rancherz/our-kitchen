@@ -190,7 +190,8 @@
           "pantry": {
             "name": "Ground beef (lean)",
             "cat": "meat"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 1,

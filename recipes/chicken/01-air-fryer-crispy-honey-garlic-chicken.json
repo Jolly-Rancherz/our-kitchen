@@ -242,7 +242,8 @@
           "pantry": {
             "name": "Cornstarch",
             "cat": "baking"
-          }
+          },
+          "asWritten": true
         }
       ]
     },
@@ -318,7 +319,8 @@
           "pantry": {
             "name": "Broccoli",
             "cat": "produce"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 2,

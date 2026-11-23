@@ -212,7 +212,8 @@
           "pantry": {
             "name": "Cornstarch",
             "cat": "baking"
-          }
+          },
+          "asWritten": true
         }
       ]
     },
@@ -250,7 +251,8 @@
           "pantry": {
             "name": "Broccoli",
             "cat": "produce"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 2,
@@ -379,7 +381,7 @@
     }
   ],
   "saleTip": "Boneless thighs drop to about $9–11/kg in No Frills club-pack flyer weeks — buy 2 kg and freeze half in a flat bag.",
-  "swap": "Chicken breast works (sear 4–5 min a side to 74°C / 165°F). Salmon also loves this sauce — 4 fillets, 4 min a side.",
+  "swap": "Chicken breast works (sear 4–5 min a side to 74°C / 165°F). Salmon also loves this sauce — 4 fillets, about 4 min a side, to 70°C (158°F).",
   "leftovers": "Pack in containers with the sauce: rice, veg, chicken. Fridge 3–4 days.",
   "doneness": "Chicken: 74°C (165°F) in the thickest part.",
   "source": "Based on tested homemade teriyaki methods (RecipeTin Eats, Just One Cookbook): soy + sweetener + vinegar reduced with a cornstarch slurry; safe temp per Health Canada.",

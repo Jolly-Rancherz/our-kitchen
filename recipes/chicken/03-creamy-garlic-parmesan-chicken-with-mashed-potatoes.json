@@ -97,7 +97,8 @@
           "pantry": {
             "name": "Chicken breasts (boneless)",
             "cat": "meat"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 1,
@@ -327,7 +328,6 @@
           "qty": 1,
           "unit": "tsp",
           "name": "salt",
-          "note": "plus 1 tbsp for the water",
           "pantry": {
             "name": "Salt",
             "cat": "spices"

@@ -202,7 +202,8 @@
           "pantry": {
             "name": "Oranges",
             "cat": "produce"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 0.33,
@@ -263,7 +264,8 @@
           "pantry": {
             "name": "Cornstarch",
             "cat": "baking"
-          }
+          },
+          "asWritten": true
         }
       ]
     },
@@ -329,7 +331,7 @@
     },
     {
       "title": "Make the orange sauce",
-      "text": "While batch two cooks, simmer the orange juice, orange zest and juice, brown sugar, soy sauce, rice vinegar, garlic and ginger in a large skillet over medium for 3–4 minutes. Stir in the slurry and simmer 1 minute until thick and glossy.",
+      "text": "While batch two cooks, simmer the carton juice, the zest of both oranges, the juice of one, brown sugar, soy sauce, rice vinegar, garlic and ginger in a large skillet over medium for 3–4 minutes. Stir in the slurry and simmer 1 minute until thick and glossy.",
       "timer": 5,
       "uses": [
         "1-0",

@@ -253,7 +253,8 @@
           "pantry": {
             "name": "Cheddar (shredded)",
             "cat": "dairy"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 8,
@@ -304,7 +305,7 @@
     },
     {
       "title": "Toast the flour",
-      "text": "Sprinkle the flour over the onions and stir for 1 minute so it coats everything and loses its raw taste. This is what makes the soup thick and silky.",
+      "text": "Sprinkle the flour over the onions and stir for 1 minute so it coats everything and loses its raw taste.",
       "timer": 1,
       "uses": [
         "0-3"
@@ -346,7 +347,7 @@
     },
     {
       "title": "Load it up and serve",
-      "text": "Ladle into bowls and top each with the rest of the cheddar, crumbled bacon and a spoonful of sour cream. Let leftovers cool, then pack 2 lunch containers.",
+      "text": "Ladle into bowls and top each with the rest of the cheddar, crumbled bacon and a spoonful of sour cream.",
       "uses": [
         "1-0=1 cup",
         "1-1",
@@ -384,7 +385,7 @@
   "swap": "Use whole milk instead of cream to save about $2 (just keep it on low), or leave out the bacon for a meat-free night.",
   "leftovers": "Fridge up to 4 days in sealed containers — great for lunch. Freezes for 2 months (it can get a little grainy; whisk well while reheating). Reheat gently on low with a splash of milk — don't boil.",
   "source": "Mom's recipe, with steps based on classic loaded baked potato soup (America's Test Kitchen, Once Upon a Chef)",
-  "doneness": null,
+  "doneness": "Potatoes break apart when pressed against the pot with a spoon; bacon is crisp. Reheat leftovers to 74°C (165°F).",
   "gear": [
     "Large pot or Dutch oven (5–6 L)",
     "Potato masher",

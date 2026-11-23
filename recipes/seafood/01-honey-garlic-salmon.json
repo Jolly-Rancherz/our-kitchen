@@ -90,7 +90,8 @@
           "pantry": {
             "name": "Salmon fillets",
             "cat": "meat"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 0.75,
@@ -255,7 +256,8 @@
           "pantry": {
             "name": "Broccoli",
             "cat": "produce"
-          }
+          },
+          "asWritten": true
         }
       ]
     }
@@ -305,7 +307,7 @@
     },
     {
       "title": "Glaze",
-      "text": "Turn the heat to medium. Add the butter and the glaze and let it bubble 2–3 minutes, spooning it over the salmon as it thickens, until the thickest part reads 63°C (145°F) and flakes easily. Turn the heat down if the glaze darkens too fast.",
+      "text": "Turn the heat to medium. Add the butter and the glaze and let it bubble 2–4 minutes, spooning it over the salmon as it thickens, until the thickest part reads 70°C (158°F) and flakes easily. Turn the heat down if the glaze darkens too fast.",
       "timer": 3,
       "uses": [
         "1-4"
@@ -338,7 +340,7 @@
   "saleTip": "Fresh Atlantic salmon is around $13/lb regular at No Frills but often drops to $9–10/lb. Frozen salmon portions (e.g. 908 g bag) are usually cheaper and work great — thaw overnight.",
   "swap": "Use frozen salmon portions to bring it to $$ (~$25). Shrimp works too (2 min per side).",
   "leftovers": "Fridge 2 days (fish is best fresh). Eat cold over rice, or reheat gently, covered, at 50% power so it doesn't dry out.",
-  "doneness": "Salmon: 63°C (145°F) in the thickest part; it should flake easily.",
+  "doneness": "Salmon: 70°C (158°F) in the thickest part (Health Canada); it flakes easily.",
   "source": "Based on tested pan-seared honey garlic salmon methods (sear then glaze, 145°F); safe temp per Health Canada.",
   "gear": [
     "Large non-stick skillet",

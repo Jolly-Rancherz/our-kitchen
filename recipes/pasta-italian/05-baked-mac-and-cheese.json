@@ -96,7 +96,8 @@
           "pantry": {
             "name": "Elbow macaroni",
             "cat": "grains"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 1,
@@ -221,7 +222,8 @@
           "pantry": {
             "name": "Cheddar (shredded)",
             "cat": "dairy"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 1.5,
@@ -369,7 +371,7 @@
   "saleTip": "Block cheddar (400 g) drops to around $5–6 on sale at No Frills — grab two and freeze one. Evaporated milk is often under $2 a can.",
   "swap": "Mix in crispy bacon or diced cooked chicken before baking to make it a full dinner. Monterey Jack works instead of mozzarella.",
   "leftovers": "Fridge 4 days. Freezes 2 months in portions. Reheat with a splash of milk, covered, in the microwave or at 175°C (350°F) for 15–20 min.",
-  "doneness": null,
+  "doneness": "Bubbling at the edges and golden on top; rest 5 minutes so the sauce sets. Reheat leftovers to 74°C (165°F).",
   "source": "Based on tested baked mac and cheese methods (roux + evaporated milk, 375°F bake — Trevor's Kitchen, America's Test Kitchen).",
   "gear": [
     "9×13 baking dish",

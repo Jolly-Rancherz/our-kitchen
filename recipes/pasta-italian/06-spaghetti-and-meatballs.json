@@ -234,7 +234,8 @@
           "pantry": {
             "name": "Spaghetti",
             "cat": "grains"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 1,
@@ -266,7 +267,7 @@
   "steps": [
     {
       "title": "Soak the crumbs",
-      "text": "In a big bowl, stir the panko and milk together and let it sit 5 minutes. This 'panade' is the secret to soft, juicy meatballs.",
+      "text": "In a big bowl, stir the panko and milk together and let it sit 5 minutes (the soaked crumbs keep the meatballs soft).",
       "timer": 5,
       "uses": [
         "0-0",

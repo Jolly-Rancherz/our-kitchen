@@ -189,7 +189,8 @@
           "pantry": {
             "name": "Lemons",
             "cat": "produce"
-          }
+          },
+          "asWritten": true
         }
       ]
     },
@@ -255,7 +256,8 @@
           "pantry": {
             "name": "Broccoli",
             "cat": "produce"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 2,

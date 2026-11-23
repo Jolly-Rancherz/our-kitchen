@@ -227,7 +227,8 @@
           "pantry": {
             "name": "Broccoli",
             "cat": "produce"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 2,

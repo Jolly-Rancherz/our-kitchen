@@ -165,7 +165,8 @@
           "pantry": {
             "name": "Broccoli",
             "cat": "produce"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 2,
@@ -175,7 +176,8 @@
           "pantry": {
             "name": "Carrots",
             "cat": "produce"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 1,
@@ -334,7 +336,7 @@
   "saleTip": "Broccoli crowns are often 2 for $4–5 at No Frills, and old cheddar 400 g blocks hit ~$5–6 on sale — use the leftover 100 g on tacos or mac and cheese.",
   "swap": "Use whole milk instead of half-and-half (a little lighter), or frozen broccoli (no need to thaw; simmer 10–12 min).",
   "leftovers": "Fridge 4 days. Reheat on low, stirring, with a splash of milk — don't boil or it can split. Freezing isn't recommended (the cheese turns grainy).",
-  "doneness": null,
+  "doneness": "Broccoli stems are tender when pierced. Keep it below a boil once the cheese is in, or it turns grainy. Reheat leftovers to 74°C (165°F).",
   "source": "Based on tested Panera-copycat broccoli cheddar soup methods (Once Upon a Chef, Food Network Kitchen): butter-flour roux, broth + half-and-half, partial blend, cheese off the heat.",
   "gear": [
     "Large pot or Dutch oven (4 L+)",
@@ -408,12 +410,12 @@
         }
       ],
       "stepNotes": {
-        "3": "Fancy: hold back a handful of small florets, roast them at 220°C for 10 minutes for the top."
+        "3": "Fancy: hold back a handful of small florets, roast them at 220°C (425°F) for 10 minutes for the top."
       },
       "addSteps": [
         {
           "title": "Fancy finish",
-          "text": "Bake small mounds of cheddar on parchment at 200°C for 6–8 minutes until lacy and golden; cool to crisp. Hollow the bread rounds, toast them 5 minutes, ladle in the soup and top with roasted florets and a cheddar crisp."
+          "text": "Bake small mounds of cheddar on parchment at 200°C (400°F) for 6–8 minutes until lacy and golden; cool to crisp. Hollow the bread rounds, toast them 5 minutes, ladle in the soup and top with roasted florets and a cheddar crisp."
         }
       ],
       "costAdd": [

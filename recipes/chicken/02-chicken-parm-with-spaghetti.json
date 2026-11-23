@@ -105,7 +105,8 @@
           "pantry": {
             "name": "Chicken breasts (boneless)",
             "cat": "meat"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 1,
@@ -160,7 +161,8 @@
           "pantry": {
             "name": "Eggs",
             "cat": "dairy"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 1.5,
@@ -279,7 +281,8 @@
           "pantry": {
             "name": "Spaghetti",
             "cat": "grains"
-          }
+          },
+          "asWritten": true
         },
         {
           "qty": 1,
@@ -346,7 +349,7 @@
     },
     {
       "title": "Pan-fry until golden",
-      "text": "Heat the oil in a large skillet over medium-high until shimmering. Fry 2 cutlets at a time, 3 minutes per side, until deep golden (they finish in the oven). Move to the lined sheet pan.",
+      "text": "Heat the oil in a large skillet over medium-high until shimmering. Fry 2 cutlets at a time, 3 minutes per side, until deep golden (they finish in the oven). Move to a parchment-lined sheet pan.",
       "timer": 6,
       "uses": [
         "1-6"

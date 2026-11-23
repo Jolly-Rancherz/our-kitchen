@@ -100,7 +100,8 @@
           "pantry": {
             "name": "Jasmine rice",
             "cat": "grains"
-          }
+          },
+          "asWritten": true
         }
       ]
     },
