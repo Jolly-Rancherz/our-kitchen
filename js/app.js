@@ -866,7 +866,7 @@ function viewPantry() {
   render(`<div class="wrap">
     <div class="kicker">What we have<span class="rule"></span></div>
     <h1 class="h1" style="margin-top:6px">Pantry</h1>
-    <p class="lead" style="margin-top:4px">Every ingredient in our recipes — no cupboard digging.</p>
+    <p class="lead hand">Every ingredient in our recipes — no cupboard digging.</p>
     <div class="pantrylinks"><a class="chip" href="#/freezer">${svg('snow')}Freezer${Object.keys(state.freezer).length ? ' · ' + Object.values(state.freezer).reduce((a, x) => a + x.portions, 0) : ''}</a><button class="chip" id="scanP">${svg('camera')}Scan receipt</button>${(() => { const n = Object.values(state.pantry).filter((p) => { const d = useByDays(p); return d != null && d <= 2; }).length; return n ? `<span class="ub warn">${n} to use soon</span>` : ''; })()}</div>
     <div class="legend4"><div><b>${counts.lots}</b>Have lots</div><div><b>${counts.have}</b>Have it</div><div><b>${counts.low}</b>Running low</div><div><b>${counts.out}</b>Out</div></div>
     <div class="chips" style="margin-top:12px">
@@ -1165,7 +1165,7 @@ async function viewAdd(editId) {
   if (editId) return viewEditRecipe(editId);
   setTop({ title: 'ADD A RECIPE', back: '#/' });
   render(`<div class="wrap"><div class="kicker">Our own<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Add a recipe</h1>
-    <p class="lead" style="margin-top:4px">It goes into the book with the next number in its category.</p>
+    <p class="lead hand">It goes into the book with the next number in its category.</p>
     <div id="dislike"></div>
     <div class="field"><label>Name</label><input id="aT" placeholder="e.g. Garlic Butter Steak Bites"></div>
     <div class="field"><label>Short description</label><input id="aS" placeholder="with cheesy mashed potatoes"></div>
@@ -1232,7 +1232,7 @@ async function viewEditRecipe(id) {
   const lvs = base && base.levels ? ['basic', 'fancy'].filter((k) => r.levels[k]) : [];
   const tags = JSON.parse(JSON.stringify(r.tags || {}));
   render(`<div class="wrap editr"><div class="kicker">${own ? 'Our own' : esc(recipeLabel(summary(id) || r))}<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Edit recipe</h1>
-    <p class="lead" style="margin-top:4px">${own ? 'The version before this edit is kept — switch back any time from the recipe page.' : 'Saved on this phone as your version of the recipe. The original stays in the book, so you can reset to it any time.'}</p>
+    <p class="lead hand">${own ? 'The version before this edit is kept — switch back any time from the recipe page.' : 'Saved on this phone as your version of the recipe. The original stays in the book, so you can reset to it any time.'}</p>
     <div id="dislike"></div>
     <div class="field"><label>Name</label><input id="aT" value="${esc(r.title)}"></div>
     <div class="field"><label>Short description</label><input id="aS" value="${esc(r.subtitle || '')}"></div>
@@ -1700,7 +1700,7 @@ function bindWish(root, redraw) {
 function viewWish() {
   setTop({ title: 'WISH LIST', back: '#/' });
   render(`<div class="wrap"><div class="kicker">Someday soon<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Wish list</h1>
-    <p class="lead" style="margin-top:4px">Meals we want to add to the book.</p><div class="sec" id="wishBox">${wishHTML()}</div></div>`);
+    <p class="lead hand">Meals we want to add to the book.</p><div class="sec" id="wishBox">${wishHTML()}</div></div>`);
   bindWish($('#wishBox'), viewWish);
 }
 
@@ -1710,7 +1710,7 @@ function viewFreezer() {
   const list = Object.values(state.freezer).sort((a, b) => (a.date < b.date ? -1 : 1));
   const lefts = Object.values(state.leftovers);
   render(`<div class="wrap"><div class="kicker">Cold storage<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Freezer</h1>
-    <p class="lead" style="margin-top:4px">What's frozen and how long it's been in there.</p>
+    <p class="lead hand">What's frozen and how long it's been in there.</p>
     <div class="sec"><div class="addrow fz"><input id="fzNew" placeholder="e.g. Taco beef, chicken breasts…" enterkeyhint="done"><input id="fzN" class="numin" type="number" inputmode="numeric" min="1" value="2" aria-label="Portions"><button class="btn primary" id="fzAdd" aria-label="Add">${svg('plus')}</button></div>
       <p class="small muted" style="margin-top:6px">Name · portions</p></div>
     ${list.length ? `<ul class="cooked" style="margin-top:12px">${list.map((x) => { const d = daysSince(x.date); const warn = d > 90; return `<li><div><div class="t">${esc(x.name)}</div><div class="d">${x.portions} portion${x.portions === 1 ? '' : 's'} · frozen ${esc(shortDate(x.date))}${warn ? ' · <b style="color:var(--gold-deep)">over 3 months — use soon</b>' : ''}</div></div><span style="display:flex;gap:6px;align-items:center"><button class="btn sm ghost" data-fzuse="${x.id}">Used one</button><button class="del" data-fzdel="${x.id}" aria-label="Remove">×</button></span></li>`; }).join('')}</ul>` : '<div class="empty" style="margin-top:12px">Nothing in the freezer list yet. Soups, taco beef and breaded cutlets freeze well for 2–3 months.</div>'}
@@ -1763,7 +1763,7 @@ function viewStory() {
   const months = []; all.forEach((c) => { const k = c.date.slice(0, 7); let m = months.find((x) => x.k === k); if (!m) months.push(m = { k, items: [] }); m.items.push(c); });
   const photoFor = (c) => (state.photos[c.recipeId] || []).filter((p) => p.date === c.date);
   render(`<div class="wrap"><div class="kicker">Corey ♥ Faith<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Our story</h1>
-    <p class="lead" style="margin-top:4px">Every dinner we've made together, newest first.</p>
+    <p class="lead hand">Every dinner we've made together, newest first.</p>
     ${all.length ? `<a class="nudge ks" href="#/keepsake"><span>${svg('print')}</span><span><b>Our cookbook keepsake</b> — every recipe we've cooked, with photos and love stamps, ready to print or save as a PDF.</span><span>${svg('chevR')}</span></a>` : ''}
     ${months.length ? months.map((m) => { const rc = monthRecap(m.k); return `<div class="sec"><div class="sec-title">${esc(monthName(m.k))}</div>${rc && m.k !== monthKey() ? recapCard(rc) : ''}
       <ul class="timeline">${m.items.map((c) => { const ph = photoFor(c); return `<li><span class="dot"></span><div class="tl-body"><div class="tl-d">${esc(shortDate(c.date))}${c.by ? ' · ' + esc(c.by === 'Both' ? 'cooked together' : c.by + ' cooked') : ''}</div>
@@ -2781,7 +2781,7 @@ function viewHome(partial) {
           <div class="pc-body"><div class="t">${esc(pk.title)}</div><div class="m">${pk.price} · ${pk.total} min · ~${money(pk.cost)} · start by ${fmtTime(startTime(pk, null))}</div></div></a>
         <div class="pick-q"><span>${esc(turn)}'s pick tonight — sound good?</span><button class="turnbtn" id="turnBtn" aria-label="Switch whose turn">${svg('swap')}</button></div>
         <div class="btnrow"><button class="btn ghost" id="pickNo">${svg('thumbDown')}Not tonight</button><button class="btn gold" id="pickYes">${svg('thumbUp')}Let's make it</button></div></div>` : ''}
-      <div class="quick"><button class="btn ghost" id="randBtn">${svg('dice')}Spin the wheel</button><button class="btn ghost" id="canMake">${svg('pantry')}What can we make</button><button class="btn ghost wide" id="ideasBtn">${svg('star')}More ideas<small>surprise me · mood · fridge clear · in season</small></button></div>
+      <div class="quick"><button class="qt" id="randBtn">${svg('dice')}<span>Spin the wheel</span></button><button class="qt" id="canMake">${svg('pantry')}<span>What can we make?</span></button><button class="qt" id="ideasBtn">${svg('star')}<span>More ideas</span></button></div>
       ${tmr && thaw ? `<button class="nudge prep" id="prepNudge"><span>${svg('thaw')}</span><span><b>Tomorrow: ${esc(summary(tmr).title)}</b> — ${esc(thaw)}.</span><span>${svg('chevR')}</span></button>` : ''}
       ${wn ? `<a class="nudge wxn" href="#/r/${wn.r.id}"><span>${svg('snow')}</span><span>${esc(wn.line)} <b>${esc(wn.r.title)}</b></span><span>${svg('chevR')}</span></a>` : ''}
       ${fcl && fcl.any ? `<button class="nudge use" id="fridayNudge"><span>${svg('pantry')}</span><span><b>Fridge-clear Friday:</b> ${esc([...fcl.lefts.map((l) => 'leftover ' + l.title), ...fcl.u.items.map((x) => x.p.name)].slice(0, 3).join(', '))}${fcl.u.picks.length ? ` — try ${esc(fcl.u.picks[0].r.title)}` : ''}.</span><span>${svg('chevR')}</span></button>` : ''}
@@ -2789,20 +2789,20 @@ function viewHome(partial) {
       ${lefts.length ? `<div class="sec"><div class="sec-title">In the fridge</div><ul class="cooked fridge">${lefts.map((l) => `<li><div><div class="t">${leftoverLine(l)}</div><div class="d">${l.portions} portion${l.portions === 1 ? '' : 's'} left</div></div><button class="btn sm ghost" data-ate="${l.id}">Ate one</button></li>`).join('')}</ul></div>` : ''}
       ${fb ? flashCard(fb, true) : ''}
       ${nudge ? `<a class="nudge" href="#/r/${nudge.r.id}"><span>${svg('reset')}</span><span>It's been <b>${nudge.days} days</b> since ${esc(nudge.r.title)}. Cook it again?</span></a>` : ''}
+      <div class="sec"><div class="sec-title">Categories</div>
+        <div class="cats">${withRecipes.map((c, i) => `<a class="cat-tile r${(i % 4) + 1}" href="#/c/${c.slug}" style="background:${c.colour}">${img(c.tile, '')}
+          <div class="lbl"><b>${esc(c.name)}</b><span>${c.items.length} recipe${c.items.length === 1 ? '' : 's'}</span></div></a>`).join('')}</div></div>
       <div class="sec"><div class="sec-title">Favourites${favs.length > 4 ? `<span class="act">${favs.length}</span>` : ''}</div>
         ${favs.length ? `<div class="favtiles">${favs.slice(0, 4).map((r) => `<a class="favtile" href="#/r/${r.id}">${r.image ? img(r.image, r.title) : placeholderArt(r)}<span class="ft">${esc(r.title)}</span>${isCoupleFav(r.id) ? `<i class="gh" title="Both of you love this">${svg('heart')}</i>` : ''}${state.signature === r.id ? '<i class="sg">★</i>' : ''}</a>`).join('')}</div>
           ${favs.length > 4 ? `<div class="hrow" style="margin-top:10px">${favs.slice(4).map(miniCard).join('')}</div>` : ''}` : `<div class="empty">Tap the ♡ on a recipe and it'll live here.</div>`}</div>
       ${rcook.length ? `<div class="sec"><div class="sec-title">Recently cooked</div><div class="rcook">${rcook.map(({ r, c }) => `<div class="rc"><a href="#/r/${r.id}" class="rc-a"><div class="im">${r.image ? img(thumb(r.image), '') : placeholderArt(r)}</div><div class="rc-t"><b>${esc(r.title)}</b><small>${hat(c.by, 14)}${esc(dayWord(c.date))}</small></div></a><button class="btn sm ghost" data-again="${r.id}" aria-label="Cook ${esc(r.title)} again">${svg('play')}Again</button></div>`).join('')}</div></div>` : ''}
       ${row ? `<div class="sec"><div class="sec-title">Recipe of the week</div><a class="wkcard" href="#/r/${row.id}"><div class="im">${row.image ? img(thumb(row.image), '') : placeholderArt(row)}</div><div><small>Something new to try</small><b>${esc(row.title)}</b><span>${row.price} · ${row.total} min · ~${money(row.cost)}</span></div></a></div>` : ''}
       ${recent.length ? `<div class="sec"><div class="sec-title">Recently viewed</div><div class="hrow">${recent.map(miniCard).join('')}</div></div>` : ''}
-      <div class="sec"><div class="sec-title">Categories</div>
-        <div class="cats">${withRecipes.map((c, i) => `<a class="cat-tile r${(i % 4) + 1}" href="#/c/${c.slug}" style="background:${c.colour}">${img(c.tile, '')}
-          <div class="lbl"><b>${esc(c.name)}</b><span>${c.items.length} recipe${c.items.length === 1 ? '' : 's'}</span></div></a>`).join('')}</div></div>
-      <div class="sec"><div class="sec-title">Contents</div>
+      <details class="sec toc-fold"><summary class="sec-title">Contents<span class="act">${recipes.length} recipes</span></summary>
         ${withRecipes.map((c) => `<div class="toc-sec"><div class="sh"><span class="sq" style="background:${c.colour}"></span>${esc(c.name)}</div>
           ${c.items.map((r) => `<a href="#/r/${r.id}"><em>${pad2(r.num)}</em><span>${esc(r.title)}</span><i>${r.price}</i></a>`).join('')}</div>`).join('')}
         <p class="small muted" style="margin-top:10px">${recipes.length} of 101 recipes so far — more are added in small batches.</p>
-      </div>
+      </details>
       <div class="sec guides"><h3>GUIDES</h3><div class="gl">
         <a href="#/guide"><span>°</span>Safe temps</a><a href="#/guide"><span>❄</span>Thawing</a>
         <a href="#/budget"><span>$</span>$350 month</a><a href="#/add"><span>+</span>Add a recipe</a><a href="#/story"><span>❦</span>Our story</a>
@@ -3195,7 +3195,7 @@ function viewGrocery() {
   render(`<div class="wrap">
     <div class="kicker">No Frills run<span class="rule"></span></div>
     <h1 class="h1" style="margin-top:6px">Grocery List</h1>
-    <p class="lead" style="margin-top:4px">${left ? `${left} thing${left === 1 ? '' : 's'} to grab` : items.length ? 'All done — nice.' : 'Empty for now.'}</p>
+    <p class="lead hand">${left ? `${left} thing${left === 1 ? '' : 's'} to grab` : items.length ? 'All done — nice.' : 'Empty for now.'}</p>
     ${gd ? dateModeCard(items) : (() => { const t = tripEstimate(); return t.n && t.priced ? `<div class="trip"><span>Estimated trip</span><b>~${money(t.total)}</b><small>${t.priced === t.n ? 'all' : t.priced + ' of ' + t.n} items priced · typical No Frills packs${Object.keys(state.prices).length ? ' + your receipts' : ''}</small>${(() => { const dn = items.filter((g) => g.checked).length; return dn ? `<span class="tprog" aria-label="${dn} of ${items.length} in the cart"><i style="transform:scaleX(${(dn / items.length).toFixed(3)})"></i></span><small class="tdone">${dn} of ${items.length} in the cart</small>` : ''; })()}</div>` : ''; })()}
     <div class="btnrow" style="margin-top:10px">${gd ? '' : `<button class="btn ghost" id="gdStart" ${left ? '' : 'disabled style="opacity:.4"'}>${svg('heart')}Shop together</button>`}<button class="btn ghost" id="scanG" ${gd ? 'style="grid-column:1/-1"' : ''}>${svg('camera')}Scan receipt</button></div>
     ${gd ? '' : `<div class="btnrow" style="margin-top:8px"><button class="btn ghost" id="wkBtn">${svg('calendar')}Plan the week</button><button class="btn ghost" id="stBtn">${svg('plus')}Staples</button></div>`}
@@ -3487,7 +3487,7 @@ function viewYear(yy) {
   setTop({ title: 'YEAR IN REVIEW', back: '#/us' });
   const s = yearStats(y);
   render(`<div class="wrap yir"><div class="kicker">Corey ♥ Faith<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Our ${y}</h1>
-    <p class="lead" style="margin-top:4px">${s.n ? `A year of cooking together, one dinner at a time.` : 'No dinners logged this year yet.'}</p>
+    <p class="lead hand">${s.n ? `A year of cooking together, one dinner at a time.` : 'No dinners logged this year yet.'}</p>
     ${s.n ? `<div class="sec"><div class="statgrid"><div class="s"><b>${s.n}</b><span>Dinners</span></div><div class="s"><b>${s.distinct}</b><span>Different recipes</span></div><div class="s"><b>${money(s.saved)}</b><span>Saved vs takeout</span></div><div class="s"><b>${s.fresh}</b><span>First-time recipes</span></div></div></div>
     <div class="sec"><div class="sec-title">Most made</div><ol class="yrtop">${s.top.map((t, i) => `<li><span class="yn">${i + 1}</span>${t.s && t.s.image ? img(thumb(t.s.image), '') : '<i></i>'}<div><b>${esc(t.title)}</b><small>${t.n} time${t.n === 1 ? '' : 's'}</small></div></li>`).join('')}</ol></div>
     <div class="sec card yrfacts"><ul class="tips">
@@ -3736,7 +3736,7 @@ async function viewAcuraSafety() {
   const D = await loadAcura(); if (!D) { render('<div class="wrap"><div class="empty">Couldn’t load the safety guide.</div></div>'); return; }
   const tb = treatBudget(); const p = AC().profile || {};
   render(`<div class="ac"><div class="wrap"><div class="kicker">${PAW('sm')}Keep Acura safe<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Safety guide</h1>
-    <p class="lead" style="margin-top:4px">What never goes in the bowl, and how much is a good-pup amount.</p>
+    <p class="lead hand">What never goes in the bowl, and how much is a good-pup amount.</p>
     <div class="ac-emerg">${svg('eyeoff')}<p>${esc(D.safety.emergency)}</p></div>
     <div class="sec"><div class="sec-title">Never feed</div><ul class="neverlist">${D.safety.never.map(([n, w]) => `<li><b>${esc(n)}</b><span>${esc(w)}</span></li>`).join('')}</ul></div>
     <div class="sec"><div class="sec-title">${PAW('sm')}Treat rules</div><ul class="pawbul">${D.safety.rules.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
@@ -3980,7 +3980,7 @@ function viewPlaces() {
   setTop({ title: 'PLACES WE LOVE', back: '#/us' });
   const list = Object.values(state.places).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : b.at - a.at));
   render(`<div class="wrap"><div class="kicker">Corey ♥ Faith<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Places we love</h1>
-    <p class="lead" style="margin-top:4px">Memorable meals out — and the closest one we can make at home.</p>
+    <p class="lead hand">Memorable meals out — and the closest one we can make at home.</p>
     <button class="btn primary block" id="plAdd" style="margin-top:14px">${svg('plus')}Add a place</button>
     ${list.length ? `<div class="places">${list.map((p) => { const m = p.dish ? closestRecipe(p.dish) : null; return `<div class="card place" data-pl="${p.id}"><div class="pl-top"><b>${esc(p.name)}</b><button class="del" data-pldel="${p.id}" aria-label="Remove ${esc(p.name)}">×</button></div>
       <div class="pl-d">${esc(longDate(p.date))}${p.by ? ' · ' + esc(p.by) : ''}</div>${p.dish ? `<p class="pl-dish">${esc(p.dish)}</p>` : ''}${p.note ? `<p class="pl-note">${esc(p.note)}</p>` : ''}
@@ -4867,6 +4867,26 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+ {
+  "name": "Update 12.0",
+  "id": "u120-2026-11",
+  "date": "2026-11-23",
+  "intro": "A tidier home page with a light scrapbook touch.",
+  "notes": [
+   [
+    "Home",
+    "The category tiles now sit right under Tonight's pick, and the full contents fold into one line you can tap open"
+   ],
+   [
+    "Ideas",
+    "Spin the wheel, What can we make? and More ideas sit together in one neat row"
+   ],
+   [
+    "A little scrapbook",
+    "Tonight's pick and Recipe of the week are taped in, and page notes are handwritten"
+   ]
+  ]
+ },
  {
   "name": "Update 11.2",
   "id": "u112-2026-11",
