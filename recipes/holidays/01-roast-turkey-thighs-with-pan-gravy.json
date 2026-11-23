@@ -331,7 +331,7 @@
   },
   "levels": {
     "basic": {
-      "note": "Salt, pepper and garlic thighs with pan gravy; no vegetable bed.",
+      "note": "Garlic and paprika thighs with pan gravy; no dried herbs or vegetable bed.",
       "drop": [
         "0-3",
         "0-5",
@@ -341,6 +341,7 @@
         "1-2"
       ],
       "stepNotes": {
+        "0": "Basic: skip the onion powder, dried thyme and sage.",
         "1": "Basic: roast the thighs straight in the pan."
       },
       "costDrop": [],
