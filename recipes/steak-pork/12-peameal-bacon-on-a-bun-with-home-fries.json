@@ -1,0 +1,403 @@
+{
+  "title": "Peameal Bacon on a Bun with Home Fries",
+  "subtitle": "Toronto's St. Lawrence Market classic: thick seared peameal bacon on a soft bun with honey mayo and crispy home fries",
+  "image": "assets/img/peameal-bacon-buns.webp",
+  "imageAlt": "A soft bun piled with thick slices of golden cornmeal-crusted peameal bacon beside crispy home fries on a cream plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "4 sandwiches: dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 30,
+  "cost": {
+    "total": 15.46,
+    "breakdown": [
+      [
+        "Peameal bacon, 700 g",
+        9.79,
+        "peameal-bacon"
+      ],
+      [
+        "Yukon Gold potatoes, 900 g",
+        2.18,
+        "yukon-gold-potatoes"
+      ],
+      [
+        "Kaiser buns, 4",
+        2.0,
+        "kaiser-buns"
+      ],
+      [
+        "Honey, 1 tbsp",
+        0.29,
+        "honey"
+      ],
+      [
+        "Mayonnaise, ¼ cup",
+        0.3,
+        "mayonnaise"
+      ],
+      [
+        "Onion, oil, butter, spices",
+        0.9
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "bread-wraps",
+      "potatoes"
+    ],
+    "occasion": [
+      "weeknight",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Canadian classic"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Peameal is raw cured pork loin rolled in cornmeal: cook it through like a pork chop."
+    },
+    {
+      "icon": "pot",
+      "text": "Par-boil the potatoes first so the home fries crisp fast."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Home fries",
+      "items": [
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "Yukon Gold potatoes",
+          "note": "cut in 2 cm cubes",
+          "pantry": {
+            "name": "Yukon Gold potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Peameal",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "peameal bacon",
+          "note": "cut in 12 slices, 1 cm thick",
+          "pantry": {
+            "name": "Peameal bacon",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Buns",
+      "items": [
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "mayonnaise",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Mayonnaise",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "honey",
+          "pantry": {
+            "name": "Honey",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "kaiser buns",
+          "pantry": {
+            "name": "Kaiser buns",
+            "cat": "grains"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Par-boil",
+      "text": "Cover the potatoes with cold salted water, bring to a boil and simmer 5 minutes, until just tender at the edges. Drain well and let them steam dry.",
+      "timer": 8,
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Home fries",
+      "text": "Heat the oil and butter in a large skillet over medium-high. Add the potatoes in one layer and cook 12–15 minutes, turning every few minutes, until golden. Add the onion, paprika, garlic powder, salt and pepper for the last 5 minutes.",
+      "timer": 14,
+      "uses": [
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Peameal",
+      "text": "Meanwhile, heat the oil in a second skillet over medium. Cook the peameal slices 3–4 minutes a side, in batches, until golden and 71°C (160°F) in the centre.",
+      "timer": 8,
+      "uses": [
+        "1-0",
+        "1-1"
+      ]
+    },
+    {
+      "title": "Honey mayo",
+      "text": "Stir the mayonnaise and honey together. Split the buns and toast them cut side down in the peameal pan, 1 minute.",
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2"
+      ]
+    },
+    {
+      "title": "Build",
+      "text": "Spread the honey mayo on the buns, stack 3 slices of peameal in each and serve with the home fries.",
+      "uses": []
+    }
+  ],
+  "together": "AABB*",
+  "fixIt": [
+    {
+      "problem": "Peameal tough",
+      "fix": "It was overcooked or sliced thin; use 1 cm slices and pull at 71°C (160°F)."
+    },
+    {
+      "problem": "Home fries sticking",
+      "fix": "Let them brown undisturbed 3–4 minutes before turning, and use enough fat."
+    },
+    {
+      "problem": "Potatoes mushy",
+      "fix": "Par-boil only 5 minutes and dry them well before frying."
+    }
+  ],
+  "saleTip": "Peameal bacon roasts go on sale at No Frills for about $8.80/kg; slice and freeze extra in portions.",
+  "swap": "Back bacon (already smoked) works the same: cook to 71°C (160°F). English muffins for buns.",
+  "leftovers": "Cold peameal is great chopped into fried rice or an omelette.",
+  "doneness": "Peameal bacon is raw cured pork: cook to 71°C (160°F) in the centre (Health Canada, pork).",
+  "source": "Based on the St. Lawrence Market peameal bacon sandwich and tested home fry methods (Toronto Life, Canadian Living): thick slices seared in a skillet, served on a kaiser bun; par-boiled, pan-crisped potatoes.",
+  "gear": [
+    "Large pot",
+    "2 large skillets",
+    "Colander",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Par-boil the potatoes up to 1 day ahead and keep them in the fridge.",
+    "Slice the peameal up to 1 day ahead."
+  ],
+  "reheat": "Peameal and home fries in a skillet over medium 4–5 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "peameal bacon",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Peameal on a toasted bun with simple home fries; no honey mayo or onion.",
+      "drop": [
+        "2-1",
+        "2-0",
+        "0-3"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the onion.",
+        "3": "Basic: skip the honey mayo; just toast the buns."
+      },
+      "costDrop": [
+        "honey",
+        "mayonnaise"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A fried egg and melted cheddar in every sandwich, diner-style.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "large eggs",
+              "pantry": {
+                "name": "Eggs",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "cheddar slices",
+              "pantry": {
+                "name": "Cheddar slices",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "butter",
+              "metric": {
+                "qty": 14,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Egg and cheese",
+          "text": "Melt the butter in the peameal pan over medium, fry the eggs covered 3–4 minutes until the whites are set and the yolks are firm. Lay cheddar on the hot peameal and add an egg to each bun."
+        }
+      ],
+      "costAdd": [
+        [
+          "Eggs, 4",
+          1.56,
+          "eggs"
+        ],
+        [
+          "Cheddar slices, 4",
+          1.0,
+          "cheddar-slices"
+        ],
+        [
+          "Butter",
+          0.2,
+          "butter"
+        ]
+      ],
+      "plating": [
+        "Wrap each sandwich halfway in parchment.",
+        "Home fries in a pile beside.",
+        "Ketchup in a small dish."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Peameal is lean, brined pork loin; the cornmeal coat browns into a crunchy edge.",
+    "2-1": "Honey mayo balances the salty bacon, a Toronto deli favourite.",
+    "0-0": "Yukon Golds hold their shape and crisp up golden."
+  },
+  "fancyNight": false,
+  "funFact": "Peameal bacon got its name from the crushed yellow peas it was first rolled in; cornmeal took over after the First World War.",
+  "keeps": {
+    "fridge": "4 days",
+    "freezer": "2 months",
+    "note": "freeze cooked peameal slices"
+  },
+  "pairs": []
+}

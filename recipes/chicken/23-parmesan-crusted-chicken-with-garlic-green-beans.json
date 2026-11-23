@@ -1,0 +1,435 @@
+{
+  "title": "Parmesan-Crusted Chicken with Garlic Green Beans",
+  "subtitle": "juicy chicken cutlets under a crunchy golden Parmesan-panko crust, with garlicky buttered green beans and rice",
+  "image": "assets/img/parmesan-crusted-chicken.webp",
+  "imageAlt": "Golden Parmesan-crusted chicken cutlets with buttered green beans and white rice on a cream plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 25,
+  "cost": {
+    "total": 17.0,
+    "breakdown": [
+      [
+        "Chicken breasts, 700 g",
+        9.24,
+        "chicken-breasts-boneless"
+      ],
+      [
+        "Green beans, 450 g",
+        3.3,
+        "green-beans"
+      ],
+      [
+        "Parmesan, ½ cup",
+        1.4,
+        "parmesan-grated"
+      ],
+      [
+        "Panko, 1 cup",
+        0.86,
+        "panko-breadcrumbs"
+      ],
+      [
+        "Jasmine rice, 2 cups",
+        1.0,
+        "jasmine-rice"
+      ],
+      [
+        "Butter, 3 tbsp",
+        0.6,
+        "butter"
+      ],
+      [
+        "Mayonnaise, garlic, spices, salt",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "stovetop"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Slice each breast in half through the side to make 2 thin cutlets; they cook evenly and fast."
+    },
+    {
+      "icon": "rice",
+      "text": "Start the rice first; it's ready when the chicken is."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "2 large",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "mayonnaise",
+          "pantry": {
+            "name": "Mayonnaise",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 60,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Garlic green beans",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "green beans",
+          "note": "trimmed",
+          "pantry": {
+            "name": "Green beans",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rice",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Cutlets",
+      "text": "Heat the oven to 220°C (425°F) and line a baking sheet with parchment. Slice each breast in half through the side to make 4 cutlets and season with the salt, pepper and paprika.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Crust",
+      "text": "Mix the panko, Parmesan, garlic powder and melted butter. Lay the cutlets on the sheet, spread the tops thinly with the mayonnaise and press the crumbs on firmly.",
+      "uses": [
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Bake 18–20 minutes, until the crust is golden and the thickest part reads 74°C (165°F).",
+      "timer": 19,
+      "uses": []
+    },
+    {
+      "title": "Green beans",
+      "text": "Meanwhile, boil the beans in salted water 4 minutes and drain. In the same pot, melt the butter over medium, cook the garlic 30 seconds, then toss the beans in it with the salt.",
+      "timer": 5,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Rest the chicken 3 minutes and serve with the rice and green beans.",
+      "uses": []
+    }
+  ],
+  "together": "BAAAB*",
+  "fixIt": [
+    {
+      "problem": "Crust not browning",
+      "fix": "Move the sheet up a rack and bake 2–3 minutes more, watching closely."
+    },
+    {
+      "problem": "Crumbs sliding off",
+      "fix": "Pat the chicken dry before the mayonnaise, and press the crumbs on firmly."
+    },
+    {
+      "problem": "Chicken dry",
+      "fix": "Pull it at 74°C (165°F); thin cutlets overshoot quickly."
+    }
+  ],
+  "saleTip": "Chicken breasts drop to about $9.90/kg in No Frills multi-packs; freeze them in pairs.",
+  "swap": "Boneless thighs: bake 20–22 minutes to 74°C (165°F). Broccoli instead of beans: boil 3 minutes.",
+  "leftovers": "Slice cold cutlets into wraps or onto a salad.",
+  "doneness": "Chicken cutlets at 74°C (165°F) in the thickest part (Health Canada, poultry pieces).",
+  "source": "Based on tested Parmesan-crusted chicken methods (Hellmann's Canada, Canadian Living): a thin coat of mayonnaise under a Parmesan-panko crust, baked hot at 220°C.",
+  "gear": [
+    "Baking sheet",
+    "Parchment paper",
+    "Medium pot with lid",
+    "Large pot",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Mix the crumb topping up to 2 days ahead and keep it in the fridge.",
+    "Trim the beans up to 2 days ahead."
+  ],
+  "reheat": "Cutlets on a rack at 200°C (400°F) for 8–10 minutes, until 74°C (165°F); the crust stays crisp.",
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Parmesan chicken with plain buttered beans and rice; no paprika or garlic.",
+      "drop": [
+        "0-3",
+        "1-2"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the paprika.",
+        "4": "Basic: skip the garlic; just butter and salt."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A lemon butter sauce spooned over the chicken.",
+      "add": [
+        {
+          "group": "Lemon butter",
+          "items": [
+            {
+              "qty": 3,
+              "unit": "tbsp",
+              "name": "butter",
+              "metric": {
+                "qty": 42,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "lemon",
+              "note": "zested and juiced",
+              "pantry": {
+                "name": "Lemons",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "tsp",
+              "name": "garlic powder",
+              "pantry": {
+                "name": "Garlic powder",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Lemon butter",
+          "text": "Melt the butter in a small pot over low with the garlic powder, then stir in the lemon zest and 2 tbsp juice. Spoon over the chicken at the table."
+        }
+      ],
+      "costAdd": [
+        [
+          "Butter, 3 tbsp",
+          0.6,
+          "butter"
+        ],
+        [
+          "Lemon",
+          0.79,
+          "lemons"
+        ]
+      ],
+      "plating": [
+        "Slice each cutlet on an angle and fan it over the rice.",
+        "Beans piled beside.",
+        "Lemon butter spooned over just before serving."
+      ]
+    }
+  },
+  "why": {
+    "0-4": "A thin coat of mayonnaise glues the crumbs on and keeps the chicken juicy.",
+    "0-6": "Parmesan browns and crisps in the oven, so the crust tastes like frico.",
+    "0-8": "Buttered crumbs turn golden in the oven without frying."
+  },
+  "fancyNight": false,
+  "funFact": "Parmesan has to age at least 12 months before it can carry the name Parmigiano Reggiano.",
+  "keeps": {
+    "fridge": "3 days",
+    "freezer": "2 months",
+    "note": "freeze baked cutlets, not the beans"
+  },
+  "pairs": []
+}

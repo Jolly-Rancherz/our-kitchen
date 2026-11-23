@@ -415,6 +415,18 @@ exactly 812pt although the image continues.
 - Temps: ground pork/beef 71°C (tourtière filling), pork loin 71°C, reheats 74°C; rolls 90°C bread doneness.
 - Tourtière and the pork loin are 'main', so they join the Nov–Feb dinner pickers through `dinnerPool`.
 
+## Update 13.6 — 20 more dinners, Corey's 80 done (2026-11-23)
+- Generators `app_src/b13/c7.py` and `c8.py`; photos mapped in `img13/map136.txt`; prices added by `app_src/b13/prices136.py`. Safe dry run of any generator: `python3 app_src/b13/dry.py cX.py` (writes to /tmp/dry only).
+  - chicken 23 Parmesan-crusted chicken & green beans, 24 baked wings & fries, 25 Caesar wraps
+  - pasta-italian 14 ham & cheese calzones (prep 90 incl. 1 h rise), 15 rosé penne (meatless), 16 pepperoni pizza pasta bake (serves 6)
+  - beef-turkey 18 turkey meatball subs, 19 pot roast (serves 6), 20 turkey burgers & sweet potato fries
+  - steak-pork 11 striploin & loaded baked potatoes, 12 peameal bacon on a bun, 13 oven pork chops & applesauce
+  - seafood 10 panko haddock & lemon rice, 11 seafood chowder (serves 6)
+  - takeout-at-home 10 chicken satay, 11 Halifax donairs, 12 beef chow mein
+  - comfort-soups 13 chicken gnocchi, 14 French onion (beef broth, so not called meatless), 15 mild chicken tortilla (all serve 6)
+- 13 new price keys (prices.json 210): chicken-wings, romaine-hearts, rotini, ground-turkey, beef-blade-roast, red-wine, peameal-bacon, kaiser-buns, peanut-butter, potato-gnocchi, black-beans-canned, bay-scallops-frozen, oyster-crackers. keycheck: none missing.
+- Temps: chicken and ground turkey 74°C, ground beef/donair loaf 71°C, peameal and pork chops 71°C, striploin 63°C (71°C medium), pot roast braised to ~90°C, haddock/cod 70°C, shrimp and scallops 74°C, reheats 74°C.
+
 ## Update 13.5 — 20 more dinners (2026-11-23)
 - Generators `app_src/b13/c5.py` and `c6.py` (c6 local helpers KETCH, WOR). Photos mapped in `img13/map135.txt`.
   - chicken 19 souvlaki & lemon potatoes, 20 crispy chicken burgers, 21 cordon bleu, 22 roast chicken & pan gravy (82°C thigh)

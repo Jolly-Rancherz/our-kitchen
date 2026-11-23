@@ -1,0 +1,454 @@
+{
+  "title": "Mild Chicken Tortilla Soup",
+  "subtitle": "a warm, tomatoey chicken soup with black beans and corn, topped with crunchy tortilla chips, cheddar and sour cream",
+  "image": "assets/img/chicken-tortilla-soup.webp",
+  "imageAlt": "A bowl of red-orange chicken tortilla soup with shredded chicken, black beans and corn, topped with tortilla chips, cheddar and sour cream, on a cream plate with a navy napkin",
+  "servings": 6,
+  "servingsNote": "a big pot: dinner for two, plus 4 bowls for lunches",
+  "prep": 15,
+  "cook": 40,
+  "cost": {
+    "total": 18.48,
+    "breakdown": [
+      [
+        "Chicken breasts, 600 g",
+        7.92,
+        "chicken-breasts-boneless"
+      ],
+      [
+        "Crushed tomatoes, 796 ml",
+        1.99,
+        "crushed-tomatoes-canned"
+      ],
+      [
+        "Chicken broth, 4 cups",
+        2.21,
+        "chicken-broth"
+      ],
+      [
+        "Black beans, 540 ml",
+        1.29,
+        "black-beans-canned"
+      ],
+      [
+        "Frozen corn, 1 cup",
+        0.56,
+        "frozen-corn"
+      ],
+      [
+        "Tortilla chips, 2 cups",
+        1.16,
+        "tortilla-chips"
+      ],
+      [
+        "Cheddar, 1 cup",
+        1.75,
+        "cheddar-shredded"
+      ],
+      [
+        "Sour cream, onion, lime, spices",
+        1.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [],
+    "occasion": [
+      "comfort-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "One pot"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "The chicken simmers whole in the soup, then gets shredded with two forks."
+    },
+    {
+      "icon": "cup",
+      "text": "Use mild chili powder; it's a warm spice blend, not hot."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Soup",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "mild chili powder",
+          "pantry": {
+            "name": "Chili powder (mild)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "ground cumin",
+          "pantry": {
+            "name": "Ground cumin",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried oregano",
+          "pantry": {
+            "name": "Dried oregano",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "can (796 ml) crushed tomatoes",
+          "pantry": {
+            "name": "Crushed tomatoes (canned)",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 1000,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 600,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "2 large, whole",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "can (540 ml) black beans",
+          "note": "drained and rinsed",
+          "pantry": {
+            "name": "Black beans (canned)",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "frozen corn",
+          "metric": {
+            "qty": 140,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Frozen corn",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "lime",
+          "note": "juiced",
+          "pantry": {
+            "name": "Limes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Toppings",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "tortilla chips",
+          "note": "lightly crushed",
+          "pantry": {
+            "name": "Tortilla chips",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "metric": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "sour cream",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Sour cream",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Base",
+      "text": "Heat the oil in a large pot over medium. Cook the onion 5 minutes until soft. Add the garlic, chili powder, cumin, paprika and dried oregano and stir 1 minute.",
+      "timer": 6,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Simmer the chicken",
+      "text": "Add the crushed tomatoes, broth, salt and the whole chicken breasts. Bring to a boil, then simmer, partly covered, 18–22 minutes, until the chicken reads 74°C (165°F) in the thickest part.",
+      "timer": 20,
+      "uses": [
+        "0-7",
+        "0-8",
+        "0-13",
+        "0-9"
+      ]
+    },
+    {
+      "title": "Shred",
+      "text": "Lift the chicken onto a board and shred it with two forks.",
+      "uses": []
+    },
+    {
+      "title": "Finish",
+      "text": "Return the chicken with the beans and corn and simmer 5 minutes. Stir in 2 tbsp lime juice and taste for salt.",
+      "timer": 5,
+      "uses": [
+        "0-10",
+        "0-11",
+        "0-12"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Ladle into bowls and top with the tortilla chips, cheddar and a spoon of sour cream.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    }
+  ],
+  "together": "AAAA*",
+  "fixIt": [
+    {
+      "problem": "Soup too thick",
+      "fix": "Add a splash of broth or water."
+    },
+    {
+      "problem": "Tastes flat",
+      "fix": "Add more lime juice and a pinch of salt; acid wakes it up."
+    },
+    {
+      "problem": "Chips soggy",
+      "fix": "Add them right at the table, not in the pot."
+    }
+  ],
+  "saleTip": "Canned black beans and crushed tomatoes are often under $1.50 at No Frills; stock the pantry.",
+  "swap": "Boneless thighs: simmer 20–25 minutes to 74°C (165°F). Kidney beans for black beans.",
+  "leftovers": "Keep the toppings separate; the soup freezes well.",
+  "doneness": "Chicken at 74°C (165°F) in the thickest part (Health Canada, poultry pieces). Reheat to 74°C (165°F).",
+  "source": "Based on tested chicken tortilla soup methods (Canadian Living, Budget Bytes): a spiced tomato-broth base with chicken simmered whole and shredded, beans and corn, finished with lime and topped with chips and cheese. Kept mild with no hot chilies.",
+  "gear": [
+    "Large pot",
+    "2 forks",
+    "Cutting board",
+    "Ladle",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Make the soup up to 3 days ahead or freeze it; add the lime and toppings when serving."
+  ],
+  "reheat": "Covered over medium, stirring, until 74°C (165°F).",
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Chicken, tomato and corn soup with chips and cheddar; no beans, dried oregano or sour cream.",
+      "drop": [
+        "0-10",
+        "0-6",
+        "1-2"
+      ],
+      "stepNotes": {
+        "0": "Basic: skip the dried oregano.",
+        "3": "Basic: corn only, no beans.",
+        "4": "Basic: chips and cheddar."
+      },
+      "costDrop": [
+        "beans"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Fresh avocado and homemade crispy tortilla strips.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "small flour tortillas",
+              "note": "cut in thin strips",
+              "pantry": {
+                "name": "Flour tortillas (small)",
+                "cat": "grains"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "canola or vegetable oil",
+              "pantry": {
+                "name": "Canola / vegetable oil",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "avocado",
+              "note": "diced",
+              "pantry": {
+                "name": "Avocados",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Tortilla strips",
+          "text": "Toss the tortilla strips with the oil and a pinch of salt and bake at 200°C (400°F) for 8–10 minutes, stirring once, until golden and crisp. Scatter the strips and avocado over the bowls."
+        }
+      ],
+      "costAdd": [
+        [
+          "Small tortillas, 4",
+          1.4,
+          "flour-tortillas-small"
+        ],
+        [
+          "Avocado",
+          1.25,
+          "avocados"
+        ],
+        [
+          "Oil",
+          0.1
+        ]
+      ],
+      "plating": [
+        "Wide bowls with toppings piled in the centre.",
+        "Lime wedges on the side.",
+        "Extra chips in a basket."
+      ]
+    }
+  },
+  "why": {
+    "0-9": "Simmering the chicken whole in the soup flavours the broth and keeps the meat tender.",
+    "0-12": "Lime juice at the end brightens all the warm spices.",
+    "0-3": "Mild chili powder gives the flavour without heat."
+  },
+  "fancyNight": false,
+  "funFact": "Tortilla soup, 'sopa de tortilla', comes from central Mexico, where day-old tortillas were fried crisp and added to tomato broth.",
+  "keeps": {
+    "fridge": "4 days",
+    "freezer": "3 months",
+    "note": "freeze without toppings"
+  },
+  "pairs": []
+}

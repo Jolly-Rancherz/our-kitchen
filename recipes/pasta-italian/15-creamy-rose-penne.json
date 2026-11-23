@@ -1,0 +1,366 @@
+{
+  "title": "Creamy Rosé Penne",
+  "subtitle": "penne in a silky pink tomato-cream sauce with garlic and Parmesan, the Canadian restaurant favourite",
+  "image": "assets/img/rose-penne.webp",
+  "imageAlt": "A bowl of penne in a creamy pink rosé sauce with grated Parmesan on a cream plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 10,
+  "cook": 25,
+  "cost": {
+    "total": 9.41,
+    "breakdown": [
+      [
+        "Penne, 450 g",
+        2.0,
+        "penne"
+      ],
+      [
+        "Crushed tomatoes, 796 ml",
+        1.99,
+        "crushed-tomatoes-canned"
+      ],
+      [
+        "Whipping cream, 1 cup",
+        2.37,
+        "35-whipping-cream"
+      ],
+      [
+        "Parmesan, ½ cup",
+        1.4,
+        "parmesan-grated"
+      ],
+      [
+        "Tomato paste, 2 tbsp",
+        0.65,
+        "tomato-paste"
+      ],
+      [
+        "Butter, 2 tbsp",
+        0.4,
+        "butter"
+      ],
+      [
+        "Onion, garlic, spices, salt",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "pasta"
+    ],
+    "occasion": [
+      "weeknight",
+      "date-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Pantry dinner"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Save a cup of pasta water before draining; it makes the sauce glossy."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Pasta",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "penne",
+          "pantry": {
+            "name": "Penne",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the pasta water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rosé sauce",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "tomato paste",
+          "pantry": {
+            "name": "Tomato paste",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "can (796 ml) crushed tomatoes",
+          "pantry": {
+            "name": "Crushed tomatoes (canned)",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried Italian seasoning",
+          "pantry": {
+            "name": "Italian seasoning (dried)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "granulated sugar",
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "35% whipping cream",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "35% whipping cream",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Water on",
+      "text": "Bring a big pot of water to a boil with the salt.",
+      "uses": [
+        "0-1"
+      ]
+    },
+    {
+      "title": "Base",
+      "text": "Melt the butter in a large deep skillet over medium. Cook the onion 5 minutes until soft, add the garlic for 30 seconds, then the tomato paste for 1 minute, stirring.",
+      "timer": 6,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Simmer",
+      "text": "Add the crushed tomatoes, Italian seasoning, sugar, salt and pepper and simmer 10 minutes, stirring now and then.",
+      "timer": 10,
+      "uses": [
+        "1-4",
+        "1-5",
+        "1-6",
+        "1-7",
+        "1-8"
+      ]
+    },
+    {
+      "title": "Pasta",
+      "text": "Meanwhile, cook the penne 1 minute less than the package says. Scoop out 1 cup of the water, then drain.",
+      "timer": 10,
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Cream",
+      "text": "Stir the cream into the sauce and bring to a gentle simmer, then stir in the Parmesan until smooth.",
+      "uses": [
+        "1-9",
+        "1-10"
+      ]
+    },
+    {
+      "title": "Toss",
+      "text": "Add the penne and toss 1 minute over low, adding pasta water a splash at a time until glossy.",
+      "uses": []
+    }
+  ],
+  "together": "ABBABA",
+  "fixIt": [
+    {
+      "problem": "Sauce too sharp",
+      "fix": "Add another pinch of sugar or a splash more cream."
+    },
+    {
+      "problem": "Sauce too thick",
+      "fix": "Loosen with pasta water a little at a time."
+    },
+    {
+      "problem": "Cream looks split",
+      "fix": "It boiled too hard. Take it off the heat and stir in a splash of cold cream."
+    }
+  ],
+  "saleTip": "Crushed tomatoes and penne are regular No Frills loss leaders; stock up at $1.49 and $1.",
+  "swap": "Half-and-half (10%) for the cream: simmer gently and don't boil. Rigatoni or rotini for penne.",
+  "leftovers": "The pasta soaks up sauce overnight; add a splash of milk when reheating.",
+  "doneness": "Meatless. Reheat leftovers to 74°C (165°F) (Health Canada, leftovers).",
+  "source": "Based on tested rosé sauce methods (Ricardo, Canadian Living): a garlic-tomato sauce finished with whipping cream and Parmesan.",
+  "gear": [
+    "Large pot",
+    "Large deep skillet",
+    "Colander",
+    "Wooden spoon"
+  ],
+  "prepAhead": [
+    "Make the tomato base up to 3 days ahead; add the cream when reheating."
+  ],
+  "reheat": "Covered in the microwave with a splash of milk, 2–3 minutes, stirring halfway, until 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Garlic tomato cream with Parmesan; no onion or Italian seasoning.",
+      "drop": [
+        "1-1",
+        "1-5"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the onion; just the garlic and tomato paste.",
+        "2": "Basic: no Italian seasoning."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Browned mild Italian sausage folded through.",
+      "add": [
+        {
+          "group": "Sausage",
+          "items": [
+            {
+              "qty": 500,
+              "unit": "g",
+              "name": "mild Italian pork sausages",
+              "note": "casings removed",
+              "pantry": {
+                "name": "Pork sausages (mild)",
+                "cat": "meat"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: first brown the sausage meat in the skillet, breaking it up, 7–8 minutes until no pink remains and 71°C (160°F); lift it out, then cook the onion in the fat."
+      },
+      "addSteps": [
+        {
+          "title": "Sausage",
+          "text": "Stir the sausage back in with the cream."
+        }
+      ],
+      "costAdd": [
+        [
+          "Mild sausages, 500 g",
+          6.99,
+          "pork-sausages-mild"
+        ]
+      ],
+      "plating": [
+        "Twist the penne into shallow bowls.",
+        "Extra Parmesan grated over the top.",
+        "Black pepper at the table."
+      ]
+    }
+  },
+  "why": {
+    "1-9": "Whipping cream won't curdle in the acidic tomatoes the way milk can.",
+    "1-3": "Cooking the paste first deepens the tomato flavour.",
+    "1-6": "A little sugar rounds off the tang of canned tomatoes."
+  },
+  "fancyNight": true,
+  "funFact": "Rosé sauce is mostly a Canadian and North American restaurant name; in Italy a similar sauce is called 'salsa rosa'.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "cream sauces split when frozen"
+  },
+  "pairs": []
+}

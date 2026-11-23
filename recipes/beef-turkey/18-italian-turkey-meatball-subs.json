@@ -1,0 +1,370 @@
+{
+  "title": "Italian Turkey Meatball Subs",
+  "subtitle": "tender baked turkey meatballs simmered in marinara, piled into toasted rolls under melted provolone",
+  "image": "assets/img/turkey-meatball-subs.webp",
+  "imageAlt": "Two meatball subs with tomato sauce and melted provolone in toasted rolls on a cream plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "4 subs: dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 25,
+  "cost": {
+    "total": 16.36,
+    "breakdown": [
+      [
+        "Ground turkey, 450 g",
+        6.49,
+        "ground-turkey"
+      ],
+      [
+        "Marinara, 1 jar",
+        3.49,
+        "marinara-sauce"
+      ],
+      [
+        "Hoagie rolls, 4",
+        2.66,
+        "hoagie-rolls"
+      ],
+      [
+        "Provolone, 4 slices",
+        2.0,
+        "provolone-slices"
+      ],
+      [
+        "Parmesan, ¼ cup",
+        0.7,
+        "parmesan-grated"
+      ],
+      [
+        "Panko, ½ cup",
+        0.43,
+        "panko-breadcrumbs"
+      ],
+      [
+        "Egg",
+        0.39,
+        "eggs"
+      ],
+      [
+        "Spices, salt",
+        0.2
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "stovetop"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [
+      "weeknight",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Wet your hands to roll the meatballs; the mix is soft and that keeps them tender."
+    },
+    {
+      "icon": "thaw",
+      "text": "Thaw frozen ground turkey in the fridge overnight."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Meatballs",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "ground turkey",
+          "pantry": {
+            "name": "Ground turkey",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 30,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried Italian seasoning",
+          "pantry": {
+            "name": "Italian seasoning (dried)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Subs",
+      "items": [
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "jar (650 ml) marinara sauce",
+          "pantry": {
+            "name": "Marinara sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "hoagie rolls",
+          "pantry": {
+            "name": "Hoagie rolls",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "slices provolone",
+          "pantry": {
+            "name": "Provolone slices",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Mix",
+      "text": "Heat the oven to 200°C (400°F) and line a baking sheet with parchment. Mix the turkey, panko, egg, Parmesan, Italian seasoning, garlic powder, salt and pepper gently with your hands.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Roll and bake",
+      "text": "Roll into 16 meatballs with wet hands and set them on the sheet. Bake 15–18 minutes, until browned and 74°C (165°F) in the centre.",
+      "timer": 16,
+      "uses": []
+    },
+    {
+      "title": "Simmer",
+      "text": "Warm the marinara in a large skillet, add the meatballs and simmer 5 minutes, turning to coat.",
+      "timer": 5,
+      "uses": [
+        "1-0"
+      ]
+    },
+    {
+      "title": "Toast",
+      "text": "Turn the oven to broil. Split the rolls without cutting through, open them on the sheet and toast 1–2 minutes, watching closely.",
+      "uses": [
+        "1-1"
+      ]
+    },
+    {
+      "title": "Build",
+      "text": "Fill each roll with 4 meatballs and sauce, tear a slice of provolone over the top and broil 1–2 minutes until melted.",
+      "uses": [
+        "1-2"
+      ]
+    }
+  ],
+  "together": "AABA*",
+  "fixIt": [
+    {
+      "problem": "Meatballs dry",
+      "fix": "Turkey is lean; mix gently and pull them at 74°C (165°F) exactly."
+    },
+    {
+      "problem": "Meatballs falling apart",
+      "fix": "Chill the rolled meatballs 10 minutes before baking."
+    },
+    {
+      "problem": "Soggy rolls",
+      "fix": "Toast them first and spoon on less sauce; serve extra for dipping."
+    }
+  ],
+  "saleTip": "Ground turkey is often $4.99 for 450 g on sale at No Frills; hoagie rolls are in the bakery aisle.",
+  "swap": "Lean ground beef: bake to 71°C (160°F). Mozzarella for provolone.",
+  "leftovers": "Keep meatballs in sauce and build fresh subs.",
+  "doneness": "Ground turkey to 74°C (165°F) in the centre (Health Canada, ground poultry).",
+  "source": "Based on tested baked turkey meatball methods (Canadian Living, Budget Bytes): panko-and-Parmesan turkey meatballs baked at 200°C, simmered in marinara and broiled in rolls with provolone.",
+  "gear": [
+    "Baking sheet",
+    "Parchment paper",
+    "Large skillet",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Roll the meatballs up to 1 day ahead and keep them covered in the fridge.",
+    "Bake and freeze meatballs up to 3 months; reheat in the sauce from frozen, 15 minutes."
+  ],
+  "reheat": "Meatballs in sauce covered over medium 8–10 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "ground turkey",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Turkey meatballs in marinara on toasted rolls; no Parmesan or Italian seasoning in the mix.",
+      "drop": [
+        "0-3",
+        "0-4"
+      ],
+      "stepNotes": {
+        "0": "Basic: skip the Parmesan and Italian seasoning."
+      },
+      "costDrop": [
+        "parmesan"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Garlic-butter toasted rolls and a little extra Parmesan on top.",
+      "add": [
+        {
+          "group": "Garlic butter",
+          "items": [
+            {
+              "qty": 3,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "softened",
+              "metric": {
+                "qty": 42,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "tsp",
+              "name": "garlic powder",
+              "pantry": {
+                "name": "Garlic powder",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "grated Parmesan",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: spread the rolls with the butter mashed with the garlic powder before toasting.",
+        "4": "Fancy: scatter the Parmesan over the provolone before broiling."
+      },
+      "costAdd": [
+        [
+          "Butter, 3 tbsp",
+          0.6,
+          "butter"
+        ],
+        [
+          "Parmesan, 2 tbsp",
+          0.3,
+          "parmesan-grated"
+        ]
+      ],
+      "plating": [
+        "Wrap each sub halfway in parchment.",
+        "Extra warm sauce in a small dish.",
+        "A pickle spear on the side."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "Panko soaks up juices so lean turkey stays moist.",
+    "0-3": "Parmesan adds the savoury depth turkey lacks on its own.",
+    "1-2": "Provolone melts smoothly and has a mild tang."
+  },
+  "fancyNight": false,
+  "funFact": "Canadians call it a sub, hoagie or grinder depending on where they grew up; 'sub' comes from the submarine shape.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze meatballs in sauce, not built subs"
+  },
+  "pairs": []
+}

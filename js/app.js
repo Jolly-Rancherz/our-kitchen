@@ -5468,6 +5468,30 @@ function recapCard(rc, dismiss) {
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
 {
+ "name": "Update 13.6",
+ "id": "u136-2026-11",
+ "date": "2026-11-23",
+ "intro": "Twenty more dinners, each with Basic, Classic and Fancy. That makes 80 new dinners since Christmas.",
+ "notes": [
+  [
+   "Chicken",
+   "Parmesan-crusted chicken with garlic green beans, crispy baked wings with fries, and chicken Caesar wraps"
+  ],
+  [
+   "Pasta and beef",
+   "Ham and cheese calzones, creamy rosé penne, pepperoni pizza pasta bake, Italian turkey meatball subs, classic pot roast and turkey burgers with sweet potato fries"
+  ],
+  [
+   "Pork and seafood",
+   "Striploin steak with loaded baked potatoes, peameal bacon on a bun with home fries, crispy oven-baked pork chops with applesauce, panko haddock with lemon rice, and creamy seafood chowder"
+  ],
+  [
+   "Takeout and soups",
+   "Chicken satay with peanut sauce, Halifax-style donairs, beef chow mein, creamy chicken gnocchi soup, French onion soup and mild chicken tortilla soup"
+  ]
+ ]
+},
+{
  "name": "Update 13.5",
  "id": "u135-2026-11",
  "date": "2026-11-23",

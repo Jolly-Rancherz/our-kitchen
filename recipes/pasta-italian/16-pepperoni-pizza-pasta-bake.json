@@ -1,0 +1,380 @@
+{
+  "title": "Pepperoni Pizza Pasta Bake",
+  "subtitle": "rotini and seasoned beef in marinara under bubbling mozzarella and crisp pepperoni: pizza night in a 9×13",
+  "image": "assets/img/pizza-pasta-bake.webp",
+  "imageAlt": "A baking dish of rotini in tomato sauce topped with melted mozzarella and crisp pepperoni, a scoop on a cream plate with a navy napkin",
+  "servings": 6,
+  "servingsNote": "a 9×13 pan: dinner for two, plus 4 lunches",
+  "prep": 15,
+  "cook": 40,
+  "cost": {
+    "total": 18.49,
+    "breakdown": [
+      [
+        "Rotini, 450 g",
+        2.0,
+        "rotini"
+      ],
+      [
+        "Lean ground beef, 450 g",
+        4.95,
+        "ground-beef-lean"
+      ],
+      [
+        "Marinara, 1 jar",
+        3.49,
+        "marinara-sauce"
+      ],
+      [
+        "Tomato sauce, 398 ml",
+        1.29,
+        "tomato-sauce-canned"
+      ],
+      [
+        "Mozzarella, 200 g",
+        4.06,
+        "mozzarella-shredded"
+      ],
+      [
+        "Pepperoni, 75 g",
+        1.5,
+        "pepperoni-sliced"
+      ],
+      [
+        "Parmesan, ¼ cup",
+        0.7,
+        "parmesan-grated"
+      ],
+      [
+        "Onion, spices, salt",
+        0.5
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "stovetop"
+    ],
+    "base": [
+      "pasta"
+    ],
+    "occasion": [
+      "comfort-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Extra cheesy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Undercook the rotini by 2 minutes; it finishes in the oven."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Pasta",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "rotini",
+          "pantry": {
+            "name": "Rotini",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the pasta water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Meat sauce",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "jar (650 ml) marinara sauce",
+          "pantry": {
+            "name": "Marinara sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "can (398 ml) tomato sauce",
+          "pantry": {
+            "name": "Tomato sauce (canned)",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried Italian seasoning",
+          "pantry": {
+            "name": "Italian seasoning (dried)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Topping",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "shredded mozzarella",
+          "metric": {
+            "qty": 200,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Mozzarella (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 75,
+          "unit": "g",
+          "name": "sliced mild pepperoni",
+          "pantry": {
+            "name": "Pepperoni (sliced)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Water on",
+      "text": "Heat the oven to 200°C (400°F). Bring a big pot of water to a boil with the salt.",
+      "uses": [
+        "0-1"
+      ]
+    },
+    {
+      "title": "Brown the beef",
+      "text": "Cook the beef and onion in a large deep skillet over medium-high, breaking it up, 8–10 minutes, until no pink remains and it reads 71°C (160°F). Spoon off the fat.",
+      "timer": 9,
+      "uses": [
+        "1-0",
+        "1-1"
+      ]
+    },
+    {
+      "title": "Sauce",
+      "text": "Stir in the marinara, tomato sauce, Italian seasoning, garlic powder and salt and simmer 5 minutes.",
+      "timer": 5,
+      "uses": [
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6"
+      ]
+    },
+    {
+      "title": "Pasta",
+      "text": "Meanwhile, cook the rotini 2 minutes less than the package says and drain. Stir it into the sauce.",
+      "timer": 8,
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Top",
+      "text": "Spread it in a 23×33 cm (9×13 in) baking dish. Scatter the mozzarella and Parmesan over, then lay the pepperoni on top.",
+      "uses": [
+        "2-0",
+        "2-2",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Bake uncovered 18–20 minutes, until bubbling, the pepperoni crisps at the edges and the centre reads 74°C (165°F). Rest 5 minutes.",
+      "timer": 19,
+      "uses": []
+    }
+  ],
+  "together": "AABBA*",
+  "fixIt": [
+    {
+      "problem": "Dry pasta",
+      "fix": "It was cooked too long first or baked too long; add ½ cup water or extra sauce next time."
+    },
+    {
+      "problem": "Pepperoni burning",
+      "fix": "Lay it on for the last 10 minutes only."
+    },
+    {
+      "problem": "Greasy top",
+      "fix": "Blot the pepperoni pools with paper towel; drain the beef well next time."
+    }
+  ],
+  "saleTip": "Marinara jars are often 2 for $5 at No Frills; ground beef family packs are cheapest per kilo.",
+  "swap": "Penne or rigatoni for rotini. Mild Italian sausage meat for the beef, cooked to 71°C (160°F).",
+  "leftovers": "Cut into squares once cold; they reheat neatly.",
+  "doneness": "Ground beef to 71°C (160°F) with no pink (Health Canada, ground beef); bake until the centre reads 74°C (165°F).",
+  "source": "Based on tested pizza pasta bake methods (Canadian Living, Food Network Canada): par-cooked short pasta in a beef marinara, topped with mozzarella and pepperoni, baked uncovered at 200°C.",
+  "gear": [
+    "Large pot",
+    "Large deep skillet",
+    "23×33 cm (9×13 in) baking dish",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Assemble up to 1 day ahead without the pepperoni; bake from cold 30–35 minutes covered, then 10 uncovered with the pepperoni, until 74°C (165°F).",
+    "Freeze unbaked up to 3 months; thaw overnight in the fridge first."
+  ],
+  "reheat": "Covered in the microwave 2–3 minutes, or covered at 180°C (350°F) for 20 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "ground beef",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Beef and rotini in marinara under mozzarella; no pepperoni or onion.",
+      "drop": [
+        "2-1",
+        "1-1"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the onion.",
+        "4": "Basic: no pepperoni."
+      },
+      "costDrop": [
+        "pepperoni"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Crispy bacon and extra pepperoni, the 'meat lovers' way.",
+      "add": [
+        {
+          "group": "Meat lovers",
+          "items": [
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "slices bacon",
+              "note": "cooked crisp and crumbled",
+              "pantry": {
+                "name": "Bacon",
+                "cat": "meat"
+              }
+            },
+            {
+              "qty": 50,
+              "unit": "g",
+              "name": "sliced mild pepperoni",
+              "note": "extra",
+              "pantry": {
+                "name": "Pepperoni (sliced)",
+                "cat": "meat"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "4": "Fancy: scatter the bacon over the cheese and add the extra pepperoni."
+      },
+      "costAdd": [
+        [
+          "Bacon, 4 slices",
+          2.0,
+          "bacon"
+        ],
+        [
+          "Pepperoni, 50 g",
+          1.0,
+          "pepperoni-sliced"
+        ]
+      ],
+      "plating": [
+        "Cut a neat square and lift it with a spatula.",
+        "Extra Parmesan at the table.",
+        "A simple side salad."
+      ]
+    }
+  },
+  "why": {
+    "1-3": "Canned tomato sauce adds extra saucy body so the pasta doesn't dry out in the oven.",
+    "2-1": "Pepperoni cups and crisps on top, just like on a pizza.",
+    "0-0": "Rotini's spirals trap the meat sauce."
+  },
+  "fancyNight": false,
+  "funFact": "Pepperoni is the most popular pizza topping in Canada and the United States.",
+  "keeps": {
+    "fridge": "4 days",
+    "freezer": "3 months",
+    "note": "freezes well baked or unbaked"
+  },
+  "pairs": []
+}

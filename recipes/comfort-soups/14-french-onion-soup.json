@@ -1,0 +1,370 @@
+{
+  "title": "French Onion Soup",
+  "subtitle": "deeply caramelized onions in a rich beef broth under toasted baguette and bubbling, browned Gruyère",
+  "image": "assets/img/french-onion-soup.webp",
+  "imageAlt": "A crock of French onion soup topped with a toasted baguette slice and browned, bubbling melted cheese on a cream plate with a navy napkin",
+  "servings": 6,
+  "servingsNote": "6 bowls: dinner for two, plus 4 for lunches",
+  "prep": 20,
+  "cook": 85,
+  "cost": {
+    "total": 20.22,
+    "breakdown": [
+      [
+        "Yellow onions, 1.5 kg",
+        3.49,
+        "yellow-onions"
+      ],
+      [
+        "Beef broth, 6 cups",
+        4.15,
+        "beef-broth"
+      ],
+      [
+        "Gruyère, 200 g",
+        8.99,
+        "gruyere-cheese"
+      ],
+      [
+        "Baguette",
+        2.49,
+        "baguette"
+      ],
+      [
+        "Butter, 3 tbsp",
+        0.6,
+        "butter"
+      ],
+      [
+        "Flour, Worcestershire, spices, sugar",
+        0.5
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [
+      "comfort-night",
+      "date-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Extra cheesy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "The onions take about an hour to caramelize; low and slow is the whole secret."
+    },
+    {
+      "icon": "oven",
+      "text": "You need oven-safe bowls for the classic cheese top, or broil the cheese toasts on a sheet and float them."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Soup",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 42,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "kg",
+          "name": "yellow onions",
+          "note": "about 6 large, halved and thinly sliced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "granulated sugar",
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 6,
+          "unit": "cup",
+          "name": "beef broth",
+          "metric": {
+            "qty": 1500,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Beef broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "bay leaf",
+          "pantry": {
+            "name": "Bay leaves",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cheese toasts",
+      "items": [
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "baguette",
+          "note": "cut in 2 cm slices",
+          "pantry": {
+            "name": "Baguette",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 200,
+          "unit": "g",
+          "name": "Gruyère",
+          "note": "shredded",
+          "pantry": {
+            "name": "Gruyere cheese",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Caramelize",
+      "text": "Melt the butter with the oil in a large heavy pot over medium. Add the onions, sugar and salt, cover and cook 10 minutes until they collapse. Uncover, lower to medium-low and cook 50–60 minutes, stirring every 5 minutes and scraping the bottom, until deep golden brown. Add a splash of water if they catch.",
+      "timer": 65,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Broth",
+      "text": "Stir in the flour for 1 minute. Slowly add the broth, scraping up all the brown bits, then the Worcestershire, dried thyme, bay leaf and pepper. Simmer 15 minutes.",
+      "timer": 15,
+      "uses": [
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9",
+        "0-10"
+      ]
+    },
+    {
+      "title": "Toast",
+      "text": "Meanwhile, heat the broiler. Toast the baguette slices on a baking sheet 1–2 minutes a side until dry and golden.",
+      "timer": 3,
+      "uses": [
+        "1-0"
+      ]
+    },
+    {
+      "title": "Broil",
+      "text": "Discard the bay leaf. Ladle the soup into oven-safe bowls on a baking sheet, float a toast or two on each and cover with the Gruyère. Broil 2–4 minutes until bubbling and browned in spots. Warn everyone: the bowls are very hot.",
+      "timer": 3,
+      "uses": [
+        "1-1"
+      ]
+    }
+  ],
+  "together": "ABB*",
+  "fixIt": [
+    {
+      "problem": "Onions burning",
+      "fix": "Lower the heat and add 2 tbsp water, scraping the brown bits back in."
+    },
+    {
+      "problem": "Soup tastes thin",
+      "fix": "The onions needed longer; simmer 10 minutes more with another 1 tsp Worcestershire."
+    },
+    {
+      "problem": "Soggy toast",
+      "fix": "Toast the bread until fully dry before it goes on the soup."
+    }
+  ],
+  "saleTip": "A 3 lb bag of onions is often $1.99 at No Frills; Gruyère is cheaper in the deli cheese case than pre-shredded.",
+  "swap": "Swiss or mozzarella for Gruyère. Slow cooker: caramelize the onions on high 8–10 hours with the lid ajar, stirring a few times.",
+  "leftovers": "Freeze the soup without the bread and cheese; make fresh toasts when you reheat.",
+  "doneness": "No raw meat to cook (beef broth base). Reheat the soup to a simmer, 74°C (165°F) (Health Canada, leftovers).",
+  "source": "Based on tested French onion soup methods (Ricardo, America's Test Kitchen): onions caramelized low and slow about an hour, simmered in beef broth with thyme and bay, topped with toasted baguette and broiled Gruyère.",
+  "gear": [
+    "Large heavy pot",
+    "Wooden spoon",
+    "6 oven-safe soup bowls",
+    "Baking sheet",
+    "Ladle"
+  ],
+  "prepAhead": [
+    "Make the soup up to 3 days ahead or freeze it up to 3 months; it tastes even better.",
+    "Toast the baguette slices up to 2 days ahead and keep them in a bag."
+  ],
+  "reheat": "Covered over medium until simmering, 74°C (165°F), then top and broil.",
+  "levels": {
+    "basic": {
+      "note": "Caramelized onion soup with cheese toast; no Worcestershire, dried thyme or bay.",
+      "drop": [
+        "0-7",
+        "0-8",
+        "0-9"
+      ],
+      "stepNotes": {
+        "1": "Basic: just the broth and pepper.",
+        "3": "Basic: nothing to discard."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A splash of red wine in the onions and extra Parmesan in the cheese top.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "dry red wine",
+              "metric": {
+                "qty": 125,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "Red wine",
+                "cat": "sauces"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "grated Parmesan",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: before the flour, pour in the wine and boil 3 minutes, scraping, until almost gone.",
+        "3": "Fancy: mix the Parmesan into the Gruyère."
+      },
+      "costAdd": [
+        [
+          "Red wine, ½ cup",
+          2.16,
+          "red-wine"
+        ],
+        [
+          "Parmesan, ½ cup",
+          1.4,
+          "parmesan-grated"
+        ]
+      ],
+      "plating": [
+        "Bowls on small plates with a folded napkin under them.",
+        "A spoon and a steak knife for the cheese.",
+        "Extra toast on the side."
+      ]
+    }
+  },
+  "why": {
+    "0-2": "Slow cooking turns the onions' sugars deep brown and sweet; that's the soup's flavour.",
+    "1-1": "Gruyère melts smoothly and browns with a nutty, salty flavour.",
+    "0-5": "A little flour gives the broth body."
+  },
+  "fancyNight": true,
+  "funFact": "French onion soup was the classic late-night meal at Les Halles, Paris's old central market, served to market workers and night owls.",
+  "keeps": {
+    "fridge": "4–5 days",
+    "freezer": "3 months",
+    "note": "freeze without bread and cheese"
+  },
+  "pairs": []
+}

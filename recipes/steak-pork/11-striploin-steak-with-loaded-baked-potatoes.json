@@ -1,0 +1,400 @@
+{
+  "title": "Striploin Steak with Loaded Baked Potatoes",
+  "subtitle": "a steakhouse night at home: garlic-butter basted striploin with fluffy baked potatoes, cheddar, bacon and sour cream",
+  "image": "assets/img/striploin-baked-potatoes.webp",
+  "imageAlt": "Sliced pink striploin steak with garlic butter beside a loaded baked potato with cheddar, bacon and sour cream on a cream plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "2 steaks sliced: dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 70,
+  "cost": {
+    "total": 37.56,
+    "breakdown": [
+      [
+        "Striploin steaks, 2 (900 g)",
+        29.98,
+        "striploin-steak"
+      ],
+      [
+        "Russet potatoes, 4 large",
+        1.58,
+        "russet-potatoes"
+      ],
+      [
+        "Cheddar, 1 cup",
+        1.75,
+        "cheddar-shredded"
+      ],
+      [
+        "Bacon, 4 slices",
+        2.0,
+        "bacon"
+      ],
+      [
+        "Sour cream, ½ cup",
+        0.75,
+        "sour-cream"
+      ],
+      [
+        "Butter, 5 tbsp",
+        1.0,
+        "butter"
+      ],
+      [
+        "Oil, garlic, spices, salt",
+        0.5
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "stovetop"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "date-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Date-night steak"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Take the steaks out of the fridge 30 minutes before cooking and pat them very dry."
+    },
+    {
+      "icon": "oven",
+      "text": "Potatoes take an hour; start them first and cook the steak in the last 15 minutes."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Potatoes",
+      "items": [
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "large russet potatoes",
+          "note": "scrubbed",
+          "pantry": {
+            "name": "Russet potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 42,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "metric": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "slices bacon",
+          "pantry": {
+            "name": "Bacon",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "sour cream",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Sour cream",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Steak",
+      "items": [
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "striploin steaks",
+          "note": "about 450 g each, 2.5 cm thick",
+          "pantry": {
+            "name": "Striploin steak",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "smashed",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Bake the potatoes",
+      "text": "Heat the oven to 200°C (400°F). Prick the potatoes a few times, rub with the oil and salt and bake right on the rack 55–65 minutes, until a knife slides in easily.",
+      "timer": 60,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Bacon",
+      "text": "Meanwhile, cook the bacon in a large heavy skillet over medium until crisp, 6–8 minutes. Drain, crumble, and wipe out the pan.",
+      "timer": 7,
+      "uses": [
+        "0-5"
+      ]
+    },
+    {
+      "title": "Sear",
+      "text": "With 15 minutes left on the potatoes, season the steaks with the salt and pepper. Heat the oil in the skillet over medium-high until shimmering and sear 4–5 minutes a side for medium-rare, 63°C (145°F) in the centre, or 5–6 minutes a side for medium, 71°C (160°F).",
+      "timer": 9,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Baste",
+      "text": "Lower to medium, add the butter and garlic and spoon the foaming butter over the steaks for 1 minute. Rest 8 minutes on a board.",
+      "timer": 8,
+      "uses": [
+        "1-4",
+        "1-5"
+      ]
+    },
+    {
+      "title": "Load",
+      "text": "Split the potatoes, fluff the insides with a fork and add the butter. Top with the cheddar, bacon and a spoon of sour cream.",
+      "uses": [
+        "0-3",
+        "0-4",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Slice the steak across the grain and spoon the pan butter over it. Serve with the potatoes.",
+      "uses": []
+    }
+  ],
+  "together": "ABAABA",
+  "fixIt": [
+    {
+      "problem": "Steak grey, not browned",
+      "fix": "The pan wasn't hot enough or the steak was wet. Pat dry and wait for the oil to shimmer."
+    },
+    {
+      "problem": "Overcooked steak",
+      "fix": "Thin steaks cook fast: check 1 minute early, and remember it rises 2–3°C as it rests."
+    },
+    {
+      "problem": "Potato skins soft",
+      "fix": "Bake right on the rack, not wrapped in foil."
+    }
+  ],
+  "saleTip": "Striploin is often $15–17/lb on sale at No Frills; buy a 2-pack for date night and freeze one.",
+  "swap": "Sirloin steak works for less money: same timing. Medium: 71°C (160°F).",
+  "leftovers": "Slice cold steak thin for sandwiches; potatoes reheat well.",
+  "doneness": "Beef steak at 63°C (145°F) for medium-rare or 71°C (160°F) for medium (Health Canada, beef whole cuts).",
+  "source": "Based on tested pan-seared, butter-basted steak and baked potato methods (America's Test Kitchen, Canadian Living): a dry, well-seasoned steak seared in a heavy pan, basted with garlic butter, rested; russets baked on the rack at 200°C.",
+  "gear": [
+    "Large heavy or cast-iron skillet",
+    "Tongs",
+    "Spoon for basting",
+    "Cutting board",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Salt the steaks up to 1 day ahead and leave uncovered on a rack in the fridge; they brown even better.",
+    "Bake the potatoes ahead and reheat at 200°C (400°F) for 15 minutes."
+  ],
+  "reheat": "Steak slices in a hot pan 30–60 seconds a side; potatoes at 200°C (400°F) for 15 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "steaks",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Salt-and-pepper seared steak with buttered baked potatoes; no bacon or garlic baste.",
+      "drop": [
+        "0-5",
+        "1-5",
+        "0-4"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the bacon.",
+        "3": "Basic: skip the garlic; just rest the steak.",
+        "4": "Basic: butter and sour cream only."
+      },
+      "costDrop": [
+        "bacon",
+        "cheddar"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Twice-baked potatoes: the insides mashed with cheddar and sour cream and baked again.",
+      "add": [
+        {
+          "group": "Twice-baked",
+          "items": [
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "milk",
+              "metric": {
+                "qty": 60,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "Milk",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "shredded old cheddar",
+              "note": "extra",
+              "metric": {
+                "qty": 50,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Cheddar (shredded)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "4": "Fancy: halve the potatoes, scoop out the insides and mash with the butter, sour cream, milk, half the cheddar and the bacon. Pile back into the skins, top with the rest of the cheddar and the extra, and bake 10 minutes, until the cheese melts, while the steak rests under foil."
+      },
+      "costAdd": [
+        [
+          "Milk, cheddar",
+          0.95
+        ]
+      ],
+      "plating": [
+        "Fan the sliced steak against the potato.",
+        "Pan butter spooned over the slices.",
+        "Flaky salt at the table."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Striploin is tender with a good fat cap, made for a hot pan.",
+    "1-4": "Basting with butter and garlic browns the crust and seasons it as it rests.",
+    "0-0": "Russets bake up dry and fluffy, perfect for loading."
+  },
+  "fancyNight": true,
+  "funFact": "Striploin is called New York strip in the US and sirloin in the UK, but it's the same cut from the short loin.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "2 months",
+    "note": "freeze potatoes without toppings"
+  },
+  "pairs": []
+}

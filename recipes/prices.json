@@ -53,13 +53,25 @@
    "price": 1.99,
    "pack": "jar"
   },
+  "bay-scallops-frozen": {
+   "price": 6.99,
+   "pack": "225 g bag"
+  },
   "bean-sprouts": {
    "price": 1.99,
    "pack": "340 g"
   },
+  "beef-blade-roast": {
+   "price": 24.6,
+   "pack": "about 1.4 kg"
+  },
   "beef-broth": {
    "price": 2.49,
    "pack": "900 ml"
+  },
+  "black-beans-canned": {
+   "price": 1.29,
+   "pack": "540 ml can"
   },
   "black-pepper": {
    "price": 3.49,
@@ -148,6 +160,10 @@
   "chicken-thighs-boneless": {
    "price": 17.0,
    "pack": "~1 kg pack"
+  },
+  "chicken-wings": {
+   "price": 12.99,
+   "pack": "about 1.36 kg (3 lb) pack"
   },
   "chili-powder-mild": {
    "price": 2.99,
@@ -373,6 +389,10 @@
    "price": 5.49,
    "pack": "450 g"
   },
+  "ground-turkey": {
+   "price": 6.49,
+   "pack": "450 g"
+  },
   "ground-turmeric": {
    "price": 2.99,
    "pack": "jar"
@@ -440,6 +460,10 @@
   "jumbo-pasta-shells": {
    "price": 2.99,
    "pack": "340 g"
+  },
+  "kaiser-buns": {
+   "price": 2.99,
+   "pack": "6 pack"
   },
   "ketchup": {
    "price": 3.99,
@@ -517,6 +541,10 @@
    "price": 3.99,
    "pack": "1.36 kg bag"
   },
+  "oyster-crackers": {
+   "price": 2.49,
+   "pack": "200 g box"
+  },
   "oyster-sauce": {
    "price": 3.49,
    "pack": "bottle"
@@ -536,6 +564,14 @@
   "parsnips": {
    "price": 2.99,
    "pack": "907 g bag"
+  },
+  "peameal-bacon": {
+   "price": 13.99,
+   "pack": "about 1 kg"
+  },
+  "peanut-butter": {
+   "price": 5.49,
+   "pack": "1 kg jar"
   },
   "peanuts-unsalted": {
    "price": 4.49,
@@ -601,6 +637,10 @@
    "price": 8.49,
    "pack": "each, ~500 g"
   },
+  "potato-gnocchi": {
+   "price": 2.99,
+   "pack": "500 g"
+  },
   "pound-cake-frozen": {
    "price": 4.49,
    "pack": "298 g"
@@ -625,6 +665,10 @@
    "price": 0.7,
    "pack": "each"
   },
+  "red-wine": {
+   "price": 12.95,
+   "pack": "750 ml bottle"
+  },
   "refried-beans-canned": {
    "price": 1.99,
    "pack": "398 ml can"
@@ -642,6 +686,14 @@
    "pack": "475 g"
   },
   "rigatoni": {
+   "price": 2.0,
+   "pack": "450 g"
+  },
+  "romaine-hearts": {
+   "price": 3.99,
+   "pack": "3 pack"
+  },
+  "rotini": {
    "price": 2.0,
    "pack": "450 g"
   },

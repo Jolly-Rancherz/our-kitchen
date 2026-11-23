@@ -1,0 +1,372 @@
+{
+  "title": "Crispy Baked Chicken Wings with Fries",
+  "subtitle": "wing-night wings baked crisp in the oven, tossed in sticky honey garlic sauce, with a tray of fries",
+  "image": "assets/img/crispy-chicken-wings.webp",
+  "imageAlt": "Sticky honey garlic chicken wings piled beside golden fries on a cream plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 55,
+  "cost": {
+    "total": 17.97,
+    "breakdown": [
+      [
+        "Chicken wings, 1.4 kg",
+        13.37,
+        "chicken-wings"
+      ],
+      [
+        "Frozen fries, 750 g",
+        2.62,
+        "frozen-french-fries"
+      ],
+      [
+        "Honey, 3 tbsp",
+        0.88,
+        "honey"
+      ],
+      [
+        "Butter, 2 tbsp",
+        0.4,
+        "butter"
+      ],
+      [
+        "Soy sauce, garlic, baking powder, spices",
+        0.7
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "stovetop"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "takeout-night",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Takeout copycat"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Thaw frozen wings in the fridge overnight and pat them very dry; wet wings won't crisp."
+    },
+    {
+      "icon": "oven",
+      "text": "Use plain baking powder, not baking soda. It's the trick for crisp skin without frying."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Wings",
+      "items": [
+        {
+          "qty": 1.4,
+          "unit": "kg",
+          "name": "chicken wings",
+          "note": "split into flats and drumettes, tips removed",
+          "pantry": {
+            "name": "Chicken wings",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "baking powder",
+          "pantry": {
+            "name": "Baking powder",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Honey garlic sauce",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "honey",
+          "pantry": {
+            "name": "Honey",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Fries",
+      "items": [
+        {
+          "qty": 750,
+          "unit": "g",
+          "name": "frozen french fries",
+          "pantry": {
+            "name": "Frozen french fries",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Season",
+      "text": "Heat the oven to 220°C (425°F) with racks in the upper and lower thirds. Pat the wings very dry and toss with the baking powder, salt, garlic powder and pepper.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Bake the wings",
+      "text": "Spread them skin side up on a rack set in a foil-lined baking sheet, not touching. Bake on the upper rack 45–50 minutes, turning at 25 minutes, until deep golden, crisp and 74°C (165°F) at the thickest part.",
+      "timer": 48,
+      "uses": []
+    },
+    {
+      "title": "Fries",
+      "text": "With 25 minutes left, spread the fries on a second sheet on the lower rack and bake as the package says, turning once. Salt them hot.",
+      "timer": 25,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Sauce",
+      "text": "Melt the butter in a small pot over medium, cook the garlic 1 minute, then add the honey and soy sauce and bubble 2 minutes until slightly syrupy.",
+      "timer": 3,
+      "uses": [
+        "1-2",
+        "1-3",
+        "1-0",
+        "1-1"
+      ]
+    },
+    {
+      "title": "Toss",
+      "text": "Toss the hot wings in a big bowl with the sauce and serve right away with the fries.",
+      "uses": []
+    }
+  ],
+  "together": "AABB*",
+  "fixIt": [
+    {
+      "problem": "Skin not crisp",
+      "fix": "The wings were wet or crowded. Bake 5–10 minutes more on the top rack, spaced apart."
+    },
+    {
+      "problem": "Sauce too thin",
+      "fix": "Bubble it 1–2 minutes more; it thickens as it cools."
+    },
+    {
+      "problem": "Wings stuck to the pan",
+      "fix": "Use a rack, or oiled foil, and let them crisp before turning."
+    }
+  ],
+  "saleTip": "Fresh wings go on sale in No Frills family packs around big game days; they freeze well flat in a bag.",
+  "swap": "Party wings already split save time. Air fryer: 200°C for 22–25 minutes in batches, shaking halfway, to 74°C (165°F).",
+  "leftovers": "Reheat on a rack so they crisp up again.",
+  "doneness": "Chicken wings at 74°C (165°F) at the thickest part, not touching bone (Health Canada, poultry pieces).",
+  "source": "Based on tested oven-crisp wing methods (Serious Eats, Canadian Living): dried wings tossed in baking powder and salt, baked on a rack at 220°C, then sauced.",
+  "gear": [
+    "2 rimmed baking sheets",
+    "Wire rack",
+    "Foil",
+    "Small pot",
+    "Large bowl",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Season the wings with the baking powder mix and leave them uncovered on the rack in the fridge up to 24 hours; they crisp even more.",
+    "Make the sauce up to 5 days ahead and warm it before tossing."
+  ],
+  "reheat": "On a rack at 200°C (400°F) for 10 minutes, or the air fryer at 190°C for 6 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "chicken wings",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Crispy salt-and-garlic wings with fries; no sauce.",
+      "drop": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ],
+      "stepNotes": {
+        "3": "Basic: skip the sauce.",
+        "4": "Basic: serve the wings straight from the oven."
+      },
+      "costDrop": [
+        "honey",
+        "butter"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Half the wings honey garlic, half garlic Parmesan.",
+      "add": [
+        {
+          "group": "Garlic Parmesan",
+          "items": [
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "melted",
+              "metric": {
+                "qty": 28,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.33,
+              "unit": "cup",
+              "name": "grated Parmesan",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "tsp",
+              "name": "garlic powder",
+              "pantry": {
+                "name": "Garlic powder",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Garlic Parmesan",
+          "text": "Toss half the hot wings in the melted butter and garlic powder, then the Parmesan, before saucing the rest with honey garlic."
+        }
+      ],
+      "costAdd": [
+        [
+          "Butter, 2 tbsp",
+          0.4,
+          "butter"
+        ],
+        [
+          "Parmesan, ⅓ cup",
+          0.93,
+          "parmesan-grated"
+        ]
+      ],
+      "plating": [
+        "Two piles of wings on a board, one of each flavour.",
+        "Fries in a paper-lined basket.",
+        "A stack of napkins and a bowl for bones."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "Baking powder raises the skin's pH so it browns and blisters like fried skin.",
+    "1-0": "Honey turns glossy and sticky in seconds over the heat.",
+    "0-0": "A rack lets the fat drip away and the hot air reach underneath."
+  },
+  "fancyNight": false,
+  "funFact": "Buffalo wings were first served in 1964 at the Anchor Bar in Buffalo, New York; before that, wings mostly went into stock.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze cooked wings unsauced"
+  },
+  "pairs": []
+}

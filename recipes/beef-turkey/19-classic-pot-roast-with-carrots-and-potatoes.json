@@ -1,0 +1,414 @@
+{
+  "title": "Classic Pot Roast with Carrots & Potatoes",
+  "subtitle": "a Sunday beef roast braised low and slow until it falls apart, with carrots, potatoes and rich gravy",
+  "image": "assets/img/pot-roast.webp",
+  "imageAlt": "Tender pulled pot roast with carrots and potatoes in brown gravy on a cream plate with a navy napkin",
+  "servings": 6,
+  "servingsNote": "dinner for two, plus 4 lunches or a second dinner",
+  "prep": 25,
+  "cook": 225,
+  "cost": {
+    "total": 31.8,
+    "breakdown": [
+      [
+        "Beef blade roast, 1.4 kg",
+        24.6,
+        "beef-blade-roast"
+      ],
+      [
+        "Yukon Gold potatoes, 1 kg",
+        2.42,
+        "yukon-gold-potatoes"
+      ],
+      [
+        "Carrots, 6",
+        1.65,
+        "carrots"
+      ],
+      [
+        "Beef broth, 2 cups",
+        1.38,
+        "beef-broth"
+      ],
+      [
+        "Tomato paste, 2 tbsp",
+        0.65,
+        "tomato-paste"
+      ],
+      [
+        "Onion, garlic, Worcestershire, spices",
+        1.1
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "stovetop"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "comfort-night",
+      "date-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "One pot"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "A frozen roast needs about 2 days in the fridge to thaw."
+    },
+    {
+      "icon": "pot",
+      "text": "You need an oven-safe Dutch oven or heavy pot with a lid, about 5.5 L."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Roast",
+      "items": [
+        {
+          "qty": 1.4,
+          "unit": "kg",
+          "name": "boneless beef blade or cross rib roast",
+          "pantry": {
+            "name": "Beef blade roast",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "cut in wedges",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "tomato paste",
+          "pantry": {
+            "name": "Tomato paste",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "beef broth",
+          "metric": {
+            "qty": 500,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Beef broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "bay leaves",
+          "pantry": {
+            "name": "Bay leaves",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Vegetables",
+      "items": [
+        {
+          "qty": 6,
+          "unit": null,
+          "name": "carrots",
+          "note": "peeled, cut in 5 cm pieces",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "kg",
+          "name": "Yukon Gold potatoes",
+          "note": "halved, or quartered if large",
+          "pantry": {
+            "name": "Yukon Gold potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Gravy",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "cornstarch",
+          "note": "mixed with 2 tbsp cold water",
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Sear",
+      "text": "Heat the oven to 160°C (325°F). Pat the roast dry and season all over with the salt and pepper. Heat the oil in a Dutch oven over medium-high and brown the roast well on all sides, 10–12 minutes. Lift it onto a plate.",
+      "timer": 11,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Base",
+      "text": "Lower to medium. Cook the onion 3 minutes, add the garlic and tomato paste and stir 1 minute. Pour in the broth and Worcestershire, scraping up the brown bits, and add the dried thyme and bay leaves.",
+      "timer": 4,
+      "uses": [
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9",
+        "0-10"
+      ]
+    },
+    {
+      "title": "Braise",
+      "text": "Return the roast and any juices, bring to a simmer, cover and braise in the oven 2 hours.",
+      "timer": 120,
+      "uses": []
+    },
+    {
+      "title": "Vegetables",
+      "text": "Tuck the carrots and potatoes around the roast, sprinkle with the salt, cover and braise 1–1¼ hours more, until the beef pulls apart with a fork, about 90°C (195°F), well past the safe 63°C (145°F), and the vegetables are tender.",
+      "timer": 70,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Gravy",
+      "text": "Lift the beef and vegetables onto a platter and tent with foil. Discard the bay leaves, skim the fat, then bring the liquid to a boil on the stove and stir in the cornstarch mix. Simmer 1–2 minutes until glossy.",
+      "timer": 2,
+      "uses": [
+        "2-0"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Pull the beef into large chunks and serve with the vegetables and plenty of gravy.",
+      "uses": []
+    }
+  ],
+  "together": "AAAAA*",
+  "fixIt": [
+    {
+      "problem": "Beef tough",
+      "fix": "It needs more time, not more heat. Cover and braise 30 minutes more, then check again."
+    },
+    {
+      "problem": "Gravy thin",
+      "fix": "Add another 1 tsp cornstarch mixed with water and simmer 1 minute."
+    },
+    {
+      "problem": "Potatoes falling apart",
+      "fix": "Cut them bigger next time, or add them 15 minutes later."
+    }
+  ],
+  "saleTip": "Blade and cross rib roasts often drop to about $11/kg in No Frills sales; buy one and freeze it.",
+  "swap": "Slow cooker: after searing and making the base, cook on low 8–9 hours with the vegetables underneath, then thicken the gravy on the stove.",
+  "leftovers": "Shred leftover beef into the gravy for hot beef sandwiches.",
+  "doneness": "Whole cuts of beef are safe from 63°C (145°F) (Health Canada); pot roast is braised on to about 90°C (195°F) so it falls apart.",
+  "source": "Based on tested Dutch-oven pot roast methods (Canadian Living, America's Test Kitchen): a seared blade roast braised in beef broth at 160°C for about 3 hours, vegetables added for the last hour, gravy thickened with cornstarch.",
+  "gear": [
+    "Dutch oven or heavy oven-safe pot with lid (5.5 L)",
+    "Tongs",
+    "Large platter",
+    "Foil"
+  ],
+  "prepAhead": [
+    "Make it a day ahead and chill in the gravy; lift off the fat and reheat covered at 160°C (325°F) for 40 minutes, until 74°C (165°F).",
+    "Peel and cut the carrots up to 2 days ahead."
+  ],
+  "reheat": "Covered with gravy over medium, or in the microwave 2–3 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "beef roast",
+    "hours": 48
+  },
+  "levels": {
+    "basic": {
+      "note": "Beef, potatoes and carrots in broth gravy; no Worcestershire, dried thyme or bay.",
+      "drop": [
+        "0-8",
+        "0-9",
+        "0-10"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the Worcestershire, dried thyme and bay leaves.",
+        "4": "Basic: nothing to discard; just skim and thicken."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A splash of red wine in the braise and butter whisked into the gravy.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "dry red wine",
+              "metric": {
+                "qty": 125,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "Red wine",
+                "cat": "sauces"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "for the gravy",
+              "metric": {
+                "qty": 28,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: pour in the wine after the tomato paste and boil 2 minutes before adding the broth.",
+        "4": "Fancy: whisk the butter into the finished gravy."
+      },
+      "costAdd": [
+        [
+          "Red wine, ½ cup",
+          2.16,
+          "red-wine"
+        ],
+        [
+          "Butter, 2 tbsp",
+          0.4,
+          "butter"
+        ]
+      ],
+      "plating": [
+        "Serve family-style on a big platter.",
+        "Gravy in a warm jug.",
+        "Crusty bread for mopping up."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Blade and cross rib have lots of connective tissue that melts into tender, juicy meat with long, low heat.",
+    "0-6": "Browned tomato paste gives the gravy colour and depth.",
+    "2-0": "Cornstarch thickens the gravy in a minute without lumps."
+  },
+  "fancyNight": true,
+  "funFact": "Braising (browning, then cooking low and covered in a little liquid) comes from the French 'braise', the hot coals once piled on the pot's lid.",
+  "keeps": {
+    "fridge": "4 days",
+    "freezer": "3 months",
+    "note": "freeze the beef in its gravy"
+  },
+  "pairs": []
+}

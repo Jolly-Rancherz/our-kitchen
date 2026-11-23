@@ -1,0 +1,441 @@
+{
+  "title": "Crispy Panko Haddock with Lemon Rice",
+  "subtitle": "flaky haddock under a golden buttery panko crust, with lemony rice, peas and a quick tartar sauce",
+  "image": "assets/img/panko-haddock.webp",
+  "imageAlt": "Golden panko-crusted haddock fillets on lemon rice with peas and a small dish of tartar sauce on a cream plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 25,
+  "cost": {
+    "total": 21.89,
+    "breakdown": [
+      [
+        "Haddock fillets, 680 g",
+        16.47,
+        "haddock-fillets-frozen"
+      ],
+      [
+        "Jasmine rice, 2 cups",
+        1.0,
+        "jasmine-rice"
+      ],
+      [
+        "Frozen peas, 1 cup",
+        0.47,
+        "frozen-peas"
+      ],
+      [
+        "Panko, 1 cup",
+        0.86,
+        "panko-breadcrumbs"
+      ],
+      [
+        "Lemons, 2",
+        1.58,
+        "lemons"
+      ],
+      [
+        "Mayonnaise, ½ cup",
+        0.61,
+        "mayonnaise"
+      ],
+      [
+        "Pickles, butter, spices",
+        0.9
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "stovetop"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Thaw frozen haddock in the fridge overnight, or sealed in cold water 30–45 minutes, and pat it very dry."
+    },
+    {
+      "icon": "rice",
+      "text": "Start the rice first; the fish bakes in 12–15 minutes."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Haddock",
+      "items": [
+        {
+          "qty": 680,
+          "unit": "g",
+          "name": "haddock fillets",
+          "note": "thawed, cut in 4 pieces",
+          "pantry": {
+            "name": "Haddock fillets (frozen)",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "mayonnaise",
+          "pantry": {
+            "name": "Mayonnaise",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 60,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lemon rice",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "lemons",
+          "note": "1 zested and juiced, 1 in wedges",
+          "pantry": {
+            "name": "Lemons",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "frozen peas",
+          "metric": {
+            "qty": 140,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Frozen peas",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tartar sauce",
+      "items": [
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "mayonnaise",
+          "metric": {
+            "qty": 80,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Mayonnaise",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "bread and butter pickles",
+          "note": "finely chopped",
+          "pantry": {
+            "name": "Bread and butter pickles",
+            "cat": "sauces"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "1-0",
+        "1-1"
+      ]
+    },
+    {
+      "title": "Prep the fish",
+      "text": "Heat the oven to 220°C (425°F) and line a baking sheet with parchment. Pat the haddock very dry, season with the salt and pepper and spread the tops thinly with the 2 tbsp mayonnaise.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Crust",
+      "text": "Mix the panko, melted butter, garlic powder and paprika and press it firmly onto the tops of the fish.",
+      "uses": [
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Bake 12–15 minutes, until the crust is golden and the fish flakes easily and reads 70°C (158°F) in the thickest part.",
+      "timer": 14,
+      "uses": []
+    },
+    {
+      "title": "Tartar sauce",
+      "text": "Zest and juice 1 lemon and cut the other in wedges. Stir the ⅓ cup mayonnaise, pickles and 1 tsp lemon juice together.",
+      "uses": [
+        "1-2",
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Lemon rice",
+      "text": "Microwave the peas covered with a splash of water 3 minutes. Fold them into the hot rice with the butter, lemon zest and 1 tbsp lemon juice.",
+      "timer": 3,
+      "uses": [
+        "1-3",
+        "1-4"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Serve the haddock on the rice with the tartar sauce and lemon wedges.",
+      "uses": []
+    }
+  ],
+  "together": "BAAABB*",
+  "fixIt": [
+    {
+      "problem": "Watery fish",
+      "fix": "It wasn't dried well after thawing. Pat it very dry and use a hot oven."
+    },
+    {
+      "problem": "Crust pale",
+      "fix": "Broil 1–2 minutes at the end, watching closely."
+    },
+    {
+      "problem": "Fish breaking",
+      "fix": "Lift it with a wide spatula; haddock is delicate when cooked."
+    }
+  ],
+  "saleTip": "Frozen haddock and cod fillets drop to about $8.99 for 454 g on sale at No Frills.",
+  "swap": "Cod or pollock: same timing. Store-bought tartar sauce works too.",
+  "leftovers": "Flake leftover fish into fish cakes or tacos.",
+  "doneness": "Fish at 70°C (158°F): opaque and flakes easily (Health Canada, fish).",
+  "source": "Based on tested panko-crusted baked fish methods (Canadian Living, Hellmann's Canada): a thin mayonnaise layer under buttered panko, baked at 220°C; a simple pickle tartar sauce.",
+  "gear": [
+    "Baking sheet",
+    "Parchment paper",
+    "Medium pot with lid",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Make the tartar sauce up to 4 days ahead.",
+    "Mix the crumb topping up to 3 days ahead."
+  ],
+  "reheat": "Fish on a rack at 200°C (400°F) for 8 minutes, until 74°C (165°F); rice in the microwave with a splash of water.",
+  "levels": {
+    "basic": {
+      "note": "Panko haddock with plain buttered rice and peas; no tartar or paprika.",
+      "drop": [
+        "0-7",
+        "2-0",
+        "2-1",
+        "1-2"
+      ],
+      "stepNotes": {
+        "2": "Basic: skip the paprika.",
+        "4": "Basic: skip the tartar sauce.",
+        "5": "Basic: just butter, no lemon."
+      },
+      "costDrop": [
+        "lemons"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Parmesan in the crust and a lemon butter drizzle.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "grated Parmesan",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "metric": {
+                "qty": 28,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "2": "Fancy: mix the Parmesan into the crumbs."
+      },
+      "addSteps": [
+        {
+          "title": "Lemon butter",
+          "text": "Melt the butter with 1 tbsp lemon juice and spoon it over the fish at the table."
+        }
+      ],
+      "costAdd": [
+        [
+          "Parmesan, ¼ cup",
+          0.7,
+          "parmesan-grated"
+        ],
+        [
+          "Butter, 2 tbsp",
+          0.4,
+          "butter"
+        ]
+      ],
+      "plating": [
+        "Fish leaning on a mound of rice.",
+        "Tartar sauce in a little dish.",
+        "Lemon wedge on the side."
+      ]
+    }
+  },
+  "why": {
+    "0-3": "Mayonnaise keeps the fish moist and holds the crumbs in place.",
+    "0-4": "Panko stays crisp in the oven where regular crumbs go soft.",
+    "2-1": "Sweet pickles give the tartar sauce its tang."
+  },
+  "fancyNight": false,
+  "funFact": "Haddock is the traditional fish for fish and chips in Atlantic Canada and Scotland; cod is more common in England.",
+  "keeps": {
+    "fridge": "2 days",
+    "freezer": null,
+    "note": "cooked fish loses its crunch when frozen"
+  },
+  "pairs": []
+}

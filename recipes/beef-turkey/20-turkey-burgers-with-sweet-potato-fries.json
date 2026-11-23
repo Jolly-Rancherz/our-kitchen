@@ -1,0 +1,467 @@
+{
+  "title": "Turkey Burgers with Sweet Potato Fries",
+  "subtitle": "juicy seasoned turkey burgers with cheddar and burger sauce, and crispy oven sweet potato fries",
+  "image": "assets/img/turkey-burgers.webp",
+  "imageAlt": "A cheddar turkey burger with lettuce and tomato beside a pile of orange sweet potato fries on a cream plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "4 burgers: dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 30,
+  "cost": {
+    "total": 14.8,
+    "breakdown": [
+      [
+        "Ground turkey, 450 g",
+        6.49,
+        "ground-turkey"
+      ],
+      [
+        "Sweet potatoes, 900 g",
+        3.14,
+        "sweet-potatoes"
+      ],
+      [
+        "Hamburger buns, 4",
+        1.5,
+        "hamburger-buns"
+      ],
+      [
+        "Cheddar slices, 4",
+        1.0,
+        "cheddar-slices"
+      ],
+      [
+        "Tomato",
+        0.75,
+        "tomatoes"
+      ],
+      [
+        "Iceberg lettuce, ¼ head",
+        0.62,
+        "iceberg-lettuce"
+      ],
+      [
+        "Mayonnaise, ketchup",
+        0.4,
+        "mayonnaise"
+      ],
+      [
+        "Panko, oil, cornstarch, spices",
+        0.9
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "stovetop"
+    ],
+    "base": [
+      "bread-wraps",
+      "potatoes"
+    ],
+    "occasion": [
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "Get the fries in first; they take longer than the burgers."
+    },
+    {
+      "icon": "thaw",
+      "text": "Thaw frozen ground turkey in the fridge overnight."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Sweet potato fries",
+      "items": [
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large sweet potatoes",
+          "note": "about 900 g, cut in 1 cm sticks",
+          "pantry": {
+            "name": "Sweet potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "cornstarch",
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Burgers",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "ground turkey",
+          "pantry": {
+            "name": "Ground turkey",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 20,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To serve",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "mayonnaise",
+          "pantry": {
+            "name": "Mayonnaise",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "ketchup",
+          "pantry": {
+            "name": "Ketchup",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "hamburger buns",
+          "pantry": {
+            "name": "Hamburger buns",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "cheddar slices",
+          "pantry": {
+            "name": "Cheddar slices",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": null,
+          "name": "head iceberg lettuce",
+          "note": "shredded",
+          "pantry": {
+            "name": "Iceberg lettuce",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "tomato",
+          "note": "sliced",
+          "pantry": {
+            "name": "Tomatoes",
+            "cat": "produce"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Fries",
+      "text": "Heat the oven to 220°C (425°F). Toss the sweet potato sticks with the cornstarch, then the oil, paprika and salt. Spread on a parchment-lined baking sheet, not touching, and bake 25–30 minutes, turning once, until crisp at the edges.",
+      "timer": 28,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Shape",
+      "text": "Mix the turkey, panko, Worcestershire, garlic powder, onion powder, salt and pepper gently. Shape 4 patties 2 cm thick with a thumbprint in the middle.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6"
+      ]
+    },
+    {
+      "title": "Cook",
+      "text": "Heat the oil in a large skillet over medium. Cook the patties 5–6 minutes a side, until browned and 74°C (165°F) in the centre. Lay a cheddar slice on each for the last minute, covered.",
+      "timer": 12,
+      "uses": [
+        "1-7",
+        "2-3"
+      ]
+    },
+    {
+      "title": "Burger sauce",
+      "text": "Stir the mayonnaise and ketchup together. Toast the buns cut side down in a dry pan, 1 minute.",
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2"
+      ]
+    },
+    {
+      "title": "Build",
+      "text": "Spread the sauce on the buns and add lettuce, a burger and tomato. Serve with the fries.",
+      "uses": [
+        "2-4",
+        "2-5"
+      ]
+    }
+  ],
+  "together": "ABBB*",
+  "fixIt": [
+    {
+      "problem": "Fries soggy",
+      "fix": "They were crowded. Use two sheets and leave space; the cornstarch helps them crisp."
+    },
+    {
+      "problem": "Burgers sticking",
+      "fix": "Let them brown before flipping; they release on their own."
+    },
+    {
+      "problem": "Burgers dry",
+      "fix": "Don't press them in the pan, and pull them at 74°C (165°F)."
+    }
+  ],
+  "saleTip": "Sweet potatoes are often $1.10/lb at No Frills; ground turkey is cheapest in the 2-pack deals.",
+  "swap": "Lean ground beef patties: cook to 71°C (160°F). Frozen sweet potato fries: bake as the package says.",
+  "leftovers": "Cooked patties reheat well; fries are best fresh but crisp again in the air fryer.",
+  "doneness": "Ground turkey to 74°C (165°F) in the centre (Health Canada, ground poultry).",
+  "source": "Based on tested turkey burger and oven sweet potato fry methods (Canadian Living, Cookie and Kate): panko and Worcestershire for juicy patties; cornstarch-tossed sweet potatoes at 220°C.",
+  "gear": [
+    "Baking sheet",
+    "Parchment paper",
+    "Large skillet with lid",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Shape the patties up to 1 day ahead, layered with parchment in the fridge.",
+    "Cut the sweet potatoes up to 1 day ahead and keep them in cold water; dry well before tossing."
+  ],
+  "reheat": "Patties covered in the microwave 1–2 minutes, until 74°C (165°F); fries in the air fryer at 200°C for 4 minutes.",
+  "thaw": {
+    "item": "ground turkey",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Turkey burgers with ketchup and lettuce, plain sweet potato fries; no cheese or paprika.",
+      "drop": [
+        "2-3",
+        "0-3",
+        "2-0",
+        "2-5"
+      ],
+      "stepNotes": {
+        "0": "Basic: skip the paprika.",
+        "2": "Basic: no cheese.",
+        "3": "Basic: plain ketchup, no mayo.",
+        "4": "Basic: lettuce only."
+      },
+      "costDrop": [
+        "cheddar",
+        "tomato"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Crisp bacon and sweet caramelized onions on every burger.",
+      "add": [
+        {
+          "group": "Fancy toppings",
+          "items": [
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "slices bacon",
+              "pantry": {
+                "name": "Bacon",
+                "cat": "meat"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "yellow onion",
+              "note": "thinly sliced",
+              "pantry": {
+                "name": "Yellow onions",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "butter",
+              "metric": {
+                "qty": 14,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Toppings",
+          "text": "While the fries bake, cook the bacon in a skillet until crisp and drain. Cook the onion in the butter over medium-low 15 minutes, stirring, until soft and golden. Top each burger with both."
+        }
+      ],
+      "costAdd": [
+        [
+          "Bacon, 4 slices",
+          2.0,
+          "bacon"
+        ],
+        [
+          "Onion, butter",
+          0.5
+        ]
+      ],
+      "plating": [
+        "Skewer each burger with a wooden pick.",
+        "Fries in a paper-lined basket.",
+        "Extra burger sauce for dipping."
+      ]
+    }
+  },
+  "why": {
+    "1-1": "Panko holds juices in lean turkey so the burgers stay tender.",
+    "1-2": "Worcestershire gives turkey a beefy, savoury depth.",
+    "0-1": "A dusting of cornstarch helps the sweet potatoes crisp instead of steam."
+  },
+  "fancyNight": false,
+  "funFact": "Sweet potatoes aren't related to regular potatoes; they're in the morning glory family.",
+  "keeps": {
+    "fridge": "3 days",
+    "freezer": "3 months",
+    "note": "freeze cooked patties between parchment"
+  },
+  "pairs": []
+}

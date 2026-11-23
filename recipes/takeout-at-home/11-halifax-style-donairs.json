@@ -1,0 +1,408 @@
+{
+  "title": "Halifax-Style Donairs",
+  "subtitle": "Nova Scotia's late-night classic: thin slices of seasoned beef in warm pitas with tomato, onion and the famous sweet garlic sauce",
+  "image": "assets/img/donairs.webp",
+  "imageAlt": "Two donairs wrapped in foil-lined pitas with sliced beef, tomato, onion and white sweet sauce on a cream plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "6 donairs: dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 25,
+  "cook": 75,
+  "cost": {
+    "total": 15.26,
+    "breakdown": [
+      [
+        "Lean ground beef, 680 g",
+        7.48,
+        "ground-beef-lean"
+      ],
+      [
+        "Pitas, 6",
+        2.99,
+        "pitas"
+      ],
+      [
+        "Evaporated milk, 370 ml",
+        2.29,
+        "evaporated-milk"
+      ],
+      [
+        "Tomatoes, 2",
+        1.5,
+        "tomatoes"
+      ],
+      [
+        "Sugar, ½ cup",
+        0.2,
+        "granulated-sugar"
+      ],
+      [
+        "Onion, vinegar, flour, spices",
+        0.8
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "stovetop"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [
+      "takeout-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Mild — not spicy",
+    "Canadian classic"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Knead the meat hard for 5 minutes until it turns sticky and paste-like. That's what makes thin, tight donair slices."
+    },
+    {
+      "icon": "cup",
+      "text": "Make the sauce first so it can chill and thicken."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Donair meat",
+      "items": [
+        {
+          "qty": 680,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried oregano",
+          "pantry": {
+            "name": "Dried oregano",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sweet sauce",
+      "items": [
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "can (370 ml) evaporated milk",
+          "note": "cold",
+          "pantry": {
+            "name": "Evaporated milk",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "granulated sugar",
+          "metric": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "white vinegar",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "White vinegar",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To serve",
+      "items": [
+        {
+          "qty": 6,
+          "unit": null,
+          "name": "pitas",
+          "note": "pocketless Greek-style if you can find them",
+          "pantry": {
+            "name": "Pitas",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "tomatoes",
+          "note": "diced",
+          "pantry": {
+            "name": "Tomatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Sweet sauce",
+      "text": "Whisk the evaporated milk, sugar and garlic powder until the sugar dissolves. Slowly drizzle in the vinegar while whisking; it thickens as you go. Chill.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Knead",
+      "text": "Heat the oven to 180°C (350°F). Mix the flour, paprika, onion powder, garlic powder, dried oregano, salt and pepper. Knead it into the beef with your hands for 5 minutes, slapping it into the bowl, until sticky and smooth.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Shape into a tight, smooth loaf about 20 cm long and set it on a rack over a foil-lined baking sheet. Bake 60–70 minutes, turning once, until 71°C (160°F) in the centre. Cool 10 minutes, then slice as thinly as you can.",
+      "timer": 65,
+      "uses": []
+    },
+    {
+      "title": "Sear",
+      "text": "Brown the slices in a dry skillet over medium-high, 1 minute a side, until crisp at the edges. Warm the pitas in the same pan.",
+      "timer": 3,
+      "uses": [
+        "2-0"
+      ]
+    },
+    {
+      "title": "Build",
+      "text": "Pile the beef on the pitas, add tomato and onion and drizzle with plenty of sweet sauce. Roll up in foil or parchment.",
+      "uses": [
+        "2-1",
+        "2-2"
+      ]
+    }
+  ],
+  "together": "BAAA*",
+  "fixIt": [
+    {
+      "problem": "Sauce too thin",
+      "fix": "Add vinegar slowly, a little at a time, and chill 30 minutes; it sets as it cools."
+    },
+    {
+      "problem": "Meat crumbly",
+      "fix": "It wasn't kneaded long enough. Knead until it looks like a smooth paste."
+    },
+    {
+      "problem": "Slices thick",
+      "fix": "Chill the cooked loaf 30 minutes, then slice with a sharp knife."
+    }
+  ],
+  "saleTip": "Evaporated milk is often 2 for $3 at No Frills; ground beef family packs are cheapest per kilo.",
+  "swap": "Pocket pitas work too; warm them and fold. Ground lamb for half the beef, cooked to 71°C (160°F).",
+  "leftovers": "Freeze sliced meat flat; it reheats in minutes in a hot pan.",
+  "doneness": "Ground beef loaf at 71°C (160°F) in the centre (Health Canada, ground beef).",
+  "source": "Based on tested home Halifax donair methods (Food Network Canada, Nova Scotia home recipes): a kneaded, spiced ground beef loaf baked at 180°C, sliced thin and seared; evaporated milk, sugar and vinegar sweet sauce. Kept mild.",
+  "gear": [
+    "Large bowl",
+    "Rimmed baking sheet",
+    "Wire rack",
+    "Foil",
+    "Large skillet",
+    "Sharp knife",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Make the sweet sauce up to 4 days ahead.",
+    "Bake the loaf a day ahead; chilled, it slices even thinner."
+  ],
+  "reheat": "Slices in a hot skillet 1–2 minutes a side, until 74°C (165°F).",
+  "thaw": {
+    "item": "ground beef",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Donair meat with sweet sauce in pitas; no dried oregano or raw onion.",
+      "drop": [
+        "0-5",
+        "2-2"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the dried oregano.",
+        "4": "Basic: tomato only."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Donair fries on the side: fries topped with donair meat, mozzarella and sweet sauce.",
+      "add": [
+        {
+          "group": "Donair fries",
+          "items": [
+            {
+              "qty": 500,
+              "unit": "g",
+              "name": "frozen french fries",
+              "pantry": {
+                "name": "Frozen french fries",
+                "cat": "frozen"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "cup",
+              "name": "shredded mozzarella",
+              "metric": {
+                "qty": 100,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Mozzarella (shredded)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Donair fries",
+          "text": "Bake the fries as the package says. Top with some sliced donair meat and the mozzarella and broil 2 minutes until melted. Drizzle with sweet sauce."
+        }
+      ],
+      "costAdd": [
+        [
+          "Frozen fries, 500 g",
+          1.75,
+          "frozen-french-fries"
+        ],
+        [
+          "Mozzarella, 100 g",
+          2.03,
+          "mozzarella-shredded"
+        ]
+      ],
+      "plating": [
+        "Wrap each donair halfway in foil, the Halifax way.",
+        "Extra sweet sauce in a dish.",
+        "Lots of napkins."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Evaporated milk thickens with vinegar into the signature sweet, garlicky sauce.",
+    "0-1": "A spoon of flour helps the kneaded meat bind into a sliceable loaf.",
+    "0-2": "Sweet paprika gives donair colour and warmth without heat."
+  },
+  "fancyNight": false,
+  "funFact": "Halifax named the donair its official food in 2015; it was adapted from the Greek gyro in the early 1970s.",
+  "keeps": {
+    "fridge": "4 days",
+    "freezer": "3 months",
+    "note": "freeze sliced meat; the sauce doesn't freeze"
+  },
+  "pairs": []
+}

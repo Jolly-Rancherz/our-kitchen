@@ -1,0 +1,423 @@
+{
+  "title": "Chicken Caesar Wraps",
+  "subtitle": "golden pan-seared chicken, crisp bacon and romaine in a creamy homemade Caesar dressing, rolled up tight",
+  "image": "assets/img/chicken-caesar-wraps.webp",
+  "imageAlt": "Two chicken Caesar wraps cut on an angle showing chicken, bacon and romaine, on a cream plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "4 big wraps: dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 20,
+  "cost": {
+    "total": 19.23,
+    "breakdown": [
+      [
+        "Chicken breasts, 700 g",
+        9.24,
+        "chicken-breasts-boneless"
+      ],
+      [
+        "Bacon, 6 slices",
+        3.0,
+        "bacon"
+      ],
+      [
+        "Romaine hearts, 2",
+        2.66,
+        "romaine-hearts"
+      ],
+      [
+        "Large tortillas, 4",
+        1.6,
+        "flour-tortillas-large"
+      ],
+      [
+        "Parmesan, ⅓ cup",
+        0.93,
+        "parmesan-grated"
+      ],
+      [
+        "Mayonnaise, ½ cup",
+        0.61,
+        "mayonnaise"
+      ],
+      [
+        "Lemon",
+        0.79,
+        "lemons"
+      ],
+      [
+        "Oil, garlic, Worcestershire, spices",
+        0.4
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Under 45 minutes"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Pound the chicken to an even 2 cm so it cooks through before the outside dries."
+    },
+    {
+      "icon": "cup",
+      "text": "Dry the romaine well after washing; wet leaves water down the dressing."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chicken and bacon",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "2 large",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 6,
+          "unit": null,
+          "name": "slices bacon",
+          "pantry": {
+            "name": "Bacon",
+            "cat": "meat"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Caesar dressing",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "mayonnaise",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Mayonnaise",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "lemons",
+          "note": "juiced",
+          "pantry": {
+            "name": "Lemons",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "finely grated",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Wraps",
+      "items": [
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "romaine hearts",
+          "note": "chopped",
+          "pantry": {
+            "name": "Romaine hearts",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "large flour tortillas",
+          "note": "about 25 cm",
+          "pantry": {
+            "name": "Flour tortillas (large)",
+            "cat": "grains"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Bacon",
+      "text": "Cook the bacon in a large skillet over medium, 6–8 minutes, until crisp. Drain on paper towel and chop. Pour off the fat and wipe the pan.",
+      "timer": 7,
+      "uses": [
+        "0-5"
+      ]
+    },
+    {
+      "title": "Chicken",
+      "text": "Pound the chicken to an even 2 cm and season with the garlic powder, salt and pepper. Heat the oil in the skillet over medium and cook 5–6 minutes a side, until golden and 74°C (165°F) in the thickest part. Rest 5 minutes, then slice.",
+      "timer": 12,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Dressing",
+      "text": "Juice the lemon. Whisk the mayonnaise, Parmesan, 2 tbsp lemon juice, garlic, Worcestershire and pepper; thin with a splash of water if thick.",
+      "uses": [
+        "1-2",
+        "1-0",
+        "1-1",
+        "1-3",
+        "1-4",
+        "1-5"
+      ]
+    },
+    {
+      "title": "Toss",
+      "text": "Toss the romaine with most of the dressing.",
+      "uses": [
+        "2-0"
+      ]
+    },
+    {
+      "title": "Wrap",
+      "text": "Warm the tortillas 20 seconds a side in the dry skillet. Fill each with romaine, chicken and bacon, drizzle with the last of the dressing, fold in the sides and roll up tightly. Cut in half on an angle.",
+      "uses": [
+        "2-1"
+      ]
+    }
+  ],
+  "together": "ABBB*",
+  "fixIt": [
+    {
+      "problem": "Wrap splitting",
+      "fix": "Warm the tortilla first and don't overfill; roll it tight, sides tucked."
+    },
+    {
+      "problem": "Dressing too sharp",
+      "fix": "Add a spoon more mayonnaise or a pinch of sugar."
+    },
+    {
+      "problem": "Chicken pale",
+      "fix": "The pan wasn't hot enough or the chicken was wet; pat it dry and preheat 2 minutes."
+    }
+  ],
+  "saleTip": "Romaine hearts are often 3 for $2.99 at No Frills; bacon is cheapest in the 2-pack deals.",
+  "swap": "Leftover roast chicken or the Parmesan-crusted cutlets work well; no cooking needed beyond warming.",
+  "leftovers": "Pack the chicken, bacon, romaine and dressing separately and wrap at lunch.",
+  "doneness": "Chicken breasts at 74°C (165°F) in the thickest part (Health Canada, poultry pieces).",
+  "source": "Based on tested egg-free Caesar dressing and chicken Caesar wrap methods (Canadian Living, Hellmann's Canada): a mayonnaise, Parmesan, lemon, garlic and Worcestershire dressing with pan-seared chicken.",
+  "gear": [
+    "Large skillet",
+    "Meat mallet or rolling pin",
+    "Plastic wrap",
+    "Large bowl",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Make the dressing up to 4 days ahead.",
+    "Cook the chicken and bacon up to 3 days ahead; wrap them cold or warmed."
+  ],
+  "reheat": "Chicken slices covered in the microwave 1 minute, until 74°C (165°F); build wraps fresh.",
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Chicken, romaine and a simple Parmesan mayo; no bacon or Worcestershire.",
+      "drop": [
+        "0-5",
+        "1-4"
+      ],
+      "stepNotes": {
+        "0": "Basic: skip the bacon.",
+        "2": "Basic: no Worcestershire."
+      },
+      "costDrop": [
+        "bacon"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Crunchy garlic croutons tucked inside and extra Parmesan.",
+      "add": [
+        {
+          "group": "Croutons",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": null,
+              "name": "baguette",
+              "note": "cut in 1 cm cubes",
+              "pantry": {
+                "name": "Baguette",
+                "cat": "grains"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "melted",
+              "metric": {
+                "qty": 28,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "tsp",
+              "name": "garlic powder",
+              "pantry": {
+                "name": "Garlic powder",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "grated Parmesan",
+              "note": "extra",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Croutons",
+          "text": "Toss the bread cubes with the butter and garlic powder and bake at 200°C (400°F) for 8–10 minutes until golden. Scatter into the wraps with the extra Parmesan."
+        }
+      ],
+      "costAdd": [
+        [
+          "Baguette, ½",
+          1.25,
+          "baguette"
+        ],
+        [
+          "Butter, Parmesan",
+          0.6
+        ]
+      ],
+      "plating": [
+        "Cut each wrap on a sharp angle and stand the halves up.",
+        "Extra dressing in a little dish for dipping.",
+        "A lemon wedge on the side."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Mayonnaise gives the creamy, eggy body of classic Caesar without raw egg.",
+    "1-4": "Worcestershire has anchovy in it, the savoury backbone of a real Caesar.",
+    "2-0": "Romaine stays crunchy under a thick dressing."
+  },
+  "fancyNight": false,
+  "funFact": "The Caesar salad is named after Caesar Cardini, who served it in Tijuana, Mexico, in the 1920s.",
+  "keeps": {
+    "fridge": "3 days",
+    "freezer": "2 months",
+    "note": "chicken only; dressing and romaine don't freeze"
+  },
+  "pairs": []
+}

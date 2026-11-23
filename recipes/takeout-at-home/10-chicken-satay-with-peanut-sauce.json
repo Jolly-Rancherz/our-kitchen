@@ -1,0 +1,438 @@
+{
+  "title": "Chicken Satay with Peanut Sauce",
+  "subtitle": "golden, sweet-savoury chicken skewers with a creamy coconut peanut sauce, rice and cool cucumber",
+  "image": "assets/img/chicken-satay.webp",
+  "imageAlt": "Golden chicken satay skewers with a bowl of peanut sauce, white rice and sliced cucumber on a cream plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 25,
+  "cook": 20,
+  "cost": {
+    "total": 17.39,
+    "breakdown": [
+      [
+        "Boneless chicken thighs, 700 g",
+        11.9,
+        "chicken-thighs-boneless"
+      ],
+      [
+        "Peanut butter, ½ cup",
+        0.7,
+        "peanut-butter"
+      ],
+      [
+        "Coconut milk, ½ can",
+        1.0,
+        "coconut-milk-canned"
+      ],
+      [
+        "Jasmine rice, 2 cups",
+        1.0,
+        "jasmine-rice"
+      ],
+      [
+        "English cucumber",
+        1.49,
+        "cucumbers"
+      ],
+      [
+        "Lime",
+        0.5,
+        "limes"
+      ],
+      [
+        "Soy sauce, sugar, garlic, spices",
+        0.8
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "stovetop"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "takeout-night",
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Takeout copycat"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Soak wooden skewers in water 30 minutes so they don't burn, or use metal ones."
+    },
+    {
+      "icon": "thaw",
+      "text": "Thaw frozen chicken thighs in the fridge overnight."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "boneless skinless chicken thighs",
+          "note": "cut in long 3 cm strips",
+          "pantry": {
+            "name": "Chicken thighs (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "packed brown sugar",
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground turmeric",
+          "pantry": {
+            "name": "Ground turmeric",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground cumin",
+          "pantry": {
+            "name": "Ground cumin",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Peanut sauce",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "smooth peanut butter",
+          "metric": {
+            "qty": 125,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Peanut butter",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": null,
+          "name": "can (400 ml) coconut milk",
+          "note": "about 200 ml, shaken",
+          "pantry": {
+            "name": "Coconut milk (canned)",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "packed brown sugar",
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "lime",
+          "note": "juiced",
+          "pantry": {
+            "name": "Limes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To serve",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "English cucumber",
+          "note": "sliced",
+          "pantry": {
+            "name": "Cucumbers",
+            "cat": "produce"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Marinate",
+      "text": "Toss the chicken with the soy sauce, brown sugar, garlic, turmeric, cumin and oil. Cover and chill 20 minutes or up to a day.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Skewer and bake",
+      "text": "Heat the oven to 230°C (450°F) with a rack in the upper third. Thread the chicken onto 12 skewers and lay them on a foil-lined baking sheet. Bake 12–14 minutes, turning once, until browned at the edges and 74°C (165°F).",
+      "timer": 13,
+      "uses": []
+    },
+    {
+      "title": "Peanut sauce",
+      "text": "Whisk the peanut butter, coconut milk, soy sauce, brown sugar, 1 tbsp lime juice and garlic powder in a small pot over medium-low 2–3 minutes until smooth and warm. Thin with water if needed.",
+      "timer": 3,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Serve the skewers over rice with the cucumber slices and a bowl of peanut sauce for dipping.",
+      "uses": [
+        "2-2"
+      ]
+    }
+  ],
+  "together": "ABAB*",
+  "fixIt": [
+    {
+      "problem": "Sauce too thick",
+      "fix": "Whisk in warm water 1 tbsp at a time."
+    },
+    {
+      "problem": "Skewers burning",
+      "fix": "Soak wooden skewers longer, or cover the bare ends with foil."
+    },
+    {
+      "problem": "Chicken pale",
+      "fix": "Broil 2 minutes at the end, watching closely."
+    }
+  ],
+  "saleTip": "Boneless thighs are cheapest in No Frills value packs; peanut butter is often $4.99 for 1 kg.",
+  "swap": "Chicken breasts: bake 10–12 minutes to 74°C (165°F). Air fryer: 200°C for 10–12 minutes, turning once.",
+  "leftovers": "Slide the chicken off the skewers for rice bowls or wraps with the sauce.",
+  "doneness": "Chicken thighs at 74°C (165°F) (Health Canada, poultry pieces).",
+  "source": "Based on tested oven chicken satay methods (RecipeTin Eats, Canadian Living): turmeric-and-soy marinated thigh strips on skewers, baked hot; a coconut peanut sauce. Kept mild with no chili.",
+  "gear": [
+    "12 skewers",
+    "Rimmed baking sheet",
+    "Foil",
+    "Small pot",
+    "Medium pot with lid",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Marinate the chicken up to 1 day ahead.",
+    "Make the peanut sauce up to 5 days ahead; it thickens in the fridge, so thin it when warming."
+  ],
+  "reheat": "Chicken covered in the microwave 1–2 minutes, until 74°C (165°F); warm the sauce separately.",
+  "thaw": {
+    "item": "chicken thighs",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Soy-garlic chicken skewers with peanut sauce and rice; no turmeric, cumin or cucumber.",
+      "drop": [
+        "0-4",
+        "0-5",
+        "2-2"
+      ],
+      "stepNotes": {
+        "0": "Basic: skip the turmeric and cumin.",
+        "4": "Basic: no cucumber."
+      },
+      "costDrop": [
+        "cucumber"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Quick-pickled cucumber and chopped peanuts over the sauce.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "rice vinegar",
+              "pantry": {
+                "name": "Rice vinegar",
+                "cat": "sauces"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "granulated sugar",
+              "pantry": {
+                "name": "Granulated sugar",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "unsalted roasted peanuts",
+              "note": "chopped",
+              "pantry": {
+                "name": "Peanuts (unsalted)",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: toss the cucumber with the rice vinegar, sugar and a pinch of salt; let it sit while the rice cooks."
+      },
+      "addSteps": [
+        {
+          "title": "Peanuts",
+          "text": "Scatter the chopped peanuts over the peanut sauce."
+        }
+      ],
+      "costAdd": [
+        [
+          "Rice vinegar, sugar",
+          0.3
+        ],
+        [
+          "Peanuts, ¼ cup",
+          0.6,
+          "peanuts-unsalted"
+        ]
+      ],
+      "plating": [
+        "Skewers fanned across the rice.",
+        "Peanut sauce in a small bowl.",
+        "Lime wedges on the side."
+      ]
+    }
+  },
+  "why": {
+    "0-4": "Turmeric gives satay its golden colour; it's earthy, not hot.",
+    "0-0": "Thighs stay juicy in a very hot oven.",
+    "1-1": "Coconut milk makes the peanut sauce silky and pourable."
+  },
+  "fancyNight": false,
+  "funFact": "Satay is street food across Indonesia, Malaysia and Singapore, traditionally grilled over charcoal.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze the cooked chicken; sauce keeps 5 days in the fridge"
+  },
+  "pairs": []
+}

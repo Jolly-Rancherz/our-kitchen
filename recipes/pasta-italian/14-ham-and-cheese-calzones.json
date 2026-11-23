@@ -1,0 +1,439 @@
+{
+  "title": "Ham & Cheese Calzones",
+  "subtitle": "golden homemade dough folded around ham, ricotta and melty mozzarella, with warm marinara for dipping",
+  "image": "assets/img/ham-cheese-calzones.webp",
+  "imageAlt": "Two golden half-moon calzones, one cut open to show melted cheese and ham, with a small bowl of marinara, on a cream plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "4 calzones: dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 90,
+  "cook": 20,
+  "cost": {
+    "total": 17.13,
+    "breakdown": [
+      [
+        "Flour, 3½ cups",
+        0.91,
+        "all-purpose-flour"
+      ],
+      [
+        "Instant yeast, 1 pouch",
+        0.93,
+        "instant-yeast"
+      ],
+      [
+        "Deli ham, 175 g",
+        4.49,
+        "deli-ham-sliced"
+      ],
+      [
+        "Mozzarella, 200 g",
+        4.06,
+        "mozzarella-shredded"
+      ],
+      [
+        "Ricotta, 1 cup",
+        2.36,
+        "ricotta"
+      ],
+      [
+        "Marinara, 1 jar",
+        3.49,
+        "marinara-sauce"
+      ],
+      [
+        "Egg",
+        0.39,
+        "eggs"
+      ],
+      [
+        "Olive oil, sugar, spices, salt",
+        0.5
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [
+      "takeout-night",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Make-ahead dough"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "The dough needs 1 hour to rise; the rest is quick."
+    },
+    {
+      "icon": "cheese",
+      "text": "Drain any liquid off the ricotta so the calzones don't go soggy."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Dough",
+      "items": [
+        {
+          "qty": 3.5,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 455,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2.25,
+          "unit": "tsp",
+          "name": "instant yeast",
+          "note": "1 pouch (8 g)",
+          "pantry": {
+            "name": "Instant yeast",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "granulated sugar",
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.25,
+          "unit": "cup",
+          "name": "water",
+          "note": "warm, about 45°C",
+          "metric": {
+            "qty": 310,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "olive oil",
+          "note": "1 for the dough, 1 for the bowl and pan",
+          "pantry": {
+            "name": "Olive oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Filling",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "ricotta",
+          "note": "drained",
+          "metric": {
+            "qty": 250,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Ricotta",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "shredded mozzarella",
+          "metric": {
+            "qty": 200,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Mozzarella (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 175,
+          "unit": "g",
+          "name": "sliced deli ham",
+          "note": "chopped",
+          "pantry": {
+            "name": "Deli ham (sliced)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried Italian seasoning",
+          "pantry": {
+            "name": "Italian seasoning (dried)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To finish",
+      "items": [
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large eggs",
+          "note": "beaten",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "jar (650 ml) marinara sauce",
+          "note": "for dipping",
+          "pantry": {
+            "name": "Marinara sauce",
+            "cat": "sauces"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Dough",
+      "text": "Whisk the flour, yeast, sugar and salt in a large bowl. Add the warm water and 1 tbsp of the oil, stir to a shaggy dough, then knead on the counter 5–6 minutes until smooth and springy.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5=1 tbsp"
+      ]
+    },
+    {
+      "title": "Rise",
+      "text": "Put it in a bowl rubbed with a little of the remaining oil, cover and let rise 1 hour, until doubled. After 40 minutes, heat the oven to 220°C (425°F).",
+      "timer": 60,
+      "uses": [
+        "0-5"
+      ]
+    },
+    {
+      "title": "Filling",
+      "text": "Stir the ricotta, mozzarella, ham, Italian seasoning, garlic powder and pepper together.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5"
+      ]
+    },
+    {
+      "title": "Shape",
+      "text": "Divide the dough in 4 and roll each into a 20 cm round. Spoon a quarter of the filling onto one half of each, leaving 2 cm clear. Fold over, press the edges, then roll and crimp them tight.",
+      "uses": []
+    },
+    {
+      "title": "Bake",
+      "text": "Set them on a baking sheet brushed with the last of the oil. Brush the tops with the egg and cut 2 small slits in each. Bake 18–20 minutes, until deep golden and the filling reads 74°C (165°F).",
+      "timer": 19,
+      "uses": [
+        "2-0"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Warm the marinara while they rest 5 minutes, and serve it for dipping.",
+      "uses": [
+        "2-1"
+      ]
+    }
+  ],
+  "together": "AABAA*",
+  "fixIt": [
+    {
+      "problem": "Calzones leaking",
+      "fix": "The edges weren't sealed or it was overfilled; crimp hard and keep the filling off the rim."
+    },
+    {
+      "problem": "Pale bottoms",
+      "fix": "Bake on the lowest rack for the last 5 minutes."
+    },
+    {
+      "problem": "Dough shrinking back",
+      "fix": "Cover and rest it 10 minutes, then roll again."
+    }
+  ],
+  "saleTip": "No Frills deli ham is cheapest in the pre-packed 175 g trays; mozzarella is often $4.99 on sale.",
+  "swap": "Store-bought pizza dough: 900 g, divided in 4; let it sit out 30 minutes first.",
+  "leftovers": "Wrap cooled calzones one by one; they make a great cold or reheated lunch.",
+  "doneness": "Ham is fully cooked; bake until the filling reads 74°C (165°F) (Health Canada, leftovers and reheated foods).",
+  "source": "Based on tested homemade calzone methods (King Arthur Baking, Canadian Living): an instant-yeast dough risen 1 hour, filled with ricotta, mozzarella and ham, egg-washed and baked at 220°C.",
+  "gear": [
+    "Large bowl",
+    "Rolling pin",
+    "Baking sheet",
+    "Pastry brush",
+    "Small pot",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Make the dough up to 2 days ahead and keep it covered in the fridge; bring it out 1 hour before shaping.",
+    "Mix the filling up to 2 days ahead."
+  ],
+  "reheat": "At 180°C (350°F) for 12–15 minutes, or the air fryer at 170°C for 8 minutes, until 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Ham and mozzarella with ricotta; no Italian seasoning or egg wash.",
+      "drop": [
+        "1-3",
+        "2-0"
+      ],
+      "stepNotes": {
+        "2": "Basic: skip the Italian seasoning.",
+        "4": "Basic: brush with a little oil instead of egg."
+      },
+      "costDrop": [
+        "egg"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Pepperoni inside and a garlic butter crust.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 75,
+              "unit": "g",
+              "name": "sliced pepperoni",
+              "pantry": {
+                "name": "Pepperoni (sliced)",
+                "cat": "meat"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "melted",
+              "metric": {
+                "qty": 28,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "tsp",
+              "name": "garlic powder",
+              "pantry": {
+                "name": "Garlic powder",
+                "cat": "spices"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "grated Parmesan",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: lay a few pepperoni slices over the filling before folding."
+      },
+      "addSteps": [
+        {
+          "title": "Garlic butter",
+          "text": "Brush the hot calzones with the butter mixed with the garlic powder and scatter the Parmesan over them."
+        }
+      ],
+      "costAdd": [
+        [
+          "Pepperoni, 75 g",
+          1.5,
+          "pepperoni-sliced"
+        ],
+        [
+          "Butter, Parmesan",
+          0.7
+        ]
+      ],
+      "plating": [
+        "Cut one calzone open so the cheese stretches.",
+        "Marinara in a small bowl in the middle.",
+        "Serve on a board."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Ricotta keeps the filling soft and creamy instead of stringy.",
+    "2-0": "Egg wash gives the shiny, deep golden crust.",
+    "1-2": "Chopped ham spreads through every bite."
+  },
+  "fancyNight": false,
+  "funFact": "'Calzone' means 'trouser leg' in Italian, from its folded, pocket-like shape.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "wrap baked calzones individually"
+  },
+  "pairs": []
+}

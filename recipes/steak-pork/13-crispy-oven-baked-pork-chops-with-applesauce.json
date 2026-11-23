@@ -1,0 +1,456 @@
+{
+  "title": "Crispy Oven-Baked Pork Chops with Applesauce",
+  "subtitle": "boneless chops in a seasoned golden crumb coating, with quick homemade applesauce and roasted carrots",
+  "image": "assets/img/oven-pork-chops.webp",
+  "imageAlt": "Golden crumb-coated pork chops with a bowl of chunky applesauce and roasted carrots on a cream plate with a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 30,
+  "cost": {
+    "total": 14.08,
+    "breakdown": [
+      [
+        "Boneless pork chops, 4 (700 g)",
+        7.39,
+        "pork-chops-boneless"
+      ],
+      [
+        "Gala apples, 4",
+        1.8,
+        "apples-gala"
+      ],
+      [
+        "Carrots, 6",
+        1.65,
+        "carrots"
+      ],
+      [
+        "Panko, 1 cup",
+        0.86,
+        "panko-breadcrumbs"
+      ],
+      [
+        "Parmesan, ¼ cup",
+        0.7,
+        "parmesan-grated"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "Butter, oil, sugar, spices",
+        0.9
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "stovetop"
+    ],
+    "base": [],
+    "occasion": [
+      "weeknight",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "The carrots and chops share the oven; carrots go in first."
+    },
+    {
+      "icon": "knife",
+      "text": "Chops about 2 cm thick cook through as the crumbs turn golden."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Carrots",
+      "items": [
+        {
+          "qty": 6,
+          "unit": null,
+          "name": "carrots",
+          "note": "peeled, cut in sticks",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pork chops",
+      "items": [
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "boneless pork chops",
+          "note": "about 700 g, 2 cm thick",
+          "pantry": {
+            "name": "Pork chops (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "note": "beaten",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 60,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Applesauce",
+      "items": [
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "Gala apples",
+          "note": "peeled, cored and chopped",
+          "pantry": {
+            "name": "Apples (Gala)",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 80,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "packed brown sugar",
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.125,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Carrots",
+      "text": "Heat the oven to 220°C (425°F). Toss the carrots with the oil and salt on one end of a large parchment-lined baking sheet and roast 10 minutes.",
+      "timer": 10,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Coat",
+      "text": "Pat the chops dry. Mix the panko, Parmesan, paprika, garlic powder, salt, pepper and melted butter. Dust the chops in the flour, dip in the egg, then press into the crumbs.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6",
+        "1-7",
+        "1-8",
+        "1-9"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Lay the chops on the other end of the sheet and bake 18–20 minutes, until golden and 71°C (160°F) in the centre. Rest 3 minutes.",
+      "timer": 19,
+      "uses": []
+    },
+    {
+      "title": "Applesauce",
+      "text": "Meanwhile, simmer the apples, water, brown sugar, cinnamon and salt in a covered pot over medium-low 12–15 minutes, until soft. Mash with a fork to the texture you like.",
+      "timer": 14,
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3",
+        "2-4"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Serve the chops with the carrots and warm applesauce.",
+      "uses": []
+    }
+  ],
+  "together": "AAAB*",
+  "fixIt": [
+    {
+      "problem": "Bottoms soggy",
+      "fix": "Bake on a rack set on the sheet, or flip the chops for the last 5 minutes."
+    },
+    {
+      "problem": "Chops dry",
+      "fix": "Pull them at 71°C (160°F); thin chops overshoot quickly."
+    },
+    {
+      "problem": "Applesauce too thick",
+      "fix": "Stir in a splash of water or apple juice."
+    }
+  ],
+  "saleTip": "Boneless pork chop family packs are often $6.59/kg at No Frills; freeze them in pairs.",
+  "swap": "Bone-in chops: add 5 minutes and check at the bone. Store-bought unsweetened applesauce for homemade.",
+  "leftovers": "Slice cold chops into sandwiches with applesauce.",
+  "doneness": "Pork chops at 71°C (160°F) in the centre (Health Canada, pork).",
+  "source": "Based on tested oven-fried pork chop and stovetop applesauce methods (Canadian Living, America's Test Kitchen): a flour, egg and buttered Parmesan-panko coat baked at 220°C; apples simmered soft with a little brown sugar.",
+  "gear": [
+    "Large rimmed baking sheet",
+    "Parchment paper",
+    "3 shallow dishes",
+    "Medium pot with lid",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Make the applesauce up to 1 week ahead; it freezes well too.",
+    "Mix the crumb coating up to 3 days ahead."
+  ],
+  "reheat": "Chops on a rack at 200°C (400°F) for 10 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "pork chops",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Crumbed chops with plain applesauce and carrots; no Parmesan, paprika or cinnamon.",
+      "drop": [
+        "1-4",
+        "1-5",
+        "2-3"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the Parmesan and paprika.",
+        "3": "Basic: skip the cinnamon."
+      },
+      "costDrop": [
+        "parmesan"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Honey-glazed carrots and a maple butter on the chops.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "honey",
+              "note": "for the carrots",
+              "pantry": {
+                "name": "Honey",
+                "cat": "sauces"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "softened",
+              "metric": {
+                "qty": 28,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "maple syrup",
+              "pantry": {
+                "name": "Maple syrup",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "2": "Fancy: drizzle the honey over the carrots when the chops go in."
+      },
+      "addSteps": [
+        {
+          "title": "Maple butter",
+          "text": "Mash the butter with the maple syrup and set a spoonful on each hot chop."
+        }
+      ],
+      "costAdd": [
+        [
+          "Honey, maple syrup",
+          0.6
+        ],
+        [
+          "Butter, 2 tbsp",
+          0.4,
+          "butter"
+        ]
+      ],
+      "plating": [
+        "Slice each chop on an angle.",
+        "Applesauce in a small bowl.",
+        "Carrots stacked alongside."
+      ]
+    }
+  },
+  "why": {
+    "1-9": "Buttered crumbs brown in the oven like they were pan-fried.",
+    "2-0": "Gala apples cook down sweet and soft, so they need little sugar.",
+    "1-4": "Parmesan adds crunch and a savoury edge to the crust."
+  },
+  "fancyNight": false,
+  "funFact": "The Gala apple was bred in New Zealand in the 1930s and is now one of the most widely grown apples in the world.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze baked chops; applesauce freezes too"
+  },
+  "pairs": []
+}
