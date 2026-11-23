@@ -112,9 +112,9 @@
         },
         {
           "qty": 1,
-          "unit": null,
-          "name": "orange",
-          "note": "finely grated zest only",
+          "unit": "tbsp",
+          "name": "finely grated orange zest",
+          "note": "from 1 orange",
           "pantry": {
             "name": "Oranges",
             "cat": "produce"
@@ -195,16 +195,20 @@
     "basic": {
       "note": "The straight classic: berries, sugar and water.",
       "drop": [
-        "0-4"
+        "0-4",
+        "0-2"
       ],
       "swap": {
-        "0-2": {
-          "name": "water",
-          "pantry": null
+        "0-3": {
+          "qty": 1,
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          }
         }
       },
       "stepNotes": {
-        "0": "Basic: use water in place of the orange juice.",
+        "0": "Basic: 1 cup water and no orange juice.",
         "2": "Basic: no zest; just cool and chill."
       },
       "costDrop": [

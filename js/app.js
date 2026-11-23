@@ -6321,6 +6321,6 @@ async function boot() {
   const wait = updatedNow ? 0 : Math.max(0, 800 - (performance.now() - t0));
   setTimeout(() => { $('#splash').classList.add('out'); setTimeout(() => $('#splash').remove(), 700); }, wait);
 }
-window.OK_DEBUG = { get state() { return state; }, set state(v) { state = v; save(); }, stripGuide: () => openStripMove(), snapshot: () => takeSnapshot('auto', true) };
+window.OK_DEBUG = { get state() { return state; }, set state(v) { state = v; save(); }, stripGuide: () => openStripMove(), snapshot: () => takeSnapshot('auto', true), pools: () => ({ spin: spinPool().pool.map((r) => r.id), dinners: dinnerPool(visibleRecipes()).map((r) => r.id), pick: ui.pick }) };
 boot();
 })();

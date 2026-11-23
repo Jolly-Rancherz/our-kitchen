@@ -147,9 +147,9 @@
         },
         {
           "qty": 1,
-          "unit": null,
-          "name": "orange",
-          "note": "finely grated zest only",
+          "unit": "tbsp",
+          "name": "finely grated orange zest",
+          "note": "from 1 orange",
           "pantry": {
             "name": "Oranges",
             "cat": "produce"

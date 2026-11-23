@@ -275,7 +275,7 @@
     },
     {
       "title": "Roll and cut",
-      "text": "Heat the oven to 180°C (350°F) and line 2 baking sheets with parchment. Roll one disc between two sheets of parchment (or on a lightly floured counter) to 5 mm thick. Cut out shapes and set them 2–3 cm apart. Re-roll the scraps once.",
+      "text": "Heat the oven to 180°C (350°F) and line 2 baking sheets with parchment. Roll one disc between two sheets of parchment (or on a lightly floured counter) to 5 mm thick. Cut out shapes and set them 2–3 cm apart. Re-roll the scraps once, then repeat with the second disc.",
       "uses": []
     },
     {
@@ -357,13 +357,14 @@
           "items": [
             {
               "qty": 1,
-              "unit": null,
-              "name": "orange",
-              "note": "finely grated zest only",
+              "unit": "tbsp",
+              "name": "finely grated orange zest",
+              "note": "from 1 orange",
               "pantry": {
                 "name": "Oranges",
                 "cat": "produce"
-              }
+              },
+              "asWritten": true
             },
             {
               "qty": 2,

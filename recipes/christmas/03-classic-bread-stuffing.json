@@ -83,10 +83,10 @@
       "name": "Stuffing",
       "items": [
         {
-          "qty": 1,
-          "unit": null,
-          "name": "white sandwich bread loaf",
-          "note": "675 g, cut in 2 cm cubes",
+          "qty": 675,
+          "unit": "g",
+          "name": "white sandwich bread",
+          "note": "1 loaf, cut in 2 cm cubes",
           "pantry": {
             "name": "Sandwich bread (white)",
             "cat": "grains"

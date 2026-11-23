@@ -204,11 +204,11 @@
       "name": "Pan gravy",
       "items": [
         {
-          "qty": 2,
+          "qty": 3,
           "unit": "tbsp",
           "name": "butter",
           "metric": {
-            "qty": 28,
+            "qty": 42,
             "unit": "g"
           },
           "pantry": {
@@ -217,9 +217,13 @@
           }
         },
         {
-          "qty": 3,
-          "unit": "tbsp",
+          "qty": 0.25,
+          "unit": "cup",
           "name": "all-purpose flour",
+          "metric": {
+            "qty": 30,
+            "unit": "g"
+          },
           "pantry": {
             "name": "All-purpose flour",
             "cat": "baking"
