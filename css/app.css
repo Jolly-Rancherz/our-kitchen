@@ -1756,3 +1756,48 @@ html[data-theme="dark"] .trip::before{background:repeating-linear-gradient(90deg
 .storebar .chip{justify-content:center}
 html.big .storebar{grid-template-columns:1fr 1fr}
 html.big .storesel{grid-column:1/-1}
+
+/* ---------------------------------------------------------------- update 12.3 calendar */
+.calnav{display:grid;grid-template-columns:44px 1fr 44px;gap:8px;align-items:center;margin-top:12px}
+.calbtn{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1.25px solid var(--line-gold);background:var(--card);color:var(--ink)}
+.calbtn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.calseg{grid-template-columns:1fr 1fr;margin-top:0}
+.calseg button{height:42px}
+.caltoday{margin-top:10px;border-color:var(--line-gold);background:var(--card);color:var(--ink)}
+.calgrid{margin-top:12px;touch-action:pan-y}
+.cwk{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;font-family:"Cinzel";font-weight:600;font-size:.7rem;letter-spacing:.12em;color:var(--kicker);padding-bottom:6px;border-bottom:1px solid var(--line-gold)}
+.cdays{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:6px}
+.cday{position:relative;aspect-ratio:1/1.08;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:6px;gap:4px;background:var(--card);border:1px solid var(--line);color:var(--ink);font-variant-numeric:tabular-nums;-webkit-tap-highlight-color:transparent}
+.cday .n{font-weight:600;font-size:.9rem;line-height:1}
+.cday.out{background:transparent;border-color:transparent;color:var(--muted);opacity:.55}
+.cday.today{border:2px solid var(--gold)}
+.cday.today .n{font-family:"Caveat",cursive;font-size:1.25rem;color:var(--gold-deep)}
+html[data-theme="dark"] .cday.today .n{color:var(--gold)}
+.cday .dot,.calkey .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.cday .dots{display:flex;gap:3px;align-items:center;min-height:9px}
+.cday .ring,.calkey .ring{display:inline-block;width:9px;height:9px;border-radius:50%;border:1.6px solid var(--gold);background:transparent}
+.cday.cooked{background:color-mix(in srgb,var(--gold) 12%,var(--card))}
+.cday:active{transform:scale(.96)}
+.calkey{margin-top:10px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.calkey .ring{margin-left:6px}
+.calweek{margin-top:12px;display:flex;flex-direction:column;gap:6px;touch-action:pan-y}
+.cwrow{display:grid;grid-template-columns:54px 1fr;gap:10px;align-items:center;text-align:left;padding:10px 12px;background:var(--card);border:1px solid var(--line);color:var(--ink);min-height:56px}
+.cwrow.today{border:2px solid var(--gold)}
+.cwd{display:flex;flex-direction:column;align-items:center;font-weight:700;font-size:1.15rem;line-height:1.05;font-variant-numeric:tabular-nums}
+.cwd b{font-family:"Cinzel";font-size:.66rem;letter-spacing:.12em;color:var(--kicker);text-transform:uppercase}
+.cwb{display:flex;flex-direction:column;gap:3px;min-width:0}
+.cw-c{display:flex;align-items:center;gap:6px;font-weight:600}
+.cw-p{font-weight:600;color:var(--ink2)}
+.cw-p::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;border:1.6px solid var(--gold);margin-right:7px;vertical-align:1px}
+.cw-p small{display:block;font-weight:500;font-size:.74rem;color:var(--muted);margin-left:17px}
+.cw-e{color:var(--muted);font-size:.88rem}
+@keyframes calnext{from{transform:translateX(28px)}to{transform:none}}
+@keyframes calprev{from{transform:translateX(-28px)}to{transform:none}}
+.slnext{animation:calnext .22s ease-out}.slprev{animation:calprev .22s ease-out}
+@media (prefers-reduced-motion:reduce){.slnext,.slprev{animation:none}}
+.wklinks{display:flex;gap:14px;flex-wrap:wrap;margin-top:4px}
+/* Us: the signature dish photo is taped in too */
+.sigcard::before,.sigcard::after{content:"";position:absolute;z-index:2;top:10px;width:72px;height:20px;pointer-events:none;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.22) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(242,229,198,.9);box-shadow:0 1px 3px rgba(18,16,46,.28);opacity:.92}
+.sigcard::before{left:-14px;transform:rotate(-36deg)}.sigcard::after{right:-14px;transform:rotate(36deg)}
+html[data-theme="dark"] .sigcard::before,html[data-theme="dark"] .sigcard::after{background:repeating-linear-gradient(90deg,rgba(255,255,255,.10) 0 6px,rgba(255,255,255,0) 6px 12px),rgba(222,200,150,.78)}

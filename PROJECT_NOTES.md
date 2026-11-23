@@ -352,3 +352,13 @@ exactly 812pt although the image continues.
 - In-store mode (`ui.instore`, session only): `.instore` big rows and ticks, its own wake lock `storeLock` (re-requested on visibility, released on Done or when leaving #/grocery). `forgotCard()` = pantry low/out + staples not already on the list (ticked or not), max 10, tap to add.
 - Hold a row (`longPress`, 520 ms, cancels on 8 px move; contextmenu on desktop) → `openGroceryItem`: recipes that use it (pantry key or a loose singular-name match), price at this store + other stores, Find on Flipp.
 - Scrapbook touch on Grocery: handwritten lead, a tape strip on the trip card, store tools grouped in one bar.
+
+## Update 12.3 — cooking calendar + .ics (2026-11-23)
+- Route `#/calendar(/YYYY-MM)` → `viewCalendar` (tab: Us). Month grid is Sunday-first (`calWeekStart`; the older Monday `weekStart` is for streaks and is untouched). `.cday` shows a gold dot per cooked dinner (max 2) or a ring for a plan; today has a gold border and a handwritten number. Week view (`ui.calMode`) has one `.cwrow` per day: cooked entries with hats, or the plan with "start by".
+- Swipe (direction-locked, ignores 26 px edge starts) or ‹ › to change month/week, with a short translate slide-in (no opacity, so no flash). "Back to today" chip.
+- `planOn(iso)`: today/future → `plannedFor`; past → `state.plan`. `cookedOn(iso)` = `realDinners()` that day.
+- Day sheet `openCalDay`: cooked list (recipe links, who, cost); for today or later, a plan select that writes the same `state.plan` / `state.tonight` shape as Plan the week.
+- `.ics` (`buildIcs`/`exportIcs`): one VEVENT per planned dinner, DTSTART = start-cooking time (dinnerAt − total − 5 min), DTEND = dinner, floating local time, a VALARM at start, and a −20 h VALARM when `thawLine()` says something needs thawing. Delivered with Web Share (files) when available, else a download. Buttons: week plan sheet "Add to my calendar" and the calendar week view.
+- Links: Us → "Our calendar" tile (first in Just for us), week plan sheet → "Open our calendar", Year in review → "See YYYY day by day" (busiest month), calendar → "Our YYYY in review".
+- Us scrapbook touch: `.lead.hand` line, washi tape on `.sigcard`.
+- crawl.mjs now includes #/calendar and #/calendar/2026-01.

@@ -430,6 +430,7 @@ const routes = [
   [/^#\/freezer$/, viewFreezer],
   [/^#\/wish$/, viewWish],
   [/^#\/year(?:\/(\d{4}))?$/, viewYear],
+  [/^#\/calendar(?:\/(\d{4}-\d{2}))?$/, viewCalendar],
   [/^#\/acura$/, viewAcura],
   [/^#\/acura\/t\/([\w-]+)$/, viewTreat],
   [/^#\/acura\/safety$/, viewAcuraSafety],
@@ -3590,11 +3591,135 @@ function viewYear(yy) {
       <li>Spent about <b>${money(s.spent)}</b> on dinners at home.</li>
       ${s.dishes ? `<li>The coin decided dishes duty ${s.dishes} time${s.dishes === 1 ? '' : 's'}.</li>` : ''}
       ${s.badges.length ? `<li>Badges earned: ${esc(s.badges.join(' · '))}.</li>` : ''}</ul></div>
+    <a class="nudge" href="#/calendar/${s.bestM ? s.bestM[0] : y + '-01'}"><span>${svg('calendar')}</span><span style="flex:1">See ${y} day by day on our calendar${s.bestM ? ` — starting with ${esc(monthName(s.bestM[0]).split(' ')[0])}` : ''}.</span><span>${svg('chevR')}</span></a>
     ${s.photos.length ? `<div class="sec"><div class="sec-title">Photo memories</div><div class="photos">${s.photos.slice(0, 12).map((p) => `<a class="ph" href="#/r/${p.rid}"><img src="${p.data}" alt="">${stampHTML(p, true)}<span>${esc(shortDate(p.date))}</span></a>`).join('')}</div></div>` : ''}
     <p class="lead" style="text-align:center;margin-top:26px">Here's to another year in our kitchen ♥</p>` : ''}</div>`);
 }
 
 // ---------------------------------------------------------------- views: Us — the couple hub (one place for everything "us")
+// ---------------------------------------------------------------- update 12.3: our cooking calendar + .ics week plan
+// Real dates. Cooked = state.cooked (every dinner logged), planned = state.plan / tonight. Read-only except the day sheet,
+// which plans a dinner exactly like Plan the week does (same state.plan entry shape).
+const WKD = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+function planOn(iso) {
+  if (iso >= todayISO()) return plannedFor(iso);
+  const p = state.plan[iso]; return p && summary(p.recipeId) ? p.recipeId : null;
+}
+function cookedOn(iso) { return realDinners().filter((c) => c.date === iso).sort((a, b) => (a.at || 0) - (b.at || 0)); }
+function calWeekStart(iso) { const d = dateOf(iso); d.setDate(d.getDate() - d.getDay()); return isoOf(d); } // Sunday-first, like a wall calendar
+function calCell(iso, inMonth) {
+  const c = cookedOn(iso); const p = c.length ? null : planOn(iso); const t = iso === todayISO();
+  return `<button class="cday${inMonth ? '' : ' out'}${t ? ' today' : ''}${c.length ? ' cooked' : ''}${p ? ' planned' : ''}" data-day="${iso}" aria-label="${esc(shortDate(iso))}${c.length ? `, ${c.length} cooked` : ''}${p ? ', planned' : ''}"><span class="n">${+iso.slice(8)}</span><span class="dots">${c.length ? `<i class="dot"></i>${c.length > 1 ? '<i class="dot"></i>' : ''}` : p ? '<i class="ring"></i>' : ''}</span></button>`;
+}
+function viewCalendar(arg) {
+  setTop({ title: 'CALENDAR', back: '#/us' });
+  const today = todayISO();
+  const mode = ui.calMode === 'week' ? 'week' : 'month';
+  let ym = arg && /^\d{4}-\d{2}$/.test(arg) ? arg : ui.calYm || today.slice(0, 7);
+  ui.calYm = ym;
+  const [Y, M] = ym.split('-').map(Number);
+  const first = new Date(Y, M - 1, 1); const days = new Date(Y, M, 0).getDate();
+  const monthDinners = realDinners().filter((c) => c.date.startsWith(ym));
+  const monthPlans = Array.from({ length: days }, (_, i) => `${ym}-${pad2(i + 1)}`).filter((iso) => iso >= today && !cookedOn(iso).length && planOn(iso)).length;
+  const ws = ui.calWeek || calWeekStart(today);
+  const wdays = Array.from({ length: 7 }, (_, i) => addDaysISO(ws, i));
+  let body;
+  if (mode === 'month') {
+    const start = new Date(Y, M - 1, 1 - first.getDay()); const cells = [];
+    const weeks = Math.ceil((first.getDay() + days) / 7);
+    for (let i = 0; i < weeks * 7; i++) { const d = new Date(start); d.setDate(start.getDate() + i); cells.push(calCell(isoOf(d), d.getMonth() === M - 1)); }
+    body = `<div class="calgrid" id="calSwipe"><div class="cwk">${WKD.map((w) => `<span>${w}</span>`).join('')}</div><div class="cdays">${cells.join('')}</div></div>
+      <p class="small muted calkey"><i class="dot"></i>cooked <i class="ring"></i>planned · tap a day for details</p>`;
+  } else {
+    body = `<div class="calweek" id="calSwipe">${wdays.map((iso) => {
+      const c = cookedOn(iso); const p = planOn(iso); const ps = p && summary(p);
+      return `<button class="cwrow${iso === today ? ' today' : ''}" data-day="${iso}"><span class="cwd"><b>${esc(dateOf(iso).toLocaleDateString('en-CA', { weekday: 'short' }))}</b>${+iso.slice(8)}</span>
+        <span class="cwb">${c.map((x) => `<span class="cw-c">${hat(x.by, 14)}${esc(x.title || (summary(x.recipeId) || {}).title || 'Dinner')}</span>`).join('')}${!c.length && ps ? `<span class="cw-p">${esc(ps.title)}<small>${iso >= today ? `start by ${fmtTime(startOn(ps, iso))}` : 'planned'}</small></span>` : ''}${!c.length && !ps ? `<span class="cw-e">${iso >= today ? 'Nothing planned' : '—'}</span>` : ''}</span></button>`;
+    }).join('')}</div>
+      ${wdays.some((iso) => iso >= today && planOn(iso)) ? `<button class="btn ghost block" id="calIcs" style="margin-top:12px">${svg('calendar')}Add this week to my calendar</button>` : ''}`;
+  }
+  const title = mode === 'month' ? first.toLocaleDateString('en-CA', { month: 'long', year: 'numeric' }) : `${dateOf(wdays[0]).toLocaleDateString('en-CA', { month: 'short', day: 'numeric' })} – ${dateOf(wdays[6]).toLocaleDateString('en-CA', { month: 'short', day: 'numeric' })}`;
+  const onNow = mode === 'month' ? ym === today.slice(0, 7) : ws === calWeekStart(today);
+  const yrN = realDinners().filter((c) => c.date.startsWith(String(Y))).length;
+  render(`<div class="wrap cal"><div class="kicker">Our kitchen calendar<span class="rule"></span></div>
+    <h1 class="h1" style="margin-top:6px">${esc(title)}</h1>
+    <p class="lead hand">${mode === 'month' ? `${monthDinners.length ? `${monthDinners.length} dinner${monthDinners.length === 1 ? '' : 's'} cooked` : 'Nothing cooked yet'}${monthPlans ? ` · ${monthPlans} planned` : ''}` : 'This week, day by day'}</p>
+    <div class="calnav"><button class="calbtn" id="calPrev" aria-label="Previous ${mode}">${svg('back')}</button>
+      <div class="segtext calseg"><button data-cm="month" class="${mode === 'month' ? 'on' : ''}">Month</button><button data-cm="week" class="${mode === 'week' ? 'on' : ''}">Week</button></div>
+      <button class="calbtn" id="calNext" aria-label="Next ${mode}">${svg('chevR')}</button></div>
+    ${onNow ? '' : `<button class="chip caltoday" id="calToday">Back to today</button>`}
+    ${body}
+    ${yrN ? `<a class="nudge yr" href="#/year/${Y}" style="margin-top:14px"><span>${svg('star')}</span><span style="flex:1"><b>Our ${Y} in review</b> — ${yrN} dinner${yrN === 1 ? '' : 's'} so far.</span><span>${svg('chevR')}</span></a>` : ''}
+  </div>`);
+  const shift = (n) => {
+    if (mode === 'month') { const d = new Date(Y, M - 1 + n, 1); ui.calYm = d.getFullYear() + '-' + pad2(d.getMonth() + 1); }
+    else ui.calWeek = addDaysISO(ws, 7 * n);
+    calSlide = n; viewCalendar();
+  };
+  $('#calPrev').onclick = () => shift(-1); $('#calNext').onclick = () => shift(1);
+  $('#calToday') && ($('#calToday').onclick = () => { ui.calYm = today.slice(0, 7); ui.calWeek = calWeekStart(today); viewCalendar(); });
+  $$('[data-cm]').forEach((b) => (b.onclick = () => { ui.calMode = b.dataset.cm; if (b.dataset.cm === 'week' && !ui.calWeek) ui.calWeek = ym === today.slice(0, 7) ? calWeekStart(today) : calWeekStart(ym + '-01'); viewCalendar(); }));
+  $$('[data-day]').forEach((b) => (b.onclick = () => openCalDay(b.dataset.day)));
+  $('#calIcs') && ($('#calIcs').onclick = () => exportIcs(wdays.filter((iso) => iso >= today)));
+  const sw = $('#calSwipe');
+  if (calSlide) { sw.classList.add(calSlide > 0 ? 'slnext' : 'slprev'); calSlide = 0; }
+  let x0 = null, y0 = 0, lock = null;
+  sw.addEventListener('touchstart', (e) => { if (e.touches.length !== 1) return; x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; lock = null; if (x0 < 26) x0 = null; }, { passive: true });
+  sw.addEventListener('touchmove', (e) => { if (x0 == null) return; const dx = e.touches[0].clientX - x0, dy = e.touches[0].clientY - y0; if (!lock && (Math.abs(dx) > 10 || Math.abs(dy) > 10)) lock = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y'; if (lock === 'x') e.preventDefault(); }, { passive: false });
+  sw.addEventListener('touchend', (e) => { if (x0 == null || lock !== 'x') { x0 = null; return; } const dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 50) { sw.dataset.sw = '1'; shift(dx < 0 ? 1 : -1); } }, { passive: true });
+}
+let calSlide = 0;
+function startOn(s, iso) { const [h, m] = (state.settings.dinnerAt || '18:30').split(':').map(Number); const d = dateOf(iso); d.setHours(h, m || 0, 0, 0); return new Date(d - ((s.total || 30) + 5) * 6e4); }
+function openCalDay(iso) {
+  const c = cookedOn(iso); const today = todayISO(); const p = planOn(iso);
+  const recipes = visibleRecipes().slice().sort((a, b) => a.title.localeCompare(b.title));
+  openSheet(`<h2>${esc(dateOf(iso).toLocaleDateString('en-CA', { weekday: 'long', month: 'long', day: 'numeric' }))}</h2><p class="sub">${iso === today ? 'Today' : iso > today ? 'Coming up' : c.length ? 'What we made' : 'Nothing logged this day'}</p>
+    ${c.length ? `<ul class="cooked">${c.map((x) => { const s = summary(x.recipeId); return `<li>${s ? `<a href="#/r/${s.id}" data-close style="flex:1;color:inherit;text-decoration:none">` : '<div style="flex:1">'}<div class="t">${esc(x.title || (s && s.title) || 'Dinner')}</div><div class="d">${x.by ? hat(x.by, 14) + esc(x.by === 'Both' ? 'Both of us' : x.by) : ''}${x.amount ? ` · ${money(x.amount, true)}` : ''}</div>${s ? '</a>' : '</div>'}</li>`; }).join('')}</ul>` : ''}
+    ${iso >= today ? `<div class="wkrow" style="margin-top:10px"><span>Dinner plan</span><select id="cdPlan" aria-label="Dinner plan"><option value="">—  nothing planned</option>${recipes.map((r) => `<option value="${r.id}" ${r.id === p ? 'selected' : ''}>${esc(r.title)}</option>`).join('')}</select></div>
+      ${p ? `<p class="small muted" style="margin-top:6px">Start cooking by ${esc(fmtTime(startOn(summary(p), iso)))} for dinner at ${esc(fmtTime((() => { const [h, m] = (state.settings.dinnerAt || '18:30').split(':').map(Number); const d = dateOf(iso); d.setHours(h, m || 0); return d; })()))}.</p>` : ''}` : p && !c.length ? `<p class="small muted">Planned: ${esc(summary(p).title)}</p>` : ''}
+    <div class="foot">${p && iso >= today ? `<a class="btn ghost" href="#/r/${p}" data-close>Open recipe</a>` : ''}<button class="btn primary" data-close>Done</button></div>`, (b) => {
+    $('#cdPlan', b) && ($('#cdPlan', b).onchange = (e) => {
+      const v = e.target.value;
+      if (v) state.plan[iso] = { recipeId: v, by: state.profile.me || null, at: now(), ...(iso === today ? { synced: 1 } : {}) }; else delete state.plan[iso];
+      if (iso === today) state.tonight = v ? { date: iso, recipeId: v, by: state.profile.me || null, eatAt: (state.tonight && state.tonight.date === iso && state.tonight.eatAt) || state.settings.dinnerAt || '18:30', at: now() } : null;
+      save(); checkMilestones(); closeSheet(); viewCalendar(); toast(v ? `${summary(v).title} planned` : 'Plan cleared');
+    });
+  });
+}
+// .ics: one event per planned dinner, starting when cooking should start, with an alert then (and the evening before when
+// something needs thawing). Floating local times, so the phone's own time zone applies.
+function icsEsc(t) { return String(t).replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/[,;]/g, (m) => '\\' + m); }
+function icsFold(line) { const out = []; let s = line; while (s.length > 74) { out.push(s.slice(0, 74)); s = ' ' + s.slice(74); } out.push(s); return out.join('\r\n'); }
+const icsTime = (d) => `${d.getFullYear()}${pad2(d.getMonth() + 1)}${pad2(d.getDate())}T${pad2(d.getHours())}${pad2(d.getMinutes())}00`;
+function buildIcs(isos) {
+  const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+Z$/, 'Z');
+  const L = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Our Kitchen//Corey and Faith//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', 'X-WR-CALNAME:Our Kitchen'];
+  let n = 0;
+  isos.forEach((iso) => {
+    const id = planOn(iso); const s = id && summary(id); if (!s) return;
+    const st = startOn(s, iso); const [h, m] = (state.settings.dinnerAt || '18:30').split(':').map(Number); const end = dateOf(iso); end.setHours(h, m || 0, 0, 0);
+    const thaw = thawLine(s);
+    L.push('BEGIN:VEVENT', `UID:${iso}-${id}@our-kitchen`, `DTSTAMP:${stamp}`, `DTSTART:${icsTime(st)}`, `DTEND:${icsTime(end)}`,
+      `SUMMARY:${icsEsc('Start cooking: ' + s.title)}`,
+      `DESCRIPTION:${icsEsc(`${s.total} min · dinner at ${fmtTime(end)}.${thaw ? ' First: ' + thaw.replace(' tonight', ' the night before') + '.' : ''}\nhttps://jolly-rancherz.github.io/our-kitchen/#/r/${id}`)}`,
+      'BEGIN:VALARM', 'ACTION:DISPLAY', `DESCRIPTION:${icsEsc('Time to start ' + s.title)}`, 'TRIGGER:PT0M', 'END:VALARM');
+    if (thaw) L.push('BEGIN:VALARM', 'ACTION:DISPLAY', `DESCRIPTION:${icsEsc('Tomorrow: ' + s.title + ' — ' + thaw)}`, 'TRIGGER:-PT20H', 'END:VALARM');
+    L.push('END:VEVENT'); n++;
+  });
+  L.push('END:VCALENDAR');
+  return { text: L.map(icsFold).join('\r\n') + '\r\n', n };
+}
+async function exportIcs(isos) {
+  const { text, n } = buildIcs(isos);
+  if (!n) { toast('Plan a dinner first'); return; }
+  const name = `our-kitchen-${isos[0]}.ics`;
+  const file = new File([text], name, { type: 'text/calendar' });
+  try { if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: 'Our Kitchen dinners' }); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
+  const a = document.createElement('a'); a.href = URL.createObjectURL(file); a.download = name; document.body.appendChild(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+  toast(`${n} dinner${n === 1 ? '' : 's'} ready for your calendar`);
+}
+
 function viewUs() {
   setTop({ title: 'US' });
   const a = state.settings.anniversary;
@@ -3619,6 +3744,7 @@ function viewUs() {
   const dishT = (() => { const m = monthKey(); const t = { Corey: 0, Faith: 0 }; Object.values(state.dishes).forEach((d) => { if (d.date.startsWith(m)) t[d.who]++; }); return t; })();
   const hatsCount = { Corey: all.filter((c) => c.by === 'Corey' || c.by === 'Both').length, Faith: all.filter((c) => c.by === 'Faith' || c.by === 'Both').length };
   render(`<div class="wrap"><div class="kicker">Corey ♥ Faith<span class="rule"></span></div><h1 class="h1" style="margin-top:6px">Us</h1>
+    <p class="lead hand">Every dinner, every memory, all in one place.</p>
     <div class="sec">${together}</div>
     <div class="sec">${streakHTML(si)}</div>
     <div class="sec"><div class="statgrid"><div class="s"><b>${all.length}</b><span>Dinners together</span></div><div class="s"><b>${favs.length}</b><span>Favourites</span></div>
@@ -3629,6 +3755,7 @@ function viewUs() {
     ${ny ? `<a class="nudge yr" href="#/year/${ny}"><span>${svg('star')}</span><span style="flex:1"><b>Our ${ny} in review</b> — dinners, favourites and firsts.</span><span>${svg('chevR')}</span></a>` : ''}
     ${rc ? `<div class="sec">${recapCard(rc, false)}</div>` : ''}
     <div class="sec"><div class="sec-title">Just for us</div><div class="tools">
+      <a class="tooltile" href="#/calendar">${svg('calendar')}<span><b>Our calendar</b><small>${(() => { const n = realDinners().filter((c) => c.date.startsWith(monthKey())).length; return n ? `${n} dinner${n === 1 ? '' : 's'} this month` : 'Cooked and planned, by day'; })()}</small></span></a>
       <button class="tooltile" id="tFlip">${svg('coin')}<span><b>Who's on dishes?</b><small>${dishT.Corey + dishT.Faith ? `Corey ${dishT.Corey} · Faith ${dishT.Faith}` : 'Flip a coin'}</small></span></button>
       <button class="tooltile" id="tTaste">${svg('thumbUp')}<span><b>Taste test</b><small>${ts.n ? `Corey ${ts.Corey} · Faith ${ts.Faith}` : 'Guess hit or miss'}</small></span></button>
       <button class="tooltile" id="tJar">${svg('jar')}<span><b>Dessert jar</b><small>${jarN ? `${jarN} wish${jarN === 1 ? '' : 'es'} inside` : 'Add a sweet wish'}</small></span></button>
@@ -3941,6 +4068,7 @@ function openWeekPlan() {
     b.innerHTML = `<h2>Plan the week</h2><p class="sub">Pick dinners for the next 7 days. Tonight's pick shows on Home; then add everything to the grocery list in one go.</p>
       <div class="wkplan">${days.map(planSel).join('')}</div>
       <button class="linkbtn" id="wkPrep" style="margin-top:6px">${svg('thaw')}Prep ahead for tonight &amp; tomorrow</button>
+      <div class="wklinks"><button class="linkbtn" id="wkIcs" ${n ? '' : 'disabled style="opacity:.4"'}>${svg('calendar')}Add to my calendar</button><a class="linkbtn" href="#/calendar" data-close>${svg('star')}Open our calendar</a></div>
       <div class="foot"><button class="btn" data-close>Done</button><button class="btn primary" id="wkList" ${n ? '' : 'disabled style="opacity:.4"'}>Shopping list (${n})</button></div>`;
     $$('[data-day]', b).forEach((s) => (s.onchange = () => {
       const iso = s.dataset.day;
@@ -3948,8 +4076,10 @@ function openWeekPlan() {
       if (iso === todayISO()) state.tonight = s.value ? { date: iso, recipeId: s.value, by: state.profile.me || null, eatAt: (state.tonight && state.tonight.date === iso && state.tonight.eatAt) || state.settings.dinnerAt || '18:30', at: now() } : null;
       save(); checkMilestones();
       const k = chosen().length; const btn = $('#wkList', b); btn.textContent = `Shopping list (${k})`; btn.disabled = !k; btn.style.opacity = k ? '' : '.4';
+      const ib = $('#wkIcs', b); ib.disabled = !k; ib.style.opacity = k ? '' : '.4';
     }));
     $('#wkPrep', b).onclick = openPrepAhead;
+    $('#wkIcs', b).onclick = () => exportIcs(days);
     $('#wkList', b).onclick = () => drawList(b);
   };
   const drawList = async (b) => {
@@ -4360,7 +4490,7 @@ function tabOf(h) {
   if (/^#\/(pantry|freezer)/.test(h)) return 'pantry';
   if (h.startsWith('#/grocery')) return 'grocery';
   if (h.startsWith('#/budget')) return 'budget';
-  if (/^#\/(us|story|year|places|menu|keepsake)/.test(h)) return 'us';
+  if (/^#\/(us|story|year|places|menu|keepsake|calendar)/.test(h)) return 'us';
   if (h.startsWith('#/acura') || h === '#/book/c/acura' || h.startsWith('#/book/t/')) return 'acura';
   if (h.startsWith('#/settings')) return '';
   return 'recipes';
@@ -4959,6 +5089,30 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+ {
+  "name": "Update 12.3",
+  "id": "u123-2026-11",
+  "date": "2026-11-23",
+  "intro": "Our cooking calendar.",
+  "notes": [
+   [
+    "Calendar",
+    "On the Us tab: every dinner we've cooked and every one we've planned, by real date. Swipe between months, switch to a week view, and today is circled in gold"
+   ],
+   [
+    "Tap a day",
+    "See what we made, who cooked and what it cost, or plan a dinner for a day that's coming up"
+   ],
+   [
+    "Add to my calendar",
+    "Plan the week (or the week view) sends the plan to your phone's calendar, with an alert when it's time to start cooking and a reminder the night before if something needs thawing"
+   ],
+   [
+    "Us",
+    "A handwritten note under the title, and the signature dish is taped in"
+   ]
+  ]
+ },
  {
   "name": "Update 12.2",
   "id": "u122-2026-11",
