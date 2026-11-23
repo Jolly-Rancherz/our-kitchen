@@ -1,0 +1,391 @@
+{
+  "title": "One-Pot Cheeseburger Macaroni",
+  "subtitle": "ground beef, macaroni and a creamy old cheddar sauce cooked together in one pot: homemade, better than the box",
+  "image": "assets/img/cheeseburger-macaroni.webp",
+  "imageAlt": "Creamy cheesy macaroni with ground beef in a white bowl on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 10,
+  "cook": 25,
+  "cost": {
+    "total": 12.95,
+    "breakdown": [
+      [
+        "Lean ground beef, 450 g",
+        4.95,
+        "ground-beef-lean"
+      ],
+      [
+        "Old cheddar, 200 g",
+        3.5,
+        "cheddar-shredded"
+      ],
+      [
+        "Beef broth, 2½ cups",
+        1.38,
+        "beef-broth"
+      ],
+      [
+        "Elbow macaroni, 225 g",
+        1.0,
+        "elbow-macaroni"
+      ],
+      [
+        "Milk, 1 cup",
+        0.72,
+        "milk"
+      ],
+      [
+        "Onion, garlic",
+        0.5
+      ],
+      [
+        "Tomato paste, ketchup, Worcestershire, spices",
+        0.9
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "pasta"
+    ],
+    "occasion": [
+      "weeknight",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "One pot"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Use a large deep skillet or Dutch oven with a lid; the pasta cooks right in the sauce."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Beef",
+      "items": [
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "tomato paste",
+          "pantry": {
+            "name": "Tomato paste",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pasta",
+      "items": [
+        {
+          "qty": 2.5,
+          "unit": "cup",
+          "name": "beef broth",
+          "metric": {
+            "qty": 625,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Beef broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "ketchup",
+          "pantry": {
+            "name": "Ketchup",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "elbow macaroni",
+          "metric": {
+            "qty": 225,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Elbow macaroni",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "metric": {
+            "qty": 200,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Brown",
+      "text": "Cook the beef and onion in a large deep skillet or Dutch oven over medium-high, breaking it up, 8–10 minutes until no pink remains. Spoon off the fat.",
+      "timer": 9,
+      "uses": [
+        "0-0",
+        "0-1"
+      ]
+    },
+    {
+      "title": "Season",
+      "text": "Add the garlic, tomato paste, paprika, onion powder, salt and pepper and stir 1 minute.",
+      "timer": 1,
+      "uses": [
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Simmer the pasta",
+      "text": "Stir in the broth, milk, ketchup, Worcestershire and macaroni. Bring to a boil, then cover and simmer on low 10–12 minutes, stirring every few minutes so it doesn't stick, until the pasta is tender and most of the liquid is absorbed.",
+      "timer": 11,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4"
+      ]
+    },
+    {
+      "title": "Cheese",
+      "text": "Take off the heat and stir in the cheddar until melted and creamy. Rest 2 minutes; it thickens as it stands.",
+      "uses": [
+        "1-5"
+      ]
+    }
+  ],
+  "together": "AAA*",
+  "fixIt": [
+    {
+      "problem": "Sticking on the bottom",
+      "fix": "Keep the heat low and stir every 2–3 minutes; add a splash of broth if it gets thick before the pasta is tender."
+    },
+    {
+      "problem": "Sauce grainy",
+      "fix": "The cheese went in over the heat. Stir it in off the heat, and shred your own if pre-shredded clumps."
+    },
+    {
+      "problem": "Too soupy",
+      "fix": "Let it stand 3–4 minutes uncovered; the pasta keeps absorbing."
+    }
+  ],
+  "saleTip": "Elbow macaroni is often 2 for $3 at No Frills; old cheddar blocks are cheaper than bags, so shred your own.",
+  "swap": "Ground turkey: same amount, cooked to 74°C (165°F).",
+  "leftovers": "Reheat with a splash of milk; it firms up in the fridge.",
+  "doneness": "Ground beef cooked to 71°C (160°F) with no pink (Health Canada); pasta tender.",
+  "source": "Based on tested one-pot cheeseburger pasta methods (Canadian Living, Food Network Canada): browned beef, macaroni simmered in broth and milk, finished with cheddar off the heat.",
+  "gear": [
+    "Large deep skillet or Dutch oven with lid",
+    "Wooden spoon",
+    "Box grater"
+  ],
+  "prepAhead": [
+    "Best fresh; it's ready in 35 minutes."
+  ],
+  "reheat": "Covered in a pan over medium-low with a splash of milk, stirring, or in the microwave 2 minutes, stirring halfway, until 74°C (165°F).",
+  "thaw": {
+    "item": "ground beef",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Beef, macaroni and cheddar with salt and pepper.",
+      "drop": [
+        "0-2",
+        "0-4",
+        "0-5",
+        "1-3"
+      ],
+      "stepNotes": {
+        "1": "Basic: tomato paste, salt and pepper only.",
+        "2": "Basic: no Worcestershire."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Crispy bacon and diced pickles over the top, like the burger.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 4,
+              "unit": "strip",
+              "name": "bacon",
+              "note": "chopped",
+              "pantry": {
+                "name": "Bacon",
+                "cat": "meat"
+              }
+            },
+            {
+              "qty": 0.33,
+              "unit": "cup",
+              "name": "diced bread-and-butter pickles",
+              "pantry": {
+                "name": "Bread and butter pickles",
+                "cat": "sauces"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: first fry the chopped bacon in the pot until crisp, scoop it out and pour off all but 1 tbsp fat before browning the beef."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Scatter the bacon and pickles over each bowl."
+        }
+      ],
+      "costAdd": [
+        [
+          "Bacon, 4 strips",
+          2.0,
+          "bacon"
+        ],
+        [
+          "Bread-and-butter pickles",
+          0.5,
+          "bread-and-butter-pickles"
+        ]
+      ],
+      "plating": [
+        "Deep bowls.",
+        "Bacon and pickles scattered on top.",
+        "Ketchup on the table, like burger night."
+      ]
+    }
+  },
+  "why": {
+    "1-4": "Cooking the pasta in the broth and milk thickens the sauce with its starch; no extra pot or roux.",
+    "1-5": "Old cheddar has more flavour, so the sauce tastes cheesy without being heavy."
+  },
+  "fancyNight": false,
+  "funFact": "Boxed 'hamburger dinners' launched in 1971; making it from scratch takes the same time.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "the pasta goes soft and the sauce splits"
+  },
+  "pairs": []
+}

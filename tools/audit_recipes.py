@@ -5,7 +5,7 @@ import json, os, re, glob
 ROOT = os.path.join(os.path.dirname(__file__), "..", "recipes")
 F = []
 def f(rid, msg): F.append(f"{rid}: {msg}")
-RULES = [(r"mushroom", "mushroom"), (r"mustard", "mustard"), (r"\bolives?\b(?!\s+oil)", "olives"),
+RULES = [(r"mushroom", "mushroom"), (r"mustard", "mustard"), (r"\bolives?\b(?![\s-]+oil)", "olives"),
          (r"cayenne|chil[il]i (flakes|powder)|red pepper flakes|jalape|sriracha|hot sauce|chipotle|habanero|gochujang|sambal|crushed red", "spicy"),
          (r"fresh (parsley|basil|cilantro|thyme|rosemary|dill|chives|oregano|sage|mint|coriander)", "fresh herb"),
          (r"\b(parsley|basil|cilantro|thyme|rosemary|dill|chives|oregano|sage|coriander leaves)\b(?![^.]{0,12}dried)", "herb-not-said-dried?")]

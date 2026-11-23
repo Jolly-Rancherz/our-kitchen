@@ -414,3 +414,18 @@ exactly 812pt although the image continues.
 - 15 new price keys (prices.json now 129). `nameFor` also singularizes potato/apple/cake at a quantity of 1.
 - Temps: ground pork/beef 71°C (tourtière filling), pork loin 71°C, reheats 74°C; rolls 90°C bread doneness.
 - Tourtière and the pork loin are 'main', so they join the Nov–Feb dinner pickers through `dinnerPool`.
+
+## Update 13.3 — 20 new dinners (2026-11-23)
+- Generators `app_src/b13/c1.py` and `c2.py` (helpers `dlib.py`: herb, SP, BROTH(kind=), EGGS, RWATER, LEMON, MILK, CREAM, PARM, FLR, OREG, THY). Numbered after each category's current max; existing gaps left alone. All serve 4 (`NOTE2`) except baked ziti, tuna casserole, chicken noodle soup, chowder and meatloaf (6).
+  - chicken 11 butter chicken, 12 pot pie, 13 sheet-pan lemon garlic chicken, 14 air fryer tenders & fries, 15 quesadillas
+  - pasta-italian 07 creamy tomato tortellini, 08 baked ziti
+  - beef-turkey 08 sloppy Joes, 09 Salisbury steak, 10 cheeseburger macaroni, 11 glazed meatloaf
+  - steak-pork 03 honey garlic pork chops, 04 pork schnitzel
+  - seafood 03 lemon butter cod, 04 tuna noodle casserole
+  - takeout-at-home 03 sweet and sour chicken, 04 crispy ginger beef
+  - comfort-soups 04 chicken noodle soup, 05 ham & potato chowder, 06 Swedish meatballs
+- No new chapters yet: the 80 go into the existing categories first; new chapters (breakfast, holidays, spice blends) are held until after the recipes, per Corey's priority.
+- 22 new price keys (prices.json 151). `app_src/b13/keycheck.py` lists any recipe price key missing from prices.json (7 older ones were already missing before 13.3: red-onions, fresh-mozzarella, aged-white-cheddar, frozen-pearl-onions, balsamic-vinegar, baguette, striploin-steak).
+- audit_recipes.py: the olives rule no longer matches the `olive-oil` price key.
+- Temps: chicken 74°C, ground beef/pork 71°C, pork chops/schnitzel 71°C, cod 70°C, ginger beef fried well past 63°C, reheats 74°C.
+- Recipe pills: a "Freezer-friendly" badge is skipped when `tags.leftovers` already has freezer (it showed twice on beef stew and several Christmas recipes).

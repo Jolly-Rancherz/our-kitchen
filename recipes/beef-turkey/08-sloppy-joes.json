@@ -1,0 +1,356 @@
+{
+  "title": "Sloppy Joes",
+  "subtitle": "saucy, sweet-tangy ground beef piled on toasted buns: a 30-minute classic",
+  "image": "assets/img/sloppy-joes.webp",
+  "imageAlt": "Two sloppy joe sandwiches on toasted buns overflowing with saucy ground beef, on a white plate on a navy napkin",
+  "servings": 4,
+  "servingsNote": "about 8 sandwiches: dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 10,
+  "cook": 25,
+  "cost": {
+    "total": 15.6,
+    "breakdown": [
+      [
+        "Lean ground beef, 900 g",
+        9.9,
+        "ground-beef-lean"
+      ],
+      [
+        "Hamburger buns, 8",
+        2.99,
+        "hamburger-buns"
+      ],
+      [
+        "Tomato sauce, 398 ml",
+        1.29,
+        "tomato-sauce-canned"
+      ],
+      [
+        "Ketchup, ½ cup",
+        0.5,
+        "ketchup"
+      ],
+      [
+        "Onion, garlic",
+        0.5
+      ],
+      [
+        "Brown sugar, Worcestershire, vinegar, paprika, salt, pepper",
+        0.42
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Freezer-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "No green pepper in this version: onion, garlic and a tangy-sweet tomato sauce do the work."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Filling",
+      "items": [
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "can",
+          "name": "tomato sauce",
+          "note": "398 ml",
+          "pantry": {
+            "name": "Tomato sauce (canned)",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "ketchup",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Ketchup",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "packed brown sugar",
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "apple cider vinegar",
+          "pantry": {
+            "name": "Apple cider vinegar",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To serve",
+      "items": [
+        {
+          "qty": 8,
+          "unit": null,
+          "name": "hamburger buns",
+          "note": "split",
+          "pantry": {
+            "name": "Hamburger buns",
+            "cat": "grains"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Brown the beef",
+      "text": "Cook the beef and onion in a large skillet over medium-high, breaking it up, 8–10 minutes until no pink remains. Spoon off the fat, add the garlic and cook 30 seconds.",
+      "timer": 9,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Sauce",
+      "text": "Stir in the tomato sauce, ketchup, brown sugar, Worcestershire, vinegar, paprika, salt and pepper.",
+      "uses": [
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9",
+        "0-10"
+      ]
+    },
+    {
+      "title": "Simmer",
+      "text": "Simmer 10–15 minutes, stirring now and then, until thick enough to mound on a spoon.",
+      "timer": 12,
+      "uses": []
+    },
+    {
+      "title": "Toast the buns",
+      "text": "Toast the buns cut side down in a dry skillet or under the broiler 1–2 minutes, until golden.",
+      "uses": [
+        "1-0"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Pile the filling on the bottom buns and cover with the tops.",
+      "uses": []
+    }
+  ],
+  "together": "AAAB*",
+  "fixIt": [
+    {
+      "problem": "Too runny",
+      "fix": "Simmer a few minutes more, uncovered; it should mound, not pour."
+    },
+    {
+      "problem": "Too sweet",
+      "fix": "Add another ½ tsp vinegar and a pinch of salt."
+    },
+    {
+      "problem": "Greasy",
+      "fix": "Drain the fat well after browning; lean beef helps."
+    }
+  ],
+  "saleTip": "Ground beef and buns are both weekly No Frills sale items; the filling freezes, so double it when beef is cheap.",
+  "swap": "Ground turkey: same amount, cooked to 74°C (165°F) with no pink.",
+  "leftovers": "Spoon over a baked potato, or over rice or macaroni with cheddar.",
+  "doneness": "Ground beef cooked to 71°C (160°F) with no pink (Health Canada). Reheat to 74°C (165°F).",
+  "source": "Based on tested sloppy joe methods (Canadian Living, Heinz): browned ground beef simmered in tomato sauce, ketchup, brown sugar, Worcestershire and vinegar.",
+  "gear": [
+    "Large skillet",
+    "Wooden spoon"
+  ],
+  "prepAhead": [
+    "Make the filling up to 3 days ahead and reheat; it thickens, so add a splash of water."
+  ],
+  "reheat": "Covered in a pan over medium-low with a splash of water, stirring, or in the microwave 2 minutes, stirring halfway, until 74°C (165°F).",
+  "thaw": {
+    "item": "ground beef",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Tomato sauce, ketchup and brown sugar; no Worcestershire or garlic.",
+      "drop": [
+        "0-2",
+        "0-6",
+        "0-8"
+      ],
+      "stepNotes": {
+        "0": "Basic: no garlic.",
+        "1": "Basic: skip the Worcestershire and paprika."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Melted old cheddar on buttered, toasted buns.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "softened, for the buns",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "cup",
+              "name": "shredded old cheddar",
+              "metric": {
+                "qty": 100,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Cheddar (shredded)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: butter the cut sides before toasting.",
+        "4": "Fancy: top the filling with the cheddar and broil 1 minute to melt before adding the bun tops."
+      },
+      "costAdd": [
+        [
+          "Butter, 2 tbsp",
+          0.4,
+          "butter"
+        ],
+        [
+          "Old cheddar, 100 g",
+          1.75,
+          "cheddar-shredded"
+        ]
+      ],
+      "plating": [
+        "Serve open-faced with a knife and fork.",
+        "Pickles on the side.",
+        "Plenty of napkins."
+      ]
+    }
+  },
+  "why": {
+    "0-7": "A spoon of vinegar brightens the sauce so it doesn't taste flat-sweet.",
+    "0-6": "Worcestershire adds deep, savoury flavour without heat."
+  },
+  "fancyNight": false,
+  "funFact": "Sloppy joes probably started as a 1930s loose-meat sandwich in Sioux City, Iowa, though several diners claim the name.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze the filling flat in bags; buns separately"
+  },
+  "pairs": []
+}

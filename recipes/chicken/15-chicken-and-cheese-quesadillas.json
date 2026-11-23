@@ -1,0 +1,413 @@
+{
+  "title": "Chicken & Cheese Quesadillas",
+  "subtitle": "seasoned chicken, corn and melty cheddar in crisp golden tortillas, with sour cream and mild salsa",
+  "image": "assets/img/chicken-quesadillas.webp",
+  "imageAlt": "Golden quesadilla wedges with melted cheese and chicken, with small bowls of sour cream and salsa, on a navy napkin",
+  "servings": 4,
+  "servingsNote": "6 quesadillas: dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 25,
+  "cost": {
+    "total": 18.5,
+    "breakdown": [
+      [
+        "Boneless chicken breasts, 600 g",
+        7.92,
+        "chicken-breasts-boneless"
+      ],
+      [
+        "Old cheddar, 200 g",
+        3.5,
+        "cheddar-shredded"
+      ],
+      [
+        "Large flour tortillas, 6",
+        2.39,
+        "flour-tortillas-large"
+      ],
+      [
+        "Mozzarella, 100 g",
+        2.03,
+        "mozzarella-shredded"
+      ],
+      [
+        "Mild salsa, ½ cup",
+        1.0,
+        "salsa-mild"
+      ],
+      [
+        "Sour cream, ½ cup",
+        0.75,
+        "sour-cream"
+      ],
+      [
+        "Frozen corn, 1 cup",
+        0.55,
+        "frozen-corn"
+      ],
+      [
+        "Oil, spices",
+        0.36
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [
+      "weeknight",
+      "takeout-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Under 45 minutes"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Mild all the way: paprika, cumin and garlic for flavour, mild salsa on the side."
+    },
+    {
+      "icon": "oven",
+      "text": "Set the oven to 95°C (200°F) to keep the first quesadillas warm and crisp."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 600,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "cut in 1 cm strips",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground cumin",
+          "pantry": {
+            "name": "Ground cumin",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Quesadillas",
+      "items": [
+        {
+          "qty": 6,
+          "unit": null,
+          "name": "large flour tortillas",
+          "note": "25 cm",
+          "pantry": {
+            "name": "Flour tortillas (large)",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "metric": {
+            "qty": 200,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "shredded mozzarella",
+          "metric": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Mozzarella (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "frozen corn",
+          "note": "thawed and patted dry",
+          "metric": {
+            "qty": 140,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Frozen corn",
+            "cat": "frozen"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To serve",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "sour cream",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Sour cream",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "mild salsa",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Salsa (mild)",
+            "cat": "sauces"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Season",
+      "text": "Heat the oven to 95°C (200°F). Toss the chicken with the paprika, cumin, garlic powder, onion powder and salt.",
+      "uses": [
+        "0-0",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Cook the chicken",
+      "text": "Heat the oil in a large skillet over medium-high and cook the chicken 5–6 minutes, stirring, until golden and 74°C (165°F). Move to a board, chop small and wipe out the skillet.",
+      "timer": 6,
+      "uses": [
+        "0-1"
+      ]
+    },
+    {
+      "title": "Fill",
+      "text": "Toss the cheddar and mozzarella together. On one half of each tortilla, layer a little cheese, then the chicken and corn, then more cheese, using it all across the 6. Fold over and press.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Crisp",
+      "text": "Cook 2 at a time in the dry skillet over medium, 2–3 minutes a side, pressing with a spatula, until golden and the cheese melts. Keep warm on a baking sheet in the oven.",
+      "timer": 5,
+      "uses": []
+    },
+    {
+      "title": "Serve",
+      "text": "Cut into wedges and serve with the sour cream and salsa.",
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    }
+  ],
+  "together": "AABA*",
+  "fixIt": [
+    {
+      "problem": "Cheese not melted, tortilla browning",
+      "fix": "Lower the heat to medium-low and cover the pan for a minute."
+    },
+    {
+      "problem": "Soggy",
+      "fix": "Pat the corn dry, and keep cooked ones on a rack or baking sheet in the warm oven, not stacked."
+    },
+    {
+      "problem": "Filling falls out",
+      "fix": "Cheese on both sides of the filling glues it in; press firmly when you flip."
+    }
+  ],
+  "saleTip": "Tortillas and shredded cheese are frequent No Frills deals; both freeze well.",
+  "swap": "Leftover roast chicken or turkey: 2½ cups chopped; skip cooking the chicken and toss it with the spices.",
+  "leftovers": "Re-crisp in a dry skillet or air fryer at 190°C (375°F) 4 minutes.",
+  "doneness": "Chicken 74°C (165°F) (Health Canada, poultry pieces); tortillas golden and cheese fully melted.",
+  "source": "Based on tested skillet quesadilla methods (Canadian Living, Old El Paso): seasoned cooked chicken and shredded cheese folded in flour tortillas and crisped in a dry pan.",
+  "gear": [
+    "Large skillet",
+    "Wide spatula",
+    "Baking sheet"
+  ],
+  "prepAhead": [
+    "Cook and chop the chicken up to 2 days ahead."
+  ],
+  "reheat": "Dry skillet or air fryer 3–4 minutes until hot and crisp; the microwave makes them soft.",
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Chicken and cheddar only.",
+      "drop": [
+        "0-3",
+        "0-5",
+        "1-2",
+        "1-3"
+      ],
+      "stepNotes": {
+        "0": "Basic: paprika, garlic powder and salt only.",
+        "2": "Basic: cheddar and chicken only."
+      },
+      "costDrop": [
+        "mozzarella-shredded",
+        "frozen-corn"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A quick lemony guacamole alongside.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 2,
+              "unit": null,
+              "name": "ripe avocados",
+              "pantry": {
+                "name": "Avocados",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "lemon juice",
+              "pantry": {
+                "name": "Lemon juice",
+                "cat": "sauces"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "tsp",
+              "name": "salt",
+              "note": "for the guacamole",
+              "pantry": {
+                "name": "Salt",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Guacamole",
+          "text": "Mash the avocados with the lemon juice and salt, leaving it a little chunky."
+        }
+      ],
+      "costAdd": [
+        [
+          "Avocados, 2",
+          2.5,
+          "avocados"
+        ],
+        [
+          "Lemon juice",
+          0.05,
+          "lemon-juice"
+        ]
+      ],
+      "plating": [
+        "Wedges fanned on a board.",
+        "Sour cream, salsa and guacamole in small bowls in the middle.",
+        "Serve right away while crisp."
+      ]
+    }
+  },
+  "why": {
+    "1-3": "Patting the corn dry keeps the tortillas crisp.",
+    "1-2": "Mozzarella adds the stretch; cheddar brings the flavour."
+  },
+  "fancyNight": false,
+  "funFact": "In much of Mexico, a quesadilla is made with corn tortillas, and in Mexico City it may not even have cheese unless you ask.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "2 months",
+    "note": "freeze cooked quesadillas whole, wrapped; re-crisp from frozen"
+  },
+  "pairs": []
+}

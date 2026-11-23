@@ -1,0 +1,412 @@
+{
+  "title": "Pork Schnitzel with Buttered Noodles",
+  "subtitle": "thin, crisp golden pork cutlets with lemon, over buttery egg noodles",
+  "image": "assets/img/pork-schnitzel.webp",
+  "imageAlt": "A large golden breaded pork cutlet with lemon wedges beside buttered egg noodles on a white plate on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 20,
+  "cost": {
+    "total": 13.9,
+    "breakdown": [
+      [
+        "Boneless pork chops, 700 g",
+        7.39,
+        "pork-chops-boneless"
+      ],
+      [
+        "Broad egg noodles, 340 g",
+        2.49,
+        "egg-noodles-broad"
+      ],
+      [
+        "Panko, 1½ cups",
+        1.29,
+        "panko-breadcrumbs"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "Lemon",
+        0.79,
+        "lemons"
+      ],
+      [
+        "Oil, ½ cup",
+        0.38,
+        "canola-vegetable-oil"
+      ],
+      [
+        "Butter, 3 tbsp",
+        0.6,
+        "butter"
+      ],
+      [
+        "Flour, milk, spices",
+        0.18
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "noodles"
+    ],
+    "occasion": [
+      "date-night",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Pound the chops thin and even (5 mm) between plastic wrap; they cook in minutes and stay tender."
+    },
+    {
+      "icon": "pot",
+      "text": "Start the noodle water before you bread the pork."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Schnitzel",
+      "items": [
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "boneless pork loin chops",
+          "note": "about 700 g",
+          "pantry": {
+            "name": "Pork chops (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 65,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "milk",
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 90,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "canola or vegetable oil",
+          "note": "for shallow frying",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "lemons",
+          "note": "cut in wedges",
+          "pantry": {
+            "name": "Lemons",
+            "cat": "produce"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Noodles",
+      "items": [
+        {
+          "qty": 340,
+          "unit": "g",
+          "name": "broad egg noodles",
+          "pantry": {
+            "name": "Egg noodles (broad)",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 42,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Water on",
+      "text": "Bring a large pot of water to a boil and add the salt.",
+      "uses": [
+        "1-1"
+      ]
+    },
+    {
+      "title": "Pound",
+      "text": "Pound the chops between sheets of plastic wrap to 5 mm thick. Season both sides with the salt, pepper and paprika.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Bread",
+      "text": "Put the flour in one shallow dish, the eggs beaten with the milk in another and the panko in a third. Coat each cutlet in flour, then egg, then panko, pressing the crumbs on.",
+      "uses": [
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Fry",
+      "text": "Heat the oil in a large skillet over medium-high until a crumb sizzles. Fry 2 cutlets at a time 2–3 minutes a side, until deep golden and 71°C (160°F). Drain on a rack and keep warm in a 95°C (200°F) oven.",
+      "timer": 5,
+      "uses": [
+        "0-8"
+      ]
+    },
+    {
+      "title": "Noodles",
+      "text": "Meanwhile, cook the noodles 6–8 minutes until tender, drain and toss with the butter.",
+      "timer": 7,
+      "uses": [
+        "1-0",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Serve the schnitzel on the noodles with lemon wedges to squeeze over.",
+      "uses": [
+        "0-9"
+      ]
+    }
+  ],
+  "together": "BAAAB*",
+  "fixIt": [
+    {
+      "problem": "Crumbs fall off",
+      "fix": "Pat the pork dry first and don't move the cutlets for the first minute in the oil."
+    },
+    {
+      "problem": "Greasy",
+      "fix": "The oil wasn't hot enough. Wait until a crumb sizzles hard before adding the pork."
+    },
+    {
+      "problem": "Browning too fast",
+      "fix": "Lower to medium; thin cutlets cook through in the time it takes to brown."
+    }
+  ],
+  "saleTip": "Boneless pork chops are among the cheapest No Frills meats on sale; pounding them makes 4 chops feel like a feast.",
+  "swap": "Chicken breasts: halve them horizontally and pound to 5 mm; fry to 74°C (165°F).",
+  "leftovers": "Slice into a sandwich on a toasted bun with mayo and lettuce.",
+  "doneness": "71°C (160°F) in the centre (Health Canada, pork). Thin cutlets get there in 2–3 minutes a side.",
+  "source": "Based on tested schnitzel methods (Canadian Living, Serious Eats): pork pounded to 5 mm, breaded flour-egg-crumb and shallow-fried in hot oil, served with lemon.",
+  "gear": [
+    "Meat mallet or heavy pan",
+    "Plastic wrap",
+    "3 shallow dishes",
+    "Large skillet",
+    "Wire rack",
+    "Large pot"
+  ],
+  "prepAhead": [
+    "Pound and bread the cutlets up to 4 hours ahead; keep uncovered on a rack in the fridge."
+  ],
+  "reheat": "Air fryer or oven at 200°C (400°F) 5–6 minutes, until 74°C (165°F) and crisp.",
+  "thaw": {
+    "item": "pork chops",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Salt and pepper on the pork, plain buttered noodles.",
+      "drop": [
+        "0-3",
+        "0-6"
+      ],
+      "stepNotes": {
+        "1": "Basic: salt and pepper only.",
+        "2": "Basic: beat the eggs on their own."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A creamy pan sauce (rahmschnitzel) spooned over.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "chicken broth",
+              "metric": {
+                "qty": 125,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "Chicken broth",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "35% whipping cream",
+              "metric": {
+                "qty": 125,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "35% whipping cream",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "lemon juice",
+              "pantry": {
+                "name": "Lemon juice",
+                "cat": "sauces"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Cream sauce",
+          "text": "Pour the oil out of the skillet and wipe it. Simmer the broth 2 minutes, add the cream and simmer 2–3 minutes until it coats a spoon. Stir in the lemon juice and a pinch of salt, and spoon beside the schnitzel."
+        }
+      ],
+      "costAdd": [
+        [
+          "Chicken broth, ½ cup",
+          0.3,
+          "chicken-broth"
+        ],
+        [
+          "35% cream, ½ cup",
+          1.18,
+          "35-whipping-cream"
+        ]
+      ],
+      "plating": [
+        "Schnitzel overlapping the noodles, not on top.",
+        "Sauce spooned beside so the crust stays crisp.",
+        "Lemon wedge on the rim."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Pounding thin means fast cooking, so the crust browns just as the pork is done.",
+    "0-6": "A spoon of milk loosens the egg so it coats thinly and evenly."
+  },
+  "fancyNight": true,
+  "funFact": "Wiener Schnitzel must be veal by Austrian law; made with pork, it's 'Schnitzel Wiener Art', Viennese-style.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "2 months",
+    "note": "freeze fried cutlets flat; re-crisp in the oven"
+  },
+  "pairs": []
+}

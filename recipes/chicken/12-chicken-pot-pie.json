@@ -1,0 +1,465 @@
+{
+  "title": "Chicken Pot Pie",
+  "subtitle": "chicken and vegetables in a creamy dried-herb sauce under a flaky golden puff pastry lid",
+  "image": "assets/img/chicken-pot-pie.webp",
+  "imageAlt": "A baking dish of chicken pot pie with a golden puff pastry top, one spoonful scooped out, on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 55,
+  "cost": {
+    "total": 16.6,
+    "breakdown": [
+      [
+        "Boneless chicken breasts, 700 g",
+        9.24,
+        "chicken-breasts-boneless"
+      ],
+      [
+        "Puff pastry, 1 sheet",
+        2.25,
+        "puff-pastry-frozen"
+      ],
+      [
+        "Chicken broth, 2 cups",
+        1.1,
+        "chicken-broth"
+      ],
+      [
+        "Butter, ¼ cup",
+        0.81,
+        "butter"
+      ],
+      [
+        "Carrots, celery, onion, garlic",
+        1.35
+      ],
+      [
+        "Frozen peas, 1 cup",
+        0.46,
+        "frozen-peas"
+      ],
+      [
+        "Milk, ¾ cup",
+        0.43,
+        "milk"
+      ],
+      [
+        "Egg",
+        0.39,
+        "eggs"
+      ],
+      [
+        "Flour, oil, dried herbs, salt, pepper",
+        0.57
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Freezer-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Thaw the puff pastry in the fridge overnight, or about 30 minutes on the counter, so it unrolls without cracking."
+    },
+    {
+      "icon": "oven",
+      "text": "Oven at 200°C (400°F). Use a 2 L baking dish, such as a 20 cm (8-inch) square or a deep 23 cm pie dish."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Filling",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "cut in 2 cm pieces",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 56,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "carrots",
+          "note": "peeled and diced",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "celery ribs",
+          "note": "diced",
+          "pantry": {
+            "name": "Celery",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 40,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried sage",
+          "note": "rubbed",
+          "pantry": {
+            "name": "Dried sage",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 500,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 175,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "frozen peas",
+          "metric": {
+            "qty": 140,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Frozen peas",
+            "cat": "frozen"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Top",
+      "items": [
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "sheet frozen puff pastry",
+          "note": "thawed (half a 450 g box)",
+          "pantry": {
+            "name": "Puff pastry (frozen)",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large eggs",
+          "note": "beaten with 1 tbsp water",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Heat the oven",
+      "text": "Heat the oven to 200°C (400°F).",
+      "uses": []
+    },
+    {
+      "title": "Sear the chicken",
+      "text": "Heat the oil in a large deep skillet over medium-high and cook the chicken 4–5 minutes, stirring, until white on the outside; it finishes in the oven. Move to a bowl.",
+      "timer": 5,
+      "uses": [
+        "0-0",
+        "0-1"
+      ]
+    },
+    {
+      "title": "Soften the vegetables",
+      "text": "Lower the heat to medium, melt the butter and cook the onion, carrots and celery 6–7 minutes until softened. Add the garlic for the last 30 seconds.",
+      "timer": 7,
+      "uses": [
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
+    },
+    {
+      "title": "Make the sauce",
+      "text": "Sprinkle in the flour, dried thyme, dried sage, salt and pepper and stir 1 minute. Whisk in the broth a little at a time, then the milk, and simmer 3–4 minutes, stirring, until thick.",
+      "timer": 4,
+      "uses": [
+        "0-7",
+        "0-8",
+        "0-9",
+        "0-10",
+        "0-11",
+        "0-12",
+        "0-13"
+      ]
+    },
+    {
+      "title": "Fill the dish",
+      "text": "Stir in the chicken with its juices and the frozen peas, and pour into a 20 cm (8-inch) square or 2 L baking dish.",
+      "uses": [
+        "0-14"
+      ]
+    },
+    {
+      "title": "Top",
+      "text": "Unfold the pastry and lay it over the dish; trim to leave a 1 cm overhang and press it to the rim. Cut 3 slits in the top and brush with the beaten egg.",
+      "uses": [
+        "1-0",
+        "1-1"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Bake on a baking sheet 25–30 minutes, until the pastry is puffed and deep golden and the filling bubbles at the edges (74°C / 165°F in the centre). Rest 10 minutes before serving.",
+      "timer": 28,
+      "uses": []
+    }
+  ],
+  "together": "AABA*BA",
+  "fixIt": [
+    {
+      "problem": "Pastry pale or soggy underneath",
+      "fix": "Bake until deep golden, not light; the underside of the lid needs the full time."
+    },
+    {
+      "problem": "Filling runny",
+      "fix": "The sauce wasn't thick enough before baking. Simmer it until it coats a spoon heavily; it loosens with the chicken juices."
+    },
+    {
+      "problem": "Pastry cracked when unfolded",
+      "fix": "It was still cold. Let it sit a few minutes, then press the cracks together."
+    },
+    {
+      "problem": "Overflowing in the oven",
+      "fix": "The dish was too small. The baking sheet underneath catches drips."
+    }
+  ],
+  "saleTip": "Chicken breasts are often $8.80–9.90/kg in No Frills family packs; frozen puff pastry goes on sale around the holidays.",
+  "swap": "Leftover cooked chicken or turkey: 3 cups, diced. Skip the searing and stir it in with the peas.",
+  "leftovers": "Reheat portions covered in the oven so the pastry stays crisp.",
+  "doneness": "Filling at 74°C (165°F) in the centre (Health Canada, poultry) and bubbling at the edges; pastry deep golden.",
+  "source": "Based on tested chicken pot pie methods (Canadian Living, Tenderflake): a roux-thickened broth-and-milk filling with chicken, vegetables and peas, topped with puff pastry and baked at 200°C (400°F).",
+  "gear": [
+    "Large deep skillet",
+    "2 L baking dish",
+    "Baking sheet",
+    "Pastry brush"
+  ],
+  "prepAhead": [
+    "Make the filling up to 1 day ahead and chill it. Top with pastry just before baking and add 10 minutes to the time."
+  ],
+  "reheat": "Covered with foil at 180°C (350°F) 20–25 minutes, uncovering for the last 5, until 74°C (165°F).",
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Dried thyme only, and no garlic.",
+      "drop": [
+        "0-9",
+        "0-6"
+      ],
+      "stepNotes": {
+        "2": "Basic: skip the garlic.",
+        "3": "Basic: dried thyme, salt and pepper only."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A splash of cream in the filling and a Parmesan-crusted lid.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "35% whipping cream",
+              "metric": {
+                "qty": 60,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "35% whipping cream",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "grated Parmesan",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: stir in the cream once the sauce has thickened.",
+        "5": "Fancy: sprinkle the Parmesan over the egg wash."
+      },
+      "costAdd": [
+        [
+          "35% cream, ¼ cup",
+          0.6,
+          "35-whipping-cream"
+        ],
+        [
+          "Parmesan, 2 tbsp",
+          0.3,
+          "parmesan-grated"
+        ]
+      ],
+      "plating": [
+        "Serve at the table from the dish.",
+        "Break through the lid with a big spoon so everyone gets pastry.",
+        "Plain buttered peas or a crisp salad on the side."
+      ]
+    }
+  },
+  "why": {
+    "0-7": "Cooking the flour in butter before the liquid makes a smooth, thick sauce with no raw taste.",
+    "1-1": "Egg wash gives the pastry its glossy, deep golden top.",
+    "0-14": "Frozen peas go in last, straight from the freezer, so they stay bright and sweet."
+  },
+  "fancyNight": false,
+  "funFact": "Pot pies date back to Roman banquets, when the crust was often just a container and wasn't eaten.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze the cooled filling; top with fresh pastry when you bake"
+  },
+  "pairs": [
+    [
+      "comfort-soups-02",
+      "a cozy soup-and-pie night"
+    ]
+  ]
+}

@@ -1,0 +1,510 @@
+{
+  "title": "Salisbury Steak with Onion Gravy",
+  "subtitle": "tender seasoned beef patties simmered in a rich caramelized-onion gravy, over buttery mashed potatoes",
+  "image": "assets/img/salisbury-steak.webp",
+  "imageAlt": "Oval beef patties smothered in brown onion gravy beside mashed potatoes on a white plate on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 40,
+  "cost": {
+    "total": 15.1,
+    "breakdown": [
+      [
+        "Lean ground beef, 680 g",
+        7.48,
+        "ground-beef-lean"
+      ],
+      [
+        "Yukon Gold potatoes, 1.2 kg",
+        2.9,
+        "yukon-gold-potatoes"
+      ],
+      [
+        "Beef broth, 2 cups",
+        1.1,
+        "beef-broth"
+      ],
+      [
+        "Butter, 5 tbsp",
+        1.0,
+        "butter"
+      ],
+      [
+        "Panko, ½ cup",
+        0.7,
+        "panko-breadcrumbs"
+      ],
+      [
+        "Onion",
+        0.5,
+        "yellow-onions"
+      ],
+      [
+        "Egg",
+        0.39,
+        "eggs"
+      ],
+      [
+        "Milk, ¾ cup",
+        0.43,
+        "milk"
+      ],
+      [
+        "Worcestershire, ketchup, flour, oil, spices",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Freezer-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Get the potatoes boiling first; the patties and gravy take about the same time."
+    },
+    {
+      "icon": "knife",
+      "text": "Mix the patties gently with your hands: overworked beef turns tough."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Patties",
+      "items": [
+        {
+          "qty": 680,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 30,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "milk",
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "ketchup",
+          "pantry": {
+            "name": "Ketchup",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "onion powder",
+          "pantry": {
+            "name": "Onion powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Onion gravy",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large yellow onion",
+          "note": "thinly sliced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "beef broth",
+          "metric": {
+            "qty": 500,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Beef broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Mashed potatoes",
+      "items": [
+        {
+          "qty": 1.2,
+          "unit": "kg",
+          "name": "Yukon Gold potatoes",
+          "note": "peeled and cut in 5 cm chunks",
+          "pantry": {
+            "name": "Yukon Gold potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "milk",
+          "note": "warm",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 42,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Boil the potatoes",
+      "text": "Put the potatoes in a pot, cover with cold water by 2 cm, add the salt and bring to a boil. Simmer 15–20 minutes, until a knife slides through.",
+      "timer": 18,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Mix the patties",
+      "text": "Gently mix the beef, panko, egg, milk, ketchup, Worcestershire, garlic powder, onion powder, salt and pepper. Shape into 4 ovals about 2 cm thick.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9"
+      ]
+    },
+    {
+      "title": "Brown the patties",
+      "text": "Heat the oil in a large skillet over medium-high and brown the patties 3–4 minutes a side. They finish cooking in the gravy. Move to a plate.",
+      "timer": 7,
+      "uses": [
+        "0-10"
+      ]
+    },
+    {
+      "title": "Onions",
+      "text": "Lower the heat to medium, add the butter and onion and cook 8–10 minutes, stirring, until soft and golden.",
+      "timer": 9,
+      "uses": [
+        "1-0",
+        "1-1"
+      ]
+    },
+    {
+      "title": "Gravy",
+      "text": "Sprinkle in the flour and stir 1 minute. Whisk in the broth a little at a time, then the Worcestershire and dried thyme, and bring to a simmer.",
+      "uses": [
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5"
+      ]
+    },
+    {
+      "title": "Simmer the patties",
+      "text": "Return the patties and their juices, cover and simmer 10–12 minutes, turning once, until they reach 71°C (160°F) and the gravy has thickened.",
+      "timer": 11,
+      "uses": []
+    },
+    {
+      "title": "Mash",
+      "text": "Drain the potatoes, return them to the pot for 1 minute to dry, and mash with the warm milk, butter and salt.",
+      "uses": [
+        "2-2",
+        "2-3",
+        "2-4"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Serve the patties on the mash with plenty of onion gravy.",
+      "uses": []
+    }
+  ],
+  "together": "BAAAAAB*",
+  "fixIt": [
+    {
+      "problem": "Patties fell apart",
+      "fix": "Brown them without moving for the first 3 minutes so a crust forms before flipping."
+    },
+    {
+      "problem": "Gravy lumpy",
+      "fix": "Whisk hard, or strain it before returning the patties. Add the broth gradually next time."
+    },
+    {
+      "problem": "Gravy too thick",
+      "fix": "Whisk in a splash of broth or water."
+    },
+    {
+      "problem": "Tough patties",
+      "fix": "Mix just until combined and keep the simmer gentle."
+    }
+  ],
+  "saleTip": "Buy the ~1 kg family pack of lean ground beef on sale and use the extra for tacos or sloppy joes later in the week.",
+  "swap": "Ground turkey: same method, simmered to 74°C (165°F).",
+  "leftovers": "Reheat patties in their gravy; they also make a great sandwich on a toasted bun.",
+  "doneness": "71°C (160°F) in the centre of the thickest patty (Health Canada, ground beef). Reheat leftovers to 74°C (165°F).",
+  "source": "Based on tested Salisbury steak methods (Canadian Living, Betty Crocker): seasoned beef patties browned, then simmered in a flour-thickened beef-broth onion gravy.",
+  "gear": [
+    "Large skillet with lid",
+    "Medium pot",
+    "Potato masher",
+    "Whisk",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Shape the patties up to 1 day ahead; keep covered in the fridge.",
+    "Freeze cooked patties in their gravy up to 3 months."
+  ],
+  "reheat": "Covered in a pan over medium-low with a splash of broth or water, 8–10 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "ground beef",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Simple patties with salt, pepper and garlic powder, and a plain onion gravy.",
+      "drop": [
+        "0-4",
+        "0-5",
+        "0-7",
+        "1-4",
+        "1-5"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the ketchup, Worcestershire and onion powder.",
+        "4": "Basic: broth only, no Worcestershire or dried thyme."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A splash of cream in the gravy and brown-butter mash.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "35% whipping cream",
+              "metric": {
+                "qty": 60,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "35% whipping cream",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "5": "Fancy: stir the cream into the gravy for the last 2 minutes.",
+        "6": "Fancy: brown the mash butter in a small pan 2–3 minutes until nutty before adding."
+      },
+      "costAdd": [
+        [
+          "35% cream, ¼ cup",
+          0.6,
+          "35-whipping-cream"
+        ]
+      ],
+      "plating": [
+        "Mash in a swoosh, patty leaning on it.",
+        "Onions piled on top, gravy spooned around.",
+        "Buttered peas or green beans on the side."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "Breadcrumbs soaked with milk and egg keep the patties tender and juicy.",
+    "1-1": "Slowly browned onions make the gravy deep, rich and sweet."
+  },
+  "fancyNight": false,
+  "funFact": "Salisbury steak is named after Dr. James Salisbury, an American physician who promoted minced beef as health food in the 1880s.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze patties in their gravy; make fresh mash"
+  },
+  "pairs": []
+}

@@ -597,9 +597,10 @@ async function viewRecipe(id) {
   const pills = [`<span class="pill gold price">${priceTier(lc.total)}</span>`];
   (tags.method || []).slice(0, 1).forEach((m) => pills.push(`<span class="pill navy">${esc(TAGLABEL['method:' + m] || m)}</span>`));
   if (r.family) pills.push(`<span class="pill fam">${svg('heart')}Family recipe</span>`);
-  (r.badges || []).filter((b) => !/air fryer/i.test(b)).forEach((b) => pills.push(`<span class="pill">${esc(b)}</span>`));
+  const frz = (tags.leftovers || []).includes('freezer');
+  (r.badges || []).filter((b) => !/air fryer/i.test(b) && !(frz && /^freezer[- ]friendly$/i.test(b))).forEach((b) => pills.push(`<span class="pill">${esc(b)}</span>`));
   (tags.occasion || []).slice(0, 2).forEach((o) => pills.push(`<span class="pill">${esc(OCC[o] || o)}</span>`));
-  if ((tags.leftovers || []).includes('freezer')) pills.push('<span class="pill">Freezer-friendly</span>');
+  if (frz) pills.push('<span class="pill">Freezer-friendly</span>');
   if (state.signature === id) pills.unshift('<span class="pill sig">★ Signature</span>');
   if (isCoupleFav(id)) pills.unshift(`<span class="pill cfav">${svg('heart')}Our favourite</span>`);
   if (state.ourDish && state.ourDish.id === id) pills.unshift(`<span class="pill ourdish">${svg('heart')}Our dish</span>`);
@@ -5458,6 +5459,30 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+{
+ "name": "Update 13.3",
+ "id": "u133-2026-11",
+ "date": "2026-11-23",
+ "intro": "Twenty new dinners across the chapters, each with Basic, Classic and Fancy.",
+ "notes": [
+  [
+   "Chicken",
+   "Mild butter chicken, chicken pot pie, sheet-pan lemon garlic chicken and potatoes, air fryer chicken tenders and fries, and chicken and cheese quesadillas"
+  ],
+  [
+   "Beef, pork and pasta",
+   "Sloppy Joes, Salisbury steak with onion gravy, one-pot cheeseburger macaroni, glazed meatloaf, honey garlic pork chops, pork schnitzel, creamy tomato tortellini and baked ziti"
+  ],
+  [
+   "Seafood, takeout and soups",
+   "Lemon butter baked cod, tuna noodle casserole, sweet and sour chicken, crispy ginger beef, chicken noodle soup, ham and potato chowder, and Swedish meatballs"
+  ],
+  [
+   "Tidier tags",
+   "Freezer-friendly no longer shows twice on a recipe"
+  ]
+ ]
+},
 {
  "name": "Update 13.2",
  "id": "u132-2026-11",

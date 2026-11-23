@@ -1,0 +1,460 @@
+{
+  "title": "Sweet and Sour Chicken",
+  "subtitle": "crispy pan-fried chicken with pineapple, onion and carrot in a glossy sweet-tangy sauce, over rice",
+  "image": "assets/img/sweet-and-sour-chicken.webp",
+  "imageAlt": "Crispy chicken pieces with pineapple chunks in a glossy red-orange sauce beside rice in a white bowl on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 30,
+  "cost": {
+    "total": 15.1,
+    "breakdown": [
+      [
+        "Boneless chicken breasts, 700 g",
+        9.24,
+        "chicken-breasts-boneless"
+      ],
+      [
+        "Pineapple chunks, 398 ml",
+        1.99,
+        "pineapple-chunks-canned"
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.0,
+        "jasmine-rice"
+      ],
+      [
+        "Cornstarch, flour, egg",
+        0.74
+      ],
+      [
+        "Oil, ⅓ cup",
+        0.25,
+        "canola-vegetable-oil"
+      ],
+      [
+        "Ketchup, rice vinegar, brown sugar, soy",
+        1.28
+      ],
+      [
+        "Onion, carrot, garlic",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "takeout-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "rice",
+      "text": "Start the rice first."
+    },
+    {
+      "icon": "knife",
+      "text": "Drain the pineapple over a bowl: you need ½ cup of the juice for the sauce."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Sauce",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "can",
+          "name": "pineapple chunks in juice",
+          "note": "398 ml, drained, ½ cup juice saved",
+          "pantry": {
+            "name": "Pineapple chunks (canned)",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "ketchup",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Ketchup",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "rice vinegar",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Rice vinegar",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 50,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "cornstarch",
+          "note": "plus 2 tbsp cold water",
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "cut in 2.5 cm pieces",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large eggs",
+          "note": "beaten",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "cornstarch",
+          "metric": {
+            "qty": 65,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cornstarch",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 30,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Vegetables",
+      "items": [
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "cut in 2 cm pieces",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "carrots",
+          "note": "thinly sliced on an angle",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rice",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "3-0",
+        "3-1"
+      ]
+    },
+    {
+      "title": "Mix the sauce",
+      "text": "Whisk ½ cup of the saved pineapple juice with the ketchup, vinegar, brown sugar, soy sauce and the cornstarch mixed with water.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Coat the chicken",
+      "text": "Season the chicken with the salt and toss in the egg. Mix the cornstarch and flour, then toss the chicken in it until fully coated, shaking off the extra.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4"
+      ]
+    },
+    {
+      "title": "Fry",
+      "text": "Heat the oil in a large skillet over medium-high. Fry the chicken in 2 batches, 5–6 minutes, turning, until golden, crisp and 74°C (165°F). Drain on a rack.",
+      "timer": 6,
+      "uses": [
+        "1-5"
+      ]
+    },
+    {
+      "title": "Vegetables",
+      "text": "Pour off all but 1 tbsp oil. Stir-fry the onion and carrot 3 minutes, then the garlic 30 seconds.",
+      "timer": 3,
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2"
+      ]
+    },
+    {
+      "title": "Sauce",
+      "text": "Add the pineapple chunks, stir the sauce and pour it in. Simmer 1–2 minutes, stirring, until thick and glossy.",
+      "timer": 2,
+      "uses": []
+    },
+    {
+      "title": "Toss and serve",
+      "text": "Toss the chicken in the sauce and serve right away over the rice.",
+      "uses": []
+    }
+  ],
+  "together": "BBAAAB*",
+  "fixIt": [
+    {
+      "problem": "Coating soggy",
+      "fix": "Toss in the sauce at the very last second and serve right away."
+    },
+    {
+      "problem": "Sauce too thick",
+      "fix": "Stir in a splash of water or pineapple juice."
+    },
+    {
+      "problem": "Too tangy",
+      "fix": "Add 1 tbsp more brown sugar; vinegars vary."
+    }
+  ],
+  "saleTip": "Canned pineapple is often under $1.50 at No Frills; keep a few cans in the pantry.",
+  "swap": "Air fryer: coat the chicken, spray with oil and air-fry at 200°C (400°F) 10–12 minutes, shaking halfway, to 74°C (165°F).",
+  "leftovers": "The coating softens but the flavour is great; reheat covered in the microwave.",
+  "doneness": "74°C (165°F) in the largest piece (Health Canada, poultry pieces).",
+  "source": "Based on tested sweet and sour chicken methods (Canadian Living, Woks of Life): cornstarch-coated chicken pan-fried crisp, tossed in a pineapple juice, ketchup and vinegar sauce thickened with cornstarch.",
+  "gear": [
+    "Large skillet",
+    "Medium pot with lid",
+    "Wire rack",
+    "Whisk"
+  ],
+  "prepAhead": [
+    "Mix the sauce and cut the vegetables up to 1 day ahead."
+  ],
+  "reheat": "Covered in the microwave 2 minutes, stirring halfway, until 74°C (165°F), or in the air fryer at 190°C (375°F) 5 minutes to re-crisp the chicken.",
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Chicken and pineapple in the sauce, no vegetables.",
+      "drop": [
+        "2-1",
+        "2-2"
+      ],
+      "stepNotes": {
+        "4": "Basic: onion only."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Toasted sesame and a splash of sesame oil in the sauce.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "sesame oil",
+              "pantry": {
+                "name": "Sesame oil",
+                "cat": "sauces"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "sesame seeds",
+              "note": "toasted",
+              "pantry": {
+                "name": "Sesame seeds",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "5": "Fancy: stir the sesame oil into the sauce at the end."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Scatter the sesame seeds over each bowl."
+        }
+      ],
+      "costAdd": [
+        [
+          "Sesame oil, sesame seeds",
+          0.4,
+          "sesame-oil"
+        ]
+      ],
+      "plating": [
+        "Rice packed into a bowl and turned out.",
+        "Chicken spooned beside it.",
+        "Sesame seeds over the top."
+      ]
+    }
+  },
+  "why": {
+    "1-3": "A cornstarch-heavy coating fries up lighter and crunchier than flour alone.",
+    "0-2": "Rice vinegar gives the sour without being harsh."
+  },
+  "fancyNight": false,
+  "funFact": "Sweet and sour pork from Guangdong is the ancestor; the bright red ketchup version is a North American Chinese restaurant creation.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "the coating goes soggy"
+  },
+  "pairs": [
+    [
+      "takeout-at-home-01",
+      "lo mein on the side for a takeout night"
+    ]
+  ]
+}

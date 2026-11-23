@@ -1,0 +1,409 @@
+{
+  "title": "Honey Garlic Pork Chops",
+  "subtitle": "golden seared boneless chops in a sticky honey, soy and garlic glaze, with fluffy rice",
+  "image": "assets/img/honey-garlic-pork-chops.webp",
+  "imageAlt": "Glazed boneless pork chops in a skillet of sticky honey garlic sauce beside jasmine rice on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 10,
+  "cook": 25,
+  "cost": {
+    "total": 11.0,
+    "breakdown": [
+      [
+        "Boneless pork chops, 700 g",
+        7.39,
+        "pork-chops-boneless"
+      ],
+      [
+        "Honey, ¼ cup",
+        1.19,
+        "honey"
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.0,
+        "jasmine-rice"
+      ],
+      [
+        "Butter, 2 tbsp",
+        0.4,
+        "butter"
+      ],
+      [
+        "Soy sauce, garlic, vinegar, broth",
+        0.67
+      ],
+      [
+        "Oil, spices",
+        0.35
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "one-pan"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Under 40 minutes"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "rice",
+      "text": "Start the rice first; it rests while the chops cook."
+    },
+    {
+      "icon": "knife",
+      "text": "Chops about 2 cm thick stay juiciest. Take them out of the fridge 15 minutes before cooking."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chops",
+      "items": [
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "boneless pork loin chops",
+          "note": "about 2 cm thick (700 g)",
+          "pantry": {
+            "name": "Pork chops (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Honey garlic glaze",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "honey",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Honey",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "soy sauce",
+          "note": "low-sodium if you have it",
+          "pantry": {
+            "name": "Soy sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "rice vinegar",
+          "pantry": {
+            "name": "Rice vinegar",
+            "cat": "sauces"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rice",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Season",
+      "text": "Pat the chops dry and season both sides with the salt, pepper, garlic powder and paprika.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Sear",
+      "text": "Heat the oil in a large skillet over medium-high. Cook the chops 4–5 minutes a side, until golden and 71°C (160°F) in the centre. Move to a plate.",
+      "timer": 9,
+      "uses": [
+        "0-5"
+      ]
+    },
+    {
+      "title": "Glaze",
+      "text": "Lower the heat to medium. Melt the butter, add the garlic and cook 30 seconds. Stir in the honey, soy sauce, broth and vinegar and simmer 2–3 minutes, until syrupy.",
+      "timer": 3,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5"
+      ]
+    },
+    {
+      "title": "Coat",
+      "text": "Return the chops and their juices and turn them in the glaze for 1 minute.",
+      "timer": 1,
+      "uses": []
+    },
+    {
+      "title": "Serve",
+      "text": "Serve over the rice with the extra glaze spooned on top.",
+      "uses": []
+    }
+  ],
+  "together": "BAAAA*",
+  "fixIt": [
+    {
+      "problem": "Chops dry",
+      "fix": "They went past 71°C. Thinner chops cook faster; start checking at 3 minutes a side."
+    },
+    {
+      "problem": "Glaze burnt",
+      "fix": "Honey burns quickly. Lower the heat before adding it and keep it at a gentle bubble."
+    },
+    {
+      "problem": "Glaze thin",
+      "fix": "Simmer 1–2 minutes more; it thickens as it cools."
+    }
+  ],
+  "saleTip": "Boneless pork chops in family packs are often under $9/kg at No Frills. Freeze them in pairs.",
+  "swap": "Bone-in chops: 5–6 minutes a side, to 71°C (160°F) next to (not touching) the bone.",
+  "leftovers": "Slice cold for fried rice, or reheat gently in the glaze.",
+  "doneness": "71°C (160°F) in the centre (Health Canada, pork); a faint blush of pink is fine. Reheat to 74°C (165°F).",
+  "source": "Based on tested honey garlic pork chop methods (Canadian Living, Canadian Pork): pan-seared chops to 71°C finished in a reduced honey, soy and garlic glaze.",
+  "gear": [
+    "Large skillet",
+    "Medium pot with lid",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Mix the glaze (except the butter and garlic) up to 3 days ahead."
+  ],
+  "reheat": "Covered in a pan over medium-low with a splash of water, or in the microwave 1–2 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "pork chops",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Salt, pepper and garlic powder on the chops, and a simple honey-soy-garlic glaze.",
+      "drop": [
+        "0-4",
+        "1-5",
+        "1-4"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the paprika.",
+        "3": "Basic: honey, soy and garlic only; simmer 1–2 minutes."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Green beans tossed in the glaze and a scatter of sesame seeds.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 300,
+              "unit": "g",
+              "name": "green beans",
+              "note": "trimmed",
+              "pantry": {
+                "name": "Green beans",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "sesame seeds",
+              "note": "toasted",
+              "pantry": {
+                "name": "Sesame seeds",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "While the chops rest, boil the green beans 3–4 minutes until bright and just tender, drain and toss in the glaze in the skillet before serving. Scatter with the sesame seeds."
+        }
+      ],
+      "costAdd": [
+        [
+          "Green beans, 300 g",
+          2.2,
+          "green-beans"
+        ],
+        [
+          "Sesame seeds",
+          0.25,
+          "sesame-seeds"
+        ]
+      ],
+      "plating": [
+        "Slice the chops on an angle and fan them over the rice.",
+        "Green beans alongside, glossy with glaze.",
+        "Sesame seeds over everything."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Dry chops sear golden instead of steaming.",
+    "1-5": "A splash of vinegar balances the honey so the glaze isn't cloying."
+  },
+  "fancyNight": false,
+  "funFact": "Honey garlic is one of the most Canadian takeout flavours: honey garlic ribs and wings have been Chinese-Canadian restaurant staples since the 1960s.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze chops in their glaze"
+  },
+  "pairs": [
+    [
+      "takeout-at-home-02",
+      "fried rice instead of plain"
+    ]
+  ]
+}

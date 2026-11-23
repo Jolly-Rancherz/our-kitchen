@@ -1,0 +1,395 @@
+{
+  "title": "Air Fryer Chicken Tenders & Fries",
+  "subtitle": "panko-crusted chicken strips air-fried crisp with oven fries and a honey-lemon dip",
+  "image": "assets/img/chicken-tenders-fries.webp",
+  "imageAlt": "Golden panko chicken tenders and fries on a white plate with a small bowl of creamy dip, on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 20,
+  "cook": 30,
+  "cost": {
+    "total": 14.6,
+    "breakdown": [
+      [
+        "Boneless chicken breasts, 700 g",
+        9.24,
+        "chicken-breasts-boneless"
+      ],
+      [
+        "Frozen fries, 600 g",
+        2.1,
+        "frozen-french-fries"
+      ],
+      [
+        "Panko, 1½ cups",
+        1.29,
+        "panko-breadcrumbs"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "Mayo, honey, lemon juice",
+        0.65
+      ],
+      [
+        "Flour, oil, spices",
+        0.54
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "air-fryer",
+      "oven-bake"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "weeknight",
+      "takeout-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Air fryer"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "airfryer",
+      "text": "Cook the tenders in one layer with space between; 2 batches in most basket air fryers."
+    },
+    {
+      "icon": "oven",
+      "text": "The fries go in the oven at the same time, so everything is ready together."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Tenders",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "boneless skinless chicken breasts",
+          "note": "cut in 2 cm strips",
+          "pantry": {
+            "name": "Chicken breasts (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 65,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "note": "beaten",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 90,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "note": "for brushing",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Fries",
+      "items": [
+        {
+          "qty": 600,
+          "unit": "g",
+          "name": "frozen french fries",
+          "pantry": {
+            "name": "Frozen french fries",
+            "cat": "frozen"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Honey-lemon dip",
+      "items": [
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "mayonnaise",
+          "metric": {
+            "qty": 80,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Mayonnaise",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "honey",
+          "pantry": {
+            "name": "Honey",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "lemon juice",
+          "pantry": {
+            "name": "Lemon juice",
+            "cat": "sauces"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Fries in the oven",
+      "text": "Heat the oven to 220°C (425°F). Spread the fries in one layer on a baking sheet and bake 20–25 minutes, turning once, until crisp.",
+      "timer": 22,
+      "uses": [
+        "1-0"
+      ]
+    },
+    {
+      "title": "Season",
+      "text": "Season the chicken strips with the salt, pepper, garlic powder and paprika. Put the flour, eggs and panko in 3 shallow bowls.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Coat",
+      "text": "Dip each strip in flour, then egg, then panko, pressing so the crumbs stick. Set on a plate and brush or drizzle lightly with the oil.",
+      "uses": [
+        "0-8"
+      ]
+    },
+    {
+      "title": "Air-fry",
+      "text": "Heat the air fryer to 200°C (400°F). Cook the tenders in one layer, in 2 batches, 10–12 minutes, turning halfway, until golden and 74°C (165°F) inside. Set the first batch on a rack, then return it to the basket for the last 2 minutes of the second batch to re-warm.",
+      "timer": 11,
+      "uses": []
+    },
+    {
+      "title": "Dip",
+      "text": "Stir the mayonnaise, honey and lemon juice together.",
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Pile the tenders and fries on plates with the dip on the side.",
+      "uses": []
+    }
+  ],
+  "together": "BAAAB*",
+  "fixIt": [
+    {
+      "problem": "Pale, dry-looking crumbs",
+      "fix": "They need a little oil. Brush or spray any dry spots before cooking and halfway through."
+    },
+    {
+      "problem": "Coating falls off",
+      "fix": "Pat the chicken dry before flouring, and press the panko on firmly."
+    },
+    {
+      "problem": "Tenders dry",
+      "fix": "The strips were too thin or cooked too long. Keep them about 2 cm thick and check at 9 minutes."
+    },
+    {
+      "problem": "Fries soft",
+      "fix": "Spread them out in one layer and give them 5 minutes more."
+    }
+  ],
+  "saleTip": "Frozen fries are often 2 for $6 at No Frills; panko lasts months in the pantry.",
+  "swap": "No air fryer: bake the coated tenders on a rack set on a baking sheet at 220°C (425°F) 15–18 minutes, turning once, to 74°C (165°F).",
+  "leftovers": "Re-crisp in the air fryer at 190°C (375°F) 4–5 minutes, then slice into a wrap with lettuce and the dip.",
+  "doneness": "74°C (165°F) in the thickest strip (Health Canada, poultry pieces); coating deep golden.",
+  "source": "Based on tested air fryer chicken tender methods (Canadian Living, Instant Brands): a flour, egg and panko coating, air-fried at 200°C (400°F) for 10–12 minutes.",
+  "gear": [
+    "Air fryer",
+    "Baking sheet",
+    "3 shallow bowls",
+    "Pastry brush",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Coat the tenders up to 4 hours ahead and keep them uncovered on a rack in the fridge."
+  ],
+  "reheat": "Air fryer at 190°C (375°F) 4–5 minutes, until 74°C (165°F) and crisp. Not the microwave; it makes them soggy.",
+  "thaw": {
+    "item": "chicken breasts",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Salt, pepper and garlic powder in the coating, and ketchup instead of the dip.",
+      "drop": [
+        "0-4",
+        "2-0",
+        "2-1",
+        "2-2"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the paprika.",
+        "4": "Basic: skip the dip; serve with ketchup."
+      },
+      "costDrop": [
+        "Mayo, honey"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Parmesan in the crust and a little garlic in the dip.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "grated Parmesan",
+              "note": "mixed into the panko",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "garlic clove",
+              "note": "finely grated, for the dip",
+              "pantry": {
+                "name": "Garlic",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: stir the Parmesan into the panko.",
+        "4": "Fancy: stir the grated garlic into the dip."
+      },
+      "costAdd": [
+        [
+          "Parmesan, ¼ cup",
+          0.6,
+          "parmesan-grated"
+        ],
+        [
+          "Garlic",
+          0.05,
+          "garlic"
+        ]
+      ],
+      "plating": [
+        "Tenders stacked log-cabin style.",
+        "Fries in a paper-lined basket or bowl.",
+        "Dip in a small bowl on the plate."
+      ]
+    }
+  },
+  "why": {
+    "0-5": "Flour gives the egg something to grip, so the coating stays on.",
+    "0-7": "Panko's large, airy flakes get much crunchier than regular breadcrumbs."
+  },
+  "fancyNight": false,
+  "funFact": "An air fryer is really a small, powerful convection oven: the fan moves hot air fast enough to crisp food with a spoon of oil.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "2 months",
+    "note": "freeze cooked tenders on a tray, then bag; reheat from frozen in the air fryer 8–10 minutes"
+  },
+  "pairs": []
+}

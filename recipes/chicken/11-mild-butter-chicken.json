@@ -1,0 +1,478 @@
+{
+  "title": "Mild Butter Chicken",
+  "subtitle": "tender chicken thighs in a creamy, buttery tomato sauce with warm garam masala: all flavour, no heat",
+  "image": "assets/img/butter-chicken.webp",
+  "imageAlt": "Creamy orange butter chicken in a white bowl beside jasmine rice on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 40,
+  "cost": {
+    "total": 22.4,
+    "breakdown": [
+      [
+        "Boneless chicken thighs, 900 g",
+        15.3,
+        "chicken-thighs-boneless"
+      ],
+      [
+        "35% cream, 1 cup",
+        2.37,
+        "35-whipping-cream"
+      ],
+      [
+        "Tomato sauce, 398 ml",
+        1.29,
+        "tomato-sauce-canned"
+      ],
+      [
+        "Jasmine rice, 400 g",
+        1.0,
+        "jasmine-rice"
+      ],
+      [
+        "Butter, 3 tbsp",
+        0.6,
+        "butter"
+      ],
+      [
+        "Garam masala",
+        0.6,
+        "garam-masala"
+      ],
+      [
+        "Onion, garlic, ginger",
+        0.75
+      ],
+      [
+        "Tomato paste, cumin, turmeric, paprika, sugar, salt",
+        0.79
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "takeout-night",
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Freezer-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Garam masala is a warm spice blend (cinnamon, cumin, cardamom), not a hot one. There's no chili in this."
+    },
+    {
+      "icon": "rice",
+      "text": "Start the rice first; it's ready when the chicken is."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chicken",
+      "items": [
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "boneless skinless chicken thighs",
+          "note": "cut in 3 cm pieces",
+          "pantry": {
+            "name": "Chicken thighs (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tsp",
+          "name": "garam masala",
+          "pantry": {
+            "name": "Garam masala",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sauce",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 42,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "fresh ginger",
+          "note": "finely grated",
+          "pantry": {
+            "name": "Fresh ginger",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "tomato paste",
+          "pantry": {
+            "name": "Tomato paste",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "ground cumin",
+          "pantry": {
+            "name": "Ground cumin",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground turmeric",
+          "pantry": {
+            "name": "Ground turmeric",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "can",
+          "name": "tomato sauce",
+          "note": "398 ml",
+          "pantry": {
+            "name": "Tomato sauce (canned)",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "granulated sugar",
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "35% whipping cream",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "35% whipping cream",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rice",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 400,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 750,
+            "unit": "ml"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Rinse the rice until the water runs mostly clear. Bring it to a boil with the water and a pinch of salt, cover and simmer on low 15 minutes, then rest 10 minutes off the heat with the lid on. Fluff with a fork.",
+      "timer": 15,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Season",
+      "text": "Toss the chicken with the salt and 1 tsp of the garam masala.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2=1 tsp"
+      ]
+    },
+    {
+      "title": "Brown the chicken",
+      "text": "Melt 1 tbsp of the butter in a large deep skillet over medium-high. Brown the chicken in 2 batches, 2–3 minutes a side; it doesn't need to cook through. Move to a plate.",
+      "timer": 6,
+      "uses": [
+        "1-0=1 tbsp"
+      ]
+    },
+    {
+      "title": "Build the sauce",
+      "text": "Lower the heat to medium and add the remaining 2 tbsp butter and the onion. Cook 6–7 minutes until soft and golden. Add the garlic and ginger and cook 1 minute, then stir in the tomato paste, the remaining 2 tsp garam masala, the cumin, turmeric and paprika and cook 1 minute more.",
+      "timer": 8,
+      "uses": [
+        "1-0=2 tbsp",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "0-2=2 tsp",
+        "1-5",
+        "1-6",
+        "1-7"
+      ]
+    },
+    {
+      "title": "Simmer",
+      "text": "Stir in the tomato sauce, sugar and salt and simmer 10 minutes, stirring now and then, until thick.",
+      "timer": 10,
+      "uses": [
+        "1-8",
+        "1-9",
+        "1-10"
+      ]
+    },
+    {
+      "title": "Finish",
+      "text": "Stir in the cream, then the chicken and its juices. Simmer gently 8–10 minutes, until the chicken reaches 74°C (165°F) and the sauce coats a spoon.",
+      "timer": 9,
+      "uses": [
+        "1-11"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Taste for salt and serve over the rice.",
+      "uses": []
+    }
+  ],
+  "together": "BAAAAA*",
+  "fixIt": [
+    {
+      "problem": "Sauce split or looks oily",
+      "fix": "It boiled after the cream went in. Lower the heat and stir in 2–3 tbsp cream or water until smooth."
+    },
+    {
+      "problem": "Sauce too thin",
+      "fix": "Simmer uncovered a few minutes more; it thickens as it reduces."
+    },
+    {
+      "problem": "Tastes sharp or tinny",
+      "fix": "Cook the tomato paste and spices the full minute, and add another pinch of sugar."
+    },
+    {
+      "problem": "Chicken tough",
+      "fix": "It boiled too hard. Keep it at a gentle bubble; thighs stay tender."
+    }
+  ],
+  "saleTip": "Boneless thighs at No Frills drop to about $11–13/kg on sale; buy the family pack and freeze in 900 g bags.",
+  "swap": "Chicken breast: same amount, but simmer only 6–8 minutes in the sauce so it stays juicy. Still 74°C (165°F).",
+  "leftovers": "Even better the next day. Pack with rice for lunch, or wrap in a warm tortilla.",
+  "doneness": "Chicken pieces at 74°C (165°F) (Health Canada). Reheat leftovers to 74°C (165°F).",
+  "source": "Based on tested home-style butter chicken (murgh makhani) methods (Canadian Living, Serious Eats): browned thighs finished in a buttery tomato, garam masala and cream sauce, with the chili left out.",
+  "gear": [
+    "Large deep skillet",
+    "Medium pot with lid",
+    "Fine grater"
+  ],
+  "prepAhead": [
+    "Cut and season the chicken up to 1 day ahead; keep covered in the fridge.",
+    "The finished curry keeps 3–4 days and freezes well."
+  ],
+  "reheat": "Covered over medium-low, stirring, with a splash of water, or in the microwave 2–3 minutes, stirring halfway, until 74°C (165°F).",
+  "thaw": {
+    "item": "chicken thighs",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Garam masala and paprika only, and no fresh ginger.",
+      "drop": [
+        "1-3",
+        "1-5",
+        "1-6"
+      ],
+      "stepNotes": {
+        "3": "Basic: skip the ginger, cumin and turmeric."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Warm buttered naan to scoop it up, and a swirl of cream on top.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "naan breads",
+              "note": "store-bought",
+              "pantry": {
+                "name": "Naan bread",
+                "cat": "grains"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "melted, for the naan",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "35% whipping cream",
+              "note": "for the swirl",
+              "pantry": {
+                "name": "35% whipping cream",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Warm the naan in a dry skillet 1 minute a side and brush with the melted butter. Swirl the cream over each bowl."
+        }
+      ],
+      "costAdd": [
+        [
+          "Naan, 4",
+          3.99,
+          "naan-bread"
+        ],
+        [
+          "Butter, 2 tbsp",
+          0.4,
+          "butter"
+        ],
+        [
+          "35% cream, 2 tbsp",
+          0.3,
+          "35-whipping-cream"
+        ]
+      ],
+      "plating": [
+        "Rice to one side, curry beside it, not on top.",
+        "A swirl of cream over the sauce.",
+        "Naan cut in triangles, leaning on the bowl."
+      ]
+    }
+  },
+  "why": {
+    "0-0": "Thighs stay juicy in the simmer where breast can go dry.",
+    "1-4": "Frying tomato paste and spices in butter deepens the flavour and takes away the raw edge.",
+    "1-9": "A little sugar balances the acidity of the tomatoes."
+  },
+  "fancyNight": true,
+  "funFact": "Butter chicken was created in the 1950s at Moti Mahal in Delhi, to use up leftover tandoori chicken in a buttery tomato gravy.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze the curry without the rice"
+  },
+  "pairs": [
+    [
+      "takeout-at-home-02",
+      "fried rice instead of plain for a takeout night"
+    ]
+  ]
+}

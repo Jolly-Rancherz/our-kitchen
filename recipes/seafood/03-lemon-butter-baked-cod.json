@@ -1,0 +1,405 @@
+{
+  "title": "Lemon Butter Baked Cod with Roasted Potatoes",
+  "subtitle": "flaky cod under a crisp lemon, garlic and Parmesan crumb, with golden roasted baby potatoes from the same oven",
+  "image": "assets/img/lemon-butter-cod.webp",
+  "imageAlt": "Baked cod fillets with a golden crumb topping beside roasted baby potatoes and a lemon wedge on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 35,
+  "cost": {
+    "total": 18.3,
+    "breakdown": [
+      [
+        "Frozen cod fillets, 600 g",
+        13.2,
+        "cod-fillets-frozen"
+      ],
+      [
+        "Baby potatoes, 900 g",
+        2.69,
+        "baby-potatoes"
+      ],
+      [
+        "Lemon",
+        0.79,
+        "lemons"
+      ],
+      [
+        "Butter, 2 tbsp",
+        0.4,
+        "butter"
+      ],
+      [
+        "Panko, ½ cup",
+        0.45,
+        "panko-breadcrumbs"
+      ],
+      [
+        "Parmesan, 2 tbsp",
+        0.3,
+        "parmesan-grated"
+      ],
+      [
+        "Oil, garlic, dried oregano, spices",
+        0.47
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "weeknight",
+      "date-night"
+    ],
+    "leftovers": []
+  },
+  "badges": [
+    "Not spicy"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Thaw the cod in the fridge overnight, or sealed in a bag in cold water about 1 hour."
+    },
+    {
+      "icon": "oven",
+      "text": "Everything bakes at 220°C (425°F): potatoes first, then the cod joins them."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Potatoes",
+      "items": [
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "baby potatoes",
+          "note": "halved",
+          "pantry": {
+            "name": "Baby potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "garlic powder",
+          "pantry": {
+            "name": "Garlic powder",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried oregano",
+          "pantry": {
+            "name": "Dried oregano",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cod",
+      "items": [
+        {
+          "qty": 600,
+          "unit": "g",
+          "name": "frozen cod fillets",
+          "note": "4 pieces, thawed",
+          "pantry": {
+            "name": "Cod fillets (frozen)",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lemon crumb",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 30,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "grated Parmesan",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "lemons",
+          "note": "zest finely grated, then cut in wedges",
+          "pantry": {
+            "name": "Lemons",
+            "cat": "produce"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Roast the potatoes",
+      "text": "Heat the oven to 220°C (425°F). Toss the potatoes with the oil, salt, garlic powder and dried oregano on a large rimmed baking sheet and turn them cut side down. Roast 20 minutes.",
+      "timer": 20,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Season the cod",
+      "text": "Meanwhile, pat the cod very dry and season with the salt, pepper and paprika.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Crumb",
+      "text": "Mix the melted butter, garlic, panko, Parmesan and lemon zest. Press it over the tops of the fillets.",
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3",
+        "2-4"
+      ]
+    },
+    {
+      "title": "Bake together",
+      "text": "Push the potatoes to the edges, set the cod in the middle of the sheet and bake 10–12 minutes, until the crumb is golden and the fish flakes easily and reaches 70°C (158°F).",
+      "timer": 11,
+      "uses": []
+    },
+    {
+      "title": "Serve",
+      "text": "Serve with the potatoes and lemon wedges to squeeze over.",
+      "uses": []
+    }
+  ],
+  "together": "BAAA*",
+  "fixIt": [
+    {
+      "problem": "Watery fish",
+      "fix": "Thawed fish holds water. Pat it very dry before seasoning."
+    },
+    {
+      "problem": "Crumb pale",
+      "fix": "Broil 1–2 minutes at the end, watching closely."
+    },
+    {
+      "problem": "Fish dry",
+      "fix": "Thin tail pieces cook faster. Fold thin ends under, and check at 9 minutes."
+    },
+    {
+      "problem": "Potatoes not crisp",
+      "fix": "Keep them cut side down and spread out; give them a few extra minutes before the fish goes in."
+    }
+  ],
+  "saleTip": "Frozen cod and haddock fillets go on sale at No Frills every few weeks; haddock is often cheaper and works the same.",
+  "swap": "Haddock or pollock fillets: same method and time.",
+  "leftovers": "Best fresh. Flake leftover cod into fish cakes with mashed potato.",
+  "doneness": "Fish 70°C (158°F) in the thickest part and flakes easily with a fork (Health Canada, fish).",
+  "source": "Based on tested baked cod methods (Canadian Living, High Liner): cod fillets topped with a buttered panko-Parmesan-lemon crumb and baked at 220°C (425°F) 10–12 minutes.",
+  "gear": [
+    "Large rimmed baking sheet",
+    "Small bowl",
+    "Fine grater",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Mix the crumb up to 1 day ahead and keep it in the fridge."
+  ],
+  "reheat": "At 180°C (350°F) 8–10 minutes until 74°C (165°F); the microwave makes it rubbery.",
+  "thaw": {
+    "item": "cod fillets",
+    "hours": 12
+  },
+  "levels": {
+    "basic": {
+      "note": "Butter, lemon and garlic crumb, no Parmesan or paprika.",
+      "drop": [
+        "2-3",
+        "1-3"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the paprika.",
+        "2": "Basic: no Parmesan in the crumb."
+      },
+      "costDrop": [
+        "parmesan-grated"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A quick lemon-butter sauce spooned over at the table.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 3,
+              "unit": "tbsp",
+              "name": "butter",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "lemon juice",
+              "pantry": {
+                "name": "Lemon juice",
+                "cat": "sauces"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "garlic clove",
+              "note": "minced",
+              "pantry": {
+                "name": "Garlic",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Lemon-butter sauce",
+          "text": "Melt the butter in a small pan over medium, add the garlic for 30 seconds, then stir in the lemon juice and a pinch of salt. Spoon over the fish."
+        }
+      ],
+      "costAdd": [
+        [
+          "Butter, 3 tbsp",
+          0.6,
+          "butter"
+        ],
+        [
+          "Lemon juice, garlic",
+          0.1
+        ]
+      ],
+      "plating": [
+        "Fish leaning on the potatoes, crumb side up.",
+        "Lemon-butter sauce spooned around, not over the crumb.",
+        "A lemon wedge on each plate."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Patting the fish dry keeps the crumb crisp instead of soggy.",
+    "2-4": "Zest in the crumb gives lemon flavour without making it wet."
+  },
+  "fancyNight": true,
+  "funFact": "Cod built Atlantic Canada: the Grand Banks cod fishery off Newfoundland drew European fishing fleets for 500 years.",
+  "keeps": {
+    "fridge": "2–3 days",
+    "freezer": null,
+    "note": "cooked fish gets dry and the crumb goes soft"
+  },
+  "pairs": []
+}

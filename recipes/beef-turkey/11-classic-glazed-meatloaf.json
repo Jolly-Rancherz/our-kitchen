@@ -1,0 +1,472 @@
+{
+  "title": "Classic Glazed Meatloaf with Baked Potatoes",
+  "subtitle": "a tender, well-seasoned meatloaf with a tangy brown sugar and ketchup glaze, and baked potatoes from the same oven",
+  "image": "assets/img/glazed-meatloaf.webp",
+  "imageAlt": "Thick slices of glazed meatloaf beside a split baked potato with butter on a white plate on a navy napkin",
+  "servings": 6,
+  "servingsNote": "dinner for two, plus meatloaf sandwiches for days",
+  "prep": 20,
+  "cook": 80,
+  "cost": {
+    "total": 15.4,
+    "breakdown": [
+      [
+        "Lean ground beef, 900 g",
+        9.9,
+        "ground-beef-lean"
+      ],
+      [
+        "Russet potatoes, 4",
+        1.32,
+        "russet-potatoes"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "Panko, ¾ cup",
+        0.65,
+        "panko-breadcrumbs"
+      ],
+      [
+        "Ketchup, ½ cup",
+        0.5,
+        "ketchup"
+      ],
+      [
+        "Butter & sour cream, for the potatoes",
+        0.9
+      ],
+      [
+        "Onion, garlic, milk, Worcestershire, dried thyme, salt, pepper",
+        1.0
+      ],
+      [
+        "Brown sugar, vinegar, oil",
+        0.35
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Freezer-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "Oven at 180°C (350°F). The potatoes go in first; the meatloaf joins them."
+    },
+    {
+      "icon": "knife",
+      "text": "Mix with your hands, just until combined. Overmixing makes it dense."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Potatoes",
+      "items": [
+        {
+          "qty": 4,
+          "unit": null,
+          "name": "russet potatoes",
+          "note": "scrubbed",
+          "pantry": {
+            "name": "Russet potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "for serving",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "sour cream",
+          "note": "for serving",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Sour cream",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Meatloaf",
+      "items": [
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 45,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Glaze",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "ketchup",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Ketchup",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "packed brown sugar",
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "apple cider vinegar",
+          "pantry": {
+            "name": "Apple cider vinegar",
+            "cat": "sauces"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Potatoes in",
+      "text": "Heat the oven to 180°C (350°F). Prick the potatoes a few times with a fork, rub with the oil and salt and set them right on the oven rack. Bake 70–80 minutes in all; the meatloaf joins them partway.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Soak the crumbs",
+      "text": "In a large bowl, stir the panko, milk and eggs together and let stand 5 minutes.",
+      "timer": 5,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Mix",
+      "text": "Add the beef, onion, garlic, Worcestershire, dried thyme, salt and pepper and mix gently with your hands just until combined.",
+      "uses": [
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6",
+        "1-7",
+        "1-8",
+        "1-9"
+      ]
+    },
+    {
+      "title": "Shape",
+      "text": "On a parchment-lined rimmed baking sheet, shape into a loaf about 23 × 12 cm.",
+      "uses": []
+    },
+    {
+      "title": "Glaze",
+      "text": "Stir the ketchup, brown sugar and vinegar together and spread half over the loaf.",
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Bake beside the potatoes 45 minutes, spread on the rest of the glaze, and bake 10–15 minutes more, until the centre reads 71°C (160°F).",
+      "timer": 58,
+      "uses": []
+    },
+    {
+      "title": "Rest and serve",
+      "text": "Rest the meatloaf 10 minutes, then slice. Split the potatoes and serve with the butter and sour cream.",
+      "timer": 10,
+      "uses": [
+        "0-3",
+        "0-4"
+      ]
+    }
+  ],
+  "together": "BAAAAA*",
+  "fixIt": [
+    {
+      "problem": "Crumbly slices",
+      "fix": "Rest the full 10 minutes before cutting, and use a serrated knife."
+    },
+    {
+      "problem": "Dense and dry",
+      "fix": "Don't skip soaking the crumbs, mix gently, and pull it at 71°C."
+    },
+    {
+      "problem": "Glaze burnt at the edges",
+      "fix": "Add the second coat later, for the last 10 minutes only."
+    },
+    {
+      "problem": "Potatoes not done",
+      "fix": "Large potatoes take up to 90 minutes. Squeeze with an oven mitt: they should give easily."
+    }
+  ],
+  "saleTip": "Russets are cheapest in 10 lb bags, often $3.99–4.99 at No Frills. Use the rest for mash and soup.",
+  "swap": "Loaf pan: pack into a 23 × 13 cm (9 × 5-inch) pan; add 10 minutes and pour off the fat before slicing.",
+  "leftovers": "Cold meatloaf sandwiches with ketchup, or slices pan-fried until crisp at the edges.",
+  "doneness": "71°C (160°F) in the centre of the loaf (Health Canada, ground beef). Reheat to 74°C (165°F).",
+  "source": "Based on tested meatloaf methods (Canadian Living, America's Test Kitchen): a milk-soaked breadcrumb panade, free-form loaf baked at 180°C (350°F) to 71°C with a two-coat ketchup glaze.",
+  "gear": [
+    "Large bowl",
+    "Rimmed baking sheet",
+    "Parchment",
+    "Instant-read thermometer",
+    "Serrated knife"
+  ],
+  "prepAhead": [
+    "Shape the loaf up to 1 day ahead and keep covered in the fridge; add 5–10 minutes to the bake."
+  ],
+  "reheat": "Slices covered with foil at 180°C (350°F) 15 minutes, or in a skillet 2–3 minutes a side, until 74°C (165°F).",
+  "thaw": {
+    "item": "ground beef",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Simple meatloaf with salt, pepper and a ketchup-brown sugar glaze.",
+      "drop": [
+        "1-5",
+        "1-6",
+        "1-7",
+        "2-2",
+        "0-4"
+      ],
+      "stepNotes": {
+        "2": "Basic: skip the garlic, Worcestershire and dried thyme.",
+        "4": "Basic: ketchup and brown sugar only.",
+        "6": "Basic: butter on the potatoes."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Wrapped in bacon, with loaded baked potatoes.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 6,
+              "unit": "strip",
+              "name": "bacon",
+              "pantry": {
+                "name": "Bacon",
+                "cat": "meat"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "shredded old cheddar",
+              "note": "for the potatoes",
+              "metric": {
+                "qty": 50,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Cheddar (shredded)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: drape the bacon strips across the loaf and tuck the ends under.",
+        "6": "Fancy: top the split potatoes with the cheddar and return to the oven 2 minutes to melt."
+      },
+      "costAdd": [
+        [
+          "Bacon, 6 strips",
+          3.0,
+          "bacon"
+        ],
+        [
+          "Old cheddar, 50 g",
+          0.88,
+          "cheddar-shredded"
+        ]
+      ],
+      "plating": [
+        "Thick slices, glaze side up.",
+        "Potato split and fluffed with a fork.",
+        "Buttered peas or green beans for colour."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Crumbs soaked in milk keep the meatloaf moist and tender.",
+    "2-2": "Vinegar keeps the glaze tangy, not candy-sweet."
+  },
+  "fancyNight": false,
+  "funFact": "Meatloaf became a North American staple in the Depression, as a way to stretch a pound of meat to feed a family.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze slices with parchment between them"
+  },
+  "pairs": []
+}

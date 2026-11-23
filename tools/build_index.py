@@ -16,7 +16,7 @@ APP = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RECIPES = os.path.join(APP, "recipes")
 BANNED = [(re.compile(r"mushroom", re.I), "mushroom"),
           (re.compile(r"mustard", re.I), "mustard"),
-          (re.compile(r"\bolives?\b(?!\s+oil)", re.I), "olives")]
+          (re.compile(r"\bolives?\b(?![\s-]+oil)", re.I), "olives")]
 REQUIRED = ["title", "servings", "prep", "cook", "cost", "groups", "steps"]
 # files the service worker should precache (relative to app/)
 SKIP_DIRS = {"tools", ".git", "node_modules", "vendor", "launch"}  # vendor/ (receipt reader) is cached on first use; icons/launch/ is only read by iOS when the icon is added

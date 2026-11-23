@@ -1,0 +1,465 @@
+{
+  "title": "Tuna Noodle Casserole",
+  "subtitle": "egg noodles, tuna and peas in a creamy cheddar sauce made from scratch, under a crisp buttery crumb",
+  "image": "assets/img/tuna-noodle-casserole.webp",
+  "imageAlt": "A casserole dish of creamy tuna noodle bake with a golden crumb top, one scoop out, on a navy napkin",
+  "servings": 6,
+  "servingsNote": "dinner for two, plus 4 lunches",
+  "prep": 15,
+  "cook": 40,
+  "cost": {
+    "total": 13.9,
+    "breakdown": [
+      [
+        "Old cheddar, 175 g",
+        3.06,
+        "cheddar-shredded"
+      ],
+      [
+        "Chunk light tuna, 2 cans",
+        3.58,
+        "canned-tuna"
+      ],
+      [
+        "Broad egg noodles, 340 g",
+        2.49,
+        "egg-noodles-broad"
+      ],
+      [
+        "Milk, 2 cups",
+        1.45,
+        "milk"
+      ],
+      [
+        "Butter, ¼ cup",
+        0.81,
+        "butter"
+      ],
+      [
+        "Chicken broth, 1 cup",
+        0.55,
+        "chicken-broth"
+      ],
+      [
+        "Onion, celery",
+        0.9
+      ],
+      [
+        "Frozen peas, 1 cup",
+        0.46,
+        "frozen-peas"
+      ],
+      [
+        "Panko, flour, dried thyme, salt, pepper",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "noodles"
+    ],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "No canned soup"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Cook the noodles 2 minutes short; they finish in the oven."
+    },
+    {
+      "icon": "oven",
+      "text": "Oven at 190°C (375°F), with a greased 2.5–3 L baking dish (11 × 7-inch or similar)."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Noodles",
+      "items": [
+        {
+          "qty": 340,
+          "unit": "g",
+          "name": "broad egg noodles",
+          "pantry": {
+            "name": "Egg noodles (broad)",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sauce",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 42,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "celery ribs",
+          "note": "diced",
+          "pantry": {
+            "name": "Celery",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 500,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "metric": {
+            "qty": 150,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "can",
+          "name": "chunk light tuna",
+          "note": "170 g each, drained",
+          "pantry": {
+            "name": "Canned tuna",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "frozen peas",
+          "metric": {
+            "qty": 140,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Frozen peas",
+            "cat": "frozen"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Topping",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 30,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "shredded old cheddar",
+          "metric": {
+            "qty": 25,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Cheddar (shredded)",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Noodles",
+      "text": "Heat the oven to 190°C (375°F). Cook the noodles in a large pot of boiling salted water 2 minutes less than the package says, and drain.",
+      "timer": 5,
+      "uses": [
+        "0-0",
+        "0-1"
+      ]
+    },
+    {
+      "title": "Soften",
+      "text": "Meanwhile, melt the butter in a large saucepan over medium and cook the onion and celery 5–6 minutes until soft.",
+      "timer": 6,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Sauce",
+      "text": "Stir in the flour for 1 minute. Whisk in the milk and broth a little at a time, add the dried thyme, salt and pepper, and simmer 3–4 minutes, stirring, until thick.",
+      "timer": 4,
+      "uses": [
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6",
+        "1-7",
+        "1-8"
+      ]
+    },
+    {
+      "title": "Combine",
+      "text": "Off the heat, stir in the cheddar until melted, then fold in the noodles, tuna and peas. Spread in a 9×13-inch (23×33 cm) baking dish.",
+      "uses": [
+        "1-9",
+        "1-10",
+        "1-11"
+      ]
+    },
+    {
+      "title": "Top",
+      "text": "Toss the panko with the melted butter and cheddar and scatter over the top.",
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Bake uncovered 20–25 minutes, until bubbling at the edges and golden on top. Rest 5 minutes.",
+      "timer": 22,
+      "uses": []
+    }
+  ],
+  "together": "ABAAB*",
+  "fixIt": [
+    {
+      "problem": "Dry casserole",
+      "fix": "The noodles soaked up the sauce. Undercook them and don't skip the broth."
+    },
+    {
+      "problem": "Lumpy sauce",
+      "fix": "Whisk hard, and add the liquid gradually next time."
+    },
+    {
+      "problem": "Topping pale",
+      "fix": "Broil 1–2 minutes at the end, watching closely."
+    }
+  ],
+  "saleTip": "Canned tuna is often 4 for $6 at No Frills; stock up, it keeps for years.",
+  "swap": "Canned salmon: same amount, skin and big bones removed.",
+  "leftovers": "Reheat portions with a splash of milk.",
+  "doneness": "Bubbling at the edges and steaming hot in the centre, 74°C (165°F).",
+  "source": "Based on tested from-scratch tuna casserole methods (Canadian Living, Clover Leaf): a roux-thickened milk and broth cheese sauce with egg noodles, tuna and peas, baked at 190°C (375°F) under buttered crumbs.",
+  "gear": [
+    "Large pot",
+    "Large saucepan",
+    "Whisk",
+    "Colander",
+    "2.5–3 L baking dish"
+  ],
+  "prepAhead": [
+    "Assemble without the topping up to 1 day ahead; top and bake 30–35 minutes from cold."
+  ],
+  "reheat": "Covered at 180°C (350°F) 15–20 minutes, or in the microwave with a splash of milk, until 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Noodles, tuna and cheese sauce: no peas, celery or crumb.",
+      "drop": [
+        "1-2",
+        "1-11",
+        "1-6",
+        "2-0",
+        "2-1",
+        "2-2"
+      ],
+      "stepNotes": {
+        "1": "Basic: onion only.",
+        "4": "Basic: skip the topping; bake as is."
+      },
+      "costDrop": [
+        "frozen-peas"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A Parmesan-lemon crumb on top.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "grated Parmesan",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tsp",
+              "name": "finely grated lemon zest",
+              "pantry": {
+                "name": "Lemons",
+                "cat": "produce"
+              },
+              "asWritten": true
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "4": "Fancy: mix the Parmesan and lemon zest into the crumb."
+      },
+      "costAdd": [
+        [
+          "Parmesan, 2 tbsp",
+          0.3,
+          "parmesan-grated"
+        ],
+        [
+          "Lemon, for zest",
+          0.4,
+          "lemons"
+        ]
+      ],
+      "plating": [
+        "Scoop deep so everyone gets crumb.",
+        "Serve with a crisp green salad or buttered peas.",
+        "The zested lemon cut in wedges on the side."
+      ]
+    }
+  },
+  "why": {
+    "1-5": "Broth with the milk gives a lighter, more savoury sauce than milk alone.",
+    "1-9": "Stirring the cheese in off the heat keeps the sauce smooth."
+  },
+  "fancyNight": false,
+  "funFact": "Tuna noodle casserole became a North American weeknight classic in the 1950s, almost always made with canned soup; this one makes the sauce in the same time.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "2 months",
+    "note": "freeze before adding the topping"
+  },
+  "pairs": []
+}

@@ -1,0 +1,320 @@
+{
+  "title": "Creamy Tomato Tortellini",
+  "subtitle": "cheese tortellini in a quick creamy tomato and Parmesan sauce: a 25-minute weeknight dinner",
+  "image": "assets/img/creamy-tomato-tortellini.webp",
+  "imageAlt": "Cheese tortellini in a pink creamy tomato sauce with grated Parmesan in a white bowl on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 5,
+  "cook": 20,
+  "cost": {
+    "total": 16.5,
+    "breakdown": [
+      [
+        "Cheese tortellini, 2 × 350 g",
+        9.98,
+        "cheese-tortellini"
+      ],
+      [
+        "Marinara sauce, 650 ml",
+        3.49,
+        "marinara-sauce"
+      ],
+      [
+        "35% cream, ½ cup",
+        1.18,
+        "35-whipping-cream"
+      ],
+      [
+        "Parmesan, ½ cup",
+        1.4,
+        "parmesan-grated"
+      ],
+      [
+        "Butter, garlic, dried Italian seasoning",
+        0.45
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "pasta"
+    ],
+    "occasion": [
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Under 30 minutes"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Start the pasta water first; the sauce takes the same time as the tortellini."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Pasta",
+      "items": [
+        {
+          "qty": 700,
+          "unit": "g",
+          "name": "refrigerated cheese tortellini",
+          "note": "2 packs of 350 g",
+          "pantry": {
+            "name": "Cheese tortellini",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the pasta water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sauce",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "jar",
+          "name": "marinara sauce",
+          "note": "650 ml",
+          "pantry": {
+            "name": "Marinara sauce",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried Italian seasoning",
+          "pantry": {
+            "name": "Italian seasoning (dried)",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "35% whipping cream",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "35% whipping cream",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "grated Parmesan",
+          "pantry": {
+            "name": "Parmesan (grated)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Boil the water",
+      "text": "Bring a large pot of water to a boil and add the salt.",
+      "uses": [
+        "0-1"
+      ]
+    },
+    {
+      "title": "Start the sauce",
+      "text": "Melt the butter in a large skillet over medium and cook the garlic 30 seconds. Add the marinara and Italian seasoning and simmer 5 minutes.",
+      "timer": 5,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Cook the tortellini",
+      "text": "Cook the tortellini for the time on the package (usually 7–9 minutes for refrigerated), until tender. Scoop out ½ cup of the pasta water, then drain.",
+      "timer": 8,
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Finish the sauce",
+      "text": "Stir the cream, Parmesan and pepper into the sauce and bring just to a simmer.",
+      "uses": [
+        "1-4",
+        "1-5",
+        "1-6"
+      ]
+    },
+    {
+      "title": "Toss",
+      "text": "Add the tortellini and toss gently, adding pasta water a splash at a time until the sauce is silky. Serve right away.",
+      "uses": []
+    }
+  ],
+  "together": "BABA*",
+  "fixIt": [
+    {
+      "problem": "Sauce too thick",
+      "fix": "Loosen with the saved pasta water, a splash at a time."
+    },
+    {
+      "problem": "Tortellini burst",
+      "fix": "The water boiled too hard. Keep it at a steady simmer once they're in."
+    },
+    {
+      "problem": "Sauce grainy",
+      "fix": "The Parmesan went into a boiling sauce. Take it off the heat and stir in a splash of cream."
+    }
+  ],
+  "saleTip": "Refrigerated tortellini is often 2 for $8 at No Frills, and freezes well in the pack for up to 2 months.",
+  "swap": "Frozen cheese tortellini: same amount, cook 2–3 minutes longer.",
+  "leftovers": "Reheat with a splash of milk or water; the pasta soaks up the sauce overnight.",
+  "doneness": "Tortellini tender and floating, sauce coating the pasta.",
+  "source": "Based on tested creamy tomato tortellini methods (Canadian Living, Olivieri): store-bought cheese tortellini in a marinara, cream and Parmesan sauce.",
+  "gear": [
+    "Large pot",
+    "Large skillet",
+    "Colander",
+    "Measuring cup for pasta water"
+  ],
+  "prepAhead": [
+    "Best made fresh; it takes 25 minutes."
+  ],
+  "reheat": "In a covered pan over medium-low with a splash of milk or water, stirring, or covered in the microwave 2 minutes, stirring halfway, until steaming hot.",
+  "levels": {
+    "basic": {
+      "note": "Marinara and Parmesan only, no cream.",
+      "drop": [
+        "1-4",
+        "1-3"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the Italian seasoning.",
+        "3": "Basic: no cream; stir in the Parmesan and pepper."
+      },
+      "costDrop": [
+        "35-whipping-cream"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Browned mild Italian sausage stirred through, and extra Parmesan on top.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 2,
+              "unit": null,
+              "name": "mild Italian sausages",
+              "note": "casings removed",
+              "pantry": {
+                "name": "Pork sausages (mild)",
+                "cat": "meat"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "grated Parmesan",
+              "note": "for the top",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: first brown the sausage meat in the skillet over medium-high, breaking it up, 6–7 minutes until no pink remains (71°C / 160°F). Spoon off the fat, then add the butter and garlic.",
+        "4": "Fancy: sprinkle the extra Parmesan over each bowl."
+      },
+      "costAdd": [
+        [
+          "Mild Italian sausage, 2",
+          2.8,
+          "pork-sausages-mild"
+        ],
+        [
+          "Parmesan, ¼ cup",
+          0.7,
+          "parmesan-grated"
+        ]
+      ],
+      "plating": [
+        "Shallow warm bowls.",
+        "A snowfall of Parmesan and black pepper on top.",
+        "Crusty bread on the side."
+      ]
+    }
+  },
+  "why": {
+    "1-4": "A little cream rounds out jarred sauce so it tastes slow-cooked.",
+    "0-1": "Salted water seasons the pasta itself, not just the sauce."
+  },
+  "fancyNight": false,
+  "funFact": "Legend says tortellini were shaped after Venus's navel, as glimpsed by an innkeeper in Bologna.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "cream sauces and filled pasta go grainy and soft"
+  },
+  "pairs": []
+}

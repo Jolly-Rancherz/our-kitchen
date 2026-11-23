@@ -1,0 +1,490 @@
+{
+  "title": "Swedish Meatballs with Egg Noodles",
+  "subtitle": "tender beef and pork meatballs with allspice and nutmeg in a creamy brown gravy, over buttered noodles",
+  "image": "assets/img/swedish-meatballs.webp",
+  "imageAlt": "Small browned meatballs in creamy brown gravy over buttered egg noodles in a white bowl on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 25,
+  "cook": 30,
+  "cost": {
+    "total": 18.1,
+    "breakdown": [
+      [
+        "Ground pork, 450 g",
+        5.49,
+        "ground-pork"
+      ],
+      [
+        "Lean ground beef, 450 g",
+        4.95,
+        "ground-beef-lean"
+      ],
+      [
+        "Broad egg noodles, 340 g",
+        2.49,
+        "egg-noodles-broad"
+      ],
+      [
+        "35% cream, ½ cup",
+        1.18,
+        "35-whipping-cream"
+      ],
+      [
+        "Beef broth, 2 cups",
+        1.1,
+        "beef-broth"
+      ],
+      [
+        "Butter, 6 tbsp",
+        1.2,
+        "butter"
+      ],
+      [
+        "Panko, milk, egg, onion",
+        1.3
+      ],
+      [
+        "Flour, oil, Worcestershire, allspice, nutmeg, salt, pepper",
+        0.39
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "noodles"
+    ],
+    "occasion": [
+      "comfort-night",
+      "date-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Freezer-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Grate the onion on a box grater so it melts into the meatballs."
+    },
+    {
+      "icon": "pot",
+      "text": "Wet hands make rolling the meatballs quick and neat."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Meatballs",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 30,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 80,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "grated",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "lean ground beef",
+          "pantry": {
+            "name": "Ground beef (lean)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 450,
+          "unit": "g",
+          "name": "ground pork",
+          "pantry": {
+            "name": "Ground pork",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "ground allspice",
+          "pantry": {
+            "name": "Ground allspice",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "ground nutmeg",
+          "pantry": {
+            "name": "Ground nutmeg",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Gravy",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 42,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "beef broth",
+          "metric": {
+            "qty": 500,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Beef broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "35% whipping cream",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "35% whipping cream",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "Worcestershire sauce",
+          "pantry": {
+            "name": "Worcestershire sauce",
+            "cat": "sauces"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Noodles",
+      "items": [
+        {
+          "qty": 340,
+          "unit": "g",
+          "name": "broad egg noodles",
+          "pantry": {
+            "name": "Egg noodles (broad)",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "salt",
+          "note": "for the water",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Soak the crumbs",
+      "text": "Stir the panko, milk, egg and grated onion together in a large bowl and let stand 5 minutes.",
+      "timer": 5,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Mix and roll",
+      "text": "Add the beef, pork, salt, pepper, allspice and nutmeg and mix gently with your hands. Roll into 3 cm balls (about 30).",
+      "uses": [
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9"
+      ]
+    },
+    {
+      "title": "Brown",
+      "text": "Heat the oil and butter in a large deep skillet over medium-high. Brown the meatballs in 2 batches, 6–8 minutes, turning, until browned all over. Move to a plate. Put the noodle water on to boil with the salt.",
+      "timer": 7,
+      "uses": [
+        "0-10",
+        "0-11",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Gravy",
+      "text": "Lower the heat to medium. Melt the butter in the skillet, whisk in the flour and cook 1 minute, until light brown. Whisk in the broth a little at a time, then the cream and Worcestershire, and simmer 2 minutes.",
+      "timer": 3,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4"
+      ]
+    },
+    {
+      "title": "Simmer",
+      "text": "Return the meatballs, cover and simmer gently 8–10 minutes, until they reach 71°C (160°F) in the centre.",
+      "timer": 9,
+      "uses": []
+    },
+    {
+      "title": "Noodles",
+      "text": "Meanwhile, cook the noodles 6–8 minutes, drain and toss with the butter.",
+      "timer": 7,
+      "uses": [
+        "2-0",
+        "2-2"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Spoon the meatballs and gravy over the noodles.",
+      "uses": []
+    }
+  ],
+  "together": "AAAAAB*",
+  "fixIt": [
+    {
+      "problem": "Meatballs fall apart when browning",
+      "fix": "Let a crust form before turning, and chill the rolled meatballs 15 minutes if they're soft."
+    },
+    {
+      "problem": "Gravy too thick",
+      "fix": "Whisk in a splash of broth or milk."
+    },
+    {
+      "problem": "Gravy lumpy",
+      "fix": "Whisk hard, and add the broth gradually."
+    }
+  ],
+  "saleTip": "Ground pork and beef are both regular No Frills sale items; this recipe uses one 450 g pack of each.",
+  "swap": "All beef: 900 g lean ground beef; a little firmer, still good.",
+  "leftovers": "Reheat in the gravy; also great over mashed potatoes.",
+  "doneness": "71°C (160°F) in the centre of a meatball (Health Canada, ground beef and pork). Reheat to 74°C (165°F).",
+  "source": "Based on tested Swedish meatball methods (Canadian Living, IKEA's published recipe): beef and pork meatballs with allspice and nutmeg, browned, then simmered in a cream and beef-broth gravy.",
+  "gear": [
+    "Large deep skillet with lid",
+    "Large pot",
+    "Box grater",
+    "Whisk",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Roll the meatballs up to 1 day ahead, or freeze them raw on a tray, then bag; brown from frozen, adding 5 minutes to the simmer."
+  ],
+  "reheat": "Covered in a pan over medium-low with a splash of broth, 8–10 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "ground beef and pork",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Beef-and-pork meatballs with salt and pepper in a simple brown gravy.",
+      "drop": [
+        "0-8",
+        "0-9",
+        "1-3",
+        "1-4"
+      ],
+      "stepNotes": {
+        "1": "Basic: salt and pepper only.",
+        "3": "Basic: broth only; simmer 3–4 minutes to thicken."
+      },
+      "costDrop": [
+        "35-whipping-cream"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Served the Swedish way, with cranberry sauce standing in for lingonberries.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "cranberry sauce",
+              "note": "homemade or canned whole-berry",
+              "pantry": {
+                "name": "Cranberries (fresh or frozen)",
+                "cat": "produce"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Add a spoon of cranberry sauce beside each serving."
+        }
+      ],
+      "costAdd": [
+        [
+          "Cranberry sauce",
+          1.2,
+          "cranberries-fresh-or-frozen"
+        ]
+      ],
+      "plating": [
+        "Noodles in a nest, meatballs in the centre.",
+        "Gravy spooned over generously.",
+        "Cranberry sauce on the side."
+      ]
+    }
+  },
+  "why": {
+    "0-8": "Allspice and nutmeg are the signature Swedish flavour: warm, not hot.",
+    "0-5": "Pork makes the meatballs tender and juicy; beef adds flavour."
+  },
+  "fancyNight": false,
+  "funFact": "In Sweden, köttbullar are always served with lingonberry jam; tart cranberry sauce is the closest Canadian match.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze meatballs in the gravy; cook noodles fresh"
+  },
+  "pairs": [
+    [
+      "christmas-06",
+      "the lingonberry stand-in"
+    ],
+    [
+      "christmas-13",
+      "over mash instead of noodles"
+    ]
+  ]
+}

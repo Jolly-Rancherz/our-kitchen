@@ -1,0 +1,382 @@
+{
+  "title": "Classic Chicken Noodle Soup",
+  "subtitle": "a big pot of golden broth with tender shredded chicken, carrots, celery and egg noodles",
+  "image": "assets/img/chicken-noodle-soup.webp",
+  "imageAlt": "A white bowl of chicken noodle soup with carrots, celery and broad egg noodles on a navy napkin",
+  "servings": 6,
+  "servingsNote": "a big pot: dinner for two, plus 4 bowls for lunches",
+  "prep": 15,
+  "cook": 45,
+  "cost": {
+    "total": 19.2,
+    "breakdown": [
+      [
+        "Boneless chicken thighs, 600 g",
+        10.2,
+        "chicken-thighs-boneless"
+      ],
+      [
+        "Chicken broth, 8 cups",
+        5.25,
+        "chicken-broth"
+      ],
+      [
+        "Carrots, celery, onion, garlic",
+        2.1
+      ],
+      [
+        "Broad egg noodles, 150 g",
+        1.1,
+        "egg-noodles-broad"
+      ],
+      [
+        "Butter, dried thyme, bay leaf, lemon juice, salt, pepper",
+        0.55
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "noodles"
+    ],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Freezer-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Cook the noodles in the soup only for what you'll eat tonight if you plan to freeze some; frozen noodles go mushy."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Soup",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": null,
+          "name": "carrots",
+          "note": "peeled and sliced 1 cm",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": null,
+          "name": "celery ribs",
+          "note": "sliced 1 cm",
+          "pantry": {
+            "name": "Celery",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "bay leaves",
+          "pantry": {
+            "name": "Bay leaves",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 8,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 2000,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 600,
+          "unit": "g",
+          "name": "boneless skinless chicken thighs",
+          "note": "left whole",
+          "pantry": {
+            "name": "Chicken thighs (boneless)",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 150,
+          "unit": "g",
+          "name": "broad egg noodles",
+          "note": "about 3 cups",
+          "pantry": {
+            "name": "Egg noodles (broad)",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "lemon juice",
+          "pantry": {
+            "name": "Lemon juice",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Soften",
+      "text": "Melt the butter in a large pot over medium. Cook the onion, carrots and celery 6–8 minutes until softened. Add the garlic and dried thyme for 30 seconds.",
+      "timer": 7,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Poach the chicken",
+      "text": "Add the broth and bay leaf and bring to a boil. Add the chicken, lower the heat and simmer, partly covered, 20 minutes, until the chicken reaches 74°C (165°F).",
+      "timer": 20,
+      "uses": [
+        "0-7",
+        "0-6",
+        "0-8"
+      ]
+    },
+    {
+      "title": "Shred",
+      "text": "Lift out the chicken, shred it with 2 forks and discard the bay leaf.",
+      "uses": []
+    },
+    {
+      "title": "Noodles",
+      "text": "Bring the soup back to a boil, add the noodles and cook 6–8 minutes until tender.",
+      "timer": 7,
+      "uses": [
+        "0-9"
+      ]
+    },
+    {
+      "title": "Finish",
+      "text": "Return the chicken, stir in the lemon juice, and season with the salt and pepper. Taste and adjust.",
+      "uses": [
+        "0-10",
+        "0-11",
+        "0-12"
+      ]
+    }
+  ],
+  "together": "AABA*",
+  "fixIt": [
+    {
+      "problem": "Bland broth",
+      "fix": "Add salt a pinch at a time; the lemon juice also wakes it up. A spoon of butter rounds it out."
+    },
+    {
+      "problem": "Noodles soaked up the broth",
+      "fix": "Add a cup of broth or water when reheating. Next time store noodles separately."
+    },
+    {
+      "problem": "Cloudy broth",
+      "fix": "It boiled hard. Keep it at a gentle simmer once the chicken goes in."
+    }
+  ],
+  "saleTip": "Broth is cheapest in 900 ml cartons on multi-buy deals at No Frills; thighs in family packs.",
+  "swap": "Leftover roast chicken or turkey: 3 cups shredded, added with the noodles; simmer the soup 10 minutes first.",
+  "leftovers": "Freeze the soup without noodles; cook fresh noodles when you reheat.",
+  "doneness": "Chicken at 74°C (165°F) (Health Canada, poultry pieces). Reheat soup to a full boil.",
+  "source": "Based on tested chicken noodle soup methods (Canadian Living, Campbell's Kitchen): vegetables sweated in butter, chicken poached in broth and shredded, egg noodles cooked in the soup.",
+  "gear": [
+    "Large pot (5 L or more)",
+    "2 forks",
+    "Ladle"
+  ],
+  "prepAhead": [
+    "Make the soup up to step 3 a day ahead; add the noodles when reheating."
+  ],
+  "reheat": "Bring to a boil on the stove, adding a splash of broth or water if it's thick.",
+  "thaw": {
+    "item": "chicken thighs",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Chicken, carrots, noodles and broth, no celery or lemon.",
+      "drop": [
+        "0-3",
+        "0-10",
+        "0-6"
+      ],
+      "stepNotes": {
+        "0": "Basic: onion and carrots only.",
+        "4": "Basic: skip the lemon."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Parmesan over each bowl and buttered toast for dipping.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "grated Parmesan",
+              "note": "for the bowls",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 4,
+              "unit": null,
+              "name": "slices crusty bread",
+              "note": "toasted",
+              "pantry": {
+                "name": "Crusty bread",
+                "cat": "grains"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "butter",
+              "note": "softened, for the toast",
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Butter the toast. Top each bowl with Parmesan and serve the toast alongside."
+        }
+      ],
+      "costAdd": [
+        [
+          "Parmesan, ¼ cup",
+          0.7,
+          "parmesan-grated"
+        ],
+        [
+          "Crusty bread",
+          1.75,
+          "crusty-bread"
+        ],
+        [
+          "Butter, 2 tbsp",
+          0.4,
+          "butter"
+        ]
+      ],
+      "plating": [
+        "Wide warm bowls.",
+        "Parmesan over the top.",
+        "Toast on the side for dipping."
+      ]
+    }
+  },
+  "why": {
+    "0-8": "Thighs poach without drying out and give the broth more body than breast.",
+    "0-10": "A spoon of lemon juice brightens the broth so it tastes homemade."
+  },
+  "fancyNight": false,
+  "funFact": "Campbell's 'chicken noodle' name came from a 1934 radio-ad slip; it had been 'chicken with noodles'.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze without the noodles"
+  },
+  "pairs": [
+    [
+      "christmas-15",
+      "soft rolls for dunking"
+    ]
+  ]
+}

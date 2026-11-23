@@ -1,0 +1,341 @@
+{
+  "title": "Sheet-Pan Lemon Garlic Chicken & Potatoes",
+  "subtitle": "crispy-skinned chicken thighs roasted over baby potatoes in lemon, garlic and dried oregano: one pan, no fuss",
+  "image": "assets/img/lemon-garlic-chicken-potatoes.webp",
+  "imageAlt": "Golden roasted chicken thighs and halved baby potatoes on a sheet pan with lemon, on a navy napkin",
+  "servings": 4,
+  "servingsNote": "dinner for one big eater + one hungry eater, plus 2 lunches",
+  "prep": 15,
+  "cook": 45,
+  "cost": {
+    "total": 13.9,
+    "breakdown": [
+      [
+        "Bone-in chicken thighs, 1.4 kg",
+        9.32,
+        "chicken-thighs-bone-in"
+      ],
+      [
+        "Baby potatoes, 900 g",
+        2.69,
+        "baby-potatoes"
+      ],
+      [
+        "Lemon",
+        0.79,
+        "lemons"
+      ],
+      [
+        "Olive oil, 3 tbsp",
+        0.45,
+        "olive-oil"
+      ],
+      [
+        "Garlic",
+        0.2,
+        "garlic"
+      ],
+      [
+        "Dried oregano, thyme, paprika, salt, pepper",
+        0.45
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake",
+      "one-pan"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "weeknight"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "One pan"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "oven",
+      "text": "Oven at 220°C (425°F) with the rack in the upper middle."
+    },
+    {
+      "icon": "knife",
+      "text": "Pat the chicken skin very dry so it crisps."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Lemon-garlic oil",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "olive oil",
+          "pantry": {
+            "name": "Olive oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "lemons",
+          "note": "zest finely grated, then juiced",
+          "pantry": {
+            "name": "Lemons",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "dried oregano",
+          "pantry": {
+            "name": "Dried oregano",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pan",
+      "items": [
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "baby potatoes",
+          "note": "halved",
+          "pantry": {
+            "name": "Baby potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 8,
+          "unit": null,
+          "name": "bone-in, skin-on chicken thighs",
+          "note": "about 1.4 kg",
+          "pantry": {
+            "name": "Chicken thighs (bone-in)",
+            "cat": "meat"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Heat the oven",
+      "text": "Heat the oven to 220°C (425°F) and line a large rimmed baking sheet with foil.",
+      "uses": []
+    },
+    {
+      "title": "Mix",
+      "text": "Whisk the olive oil, lemon zest and juice, garlic, dried oregano, dried thyme, paprika, salt and pepper in a large bowl.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Potatoes",
+      "text": "Toss the potatoes in the bowl to coat, then lift them onto the sheet, cut side down, leaving the rest of the mixture in the bowl.",
+      "uses": [
+        "1-0"
+      ]
+    },
+    {
+      "title": "Chicken",
+      "text": "Pat the chicken dry, toss it in the remaining mixture and nestle the pieces skin side up between the potatoes. Pour any mixture left in the bowl over the chicken.",
+      "uses": [
+        "1-1"
+      ]
+    },
+    {
+      "title": "Roast",
+      "text": "Roast 40–45 minutes, until the skin is crisp and golden, the potatoes are tender and the thickest thigh reads at least 74°C (165°F) near (not touching) the bone.",
+      "timer": 42,
+      "uses": []
+    },
+    {
+      "title": "Rest and serve",
+      "text": "Rest 5 minutes, then spoon the pan juices over the chicken and potatoes.",
+      "uses": []
+    }
+  ],
+  "together": "BBBAA*",
+  "fixIt": [
+    {
+      "problem": "Skin not crisp",
+      "fix": "Pat it drier next time, and give it 3–4 minutes under the broiler at the end; watch it closely."
+    },
+    {
+      "problem": "Potatoes pale",
+      "fix": "They were crowded or under the chicken. Keep them cut side down in a single layer."
+    },
+    {
+      "problem": "Chicken done, potatoes not",
+      "fix": "Move the chicken to a plate under foil and roast the potatoes 5–10 minutes more."
+    },
+    {
+      "problem": "Too sour",
+      "fix": "Lemons vary. Drizzle a little honey or olive oil over before serving."
+    }
+  ],
+  "saleTip": "Bone-in thighs are one of the cheapest cuts at No Frills, often $5.50–6.60/kg in family packs.",
+  "swap": "Drumsticks: same method, 40–50 minutes, to 74°C (165°F).",
+  "leftovers": "Pull the meat off the bone for wraps or a chicken salad sandwich; fry the potatoes for breakfast.",
+  "doneness": "74°C (165°F) in the thickest thigh, not touching the bone (Health Canada, poultry pieces). Thighs are even more tender at 80–85°C.",
+  "source": "Based on tested sheet-pan chicken thigh methods (Canadian Living, Serious Eats): bone-in thighs roasted at 220°C (425°F) with potatoes in a lemon-garlic-oregano oil.",
+  "gear": [
+    "Large rimmed baking sheet",
+    "Foil",
+    "Large bowl",
+    "Fine grater",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Mix the oil and toss the chicken in it up to 8 hours ahead; keep covered in the fridge. Toss the potatoes just before roasting."
+  ],
+  "reheat": "At 200°C (400°F) 12–15 minutes, or in the air fryer at 190°C (375°F) 6–8 minutes, until 74°C (165°F).",
+  "thaw": {
+    "item": "chicken thighs",
+    "hours": 24
+  },
+  "levels": {
+    "basic": {
+      "note": "Lemon, garlic, dried oregano, salt and pepper; no dried thyme or paprika.",
+      "drop": [
+        "0-4",
+        "0-5"
+      ],
+      "stepNotes": {
+        "1": "Basic: leave out the dried thyme and paprika."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Roasted lemon slices and a honey glaze on the skin.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "lemons",
+              "note": "extra, thinly sliced",
+              "pantry": {
+                "name": "Lemons",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "honey",
+              "pantry": {
+                "name": "Honey",
+                "cat": "sauces"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: tuck the lemon slices between the pieces.",
+        "4": "Fancy: brush the honey over the skin for the last 5 minutes."
+      },
+      "costAdd": [
+        [
+          "Lemon",
+          0.79,
+          "lemons"
+        ],
+        [
+          "Honey, 1 tbsp",
+          0.2,
+          "honey"
+        ]
+      ],
+      "plating": [
+        "Serve on the warm sheet pan at the table.",
+        "Charred lemon slices on top.",
+        "Spoon the juices over everything."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "Zest carries the lemon flavour; the juice adds brightness. Using both makes it taste really lemony.",
+    "1-0": "Cut side down on the hot pan, the potatoes brown in the chicken drippings."
+  },
+  "fancyNight": false,
+  "funFact": "Bone-in chicken thighs are almost impossible to dry out: their fat and connective tissue keep them juicy even past 80°C.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "freeze the chicken; the potatoes go mealy"
+  },
+  "pairs": []
+}

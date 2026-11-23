@@ -1,0 +1,407 @@
+{
+  "title": "Ham & Potato Chowder",
+  "subtitle": "a thick, creamy potato chowder with smoky ham and sweet corn: the best use for leftover ham",
+  "image": "assets/img/ham-potato-chowder.webp",
+  "imageAlt": "A white bowl of creamy potato chowder with diced ham and corn on a navy napkin",
+  "servings": 6,
+  "servingsNote": "dinner for two, plus 4 bowls for lunches",
+  "prep": 15,
+  "cook": 35,
+  "cost": {
+    "total": 13.4,
+    "breakdown": [
+      [
+        "Cooked ham steak, 400 g",
+        5.3,
+        "ham-steak"
+      ],
+      [
+        "Chicken broth, 4 cups",
+        2.2,
+        "chicken-broth"
+      ],
+      [
+        "Yukon Gold potatoes, 900 g",
+        2.18,
+        "yukon-gold-potatoes"
+      ],
+      [
+        "Milk, 1½ cups",
+        1.09,
+        "milk"
+      ],
+      [
+        "Onion, celery, carrots",
+        1.2
+      ],
+      [
+        "Butter, 3 tbsp",
+        0.6,
+        "butter"
+      ],
+      [
+        "Frozen corn, 1 cup",
+        0.55,
+        "frozen-corn"
+      ],
+      [
+        "Flour, dried thyme, bay leaf, pepper",
+        0.28
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "comfort-night"
+    ],
+    "leftovers": [
+      "lunch"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Leftover-friendly"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "Leftover Christmas or Easter ham is perfect here; otherwise a cooked ham steak."
+    },
+    {
+      "icon": "pot",
+      "text": "Taste before salting at the end: ham and broth are already salty."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Chowder",
+      "items": [
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 42,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "yellow onion",
+          "note": "finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "celery ribs",
+          "note": "diced",
+          "pantry": {
+            "name": "Celery",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "carrots",
+          "note": "diced",
+          "pantry": {
+            "name": "Carrots",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "cup",
+          "name": "chicken broth",
+          "metric": {
+            "qty": 1000,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Chicken broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 900,
+          "unit": "g",
+          "name": "Yukon Gold potatoes",
+          "note": "peeled and cut in 1.5 cm dice",
+          "pantry": {
+            "name": "Yukon Gold potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "bay leaves",
+          "pantry": {
+            "name": "Bay leaves",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "dried thyme",
+          "pantry": {
+            "name": "Dried thyme",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "diced cooked ham",
+          "note": "about 400 g",
+          "pantry": {
+            "name": "Ham steak",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "frozen corn",
+          "metric": {
+            "qty": 140,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Frozen corn",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 375,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Soften",
+      "text": "Melt the butter in a large pot over medium. Cook the onion, celery and carrots 6–7 minutes until soft.",
+      "timer": 7,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Thicken",
+      "text": "Stir in the flour for 1 minute, then whisk in the broth a little at a time.",
+      "timer": 1,
+      "uses": [
+        "0-4",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Simmer the potatoes",
+      "text": "Add the potatoes, bay leaf and dried thyme, bring to a boil and simmer, partly covered, 15 minutes, until the potatoes are tender.",
+      "timer": 15,
+      "uses": [
+        "0-6",
+        "0-7",
+        "0-8"
+      ]
+    },
+    {
+      "title": "Thicken more",
+      "text": "Discard the bay leaf. Mash some of the potatoes against the side of the pot to thicken the chowder.",
+      "uses": []
+    },
+    {
+      "title": "Finish",
+      "text": "Stir in the ham, corn, milk and pepper and heat 5 minutes, without boiling, until steaming hot. Taste and add salt only if it needs it.",
+      "timer": 5,
+      "uses": [
+        "0-9",
+        "0-10",
+        "0-11",
+        "0-12"
+      ]
+    }
+  ],
+  "together": "AAABA",
+  "fixIt": [
+    {
+      "problem": "Too thin",
+      "fix": "Mash more of the potatoes, or simmer a few minutes uncovered."
+    },
+    {
+      "problem": "Too thick after a night in the fridge",
+      "fix": "Stir in milk or broth as you reheat."
+    },
+    {
+      "problem": "Too salty",
+      "fix": "Add more milk and a few more diced potatoes, and simmer until tender."
+    }
+  ],
+  "saleTip": "Ham steaks are often $4–5 at No Frills; after Christmas or Easter, use leftover ham for free.",
+  "swap": "Bacon: fry 6 chopped strips first and use 2 tbsp of the fat instead of butter.",
+  "leftovers": "Thickens overnight; loosen with milk when reheating.",
+  "doneness": "Potatoes tender; chowder steaming hot. Cooked ham reheated to 74°C (165°F).",
+  "source": "Based on tested ham and potato chowder methods (Canadian Living, Canadian Pork): a roux-thickened broth with potatoes, finished with ham, corn and milk.",
+  "gear": [
+    "Large pot",
+    "Whisk",
+    "Potato masher or wooden spoon",
+    "Ladle"
+  ],
+  "prepAhead": [
+    "Make up to 2 days ahead; it thickens, so add milk when reheating."
+  ],
+  "reheat": "Over medium-low, stirring often, with a splash of milk, until steaming hot; don't let it boil hard or the milk can separate.",
+  "levels": {
+    "basic": {
+      "note": "Ham, potatoes and onion in a creamy broth.",
+      "drop": [
+        "0-2",
+        "0-3",
+        "0-10",
+        "0-7"
+      ],
+      "stepNotes": {
+        "0": "Basic: onion only.",
+        "4": "Basic: no corn."
+      },
+      "costDrop": [
+        "frozen-corn"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Finished with cream and topped with old cheddar.",
+      "add": [
+        {
+          "group": "Fancy finish",
+          "items": [
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "35% whipping cream",
+              "metric": {
+                "qty": 125,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "35% whipping cream",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "shredded old cheddar",
+              "note": "for the bowls",
+              "metric": {
+                "qty": 50,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Cheddar (shredded)",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "4": "Fancy: add the cream with the milk."
+      },
+      "addSteps": [
+        {
+          "title": "Fancy finish",
+          "text": "Top each bowl with a little cheddar."
+        }
+      ],
+      "costAdd": [
+        [
+          "35% cream, ½ cup",
+          1.18,
+          "35-whipping-cream"
+        ],
+        [
+          "Old cheddar, 50 g",
+          0.88,
+          "cheddar-shredded"
+        ]
+      ],
+      "plating": [
+        "Deep bowls.",
+        "Cheddar over the top so it melts.",
+        "Rolls or crusty bread alongside."
+      ]
+    }
+  },
+  "why": {
+    "0-6": "Yukon Golds hold their shape but some break down to thicken the chowder.",
+    "0-11": "Milk goes in last and never boils, so it stays smooth."
+  },
+  "fancyNight": false,
+  "funFact": "Chowder comes from the French 'chaudière', the cauldron Breton fishermen cooked in; Atlantic Canada has been making it for centuries.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": null,
+    "note": "potatoes and milk go grainy when frozen"
+  },
+  "pairs": [
+    [
+      "christmas-02",
+      "made for the leftover Christmas ham"
+    ],
+    [
+      "christmas-15",
+      "soft rolls for dunking"
+    ]
+  ]
+}
