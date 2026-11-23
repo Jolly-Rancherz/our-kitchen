@@ -1722,3 +1722,9 @@ html.big .quick .qt{font-size:.84rem;min-height:78px}
 .wkcard .im::after{content:"";position:absolute;z-index:1;left:-12px;top:7px;width:52px;height:16px;transform:rotate(-34deg);pointer-events:none;
   background:repeating-linear-gradient(90deg,rgba(255,255,255,.22) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(242,229,198,.9);box-shadow:0 1px 3px rgba(18,16,46,.28);opacity:.92}
 html[data-theme="dark"] .wkcard .im::after{background:repeating-linear-gradient(90deg,rgba(255,255,255,.10) 0 6px,rgba(255,255,255,0) 6px 12px),rgba(222,200,150,.78)}
+/* update 12.1: the tab you tap gives a small spring, and its gold bar draws in from the centre */
+@keyframes tabpop{0%{transform:scale(.86)}60%{transform:scale(1.1)}100%{transform:scale(1)}}
+@keyframes tabbar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+#tabbar a.on svg{animation:tabpop .34s cubic-bezier(.3,1.4,.5,1)}
+#tabbar a.on::before{animation:tabbar .26s ease-out}
+@media (prefers-reduced-motion:reduce){#tabbar a.on svg,#tabbar a.on::before{animation:none}}

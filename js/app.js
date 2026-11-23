@@ -367,6 +367,24 @@ function updateBadge() {
   const n = Object.values(state.grocery).filter((g) => !g.checked).length;
   const b = $('#groceryBadge'); if (b) b.textContent = n ? String(n) : '';
 }
+// update 12.1: typo-tolerant search. A word matches if it is in the text, or (5+ letters) it is within one typo of a
+// word in the text or of that word's start ("lasagne", "chiken", "brocoli", "parmasan"); two typos allowed from 8 letters
+function editWithin(a, b, k) {
+  if (Math.abs(a.length - b.length) > k) return false;
+  let prev = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [i]; let best = i;
+    for (let j = 1; j <= b.length; j++) { cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); if (cur[j] < best) best = cur[j]; }
+    if (best > k) return false; prev = cur;
+  }
+  return prev[b.length] <= k;
+}
+function fuzzyHas(hay, w) {
+  if (!w || hay.includes(w)) return true;
+  if (w.length < 5) return false;
+  const k = w.length >= 8 ? 2 : 1;
+  return hay.split(/[^a-z0-9&']+/).some((t) => t.length >= w.length - k && (editWithin(w, t, k) || (t.length > w.length && editWithin(w, t.slice(0, w.length), k))));
+}
 function img(src, alt = '') { return src ? `<img src="${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async">` : ''; }
 function placeholderArt(r) {
   const c = catOf(r.category);
@@ -430,12 +448,12 @@ function matchesFilters(r) {
   if (ui.q && /[+,]/.test(ui.q)) {
     const terms = ui.q.toLowerCase().split(/\s*[+,]\s*/).filter(Boolean);
     const ings = [...(r.ingredients || []), ...(r.pantry || []).map((p) => p.name)].join(' | ').toLowerCase();
-    if (!terms.every((t) => t.split(/\s+/).every((w) => ings.includes(w.replace(/s$/, ''))))) return false;
+    if (!terms.every((t) => t.split(/\s+/).every((w) => fuzzyHas(ings, w.replace(/s$/, ''))))) return false;
   } else if (ui.q) {
     const q = ui.q.toLowerCase();
     const hay = [r.title, r.subtitle, catOf(r.category).name, ...(r.ingredients || []),
       ...Object.entries(r.tags || {}).flatMap(([k, vs]) => vs.map((v) => TAGLABEL[k + ':' + v] || v))].join(' ').toLowerCase();
-    if (!q.split(/\s+/).every((w) => hay.includes(w))) return false;
+    if (!q.split(/\s+/).every((w) => fuzzyHas(hay, w))) return false;
   }
   return true;
 }
@@ -4867,6 +4885,26 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+ {
+  "name": "Update 12.1",
+  "id": "u121-2026-11",
+  "date": "2026-11-23",
+  "intro": "Small things that make the app feel quicker.",
+  "notes": [
+   [
+    "Search forgives typos",
+    "“chiken”, “lasagne”, “brocoli” and “parmasan” all find the right recipes"
+   ],
+   [
+    "Tabs",
+    "The tab you tap gives a little spring. Each tab remembers where you scrolled, and tapping the tab you're on jumps back to the top"
+   ],
+   [
+    "Faith's iPhone",
+    "Every page checked at the iPhone 16 Pro size"
+   ]
+  ]
+ },
  {
   "name": "Update 12.0",
   "id": "u120-2026-11",

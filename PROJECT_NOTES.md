@@ -336,3 +336,10 @@ exactly 812pt although the image continues.
 - Idea shortcuts: `.quick` is one row of three `.qt` index-card tiles (Spin the wheel, What can we make?, More ideas). The old "surprise me · mood · fridge clear · in season" caption lives inside the More ideas sheet only.
 - Scrapbook touch (main app, much lighter than the book): `.lead.hand` (Caveat) for the page notes under tab titles (10 pages), the "…'s pick tonight" line in Caveat, washi tape (`.pick-card .im::before/::after`, `.wkcard .im::after`). Palette, fonts and category tiles unchanged.
 - Before/after previews: app_preview/u120-before-*.png, u120-after-*.png, u120-before-home-strip.png, u120-after-home-strip2.png, u120-after-home-dark.png.
+
+## Update 12.1 — quick wins (2026-11-23)
+- Typo-tolerant search: `fuzzyHas(hay, w)` + `editWithin(a, b, k)` (bounded Levenshtein). Exact substring first; from 5 letters one typo, from 8 letters two, against whole words or word starts. Used by the plain search and the "a + b" ingredient search.
+- Tab tap animation: `tabpop` spring on the active tab icon + `tabbar` draw-in of the gold bar (off under reduced motion). Runs only when the tab becomes active.
+- Already there and re-verified (pwtest/t121.mjs): per-tab scroll memory (`scrollMem` restored on `dir === 'tab'`), tap the active tab → smooth scroll to top.
+- Photos: all 63 are already WebP. AVIF was measured at only 18% smaller (2.77 → 2.27 MB) and would mean a second copy of every photo in the offline cache, so we stayed on WebP.
+- iPhone 16 Pro (402 × 874) added to the crawl configs.
