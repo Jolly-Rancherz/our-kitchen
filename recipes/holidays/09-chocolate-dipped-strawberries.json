@@ -1,0 +1,229 @@
+{
+  "title": "Chocolate-Dipped Strawberries",
+  "subtitle": "plump strawberries in a crisp chocolate shell with a white chocolate drizzle",
+  "image": "assets/img/chocolate-strawberries.webp",
+  "imageAlt": "Glossy chocolate-dipped strawberries with white chocolate drizzle on a cream plate beside a navy napkin",
+  "servings": 2,
+  "servingsNote": "about 16 strawberries: dessert for two",
+  "prep": 20,
+  "cook": 5,
+  "cost": {
+    "total": 6.64,
+    "breakdown": [
+      [
+        "Strawberries, 454 g",
+        3.99,
+        "strawberries"
+      ],
+      [
+        "Semi-sweet baking chocolate, 170 g",
+        2.6,
+        "semi-sweet-chocolate-baking"
+      ],
+      [
+        "Oil",
+        0.05,
+        "canola-vegetable-oil"
+      ]
+    ]
+  },
+  "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+      "dessert"
+    ],
+    "holiday": [
+      "valentines"
+    ]
+  },
+  "badges": [
+    "No bake",
+    "Valentine's"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "knife",
+      "text": "The berries must be completely dry or the chocolate will seize and slide off."
+    },
+    {
+      "icon": "cup",
+      "text": "Melt the chocolate slowly in short bursts; it burns easily."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Strawberries",
+      "items": [
+        {
+          "qty": 454,
+          "unit": "g",
+          "name": "strawberries",
+          "note": "about 16, with green tops, washed and dried completely",
+          "pantry": {
+            "name": "Strawberries",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 170,
+          "unit": "g",
+          "name": "semi-sweet baking chocolate",
+          "note": "chopped",
+          "pantry": {
+            "name": "Semi-sweet chocolate (baking)",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Dry",
+      "text": "Wash the strawberries, then dry them very well on paper towel and leave 15 minutes to air-dry. Line a tray with parchment.",
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Melt",
+      "text": "Microwave the chocolate and oil in a small bowl in 30-second bursts, stirring each time, until almost melted; stir until smooth.",
+      "timer": 2,
+      "uses": [
+        "0-1",
+        "0-2"
+      ]
+    },
+    {
+      "title": "Dip",
+      "text": "Holding the green top, dip each berry, let the extra drip off and lay it on the parchment.",
+      "uses": []
+    },
+    {
+      "title": "Set",
+      "text": "Chill 20 minutes until the chocolate is firm.",
+      "timer": 20,
+      "uses": []
+    }
+  ],
+  "together": "AAA*",
+  "fixIt": [
+    {
+      "problem": "Chocolate thick and grainy",
+      "fix": "It seized from water or heat; stir in 1 tsp more oil, or start again with fresh chocolate."
+    },
+    {
+      "problem": "Chocolate pools at the base",
+      "fix": "Let more drip off and scrape the bottom on the bowl's rim."
+    },
+    {
+      "problem": "Berries sweating",
+      "fix": "They sat too long in the fridge; make them the same day."
+    }
+  ],
+  "saleTip": "Strawberries are pricey in February; the 1 lb clamshell at No Frills is usually the best deal.",
+  "swap": "Milk or dark chocolate. Banana chunks or pretzels for berries.",
+  "leftovers": "Eat the same day; they weep after a day in the fridge.",
+  "doneness": "No cooking; melt the chocolate gently and keep it below about 45°C (115°F) so it stays glossy.",
+  "source": "Based on tested chocolate-dipped strawberry methods (Food Network, Canadian Living): dry berries, microwave-melted chocolate with a little oil, chilled to set.",
+  "gear": [
+    "Microwave-safe bowl",
+    "Parchment",
+    "Tray",
+    "Spoon or fork for drizzling"
+  ],
+  "prepAhead": [
+    "Make up to 6 hours ahead and keep in the fridge."
+  ],
+  "reheat": "Served cold; no reheating needed.",
+  "levels": {
+    "basic": {
+      "note": "The chocolate on its own, no oil: a thicker shell.",
+      "drop": [
+        "0-2"
+      ],
+      "stepNotes": {
+        "1": "Basic: melt the chocolate on its own."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A white chocolate drizzle and pink sprinkles.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 60,
+              "unit": "g",
+              "name": "white baking chocolate",
+              "note": "chopped",
+              "pantry": {
+                "name": "White chocolate (baking)",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "pink or heart sprinkles",
+              "pantry": {
+                "name": "Holiday sprinkles",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Drizzle",
+          "text": "Once the dark chocolate is set, melt the white chocolate in 20-second bursts, drizzle it over the berries with a fork, add sprinkles and chill 10 minutes more."
+        }
+      ],
+      "costAdd": [
+        [
+          "White chocolate, 60 g",
+          1.3,
+          "white-chocolate-baking"
+        ],
+        [
+          "Sprinkles",
+          0.25,
+          "holiday-sprinkles"
+        ]
+      ],
+      "plating": [
+        "Line them up on a white plate.",
+        "A few in mini paper cups like a box of chocolates.",
+        "Serve with something bubbly."
+      ]
+    }
+  },
+  "why": {
+    "0-2": "A little oil keeps the chocolate fluid and gives a thinner, glossier shell.",
+    "0-0": "Dry berries let the chocolate cling."
+  },
+  "fancyNight": false,
+  "funFact": "Chocolate-covered strawberries were popularized in Chicago in the 1960s by a confectioner named Lorraine Lorusso.",
+  "keeps": {
+    "fridge": "1 day, uncovered",
+    "freezer": null,
+    "note": "the berries go mushy"
+  },
+  "drink": "Sparkling wine, or sparkling pink lemonade.",
+  "pairs": []
+}

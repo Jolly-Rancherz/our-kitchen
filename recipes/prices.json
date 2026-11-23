@@ -77,6 +77,10 @@
    "price": 2.49,
    "pack": "900 ml"
   },
+  "beef-tenderloin-steaks": {
+   "price": 15.99,
+   "pack": "2 steaks, 340 g"
+  },
   "black-beans-canned": {
    "price": 1.29,
    "pack": "540 ml can"
@@ -84,6 +88,10 @@
   "black-pepper": {
    "price": 3.49,
    "pack": "jar"
+  },
+  "boneless-leg-of-lamb": {
+   "price": 32.38,
+   "pack": "about 1.8 kg"
   },
   "bread-and-butter-pickles": {
    "price": 3.49,
@@ -216,6 +224,10 @@
   "cream-cheese-brick": {
    "price": 3.49,
    "pack": "250 g brick"
+  },
+  "crispy-fried-onions": {
+   "price": 3.99,
+   "pack": "170 g"
   },
   "crushed-tomatoes-canned": {
    "price": 1.99,
@@ -537,6 +549,10 @@
    "price": 2.0,
    "pack": "450 g"
   },
+  "lobster-tails-frozen": {
+   "price": 19.98,
+   "pack": "2 × 140 g"
+  },
   "mangoes": {
    "price": 1.29,
    "pack": "each"
@@ -556,6 +572,10 @@
   "milk": {
    "price": 5.79,
    "pack": "2 L"
+  },
+  "mini-marshmallows": {
+   "price": 2.49,
+   "pack": "250 g"
   },
   "mozzarella-shredded": {
    "price": 6.49,
@@ -697,13 +717,25 @@
    "price": 4.49,
    "pack": "450 g, 2 sheets"
   },
+  "pure-pumpkin-puree": {
+   "price": 2.49,
+   "pack": "398 ml"
+  },
   "raisins": {
    "price": 3.49,
    "pack": "400 g"
   },
+  "raspberries": {
+   "price": 3.99,
+   "pack": "170 g"
+  },
   "raspberry-jam": {
    "price": 3.99,
    "pack": "500 ml"
+  },
+  "red-food-colouring": {
+   "price": 2.99,
+   "pack": "4-pack"
   },
   "red-onions": {
    "price": 0.7,
@@ -732,6 +764,10 @@
   "rigatoni": {
    "price": 2.0,
    "pack": "450 g"
+  },
+  "rolled-oats": {
+   "price": 4.49,
+   "pack": "1 kg"
   },
   "romaine-hearts": {
    "price": 3.99,
@@ -813,6 +849,10 @@
    "price": 16.5,
    "pack": "per kg"
   },
+  "strawberries": {
+   "price": 3.99,
+   "pack": "454 g"
+  },
   "striploin-steak": {
    "price": 14.99,
    "pack": "about 450 g"
@@ -853,6 +893,10 @@
    "price": 19.99,
    "pack": "1.36–1.4 kg, frozen boneless"
   },
+  "turkey-thighs-bone-in": {
+   "price": 12.59,
+   "pack": "about 1.4 kg"
+  },
   "vanilla-extract": {
    "price": 6.99,
    "pack": "43 ml"
@@ -860,6 +904,10 @@
   "vanilla-ice-cream": {
    "price": 4.99,
    "pack": "1.5 L"
+  },
+  "white-chocolate-baking": {
+   "price": 3.99,
+   "pack": "200 g"
   },
   "white-vinegar": {
    "price": 2.49,

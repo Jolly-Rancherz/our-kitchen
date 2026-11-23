@@ -1,0 +1,457 @@
+{
+  "title": "Filet Mignon with Red Wine Pan Sauce",
+  "subtitle": "butter-basted tenderloin steaks, a glossy red wine sauce and garlic mashed potatoes",
+  "image": "assets/img/filet-mignon.webp",
+  "imageAlt": "A seared filet mignon with red wine pan sauce beside creamy mashed potatoes on a cream plate with a navy napkin",
+  "servings": 2,
+  "servingsNote": "Valentine's dinner for two",
+  "prep": 15,
+  "cook": 30,
+  "cost": {
+    "total": 21.5,
+    "breakdown": [
+      [
+        "Beef tenderloin steaks, 2 (340 g)",
+        15.99,
+        "beef-tenderloin-steaks"
+      ],
+      [
+        "Yukon Gold potatoes, 500 g",
+        1.21,
+        "yukon-gold-potatoes"
+      ],
+      [
+        "Red wine, ½ cup",
+        2.0,
+        "red-wine"
+      ],
+      [
+        "Beef broth, ½ cup",
+        0.4,
+        "beef-broth"
+      ],
+      [
+        "Butter, 5 tbsp",
+        1.0,
+        "butter"
+      ],
+      [
+        "Milk, garlic, onion, oil, salt, pepper",
+        0.9
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop",
+      "oven-bake"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [
+      "date-night"
+    ],
+    "leftovers": [],
+    "course": [
+      "main"
+    ],
+    "holiday": [
+      "valentines"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Date night"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Take the steaks out of the fridge 30 minutes before cooking and pat them very dry."
+    },
+    {
+      "icon": "oven",
+      "text": "Use an oven-safe skillet: the steaks go from the stove into a hot oven."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Mashed potatoes",
+      "items": [
+        {
+          "qty": 500,
+          "unit": "g",
+          "name": "Yukon Gold potatoes",
+          "note": "peeled and cut in chunks",
+          "pantry": {
+            "name": "Yukon Gold potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "grated",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Steaks",
+      "items": [
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "beef tenderloin steaks",
+          "note": "about 4 cm thick (340 g total)",
+          "pantry": {
+            "name": "Beef tenderloin steaks",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 28,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "smashed",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Red wine sauce",
+      "items": [
+        {
+          "qty": 0.25,
+          "unit": null,
+          "name": "yellow onions",
+          "note": "very finely diced",
+          "pantry": {
+            "name": "Yellow onions",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "dry red wine",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Red wine",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "beef broth",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Beef broth",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "cold",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Potatoes",
+      "text": "Cover the potatoes with cold salted water, boil and simmer 15 minutes until very tender. Drain, mash with the milk, butter, grated garlic and salt, and keep covered.",
+      "timer": 15,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4"
+      ]
+    },
+    {
+      "title": "Sear",
+      "text": "Heat the oven to 200°C (400°F). Season the steaks with salt and pepper. Heat the oil in an oven-safe skillet over medium-high until shimmering and sear 3 minutes a side until deeply browned.",
+      "timer": 6,
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Baste and roast",
+      "text": "Add the butter and smashed garlic, tilt the pan and spoon the foaming butter over the steaks 30 seconds. Move the skillet to the oven for 5–8 minutes, until 63°C (145°F) for medium-rare or 71°C (160°F) for medium.",
+      "timer": 7,
+      "uses": [
+        "1-4",
+        "1-5"
+      ]
+    },
+    {
+      "title": "Rest",
+      "text": "Rest the steaks on a plate, loosely tented, 5 minutes.",
+      "timer": 5,
+      "uses": []
+    },
+    {
+      "title": "Pan sauce",
+      "text": "Pour off all but 1 tbsp fat (careful: the handle is hot). Cook the onion over medium 1 minute, add the wine and boil, scraping, until reduced by half, 2–3 minutes. Add the broth and boil 3 minutes until syrupy. Off the heat, swirl in the cold butter.",
+      "timer": 6,
+      "uses": [
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3"
+      ]
+    },
+    {
+      "title": "Serve",
+      "text": "Plate the steaks on the mash and spoon the sauce over.",
+      "uses": []
+    }
+  ],
+  "together": "BAAAA*",
+  "fixIt": [
+    {
+      "problem": "Grey, not browned",
+      "fix": "The pan wasn't hot enough or the steaks were damp; dry them well and wait for the oil to shimmer."
+    },
+    {
+      "problem": "Sauce split or greasy",
+      "fix": "Take the pan off the heat before adding the butter, and swirl, don't boil."
+    },
+    {
+      "problem": "Overcooked",
+      "fix": "Pull them 3°C before your target; they rise while resting."
+    }
+  ],
+  "saleTip": "Buy a small whole beef tenderloin roast on sale and cut your own steaks; freeze the rest.",
+  "swap": "Striploin or top sirloin steaks (sear only, 4–5 minutes a side). Beef broth with 1 tsp balsamic vinegar for the wine.",
+  "leftovers": "Slice cold leftover steak thinly for sandwiches.",
+  "doneness": "Whole cuts of beef to 63°C (145°F) for medium-rare or 71°C (160°F) for medium (Health Canada).",
+  "source": "Based on tested restaurant-style filet mignon methods (Serious Eats, Canadian Living): sear, butter-baste, finish in a 200°C oven, then a reduced red wine pan sauce mounted with butter.",
+  "gear": [
+    "Oven-safe skillet (cast iron is ideal)",
+    "Pot",
+    "Masher",
+    "Instant-read thermometer",
+    "Spoon for basting"
+  ],
+  "prepAhead": [
+    "Make the mash ahead and reheat with a splash of milk.",
+    "Dice the onion and measure the sauce before searing."
+  ],
+  "reheat": "Leftover steak: slice and warm gently in a covered pan, or eat cold. Mash to 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Seared steaks and garlic mash with garlic butter; no wine sauce.",
+      "drop": [
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3"
+      ],
+      "stepNotes": {
+        "4": "Basic: skip the sauce; spoon the pan butter over the steaks."
+      },
+      "costDrop": [
+        "red-wine",
+        "beef-broth"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Bacon-wrapped filets and buttery green beans.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 2,
+              "unit": null,
+              "name": "slices bacon",
+              "pantry": {
+                "name": "Bacon",
+                "cat": "meat"
+              }
+            },
+            {
+              "qty": 200,
+              "unit": "g",
+              "name": "green beans",
+              "note": "trimmed",
+              "pantry": {
+                "name": "Green beans",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "butter",
+              "metric": {
+                "qty": 14,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Butter",
+                "cat": "dairy"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "1": "Fancy: wrap a bacon slice around each steak and secure with a toothpick before searing; sear the bacon edge 1 minute too."
+      },
+      "addSteps": [
+        {
+          "title": "Green beans",
+          "text": "Boil the beans 4 minutes, drain and toss with the butter and a pinch of salt."
+        }
+      ],
+      "costAdd": [
+        [
+          "Bacon, 2 slices",
+          0.94,
+          "bacon"
+        ],
+        [
+          "Green beans, 200 g",
+          0.88,
+          "green-beans"
+        ],
+        [
+          "Butter",
+          0.2,
+          "butter"
+        ]
+      ],
+      "plating": [
+        "Mash swooshed with the back of a spoon, steak on top.",
+        "Sauce around, not over the crust.",
+        "Candles, cloth napkins, the good glasses."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Tenderloin is the most tender cut, and a thick steak gives a crust without overcooking the centre.",
+    "2-3": "Cold butter swirled in at the end makes the sauce glossy."
+  },
+  "fancyNight": true,
+  "funFact": "'Filet mignon' means 'dainty fillet' in French, but in France the cut is usually called tournedos.",
+  "keeps": {
+    "fridge": "3 days",
+    "freezer": null,
+    "note": "best fresh; cooked tenderloin goes dry"
+  },
+  "drink": "A Cabernet Sauvignon or Malbec, or a pomegranate spritzer.",
+  "pairs": [
+    [
+      "holidays-09",
+      "dessert for two"
+    ]
+  ]
+}

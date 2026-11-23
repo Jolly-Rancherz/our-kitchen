@@ -1,0 +1,361 @@
+{
+  "title": "Garlic Butter Baked Lobster Tails",
+  "subtitle": "butterflied tails baked in garlic lemon butter, with lemony buttered rice",
+  "image": "assets/img/lobster-tails.webp",
+  "imageAlt": "Two butterflied baked lobster tails with garlic butter and lemon wedges beside buttered rice on a cream plate with a navy napkin",
+  "servings": 2,
+  "servingsNote": "Valentine's dinner for two",
+  "prep": 20,
+  "cook": 25,
+  "cost": {
+    "total": 22.77,
+    "breakdown": [
+      [
+        "Frozen lobster tails, 2 (about 140 g each)",
+        19.98,
+        "lobster-tails-frozen"
+      ],
+      [
+        "Jasmine rice, 1 cup",
+        0.7,
+        "jasmine-rice"
+      ],
+      [
+        "Butter, 5 tbsp",
+        1.0,
+        "butter"
+      ],
+      [
+        "Lemon",
+        0.79,
+        "lemons"
+      ],
+      [
+        "Garlic, paprika, salt",
+        0.3
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "rice"
+    ],
+    "occasion": [
+      "date-night"
+    ],
+    "leftovers": [],
+    "course": [
+      "main"
+    ],
+    "holiday": [
+      "valentines"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Date night"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Thaw the tails overnight in the fridge (or sealed in cold water 30–60 minutes)."
+    },
+    {
+      "icon": "knife",
+      "text": "Kitchen scissors make butterflying easy."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Lemon rice",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "jasmine rice",
+          "note": "rinsed",
+          "metric": {
+            "qty": 200,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Jasmine rice",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "cup",
+          "name": "water",
+          "metric": {
+            "qty": 375,
+            "unit": "ml"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "butter",
+          "metric": {
+            "qty": 14,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lobster",
+      "items": [
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "frozen lobster tails",
+          "note": "about 140 g each, thawed",
+          "pantry": {
+            "name": "Lobster tails (frozen)",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 56,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "lemons",
+          "note": "zested, then cut in wedges",
+          "pantry": {
+            "name": "Lemons",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Start the rice",
+      "text": "Bring the rice, water and a pinch of salt to a boil, cover and simmer on low 15 minutes, then rest 10 minutes off the heat. Fluff with the butter.",
+      "timer": 15,
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3"
+      ]
+    },
+    {
+      "title": "Butterfly",
+      "text": "Heat the oven to 220°C (425°F). With scissors, cut down the centre of the top shell to the tail fan. Gently lift the meat up through the cut so it sits on top of the shell, still attached at the tail. Set on a small baking sheet.",
+      "uses": [
+        "1-0"
+      ]
+    },
+    {
+      "title": "Butter",
+      "text": "Stir the melted butter with the garlic, lemon zest, paprika and salt and spoon most of it over the meat.",
+      "uses": [
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Bake 10–14 minutes (about 1 minute per 30 g), until the meat is opaque and white all the way through and reads 74°C (165°F).",
+      "timer": 12,
+      "uses": []
+    },
+    {
+      "title": "Serve",
+      "text": "Spoon the rest of the garlic butter over the tails and serve with the rice and lemon wedges.",
+      "uses": []
+    }
+  ],
+  "together": "ABAA*",
+  "fixIt": [
+    {
+      "problem": "Rubbery meat",
+      "fix": "Overbaked; check at the low end of the time with a thermometer."
+    },
+    {
+      "problem": "Meat tears when lifting",
+      "fix": "Loosen it from the shell with your finger first and lift gently."
+    },
+    {
+      "problem": "Shell won't cut",
+      "fix": "Use sturdy kitchen shears and cut from the open end."
+    }
+  ],
+  "saleTip": "No Frills often has lobster tails 2 for $20 around Valentine's and Easter; check the freezer case.",
+  "swap": "Large raw shrimp (bake 6–8 minutes to 74°C / 165°F). Cauliflower rice for jasmine.",
+  "leftovers": "Best fresh; chop any leftover meat into a lobster roll the next day.",
+  "doneness": "Shellfish to 74°C (165°F); the meat turns opaque white (Health Canada).",
+  "source": "Based on tested baked butterflied lobster tail methods (Food Network, Canadian Living): piggyback-style tails baked at about 220°C, roughly 1 minute per 30 g.",
+  "gear": [
+    "Kitchen scissors",
+    "Small baking sheet",
+    "Small pot with lid",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Butterfly the tails and mix the garlic butter up to 4 hours ahead; keep in the fridge."
+  ],
+  "reheat": "Gently in a covered pan with a little butter until 74°C (165°F); it toughens if overheated.",
+  "thaw": {
+    "item": "lobster tails",
+    "hours": 12
+  },
+  "levels": {
+    "basic": {
+      "note": "Garlic lemon butter lobster and buttered rice; no paprika.",
+      "drop": [
+        "1-4"
+      ],
+      "stepNotes": {
+        "2": "Basic: skip the paprika."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A golden Parmesan-panko crust on the lobster and garlic bread on the side.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "panko breadcrumbs",
+              "pantry": {
+                "name": "Panko breadcrumbs",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "grated Parmesan",
+              "pantry": {
+                "name": "Parmesan (grated)",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": null,
+              "name": "baguette",
+              "note": "sliced",
+              "pantry": {
+                "name": "Baguette",
+                "cat": "grains"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "2": "Fancy: sprinkle the panko and Parmesan over the buttered meat."
+      },
+      "addSteps": [
+        {
+          "title": "Garlic bread",
+          "text": "Brush the baguette slices with a little of the garlic butter and bake alongside for the last 6–8 minutes until crisp."
+        }
+      ],
+      "costAdd": [
+        [
+          "Panko, Parmesan",
+          0.6
+        ],
+        [
+          "Baguette, ½",
+          1.25,
+          "baguette"
+        ]
+      ],
+      "plating": [
+        "Tails on top of a mound of rice.",
+        "Lemon wedges and a little dish of warm garlic butter.",
+        "Candles and soft music."
+      ]
+    }
+  },
+  "why": {
+    "1-0": "Butterflying lets the butter soak in and the meat cook evenly.",
+    "1-3": "Lemon zest perfumes the butter without making it sour."
+  },
+  "fancyNight": true,
+  "funFact": "Nova Scotia's lobster season off the southwest coast opens on the last Monday of November, Dumping Day.",
+  "keeps": {
+    "fridge": "2 days",
+    "freezer": null,
+    "note": "cooked lobster turns tough"
+  },
+  "drink": "A Chardonnay or sparkling wine, or sparkling lemonade.",
+  "pairs": [
+    [
+      "holidays-09",
+      "dessert for two"
+    ]
+  ]
+}

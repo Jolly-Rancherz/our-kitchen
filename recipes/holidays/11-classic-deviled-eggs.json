@@ -1,0 +1,286 @@
+{
+  "title": "Classic Deviled Eggs",
+  "subtitle": "creamy, tangy filling piped into tender egg whites, with a sprinkle of paprika",
+  "image": "assets/img/deviled-eggs.webp",
+  "imageAlt": "A platter of classic deviled eggs with piped yellow filling and a dusting of paprika on a cream plate beside a navy napkin",
+  "servings": 6,
+  "servingsNote": "12 halves: an appetizer for 6",
+  "prep": 20,
+  "cook": 15,
+  "cost": {
+    "total": 3.1,
+    "breakdown": [
+      [
+        "Eggs, 6",
+        2.35,
+        "eggs"
+      ],
+      [
+        "Mayonnaise, ¼ cup",
+        0.6,
+        "mayonnaise"
+      ],
+      [
+        "Vinegar, paprika, salt, pepper",
+        0.15
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "stovetop"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+      "side"
+    ],
+    "holiday": [
+      "easter"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Make-ahead"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Eggs a week or so old peel much more easily than very fresh ones."
+    },
+    {
+      "icon": "cup",
+      "text": "Have a bowl of ice water ready for the cooked eggs."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Deviled eggs",
+      "items": [
+        {
+          "qty": 6,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "mayonnaise",
+          "metric": {
+            "qty": 60,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Mayonnaise",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "white vinegar",
+          "pantry": {
+            "name": "White vinegar",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "granulated sugar",
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.125,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "sweet paprika",
+          "note": "mild, not hot",
+          "pantry": {
+            "name": "Paprika",
+            "cat": "spices"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Cook",
+      "text": "Put the eggs in a pot, cover with cold water by 2 cm and bring to a boil. Turn off the heat, cover and let stand 12 minutes.",
+      "timer": 12,
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Chill",
+      "text": "Move the eggs to ice water for 10 minutes, then peel.",
+      "timer": 10,
+      "uses": []
+    },
+    {
+      "title": "Filling",
+      "text": "Halve the eggs lengthwise and pop the yolks into a bowl. Mash the yolks fine with a fork, then stir in the mayonnaise, vinegar, sugar, salt and pepper until smooth.",
+      "uses": [
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Fill",
+      "text": "Spoon or pipe the filling into the whites and dust with paprika. Chill until serving.",
+      "uses": [
+        "0-6"
+      ]
+    }
+  ],
+  "together": "ABAA",
+  "fixIt": [
+    {
+      "problem": "Green ring on the yolk",
+      "fix": "Overcooked; stick to 12 minutes and chill them fast."
+    },
+    {
+      "problem": "Hard to peel",
+      "fix": "Crack all over and peel under running water, starting at the wide end."
+    },
+    {
+      "problem": "Filling lumpy",
+      "fix": "Push the yolks through a sieve before mixing."
+    }
+  ],
+  "saleTip": "Eggs are often a loss leader at No Frills before Easter; buy two dozen.",
+  "swap": "Greek yogurt for half the mayonnaise. Pickle juice for the vinegar.",
+  "leftovers": "Keep covered in the fridge and eat within 2 days.",
+  "doneness": "Cook eggs until the yolk and white are firm (Health Canada). Keep deviled eggs cold and out of the fridge no more than 2 hours.",
+  "source": "Based on tested deviled egg methods (Canadian Living, Serious Eats): eggs brought to a boil then rested 12 minutes off the heat, iced, and filled with a mayonnaise and vinegar yolk mix.",
+  "gear": [
+    "Pot with lid",
+    "Bowl of ice water",
+    "Fork",
+    "Piping bag or zip bag (optional)"
+  ],
+  "prepAhead": [
+    "Cook and peel the eggs a day ahead; make the filling and fill up to 4 hours before serving."
+  ],
+  "reheat": "Served cold; no reheating.",
+  "levels": {
+    "basic": {
+      "note": "Yolk, mayo, salt and pepper; no vinegar, sugar or paprika.",
+      "drop": [
+        "0-2",
+        "0-3",
+        "0-6"
+      ],
+      "stepNotes": {
+        "2": "Basic: just mayo, salt and pepper.",
+        "3": "Basic: no paprika."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Topped with crisp bacon bits and smoked paprika.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 3,
+              "unit": null,
+              "name": "slices bacon",
+              "note": "cooked crisp and finely crumbled",
+              "pantry": {
+                "name": "Bacon",
+                "cat": "meat"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "tsp",
+              "name": "smoked paprika",
+              "note": "in place of sweet paprika",
+              "pantry": {
+                "name": "Smoked paprika",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: dust with smoked paprika and top each with bacon."
+      },
+      "addSteps": [
+        {
+          "title": "Bacon",
+          "text": "Cook the bacon in a skillet over medium 6–8 minutes until crisp, drain and crumble fine."
+        }
+      ],
+      "costAdd": [
+        [
+          "Bacon, 3 slices",
+          1.4,
+          "bacon"
+        ],
+        [
+          "Smoked paprika",
+          0.1,
+          "smoked-paprika"
+        ]
+      ],
+      "plating": [
+        "Pipe with a star tip.",
+        "Line them up on a platter.",
+        "Keep the platter over ice outside."
+      ]
+    }
+  },
+  "why": {
+    "0-2": "A splash of vinegar gives the classic tang.",
+    "0-3": "A pinch of sugar rounds out the vinegar."
+  },
+  "fancyNight": false,
+  "funFact": "'Deviled' has meant spicy or zesty food since the 1700s, even when, like ours, it isn't spicy at all.",
+  "keeps": {
+    "fridge": "2 days",
+    "freezer": null,
+    "note": "cooked egg whites turn rubbery"
+  },
+  "drink": "Sparkling water with lemon.",
+  "pairs": [
+    [
+      "holidays-10",
+      "the Easter roast"
+    ]
+  ]
+}

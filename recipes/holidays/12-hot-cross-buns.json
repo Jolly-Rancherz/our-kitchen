@@ -1,0 +1,417 @@
+{
+  "title": "Hot Cross Buns",
+  "subtitle": "soft spiced Easter buns with raisins, a piped cross and a shiny honey glaze",
+  "image": "assets/img/hot-cross-buns.webp",
+  "imageAlt": "A tray of glossy hot cross buns with white piped crosses, one split and buttered on a cream plate beside a navy napkin",
+  "servings": 12,
+  "servingsNote": "12 buns",
+  "prep": 130,
+  "cook": 22,
+  "cost": {
+    "total": 5.6,
+    "breakdown": [
+      [
+        "Flour, 3½ cups",
+        0.91,
+        "all-purpose-flour"
+      ],
+      [
+        "Raisins, ¾ cup",
+        1.2,
+        "raisins"
+      ],
+      [
+        "Milk, 1 cup",
+        0.73,
+        "milk"
+      ],
+      [
+        "Instant yeast, 1 pouch",
+        0.66,
+        "instant-yeast"
+      ],
+      [
+        "Butter, ¼ cup",
+        0.8,
+        "butter"
+      ],
+      [
+        "Honey, 2 tbsp",
+        0.4,
+        "honey"
+      ],
+      [
+        "Egg, sugar, spices, salt",
+        0.9
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "dessert"
+    ],
+    "holiday": [
+      "easter"
+    ]
+  },
+  "badges": [
+    "Weekend project",
+    "Easter brunch"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "Warm the milk to about 45°C (110°F): warm to the touch, not hot."
+    },
+    {
+      "icon": "oven",
+      "text": "Plan about 2½ hours: two rises and a short bake."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Dough",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "milk",
+          "note": "warmed to 45°C (110°F)",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "pouch (8 g) instant yeast",
+          "pantry": {
+            "name": "Instant yeast",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "granulated sugar",
+          "metric": {
+            "qty": 50,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Granulated sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 57,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 3.5,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "note": "plus a little for kneading",
+          "metric": {
+            "qty": 455,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1.5,
+          "unit": "tsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "ground nutmeg",
+          "pantry": {
+            "name": "Ground nutmeg",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "ground allspice",
+          "pantry": {
+            "name": "Ground allspice",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "raisins",
+          "metric": {
+            "qty": 110,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Raisins",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Crosses and glaze",
+      "items": [
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 45,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "water"
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "honey",
+          "pantry": {
+            "name": "Honey",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Dough",
+      "text": "Stir the warm milk, yeast and sugar in a large bowl. Add the melted butter, egg, salt, cinnamon, nutmeg, allspice and 3 cups of the flour and stir into a shaggy dough.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9",
+        "0-5=3 cups"
+      ]
+    },
+    {
+      "title": "Knead",
+      "text": "Knead in the rest of the flour 6–8 minutes until smooth, then knead in the raisins.",
+      "uses": [
+        "0-5=½ cup",
+        "0-10"
+      ]
+    },
+    {
+      "title": "First rise",
+      "text": "Cover in a greased bowl and let rise somewhere warm about 1 hour, until doubled.",
+      "timer": 60,
+      "uses": []
+    },
+    {
+      "title": "Shape",
+      "text": "Divide into 12 pieces, roll into smooth balls and set them close together in a greased 23×33 cm (9×13 in) pan. Cover and rise 40–45 minutes until puffy. Heat the oven to 190°C (375°F).",
+      "timer": 42,
+      "uses": []
+    },
+    {
+      "title": "Cross",
+      "text": "Stir the flour and water into a thick paste, spoon it into a zip bag, snip a small corner and pipe a cross over each row of buns.",
+      "uses": [
+        "1-0",
+        "1-1"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Bake 20–22 minutes, until deep golden and the centre bun reads 88°C (190°F).",
+      "timer": 21,
+      "uses": []
+    },
+    {
+      "title": "Glaze",
+      "text": "Warm the honey 10 seconds in the microwave and brush over the hot buns.",
+      "uses": [
+        "1-2"
+      ]
+    }
+  ],
+  "together": "AAAAB**",
+  "fixIt": [
+    {
+      "problem": "Dough too sticky",
+      "fix": "Knead in flour a tablespoon at a time; a little tack is right."
+    },
+    {
+      "problem": "Crosses disappeared",
+      "fix": "The paste was too thin; it should hold a ribbon."
+    },
+    {
+      "problem": "Dense buns",
+      "fix": "Let them rise until truly puffy; a warm spot helps."
+    }
+  ],
+  "saleTip": "Buy raisins from the bulk bins for just the ¾ cup you need.",
+  "swap": "Dried cranberries or chopped dried apricots for raisins. Active dry yeast: foam it in the milk 10 minutes first.",
+  "leftovers": "Split and toast them with butter for days.",
+  "doneness": "Bake until deep golden and 88°C (190°F) in the centre; the egg in the dough is fully cooked.",
+  "source": "Based on traditional hot cross bun methods (BBC Good Food, King Arthur Baking): a spiced enriched dough with dried fruit, two rises, a flour-paste cross and a sticky glaze.",
+  "gear": [
+    "Large bowl",
+    "23×33 cm (9×13 in) pan",
+    "Zip bag for piping",
+    "Pastry brush",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Shape the buns, cover and refrigerate overnight; let them sit out 1 hour before piping and baking."
+  ],
+  "reheat": "Toast split buns, or warm 15 seconds in the microwave; no food-safety reheat needed.",
+  "levels": {
+    "basic": {
+      "note": "Cinnamon buns with raisins and a honey glaze; no crosses or extra spices.",
+      "drop": [
+        "0-8",
+        "0-9",
+        "1-0",
+        "1-1"
+      ],
+      "stepNotes": {
+        "0": "Basic: just cinnamon.",
+        "4": "Basic: skip the crosses."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Orange zest in the dough and an orange icing cross.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "orange",
+              "note": "zested and juiced",
+              "pantry": {
+                "name": "Oranges",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "icing sugar",
+              "pantry": {
+                "name": "Icing sugar",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: add the orange zest with the spices."
+      },
+      "addSteps": [
+        {
+          "title": "Orange icing",
+          "text": "Once the buns cool, stir the icing sugar with 1 tbsp orange juice and pipe it over the crosses."
+        }
+      ],
+      "costAdd": [
+        [
+          "Orange",
+          0.99,
+          "oranges"
+        ],
+        [
+          "Icing sugar",
+          0.3,
+          "icing-sugar"
+        ]
+      ],
+      "plating": [
+        "Pull apart warm and split.",
+        "Butter melting in the middle.",
+        "In a basket for Easter brunch."
+      ]
+    }
+  },
+  "why": {
+    "0-10": "Kneading the raisins in last keeps them whole.",
+    "1-2": "A warm honey glaze makes the classic sticky shine."
+  },
+  "fancyNight": false,
+  "funFact": "In Elizabethan England, a 1592 law limited hot cross buns to Good Friday, Christmas and burials.",
+  "keeps": {
+    "room": "2 days, covered",
+    "fridge": "5 days",
+    "freezer": "3 months",
+    "note": "freeze in a bag",
+    "thaw": "Thaw on the counter 1 hour, then toast"
+  },
+  "drink": "A pot of tea with milk, or coffee.",
+  "pairs": []
+}

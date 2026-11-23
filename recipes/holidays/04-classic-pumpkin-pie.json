@@ -1,0 +1,334 @@
+{
+  "title": "Classic Pumpkin Pie",
+  "subtitle": "smooth, gently spiced custard pie with maple whipped cream",
+  "image": "assets/img/pumpkin-pie.webp",
+  "imageAlt": "A classic pumpkin pie with a slice cut out and served on a cream plate with whipped cream, beside a navy napkin",
+  "servings": 8,
+  "servingsNote": "one 23 cm (9 in) deep pie, 8 slices",
+  "prep": 15,
+  "cook": 55,
+  "cost": {
+    "total": 8.57,
+    "breakdown": [
+      [
+        "Pure pumpkin purée, 398 ml",
+        2.49,
+        "pure-pumpkin-puree"
+      ],
+      [
+        "Frozen deep pie shell",
+        2.25,
+        "frozen-deep-pie-shells"
+      ],
+      [
+        "Evaporated milk, 370 ml",
+        1.99,
+        "evaporated-milk"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "Brown sugar, ¾ cup",
+        0.56,
+        "brown-sugar"
+      ],
+      [
+        "Spices, salt",
+        0.5
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "dessert"
+    ],
+    "holiday": [
+      "thanksgiving"
+    ]
+  },
+  "badges": [
+    "Make-ahead"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "cup",
+      "text": "Use pure pumpkin purée, not pumpkin pie filling (that one is already sweetened and spiced)."
+    },
+    {
+      "icon": "oven",
+      "text": "Bake it the day before: it needs 2 hours to cool and set."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Pie",
+      "items": [
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "frozen deep-dish pie shell",
+          "note": "23 cm (9 in)",
+          "pantry": {
+            "name": "Frozen deep pie shells",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "can (398 ml) pure pumpkin purée",
+          "pantry": {
+            "name": "Pure pumpkin puree",
+            "cat": "canned"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 160,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground ginger",
+          "pantry": {
+            "name": "Ground ginger",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "ground nutmeg",
+          "pantry": {
+            "name": "Ground nutmeg",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.125,
+          "unit": "tsp",
+          "name": "ground cloves",
+          "pantry": {
+            "name": "Ground cloves",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "can (370 ml) evaporated milk",
+          "pantry": {
+            "name": "Evaporated milk",
+            "cat": "canned"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Heat",
+      "text": "Heat the oven to 220°C (425°F) with a rack in the lower third. Set the frozen shell on a baking sheet.",
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Filling",
+      "text": "Whisk the pumpkin, brown sugar, cinnamon, ginger, nutmeg, cloves and salt, then whisk in the eggs and evaporated milk until smooth.",
+      "uses": [
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9"
+      ]
+    },
+    {
+      "title": "Bake hot",
+      "text": "Pour into the shell and bake 15 minutes.",
+      "timer": 15,
+      "uses": []
+    },
+    {
+      "title": "Bake low",
+      "text": "Lower to 175°C (350°F) and bake 35–45 minutes more, until the edges are set, the centre jiggles slightly and a knife near the centre comes out clean (about 80°C / 175°F).",
+      "timer": 40,
+      "uses": []
+    },
+    {
+      "title": "Cool",
+      "text": "Cool on a rack at least 2 hours, then refrigerate.",
+      "uses": []
+    }
+  ],
+  "together": "AAAA*",
+  "fixIt": [
+    {
+      "problem": "Cracked top",
+      "fix": "It baked a little long; cover the crack with whipped cream and take it out at a slight jiggle next time."
+    },
+    {
+      "problem": "Crust edge too dark",
+      "fix": "Cover the edge with a foil ring after 25 minutes."
+    },
+    {
+      "problem": "Soggy bottom",
+      "fix": "Bake on the lower rack on a hot baking sheet."
+    }
+  ],
+  "saleTip": "Canned pumpkin sells out before Thanksgiving; buy two cans in September.",
+  "swap": "2½ tsp of our Pumpkin Pie Spice for the five spices. Homemade crust if you have one.",
+  "leftovers": "Keep slices covered in the fridge; they're good cold for breakfast.",
+  "doneness": "Bake until a knife near the centre comes out clean, about 80°C (175°F); the eggs are fully cooked. Refrigerate within 2 hours of cooling.",
+  "source": "Based on the classic evaporated-milk pumpkin pie (Libby's, Canadian Living): two-temperature bake, 220°C then 175°C.",
+  "gear": [
+    "Baking sheet",
+    "Whisk",
+    "Large bowl",
+    "Cooling rack"
+  ],
+  "prepAhead": [
+    "Bake up to 2 days ahead and keep covered in the fridge."
+  ],
+  "reheat": "Served cold or at room temperature; no reheating needed.",
+  "levels": {
+    "basic": {
+      "note": "Cinnamon and nutmeg only.",
+      "drop": [
+        "0-4",
+        "0-6"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the ginger and cloves."
+      },
+      "costDrop": [],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "Maple whipped cream and a sprinkle of cinnamon.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 1,
+              "unit": "cup",
+              "name": "35% whipping cream",
+              "metric": {
+                "qty": 250,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "35% whipping cream",
+                "cat": "dairy"
+              }
+            },
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "maple syrup",
+              "pantry": {
+                "name": "Maple syrup",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "addSteps": [
+        {
+          "title": "Maple cream",
+          "text": "Whip the cream with the maple syrup to soft peaks and spoon onto each slice."
+        }
+      ],
+      "costAdd": [
+        [
+          "Whipping cream, 1 cup",
+          2.37,
+          "35-whipping-cream"
+        ],
+        [
+          "Maple syrup",
+          0.58,
+          "maple-syrup"
+        ]
+      ],
+      "plating": [
+        "Cut with a hot, wiped knife for clean slices.",
+        "A big swirl of maple cream.",
+        "Dust with cinnamon."
+      ]
+    }
+  },
+  "why": {
+    "0-9": "Evaporated milk gives a dense, silky custard that sets cleanly.",
+    "0-1": "Pure purée lets us control the sugar and spice."
+  },
+  "fancyNight": false,
+  "funFact": "Morton, Illinois, calls itself the pumpkin capital of the world; most canned pumpkin comes from there.",
+  "keeps": {
+    "fridge": "4 days",
+    "freezer": "1 month",
+    "note": "wrap well; the texture softens slightly",
+    "thaw": "Thaw overnight in the fridge and serve cold"
+  },
+  "drink": "Coffee or a cup of chai tea.",
+  "pairs": [
+    [
+      "spice-blends-08",
+      "our pumpkin pie spice works here"
+    ]
+  ]
+}

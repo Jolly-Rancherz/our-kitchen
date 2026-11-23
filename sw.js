@@ -1,6 +1,6 @@
 /* Our Kitchen service worker — offline support.
    VERSION and the PRECACHE list are rewritten by tools/build_index.py. */
-const VERSION = '225bafe7bb';
+const VERSION = 'b2ceb581e6';
 const CACHE = 'our-kitchen-' + VERSION;
 const VENDOR = 'ok-vendor-tesseract-5.1.1';
 const PRECACHE = /*PRECACHE*/[
@@ -437,6 +437,19 @@ const PRECACHE = /*PRECACHE*/[
   "./recipes/comfort-soups/13-creamy-chicken-gnocchi-soup.json",
   "./recipes/comfort-soups/14-french-onion-soup.json",
   "./recipes/comfort-soups/15-mild-chicken-tortilla-soup.json",
+  "./recipes/holidays/01-roast-turkey-thighs-with-pan-gravy.json",
+  "./recipes/holidays/02-sweet-potato-casserole-with-pecan-crumble.json",
+  "./recipes/holidays/03-green-bean-casserole.json",
+  "./recipes/holidays/04-classic-pumpkin-pie.json",
+  "./recipes/holidays/05-apple-crisp.json",
+  "./recipes/holidays/06-filet-mignon-with-red-wine-pan-sauce.json",
+  "./recipes/holidays/07-garlic-butter-baked-lobster-tails.json",
+  "./recipes/holidays/08-red-velvet-cupcakes.json",
+  "./recipes/holidays/09-chocolate-dipped-strawberries.json",
+  "./recipes/holidays/10-garlic-roast-leg-of-lamb.json",
+  "./recipes/holidays/11-classic-deviled-eggs.json",
+  "./recipes/holidays/12-hot-cross-buns.json",
+  "./recipes/holidays/13-carrot-cake-with-cream-cheese-frosting.json",
   "./recipes/pasta-italian/01-chicken-alfredo.json",
   "./recipes/pasta-italian/03-classic-beef-lasagna.json",
   "./recipes/pasta-italian/05-baked-mac-and-cheese.json",

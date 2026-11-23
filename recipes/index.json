@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-23T16:47:59",
- "count": 139,
+ "generated": "2026-11-23T17:30:14",
+ "count": 152,
  "categories": [
   {
    "slug": "chicken",
@@ -14462,6 +14462,1247 @@
     {
      "name": "Ground cloves",
      "cat": "spices"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "holidays-01",
+   "category": "holidays",
+   "num": 1,
+   "file": "recipes/holidays/01-roast-turkey-thighs-with-pan-gravy.json",
+   "title": "Roast Turkey Thighs with Pan Gravy",
+   "subtitle": "all the Thanksgiving turkey flavour for two, with crisp skin and real drippings gravy",
+   "image": "assets/img/turkey-thighs-gravy.webp",
+   "prep": 20,
+   "cook": 95,
+   "total": 115,
+   "servings": 4,
+   "cost": 16.59,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "course": [
+     "main"
+    ],
+    "holiday": [
+     "thanksgiving"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "bone-in, skin-on turkey thighs",
+    "butter",
+    "garlic powder",
+    "onion powder",
+    "sweet paprika",
+    "dried thyme",
+    "dried sage",
+    "salt",
+    "black pepper",
+    "yellow onion",
+    "carrots",
+    "celery ribs",
+    "butter",
+    "all-purpose flour",
+    "chicken broth",
+    "salt"
+   ],
+   "pantry": [
+    {
+     "name": "Turkey thighs (bone-in)",
+     "cat": "meat"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Garlic powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Onion powder",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried thyme",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried sage",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Carrots",
+     "cat": "produce"
+    },
+    {
+     "name": "Celery",
+     "cat": "produce"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Chicken broth",
+     "cat": "baking"
+    }
+   ],
+   "fancyNight": true
+  },
+  {
+   "id": "holidays-02",
+   "category": "holidays",
+   "num": 2,
+   "file": "recipes/holidays/02-sweet-potato-casserole-with-pecan-crumble.json",
+   "title": "Sweet Potato Casserole with Pecan Crumble",
+   "subtitle": "silky spiced sweet potatoes under a crunchy brown sugar pecan top",
+   "image": "assets/img/sweet-potato-casserole.webp",
+   "prep": 25,
+   "cook": 50,
+   "total": 75,
+   "servings": 8,
+   "cost": 11.07,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+     "freezer"
+    ],
+    "course": [
+     "side"
+    ],
+    "holiday": [
+     "thanksgiving"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "sweet potatoes",
+    "butter",
+    "packed brown sugar",
+    "milk",
+    "large eggs",
+    "vanilla extract",
+    "ground cinnamon",
+    "salt",
+    "packed brown sugar",
+    "all-purpose flour",
+    "butter",
+    "pecans"
+   ],
+   "pantry": [
+    {
+     "name": "Sweet potatoes",
+     "cat": "produce"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Brown sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Vanilla extract",
+     "cat": "baking"
+    },
+    {
+     "name": "Ground cinnamon",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Pecan halves",
+     "cat": "baking"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "holidays-03",
+   "category": "holidays",
+   "num": 3,
+   "file": "recipes/holidays/03-green-bean-casserole.json",
+   "title": "Green Bean Casserole",
+   "subtitle": "tender green beans in a from-scratch creamy sauce under crispy onions",
+   "image": "assets/img/green-bean-casserole.webp",
+   "prep": 20,
+   "cook": 30,
+   "total": 50,
+   "servings": 6,
+   "cost": 8.18,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+     "side"
+    ],
+    "holiday": [
+     "thanksgiving"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "green beans",
+    "butter",
+    "yellow onions",
+    "garlic",
+    "all-purpose flour",
+    "chicken broth",
+    "milk",
+    "soy sauce",
+    "grated Parmesan",
+    "salt",
+    "black pepper",
+    "crispy fried onions"
+   ],
+   "pantry": [
+    {
+     "name": "Green beans",
+     "cat": "produce"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Chicken broth",
+     "cat": "baking"
+    },
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Soy sauce",
+     "cat": "sauces"
+    },
+    {
+     "name": "Parmesan (grated)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Crispy fried onions",
+     "cat": "baking"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "holidays-04",
+   "category": "holidays",
+   "num": 4,
+   "file": "recipes/holidays/04-classic-pumpkin-pie.json",
+   "title": "Classic Pumpkin Pie",
+   "subtitle": "smooth, gently spiced custard pie with maple whipped cream",
+   "image": "assets/img/pumpkin-pie.webp",
+   "prep": 15,
+   "cook": 55,
+   "total": 70,
+   "servings": 8,
+   "cost": 8.57,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+     "freezer"
+    ],
+    "course": [
+     "dessert"
+    ],
+    "holiday": [
+     "thanksgiving"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "frozen deep-dish pie shell",
+    "can (398 ml) pure pumpkin purée",
+    "packed brown sugar",
+    "ground cinnamon",
+    "ground ginger",
+    "ground nutmeg",
+    "ground cloves",
+    "salt",
+    "large eggs",
+    "can (370 ml) evaporated milk"
+   ],
+   "pantry": [
+    {
+     "name": "Frozen deep pie shells",
+     "cat": "frozen"
+    },
+    {
+     "name": "Pure pumpkin puree",
+     "cat": "canned"
+    },
+    {
+     "name": "Brown sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Ground cinnamon",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground ginger",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground nutmeg",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground cloves",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Evaporated milk",
+     "cat": "canned"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "holidays-05",
+   "category": "holidays",
+   "num": 5,
+   "file": "recipes/holidays/05-apple-crisp.json",
+   "title": "Apple Crisp",
+   "subtitle": "soft cinnamon apples under a buttery oat crumble",
+   "image": "assets/img/apple-crisp.webp",
+   "prep": 20,
+   "cook": 45,
+   "total": 65,
+   "servings": 6,
+   "cost": 8.07,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+     "freezer"
+    ],
+    "course": [
+     "dessert"
+    ],
+    "holiday": [
+     "thanksgiving"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "Gala or Honeycrisp apples",
+    "granulated sugar",
+    "lemon juice",
+    "ground cinnamon",
+    "all-purpose flour",
+    "large-flake rolled oats",
+    "all-purpose flour",
+    "packed brown sugar",
+    "ground cinnamon",
+    "salt",
+    "cold butter"
+   ],
+   "pantry": [
+    {
+     "name": "Apples (Gala)",
+     "cat": "produce"
+    },
+    {
+     "name": "Granulated sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Lemon juice",
+     "cat": "sauces"
+    },
+    {
+     "name": "Ground cinnamon",
+     "cat": "spices"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Rolled oats",
+     "cat": "grains"
+    },
+    {
+     "name": "Brown sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "holidays-06",
+   "category": "holidays",
+   "num": 6,
+   "file": "recipes/holidays/06-filet-mignon-with-red-wine-pan-sauce.json",
+   "title": "Filet Mignon with Red Wine Pan Sauce",
+   "subtitle": "butter-basted tenderloin steaks, a glossy red wine sauce and garlic mashed potatoes",
+   "image": "assets/img/filet-mignon.webp",
+   "prep": 15,
+   "cook": 30,
+   "total": 45,
+   "servings": 2,
+   "cost": 21.5,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "stovetop",
+     "oven-bake"
+    ],
+    "base": [
+     "potatoes"
+    ],
+    "occasion": [
+     "date-night"
+    ],
+    "leftovers": [],
+    "course": [
+     "main"
+    ],
+    "holiday": [
+     "valentines"
+    ],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "Yukon Gold potatoes",
+    "milk",
+    "butter",
+    "garlic",
+    "salt",
+    "beef tenderloin steaks",
+    "salt",
+    "black pepper",
+    "canola or vegetable oil",
+    "butter",
+    "garlic",
+    "yellow onions",
+    "dry red wine",
+    "beef broth",
+    "butter"
+   ],
+   "pantry": [
+    {
+     "name": "Yukon Gold potatoes",
+     "cat": "produce"
+    },
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Beef tenderloin steaks",
+     "cat": "meat"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Red wine",
+     "cat": "sauces"
+    },
+    {
+     "name": "Beef broth",
+     "cat": "baking"
+    }
+   ],
+   "fancyNight": true
+  },
+  {
+   "id": "holidays-07",
+   "category": "holidays",
+   "num": 7,
+   "file": "recipes/holidays/07-garlic-butter-baked-lobster-tails.json",
+   "title": "Garlic Butter Baked Lobster Tails",
+   "subtitle": "butterflied tails baked in garlic lemon butter, with lemony buttered rice",
+   "image": "assets/img/lobster-tails.webp",
+   "prep": 20,
+   "cook": 25,
+   "total": 45,
+   "servings": 2,
+   "cost": 22.77,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [
+     "rice"
+    ],
+    "occasion": [
+     "date-night"
+    ],
+    "leftovers": [],
+    "course": [
+     "main"
+    ],
+    "holiday": [
+     "valentines"
+    ],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "jasmine rice",
+    "water",
+    "butter",
+    "salt",
+    "frozen lobster tails",
+    "butter",
+    "garlic",
+    "lemons",
+    "sweet paprika",
+    "salt"
+   ],
+   "pantry": [
+    {
+     "name": "Jasmine rice",
+     "cat": "grains"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Lobster tails (frozen)",
+     "cat": "frozen"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Lemons",
+     "cat": "produce"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    }
+   ],
+   "fancyNight": true
+  },
+  {
+   "id": "holidays-08",
+   "category": "holidays",
+   "num": 8,
+   "file": "recipes/holidays/08-red-velvet-cupcakes.json",
+   "title": "Red Velvet Cupcakes",
+   "subtitle": "soft cocoa-kissed cupcakes with fluffy cream cheese frosting",
+   "image": "assets/img/red-velvet-cupcakes.webp",
+   "prep": 25,
+   "cook": 20,
+   "total": 45,
+   "servings": 12,
+   "cost": 6.74,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+     "freezer"
+    ],
+    "course": [
+     "dessert"
+    ],
+    "holiday": [
+     "valentines"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "all-purpose flour",
+    "granulated sugar",
+    "cocoa powder",
+    "baking soda",
+    "salt",
+    "canola or vegetable oil",
+    "buttermilk",
+    "large eggs",
+    "vanilla extract",
+    "white vinegar",
+    "red liquid food colouring",
+    "brick cream cheese",
+    "butter",
+    "icing sugar",
+    "vanilla extract"
+   ],
+   "pantry": [
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Granulated sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Cocoa powder",
+     "cat": "baking"
+    },
+    {
+     "name": "Baking soda",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Buttermilk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Vanilla extract",
+     "cat": "baking"
+    },
+    {
+     "name": "White vinegar",
+     "cat": "sauces"
+    },
+    {
+     "name": "Red food colouring",
+     "cat": "baking"
+    },
+    {
+     "name": "Cream cheese (brick)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Icing sugar",
+     "cat": "baking"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "holidays-09",
+   "category": "holidays",
+   "num": 9,
+   "file": "recipes/holidays/09-chocolate-dipped-strawberries.json",
+   "title": "Chocolate-Dipped Strawberries",
+   "subtitle": "plump strawberries in a crisp chocolate shell with a white chocolate drizzle",
+   "image": "assets/img/chocolate-strawberries.webp",
+   "prep": 20,
+   "cook": 5,
+   "total": 25,
+   "servings": 2,
+   "cost": 6.64,
+   "price": "$",
+   "tags": {
+    "method": [],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+     "dessert"
+    ],
+    "holiday": [
+     "valentines"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "under-30"
+    ]
+   },
+   "ingredients": [
+    "strawberries",
+    "semi-sweet baking chocolate",
+    "canola or vegetable oil"
+   ],
+   "pantry": [
+    {
+     "name": "Strawberries",
+     "cat": "produce"
+    },
+    {
+     "name": "Semi-sweet chocolate (baking)",
+     "cat": "baking"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "holidays-10",
+   "category": "holidays",
+   "num": 10,
+   "file": "recipes/holidays/10-garlic-roast-leg-of-lamb.json",
+   "title": "Garlic Roast Leg of Lamb with Potatoes",
+   "subtitle": "a boneless leg rubbed with garlic, lemon and dried rosemary, roasted over golden potatoes",
+   "image": "assets/img/roast-leg-of-lamb.webp",
+   "prep": 20,
+   "cook": 95,
+   "total": 115,
+   "servings": 6,
+   "cost": 38.77,
+   "price": "$$$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [
+     "potatoes"
+    ],
+    "occasion": [],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "course": [
+     "main"
+    ],
+    "holiday": [
+     "easter"
+    ],
+    "price": [
+     "$$$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "boneless leg of lamb",
+    "garlic",
+    "lemons",
+    "olive oil",
+    "dried rosemary",
+    "dried oregano",
+    "salt",
+    "black pepper",
+    "baby potatoes",
+    "olive oil",
+    "salt",
+    "all-purpose flour",
+    "beef broth"
+   ],
+   "pantry": [
+    {
+     "name": "Boneless leg of lamb",
+     "cat": "meat"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Lemons",
+     "cat": "produce"
+    },
+    {
+     "name": "Olive oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Dried rosemary",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried oregano",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Baby potatoes",
+     "cat": "produce"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Beef broth",
+     "cat": "baking"
+    }
+   ],
+   "fancyNight": true
+  },
+  {
+   "id": "holidays-11",
+   "category": "holidays",
+   "num": 11,
+   "file": "recipes/holidays/11-classic-deviled-eggs.json",
+   "title": "Classic Deviled Eggs",
+   "subtitle": "creamy, tangy filling piped into tender egg whites, with a sprinkle of paprika",
+   "image": "assets/img/deviled-eggs.webp",
+   "prep": 20,
+   "cook": 15,
+   "total": 35,
+   "servings": 6,
+   "cost": 3.1,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [],
+    "course": [
+     "side"
+    ],
+    "holiday": [
+     "easter"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "large eggs",
+    "mayonnaise",
+    "white vinegar",
+    "granulated sugar",
+    "salt",
+    "black pepper",
+    "sweet paprika"
+   ],
+   "pantry": [
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Mayonnaise",
+     "cat": "sauces"
+    },
+    {
+     "name": "White vinegar",
+     "cat": "sauces"
+    },
+    {
+     "name": "Granulated sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "holidays-12",
+   "category": "holidays",
+   "num": 12,
+   "file": "recipes/holidays/12-hot-cross-buns.json",
+   "title": "Hot Cross Buns",
+   "subtitle": "soft spiced Easter buns with raisins, a piped cross and a shiny honey glaze",
+   "image": "assets/img/hot-cross-buns.webp",
+   "prep": 130,
+   "cook": 22,
+   "total": 152,
+   "servings": 12,
+   "cost": 5.6,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+     "freezer"
+    ],
+    "course": [
+     "dessert"
+    ],
+    "holiday": [
+     "easter"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "milk",
+    "pouch (8 g) instant yeast",
+    "granulated sugar",
+    "butter",
+    "large eggs",
+    "all-purpose flour",
+    "salt",
+    "ground cinnamon",
+    "ground nutmeg",
+    "ground allspice",
+    "raisins",
+    "all-purpose flour",
+    "water",
+    "honey"
+   ],
+   "pantry": [
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Instant yeast",
+     "cat": "baking"
+    },
+    {
+     "name": "Granulated sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground cinnamon",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground nutmeg",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground allspice",
+     "cat": "spices"
+    },
+    {
+     "name": "Raisins",
+     "cat": "baking"
+    },
+    {
+     "name": "Honey",
+     "cat": "baking"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "holidays-13",
+   "category": "holidays",
+   "num": 13,
+   "file": "recipes/holidays/13-carrot-cake-with-cream-cheese-frosting.json",
+   "title": "Carrot Cake with Cream Cheese Frosting",
+   "subtitle": "a moist spiced carrot sheet cake under thick cream cheese frosting",
+   "image": "assets/img/carrot-cake.webp",
+   "prep": 30,
+   "cook": 40,
+   "total": 70,
+   "servings": 15,
+   "cost": 12.75,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+     "freezer"
+    ],
+    "course": [
+     "dessert"
+    ],
+    "holiday": [
+     "easter"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "all-purpose flour",
+    "baking powder",
+    "baking soda",
+    "ground cinnamon",
+    "ground nutmeg",
+    "salt",
+    "large eggs",
+    "canola or vegetable oil",
+    "packed brown sugar",
+    "granulated sugar",
+    "vanilla extract",
+    "finely grated carrots",
+    "brick cream cheese",
+    "butter",
+    "icing sugar",
+    "vanilla extract"
+   ],
+   "pantry": [
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Baking powder",
+     "cat": "baking"
+    },
+    {
+     "name": "Baking soda",
+     "cat": "baking"
+    },
+    {
+     "name": "Ground cinnamon",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground nutmeg",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Brown sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Granulated sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Vanilla extract",
+     "cat": "baking"
+    },
+    {
+     "name": "Carrots",
+     "cat": "produce"
+    },
+    {
+     "name": "Cream cheese (brick)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Icing sugar",
+     "cat": "baking"
     }
    ],
    "fancyNight": false

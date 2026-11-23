@@ -1,0 +1,388 @@
+{
+  "title": "Garlic Roast Leg of Lamb with Potatoes",
+  "subtitle": "a boneless leg rubbed with garlic, lemon and dried rosemary, roasted over golden potatoes",
+  "image": "assets/img/roast-leg-of-lamb.webp",
+  "imageAlt": "Sliced garlic roast leg of lamb, pink in the centre, with golden roast potatoes on a cream plate beside a navy napkin",
+  "servings": 6,
+  "servingsNote": "Easter dinner for 6, or for two with plenty of leftovers",
+  "prep": 20,
+  "cook": 95,
+  "cost": {
+    "total": 38.77,
+    "breakdown": [
+      [
+        "Boneless leg of lamb, 1.8 kg",
+        32.38,
+        "boneless-leg-of-lamb"
+      ],
+      [
+        "Baby potatoes, 1 kg",
+        3.49,
+        "baby-potatoes"
+      ],
+      [
+        "Garlic, lemon, olive oil",
+        1.9
+      ],
+      [
+        "Dried rosemary and oregano, salt, pepper",
+        0.4
+      ],
+      [
+        "Beef broth, flour",
+        0.6
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [
+      "potatoes"
+    ],
+    "occasion": [],
+    "leftovers": [
+      "lunch",
+      "freezer"
+    ],
+    "course": [
+      "main"
+    ],
+    "holiday": [
+      "easter"
+    ]
+  },
+  "badges": [
+    "Not spicy",
+    "Holiday roast"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Frozen lamb needs 1–2 days in the fridge to thaw; take it out 45 minutes before roasting."
+    },
+    {
+      "icon": "oven",
+      "text": "A thermometer is the only sure way: pull it at 60°C for medium-rare, it rises to 63°C as it rests."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Lamb",
+      "items": [
+        {
+          "qty": 1.8,
+          "unit": "kg",
+          "name": "boneless leg of lamb",
+          "note": "netted or tied",
+          "pantry": {
+            "name": "Boneless leg of lamb",
+            "cat": "meat"
+          }
+        },
+        {
+          "qty": 6,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "minced",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "lemons",
+          "note": "zested and juiced",
+          "pantry": {
+            "name": "Lemons",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "olive oil",
+          "pantry": {
+            "name": "Olive oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "dried rosemary",
+          "note": "crushed fine",
+          "pantry": {
+            "name": "Dried rosemary",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "dried oregano",
+          "pantry": {
+            "name": "Dried oregano",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "black pepper",
+          "pantry": {
+            "name": "Black pepper",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Potatoes",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "kg",
+          "name": "baby potatoes",
+          "note": "halved",
+          "pantry": {
+            "name": "Baby potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "olive oil",
+          "pantry": {
+            "name": "Olive oil",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pan gravy",
+      "items": [
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "beef broth",
+          "metric": {
+            "qty": 250,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Beef broth",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Rub",
+      "text": "Heat the oven to 220°C (425°F). Mash the garlic, lemon zest, 1 tbsp lemon juice, olive oil, dried rosemary, dried oregano, salt and pepper into a paste and rub it all over the lamb.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Potatoes",
+      "text": "Toss the potatoes with the olive oil and salt in a roasting pan and set the lamb on top (or on a rack over them).",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2"
+      ]
+    },
+    {
+      "title": "Roast",
+      "text": "Roast 15 minutes, then lower to 175°C (350°F) and roast 60–80 minutes more, stirring the potatoes once, until the thickest part reads 60°C (140°F) for medium-rare or 68°C (155°F) for medium.",
+      "timer": 85,
+      "uses": []
+    },
+    {
+      "title": "Rest",
+      "text": "Move the lamb to a board, tent with foil and rest 15 minutes; it rises to at least 63°C (145°F). Keep the potatoes warm in the turned-off oven.",
+      "timer": 15,
+      "uses": []
+    },
+    {
+      "title": "Gravy",
+      "text": "Spoon off most of the fat from the pan, set it over medium, whisk in the flour 1 minute, then the broth and the rest of the lemon juice, scraping up the browned bits. Simmer 3–4 minutes.",
+      "timer": 4,
+      "uses": [
+        "2-0",
+        "2-1"
+      ]
+    },
+    {
+      "title": "Carve",
+      "text": "Snip off the netting, slice thinly against the grain and serve with the potatoes and gravy.",
+      "uses": []
+    }
+  ],
+  "together": "ABAAB*",
+  "fixIt": [
+    {
+      "problem": "Outside done, inside raw",
+      "fix": "Lower the oven to 160°C (325°F) and keep going; the thermometer decides."
+    },
+    {
+      "problem": "Potatoes not crisp",
+      "fix": "Move the lamb out to rest and crank the oven to 220°C (425°F) for 10 minutes."
+    },
+    {
+      "problem": "Too pink for you",
+      "fix": "Return slices to the hot gravy for a minute, or roast to 71°C (160°F) next time."
+    }
+  ],
+  "saleTip": "Lamb legs go on sale at No Frills the week before Easter; a frozen New Zealand leg is often cheapest.",
+  "swap": "Bone-in leg (add about 20 minutes). Pork loin roast with the same rub, to 71°C (160°F).",
+  "leftovers": "Lamb pitas with tzatziki, or shepherd's pie with the chopped meat.",
+  "doneness": "Whole cuts of lamb to at least 63°C (145°F) after resting for medium-rare, 71°C (160°F) for medium (Health Canada).",
+  "source": "Based on tested roast leg of lamb methods (Canadian Living, BBC Good Food): garlic-herb paste, a 220°C start then 175°C, pulled at 60°C and rested.",
+  "gear": [
+    "Roasting pan (with a rack if you have one)",
+    "Whisk",
+    "Carving board",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Rub the lamb the night before and keep covered in the fridge."
+  ],
+  "reheat": "Slices covered with a splash of gravy at 160°C (325°F) for 10–15 minutes, or in the microwave, until 74°C (165°F).",
+  "thaw": {
+    "item": "leg of lamb",
+    "hours": 36
+  },
+  "levels": {
+    "basic": {
+      "note": "Garlic, lemon, salt and pepper lamb over potatoes; no herbs or gravy.",
+      "drop": [
+        "0-4",
+        "0-5",
+        "2-0",
+        "2-1"
+      ],
+      "stepNotes": {
+        "0": "Basic: skip the dried herbs.",
+        "4": "Basic: skip the gravy; spoon the pan juices over."
+      },
+      "costDrop": [
+        "beef-broth"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A honey-garlic glaze for the last 15 minutes and a red wine gravy.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 2,
+              "unit": "tbsp",
+              "name": "honey",
+              "pantry": {
+                "name": "Honey",
+                "cat": "baking"
+              }
+            },
+            {
+              "qty": 0.5,
+              "unit": "cup",
+              "name": "dry red wine",
+              "metric": {
+                "qty": 125,
+                "unit": "ml"
+              },
+              "pantry": {
+                "name": "Red wine",
+                "cat": "sauces"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "2": "Fancy: brush the honey over the lamb for the last 15 minutes.",
+        "4": "Fancy: add the wine with the broth and simmer 5 minutes."
+      },
+      "costAdd": [
+        [
+          "Honey",
+          0.4,
+          "honey"
+        ],
+        [
+          "Red wine, ½ cup",
+          2.0,
+          "red-wine"
+        ]
+      ],
+      "plating": [
+        "Fan the slices, pink side up.",
+        "Potatoes around, gravy in a jug.",
+        "Spring flowers on the table."
+      ]
+    }
+  },
+  "why": {
+    "0-1": "Lots of garlic mellows and sweetens as it roasts.",
+    "0-0": "Boneless is easy to carve and cooks evenly."
+  },
+  "fancyNight": true,
+  "funFact": "Lamb at Easter goes back to the Passover lamb; it's the traditional Easter roast across much of Europe.",
+  "keeps": {
+    "fridge": "3–4 days",
+    "freezer": "3 months",
+    "note": "slice and freeze with gravy"
+  },
+  "drink": "A Merlot or Pinot Noir, or sparkling water with lemon.",
+  "pairs": [
+    [
+      "holidays-11",
+      "deviled eggs to start"
+    ]
+  ]
+}

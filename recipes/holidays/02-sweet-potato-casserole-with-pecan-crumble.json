@@ -1,0 +1,366 @@
+{
+  "title": "Sweet Potato Casserole with Pecan Crumble",
+  "subtitle": "silky spiced sweet potatoes under a crunchy brown sugar pecan top",
+  "image": "assets/img/sweet-potato-casserole.webp",
+  "imageAlt": "A baking dish of mashed sweet potato casserole with a golden pecan crumble top, a scoop on a cream plate beside a navy napkin",
+  "servings": 8,
+  "servingsNote": "a 2 L dish: a holiday side for 8",
+  "prep": 25,
+  "cook": 50,
+  "cost": {
+    "total": 11.07,
+    "breakdown": [
+      [
+        "Sweet potatoes, 1.5 kg",
+        4.38,
+        "sweet-potatoes"
+      ],
+      [
+        "Pecans, ¾ cup",
+        3.0,
+        "pecan-halves"
+      ],
+      [
+        "Butter, ½ cup",
+        1.6,
+        "butter"
+      ],
+      [
+        "Brown sugar, ¾ cup",
+        0.56,
+        "brown-sugar"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "Milk, flour, vanilla, spices",
+        0.75
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+      "freezer"
+    ],
+    "course": [
+      "side"
+    ],
+    "holiday": [
+      "thanksgiving"
+    ]
+  },
+  "badges": [
+    "Make-ahead"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "pot",
+      "text": "Boil the sweet potatoes until very soft so the mash is silky."
+    },
+    {
+      "icon": "oven",
+      "text": "It can be made the day before and baked on the day."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Sweet potatoes",
+      "items": [
+        {
+          "qty": 1.5,
+          "unit": "kg",
+          "name": "sweet potatoes",
+          "note": "peeled and cut in 4 cm chunks",
+          "pantry": {
+            "name": "Sweet potatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 56,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 55,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "milk",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Milk",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "vanilla extract",
+          "pantry": {
+            "name": "Vanilla extract",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "ground cinnamon",
+          "pantry": {
+            "name": "Ground cinnamon",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pecan crumble",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "packed brown sugar",
+          "metric": {
+            "qty": 110,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Brown sugar",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.33,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "metric": {
+            "qty": 45,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 4,
+          "unit": "tbsp",
+          "name": "butter",
+          "note": "melted",
+          "metric": {
+            "qty": 56,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Butter",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 0.75,
+          "unit": "cup",
+          "name": "pecans",
+          "note": "chopped",
+          "metric": {
+            "qty": 85,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Pecan halves",
+            "cat": "baking"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Boil",
+      "text": "Cover the sweet potatoes with cold salted water, bring to a boil and simmer 15–18 minutes until very tender. Drain well.",
+      "timer": 16,
+      "uses": [
+        "0-0"
+      ]
+    },
+    {
+      "title": "Mash",
+      "text": "Heat the oven to 175°C (350°F). Mash the sweet potatoes smooth, then beat in the melted butter, brown sugar, milk, eggs, vanilla, cinnamon and salt. Spread in a buttered 2 L (8 in square or 7×11 in) baking dish.",
+      "uses": [
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7"
+      ]
+    },
+    {
+      "title": "Crumble",
+      "text": "Stir the brown sugar, flour, melted butter and pecans together and scatter over the top.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
+    },
+    {
+      "title": "Bake",
+      "text": "Bake 30–35 minutes, until the top is golden and the centre reads 74°C (165°F).",
+      "timer": 32,
+      "uses": []
+    }
+  ],
+  "together": "ABAA",
+  "fixIt": [
+    {
+      "problem": "Watery",
+      "fix": "Drain the potatoes very well and let them steam dry 2 minutes before mashing."
+    },
+    {
+      "problem": "Stringy",
+      "fix": "Beat with a hand mixer, or push through a sieve."
+    },
+    {
+      "problem": "Topping too dark",
+      "fix": "Tent with foil after 20 minutes."
+    }
+  ],
+  "saleTip": "Sweet potatoes are usually cheapest by the bag at No Frills in October.",
+  "swap": "Walnuts for pecans. Canned sweet potatoes, drained, in a pinch.",
+  "leftovers": "Reheat a scoop for lunch beside leftover turkey.",
+  "doneness": "Egg dishes to 74°C (165°F) in the centre (Health Canada).",
+  "source": "Based on tested sweet potato casserole methods (Canadian Living, Southern Living): egg-enriched spiced mash under a brown sugar pecan crumble, baked at 175°C.",
+  "gear": [
+    "Large pot",
+    "Masher or hand mixer",
+    "2 L baking dish",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Make the mash and crumble a day ahead, keep separate in the fridge and top just before baking (add 10 minutes)."
+  ],
+  "reheat": "Covered at 175°C (350°F) for 20 minutes or a portion in the microwave, until 74°C (165°F).",
+  "levels": {
+    "basic": {
+      "note": "Buttery mashed sweet potatoes with brown sugar; no crumble.",
+      "drop": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "0-5"
+      ],
+      "stepNotes": {
+        "1": "Basic: skip the vanilla.",
+        "2": "Basic: no crumble; bake it plain."
+      },
+      "costDrop": [
+        "pecan-halves"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A ring of toasted mini marshmallows around the pecan crumble.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 2,
+              "unit": "cup",
+              "name": "mini marshmallows",
+              "pantry": {
+                "name": "Mini marshmallows",
+                "cat": "baking"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "3": "Fancy: for the last 10 minutes, arrange the marshmallows around the edge and bake until golden."
+      },
+      "costAdd": [
+        [
+          "Mini marshmallows, 2 cups",
+          1.2,
+          "mini-marshmallows"
+        ]
+      ],
+      "plating": [
+        "Serve from the dish at the table.",
+        "A big spoon for scooping.",
+        "Next to the turkey and gravy."
+      ]
+    }
+  },
+  "why": {
+    "0-4": "Eggs set the mash into a soft, spoonable soufflé.",
+    "1-3": "Toasted pecans give crunch against the silky potatoes."
+  },
+  "fancyNight": false,
+  "funFact": "Sweet potatoes aren't true potatoes; they're in the morning glory family.",
+  "keeps": {
+    "fridge": "4 days",
+    "freezer": "2 months",
+    "note": "freeze without the marshmallows"
+  },
+  "drink": "Sparkling apple cider.",
+  "pairs": [
+    [
+      "holidays-01",
+      "the turkey it sits beside"
+    ]
+  ]
+}
