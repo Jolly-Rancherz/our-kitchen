@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-23T07:40:10",
- "count": 21,
+ "generated": "2026-11-23T08:12:52",
+ "count": 31,
  "categories": [
   {
    "slug": "chicken",
@@ -43,6 +43,11 @@
    "name": "Comfort & Soups",
    "colour": "#082048",
    "tile": "assets/tiles/comfort-soups.webp"
+  },
+  {
+   "slug": "christmas",
+   "name": "Christmas",
+   "colour": "#9E2B35"
   }
  ],
  "recipes": [
@@ -2553,6 +2558,884 @@
     {
      "name": "Crusty bread",
      "cat": "grains"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "christmas-01",
+   "category": "christmas",
+   "num": 1,
+   "file": "recipes/christmas/01-herb-butter-roast-turkey-breast.json",
+   "title": "Herb-Butter Roast Turkey Breast",
+   "subtitle": "a juicy boneless turkey breast under garlic and dried-herb butter, with real pan gravy — Christmas dinner without the whole bird",
+   "image": "assets/img/herb-butter-roast-turkey-breast.webp",
+   "prep": 15,
+   "cook": 100,
+   "total": 115,
+   "servings": 6,
+   "cost": 25,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [
+     "date-night",
+     "comfort-night"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "course": [
+     "main"
+    ],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "boneless turkey breast roast",
+    "salt",
+    "black pepper",
+    "yellow onion",
+    "chicken broth",
+    "butter",
+    "garlic",
+    "dried thyme",
+    "dried sage",
+    "dried rosemary",
+    "sweet paprika",
+    "butter",
+    "all-purpose flour",
+    "chicken broth",
+    "Worcestershire sauce"
+   ],
+   "pantry": [
+    {
+     "name": "Turkey breast roast",
+     "cat": "meat"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Chicken broth",
+     "cat": "baking"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Dried thyme",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried sage",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried rosemary",
+     "cat": "spices"
+    },
+    {
+     "name": "Paprika",
+     "cat": "spices"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Worcestershire sauce",
+     "cat": "sauces"
+    }
+   ],
+   "fancyNight": true
+  },
+  {
+   "id": "christmas-02",
+   "category": "christmas",
+   "num": 2,
+   "file": "recipes/christmas/02-honey-orange-glazed-ham.json",
+   "title": "Honey-Orange Glazed Ham",
+   "subtitle": "a fully cooked ham warmed gently, then lacquered with brown sugar, honey and orange: easy, glossy, and leftovers all week",
+   "image": "assets/img/honey-orange-glazed-ham.webp",
+   "prep": 15,
+   "cook": 80,
+   "total": 95,
+   "servings": 8,
+   "cost": 20,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [
+     "comfort-night"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "course": [
+     "main"
+    ],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "fully cooked boneless ham",
+    "water",
+    "packed brown sugar",
+    "honey",
+    "orange juice",
+    "orange",
+    "butter",
+    "ground cloves",
+    "ground cinnamon"
+   ],
+   "pantry": [
+    {
+     "name": "Ham (fully cooked)",
+     "cat": "meat"
+    },
+    {
+     "name": "Brown sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Honey",
+     "cat": "sauces"
+    },
+    {
+     "name": "Orange juice",
+     "cat": "dairy"
+    },
+    {
+     "name": "Oranges",
+     "cat": "produce"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Ground cloves",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground cinnamon",
+     "cat": "spices"
+    }
+   ],
+   "fancyNight": true
+  },
+  {
+   "id": "christmas-03",
+   "category": "christmas",
+   "num": 3,
+   "file": "recipes/christmas/03-classic-bread-stuffing.json",
+   "title": "Classic Bread Stuffing",
+   "subtitle": "buttery onion and celery, dried sage and thyme, baked in its own dish until crisp on top and soft inside",
+   "image": "assets/img/classic-bread-stuffing.webp",
+   "prep": 20,
+   "cook": 70,
+   "total": 90,
+   "servings": 8,
+   "cost": 10,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [
+     "bread-wraps"
+    ],
+    "occasion": [
+     "comfort-night"
+    ],
+    "leftovers": [
+     "lunch",
+     "freezer"
+    ],
+    "course": [
+     "side"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "white sandwich bread loaf",
+    "butter",
+    "yellow onion",
+    "celery",
+    "dried sage",
+    "dried thyme",
+    "salt",
+    "black pepper",
+    "chicken broth",
+    "large eggs"
+   ],
+   "pantry": [
+    {
+     "name": "Sandwich bread (white)",
+     "cat": "grains"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Yellow onions",
+     "cat": "produce"
+    },
+    {
+     "name": "Celery",
+     "cat": "produce"
+    },
+    {
+     "name": "Dried sage",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried thyme",
+     "cat": "spices"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Chicken broth",
+     "cat": "baking"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "christmas-04",
+   "category": "christmas",
+   "num": 4,
+   "file": "recipes/christmas/04-cheesy-scalloped-potatoes.json",
+   "title": "Cheesy Scalloped Potatoes",
+   "subtitle": "thin Yukon Golds layered with a creamy cheddar sauce and baked until bubbling and golden",
+   "image": "assets/img/cheesy-scalloped-potatoes.webp",
+   "prep": 25,
+   "cook": 90,
+   "total": 115,
+   "servings": 6,
+   "cost": 10,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [
+     "potatoes"
+    ],
+    "occasion": [
+     "comfort-night"
+    ],
+    "leftovers": [
+     "lunch"
+    ],
+    "course": [
+     "side"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "Yukon Gold potatoes",
+    "butter",
+    "garlic",
+    "all-purpose flour",
+    "milk",
+    "salt",
+    "black pepper",
+    "dried thyme",
+    "shredded old cheddar"
+   ],
+   "pantry": [
+    {
+     "name": "Yukon Gold potatoes",
+     "cat": "produce"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried thyme",
+     "cat": "spices"
+    },
+    {
+     "name": "Cheddar (shredded)",
+     "cat": "dairy"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "christmas-05",
+   "category": "christmas",
+   "num": 5,
+   "file": "recipes/christmas/05-maple-roasted-carrots-and-parsnips.json",
+   "title": "Maple-Roasted Carrots & Parsnips",
+   "subtitle": "Ontario winter roots roasted hot, then tossed in maple butter until the edges caramelize",
+   "image": "assets/img/maple-roasted-carrots-parsnips.webp",
+   "prep": 15,
+   "cook": 35,
+   "total": 50,
+   "servings": 4,
+   "cost": 4.4,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [
+     "weeknight",
+     "comfort-night"
+    ],
+    "leftovers": [
+     "lunch"
+    ],
+    "course": [
+     "side"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "carrots",
+    "parsnips",
+    "canola or vegetable oil",
+    "salt",
+    "black pepper",
+    "dried thyme",
+    "maple syrup",
+    "butter"
+   ],
+   "pantry": [
+    {
+     "name": "Carrots",
+     "cat": "produce"
+    },
+    {
+     "name": "Parsnips",
+     "cat": "produce"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Black pepper",
+     "cat": "spices"
+    },
+    {
+     "name": "Dried thyme",
+     "cat": "spices"
+    },
+    {
+     "name": "Maple syrup",
+     "cat": "baking"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "christmas-06",
+   "category": "christmas",
+   "num": 6,
+   "file": "recipes/christmas/06-cranberry-orange-sauce.json",
+   "title": "Cranberry Orange Sauce",
+   "subtitle": "fresh cranberries simmered with orange until they burst, then left to set: ten minutes, and miles better than the can",
+   "image": "assets/img/cranberry-orange-sauce.webp",
+   "prep": 5,
+   "cook": 15,
+   "total": 20,
+   "servings": 8,
+   "cost": 5,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop"
+    ],
+    "base": [],
+    "occasion": [
+     "comfort-night"
+    ],
+    "leftovers": [
+     "freezer"
+    ],
+    "course": [
+     "side"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "under-30"
+    ]
+   },
+   "ingredients": [
+    "cranberries",
+    "granulated sugar",
+    "orange juice",
+    "water",
+    "orange",
+    "salt"
+   ],
+   "pantry": [
+    {
+     "name": "Cranberries (fresh or frozen)",
+     "cat": "produce"
+    },
+    {
+     "name": "Granulated sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Orange juice",
+     "cat": "dairy"
+    },
+    {
+     "name": "Oranges",
+     "cat": "produce"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "christmas-07",
+   "category": "christmas",
+   "num": 7,
+   "file": "recipes/christmas/07-gingerbread-cookies.json",
+   "title": "Gingerbread Cookies",
+   "subtitle": "soft-centred molasses cut-outs with warm ginger and cinnamon, piped with simple white icing",
+   "image": "assets/img/gingerbread-cookies.webp",
+   "prep": 30,
+   "cook": 85,
+   "total": 115,
+   "servings": 12,
+   "cost": 7.2,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+     "freezer"
+    ],
+    "course": [
+     "dessert"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "all-purpose flour",
+    "ground ginger",
+    "ground cinnamon",
+    "ground cloves",
+    "baking soda",
+    "salt",
+    "butter",
+    "packed brown sugar",
+    "fancy molasses",
+    "large egg",
+    "vanilla extract",
+    "icing sugar",
+    "milk",
+    "vanilla extract"
+   ],
+   "pantry": [
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Ground ginger",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground cinnamon",
+     "cat": "spices"
+    },
+    {
+     "name": "Ground cloves",
+     "cat": "spices"
+    },
+    {
+     "name": "Baking soda",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Brown sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Fancy molasses",
+     "cat": "baking"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Vanilla extract",
+     "cat": "baking"
+    },
+    {
+     "name": "Icing sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Milk",
+     "cat": "dairy"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "christmas-08",
+   "category": "christmas",
+   "num": 8,
+   "file": "recipes/christmas/08-classic-butter-shortbread.json",
+   "title": "Classic Butter Shortbread",
+   "subtitle": "slice-and-bake butter rounds with a sugar-sparkle edge that melt in your mouth",
+   "image": "assets/img/butter-shortbread.webp",
+   "prep": 15,
+   "cook": 55,
+   "total": 70,
+   "servings": 10,
+   "cost": 4.8,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+     "freezer"
+    ],
+    "course": [
+     "dessert"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "butter",
+    "icing sugar",
+    "vanilla extract",
+    "salt",
+    "all-purpose flour",
+    "granulated sugar"
+   ],
+   "pantry": [
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Icing sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Vanilla extract",
+     "cat": "baking"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Granulated sugar",
+     "cat": "baking"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "christmas-09",
+   "category": "christmas",
+   "num": 9,
+   "file": "recipes/christmas/09-nanaimo-bars.json",
+   "title": "Nanaimo Bars",
+   "subtitle": "Canada's no-bake classic: chocolate coconut crumb base, custard buttercream middle, snappy chocolate top",
+   "image": "assets/img/nanaimo-bars.webp",
+   "prep": 30,
+   "cook": 85,
+   "total": 115,
+   "servings": 8,
+   "cost": 12.8,
+   "price": "$",
+   "tags": {
+    "method": [
+     "stovetop"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+     "freezer"
+    ],
+    "course": [
+     "dessert"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "up-to-60"
+    ]
+   },
+   "ingredients": [
+    "butter",
+    "granulated sugar",
+    "cocoa powder",
+    "large egg",
+    "graham cracker crumbs",
+    "sweetened shredded coconut",
+    "sliced almonds",
+    "butter",
+    "35% whipping cream",
+    "custard powder",
+    "icing sugar",
+    "semi-sweet baking chocolate",
+    "butter"
+   ],
+   "pantry": [
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Granulated sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Cocoa powder",
+     "cat": "baking"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Graham cracker crumbs",
+     "cat": "baking"
+    },
+    {
+     "name": "Sweetened shredded coconut",
+     "cat": "baking"
+    },
+    {
+     "name": "Sliced almonds",
+     "cat": "baking"
+    },
+    {
+     "name": "35% whipping cream",
+     "cat": "dairy"
+    },
+    {
+     "name": "Custard powder",
+     "cat": "baking"
+    },
+    {
+     "name": "Icing sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Semi-sweet chocolate (baking)",
+     "cat": "baking"
+    }
+   ],
+   "fancyNight": false
+  },
+  {
+   "id": "christmas-10",
+   "category": "christmas",
+   "num": 10,
+   "file": "recipes/christmas/10-butter-tarts.json",
+   "title": "Butter Tarts",
+   "subtitle": "flaky shells filled with brown sugar, butter and a runny caramel centre, raisins optional",
+   "image": "assets/img/butter-tarts.webp",
+   "prep": 15,
+   "cook": 30,
+   "total": 45,
+   "servings": 6,
+   "cost": 8.3,
+   "price": "$",
+   "tags": {
+    "method": [
+     "oven-bake"
+    ],
+    "base": [],
+    "occasion": [],
+    "leftovers": [
+     "freezer"
+    ],
+    "course": [
+     "dessert"
+    ],
+    "price": [
+     "$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "frozen deep tart shells",
+    "raisins",
+    "packed brown sugar",
+    "golden corn syrup",
+    "butter",
+    "large egg",
+    "vanilla extract",
+    "white vinegar",
+    "salt"
+   ],
+   "pantry": [
+    {
+     "name": "Frozen tart shells",
+     "cat": "frozen"
+    },
+    {
+     "name": "Raisins",
+     "cat": "baking"
+    },
+    {
+     "name": "Brown sugar",
+     "cat": "baking"
+    },
+    {
+     "name": "Corn syrup (golden)",
+     "cat": "baking"
+    },
+    {
+     "name": "Butter",
+     "cat": "dairy"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Vanilla extract",
+     "cat": "baking"
+    },
+    {
+     "name": "White vinegar",
+     "cat": "sauces"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
     }
    ],
    "fancyNight": false
