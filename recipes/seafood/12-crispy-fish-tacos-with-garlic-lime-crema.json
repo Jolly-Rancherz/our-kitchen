@@ -8,12 +8,12 @@
   "prep": 25,
   "cook": 15,
   "cost": {
-    "total": 26.19,
+    "total": 24.24,
     "breakdown": [
       [
-        "Cod fillets, 600 g",
-        13.2,
-        "cod-fillets-frozen"
+        "Seaquest wild Pacific cod, 600 g (2 × 400 g bags at $7.50)",
+        11.25,
+        "wild-pacific-cod-fillets-frozen"
       ],
       [
         "Small flour tortillas, 8",
@@ -91,7 +91,7 @@
   "beforeYouStart": [
     {
       "icon": "thaw",
-      "text": "Thaw frozen cod in the fridge overnight, or sealed in cold water 30–45 minutes, then pat it very dry."
+      "text": "Thaw the frozen cod in the fridge overnight, or sealed in cold water 30–45 minutes, then pat it very dry."
     },
     {
       "icon": "cup",
@@ -105,10 +105,10 @@
         {
           "qty": 600,
           "unit": "g",
-          "name": "cod or haddock fillets",
-          "note": "thawed, cut in 2.5 cm (1 in) strips",
+          "name": "frozen wild Pacific cod fillets",
+          "note": "about 1½ bags (400 g each), thawed, patted very dry, cut in 2.5 cm (1 in) strips",
           "pantry": {
-            "name": "Cod fillets (frozen)",
+            "name": "Wild Pacific cod fillets (frozen)",
             "cat": "frozen"
           }
         },
@@ -414,8 +414,8 @@
       "fix": "Warm them right before serving and keep them wrapped in a towel."
     }
   ],
-  "saleTip": "Frozen cod and haddock fillets drop to about $8.99 for 454 g on sale at No Frills; stock up then.",
-  "swap": "Haddock or pollock: same timing. Plain shredded cabbage for the coleslaw mix. Store-bought mild taco seasoning works if you're out of ours.",
+  "saleTip": "Seaquest Wild Pacific Cod Fillets are $7.50 for a 400 g bag at No Frills. Buy 2 bags; the extra 200 g keeps frozen for next taco night.",
+  "swap": "Haddock or pollock: same timing. Basa is the cheapest swap but softer: handle it gently and check it at 10 minutes. Plain shredded cabbage for the coleslaw mix. Store-bought mild taco seasoning works if you're out of ours.",
   "leftovers": "Keep the fish, slaw and crema apart. Re-crisp the fish and make fresh tacos, or have it on a rice bowl.",
   "doneness": "Fish at 70°C (158°F): opaque and flakes easily (Health Canada, fish).",
   "source": "Based on tested baked panko fish taco methods (Canadian Living, Budget Bytes): flour-egg-panko coated fish strips baked hot on a rack, a sour cream lime crema and a quick lime slaw. No chili or hot sauce.",

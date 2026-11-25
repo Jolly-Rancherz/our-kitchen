@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25T23:48:23",
+ "generated": "2026-11-25T23:55:53",
  "count": 153,
  "categories": [
   {
@@ -8260,7 +8260,7 @@
    "cook": 15,
    "total": 40,
    "servings": 4,
-   "cost": 26.19,
+   "cost": 24.24,
    "price": "$$",
    "tags": {
     "method": [
@@ -8282,7 +8282,7 @@
     ]
    },
    "ingredients": [
-    "cod or haddock fillets",
+    "frozen wild Pacific cod fillets",
     "all-purpose flour",
     "mild taco seasoning",
     "large eggs",
@@ -8306,7 +8306,7 @@
    ],
    "pantry": [
     {
-     "name": "Cod fillets (frozen)",
+     "name": "Wild Pacific cod fillets (frozen)",
      "cat": "frozen"
     },
     {

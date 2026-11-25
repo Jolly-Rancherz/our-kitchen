@@ -5577,7 +5577,7 @@ const UPDATES = /* UPDATES:BEGIN */ [
  "notes": [
   [
    "Crispy Fish Tacos",
-   "Panko-crusted cod strips seasoned with our Mild Taco Seasoning, a garlic-lime crema, honey-lime slaw, corn and Tex-Mex cheese in warm tortillas. Classic adds avocado and tomato, Fancy adds a mango salsa and smoked paprika in the crema, and there’s an air fryer version"
+   "Panko-crusted wild Pacific cod strips seasoned with our Mild Taco Seasoning, a garlic-lime crema, honey-lime slaw, corn and Tex-Mex cheese in warm tortillas. Classic adds avocado and tomato, Fancy adds a mango salsa and smoked paprika in the crema, and there’s an air fryer version"
   ]
  ]
 },
