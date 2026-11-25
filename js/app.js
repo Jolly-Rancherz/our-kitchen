@@ -5570,6 +5570,18 @@ function recapCard(rc, dismiss) {
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
 {
+ "name": "Update 14.2",
+ "id": "u142-2026-11",
+ "date": "2026-11-25",
+ "intro": "One new dinner in Seafood: Crispy Fish Tacos with Garlic-Lime Crema.",
+ "notes": [
+  [
+   "Crispy Fish Tacos",
+   "Panko-crusted cod strips seasoned with our Mild Taco Seasoning, a garlic-lime crema, honey-lime slaw, corn and Tex-Mex cheese in warm tortillas. Classic adds avocado and tomato, Fancy adds a mango salsa and smoked paprika in the crema, and there’s an air fryer version"
+  ]
+ ]
+},
+{
  "name": "Update 14.1",
  "id": "u141-2026-11",
  "date": "2026-11-23",

@@ -569,6 +569,10 @@
    "price": 4.49,
    "pack": "890 ml"
   },
+  "mild-taco-seasoning": {
+   "price": 1.29,
+   "pack": "24 g packet"
+  },
   "milk": {
    "price": 5.79,
    "pack": "2 L"
@@ -872,6 +876,10 @@
   "swiss-cheese-slices": {
    "price": 4.99,
    "pack": "240 g"
+  },
+  "tex-mex-cheese-shredded": {
+   "price": 6.99,
+   "pack": "320 g"
   },
   "tomato-paste": {
    "price": 1.29,
