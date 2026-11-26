@@ -2037,7 +2037,7 @@ html[data-theme="dark"] .hol-band{opacity:.55}
 .kt-fan.n3 .f1{transform:rotate(-11deg) translateX(-10%)}.kt-fan.n3 .f2{transform:rotate(9deg) translateX(10%)}.kt-fan.n3 .f3{transform:rotate(-1deg)}
 .kt-fan.n2 .f1{transform:rotate(-8deg) translateX(-7%)}.kt-fan.n2 .f2{transform:rotate(5deg) translateX(7%)}
 .kt-fan.n1 .f1{transform:rotate(3deg)}
-.kt-lbl{position:absolute;left:0;right:0;bottom:-6px;text-align:center;font-family:"Cinzel";font-weight:600;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--kicker);text-decoration:none;z-index:2}
+.kt-lbl{position:absolute;left:0;right:0;bottom:-16px;text-align:center;font-family:"Cinzel";font-weight:600;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--kicker);text-decoration:none;z-index:2}
 .kt-none{display:flex;align-items:center;justify-content:center}.kt-none .kt-lbl{position:static;letter-spacing:.08em;line-height:1.5}
 html[data-theme="dark"] .kt{background:repeating-linear-gradient(90deg,transparent 0 22px,rgba(196,150,62,.05) 22px 23px),var(--bg2)}
 @media (prefers-reduced-motion: reduce){.kt-open,.kt-f{transition:none}}

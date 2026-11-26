@@ -5592,6 +5592,18 @@ function recapCard(rc, dismiss) {
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
 {
+ "name": "Update 14.3",
+ "id": "u143-2026-11",
+ "date": "2026-11-25",
+ "intro": "Home now starts with the Kitchen Table.",
+ "notes": [
+  [
+   "The Kitchen Table",
+   "The last recipe you had open lies open on the table at the top of Home. Tap it to go back to the same level and the same spot on the page. Your favourites are fanned beside it; tap one to open it, or tap Favourites to jump to them all. Everything else on Home is still below"
+  ]
+ ]
+},
+{
  "name": "Update 14.2",
  "id": "u142-2026-11",
  "date": "2026-11-25",
