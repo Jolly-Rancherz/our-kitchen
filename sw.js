@@ -1,6 +1,6 @@
 /* Our Kitchen service worker — offline support.
    VERSION and the PRECACHE list are rewritten by tools/build_index.py. */
-const VERSION = '99bab7a11a';
+const VERSION = '773fb7dc09';
 const CACHE = 'our-kitchen-' + VERSION;
 const VENDOR = 'ok-vendor-tesseract-5.1.1';
 const PRECACHE = /*PRECACHE*/[
@@ -209,6 +209,8 @@ const PRECACHE = /*PRECACHE*/[
   "./assets/img/egg-roll-bowls.webp",
   "./assets/img/filet-mignon-sm.webp",
   "./assets/img/filet-mignon.webp",
+  "./assets/img/fish-tacos-sm.webp",
+  "./assets/img/fish-tacos.webp",
   "./assets/img/french-onion-soup-sm.webp",
   "./assets/img/french-onion-soup.webp",
   "./assets/img/garlic-butter-shrimp-sm.webp",
@@ -501,6 +503,7 @@ const PRECACHE = /*PRECACHE*/[
   "./recipes/seafood/09-golden-salmon-cakes-with-lemon-mayo.json",
   "./recipes/seafood/10-crispy-panko-haddock-with-lemon-rice.json",
   "./recipes/seafood/11-creamy-seafood-chowder.json",
+  "./recipes/seafood/12-crispy-fish-tacos-with-garlic-lime-crema.json",
   "./recipes/spice-blends/01-mild-taco-seasoning.json",
   "./recipes/spice-blends/02-italian-seasoning.json",
   "./recipes/spice-blends/03-all-purpose-chicken-seasoning.json",

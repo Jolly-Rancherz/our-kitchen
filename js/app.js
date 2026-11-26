@@ -666,9 +666,10 @@ async function viewRecipe(id) {
 
     ${(r.fixIt || []).length ? `<div class="sec"><div class="sec-title">Fix it</div><div class="card fix" style="padding-top:2px;padding-bottom:2px">${r.fixIt.map((x) => `<details><summary>${esc(x.problem)}</summary><p>${tx(x.fix)}</p></details>`).join('')}</div></div>` : ''}
 
-    ${(r.prepAhead || []).length || r.reheat || r.keeps || r.airFryer ? `<div class="sec"><div class="sec-title">Good to know</div><div class="card fix" style="padding-top:2px;padding-bottom:2px">
+    ${(r.prepAhead || []).length || r.reheat || r.keeps || r.airFryer || r.oven ? `<div class="sec"><div class="sec-title">Good to know</div><div class="card fix" style="padding-top:2px;padding-bottom:2px">
       ${(r.prepAhead || []).length ? `<details><summary>Make ahead</summary><ul class="tips">${r.prepAhead.map((t) => `<li>${tx(t)}</li>`).join('')}</ul></details>` : ''}
       ${r.airFryer ? `<details><summary>Air fryer version</summary><p>${tx(r.airFryer)}</p></details>` : ''}
+      ${r.oven ? `<details><summary>Oven version</summary><p>${tx(r.oven)}</p></details>` : ''}
       ${r.reheat ? `<details><summary>Reheating leftovers</summary><p>${tx(r.reheat)}</p></details>` : ''}
       ${r.keeps ? keepsHTML(r.keeps) : ''}</div></div>` : ''}
     ${pairsHTML(r)}
@@ -5569,6 +5570,18 @@ function recapCard(rc, dismiss) {
 // tools/build_index.py reads and checks it). The top entry is the version shown at the foot of Settings, its id drives
 // the "New in Our Kitchen" card (seenWhatsNew), and the sheet opens on it, with every entry under "Past updates".
 const UPDATES = /* UPDATES:BEGIN */ [
+{
+ "name": "Update 14.2",
+ "id": "u142-2026-11",
+ "date": "2026-11-25",
+ "intro": "One new dinner in Seafood: Crispy Fish Tacos with Garlic-Lime Crema.",
+ "notes": [
+  [
+   "Crispy Fish Tacos",
+   "Panko-crusted wild Pacific cod strips seasoned with our Mild Taco Seasoning, a garlic-lime crema, honey-lime slaw, corn and Tex-Mex cheese in warm tortillas. Classic adds avocado and tomato, Fancy adds a mango salsa and smoked paprika in the crema, made in the air fryer, with an oven version too"
+  ]
+ ]
+},
 {
  "name": "Update 14.1",
  "id": "u141-2026-11",

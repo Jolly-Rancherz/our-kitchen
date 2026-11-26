@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-23T17:39:36",
- "count": 152,
+ "generated": "2026-11-26T00:17:46",
+ "count": 153,
  "categories": [
   {
    "slug": "chicken",
@@ -8247,6 +8247,139 @@
     }
    ],
    "fancyNight": true
+  },
+  {
+   "id": "seafood-12",
+   "category": "seafood",
+   "num": 12,
+   "file": "recipes/seafood/12-crispy-fish-tacos-with-garlic-lime-crema.json",
+   "title": "Crispy Fish Tacos with Garlic-Lime Crema",
+   "subtitle": "golden panko cod in warm tortillas with a honey-lime slaw, corn, cheese and a cool garlic-lime crema",
+   "image": "assets/img/fish-tacos.webp",
+   "prep": 25,
+   "cook": 20,
+   "total": 45,
+   "servings": 4,
+   "cost": 24.24,
+   "price": "$$",
+   "tags": {
+    "method": [
+     "air-fryer",
+     "oven-bake"
+    ],
+    "base": [
+     "bread-wraps"
+    ],
+    "occasion": [
+     "weeknight",
+     "takeout-night"
+    ],
+    "leftovers": [],
+    "price": [
+     "$$"
+    ],
+    "time": [
+     "30-45"
+    ]
+   },
+   "ingredients": [
+    "frozen wild Pacific cod fillets",
+    "all-purpose flour",
+    "mild taco seasoning",
+    "large eggs",
+    "panko breadcrumbs",
+    "canola or vegetable oil",
+    "sour cream",
+    "mayonnaise",
+    "lime",
+    "garlic",
+    "salt",
+    "coleslaw mix",
+    "lime juice",
+    "honey",
+    "salt",
+    "small (15 cm) flour tortillas",
+    "shredded Tex-Mex cheese",
+    "frozen corn",
+    "avocado",
+    "diced tomato",
+    "lime"
+   ],
+   "pantry": [
+    {
+     "name": "Wild Pacific cod fillets (frozen)",
+     "cat": "frozen"
+    },
+    {
+     "name": "All-purpose flour",
+     "cat": "baking"
+    },
+    {
+     "name": "Mild taco seasoning",
+     "cat": "spices"
+    },
+    {
+     "name": "Eggs",
+     "cat": "dairy"
+    },
+    {
+     "name": "Panko breadcrumbs",
+     "cat": "baking"
+    },
+    {
+     "name": "Canola / vegetable oil",
+     "cat": "baking"
+    },
+    {
+     "name": "Sour cream",
+     "cat": "dairy"
+    },
+    {
+     "name": "Mayonnaise",
+     "cat": "sauces"
+    },
+    {
+     "name": "Limes",
+     "cat": "produce"
+    },
+    {
+     "name": "Garlic",
+     "cat": "produce"
+    },
+    {
+     "name": "Salt",
+     "cat": "spices"
+    },
+    {
+     "name": "Coleslaw mix",
+     "cat": "produce"
+    },
+    {
+     "name": "Honey",
+     "cat": "baking"
+    },
+    {
+     "name": "Flour tortillas (small)",
+     "cat": "grains"
+    },
+    {
+     "name": "Tex-Mex cheese (shredded)",
+     "cat": "dairy"
+    },
+    {
+     "name": "Frozen corn",
+     "cat": "frozen"
+    },
+    {
+     "name": "Avocados",
+     "cat": "produce"
+    },
+    {
+     "name": "Tomatoes",
+     "cat": "produce"
+    }
+   ],
+   "fancyNight": false
   },
   {
    "id": "takeout-at-home-01",

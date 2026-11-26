@@ -569,6 +569,10 @@
    "price": 4.49,
    "pack": "890 ml"
   },
+  "mild-taco-seasoning": {
+   "price": 1.29,
+   "pack": "24 g packet"
+  },
   "milk": {
    "price": 5.79,
    "pack": "2 L"
@@ -873,6 +877,10 @@
    "price": 4.99,
    "pack": "240 g"
   },
+  "tex-mex-cheese-shredded": {
+   "price": 6.99,
+   "pack": "320 g"
+  },
   "tomato-paste": {
    "price": 1.29,
    "pack": "156 ml can"
@@ -916,6 +924,10 @@
   "whole-chicken": {
    "price": 13.99,
    "pack": "about 1.8 kg"
+  },
+  "wild-pacific-cod-fillets-frozen": {
+   "price": 7.5,
+   "pack": "400 g bag (Seaquest)"
   },
   "wonton-wrappers": {
    "price": 2.49,

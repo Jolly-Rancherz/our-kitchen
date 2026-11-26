@@ -1,0 +1,580 @@
+{
+  "title": "Crispy Fish Tacos with Garlic-Lime Crema",
+  "subtitle": "golden panko cod in warm tortillas with a honey-lime slaw, corn, cheese and a cool garlic-lime crema",
+  "image": "assets/img/fish-tacos.webp",
+  "imageAlt": "Soft flour tortillas filled with golden panko fish strips, shredded slaw, corn, cheese, diced tomato and avocado with a drizzle of white crema and lime wedges on a cream plate beside a navy napkin",
+  "servings": 4,
+  "servingsNote": "8 tacos: dinner for one big eater + one hungry eater, plus lunches",
+  "prep": 25,
+  "cook": 20,
+  "cost": {
+    "total": 24.24,
+    "breakdown": [
+      [
+        "Seaquest wild Pacific cod, 600 g (2 × 400 g bags at $7.50)",
+        11.25,
+        "wild-pacific-cod-fillets-frozen"
+      ],
+      [
+        "Small flour tortillas, 8",
+        2.79,
+        "flour-tortillas-small"
+      ],
+      [
+        "Tex-Mex cheese, 1 cup",
+        2.18,
+        "tex-mex-cheese-shredded"
+      ],
+      [
+        "Limes, 3",
+        1.5,
+        "limes"
+      ],
+      [
+        "Coleslaw mix, ½ bag",
+        1.25,
+        "coleslaw-mix"
+      ],
+      [
+        "Panko, 1 cup",
+        0.86,
+        "panko-breadcrumbs"
+      ],
+      [
+        "Eggs, 2",
+        0.78,
+        "eggs"
+      ],
+      [
+        "Sour cream, ½ cup",
+        0.75,
+        "sour-cream"
+      ],
+      [
+        "Tomato, ½ cup diced",
+        0.75,
+        "tomatoes"
+      ],
+      [
+        "Avocado, ½",
+        0.63,
+        "avocados"
+      ],
+      [
+        "Frozen corn, 1 cup",
+        0.6,
+        "frozen-corn"
+      ],
+      [
+        "Flour, mayo, honey, oil, spices",
+        0.9
+      ]
+    ]
+  },
+  "tags": {
+    "method": [
+      "air-fryer",
+      "oven-bake"
+    ],
+    "base": [
+      "bread-wraps"
+    ],
+    "occasion": [
+      "weeknight",
+      "takeout-night"
+    ],
+    "leftovers": []
+  },
+  "badges": [
+    "Not spicy",
+    "Taco night"
+  ],
+  "beforeYouStart": [
+    {
+      "icon": "thaw",
+      "text": "Thaw the frozen cod in the fridge overnight, or sealed in cold water 30–45 minutes, then pat it very dry."
+    },
+    {
+      "icon": "cup",
+      "text": "Make the crema and slaw first so they chill while the fish air-fries."
+    }
+  ],
+  "groups": [
+    {
+      "name": "Crispy fish",
+      "items": [
+        {
+          "qty": 600,
+          "unit": "g",
+          "name": "frozen wild Pacific cod fillets",
+          "note": "about 1½ bags (400 g each), thawed, patted very dry, cut in 2.5 cm (1 in) strips",
+          "pantry": {
+            "name": "Wild Pacific cod fillets (frozen)",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "all-purpose flour",
+          "pantry": {
+            "name": "All-purpose flour",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tsp",
+          "name": "mild taco seasoning",
+          "note": "our Mild Taco Seasoning or store-bought mild",
+          "pantry": {
+            "name": "Mild taco seasoning",
+            "cat": "spices"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": null,
+          "name": "large eggs",
+          "note": "beaten",
+          "pantry": {
+            "name": "Eggs",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "panko breadcrumbs",
+          "metric": {
+            "qty": 60,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Panko breadcrumbs",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "canola or vegetable oil",
+          "note": "for the panko, plus a light oil spray for the basket",
+          "pantry": {
+            "name": "Canola / vegetable oil",
+            "cat": "baking"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Garlic-lime crema",
+      "items": [
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "sour cream",
+          "metric": {
+            "qty": 125,
+            "unit": "ml"
+          },
+          "pantry": {
+            "name": "Sour cream",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "mayonnaise",
+          "pantry": {
+            "name": "Mayonnaise",
+            "cat": "sauces"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": null,
+          "name": "lime",
+          "note": "juiced (2 tbsp)",
+          "pantry": {
+            "name": "Limes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "clove",
+          "name": "garlic",
+          "note": "small, finely grated",
+          "pantry": {
+            "name": "Garlic",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.25,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Honey-lime slaw",
+      "items": [
+        {
+          "qty": 2,
+          "unit": "cup",
+          "name": "coleslaw mix",
+          "metric": {
+            "qty": 150,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Coleslaw mix",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "lime juice",
+          "note": "from ½ lime",
+          "pantry": {
+            "name": "Limes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "honey",
+          "pantry": {
+            "name": "Honey",
+            "cat": "baking"
+          }
+        },
+        {
+          "qty": 0.125,
+          "unit": "tsp",
+          "name": "salt",
+          "pantry": {
+            "name": "Salt",
+            "cat": "spices"
+          }
+        }
+      ]
+    },
+    {
+      "name": "To serve",
+      "items": [
+        {
+          "qty": 8,
+          "unit": null,
+          "name": "small (15 cm) flour tortillas",
+          "pantry": {
+            "name": "Flour tortillas (small)",
+            "cat": "grains"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "shredded Tex-Mex cheese",
+          "metric": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Tex-Mex cheese (shredded)",
+            "cat": "dairy"
+          }
+        },
+        {
+          "qty": 1,
+          "unit": "cup",
+          "name": "frozen corn",
+          "note": "thawed",
+          "metric": {
+            "qty": 140,
+            "unit": "g"
+          },
+          "pantry": {
+            "name": "Frozen corn",
+            "cat": "frozen"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": null,
+          "name": "avocado",
+          "note": "diced",
+          "pantry": {
+            "name": "Avocados",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": "cup",
+          "name": "diced tomato",
+          "note": "about 1 small",
+          "pantry": {
+            "name": "Tomatoes",
+            "cat": "produce"
+          }
+        },
+        {
+          "qty": 0.5,
+          "unit": null,
+          "name": "lime",
+          "note": "cut in wedges",
+          "pantry": {
+            "name": "Limes",
+            "cat": "produce"
+          }
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Crema and slaw",
+      "text": "Stir the sour cream, mayonnaise, lime juice, grated garlic and salt until smooth. In another bowl, toss the coleslaw mix with the 1 tbsp lime juice, honey and a pinch of salt. Chill both.",
+      "uses": [
+        "1-0",
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "2-0",
+        "2-1",
+        "2-2",
+        "2-3"
+      ]
+    },
+    {
+      "title": "Set up",
+      "text": "Heat the air fryer to 200°C (400°F) and the oven to 95°C (200°F) to keep batches warm. Pat the fish very dry. Mix the flour with the taco seasoning in one shallow dish, beat the eggs in a second, and toss the panko with the oil in a third.",
+      "uses": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5"
+      ]
+    },
+    {
+      "title": "Coat",
+      "text": "Dredge each strip in the flour, dip in the egg, then press into the panko on all sides. Set on a plate in one layer.",
+      "uses": []
+    },
+    {
+      "title": "Air-fry",
+      "text": "Lightly spray the basket with oil. Air-fry the strips in batches in one layer, not crowded, 8–10 minutes, flipping once and spraying lightly, until golden and crisp and the thickest strip reads 70°C (158°F) and flakes easily. Keep each batch warm on a rack in the oven.",
+      "timer": 9,
+      "uses": []
+    },
+    {
+      "title": "Warm the rest",
+      "text": "While the fish cooks, microwave the corn covered 1–2 minutes, then warm the tortillas in a dry skillet over medium, 20–30 seconds a side, and keep them wrapped in a clean towel.",
+      "timer": 2,
+      "uses": [
+        "3-2",
+        "3-0"
+      ]
+    },
+    {
+      "title": "Build",
+      "text": "Fill each tortilla with slaw, 2–3 fish strips, cheese, corn, tomato and avocado. Drizzle with crema and serve with lime wedges.",
+      "uses": [
+        "3-1",
+        "3-4",
+        "3-3",
+        "3-5"
+      ]
+    }
+  ],
+  "together": "AAABB*",
+  "fixIt": [
+    {
+      "problem": "Coating falls off",
+      "fix": "Dry the fish well and press the panko on firmly; flip gently with tongs."
+    },
+    {
+      "problem": "Crumbs pale",
+      "fix": "Spray a little more oil on the pale spots and air-fry 1–2 minutes more."
+    },
+    {
+      "problem": "Soggy bottoms",
+      "fix": "The basket was crowded; cook fewer strips per batch so the air can move."
+    },
+    {
+      "problem": "Tortillas crack",
+      "fix": "Warm them right before serving and keep them wrapped in a towel."
+    }
+  ],
+  "saleTip": "Seaquest Wild Pacific Cod Fillets are $7.50 for a 400 g bag at No Frills. Buy 2 bags; the extra 200 g keeps frozen for next taco night.",
+  "swap": "Haddock or pollock: same timing. Basa is the cheapest swap but softer: handle it gently and check it at 7 minutes. Plain shredded cabbage for the coleslaw mix. Store-bought mild taco seasoning works if you're out of ours.",
+  "leftovers": "Keep the fish, slaw and crema apart. Re-crisp the fish and make fresh tacos, or have it on a rice bowl.",
+  "doneness": "Fish at 70°C (158°F): opaque and flakes easily (Health Canada, fish).",
+  "source": "Based on tested air fryer and baked panko fish taco methods (Canadian Living, Budget Bytes): flour-egg-panko coated fish strips air-fried at 200°C, a sour cream lime crema and a quick lime slaw. No chili or hot sauce.",
+  "gear": [
+    "Air fryer",
+    "Oven-safe rack on a baking sheet (to keep batches warm)",
+    "3 shallow dishes",
+    "Large skillet",
+    "2 bowls",
+    "Instant-read thermometer"
+  ],
+  "prepAhead": [
+    "Make the crema up to 3 days ahead.",
+    "Mix the slaw up to 4 hours ahead.",
+    "Cut the fish and keep it covered in the fridge up to a day ahead."
+  ],
+  "reheat": "Fish on a rack at 200°C (400°F) for 5–6 minutes, or in the air fryer for 3–4 minutes, until 74°C (165°F). Crema and slaw are served cold.",
+  "thaw": {
+    "item": "cod fillets",
+    "hours": 12
+  },
+  "oven": "No air fryer? Bake the coated strips on a rack set on a lined baking sheet at 220°C (425°F) for 12–14 minutes, flipping once, until golden and 70°C (158°F) inside.",
+  "levels": {
+    "basic": {
+      "note": "Crispy fish tacos with plain slaw, cheese, corn and the crema; no slaw dressing, tomato or avocado.",
+      "drop": [
+        "2-1",
+        "2-2",
+        "2-3",
+        "3-4",
+        "3-3"
+      ],
+      "stepNotes": {
+        "0": "Basic: skip the slaw dressing; use the coleslaw mix plain.",
+        "5": "Basic: no tomato or avocado."
+      },
+      "costDrop": [
+        "tomatoes",
+        "avocados"
+      ],
+      "costAdd": []
+    },
+    "fancy": {
+      "note": "A fresh mango salsa on top and smoked paprika in the crema.",
+      "add": [
+        {
+          "group": "Fancy",
+          "items": [
+            {
+              "qty": 1,
+              "unit": null,
+              "name": "ripe mango",
+              "note": "finely diced",
+              "pantry": {
+                "name": "Mangoes",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "cup",
+              "name": "red onion",
+              "note": "finely diced",
+              "metric": {
+                "qty": 40,
+                "unit": "g"
+              },
+              "pantry": {
+                "name": "Red onions",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 1,
+              "unit": "tbsp",
+              "name": "lime juice",
+              "note": "from ½ lime",
+              "pantry": {
+                "name": "Limes",
+                "cat": "produce"
+              }
+            },
+            {
+              "qty": 0.25,
+              "unit": "tsp",
+              "name": "smoked paprika",
+              "pantry": {
+                "name": "Smoked paprika",
+                "cat": "spices"
+              }
+            }
+          ]
+        }
+      ],
+      "stepNotes": {
+        "0": "Fancy: stir the smoked paprika into the crema.",
+        "5": "Fancy: spoon mango salsa over each taco."
+      },
+      "addSteps": [
+        {
+          "title": "Mango salsa",
+          "text": "Toss the mango, red onion and lime juice. Chill until serving."
+        }
+      ],
+      "costAdd": [
+        [
+          "Mango",
+          1.29,
+          "mangoes"
+        ],
+        [
+          "Red onion, ¼ cup",
+          0.35,
+          "red-onions"
+        ],
+        [
+          "Lime, ½",
+          0.25,
+          "limes"
+        ],
+        [
+          "Smoked paprika",
+          0.1,
+          "smoked-paprika"
+        ]
+      ],
+      "plating": [
+        "Three tacos standing in a row.",
+        "Mango salsa and a zigzag of crema on top.",
+        "Lime wedges and extra crema on the side."
+      ]
+    }
+  },
+  "why": {
+    "0-4": "Panko tossed with oil crisps up in the air fryer without deep-frying.",
+    "1-2": "Lime in the crema and slaw keeps the tacos bright.",
+    "0-2": "Our mild taco blend seasons the coating with no heat."
+  },
+  "fancyNight": false,
+  "funFact": "Fish tacos come from Baja California, where battered fish in tortillas became a street-stand staple in Ensenada in the 1950s.",
+  "keeps": {
+    "fridge": "2 days",
+    "freezer": null,
+    "note": "cooked fish loses its crunch when frozen; keep the crema and slaw separate"
+  },
+  "drink": "Sparkling water with lime, or a cold Mexican lager.",
+  "pairs": [
+    [
+      "spice-blends-01",
+      "our Mild Taco Seasoning, made for this"
+    ],
+    [
+      "seafood-08",
+      "shrimp tacos for the next taco night"
+    ]
+  ]
+}
