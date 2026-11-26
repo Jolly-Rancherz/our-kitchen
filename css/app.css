@@ -2018,3 +2018,26 @@ html[data-theme="dark"] .hol-band{opacity:.55}
 /* update 14.0: with an odd number of chapters the last tile runs the full width (same height as the others),
    so the grid ends square instead of leaving an empty half-row */
 .cats .cat-tile:last-child:nth-child(odd){grid-column:1/-1;aspect-ratio:2.2/1}
+
+/* update 14.3: the Kitchen Table: the last open recipe lying open, favourites fanned beside it */
+.ktable{margin-top:4px}
+.kt{display:grid;grid-template-columns:1.45fr 1fr;gap:14px;align-items:center;padding:16px 14px 18px;border:1.25px solid var(--line-gold);background:
+  radial-gradient(120% 90% at 30% 20%,rgba(255,255,255,.18),transparent 60%),repeating-linear-gradient(90deg,transparent 0 22px,rgba(140,106,40,.05) 22px 23px),var(--bg2)}
+.kt-open{display:block;color:var(--ink);text-decoration:none;transform:rotate(-1.6deg);background:var(--card);padding:7px 7px 10px;box-shadow:0 1px 2px rgba(0,0,0,.12),0 6px 14px rgba(18,16,46,.16);transition:transform .18s ease}
+.kt-open:active{transform:rotate(-1.6deg) scale(.985)}
+.kt-im{aspect-ratio:4/3;overflow:hidden;background:var(--tile1)}.kt-im img{width:100%;height:100%;object-fit:cover;display:block}
+.kt-card{padding:8px 3px 0}
+.kt-card small{display:block;font-family:"Cinzel";font-weight:600;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--kicker)}
+.kt-card b{display:block;font-family:"Cinzel";font-weight:700;font-size:.92rem;line-height:1.2;margin-top:3px;overflow-wrap:anywhere}
+.kt-card span{display:block;font-size:.74rem;color:var(--muted);margin-top:3px}
+.kt-empty{transform:rotate(-1.6deg)}.kt-empty .kt-card{padding:12px 6px}
+.kt-fan{position:relative;height:150px}
+.kt-f{position:absolute;left:50%;top:6px;width:74%;aspect-ratio:3/4;margin-left:-37%;background:var(--card);padding:5px;box-shadow:0 1px 2px rgba(0,0,0,.12),0 5px 12px rgba(18,16,46,.18);transform-origin:50% 100%;transition:transform .18s ease}
+.kt-f img,.kt-f .ph{width:100%;height:100%;object-fit:cover;display:block}
+.kt-fan.n3 .f1{transform:rotate(-11deg) translateX(-10%)}.kt-fan.n3 .f2{transform:rotate(9deg) translateX(10%)}.kt-fan.n3 .f3{transform:rotate(-1deg)}
+.kt-fan.n2 .f1{transform:rotate(-8deg) translateX(-7%)}.kt-fan.n2 .f2{transform:rotate(5deg) translateX(7%)}
+.kt-fan.n1 .f1{transform:rotate(3deg)}
+.kt-lbl{position:absolute;left:0;right:0;bottom:-16px;text-align:center;font-family:"Cinzel";font-weight:600;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--kicker);text-decoration:none;z-index:2}
+.kt-none{display:flex;align-items:center;justify-content:center}.kt-none .kt-lbl{position:static;letter-spacing:.08em;line-height:1.5}
+html[data-theme="dark"] .kt{background:repeating-linear-gradient(90deg,transparent 0 22px,rgba(196,150,62,.05) 22px 23px),var(--bg2)}
+@media (prefers-reduced-motion: reduce){.kt-open,.kt-f{transition:none}}
