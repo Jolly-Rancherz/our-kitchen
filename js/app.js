@@ -3158,6 +3158,7 @@ function viewHome(partial) {
     const tmr = plannedFor(isoPlus(1)); const thaw = tmr ? thawLine(summary(tmr)) : '';
     body = `
       ${thanksCard()}${whatsNewCard()}${stripMoveCard()}${backupCard()}
+      ${kitchenTable(recipes, favs)}
       ${showAn ? `<div class="annv"><div class="fk">${an.days === 1 ? 'TOMORROW' : `IN ${an.days} DAYS`} · ${an.yrs}-YEAR ANNIVERSARY<button class="x" id="anX" aria-label="Dismiss">×</button></div><p>${an.sug ? `How about <b>${esc(an.sug.title)}</b> — ${esc(an.sigWhy)}?` : 'Plan something special to cook together.'}</p>${an.sug ? `<div class="btnrow" style="margin-top:10px"><a class="btn sm ghost" href="#/r/${an.sug.id}">Open recipe</a><button class="btn sm gold" id="anPlan">Plan date night</button></div>` : ''}</div>` : ''}
       ${ourDishCard()}
       ${rc ? recapCard(rc, true) : ''}
@@ -3178,7 +3179,7 @@ function viewHome(partial) {
       <div class="sec"><div class="sec-title">Categories</div>
         <div class="cats">${withRecipes.map((c, i) => `<a class="cat-tile r${(i % 4) + 1}" href="#/c/${c.slug}" style="background:${c.colour}">${img(c.tile, '')}
           <div class="lbl"><b>${esc(c.name)}</b><span>${catNoun(c, c.items.length)}</span></div></a>`).join('')}</div></div>
-      <div class="sec"><div class="sec-title">Favourites${favs.length > 4 ? `<span class="act">${favs.length}</span>` : ''}</div>
+      <div class="sec" id="favSec"><div class="sec-title">Favourites${favs.length > 4 ? `<span class="act">${favs.length}</span>` : ''}</div>
         ${favs.length ? `<div class="favtiles">${favs.slice(0, 4).map((r) => `<a class="favtile" href="#/r/${r.id}">${r.image ? img(r.image, r.title) : placeholderArt(r)}<span class="ft">${esc(r.title)}</span>${isCoupleFav(r.id) ? `<i class="gh" title="Both of you love this">${svg('heart')}</i>` : ''}${state.signature === r.id ? '<i class="sg">★</i>' : ''}</a>`).join('')}</div>
           ${favs.length > 4 ? `<div class="hrow" style="margin-top:10px">${favs.slice(4).map(miniCard).join('')}</div>` : ''}` : `<div class="empty">Tap the ♡ on a recipe and it'll live here.</div>`}</div>
       ${rcook.length ? `<div class="sec"><div class="sec-title">Recently cooked</div><div class="rcook">${rcook.map(({ r, c }) => `<div class="rc"><a href="#/r/${r.id}" class="rc-a"><div class="im">${r.image ? img(thumb(r.image), '') : placeholderArt(r)}</div><div class="rc-t"><b>${esc(r.title)}</b><small>${hat(c.by, 14)}${esc(dayWord(c.date))}</small></div></a><button class="btn sm ghost" data-again="${r.id}" aria-label="Cook ${esc(r.title)} again">${svg('play')}Again</button></div>`).join('')}</div></div>` : ''}
@@ -3201,7 +3202,7 @@ function viewHome(partial) {
   if (partial) swapHomeBody(body); else render(`<div class="home-head">
       <div class="kicker">${pump ? `<svg class="pump" viewBox="0 0 24 24" aria-hidden="true">${ICON.pumpkin}</svg>` : ''}Recipes we love<span class="rule"></span></div>
       <div class="lead greet" style="margin-top:6px">${esc(greeting())}<span class="wx" id="wxLine">${esc(wxLine())}</span></div>
-      ${ribbonHTML()}
+      ${state.bookmark && /^#\/r\//.test(state.bookmark.h) ? '' : ribbonHTML()}
       ${dn && dn.days <= 14 ? `<a class="dnline" href="#/us">${svg('heart')}<span>${esc(dnWords(dn))}${dn.s ? ' — ' + esc(dn.s.title) : ''}</span></a>` : ''}
       <div class="searchrow"><label class="search">${svg('search')}<input id="q" type="search" placeholder="Search recipes or ingredients" value="${esc(ui.q)}" autocomplete="off" enterkeyhint="search"><button class="clear" id="qClear" aria-label="Clear search" ${ui.q ? '' : 'hidden'}>×</button></label>
         <button class="filterbtn ${fc ? 'on' : ''}" id="filterBtn" aria-label="Filters">${svg('filter')}${fc ? `<b>${fc}</b>` : ''}</button></div>
@@ -3283,7 +3284,7 @@ function viewHome(partial) {
   $('#bkLater') && ($('#bkLater').onclick = () => { state.settings.backupSnooze = now() + DAYS(7); save(); redraw(); toast("I'll remind you next week"); });
   $('#recapX') && ($('#recapX').onclick = () => { state.recapSeen[lastMonthKey()] = now(); save(); redraw(); });
   $('#flashX') && ($('#flashX').onclick = (e) => { e.preventDefault(); state.flashSeen[todayISO()] = now(); save(); redraw(); });
-  bindRibbon(); bindOurDishCard(redraw);
+  bindRibbon(); bindKitchenTable(); bindOurDishCard(redraw);
   $('#anX') && ($('#anX').onclick = () => { const a = annivSoon(); if (a) state.annivSeen[a.key] = now(); save(); redraw(); });
   $('#anPlan') && ($('#anPlan').onclick = () => { const a = annivSoon(); if (!a) return; const [, m, d] = state.settings.anniversary.split('-').map(Number); openDateNight({ date: isoOf(new Date(+a.key, m - 1, d)), recipeId: a.sug && a.sug.id }); });
   $('#tnCook') && ($('#tnCook').onclick = () => { ui.autoCook = tonightPlan().recipeId; go('#/r/' + ui.autoCook); });
@@ -5339,6 +5340,26 @@ document.addEventListener('visibilitychange', () => { if (document.visibilitySta
 function bookmarkTitle(h) {
   const r = h.match(/^#\/r\/(.+)$/); if (r) return (summary(r[1]) || {}).title || null;
   const t = h.match(/^#\/acura\/t\/(.+)$/); const tr = t && ACURA && ACURA.treats.find((x) => x.id === t[1]); return tr ? tr.title + ' (Acura)' : null;
+}
+// update 14.3: the Kitchen Table, the top of Home seen from above. The last recipe we had open lies open on the table
+// (it reopens at the same level and scroll spot, using the ribbon's bookmark), with our favourites fanned beside it.
+function kitchenTable(recipes, favs) {
+  const b = state.bookmark; const bm = b && /^#\/r\//.test(b.h) ? b.h.slice(4) : null;
+  const last = recipes.find((r) => r.id === bm) || recipes.find((r) => r.id === state.recent[0]);
+  const fan = favs.slice(0, 3);
+  if (!last && !fan.length) return '';
+  const lvl = last ? ((ui.lv && ui.lv[last.id]) || state.levels[last.id] || 'classic') : null;
+  const where = last && bm === last.id && b.y > 40 ? 'Right where you left off' : 'Pick up where you left off';
+  const open = last ? `<a class="kt-open" id="ktOpen" href="#/r/${last.id}" data-id="${last.id}"><div class="kt-im">${last.image ? img(thumb(last.image), '') : placeholderArt(last)}</div>
+      <div class="kt-card"><small>Open on the table</small><b>${esc(last.title)}</b><span>${(RLEVELS.find((x) => x[0] === lvl) || RLEVELS[1])[1]} · ${esc(where)}</span></div></a>`
+    : `<div class="kt-open kt-empty"><div class="kt-card"><small>Open on the table</small><span>Open any recipe and it'll wait here for you.</span></div></div>`;
+  const stack = fan.length ? `<div class="kt-fan n${fan.length}">${fan.map((r, i) => `<a class="kt-f f${i + 1}" href="#/r/${r.id}" aria-label="${esc(r.title)}">${r.image ? img(thumb(r.image), '') : placeholderArt(r)}</a>`).join('')}<a class="kt-lbl" href="#favSec">Favourites${favs.length > 3 ? ` · ${favs.length}` : ''}</a></div>`
+    : `<div class="kt-fan kt-none"><span class="kt-lbl">Tap ♡ on a recipe to add it here</span></div>`;
+  return `<div class="sec ktable"><div class="kt">${open}${stack}</div></div>`;
+}
+function bindKitchenTable() {
+  const a = $('#ktOpen'); if (a) a.onclick = () => { const b = state.bookmark; if (b && b.h === '#/r/' + a.dataset.id) { try { sessionStorage.setItem('ok-scroll', JSON.stringify({ h: b.h, y: b.y })); } catch (e) {} } };
+  const l = $('.kt-lbl[href="#favSec"]'); if (l) l.onclick = (e) => { e.preventDefault(); const f = $('#favSec'); if (f) f.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); };
 }
 function ribbonHTML() {
   const b = state.bookmark; const title = b && bookmarkTitle(b.h);
