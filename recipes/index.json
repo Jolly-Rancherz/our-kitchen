@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25T23:55:53",
+ "generated": "2026-11-26T00:17:46",
  "count": 153,
  "categories": [
   {
@@ -8257,13 +8257,14 @@
    "subtitle": "golden panko cod in warm tortillas with a honey-lime slaw, corn, cheese and a cool garlic-lime crema",
    "image": "assets/img/fish-tacos.webp",
    "prep": 25,
-   "cook": 15,
-   "total": 40,
+   "cook": 20,
+   "total": 45,
    "servings": 4,
    "cost": 24.24,
    "price": "$$",
    "tags": {
     "method": [
+     "air-fryer",
      "oven-bake"
     ],
     "base": [
@@ -8291,7 +8292,7 @@
     "sour cream",
     "mayonnaise",
     "lime",
-    "small garlic clove",
+    "garlic",
     "salt",
     "coleslaw mix",
     "lime juice",

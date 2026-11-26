@@ -6,7 +6,7 @@
   "servings": 4,
   "servingsNote": "8 tacos: dinner for one big eater + one hungry eater, plus lunches",
   "prep": 25,
-  "cook": 15,
+  "cook": 20,
   "cost": {
     "total": 24.24,
     "breakdown": [
@@ -73,6 +73,7 @@
   },
   "tags": {
     "method": [
+      "air-fryer",
       "oven-bake"
     ],
     "base": [
@@ -95,7 +96,7 @@
     },
     {
       "icon": "cup",
-      "text": "Make the crema and slaw first so they chill while the fish bakes."
+      "text": "Make the crema and slaw first so they chill while the fish air-fries."
     }
   ],
   "groups": [
@@ -158,7 +159,7 @@
           "qty": 2,
           "unit": "tbsp",
           "name": "canola or vegetable oil",
-          "note": "or cooking spray",
+          "note": "for the panko, plus a light oil spray for the basket",
           "pantry": {
             "name": "Canola / vegetable oil",
             "cat": "baking"
@@ -204,8 +205,8 @@
         {
           "qty": 1,
           "unit": "clove",
-          "name": "small garlic clove",
-          "note": "finely grated",
+          "name": "garlic",
+          "note": "small, finely grated",
           "pantry": {
             "name": "Garlic",
             "cat": "produce"
@@ -358,7 +359,7 @@
     },
     {
       "title": "Set up",
-      "text": "Heat the oven to 220°C (425°F) and set a rack on a lined baking sheet. Pat the fish very dry. Mix the flour with the taco seasoning in one shallow dish, beat the eggs in a second, and toss the panko with the oil in a third.",
+      "text": "Heat the air fryer to 200°C (400°F) and the oven to 95°C (200°F) to keep batches warm. Pat the fish very dry. Mix the flour with the taco seasoning in one shallow dish, beat the eggs in a second, and toss the panko with the oil in a third.",
       "uses": [
         "0-0",
         "0-1",
@@ -370,18 +371,18 @@
     },
     {
       "title": "Coat",
-      "text": "Dredge each strip in the flour, dip in the egg, then press into the panko on all sides. Lay on the rack in one layer, not touching.",
+      "text": "Dredge each strip in the flour, dip in the egg, then press into the panko on all sides. Set on a plate in one layer.",
       "uses": []
     },
     {
-      "title": "Bake",
-      "text": "Bake 12–14 minutes, flipping once halfway, until golden and crisp and the thickest strip reads 70°C (158°F) and flakes easily.",
-      "timer": 13,
+      "title": "Air-fry",
+      "text": "Lightly spray the basket with oil. Air-fry the strips in batches in one layer, not crowded, 8–10 minutes, flipping once and spraying lightly, until golden and crisp and the thickest strip reads 70°C (158°F) and flakes easily. Keep each batch warm on a rack in the oven.",
+      "timer": 9,
       "uses": []
     },
     {
       "title": "Warm the rest",
-      "text": "While the fish bakes, microwave the corn covered 1–2 minutes, then warm the tortillas in a dry skillet over medium, 20–30 seconds a side, and keep them wrapped in a clean towel.",
+      "text": "While the fish cooks, microwave the corn covered 1–2 minutes, then warm the tortillas in a dry skillet over medium, 20–30 seconds a side, and keep them wrapped in a clean towel.",
       "timer": 2,
       "uses": [
         "3-2",
@@ -407,7 +408,11 @@
     },
     {
       "problem": "Crumbs pale",
-      "fix": "Spray or drizzle a little more oil on top and give it 2 more minutes."
+      "fix": "Spray a little more oil on the pale spots and air-fry 1–2 minutes more."
+    },
+    {
+      "problem": "Soggy bottoms",
+      "fix": "The basket was crowded; cook fewer strips per batch so the air can move."
     },
     {
       "problem": "Tortillas crack",
@@ -415,12 +420,13 @@
     }
   ],
   "saleTip": "Seaquest Wild Pacific Cod Fillets are $7.50 for a 400 g bag at No Frills. Buy 2 bags; the extra 200 g keeps frozen for next taco night.",
-  "swap": "Haddock or pollock: same timing. Basa is the cheapest swap but softer: handle it gently and check it at 10 minutes. Plain shredded cabbage for the coleslaw mix. Store-bought mild taco seasoning works if you're out of ours.",
+  "swap": "Haddock or pollock: same timing. Basa is the cheapest swap but softer: handle it gently and check it at 7 minutes. Plain shredded cabbage for the coleslaw mix. Store-bought mild taco seasoning works if you're out of ours.",
   "leftovers": "Keep the fish, slaw and crema apart. Re-crisp the fish and make fresh tacos, or have it on a rice bowl.",
   "doneness": "Fish at 70°C (158°F): opaque and flakes easily (Health Canada, fish).",
-  "source": "Based on tested baked panko fish taco methods (Canadian Living, Budget Bytes): flour-egg-panko coated fish strips baked hot on a rack, a sour cream lime crema and a quick lime slaw. No chili or hot sauce.",
+  "source": "Based on tested air fryer and baked panko fish taco methods (Canadian Living, Budget Bytes): flour-egg-panko coated fish strips air-fried at 200°C, a sour cream lime crema and a quick lime slaw. No chili or hot sauce.",
   "gear": [
-    "Baking sheet with a rack",
+    "Air fryer",
+    "Oven-safe rack on a baking sheet (to keep batches warm)",
     "3 shallow dishes",
     "Large skillet",
     "2 bowls",
@@ -436,7 +442,7 @@
     "item": "cod fillets",
     "hours": 12
   },
-  "airFryer": "Air-fry the coated strips in one layer, in batches, at 200°C (400°F) for 8–10 minutes, flipping once, until golden and 70°C (158°F) inside. Spray the tops with cooking spray first.",
+  "oven": "No air fryer? Bake the coated strips on a rack set on a lined baking sheet at 220°C (425°F) for 12–14 minutes, flipping once, until golden and 70°C (158°F) inside.",
   "levels": {
     "basic": {
       "note": "Crispy fish tacos with plain slaw, cheese, corn and the crema; no slaw dressing, tomato or avocado.",
@@ -549,7 +555,7 @@
     }
   },
   "why": {
-    "0-4": "Panko tossed with oil bakes up crunchy without frying.",
+    "0-4": "Panko tossed with oil crisps up in the air fryer without deep-frying.",
     "1-2": "Lime in the crema and slaw keeps the tacos bright.",
     "0-2": "Our mild taco blend seasons the coating with no heat."
   },

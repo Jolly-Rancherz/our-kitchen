@@ -666,9 +666,10 @@ async function viewRecipe(id) {
 
     ${(r.fixIt || []).length ? `<div class="sec"><div class="sec-title">Fix it</div><div class="card fix" style="padding-top:2px;padding-bottom:2px">${r.fixIt.map((x) => `<details><summary>${esc(x.problem)}</summary><p>${tx(x.fix)}</p></details>`).join('')}</div></div>` : ''}
 
-    ${(r.prepAhead || []).length || r.reheat || r.keeps || r.airFryer ? `<div class="sec"><div class="sec-title">Good to know</div><div class="card fix" style="padding-top:2px;padding-bottom:2px">
+    ${(r.prepAhead || []).length || r.reheat || r.keeps || r.airFryer || r.oven ? `<div class="sec"><div class="sec-title">Good to know</div><div class="card fix" style="padding-top:2px;padding-bottom:2px">
       ${(r.prepAhead || []).length ? `<details><summary>Make ahead</summary><ul class="tips">${r.prepAhead.map((t) => `<li>${tx(t)}</li>`).join('')}</ul></details>` : ''}
       ${r.airFryer ? `<details><summary>Air fryer version</summary><p>${tx(r.airFryer)}</p></details>` : ''}
+      ${r.oven ? `<details><summary>Oven version</summary><p>${tx(r.oven)}</p></details>` : ''}
       ${r.reheat ? `<details><summary>Reheating leftovers</summary><p>${tx(r.reheat)}</p></details>` : ''}
       ${r.keeps ? keepsHTML(r.keeps) : ''}</div></div>` : ''}
     ${pairsHTML(r)}
@@ -5577,7 +5578,7 @@ const UPDATES = /* UPDATES:BEGIN */ [
  "notes": [
   [
    "Crispy Fish Tacos",
-   "Panko-crusted wild Pacific cod strips seasoned with our Mild Taco Seasoning, a garlic-lime crema, honey-lime slaw, corn and Tex-Mex cheese in warm tortillas. Classic adds avocado and tomato, Fancy adds a mango salsa and smoked paprika in the crema, and there’s an air fryer version"
+   "Panko-crusted wild Pacific cod strips seasoned with our Mild Taco Seasoning, a garlic-lime crema, honey-lime slaw, corn and Tex-Mex cheese in warm tortillas. Classic adds avocado and tomato, Fancy adds a mango salsa and smoked paprika in the crema, made in the air fryer, with an oven version too"
   ]
  ]
 },
